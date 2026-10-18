@@ -35,15 +35,15 @@ def check_totals(data: dict) -> list[str]:
     avisos = []
     res = data["resumen"]
     for nombre, clave in (("gastos", "gastosPorCapitulo"), ("ingresos", "ingresosPorCapitulo")):
-        ref = {c["cap"]: c["y2026"] for c in res[clave]}
+        ref = {c["cap"]: c["actual"] for c in res[clave]}
         for c in data[nombre]["capitulos"]:
-            _cmp(avisos, f"{nombre}, capítulo {c['cap']}", c["y2026"], ref.get(c["cap"]))
+            _cmp(avisos, f"{nombre}, capítulo {c['cap']}", c["actual"], ref.get(c["cap"]))
     for c in data["gastos"]["capitulos"]:
-        suma = sum(p["y2026"] or 0 for p in data["gastos"]["partidas"] if p["cap"] == c["cap"])
-        _cmp(avisos, f"gastos, capítulo {c['cap']}: las partidas suman {round(suma, 2)} y el capítulo", suma, c["y2026"])
+        suma = sum(p["actual"] or 0 for p in data["gastos"]["partidas"] if p["cap"] == c["cap"])
+        _cmp(avisos, f"gastos, capítulo {c['cap']}: las partidas suman {round(suma, 2)} y el capítulo", suma, c["actual"])
     suma_proyectos = sum(pr["importe"] for p in data["inversiones"]["programas"] for pr in p["proyectos"])
     _cmp(avisos, f"inversiones: los proyectos suman {round(suma_proyectos, 2)} y el total", suma_proyectos, data["inversiones"]["total"])
-    _cmp(avisos, "inversiones (total)", data["inversiones"]["total"], next(c["y2026"] for c in res["gastosPorCapitulo"] if c["cap"] == 6))
+    _cmp(avisos, "inversiones (total)", data["inversiones"]["total"], next(c["actual"] for c in res["gastosPorCapitulo"] if c["cap"] == 6))
     return avisos
 
 

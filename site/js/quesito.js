@@ -19,10 +19,10 @@ export const COLOR_CAPITULO = {
 
 /** Capítulos con importe > 0, de mayor a menor, con su porcentaje y color. */
 export function datosQuesito(capitulos) {
-  const con = capitulos.filter((c) => c.y2026 > 0);
-  const total = con.reduce((s, c) => s + c.y2026, 0);
+  const con = capitulos.filter((c) => c.actual > 0);
+  const total = con.reduce((s, c) => s + c.actual, 0);
   const items = con
-    .map((c) => ({ cap: c.cap, nombre: c.corto, oficial: c.oficial, valor: c.y2026, pct: (c.y2026 / total) * 100, color: COLOR_CAPITULO[c.cap] }))
+    .map((c) => ({ cap: c.cap, nombre: c.corto, oficial: c.oficial, valor: c.actual, pct: (c.actual / total) * 100, color: COLOR_CAPITULO[c.cap] }))
     .sort((a, b) => b.valor - a.valor);
   return { items, total };
 }

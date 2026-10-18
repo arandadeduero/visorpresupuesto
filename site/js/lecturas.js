@@ -12,15 +12,15 @@ export function parseImporte(texto) {
 /** Reparte `importe` entre las políticas de gasto en proporción a su gasto previsto (orientativo). */
 export function repartoAportacion(importe, politicas) {
   if (!Number.isFinite(importe) || importe <= 0) return [];
-  const total = politicas.reduce((s, p) => s + p.y2026, 0);
+  const total = politicas.reduce((s, p) => s + p.actual, 0);
   if (total <= 0) return [];
   return politicas
-    .filter((p) => p.y2026 > 0)
-    .map((p) => ({ codigo: p.codigo, nombre: p.nombre, importe: (importe * p.y2026) / total }))
+    .filter((p) => p.actual > 0)
+    .map((p) => ({ codigo: p.codigo, nombre: p.nombre, importe: (importe * p.actual) / total }))
     .sort((a, b) => b.importe - a.importe);
 }
 
-const sumaCaps = (capitulos, caps) => capitulos.filter((c) => caps.includes(c.cap)).reduce((s, c) => s + (c.y2026 ?? 0), 0);
+const sumaCaps = (capitulos, caps) => capitulos.filter((c) => caps.includes(c.cap)).reduce((s, c) => s + (c.actual ?? 0), 0);
 const pct = (parte, todo) => (todo > 0 ? (parte / todo) * 100 : null);
 
 /** Indicadores sencillos de la situación económica, calculados con las cifras del propio presupuesto. */

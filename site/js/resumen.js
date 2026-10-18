@@ -12,26 +12,26 @@ function cambios(titulo, items, clase) {
 }
 
 function bloque(titulo, capitulos, total) {
-  const max = Math.max(...capitulos.map((c) => c.y2026));
-  const ordenados = [...capitulos].sort((a, b) => b.y2026 - a.y2026);
+  const max = Math.max(...capitulos.map((c) => c.actual));
+  const ordenados = [...capitulos].sort((a, b) => b.actual - a.actual);
   return `<section><h2>${esc(titulo)}</h2>
     <ul class="barras">${ordenados.map((c) => `<li>${filaHtml({
       nombre: c.corto,
       title: `Nombre oficial: ${c.oficial}`,
-      importe: c.y2026,
+      importe: c.actual,
       max,
-      extra: `${((c.y2026 / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${variacionHtml(c.y2026, c.y2025)}`,
+      extra: `${((c.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${variacionHtml(c.actual, c.anterior)}`,
     })}</li>`).join("")}</ul></section>`;
 }
 
 runPage("resumen", async ({ anio, main, load }) => {
   const [r, gastos, ingresos] = await Promise.all([load("resumen"), load("gastos"), load("ingresos")]);
-  const prestamos = r.ingresosPorCapitulo.find((c) => c.cap === 9).y2026;
+  const prestamos = r.ingresosPorCapitulo.find((c) => c.cap === 9).actual;
   const gc = mayoresCambios(gastos.politicas, 5);
   const ic = mayoresCambios(ingresos.capitulos.flatMap((c) => c.conceptos), 5);
   const suben = { g: gc.suben, i: ic.suben };
   const bajan = { g: gc.bajan, i: ic.bajan };
-  const filas = (caps) => caps.map((c) => `<tr><td>${esc(c.corto)}</td><td class="num">${formatEuros(c.y2025)}</td><td class="num">${formatEuros(c.y2026)}</td></tr>`);
+  const filas = (caps) => caps.map((c) => `<tr><td>${esc(c.corto)}</td><td class="num">${formatEuros(c.anterior)}</td><td class="num">${formatEuros(c.actual)}</td></tr>`);
   const cab = [{ texto: "Concepto" }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }];
 
   main.innerHTML = `

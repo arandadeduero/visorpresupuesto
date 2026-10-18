@@ -25,7 +25,7 @@ def parse_gastos(year: int) -> dict:
     programa = None
     for row in ws.iter_rows(values_only=True):
         row = tuple(row) + (None,) * (6 - len(row))
-        prog, econ, nombre, y2025, y2026 = row[1], row[2], row[3], num(row[4]), num(row[5])
+        prog, econ, nombre, anterior, actual = row[1], row[2], row[3], num(row[4]), num(row[5])
         nombre_txt = nombre.strip() if isinstance(nombre, str) else None
 
         if nombre_txt and (m := _CABECERA.match(nombre_txt)):
@@ -34,7 +34,7 @@ def parse_gastos(year: int) -> dict:
         elif nombre_txt and (m := _TOTAL.match(nombre_txt)):
             n = _ROMANOS[m.group(1)]
             corto, oficial = CAPITULOS_GASTOS[n]
-            capitulos[n] = {"cap": n, "corto": corto, "oficial": oficial, "y2025": y2025, "y2026": y2026}
+            capitulos[n] = {"cap": n, "corto": corto, "oficial": oficial, "anterior": anterior, "actual": actual}
             cap = None
         elif cap is None:
             continue
@@ -43,34 +43,34 @@ def parse_gastos(year: int) -> dict:
             nombres_programa.setdefault(programa, sentence_case(nombre_txt))
         elif econ is not None and programa is not None:
             partidas.append(
-                {"cap": cap, "programa": programa, "codigo": code_str(econ), "nombre": sentence_case(nombre_txt) if nombre_txt else f"Partida {code_str(econ)} (sin descripción)", "y2025": y2025, "y2026": y2026}
+                {"cap": cap, "programa": programa, "codigo": code_str(econ), "nombre": sentence_case(nombre_txt) if nombre_txt else f"Partida {code_str(econ)} (sin descripción)", "anterior": anterior, "actual": actual}
             )
 
     # Capítulo 1: una sola partida por programa con el total.
     personal = defaultdict(lambda: [0.0, 0.0])
     for p in partidas:
         if p["cap"] == 1:
-            personal[p["programa"]][0] += p["y2025"] or 0
-            personal[p["programa"]][1] += p["y2026"] or 0
+            personal[p["programa"]][0] += p["anterior"] or 0
+            personal[p["programa"]][1] += p["actual"] or 0
     resto = [p for p in partidas if p["cap"] != 1]
     agrupadas = [
-        {"cap": 1, "programa": prog, "codigo": None, "nombre": "Gastos de personal", "y2025": round(a, 2), "y2026": round(b, 2)}
+        {"cap": 1, "programa": prog, "codigo": None, "nombre": "Gastos de personal", "anterior": round(a, 2), "actual": round(b, 2)}
         for prog, (a, b) in personal.items()
     ]
     partidas = agrupadas + resto
 
     totales = defaultdict(lambda: [0.0, 0.0])
     for p in partidas:
-        totales[p["programa"]][0] += p["y2025"] or 0
-        totales[p["programa"]][1] += p["y2026"] or 0
+        totales[p["programa"]][0] += p["anterior"] or 0
+        totales[p["programa"]][1] += p["actual"] or 0
     programas = [
         {
             "codigo": cod,
             "nombre": nombres_programa.get(cod, f"Programa {cod}"),
             "area": int(cod[0]),
             "politica": cod[:2],
-            "y2025": round(t[0], 2),
-            "y2026": round(t[1], 2),
+            "anterior": round(t[0], 2),
+            "actual": round(t[1], 2),
         }
         for cod, t in sorted(totales.items())
     ]
@@ -82,8 +82,8 @@ def parse_gastos(year: int) -> dict:
                 "codigo": codigo,
                 "nombre": POLITICAS[codigo],
                 "area": int(codigo[0]),
-                "y2025": round(sum(p["y2025"] for p in propios), 2),
-                "y2026": round(sum(p["y2026"] for p in propios), 2),
+                "anterior": round(sum(p["anterior"] for p in propios), 2),
+                "actual": round(sum(p["actual"] for p in propios), 2),
             }
         )
     usadas = sorted({p["area"] for p in programas})

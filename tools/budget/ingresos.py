@@ -22,11 +22,11 @@ def parse_ingresos(year: int) -> dict:
         if m := _CABECERA.match(nombre):
             n = _ROMANOS[m.group(1)]
             corto, oficial = CAPITULOS_INGRESOS[n]
-            actual = {"cap": n, "corto": corto, "oficial": oficial, "y2024": None, "y2025": None, "y2026": None, "conceptos": []}
+            actual = {"cap": n, "corto": corto, "oficial": oficial, "anterior2": None, "anterior": None, "actual": None, "conceptos": []}
             capitulos[n] = actual
         elif m := _TOTAL.match(nombre):
             c = capitulos[_ROMANOS[m.group(1)]]
-            c["y2024"], c["y2025"], c["y2026"] = num(row[3]), num(row[4]), num(row[5])
+            c["anterior2"], c["anterior"], c["actual"] = num(row[3]), num(row[4]), num(row[5])
         elif actual is not None and codigo is not None and not nombre.upper().startswith("ARTÍCULO"):
             if isinstance(codigo, str) and not codigo.strip()[:1].isdigit():
                 continue
@@ -34,9 +34,9 @@ def parse_ingresos(year: int) -> dict:
                 {
                     "codigo": code_str(codigo),
                     "nombre": sentence_case(nombre),
-                    "y2024": num(row[3]),
-                    "y2025": num(row[4]),
-                    "y2026": num(row[5]),
+                    "anterior2": num(row[3]),
+                    "anterior": num(row[4]),
+                    "actual": num(row[5]),
                 }
             )
     return {"anio": year, "capitulos": [capitulos[n] for n in sorted(capitulos)]}

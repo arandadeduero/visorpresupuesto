@@ -28,7 +28,7 @@ test("los gastos por capítulo se ordenan de mayor a menor y suman el 100 %", ()
 });
 
 test("los ingresos por capítulo mantienen los colores y descartan los capítulos a cero", () => {
-  const caps = resumen.ingresosPorCapitulo.map((c) => (c.cap === 8 ? { ...c, y2026: 0 } : c));
+  const caps = resumen.ingresosPorCapitulo.map((c) => (c.cap === 8 ? { ...c, actual: 0 } : c));
   const { items } = datosQuesito(caps);
   assert.equal(items.length, 8);
   assert.ok(items.every((i) => i.valor > 0));

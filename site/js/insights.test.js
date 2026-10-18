@@ -18,12 +18,12 @@ test("porHabitante divide por la población y no revienta sin ella", () => {
 
 test("mayoresCambios separa lo que sube de lo que baja, por importe, sin NaN", () => {
   const items = [
-    { nombre: "a", y2025: 100, y2026: 150 },
-    { nombre: "b", y2025: 0, y2026: 80 },
-    { nombre: "c", y2025: 500, y2026: 100 },
-    { nombre: "d", y2025: 10, y2026: 10 },
-    { nombre: "e", y2025: null, y2026: null },
-    { nombre: "f", y2025: 50, y2026: 45 },
+    { nombre: "a", anterior: 100, actual: 150 },
+    { nombre: "b", anterior: 0, actual: 80 },
+    { nombre: "c", anterior: 500, actual: 100 },
+    { nombre: "d", anterior: 10, actual: 10 },
+    { nombre: "e", anterior: null, actual: null },
+    { nombre: "f", anterior: 50, actual: 45 },
   ];
   const { suben, bajan } = mayoresCambios(items, 2);
   assert.deepEqual(suben.map((x) => x.nombre), ["b", "a"]);
@@ -48,8 +48,8 @@ test("destacar resume una política: importe, euros por vecino y porcentaje", ()
   const cultura = gastos.politicas.find((p) => p.nombre === "Cultura");
   const d = destacar(cultura, resumen.totalGastos, resumen.habitantes);
   assert.equal(d.nombre, "Cultura");
-  assert.equal(d.importe, cultura.y2026);
-  assert.ok(Math.abs(d.porHabitante - cultura.y2026 / 33956) < 1e-9);
+  assert.equal(d.importe, cultura.actual);
+  assert.ok(Math.abs(d.porHabitante - cultura.actual / 33956) < 1e-9);
   assert.ok(d.pct > 10 && d.pct < 12);
   assert.equal(destacar(cultura, resumen.totalGastos, 0).porHabitante, null);
 });
