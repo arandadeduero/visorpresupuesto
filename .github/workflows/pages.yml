@@ -12,10 +12,14 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
+  test:
+    uses: ./.github/workflows/ci.yml
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -28,3 +32,18 @@ jobs:
           path: site
       - id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: Comprobar que la web publicada carga
+        env:
+          URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          base="${URL%/}"
+          for intento in $(seq 1 18); do
+            if curl -fsS "$base/" | grep -q "Presupuestos de Aranda de Duero" \
+              && curl -fsS "$base/data/index.json" | grep -q '"ultimo"' \
+              && curl -fsS -o /dev/null "$base/vendor/chart.umd.min.js"; then
+              echo "La web carga en $base"; exit 0
+            fi
+            echo "Intento $intento: todavía no responde, espero 10 s…"; sleep 10
+          done
+          echo "::error::La web no carga en $base"; exit 1
