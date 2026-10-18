@@ -22,3 +22,7 @@ node_modules/
 # Secretos
 .env
 .env.*
+
+# Capturas y trazas de Playwright
+.playwright-mcp/
+*.png
