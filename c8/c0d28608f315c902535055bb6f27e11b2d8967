@@ -1,0 +1,66 @@
+site/js/home.js
+  s_c524ba238f0f5a::t_3931439c2cb0b0 12,14-16,33
+site/js/deuda-texto.js
+  s_c524ba238f0f5a::t_3931439c2cb0b0 1-12
+site/js/format.js
+  s_c524ba238f0f5a::t_3931439c2cb0b0 21,36-38,40-41
+site/js/deuda.js
+  s_c524ba238f0f5a::t_3931439c2cb0b0 5,25-26
+site/inversiones.html
+  s_c524ba238f0f5a::t_3931439c2cb0b0 12-20
+site/resumen.html
+  s_c524ba238f0f5a::t_3931439c2cb0b0 12-20
+site/subvenciones.html
+  s_c524ba238f0f5a::t_3931439c2cb0b0 12-20
+site/js/subvenciones.js
+  s_c524ba238f0f5a::t_3931439c2cb0b0 12,32,54
+site/js/format.test.js
+  s_c524ba238f0f5a::t_22b3961150b328 52-58
+site/js/ingresos.js
+  s_c524ba238f0f5a::t_3931439c2cb0b0 40
+site/js/resumen.js
+  s_c524ba238f0f5a::t_3931439c2cb0b0 22,35
+tools/tests/test_convert.py
+  s_c524ba238f0f5a::t_22b3961150b328 46-64
+  s_c524ba238f0f5a::t_3931439c2cb0b0 45
+site/ingresos.html
+  s_c524ba238f0f5a::t_3931439c2cb0b0 12-20
+site/index.html
+  s_c524ba238f0f5a::t_3931439c2cb0b0 12-20
+site/css/styles.css
+  s_c524ba238f0f5a::t_3931439c2cb0b0 6,29-30,61,89,99,104-105
+site/js/ui.js
+  s_c524ba238f0f5a::t_3931439c2cb0b0 5-6
+site/js/calidad.test.js
+  s_c524ba238f0f5a::t_22b3961150b328 1-66
+site/js/gastos.js
+  s_c524ba238f0f5a::t_3931439c2cb0b0 21,79
+site/gastos.html
+  s_c524ba238f0f5a::t_3931439c2cb0b0 12-20
+tools/budget/gastos.py
+  s_c524ba238f0f5a::t_3931439c2cb0b0 44,46
+site/js/deuda-texto.test.js
+  s_c524ba238f0f5a::t_22b3961150b328 1-13
+tools/convert.py
+  s_c524ba238f0f5a::t_3931439c2cb0b0 41-45
+site/deuda.html
+  s_c524ba238f0f5a::t_3931439c2cb0b0 12-20
+README.md
+  s_c524ba238f0f5a::t_728493d89bf910 41-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c8c0d28608f315c902535055bb6f27e11b2d8967",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
