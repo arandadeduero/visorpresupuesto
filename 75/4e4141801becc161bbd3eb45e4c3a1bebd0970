@@ -1,0 +1,19 @@
+README.md
+  s_c524ba238f0f5a::t_ab40ff4130e644 3-5,9-26,30-31,33,55-57,68-69,74-76,85,88-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "754e4141801becc161bbd3eb45e4c3a1bebd0970",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
