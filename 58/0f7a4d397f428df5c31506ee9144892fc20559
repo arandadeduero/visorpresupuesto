@@ -1,0 +1,21 @@
+site/js/inversiones.js
+  s_c524ba238f0f5a::t_a7266308a68a89 1-65
+site/inversiones.html
+  s_c524ba238f0f5a::t_a7266308a68a89 1-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "580f7a4d397f428df5c31506ee9144892fc20559",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
