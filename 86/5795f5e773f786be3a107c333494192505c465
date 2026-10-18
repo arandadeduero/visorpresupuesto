@@ -1,0 +1,25 @@
+tools/tests/test_site.py
+  s_c524ba238f0f5a::t_f4a31a29a5eb1f 1-70
+.github/workflows/ci.yml
+  s_c524ba238f0f5a::t_1f4999837b8ca8 1-43
+.github/workflows/pages.yml
+  s_c524ba238f0f5a::t_1f4999837b8ca8 15,18-20,22,35-49
+README.md
+  s_c524ba238f0f5a::t_fde2ac6884f532 52,54-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "865795f5e773f786be3a107c333494192505c465",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
