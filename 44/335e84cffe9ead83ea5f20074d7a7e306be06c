@@ -1,0 +1,23 @@
+site/js/deuda.js
+  s_c524ba238f0f5a::t_7ebbb6492c6d99 1-50
+site/deuda.html
+  s_c524ba238f0f5a::t_7ebbb6492c6d99 1-15
+site/js/charts.js
+  s_c524ba238f0f5a::t_76e04024fbfb38 17-19,26,34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "44335e84cffe9ead83ea5f20074d7a7e306be06c",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
