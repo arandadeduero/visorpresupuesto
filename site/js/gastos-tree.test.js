@@ -7,21 +7,24 @@ const datos = JSON.parse(readFileSync(new URL("../data/2026/gastos.json", import
 const TOTAL = 64280861.35;
 const suma = (nodos) => nodos.reduce((s, n) => s + n.y2026, 0);
 
-test("por programa: las áreas suman el presupuesto y llevan nombre llano", () => {
-  const raiz = buildTree(datos, "programa");
+test("por política: las políticas suman el presupuesto y llevan nombre llano", () => {
+  const raiz = buildTree(datos, "politica");
   assert.ok(Math.abs(suma(raiz) - TOTAL) < 1);
-  assert.ok(raiz.some((n) => n.nombre.startsWith("Servicios básicos")));
-  assert.ok(raiz.some((n) => n.nombre === "Deuda"));
+  for (const nombre of ["Cultura", "Deporte", "Educación", "Bienestar comunitario", "Seguridad y movilidad ciudadana", "Deuda pública"]) {
+    assert.ok(raiz.some((n) => n.nombre === nombre), nombre);
+  }
+  assert.ok(raiz.every((x, i) => i === 0 || raiz[i - 1].y2026 >= x.y2026));
 });
 
-test("por programa: área → programa → partida, con los importes de Seguridad", () => {
-  const area = buildTree(datos, "programa").find((n) => n.nombre.startsWith("Servicios básicos"));
-  const seguridad = area.hijos.find((n) => n.nombre === "Seguridad");
+test("por política: política → programa → partida, con los importes de Seguridad", () => {
+  const politica = buildTree(datos, "politica").find((n) => n.nombre === "Seguridad y movilidad ciudadana");
+  const seguridad = politica.hijos.find((n) => n.nombre === "Seguridad");
   assert.ok(Math.abs(seguridad.y2026 - 2893700) < 1);
   assert.ok(Math.abs(suma(seguridad.hijos) - seguridad.y2026) < 1);
   const edificios = seguridad.hijos.find((n) => n.codigo === "622");
   assert.equal(edificios.y2026, 110000);
   assert.equal(edificios.hijos, null);
+  assert.ok(Math.abs(suma(politica.hijos) - politica.y2026) < 1);
 });
 
 test("por capítulo: el personal no baja de programa", () => {

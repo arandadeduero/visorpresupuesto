@@ -1,25 +1,28 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
 import { buildTree, buscar } from "./gastos-tree.js";
-import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
+import { filaHtml, variacionHtml, tablaHtml, porHabHtml } from "./ui.js";
 import { pintaQuesito } from "./quesito.js";
 
 runPage("gastos", async ({ anio, main, load }) => {
-  const datos = await load("gastos");
+  const [datos, resumen] = await Promise.all([load("gastos"), load("resumen")]);
+  const habitantes = resumen.habitantes;
   const total = datos.capitulos.reduce((s, c) => s + c.y2026, 0);
-  let modo = "programa";
+  let modo = "politica";
   let nodos = new Map();
 
   main.innerHTML = `
     <h1>¿En qué se gasta el dinero? <span class="muted">${anio}</span></h1>
-    <p class="lead">Total previsto: <strong>${formatEuros(total)}</strong>. Pulsa en cada línea para ver su detalle.</p>
+    <p class="lead">Total previsto: <strong>${formatEuros(total)}</strong>. Unos <strong>${porHabHtml(total, habitantes)}</strong>. Pulsa en cada línea para ver su detalle.</p>
+    <p class="muted">Importe por habitante = gasto del Ayuntamiento dividido entre ${habitantes.toLocaleString("es-ES")} habitantes (${esc(resumen.fuentePoblacion)}). No es lo que paga cada vecino.</p>
     <div id="quesito"></div>
     <div class="controles">
       <div class="pestanas" role="group" aria-label="Cómo agrupar los gastos">
-        <button type="button" data-modo="programa" aria-pressed="true">¿En qué se gasta?</button>
+        <button type="button" data-modo="politica" aria-pressed="true">¿En qué se gasta?</button>
         <button type="button" data-modo="capitulo" aria-pressed="false">¿Qué tipo de gasto es?</button>
       </div>
     </div>
+    <p class="muted" id="explica-modo"></p>
     <p><label>Buscar un gasto <input type="search" id="buscar" placeholder="Por ejemplo: energía, parques, cultura…" autocomplete="off"></label></p>
     <div id="arbol"></div>
     <div id="resultados" hidden></div>
@@ -40,11 +43,17 @@ runPage("gastos", async ({ anio, main, load }) => {
       importe: n.y2026,
       max,
       clicable: Boolean(n.hijos),
-      extra: [n.detalle ? esc(n.detalle) : "", `${((n.y2026 / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total`, variacionHtml(n.y2026, n.y2025)].filter(Boolean).join(" · "),
+      extra: [n.detalle ? esc(n.detalle) : "", `${((n.y2026 / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total`, porHabHtml(n.y2026, habitantes), variacionHtml(n.y2026, n.y2025)].filter(Boolean).join(" · "),
     })}<div class="hijos" hidden></div></li>`).join("")}</ul>`;
   }
 
+  const EXPLICA = {
+    politica: "Agrupa los gastos por la finalidad a la que se destinan (cultura, deporte, seguridad…). Es lo que se llama clasificación por programas.",
+    capitulo: "Agrupa los gastos por su naturaleza (sueldos, servicios, obras, intereses…). Es lo que se llama clasificación económica.",
+  };
+
   function dibujar() {
+    main.querySelector("#explica-modo").textContent = EXPLICA[modo];
     const raiz = buildTree(datos, modo);
     nodos = new Map();
     indexar(raiz);

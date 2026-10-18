@@ -1,6 +1,7 @@
 // Piezas de interfaz compartidas por varias páginas.
 import { esc } from "./layout.js";
 import { formatEuros, formatVariation } from "./format.js";
+import { porHabitante } from "./insights.js";
 
 /** «▲ +5 % frente al año anterior», «nuevo este año»… con el color y la flecha adecuados (nunca solo color). */
 export function variacionHtml(actual, anterior, etiqueta = "frente al año anterior") {
@@ -28,3 +29,9 @@ export function filaHtml({ id, nombre, title, importe, max, extra = "", clicable
 export const tablaHtml = (cabeceras, filas) => `<div class="tabla-scroll"><table class="datos">
   <thead><tr>${cabeceras.map((c) => `<th${c.num ? ' class="num"' : ""}>${esc(c.texto)}</th>`).join("")}</tr></thead>
   <tbody>${filas.join("")}</tbody></table></div>`;
+
+/** «117 € por habitante» (cadena vacía si no hay población). */
+export function porHabHtml(importe, habitantes) {
+  const v = porHabitante(importe, habitantes);
+  return v === null ? "" : `${formatEuros(v)} por habitante`;
+}

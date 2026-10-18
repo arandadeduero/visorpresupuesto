@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora · Presupuestos de Aranda de Duero</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <p class="cargando wrap">Cargando…</p>
+  <script>
+    // Con doble clic (file://) el navegador bloquea los módulos: avisamos en vez de dejar «Cargando…» para siempre.
+    if (location.protocol === "file:") {
+      document.addEventListener("DOMContentLoaded", function () {
+        var p = document.querySelector(".cargando");
+        if (p) p.textContent = "Abre la web desde un servidor, no haciendo doble clic en el fichero (por ejemplo: python3 -m http.server -d site).";
+      });
+    }
+  </script>
+  <script type="module" src="js/calculadora.js"></script>
+</body>
+</html>
