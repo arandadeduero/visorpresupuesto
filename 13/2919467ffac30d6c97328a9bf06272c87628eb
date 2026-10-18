@@ -1,0 +1,25 @@
+site/subvenciones.html
+  s_c524ba238f0f5a::t_0d17ce2bcc437f 1-14
+site/js/format.test.js
+  s_c524ba238f0f5a::t_a1795cbd723d19 10-11
+site/js/format.js
+  s_c524ba238f0f5a::t_a1795cbd723d19 4-6,14,24
+site/js/subvenciones.js
+  s_c524ba238f0f5a::t_0d17ce2bcc437f 1-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "132919467ffac30d6c97328a9bf06272c87628eb",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
