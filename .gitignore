@@ -1,0 +1,28 @@
+# Maquetas y estado de la sesión de diseño con Claude
+.superpowers/
+.remember/
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Ficheros temporales de Excel/Word (se crean al abrir un documento)
+~$*
+.~lock.*
+
+# Entornos y dependencias de los scripts de conversión
+.venv/
+venv/
+__pycache__/
+*.pyc
+node_modules/
+
+# Secretos
+.env
+.env.*
+
+# Capturas y trazas de Playwright
+.playwright-mcp/
+*.png

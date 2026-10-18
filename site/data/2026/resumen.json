@@ -1,0 +1,176 @@
+{
+ "anio": 2026,
+ "tipo": "inicial",
+ "totalGastos": 64280861.35,
+ "totalGastos2025": 65078315.2,
+ "totalIngresos": 64280861.35,
+ "gastosPorCapitulo": [
+  {
+   "cap": 1,
+   "corto": "Personal",
+   "oficial": "Gastos de personal",
+   "y2025": 15562398.5,
+   "y2026": 15616598.5
+  },
+  {
+   "cap": 2,
+   "corto": "Servicios y mantenimiento",
+   "oficial": "Gastos corrientes en bienes y servicios",
+   "y2025": 19680030.0,
+   "y2026": 21623640.0
+  },
+  {
+   "cap": 3,
+   "corto": "Intereses de préstamos",
+   "oficial": "Gastos financieros",
+   "y2025": 170300.0,
+   "y2026": 184000.0
+  },
+  {
+   "cap": 4,
+   "corto": "Ayudas y transferencias",
+   "oficial": "Transferencias corrientes",
+   "y2025": 1727680.0,
+   "y2026": 1929680.0
+  },
+  {
+   "cap": 5,
+   "corto": "Fondo de imprevistos",
+   "oficial": "Fondo de contingencia",
+   "y2025": 50000.0,
+   "y2026": 50000.0
+  },
+  {
+   "cap": 6,
+   "corto": "Obras e inversiones",
+   "oficial": "Inversiones reales",
+   "y2025": 27237906.7,
+   "y2026": 24206942.85
+  },
+  {
+   "cap": 7,
+   "corto": "Ayudas para inversiones",
+   "oficial": "Transferencias de capital",
+   "y2025": 100000.0,
+   "y2026": 120000.0
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "y2025": 15000.0,
+   "y2026": 15000.0
+  },
+  {
+   "cap": 9,
+   "corto": "Devolución de préstamos",
+   "oficial": "Pasivos financieros",
+   "y2025": 535000.0,
+   "y2026": 535000.0
+  }
+ ],
+ "ingresosPorCapitulo": [
+  {
+   "cap": 1,
+   "corto": "Impuestos directos (IBI, IAE, vehículos…)",
+   "oficial": "Impuestos directos",
+   "y2025": 15820000.0,
+   "y2026": 16600000.0
+  },
+  {
+   "cap": 2,
+   "corto": "Impuestos indirectos (obras)",
+   "oficial": "Impuestos indirectos",
+   "y2025": 900000.0,
+   "y2026": 900000.0
+  },
+  {
+   "cap": 3,
+   "corto": "Tasas y precios públicos",
+   "oficial": "Tasas y otros ingresos",
+   "y2025": 7086060.0,
+   "y2026": 8359410.0
+  },
+  {
+   "cap": 4,
+   "corto": "Transferencias de otras administraciones",
+   "oficial": "Transferencias corrientes",
+   "y2025": 13640973.59,
+   "y2026": 14419582.61
+  },
+  {
+   "cap": 5,
+   "corto": "Ingresos de patrimonio",
+   "oficial": "Ingresos patrimoniales",
+   "y2025": 671028.12,
+   "y2026": 2086114.0
+  },
+  {
+   "cap": 6,
+   "corto": "Venta de inversiones",
+   "oficial": "Enajenación de inversiones reales",
+   "y2025": 0.0,
+   "y2026": 110000.0
+  },
+  {
+   "cap": 7,
+   "corto": "Subvenciones para obras",
+   "oficial": "Transferencias de capital",
+   "y2025": 1931060.4,
+   "y2026": 1445600.95
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "y2025": 4571700.16,
+   "y2026": 198530.15
+  },
+  {
+   "cap": 9,
+   "corto": "Préstamos",
+   "oficial": "Pasivos financieros",
+   "y2025": 20457492.93,
+   "y2026": 20161623.64
+  }
+ ],
+ "por100": [
+  {
+   "bloque": "Obras e inversiones",
+   "caps": [
+    6,
+    7
+   ],
+   "importe": 24326942.85,
+   "euros": 38
+  },
+  {
+   "bloque": "Servicios",
+   "caps": [
+    2
+   ],
+   "importe": 21623640.0,
+   "euros": 34
+  },
+  {
+   "bloque": "Personal",
+   "caps": [
+    1
+   ],
+   "importe": 15616598.5,
+   "euros": 24
+  },
+  {
+   "bloque": "Otros",
+   "caps": [
+    3,
+    4,
+    5,
+    8,
+    9
+   ],
+   "importe": 2713680.0,
+   "euros": 4
+  }
+ ]
+}
