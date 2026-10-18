@@ -9,7 +9,7 @@ const leer = (ruta) => readFileSync(new URL(ruta, import.meta.url), "utf8");
 const paginas = readdirSync(new URL("../", import.meta.url)).filter((f) => f.endsWith(".html"));
 
 test("cada página avisa con un script clásico si se abre con file://", () => {
-  assert.equal(paginas.length, 7);
+  assert.equal(paginas.length, 11);
   for (const p of paginas) {
     const html = leer(`../${p}`);
     const clasicos = [...html.matchAll(/<script(?![^>]*type="module")(?![^>]*src=)[^>]*>([\s\S]*?)<\/script>/g)].map((m) => m[1]);

@@ -112,6 +112,26 @@ input[type="search"] { font: inherit; padding: 8px 12px; border: 1px solid var(-
 .mini-barra { display: flex; gap: 2px; height: 10px; margin-top: 4px; }
 .mini-barra i { display: block; border-radius: 3px; min-width: 3px; }
 
+/* Calculadora, guía y descargas */
+.formulario { display: grid; gap: 12px; max-width: 520px; margin: 1em 0; }
+.formulario label { display: grid; gap: 4px; font-weight: 500; }
+.formulario input { font: inherit; padding: 10px 12px; border: 1px solid var(--gris); border-radius: var(--radio); }
+.glosario dt { font-weight: 700; margin-top: 1em; }
+.glosario dd { margin: .2em 0 0; }
+.descargas { padding-left: 1.2em; }
+.descargas li { margin-bottom: .8em; }
+.card-titulo { font-size: 1rem; color: var(--azul-texto); margin: 0 0 .3em; }
+
+/* Tarjeta destacada y cambios */
+.destacado { border: 1px solid var(--borde); border-left: 6px solid var(--azul); border-radius: var(--radio); padding: 4px 16px 16px; margin: 1.5em 0; background: var(--azul-claro); }
+.destacado-nombre { font-size: 1.4rem; font-weight: 700; margin: 0 0 .4em; }
+.cifras { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-bottom: .6em; }
+.cifras div { display: flex; flex-direction: column; }
+.cifras .cifra { font-size: 1.6rem; }
+.cambios { list-style: none; margin: 0; padding: 0; }
+.cambios li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 12px; padding: 8px 0; border-bottom: 1px solid var(--borde); }
+.cambios li small { grid-column: 2; text-align: right; }
+
 /* Quesito (rosca por capítulos) */
 .dos-columnas { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr); margin: 1em 0; }
 .quesito { margin: 0; }

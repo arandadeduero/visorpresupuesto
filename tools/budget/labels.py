@@ -39,3 +39,35 @@ BLOQUES_100 = [
     ("Personal", [1]),
     ("Otros", [3, 4, 5, 8, 9]),
 ]
+
+# Políticas de gasto (primeros dos dígitos del programa) según la clasificación por programas oficial
+# (Orden EHA/3565/2008), con su nombre oficial, que ya es llano para el vecino.
+POLITICAS = {
+    "01": "Deuda pública",
+    "13": "Seguridad y movilidad ciudadana",
+    "15": "Vivienda y urbanismo",
+    "16": "Bienestar comunitario",
+    "17": "Medio ambiente",
+    "22": "Otras prestaciones económicas",
+    "23": "Servicios sociales y promoción social",
+    "24": "Fomento del empleo",
+    "31": "Sanidad",
+    "32": "Educación",
+    "33": "Cultura",
+    "34": "Deporte",
+    "42": "Industria y energía",
+    "43": "Comercio, turismo y pequeñas y medianas empresas",
+    "44": "Transporte público",
+    "45": "Infraestructuras",
+    "46": "Investigación, desarrollo e innovación",
+    "49": "Otras actuaciones de carácter económico",
+    "91": "Órganos de gobierno",
+    "92": "Servicios de carácter general",
+    "93": "Administración financiera y tributaria",
+    "94": "Transferencias a otras administraciones públicas",
+}
+
+# Población para los importes «por habitante»: año del presupuesto → (habitantes, año del dato, fuente).
+POBLACION = {
+    2026: (33956, 2025, "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos"),
+}

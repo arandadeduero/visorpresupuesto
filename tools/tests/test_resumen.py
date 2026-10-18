@@ -41,3 +41,9 @@ def test_por_cada_100_euros(r):
 def test_json_limpio(r):
     texto = json.dumps(r, ensure_ascii=False)
     assert "#REF" not in texto and "NaN" not in texto
+
+
+def test_habitantes_para_los_importes_por_vecino(r):
+    assert r["habitantes"] == 33956
+    assert r["anioPoblacion"] == 2025
+    assert "INE" in r["fuentePoblacion"]

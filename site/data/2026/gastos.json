@@ -91,11 +91,168 @@
    "nombre": "Administración general"
   }
  ],
+ "politicas": [
+  {
+   "codigo": "01",
+   "nombre": "Deuda pública",
+   "area": 0,
+   "y2025": 695000.0,
+   "y2026": 695000.0
+  },
+  {
+   "codigo": "13",
+   "nombre": "Seguridad y movilidad ciudadana",
+   "area": 1,
+   "y2025": 6203375.0,
+   "y2026": 6260275.0
+  },
+  {
+   "codigo": "15",
+   "nombre": "Vivienda y urbanismo",
+   "area": 1,
+   "y2025": 8570950.69,
+   "y2026": 14341478.85
+  },
+  {
+   "codigo": "16",
+   "nombre": "Bienestar comunitario",
+   "area": 1,
+   "y2025": 8357900.0,
+   "y2026": 8929510.0
+  },
+  {
+   "codigo": "17",
+   "nombre": "Medio ambiente",
+   "area": 1,
+   "y2025": 3647770.0,
+   "y2026": 3989170.0
+  },
+  {
+   "codigo": "22",
+   "nombre": "Otras prestaciones económicas",
+   "area": 2,
+   "y2025": 116000.0,
+   "y2026": 116000.0
+  },
+  {
+   "codigo": "23",
+   "nombre": "Servicios sociales y promoción social",
+   "area": 2,
+   "y2025": 4778197.5,
+   "y2026": 5292497.5
+  },
+  {
+   "codigo": "24",
+   "nombre": "Fomento del empleo",
+   "area": 2,
+   "y2025": 249000.0,
+   "y2026": 310000.0
+  },
+  {
+   "codigo": "31",
+   "nombre": "Sanidad",
+   "area": 3,
+   "y2025": 124610.0,
+   "y2026": 276500.0
+  },
+  {
+   "codigo": "32",
+   "nombre": "Educación",
+   "area": 3,
+   "y2025": 2533670.0,
+   "y2026": 2598270.0
+  },
+  {
+   "codigo": "33",
+   "nombre": "Cultura",
+   "area": 3,
+   "y2025": 11610319.95,
+   "y2026": 7077635.0
+  },
+  {
+   "codigo": "34",
+   "nombre": "Deporte",
+   "area": 3,
+   "y2025": 3314290.0,
+   "y2026": 3655290.0
+  },
+  {
+   "codigo": "42",
+   "nombre": "Industria y energía",
+   "area": 4,
+   "y2025": 50000.0,
+   "y2026": 50000.0
+  },
+  {
+   "codigo": "43",
+   "nombre": "Comercio, turismo y pequeñas y medianas empresas",
+   "area": 4,
+   "y2025": 7175345.56,
+   "y2026": 3547290.0
+  },
+  {
+   "codigo": "44",
+   "nombre": "Transporte público",
+   "area": 4,
+   "y2025": 390000.0,
+   "y2026": 381000.0
+  },
+  {
+   "codigo": "45",
+   "nombre": "Infraestructuras",
+   "area": 4,
+   "y2025": 100000.0,
+   "y2026": 300000.0
+  },
+  {
+   "codigo": "46",
+   "nombre": "Investigación, desarrollo e innovación",
+   "area": 4,
+   "y2025": 18500.0,
+   "y2026": 103900.0
+  },
+  {
+   "codigo": "49",
+   "nombre": "Otras actuaciones de carácter económico",
+   "area": 4,
+   "y2025": 89500.0,
+   "y2026": 89500.0
+  },
+  {
+   "codigo": "91",
+   "nombre": "Órganos de gobierno",
+   "area": 9,
+   "y2025": 994300.0,
+   "y2026": 967000.0
+  },
+  {
+   "codigo": "92",
+   "nombre": "Servicios de carácter general",
+   "area": 9,
+   "y2025": 2771810.0,
+   "y2026": 3116930.0
+  },
+  {
+   "codigo": "93",
+   "nombre": "Administración financiera y tributaria",
+   "area": 9,
+   "y2025": 2031915.0,
+   "y2026": 2033615.0
+  },
+  {
+   "codigo": "94",
+   "nombre": "Transferencias a otras administraciones públicas",
+   "area": 9,
+   "y2025": 300000.0,
+   "y2026": 150000.0
+  }
+ ],
  "programas": [
   {
    "codigo": "0110",
    "nombre": "Deuda pública",
    "area": 0,
+   "politica": "01",
    "y2025": 695000.0,
    "y2026": 695000.0
   },
@@ -103,6 +260,7 @@
    "codigo": "1300",
    "nombre": "Admon. gral. de la seguridad",
    "area": 1,
+   "politica": "13",
    "y2025": 177175.0,
    "y2026": 177175.0
   },
@@ -110,6 +268,7 @@
    "codigo": "1320",
    "nombre": "Seguridad",
    "area": 1,
+   "politica": "13",
    "y2025": 2760700.0,
    "y2026": 2893700.0
   },
@@ -117,6 +276,7 @@
    "codigo": "1330",
    "nombre": "Ordenación del tráfico y estacionamiento",
    "area": 1,
+   "politica": "13",
    "y2025": 688300.0,
    "y2026": 763300.0
   },
@@ -124,6 +284,7 @@
    "codigo": "1350",
    "nombre": "Protección civil",
    "area": 1,
+   "politica": "13",
    "y2025": 108300.0,
    "y2026": 162200.0
   },
@@ -131,6 +292,7 @@
    "codigo": "1360",
    "nombre": "Extinción de incendios",
    "area": 1,
+   "politica": "13",
    "y2025": 2468900.0,
    "y2026": 2263900.0
   },
@@ -138,6 +300,7 @@
    "codigo": "1500",
    "nombre": "Admon. gral. de urbanismo",
    "area": 1,
+   "politica": "15",
    "y2025": 297000.0,
    "y2026": 301400.0
   },
@@ -145,6 +308,7 @@
    "codigo": "1510",
    "nombre": "Urbanismo",
    "area": 1,
+   "politica": "15",
    "y2025": 595300.0,
    "y2026": 595300.0
   },
@@ -152,6 +316,7 @@
    "codigo": "1522",
    "nombre": "Urbanismo. oficina gestión ARU santa catalina",
    "area": 1,
+   "politica": "15",
    "y2025": 3711550.54,
    "y2026": 2530865.69
   },
@@ -159,6 +324,7 @@
    "codigo": "1530",
    "nombre": "Vías públicas urbanas",
    "area": 1,
+   "politica": "15",
    "y2025": 3967100.15,
    "y2026": 10913913.16
   },
@@ -166,6 +332,7 @@
    "codigo": "1600",
    "nombre": "Alcantarillado",
    "area": 1,
+   "politica": "16",
    "y2025": 435500.0,
    "y2026": 398700.0
   },
@@ -173,6 +340,7 @@
    "codigo": "1610",
    "nombre": "Abastecimiento y distribución de aguas",
    "area": 1,
+   "politica": "16",
    "y2025": 1372600.0,
    "y2026": 1213800.0
   },
@@ -180,6 +348,7 @@
    "codigo": "1621",
    "nombre": "Recogida de residuos",
    "area": 1,
+   "politica": "16",
    "y2025": 1615000.0,
    "y2026": 1770010.0
   },
@@ -187,6 +356,7 @@
    "codigo": "1623",
    "nombre": "Tratamiento de residuos",
    "area": 1,
+   "politica": "16",
    "y2025": 1185000.0,
    "y2026": 1135000.0
   },
@@ -194,6 +364,7 @@
    "codigo": "1630",
    "nombre": "Limpieza viaria",
    "area": 1,
+   "politica": "16",
    "y2025": 2078300.0,
    "y2026": 2398300.0
   },
@@ -201,6 +372,7 @@
    "codigo": "1640",
    "nombre": "Cementerio",
    "area": 1,
+   "politica": "16",
    "y2025": 490650.0,
    "y2026": 607850.0
   },
@@ -208,6 +380,7 @@
    "codigo": "1650",
    "nombre": "Alumbrado público",
    "area": 1,
+   "politica": "16",
    "y2025": 1180850.0,
    "y2026": 1405850.0
   },
@@ -215,6 +388,7 @@
    "codigo": "1700",
    "nombre": "Admon. gral. del medio ambiente",
    "area": 1,
+   "politica": "17",
    "y2025": 237260.0,
    "y2026": 237260.0
   },
@@ -222,6 +396,7 @@
    "codigo": "1710",
    "nombre": "Parques y jardines",
    "area": 1,
+   "politica": "17",
    "y2025": 3060510.0,
    "y2026": 3533710.0
   },
@@ -229,6 +404,7 @@
    "codigo": "1721",
    "nombre": "Protección contaminac. acústica y atm.",
    "area": 1,
+   "politica": "17",
    "y2025": 350000.0,
    "y2026": 218200.0
   },
@@ -236,6 +412,7 @@
    "codigo": "2210",
    "nombre": "Otras prestaciones",
    "area": 2,
+   "politica": "22",
    "y2025": 116000.0,
    "y2026": 116000.0
   },
@@ -243,6 +420,7 @@
    "codigo": "2310",
    "nombre": "Admon. gral. asistencia social primaria",
    "area": 2,
+   "politica": "23",
    "y2025": 454510.0,
    "y2026": 573710.0
   },
@@ -250,6 +428,7 @@
    "codigo": "2311",
    "nombre": "Asistencia social primaria",
    "area": 2,
+   "politica": "23",
    "y2025": 2285767.5,
    "y2026": 2302767.5
   },
@@ -257,6 +436,7 @@
    "codigo": "2312",
    "nombre": "Colectivos marginados",
    "area": 2,
+   "politica": "23",
    "y2025": 148300.0,
    "y2026": 148300.0
   },
@@ -264,6 +444,7 @@
    "codigo": "2313",
    "nombre": "Promoción de la igualdad",
    "area": 2,
+   "politica": "23",
    "y2025": 87490.0,
    "y2026": 75490.0
   },
@@ -271,6 +452,7 @@
    "codigo": "2314",
    "nombre": "Tercera edad y dependencia",
    "area": 2,
+   "politica": "23",
    "y2025": 1802130.0,
    "y2026": 2192230.0
   },
@@ -278,6 +460,7 @@
    "codigo": "2411",
    "nombre": "Formación y empleo otros programas",
    "area": 2,
+   "politica": "24",
    "y2025": 249000.0,
    "y2026": 310000.0
   },
@@ -285,6 +468,7 @@
    "codigo": "3110",
    "nombre": "Protección salubridad pública",
    "area": 3,
+   "politica": "31",
    "y2025": 124610.0,
    "y2026": 276500.0
   },
@@ -292,6 +476,7 @@
    "codigo": "3200",
    "nombre": "Admon. gral. de la educación",
    "area": 3,
+   "politica": "32",
    "y2025": 214720.0,
    "y2026": 222920.0
   },
@@ -299,6 +484,7 @@
    "codigo": "3230",
    "nombre": "Funcionamiento centros docentes",
    "area": 3,
+   "politica": "32",
    "y2025": 1205400.0,
    "y2026": 1213700.0
   },
@@ -306,6 +492,7 @@
    "codigo": "3260",
    "nombre": "Servicios complementarios educación",
    "area": 3,
+   "politica": "32",
    "y2025": 170850.0,
    "y2026": 170850.0
   },
@@ -313,6 +500,7 @@
    "codigo": "3261",
    "nombre": "Escuela de música y danza",
    "area": 3,
+   "politica": "32",
    "y2025": 705300.0,
    "y2026": 741700.0
   },
@@ -320,6 +508,7 @@
    "codigo": "3262",
    "nombre": "Escuela de folklore",
    "area": 3,
+   "politica": "32",
    "y2025": 237400.0,
    "y2026": 249100.0
   },
@@ -327,6 +516,7 @@
    "codigo": "3300",
    "nombre": "Admon. gral. de la cultura",
    "area": 3,
+   "politica": "33",
    "y2025": 356180.0,
    "y2026": 347680.0
   },
@@ -334,6 +524,7 @@
    "codigo": "3321",
    "nombre": "Biblioteca",
    "area": 3,
+   "politica": "33",
    "y2025": 446865.0,
    "y2026": 489965.0
   },
@@ -341,6 +532,7 @@
    "codigo": "3330",
    "nombre": "Museos",
    "area": 3,
+   "politica": "33",
    "y2025": 144300.0,
    "y2026": 180900.0
   },
@@ -348,6 +540,7 @@
    "codigo": "3331",
    "nombre": "Escuela y museo de cerámica",
    "area": 3,
+   "politica": "33",
    "y2025": 73050.0,
    "y2026": 123050.0
   },
@@ -355,6 +548,7 @@
    "codigo": "3340",
    "nombre": "Promoción cultural",
    "area": 3,
+   "politica": "33",
    "y2025": 1194000.0,
    "y2026": 868200.0
   },
@@ -362,6 +556,7 @@
    "codigo": "3341",
    "nombre": "Banda de música",
    "area": 3,
+   "politica": "33",
    "y2025": 50800.0,
    "y2026": 79000.0
   },
@@ -369,6 +564,7 @@
    "codigo": "3360",
    "nombre": "Patrimonio histórico - artístico",
    "area": 3,
+   "politica": "33",
    "y2025": 50000.0,
    "y2026": 70000.0
   },
@@ -376,6 +572,7 @@
    "codigo": "3370",
    "nombre": "Centros cívicos",
    "area": 3,
+   "politica": "33",
    "y2025": 6211984.95,
    "y2026": 1856200.0
   },
@@ -383,6 +580,7 @@
    "codigo": "3373",
    "nombre": "Casa de la juventud y centro arte joven",
    "area": 3,
+   "politica": "33",
    "y2025": 2121430.0,
    "y2026": 1684430.0
   },
@@ -390,6 +588,7 @@
    "codigo": "3374",
    "nombre": "Albergue juvenil",
    "area": 3,
+   "politica": "33",
    "y2025": 7250.0,
    "y2026": 25450.0
   },
@@ -397,6 +596,7 @@
    "codigo": "3375",
    "nombre": "Huertos de ocio",
    "area": 3,
+   "politica": "33",
    "y2025": 5000.0,
    "y2026": 56000.0
   },
@@ -404,6 +604,7 @@
    "codigo": "3380",
    "nombre": "Festejos",
    "area": 3,
+   "politica": "33",
    "y2025": 949460.0,
    "y2026": 1296760.0
   },
@@ -411,6 +612,7 @@
    "codigo": "3410",
    "nombre": "Promoción deportiva",
    "area": 3,
+   "politica": "34",
    "y2025": 1364380.0,
    "y2026": 1249380.0
   },
@@ -418,6 +620,7 @@
    "codigo": "3420",
    "nombre": "Instalaciones deportivas",
    "area": 3,
+   "politica": "34",
    "y2025": 1949910.0,
    "y2026": 2405910.0
   },
@@ -425,6 +628,7 @@
    "codigo": "4220",
    "nombre": "Promoción industrial",
    "area": 4,
+   "politica": "42",
    "y2025": 50000.0,
    "y2026": 50000.0
   },
@@ -432,6 +636,7 @@
    "codigo": "4310",
    "nombre": "Comercio",
    "area": 4,
+   "politica": "43",
    "y2025": 92000.0,
    "y2026": 142000.0
   },
@@ -439,6 +644,7 @@
    "codigo": "4311",
    "nombre": "Ferias",
    "area": 4,
+   "politica": "43",
    "y2025": 100000.0,
    "y2026": 203000.0
   },
@@ -446,6 +652,7 @@
    "codigo": "4320",
    "nombre": "Turismo",
    "area": 4,
+   "politica": "43",
    "y2025": 5617775.56,
    "y2026": 1781720.0
   },
@@ -453,6 +660,7 @@
    "codigo": "4321",
    "nombre": "Hermanamientos",
    "area": 4,
+   "politica": "43",
    "y2025": 38700.0,
    "y2026": 48700.0
   },
@@ -460,6 +668,7 @@
    "codigo": "4330",
    "nombre": "Desarrollo económico",
    "area": 4,
+   "politica": "43",
    "y2025": 1326870.0,
    "y2026": 1371870.0
   },
@@ -467,6 +676,7 @@
    "codigo": "4411",
    "nombre": "Transporte urbano de viajeros",
    "area": 4,
+   "politica": "44",
    "y2025": 390000.0,
    "y2026": 381000.0
   },
@@ -474,6 +684,7 @@
    "codigo": "4540",
    "nombre": "Caminos",
    "area": 4,
+   "politica": "45",
    "y2025": 100000.0,
    "y2026": 300000.0
   },
@@ -481,6 +692,7 @@
    "codigo": "4620",
    "nombre": "Innovación",
    "area": 4,
+   "politica": "46",
    "y2025": 18500.0,
    "y2026": 103900.0
   },
@@ -488,6 +700,7 @@
    "codigo": "4930",
    "nombre": "Consumo",
    "area": 4,
+   "politica": "49",
    "y2025": 89500.0,
    "y2026": 89500.0
   },
@@ -495,6 +708,7 @@
    "codigo": "9120",
    "nombre": "Órganos de gobierno",
    "area": 9,
+   "politica": "91",
    "y2025": 994300.0,
    "y2026": 967000.0
   },
@@ -502,6 +716,7 @@
    "codigo": "9200",
    "nombre": "Administración general",
    "area": 9,
+   "politica": "92",
    "y2025": 1476710.0,
    "y2026": 1698310.0
   },
@@ -509,6 +724,7 @@
    "codigo": "9201",
    "nombre": "Secretaría general",
    "area": 9,
+   "politica": "92",
    "y2025": 495500.0,
    "y2026": 495500.0
   },
@@ -516,6 +732,7 @@
    "codigo": "9202",
    "nombre": "Administración de personal",
    "area": 9,
+   "politica": "92",
    "y2025": 228700.0,
    "y2026": 228700.0
   },
@@ -523,6 +740,7 @@
    "codigo": "9240",
    "nombre": "Participación ciudadana",
    "area": 9,
+   "politica": "92",
    "y2025": 460600.0,
    "y2026": 583600.0
   },
@@ -530,6 +748,7 @@
    "codigo": "9250",
    "nombre": "Atención a los ciudadanos",
    "area": 9,
+   "politica": "92",
    "y2025": 42200.0,
    "y2026": 46720.0
   },
@@ -537,6 +756,7 @@
    "codigo": "9290",
    "nombre": "Servicios no clasificados",
    "area": 9,
+   "politica": "92",
    "y2025": 68100.0,
    "y2026": 64100.0
   },
@@ -544,6 +764,7 @@
    "codigo": "9300",
    "nombre": "Administración general. econ. y hacienda",
    "area": 9,
+   "politica": "93",
    "y2025": 92000.0,
    "y2026": 87000.0
   },
@@ -551,6 +772,7 @@
    "codigo": "9310",
    "nombre": "Intervención",
    "area": 9,
+   "politica": "93",
    "y2025": 566285.0,
    "y2026": 568285.0
   },
@@ -558,6 +780,7 @@
    "codigo": "9320",
    "nombre": "Gestión tributaria y recaudación",
    "area": 9,
+   "politica": "93",
    "y2025": 911220.0,
    "y2026": 888220.0
   },
@@ -565,6 +788,7 @@
    "codigo": "9330",
    "nombre": "Contratación y patrimonio",
    "area": 9,
+   "politica": "93",
    "y2025": 260310.0,
    "y2026": 274310.0
   },
@@ -572,6 +796,7 @@
    "codigo": "9340",
    "nombre": "Tesorería",
    "area": 9,
+   "politica": "93",
    "y2025": 202100.0,
    "y2026": 215800.0
   },
@@ -579,6 +804,7 @@
    "codigo": "9430",
    "nombre": "Transferencias a la aguilera",
    "area": 9,
+   "politica": "94",
    "y2025": 300000.0,
    "y2026": 150000.0
   }
