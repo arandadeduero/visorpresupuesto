@@ -1,0 +1,26 @@
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_8ce557d6a3461f::t_7795df9c28388f 77-81
+  s_8ce557d6a3461f::t_145029b4a09b53 1-76,108-113
+  s_8ce557d6a3461f::t_67078da1340191 82-96
+  s_8ce557d6a3461f::t_9e3976c037425b 97-107
+.gitignore
+  s_8ce557d6a3461f::t_35a0013515d236 1-24
+docs/superpowers/plans/2026-10-19-visor-presupuestos.md
+  s_8ce557d6a3461f::t_30d5376acc8c28 1-245
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c52e41ee65a75f6be6b8183d8620051f35c49c39",
+  "prompts": {},
+  "sessions": {
+    "s_8ce557d6a3461f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f599689a-df4e-42d8-af45-c15da5c62d9b",
+        "model": "unknown"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
