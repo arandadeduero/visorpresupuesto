@@ -2,6 +2,7 @@ import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
 import { buildTree, buscar } from "./gastos-tree.js";
 import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
+import { pintaQuesito } from "./quesito.js";
 
 runPage("gastos", async ({ anio, main, load }) => {
   const datos = await load("gastos");
@@ -12,6 +13,7 @@ runPage("gastos", async ({ anio, main, load }) => {
   main.innerHTML = `
     <h1>¿En qué se gasta el dinero? <span class="muted">${anio}</span></h1>
     <p class="lead">Total previsto: <strong>${formatEuros(total)}</strong>. Pulsa en cada línea para ver su detalle.</p>
+    <div id="quesito"></div>
     <div class="controles">
       <div class="pestanas" role="group" aria-label="Cómo agrupar los gastos">
         <button type="button" data-modo="programa" aria-pressed="true">¿En qué se gasta?</button>
@@ -23,6 +25,7 @@ runPage("gastos", async ({ anio, main, load }) => {
     <div id="resultados" hidden></div>
     <div class="ayuda"><strong>Sobre el personal:</strong> los sueldos y cotizaciones se muestran agrupados por programa, sin detalle por categoría. El resto de gastos llega hasta la partida concreta.</div>`;
 
+  pintaQuesito(main.querySelector("#quesito"), datos.capitulos, "Gastos por tipo de gasto");
   const arbol = main.querySelector("#arbol");
   const resultados = main.querySelector("#resultados");
 
