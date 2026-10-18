@@ -1,0 +1,28 @@
+tools/tests/test_common.py
+  s_8ce557d6a3461f::t_9ca6571cc32a40 1-18,20,22-34
+  s_8ce557d6a3461f::t_6dc176c2d140d3 19,21
+pytest.ini
+  s_8ce557d6a3461f::t_f3ce1e4f56edeb 1-3
+tools/budget/common.py
+  s_8ce557d6a3461f::t_674716514861ce 1-77
+requirements.txt
+  s_8ce557d6a3461f::t_f3ce1e4f56edeb 1-2
+tools/budget/labels.py
+  s_8ce557d6a3461f::t_7519e49bf4ebfa 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "14e6e4ee278c4477cc80f41df2a29507be742068",
+  "prompts": {},
+  "sessions": {
+    "s_8ce557d6a3461f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f599689a-df4e-42d8-af45-c15da5c62d9b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
