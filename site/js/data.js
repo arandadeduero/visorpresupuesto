@@ -20,7 +20,7 @@ export async function getYear() {
   const indice = await getIndex();
   const pedido = new URLSearchParams(location.search).get("anio");
   const anio = pedido === null ? indice.ultimo : Number(pedido);
-  if (!indice.anios.some((a) => a.anio === anio)) throw new Error("Año no disponible");
+  if (!indice.anios.some((a) => a.anio === anio)) throw new Error("Año no disponible: ese presupuesto aún no está publicado. Elige otro año en el selector de arriba.");
   return anio;
 }
 

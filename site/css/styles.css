@@ -64,7 +64,7 @@ a.card:hover { border-color: var(--azul); box-shadow: 0 2px 8px rgba(0, 0, 0, .0
 /* Barra dividida */
 .stackbar { display: flex; gap: 2px; margin: 12px 0; min-height: 64px; }
 .stackbar .seg {
-  flex: 1 1 0; min-width: 0; border: 0; border-radius: 6px; padding: 8px 6px; font: inherit; text-align: left; cursor: pointer;
+  flex: 1 1 0; min-width: 64px; border: 0; border-radius: 6px; padding: 8px 6px; font: inherit; text-align: left; cursor: pointer;
   display: flex; flex-direction: column; justify-content: center; line-height: 1.2;
 }
 .seg .seg-euros { font-size: 1.4rem; font-weight: 700; }
