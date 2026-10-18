@@ -1,0 +1,35 @@
+tools/convert.py
+  s_c524ba238f0f5a::t_968bab0c3b5220 1-67
+site/data/index.json
+  s_c524ba238f0f5a::t_d6cb0b68320db8 1-9
+site/data/2026/ingresos.json
+  s_c524ba238f0f5a::t_d6cb0b68320db8 1-837
+site/data/2026/inversiones.json
+  s_c524ba238f0f5a::t_d6cb0b68320db8 1-1660
+site/data/2026/subvenciones.json
+  s_c524ba238f0f5a::t_d6cb0b68320db8 1-1210
+tools/tests/test_convert.py
+  s_c524ba238f0f5a::t_968bab0c3b5220 1-45
+site/data/2026/deuda.json
+  s_c524ba238f0f5a::t_d6cb0b68320db8 1-101
+site/data/2026/resumen.json
+  s_c524ba238f0f5a::t_d6cb0b68320db8 1-176
+site/data/2026/gastos.json
+  s_c524ba238f0f5a::t_d6cb0b68320db8 1-7124
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "53ad6c6c4b83c43798d7944adf1006751bee85c4",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
