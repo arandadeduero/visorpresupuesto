@@ -1,0 +1,23 @@
+tools/tests/test_gastos.py
+  s_8ce557d6a3461f::t_0ea5b5f9760d0f 1-41,45-48
+  s_8ce557d6a3461f::t_bcfc8f946d1cd8 42-44
+tools/budget/gastos.py
+  s_8ce557d6a3461f::t_bcfc8f946d1cd8 14-15
+  s_8ce557d6a3461f::t_c5add41435606d 1-13,16-83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "61c3c38927fa124b61aadaceb9f8ddd83c4d01c7",
+  "prompts": {},
+  "sessions": {
+    "s_8ce557d6a3461f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f599689a-df4e-42d8-af45-c15da5c62d9b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
