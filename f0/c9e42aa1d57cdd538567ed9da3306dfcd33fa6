@@ -1,0 +1,23 @@
+tools/budget/subvenciones.py
+  s_c524ba238f0f5a::t_4be99c00a7f700 1-72
+pytest.ini
+  s_c524ba238f0f5a::t_679a08a928eb21 4
+tools/tests/test_subvenciones.py
+  s_c524ba238f0f5a::t_679a08a928eb21 1-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f0c9e42aa1d57cdd538567ed9da3306dfcd33fa6",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
