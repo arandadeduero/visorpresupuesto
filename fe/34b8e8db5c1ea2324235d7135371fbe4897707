@@ -1,0 +1,27 @@
+site/ingresos.html
+  s_c524ba238f0f5a::t_d3c75282549c09 1-14
+tools/tests/test_common.py
+  s_c524ba238f0f5a::t_9db956828a1030 29-32
+site/data/2026/ingresos.json
+  s_c524ba238f0f5a::t_2fa5e2f3b6acce 83,590,774
+tools/budget/common.py
+  s_c524ba238f0f5a::t_2fa5e2f3b6acce 48,52-53,55-56,59,61-62
+site/js/ingresos.js
+  s_c524ba238f0f5a::t_d3c75282549c09 1-70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fe34b8e8db5c1ea2324235d7135371fbe4897707",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
