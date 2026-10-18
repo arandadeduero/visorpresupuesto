@@ -41,4 +41,4 @@ jobs:
           node-version: lts/*
 
       - name: Tests de JavaScript
-        run: node --test site/js/
+        run: node --test "site/js/*.test.js"

@@ -46,7 +46,7 @@ El selector de año de la web lee `site/data/index.json`, que el script actualiz
 
 ```bash
 .venv/bin/pytest          # conversor, con los Excel reales de 2026
-node --test site/js/      # funciones de formato, búsqueda y árbol de gastos
+node --test "site/js/*.test.js"      # funciones de formato, búsqueda y árbol de gastos
 ```
 
 ## Publicación y comprobaciones automáticas
