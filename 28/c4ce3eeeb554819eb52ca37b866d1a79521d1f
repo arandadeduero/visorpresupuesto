@@ -1,0 +1,28 @@
+site/index.html
+  s_c524ba238f0f5a::t_fb404f001411fb 1-6,8-14
+  s_c524ba238f0f5a::t_aa6c4789d66e92 7
+site/js/home.js
+  s_c524ba238f0f5a::t_fb404f001411fb 1-57
+site/css/styles.css
+  s_c524ba238f0f5a::t_aa6c4789d66e92 67
+.gitignore
+  s_c524ba238f0f5a::t_2ff54501a7d615 25-28
+site/js/data.js
+  s_c524ba238f0f5a::t_4194a46dfdc217 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "28c4ce3eeeb554819eb52ca37b866d1a79521d1f",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "unknown"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
