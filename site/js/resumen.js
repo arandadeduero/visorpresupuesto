@@ -1,6 +1,7 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
 import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
+import { pintaQuesito } from "./quesito.js";
 
 function bloque(titulo, capitulos, total) {
   const max = Math.max(...capitulos.map((c) => c.y2026));
@@ -26,6 +27,7 @@ runPage("resumen", async ({ anio, main, load }) => {
     <p class="lead">El Ayuntamiento prevé ingresar <strong>${formatEuros(r.totalIngresos)}</strong> y gastar <strong>${formatEuros(r.totalGastos)}</strong>: el presupuesto está equilibrado.</p>
     <div class="aviso"><h3>Una aclaración sobre los ingresos</h3>
       <p>De los ingresos previstos, <strong>${formatEuros(prestamos)}</strong> son préstamos que se podrían pedir para pagar inversiones. No es dinero que ya se tenga: se explica en las páginas de <a href="inversiones.html?anio=${anio}">inversiones</a> y de <a href="deuda.html?anio=${anio}">deuda</a>.</p></div>
+    <div class="dos-columnas"><div id="q-ingresos"></div><div id="q-gastos"></div></div>
     ${bloque("De dónde sale el dinero", r.ingresosPorCapitulo, r.totalIngresos)}
     ${bloque("En qué se gasta", r.gastosPorCapitulo, r.totalGastos)}
     <details><summary>Ver como tablas</summary>
@@ -33,4 +35,7 @@ runPage("resumen", async ({ anio, main, load }) => {
       <h3>Gastos</h3>${tablaHtml(cab, filas(r.gastosPorCapitulo))}
     </details>
     <p class="muted">La cifra de ${anio - 1} son los créditos del presupuesto de ${anio - 1}.</p>`;
+
+  pintaQuesito(main.querySelector("#q-ingresos"), r.ingresosPorCapitulo, "De dónde sale el dinero");
+  pintaQuesito(main.querySelector("#q-gastos"), r.gastosPorCapitulo, "En qué se gasta");
 });

@@ -35,8 +35,8 @@ export function barChart(canvas, { labels, datasets, horizontal = false }) {
   });
 }
 
-export function doughnutChart(canvas, { labels, values, colors = PALETTE }) {
+export function doughnutChart(canvas, { labels, values, colors = PALETTE, leyenda = true }) {
   return crear(canvas, "doughnut", { labels, datasets: [{ data: values, backgroundColor: colors, borderColor: "#fff", borderWidth: 2 }] }, {
-    plugins: { legend: { position: "bottom" }, tooltip: { callbacks: { label: (c) => ` ${c.label}: ${formatEuros(c.parsed)}` } } },
+    plugins: { legend: { display: leyenda, position: "bottom" }, tooltip: { callbacks: { label: (c) => ` ${c.label}: ${formatEuros(c.parsed)}` } } },
   });
 }

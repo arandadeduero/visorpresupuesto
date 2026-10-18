@@ -1,6 +1,7 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros, matches } from "./format.js";
 import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
+import { pintaQuesito } from "./quesito.js";
 
 const EXPLICACION = {
   1: "Impuestos que se pagan cada año, como el IBI (viviendas), el impuesto de vehículos o el de actividades económicas.",
@@ -23,6 +24,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
   main.innerHTML = `
     <h1>¿De dónde sale el dinero? <span class="muted">${anio}</span></h1>
     <p class="lead">Ingresos previstos: <strong>${formatEuros(total)}</strong>. Pulsa en cada línea para ver de qué está hecha.</p>
+    <div id="quesito"></div>
     <p><label>Buscar un ingreso <input type="search" id="buscar" placeholder="Por ejemplo: IBI, basuras, terrazas…" autocomplete="off"></label></p>
     <div id="arbol"><ul class="barras">${caps.map((c) => `<li>${filaHtml({
       id: `cap-${c.cap}`,
@@ -35,6 +37,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
     })}<div class="hijos" hidden></div></li>`).join("")}</ul></div>
     <div id="resultados" hidden></div>`;
 
+  pintaQuesito(main.querySelector("#quesito"), datos.capitulos, "Ingresos por tipo");
   const arbol = main.querySelector("#arbol");
   const resultados = main.querySelector("#resultados");
   const cab = [{ texto: "Concepto" }, { texto: `${anio - 2}`, num: true }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }, { texto: "Cambio" }];
