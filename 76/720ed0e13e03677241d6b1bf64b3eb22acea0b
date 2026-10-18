@@ -1,0 +1,22 @@
+tools/budget/inversiones.py
+  s_c524ba238f0f5a::t_cf3e81a67165ea 1,4-27,37-47
+  s_c524ba238f0f5a::t_2817cbb934d655 2-3,28-36
+tools/tests/test_inversiones.py
+  s_c524ba238f0f5a::t_4bbe7ac7f6eefe 1-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "76720ed0e13e03677241d6b1bf64b3eb22acea0b",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
