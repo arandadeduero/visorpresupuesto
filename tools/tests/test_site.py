@@ -61,7 +61,7 @@ def test_el_despliegue_espera_a_los_tests_y_no_se_cancela_a_medias():
 def test_el_ci_se_ejecuta_en_pull_requests_y_comprueba_los_datos_generados():
     ci = _workflow("ci.yml")
     assert "pull_request:" in ci and "workflow_call:" in ci
-    assert "pytest" in ci and "node --test site/js/" in ci
+    assert "pytest" in ci and "node --test \"site/js/*.test.js\"" in ci
     assert "git diff --exit-code site/data" in ci
 
 
