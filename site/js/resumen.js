@@ -2,6 +2,14 @@ import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
 import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
 import { pintaQuesito } from "./quesito.js";
+import { mayoresCambios } from "./insights.js";
+
+function cambios(titulo, items, clase) {
+  const lista = items
+    .map((x) => `<li><span>${esc(x.nombre)}</span><strong class="${clase === "sube" ? "var-up" : "var-down"}">${clase === "sube" ? "▲ +" : "▼ −"}${formatEuros(Math.abs(x.delta))}</strong><small class="muted">${x.pct === null ? "nuevo este año" : `${x.pct > 0 ? "+" : "−"}${Math.abs(x.pct).toLocaleString("es-ES", { maximumFractionDigits: 0 })} %`}</small></li>`)
+    .join("");
+  return `<section><h3>${esc(titulo)}</h3><ol class="cambios">${lista || "<li>Sin cambios</li>"}</ol></section>`;
+}
 
 function bloque(titulo, capitulos, total) {
   const max = Math.max(...capitulos.map((c) => c.y2026));
@@ -17,8 +25,12 @@ function bloque(titulo, capitulos, total) {
 }
 
 runPage("resumen", async ({ anio, main, load }) => {
-  const r = await load("resumen");
+  const [r, gastos, ingresos] = await Promise.all([load("resumen"), load("gastos"), load("ingresos")]);
   const prestamos = r.ingresosPorCapitulo.find((c) => c.cap === 9).y2026;
+  const gc = mayoresCambios(gastos.politicas, 5);
+  const ic = mayoresCambios(ingresos.capitulos.flatMap((c) => c.conceptos), 5);
+  const suben = { g: gc.suben, i: ic.suben };
+  const bajan = { g: gc.bajan, i: ic.bajan };
   const filas = (caps) => caps.map((c) => `<tr><td>${esc(c.corto)}</td><td class="num">${formatEuros(c.y2025)}</td><td class="num">${formatEuros(c.y2026)}</td></tr>`);
   const cab = [{ texto: "Concepto" }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }];
 
@@ -30,6 +42,12 @@ runPage("resumen", async ({ anio, main, load }) => {
     <div class="dos-columnas"><div id="q-ingresos"></div><div id="q-gastos"></div></div>
     ${bloque("De dónde sale el dinero", r.ingresosPorCapitulo, r.totalIngresos)}
     ${bloque("En qué se gasta", r.gastosPorCapitulo, r.totalGastos)}
+    <h2>Qué ha cambiado más respecto a ${anio - 1}</h2>
+    <p class="muted">Diferencia en euros entre el presupuesto de ${anio} y los créditos de ${anio - 1}.</p>
+    <div class="dos-columnas">
+      ${cambios("Gastos que más suben", suben.g, "sube")}${cambios("Gastos que más bajan", bajan.g, "baja")}
+      ${cambios("Ingresos que más suben", suben.i, "sube")}${cambios("Ingresos que más bajan", bajan.i, "baja")}
+    </div>
     <details><summary>Ver como tablas</summary>
       <h3>Ingresos</h3>${tablaHtml(cab, filas(r.ingresosPorCapitulo))}
       <h3>Gastos</h3>${tablaHtml(cab, filas(r.gastosPorCapitulo))}

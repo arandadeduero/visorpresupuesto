@@ -1,6 +1,8 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros, formatVariation } from "./format.js";
 import { PALETTE, TEXTO_SOBRE } from "./charts.js";
+import { destacar, porHabitante } from "./insights.js";
+import { variacionHtml } from "./ui.js";
 
 const EXPLICACION = {
   "Obras e inversiones": "Obras nuevas y mejoras en calles, edificios e instalaciones, y ayudas para inversiones.",
@@ -17,7 +19,8 @@ function comparacion(total, anterior, anio) {
 }
 
 runPage("inicio", async ({ anio, main, load }) => {
-  const r = await load("resumen");
+  const [r, gastos] = await Promise.all([load("resumen"), load("gastos")]);
+  const porVecino = formatEuros(porHabitante(r.totalGastos, r.habitantes));
   const consulta = `?anio=${anio}`;
   const segmentos = r.por100.map((b, i) => {
     const color = PALETTE[i];
@@ -35,6 +38,14 @@ runPage("inicio", async ({ anio, main, load }) => {
       <div class="tabla-scroll"><table class="datos"><thead><tr><th>En qué</th><th class="num">Por cada 100 €</th><th class="num">Importe</th></tr></thead><tbody>${filas}</tbody></table></div>
     </details>
     <p><a href="gastos.html${consulta}">Ver el detalle de los gastos →</a></p>
+    <section class="destacado" aria-labelledby="titulo-destacado">
+      <h2 id="titulo-destacado">¿Cuánto gasta Aranda de Duero en…?</h2>
+      <div id="destacado" aria-live="polite"></div>
+      <button class="boton" type="button" id="otra">Enséñame otra</button>
+    </section>
+    <h2>Para cada vecino</h2>
+    <p class="lead">El presupuesto equivale a unos <strong>${porVecino}</strong> por habitante al año (${r.habitantes.toLocaleString("es-ES")} habitantes).</p>
+    <p class="muted">Es el gasto previsto del Ayuntamiento dividido entre la población (${esc(r.fuentePoblacion)}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>
     <h2>Y además…</h2>
     <div class="cards">
       <a class="card" href="ingresos.html${consulta}"><strong>Ingresos</strong><span>De dónde sale el dinero</span></a>
@@ -54,4 +65,24 @@ runPage("inicio", async ({ anio, main, load }) => {
   };
   botones.forEach((btn, i) => btn.addEventListener("click", () => elegir(i)));
   elegir(0);
+
+  // «¿Cuánto gasta Aranda de Duero en…?»: una política de gasto cada vez, en orden aleatorio.
+  const orden = [...gastos.politicas].filter((p) => p.y2026 > 0).sort(() => Math.random() - 0.5);
+  let actual = 0;
+  const caja = main.querySelector("#destacado");
+  const mostrar = () => {
+    const d = destacar(orden[actual], r.totalGastos, r.habitantes);
+    caja.innerHTML = `<p class="destacado-nombre">${esc(d.nombre)}</p>
+      <div class="cifras">
+        <div><span class="cifra">${formatEuros(d.porHabitante)}</span><span>por habitante</span></div>
+        <div><span class="cifra">${formatEuros(d.importe, { compact: true })}</span><span>en total</span></div>
+        <div><span class="cifra">${d.pct.toLocaleString("es-ES", { maximumFractionDigits: 1 })} %</span><span>del presupuesto</span></div>
+      </div>
+      <p class="muted">${variacionHtml(d.importe, d.anterior)}</p>`;
+  };
+  main.querySelector("#otra").addEventListener("click", () => {
+    actual = (actual + 1) % orden.length;
+    mostrar();
+  });
+  mostrar();
 });

@@ -1,6 +1,6 @@
 """A1 · Resumen por capítulos."""
 from .common import find_file, largest_remainder, load_sheet, num
-from .labels import BLOQUES_100, CAPITULOS_GASTOS, CAPITULOS_INGRESOS
+from .labels import BLOQUES_100, CAPITULOS_GASTOS, CAPITULOS_INGRESOS, POBLACION
 
 
 def _capitulos(rows, etiquetas):
@@ -37,9 +37,13 @@ def parse_resumen(year: int) -> dict:
         for (nombre, caps), imp, e in zip(BLOQUES_100, importes, euros)
     ]
 
+    habitantes, anio_poblacion, fuente = POBLACION[year]
     return {
         "anio": year,
         "tipo": "inicial",
+        "habitantes": habitantes,
+        "anioPoblacion": anio_poblacion,
+        "fuentePoblacion": fuente,
         "totalGastos": total_gastos,
         "totalGastos2025": total_gastos_2025,
         "totalIngresos": total_ingresos,

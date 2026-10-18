@@ -46,3 +46,21 @@ def test_programas_con_nombre_y_area(d):
 
 def test_los_programas_suman_el_total(d):
     assert sum(p["y2026"] for p in d["programas"]) == pytest.approx(64280861.35, abs=1)
+
+
+def test_politicas_de_gasto_con_nombre_llano(d):
+    politicas = {p["codigo"]: p for p in d["politicas"]}
+    assert politicas["13"]["nombre"] == "Seguridad y movilidad ciudadana"
+    assert politicas["01"]["nombre"] == "Deuda pública" and politicas["01"]["area"] == 0
+    assert politicas["34"]["nombre"] == "Deporte" and politicas["33"]["nombre"] == "Cultura"
+    assert politicas["92"]["area"] == 9
+    assert sum(p["y2026"] for p in politicas.values()) == pytest.approx(64280861.35, abs=1)
+
+
+def test_cada_programa_cuelga_de_una_politica_conocida(d):
+    codigos = {p["codigo"] for p in d["politicas"]}
+    for p in d["programas"]:
+        assert p["politica"] == p["codigo"][:2]
+        assert p["politica"] in codigos
+    seg = next(p for p in d["politicas"] if p["codigo"] == "13")
+    assert seg["y2026"] == pytest.approx(sum(p["y2026"] for p in d["programas"] if p["politica"] == "13"), abs=0.01)

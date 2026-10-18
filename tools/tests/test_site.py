@@ -10,8 +10,13 @@ SITE = ROOT / "site"
 PAGINAS = sorted(SITE.glob("*.html"))
 
 
-def test_hay_siete_paginas():
-    assert [p.name for p in PAGINAS] == ["deuda.html", "gastos.html", "index.html", "ingresos.html", "inversiones.html", "resumen.html", "subvenciones.html"]
+def test_hay_once_paginas_y_todas_estan_en_el_menu():
+    assert [p.name for p in PAGINAS] == sorted(
+        f"{n}.html" for n in ["calculadora", "descargas", "deuda", "gastos", "guia", "index", "indicadores", "ingresos", "inversiones", "resumen", "subvenciones"]
+    )
+    layout = (SITE / "js" / "layout.js").read_text(encoding="utf-8")
+    for p in PAGINAS:
+        assert f'"{p.name}"' in layout, f"{p.name} no está en el menú"
 
 
 @pytest.mark.parametrize("pagina", PAGINAS, ids=lambda p: p.name)

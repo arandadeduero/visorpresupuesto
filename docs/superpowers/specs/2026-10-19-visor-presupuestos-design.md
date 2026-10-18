@@ -105,6 +105,19 @@ Decisiones mías añadidas al preparar el plan:
 - Existe una página breve de **Resumen** (ingresos frente a gastos por capítulo).
 - El conversor de Excel está en Python con `openpyxl`; el JSON generado se commitea y GitHub Pages solo publica la carpeta `site/`.
 
+## Ideas tomadas de otros visores (Gobierto y Fuengirola)
+
+Analizados el 2026-10-19: *Gobierto Presupuestos* (presupuestos.gobierto.es, Aranda de Duero 2024) y el visor de Fuengirola (gobiernoabierto.fuengirola.es/pre, de oGov).
+
+Integrado, siempre calculado con nuestros datos:
+- **Euros por habitante** en portada, gastos e ingresos, con la población del INE (33.956 habitantes en 2025) indicada como fuente y con el aviso de que no es lo que paga cada vecino.
+- **Políticas de gasto** con nombre llano (Cultura, Deporte, Bienestar comunitario…), a partir de los dos primeros dígitos del programa y la clasificación oficial por programas; sustituyen a las áreas en la vista «¿En qué se gasta?».
+- **«¿Cuánto gasta Aranda de Duero en…?»** con «Enséñame otra» en la portada y **«Qué ha cambiado más»** (suben y bajan) en el resumen.
+- **Indicadores** (impuestos y tasas por habitante, ahorro bruto, deuda por habitante y sobre ingresos, coste anual de la deuda, dependencia de transferencias), **calculadora** («¿a qué se destina lo que pago?», reparto proporcional y orientativo con los importes que escribe el vecino), **guía** con glosario, **descargas** de los JSON y explicación breve de cada forma de ver los gastos.
+- Enlace a Gobierto para comparar con otros municipios.
+
+Descartado: series históricas 2010–2024, medias provincial, autonómica y nacional, rankings, ejecución presupuestaria (los Excel solo traen el presupuesto inicial y datos de terceros no son comparables), calculadora con ordenanzas fiscales (no disponemos de ellas) y clasificación orgánica («¿quién gasta?»), que los Excel no traen.
+
 ## Deja al constructor
 
 - Librería de gráficos (preferiblemente ligera, o SVG propio), estilo visual, estructura de carpetas y de JSON, naming de ficheros, sistema de rutas (páginas separadas o una sola con hash).

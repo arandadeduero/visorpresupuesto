@@ -9,6 +9,10 @@ const SECCIONES = [
   ["inversiones", "Inversiones", "inversiones.html"],
   ["subvenciones", "Subvenciones", "subvenciones.html"],
   ["deuda", "Deuda", "deuda.html"],
+  ["indicadores", "Indicadores", "indicadores.html"],
+  ["calculadora", "Calculadora", "calculadora.html"],
+  ["guia", "Guía", "guia.html"],
+  ["descargas", "Descargas", "descargas.html"],
 ];
 
 export const esc = (t) =>
@@ -32,7 +36,7 @@ function montarMarco(activa, anio, indice) {
       <nav class="wrap menu" aria-label="Secciones">${enlaces}</nav>
     </header>
     <main id="contenido" class="wrap" tabindex="-1"></main>
-    <footer class="site"><div class="wrap">Fuente: presupuesto inicial del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados.</div></footer>`;
+    <footer class="site"><div class="wrap">Fuente: presupuesto inicial del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados. Para comparar con otros municipios: <a href="https://presupuestos.gobierto.es/municipios/aranda-de-duero" rel="noopener">Gobierto Presupuestos</a>.</div></footer>`;
   document.getElementById("selector-anio").addEventListener("change", (e) => {
     const url = new URL(location.href);
     url.searchParams.set("anio", e.target.value);

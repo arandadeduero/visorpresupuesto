@@ -17,7 +17,7 @@ function nodoPartida(p, detalle) {
 }
 
 /**
- * modo "programa": áreas → programas → partidas (¿en qué se gasta?).
+ * modo "politica": políticas de gasto (Cultura, Deporte…) → programas → partidas (¿en qué se gasta?).
  * modo "capitulo": capítulos → programas → partidas (¿qué tipo de gasto es?).
  * El capítulo 1 (personal) no baja de programa: sus programas son hojas.
  */
@@ -25,7 +25,7 @@ export function buildTree(datos, modo) {
   const capitulo = new Map(datos.capitulos.map((c) => [c.cap, c]));
   const programa = new Map(datos.programas.map((p) => [p.codigo, p]));
 
-  if (modo === "programa") {
+  if (modo === "politica") {
     const porPrograma = new Map();
     for (const p of datos.partidas) {
       if (!porPrograma.has(p.programa)) porPrograma.set(p.programa, []);
@@ -36,7 +36,7 @@ export function buildTree(datos, modo) {
       return {
         id: `prog-${codigo}`,
         nombre: info.nombre,
-        area: info.area,
+        politica: info.politica,
         y2025: suma(partidas, "y2025"),
         y2026: suma(partidas, "y2026"),
         hijos: partidas
@@ -44,10 +44,10 @@ export function buildTree(datos, modo) {
           .sort(porImporte),
       };
     });
-    return datos.areas
-      .map((a) => {
-        const hijos = nodosPrograma.filter((n) => n.area === a.area).sort(porImporte);
-        return { id: `area-${a.area}`, nombre: a.nombre, y2025: suma(hijos, "y2025"), y2026: suma(hijos, "y2026"), hijos };
+    return datos.politicas
+      .map((pol) => {
+        const hijos = nodosPrograma.filter((n) => n.politica === pol.codigo).sort(porImporte);
+        return { id: `pol-${pol.codigo}`, nombre: pol.nombre, y2025: suma(hijos, "y2025"), y2026: suma(hijos, "y2026"), hijos };
       })
       .sort(porImporte);
   }

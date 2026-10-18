@@ -3,7 +3,7 @@ import re
 from collections import defaultdict
 
 from .common import code_str, find_file, load_sheet, num, sentence_case
-from .labels import AREAS, CAPITULOS_GASTOS
+from .labels import AREAS, CAPITULOS_GASTOS, POLITICAS
 
 _ROMANOS = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9}
 _CABECERA = re.compile(r"^CAPÍTULO ([IVX]+)$")
@@ -68,16 +68,30 @@ def parse_gastos(year: int) -> dict:
             "codigo": cod,
             "nombre": nombres_programa.get(cod, f"Programa {cod}"),
             "area": int(cod[0]),
+            "politica": cod[:2],
             "y2025": round(t[0], 2),
             "y2026": round(t[1], 2),
         }
         for cod, t in sorted(totales.items())
     ]
+    politicas = []
+    for codigo in sorted({p["politica"] for p in programas}):
+        propios = [p for p in programas if p["politica"] == codigo]
+        politicas.append(
+            {
+                "codigo": codigo,
+                "nombre": POLITICAS[codigo],
+                "area": int(codigo[0]),
+                "y2025": round(sum(p["y2025"] for p in propios), 2),
+                "y2026": round(sum(p["y2026"] for p in propios), 2),
+            }
+        )
     usadas = sorted({p["area"] for p in programas})
     return {
         "anio": year,
         "capitulos": [capitulos[n] for n in sorted(capitulos)],
         "areas": [{"area": a, "nombre": AREAS[a]} for a in usadas],
+        "politicas": politicas,
         "programas": programas,
         "partidas": partidas,
     }

@@ -1,6 +1,6 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros, matches } from "./format.js";
-import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
+import { filaHtml, variacionHtml, tablaHtml, porHabHtml } from "./ui.js";
 import { pintaQuesito } from "./quesito.js";
 
 const EXPLICACION = {
@@ -16,14 +16,15 @@ const EXPLICACION = {
 };
 
 runPage("ingresos", async ({ anio, main, load }) => {
-  const datos = await load("ingresos");
+  const [datos, resumen] = await Promise.all([load("ingresos"), load("resumen")]);
+  const habitantes = resumen.habitantes;
   const caps = [...datos.capitulos].sort((a, b) => b.y2026 - a.y2026);
   const total = caps.reduce((s, c) => s + c.y2026, 0);
   const max = caps[0].y2026;
 
   main.innerHTML = `
     <h1>¿De dónde sale el dinero? <span class="muted">${anio}</span></h1>
-    <p class="lead">Ingresos previstos: <strong>${formatEuros(total)}</strong>. Pulsa en cada línea para ver de qué está hecha.</p>
+    <p class="lead">Ingresos previstos: <strong>${formatEuros(total)}</strong>. Unos <strong>${porHabHtml(total, habitantes)}</strong>. Pulsa en cada línea para ver de qué está hecha.</p>
     <div id="quesito"></div>
     <p><label>Buscar un ingreso <input type="search" id="buscar" placeholder="Por ejemplo: IBI, basuras, terrazas…" autocomplete="off"></label></p>
     <div id="arbol"><ul class="barras">${caps.map((c) => `<li>${filaHtml({
@@ -33,7 +34,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
       importe: c.y2026,
       max,
       clicable: true,
-      extra: `${((c.y2026 / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${variacionHtml(c.y2026, c.y2025)}`,
+      extra: `${((c.y2026 / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${porHabHtml(c.y2026, habitantes)} · ${variacionHtml(c.y2026, c.y2025)}`,
     })}<div class="hijos" hidden></div></li>`).join("")}</ul></div>
     <div id="resultados" hidden></div>`;
 
