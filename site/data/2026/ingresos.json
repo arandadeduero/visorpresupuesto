@@ -1,0 +1,837 @@
+{
+ "anio": 2026,
+ "capitulos": [
+  {
+   "cap": 1,
+   "corto": "Impuestos directos (IBI, IAE, vehículos…)",
+   "oficial": "Impuestos directos",
+   "y2024": 14678000.0,
+   "y2025": 15820000.0,
+   "y2026": 16600000.0,
+   "conceptos": [
+    {
+     "codigo": "112",
+     "nombre": "Impuesto sobre bienes inmuebles de naturaleza rústica",
+     "y2024": 548000.0,
+     "y2025": 590000.0,
+     "y2026": 595000.0
+    },
+    {
+     "codigo": "113",
+     "nombre": "Impuesto sobre bienes inmuebles de naturaleza urbana",
+     "y2024": 10550000.0,
+     "y2025": 11400000.0,
+     "y2026": 11675000.0
+    },
+    {
+     "codigo": "115",
+     "nombre": "Impuesto sobre vehículos de tracción mecánica",
+     "y2024": 1730000.0,
+     "y2025": 1730000.0,
+     "y2026": 1780000.0
+    },
+    {
+     "codigo": "116",
+     "nombre": "Impuesto sobre incremento de valor de los terrenos naturaleza urbana",
+     "y2024": 400000.0,
+     "y2025": 600000.0,
+     "y2026": 800000.0
+    },
+    {
+     "codigo": "130",
+     "nombre": "Impuesto sobre actividades económicas",
+     "y2024": 1450000.0,
+     "y2025": 1500000.0,
+     "y2026": 1750000.0
+    }
+   ]
+  },
+  {
+   "cap": 2,
+   "corto": "Impuestos indirectos (obras)",
+   "oficial": "Impuestos indirectos",
+   "y2024": 900000.0,
+   "y2025": 900000.0,
+   "y2026": 900000.0,
+   "conceptos": [
+    {
+     "codigo": "290",
+     "nombre": "Impuesto sobre instalaciones, construcciones y obras",
+     "y2024": 900000.0,
+     "y2025": 900000.0,
+     "y2026": 900000.0
+    }
+   ]
+  },
+  {
+   "cap": 3,
+   "corto": "Tasas y precios públicos",
+   "oficial": "Tasas y otros ingresos",
+   "y2024": 8686060.0,
+   "y2025": 7086060.0,
+   "y2026": 8359410.0,
+   "conceptos": [
+    {
+     "codigo": "300.00",
+     "nombre": "Tasa abastecimiento agua",
+     "y2024": 4500000.0,
+     "y2025": 2400000.0,
+     "y2026": 2800000.0
+    },
+    {
+     "codigo": "302.00",
+     "nombre": "TASA DE BASURAS: RECOGIDA Y TRANSPORTE (Ley 7/2022)",
+     "y2024": null,
+     "y2025": 0.0,
+     "y2026": 0.0
+    },
+    {
+     "codigo": "305.00",
+     "nombre": "Tasa extinción de incendios",
+     "y2024": 10000.0,
+     "y2025": 10000.0,
+     "y2026": 13000.0
+    },
+    {
+     "codigo": "321.00",
+     "nombre": "Tasa licencias urbanísticas",
+     "y2024": 225000.0,
+     "y2025": 280000.0,
+     "y2026": 300000.0
+    },
+    {
+     "codigo": "325.00",
+     "nombre": "Tasa expedición de documentos",
+     "y2024": 6000.0,
+     "y2025": 6000.0,
+     "y2026": 6000.0
+    },
+    {
+     "codigo": "326.00",
+     "nombre": "Tasa retirada de vehículos",
+     "y2024": 150000.0,
+     "y2025": 75000.0,
+     "y2026": 75000.0
+    },
+    {
+     "codigo": "327.00",
+     "nombre": "Tasa participación exámenes y procesos selectivos",
+     "y2024": 12000.0,
+     "y2025": 12000.0,
+     "y2026": 12000.0
+    },
+    {
+     "codigo": "329.00",
+     "nombre": "Tasa autotaxis",
+     "y2024": 60.0,
+     "y2025": 60.0,
+     "y2026": 600.0
+    },
+    {
+     "codigo": "329.01",
+     "nombre": "Tasa apertura establecimientos",
+     "y2024": 3000.0,
+     "y2025": 3000.0,
+     "y2026": 6000.0
+    },
+    {
+     "codigo": "329.03",
+     "nombre": "Tasa celebración matrimonios civiles",
+     "y2024": 800.0,
+     "y2025": 800.0,
+     "y2026": 2500.0
+    },
+    {
+     "codigo": "330.00",
+     "nombre": "Tasa por estacionamiento de vehículos (ORA)",
+     "y2024": 550000.0,
+     "y2025": 550000.0,
+     "y2026": 580000.0
+    },
+    {
+     "codigo": "331.00",
+     "nombre": "Tasa entrada de vehículos a través de las aceras",
+     "y2024": 197000.0,
+     "y2025": 192000.0,
+     "y2026": 205000.0
+    },
+    {
+     "codigo": "332.00",
+     "nombre": "Tasa utilización privativa empresas explotadoras de servicios y suministros",
+     "y2024": 900000.0,
+     "y2025": 900000.0,
+     "y2026": 900000.0
+    },
+    {
+     "codigo": "335.00",
+     "nombre": "Tasa por ocupación de la vía pública con terrazas y veladores",
+     "y2024": 40000.0,
+     "y2025": 40000.0,
+     "y2026": 43250.0
+    },
+    {
+     "codigo": "339.00",
+     "nombre": "Tasa por otras ocupaciones del dominio público local",
+     "y2024": 30000.0,
+     "y2025": 30000.0,
+     "y2026": 70000.0
+    },
+    {
+     "codigo": "339.01",
+     "nombre": "Tasa por ocupación de la vía pública con quioscos",
+     "y2024": 2000.0,
+     "y2025": 25000.0,
+     "y2026": 25000.0
+    },
+    {
+     "codigo": "339.02",
+     "nombre": "Tasa por ocupación de la vía pública con barracas y puestos de feria",
+     "y2024": 70000.0,
+     "y2025": 37000.0,
+     "y2026": 92000.0
+    },
+    {
+     "codigo": "339.03",
+     "nombre": "Tasa por aprovechamiento especial del suelo con cajeros automáticos",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 2860.0
+    },
+    {
+     "codigo": "339.03",
+     "nombre": "Tasa por ocupación de vivienda pública",
+     "y2024": 3000.0,
+     "y2025": 3000.0,
+     "y2026": 3000.0
+    },
+    {
+     "codigo": "339.04",
+     "nombre": "Tasa cementerio",
+     "y2024": 30000.0,
+     "y2025": 25000.0,
+     "y2026": 35000.0
+    },
+    {
+     "codigo": "339.09",
+     "nombre": "Otras tasas por utilización privativa del dominio público local",
+     "y2024": 10000.0,
+     "y2025": 17000.0,
+     "y2026": 17000.0
+    },
+    {
+     "codigo": "341.00",
+     "nombre": "Precio público ayuda a domicilio",
+     "y2024": 140000.0,
+     "y2025": 140000.0,
+     "y2026": 205000.0
+    },
+    {
+     "codigo": "341.02",
+     "nombre": "Precio público servicio de comidas",
+     "y2024": 110000.0,
+     "y2025": 90000.0,
+     "y2026": 120000.0
+    },
+    {
+     "codigo": "341.03",
+     "nombre": "Precio público atención preventiva",
+     "y2024": 55000.0,
+     "y2025": 55000.0,
+     "y2026": 110000.0
+    },
+    {
+     "codigo": "342.00",
+     "nombre": "Precio público escuela de música",
+     "y2024": 162000.0,
+     "y2025": 150000.0,
+     "y2026": 155000.0
+    },
+    {
+     "codigo": "342.01",
+     "nombre": "Precio público escuela de folclore",
+     "y2024": 30000.0,
+     "y2025": 30000.0,
+     "y2026": 35000.0
+    },
+    {
+     "codigo": "342.02",
+     "nombre": "Precio público escuela de cerámica",
+     "y2024": 0.0,
+     "y2025": 0.0,
+     "y2026": 0.0
+    },
+    {
+     "codigo": "342.03",
+     "nombre": "Precio público actividades juveniles",
+     "y2024": 6000.0,
+     "y2025": 6000.0,
+     "y2026": 6000.0
+    },
+    {
+     "codigo": "342.04",
+     "nombre": "Precio público escuelas infantiles municipales",
+     "y2024": 110000.0,
+     "y2025": 120000.0,
+     "y2026": 105000.0
+    },
+    {
+     "codigo": "342.05",
+     "nombre": "Precio público cursos de verano",
+     "y2024": 500.0,
+     "y2025": 500.0,
+     "y2026": 500.0
+    },
+    {
+     "codigo": "342.06",
+     "nombre": "Precio público otros cursos escuela de cerámica",
+     "y2024": 0.0,
+     "y2025": 0.0,
+     "y2026": 0.0
+    },
+    {
+     "codigo": "342.07",
+     "nombre": "Precio público colonias de verano",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 100000.0
+    },
+    {
+     "codigo": "342.08",
+     "nombre": "Precio público visitas teatralizadas",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 30000.0
+    },
+    {
+     "codigo": "342.09",
+     "nombre": "Precio público visitas bodegas peñas",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 10000.0
+    },
+    {
+     "codigo": "342.10",
+     "nombre": "Precio público autobús turístico",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 10000.0
+    },
+    {
+     "codigo": "342.11",
+     "nombre": "Precio público museo del tren",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 5000.0
+    },
+    {
+     "codigo": "342.12",
+     "nombre": "Precio público museo de pintura",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 5000.0
+    },
+    {
+     "codigo": "342.13",
+     "nombre": "Precio público visitas bodega las ánimas",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 5000.0
+    },
+    {
+     "codigo": "343.00",
+     "nombre": "Precio público utilización instalaciones deportivas",
+     "y2024": 12000.0,
+     "y2025": 290000.0,
+     "y2026": 310000.0
+    },
+    {
+     "codigo": "344.00",
+     "nombre": "Precio público espectáculos casa de cultura",
+     "y2024": 60000.0,
+     "y2025": 60000.0,
+     "y2026": 95000.0
+    },
+    {
+     "codigo": "345.00",
+     "nombre": "Precio público transporte urbano de viajeros",
+     "y2024": 45000.0,
+     "y2025": 45000.0,
+     "y2026": 51000.0
+    },
+    {
+     "codigo": "349.00",
+     "nombre": "Precio público actividades acción social",
+     "y2024": 30000.0,
+     "y2025": 27000.0,
+     "y2026": 40000.0
+    },
+    {
+     "codigo": "349.01",
+     "nombre": "Precio público de la banda de música",
+     "y2024": 1200.0,
+     "y2025": 1200.0,
+     "y2026": 1200.0
+    },
+    {
+     "codigo": "349.02",
+     "nombre": "Precio público ferias",
+     "y2024": 0.0,
+     "y2025": 0.0,
+     "y2026": 0.0
+    },
+    {
+     "codigo": "349.03",
+     "nombre": "Precio público utilización recinto ferial",
+     "y2024": 5000.0,
+     "y2025": 5000.0,
+     "y2026": 5000.0
+    },
+    {
+     "codigo": "349.05",
+     "nombre": "Precio público otras actividades",
+     "y2024": 1000.0,
+     "y2025": 51000.0,
+     "y2026": 51000.0
+    },
+    {
+     "codigo": "351.00",
+     "nombre": "Contribución especial unespa. servicio extinción de incendios",
+     "y2024": 200000.0,
+     "y2025": 210000.0,
+     "y2026": 240000.0
+    },
+    {
+     "codigo": "360.00",
+     "nombre": "VENTAS EFECTOS INÚTILES (papel, vidrio, plástico y otros)",
+     "y2024": 350000.0,
+     "y2025": 350000.0,
+     "y2026": 550000.0
+    },
+    {
+     "codigo": "361.00",
+     "nombre": "Ventas trabajos otras empresas",
+     "y2024": 500.0,
+     "y2025": 500.0,
+     "y2026": 500.0
+    },
+    {
+     "codigo": "362.00",
+     "nombre": "Ventas otros efectos",
+     "y2024": 500.0,
+     "y2025": 500.0,
+     "y2026": 500.0
+    },
+    {
+     "codigo": "389.00",
+     "nombre": "Reintegros de presupuestos cerrados",
+     "y2024": 10000.0,
+     "y2025": 10000.0,
+     "y2026": 10000.0
+    },
+    {
+     "codigo": "391.00",
+     "nombre": "Multas por infracciones urbanísticas",
+     "y2024": 5000.0,
+     "y2025": 5000.0,
+     "y2026": 5000.0
+    },
+    {
+     "codigo": "391.20",
+     "nombre": "Multas de tráfico ORA",
+     "y2024": 380000.0,
+     "y2025": 600000.0,
+     "y2026": 500000.0
+    },
+    {
+     "codigo": "391.21",
+     "nombre": "Multas de infracciones de tráfico (no ORA)",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 100000.0
+    },
+    {
+     "codigo": "391.30",
+     "nombre": "Multas coercitivas infracciones ordenanzas",
+     "y2024": 5000.0,
+     "y2025": 5000.0,
+     "y2026": 25000.0
+    },
+    {
+     "codigo": "391.90",
+     "nombre": "Otras sanciones",
+     "y2024": 15000.0,
+     "y2025": 15000.0,
+     "y2026": 15000.0
+    },
+    {
+     "codigo": "392.11",
+     "nombre": "Recargos de apremio",
+     "y2024": 120000.0,
+     "y2025": 120000.0,
+     "y2026": 150000.0
+    },
+    {
+     "codigo": "393.00",
+     "nombre": "Intereses de demora",
+     "y2024": 40000.0,
+     "y2025": 40000.0,
+     "y2026": 45000.0
+    },
+    {
+     "codigo": "397.00",
+     "nombre": "Aprovechamientos urbanísticos",
+     "y2024": 500.0,
+     "y2025": 500.0,
+     "y2026": 500.0
+    },
+    {
+     "codigo": "398.00",
+     "nombre": "Indemnizaciones por siniestros",
+     "y2024": 3000.0,
+     "y2025": 3000.0,
+     "y2026": 25000.0
+    },
+    {
+     "codigo": "399.00",
+     "nombre": "Recursos eventuales",
+     "y2024": 50000.0,
+     "y2025": 50000.0,
+     "y2026": 50000.0
+    }
+   ]
+  },
+  {
+   "cap": 4,
+   "corto": "Transferencias de otras administraciones",
+   "oficial": "Transferencias corrientes",
+   "y2024": 12846672.94,
+   "y2025": 13640973.59,
+   "y2026": 14419582.61,
+   "conceptos": [
+    {
+     "codigo": "420.00",
+     "nombre": "Participación en los tributos del estado",
+     "y2024": 9200000.0,
+     "y2025": 10300000.0,
+     "y2026": 10780000.0
+    },
+    {
+     "codigo": "420.20",
+     "nombre": "Compensaciones por beneficios fiscales",
+     "y2024": 36000.0,
+     "y2025": 36000.0,
+     "y2026": 45000.0
+    },
+    {
+     "codigo": "420.90",
+     "nombre": "Otras participaciones (fondo adicional para compensar la liq negativa 2020)",
+     "y2024": 310589.44,
+     "y2025": 0.0,
+     "y2026": 0.0
+    },
+    {
+     "codigo": "420.91",
+     "nombre": "Otras transferencias. contratación agente innovación local",
+     "y2024": 37500.0,
+     "y2025": 37500.0,
+     "y2026": 37500.0
+    },
+    {
+     "codigo": "420.93",
+     "nombre": "Otras transf. pacto de estado contra violencia de género",
+     "y2024": 20000.0,
+     "y2025": 22500.0,
+     "y2026": 25500.0
+    },
+    {
+     "codigo": "420.94",
+     "nombre": "Otras transf. control colonias felinas",
+     "y2024": 26609.91,
+     "y2025": 29000.0,
+     "y2026": 29000.0
+    },
+    {
+     "codigo": "450.00",
+     "nombre": "Participación en ingresos de la ccaa. fondo incondicionado",
+     "y2024": 157071.12,
+     "y2025": 157071.12,
+     "y2026": 157337.2
+    },
+    {
+     "codigo": "450.02",
+     "nombre": "Transferencias corrientes convenios servicios sociales. acuerdo marco",
+     "y2024": 2446000.0,
+     "y2025": 2446000.0,
+     "y2026": 2639619.06
+    },
+    {
+     "codigo": "450.05",
+     "nombre": "Transferencias corrientes convenio jcyl gratuidad escuelas infantiles",
+     "y2024": 172276.12,
+     "y2025": 172276.12,
+     "y2026": 210000.0
+    },
+    {
+     "codigo": "450.80",
+     "nombre": "Otras subvenciones corrientes. competencias delegadas deportes",
+     "y2024": 27700.0,
+     "y2025": 27700.0,
+     "y2026": 27700.0
+    },
+    {
+     "codigo": "450.81",
+     "nombre": "Otras transferencias. proteccion acustica",
+     "y2024": 0.0,
+     "y2025": 0.0,
+     "y2026": 0.0
+    },
+    {
+     "codigo": "450.83",
+     "nombre": "Otras transf. subv. prtr oficina gestión ARU sta catalina",
+     "y2024": 47426.35,
+     "y2025": 47426.35,
+     "y2026": 47426.35
+    },
+    {
+     "codigo": "461.00",
+     "nombre": "Convenio diputación prestación servicio extinción de incendios",
+     "y2024": 350000.0,
+     "y2025": 350000.0,
+     "y2026": 360000.0
+    },
+    {
+     "codigo": "461.01",
+     "nombre": "Convenio diputación vuelta ciclista junior a la ribera",
+     "y2024": null,
+     "y2025": 0.0,
+     "y2026": 45000.0
+    },
+    {
+     "codigo": "470.01",
+     "nombre": "Subvenciones de empresas privadas. certamen de bandas",
+     "y2024": 3500.0,
+     "y2025": 3500.0,
+     "y2026": 3500.0
+    },
+    {
+     "codigo": "470.12",
+     "nombre": "Subvenciones de empresas privadas. festejos",
+     "y2024": 7000.0,
+     "y2025": 7000.0,
+     "y2026": 7000.0
+    },
+    {
+     "codigo": "470.10",
+     "nombre": "Subvenciones de empresas privadas. actividades deportivas",
+     "y2024": 5000.0,
+     "y2025": 5000.0,
+     "y2026": 5000.0
+    },
+    {
+     "codigo": "497.00",
+     "nombre": "Otras transferencias de la union europea. ARU santa catalina",
+     "y2024": 0.0,
+     "y2025": 0.0,
+     "y2026": 0.0
+    }
+   ]
+  },
+  {
+   "cap": 5,
+   "corto": "Ingresos de patrimonio",
+   "oficial": "Ingresos patrimoniales",
+   "y2024": 427414.0,
+   "y2025": 671028.12,
+   "y2026": 2086114.0,
+   "conceptos": [
+    {
+     "codigo": "520.00",
+     "nombre": "Intereses de depósitos de empresas privadas",
+     "y2024": 400000.0,
+     "y2025": 600000.0,
+     "y2026": 500000.0
+    },
+    {
+     "codigo": "520.01",
+     "nombre": "Intereses de cuentas ARU",
+     "y2024": null,
+     "y2025": 43614.12,
+     "y2026": 34000.0
+    },
+    {
+     "codigo": "540.00",
+     "nombre": "Arrendamiento fincas urbanas",
+     "y2024": 5500.0,
+     "y2025": 5500.0,
+     "y2026": 20500.0
+    },
+    {
+     "codigo": "550.02",
+     "nombre": "Concesión albergue juvenil",
+     "y2024": 0.0,
+     "y2025": 0.0,
+     "y2026": 0.0
+    },
+    {
+     "codigo": "552.03",
+     "nombre": "Concesión quioscos",
+     "y2024": 13884.0,
+     "y2025": 13884.0,
+     "y2026": 13884.0
+    },
+    {
+     "codigo": "552.04",
+     "nombre": "Concesión aparcamiento de camiones",
+     "y2024": 1100.0,
+     "y2025": 1100.0,
+     "y2026": 1100.0
+    },
+    {
+     "codigo": "552.05",
+     "nombre": "Concesión parking sol de las moreras",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 3550.0
+    },
+    {
+     "codigo": "553.00",
+     "nombre": "Concesión puerto seco",
+     "y2024": null,
+     "y2025": null,
+     "y2026": 1500000.0
+    },
+    {
+     "codigo": "555.00",
+     "nombre": "Aprovechamiento coto monte la calabaza",
+     "y2024": 5780.0,
+     "y2025": 5780.0,
+     "y2026": 11930.0
+    },
+    {
+     "codigo": "555.01",
+     "nombre": "Aprovechamiento pastos monte la calabaza",
+     "y2024": 150.0,
+     "y2025": 150.0,
+     "y2026": 150.0
+    },
+    {
+     "codigo": "599.00",
+     "nombre": "Otros ingresos patrimoniales",
+     "y2024": 1000.0,
+     "y2025": 1000.0,
+     "y2026": 1000.0
+    }
+   ]
+  },
+  {
+   "cap": 6,
+   "corto": "Venta de inversiones",
+   "oficial": "Enajenación de inversiones reales",
+   "y2024": 6000.0,
+   "y2025": 0.0,
+   "y2026": 110000.0,
+   "conceptos": [
+    {
+     "codigo": "603",
+     "nombre": "Patrimonio público del suelo",
+     "y2024": 6000.0,
+     "y2025": 0.0,
+     "y2026": 110000.0
+    }
+   ]
+  },
+  {
+   "cap": 7,
+   "corto": "Subvenciones para obras",
+   "oficial": "Transferencias de capital",
+   "y2024": 1465755.56,
+   "y2025": 1931060.4,
+   "y2026": 1445600.95,
+   "conceptos": [
+    {
+     "codigo": "750.60",
+     "nombre": "Otras transferencias capital. subvención directa consejería de presidencia",
+     "y2024": 0.0,
+     "y2025": 0.0,
+     "y2026": 0.0
+    },
+    {
+     "codigo": "750.80",
+     "nombre": "Otras transferencias. fcl inversiones agenda 2030",
+     "y2024": 268000.0,
+     "y2025": 268000.0,
+     "y2026": 282000.0
+    },
+    {
+     "codigo": "750.81",
+     "nombre": "Otras transferencias. fcl inversiones desafíos demográficos",
+     "y2024": 268000.0,
+     "y2025": 268000.0,
+     "y2026": 282000.0
+    },
+    {
+     "codigo": "750.83",
+     "nombre": "Otras transf. subv. prtr ARU santa catalina",
+     "y2024": 855515.16,
+     "y2025": 1320820.0,
+     "y2026": 881600.95
+    },
+    {
+     "codigo": "789.00",
+     "nombre": "Transf. de familias e inst. sin fines de lucro. propietarios ARU",
+     "y2024": 74240.4,
+     "y2025": 74240.4,
+     "y2026": 0.0
+    },
+    {
+     "codigo": "797.00",
+     "nombre": "Otras transferencias de la unión europea. ARU santa catalina",
+     "y2024": 0.0,
+     "y2025": 0.0,
+     "y2026": 0.0
+    }
+   ]
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "y2024": 2172195.5,
+   "y2025": 4571700.16,
+   "y2026": 198530.15,
+   "conceptos": [
+    {
+     "codigo": "830.00",
+     "nombre": "Reintegros anticipos al personal",
+     "y2024": 15000.0,
+     "y2025": 15000.0,
+     "y2026": 15000.0
+    },
+    {
+     "codigo": "870.10",
+     "nombre": "Remanente de tesorería afectado fondos europeos next-generation",
+     "y2024": 2157195.5,
+     "y2025": 4556700.16,
+     "y2026": 183530.15
+    }
+   ]
+  },
+  {
+   "cap": 9,
+   "corto": "Préstamos",
+   "oficial": "Pasivos financieros",
+   "y2024": 8618380.98,
+   "y2025": 20457492.93,
+   "y2026": 20161623.64,
+   "conceptos": [
+    {
+     "codigo": "913.00",
+     "nombre": "Préstamos de entes de fuera del sector público a largo plazo",
+     "y2024": 8618380.98,
+     "y2025": 20457492.93,
+     "y2026": 20161623.64
+    }
+   ]
+  }
+ ]
+}
