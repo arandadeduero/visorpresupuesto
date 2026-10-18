@@ -1,0 +1,83 @@
+site/js/resumen.js
+  s_c524ba238f0f5a::t_6fc81509357bf5 5-12,28,30-33,45-50
+site/js/home.js
+  s_c524ba238f0f5a::t_6fc81509357bf5 4-5,22-23,41-48,68-87
+tools/budget/labels.py
+  s_c524ba238f0f5a::t_8b827bcdd71dcf 42-73
+site/js/insights.js
+  s_c524ba238f0f5a::t_59ecf94dfbcb0d 1-39
+site/data/2026/gastos.json
+  s_c524ba238f0f5a::t_8b827bcdd71dcf 94-249,255,263,271,279,287,295,303,311,319,327,335,343,351,359,367,375,383,391,399,407,415,423,431,439,447,455,463,471,479,487,495,503,511,519,527,535,543,551,559,567,575,583,591,599,607,615,623,631,639,647,655,663,671,679,687,695,703,711,719,727,735,743,751,759,767,775,783,791,799,807
+site/js/ingresos.js
+  s_c524ba238f0f5a::t_5aa39d50b17a40 3,19-20,27,37
+site/js/lecturas.js
+  s_c524ba238f0f5a::t_f40fb2ca786d34 1-54
+tools/budget/gastos.py
+  s_c524ba238f0f5a::t_8b827bcdd71dcf 6,71,77-88,94
+site/js/layout.js
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 12-15
+  s_c524ba238f0f5a::t_5aa39d50b17a40 39
+tools/tests/test_resumen.py
+  s_c524ba238f0f5a::t_c9271a7c86190a 44-49
+site/js/ui.js
+  s_c524ba238f0f5a::t_5aa39d50b17a40 4,32-37
+site/indicadores.html
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 1-23
+site/js/descargas.js
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 1-21
+site/js/gastos-tree.test.js
+  s_c524ba238f0f5a::t_7925bb5cf027c0 10-11,13-16,19-21,27
+site/js/guia.js
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 1-32
+site/js/indicadores.js
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 1-47
+tools/tests/test_gastos.py
+  s_c524ba238f0f5a::t_c9271a7c86190a 49-66
+site/data/2026/resumen.json
+  s_c524ba238f0f5a::t_8b827bcdd71dcf 4-6
+tools/budget/resumen.py
+  s_c524ba238f0f5a::t_8b827bcdd71dcf 3,40,44-46
+site/js/calculadora.js
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 1-39
+site/css/styles.css
+  s_c524ba238f0f5a::t_6fc81509357bf5 125-134
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 115-124
+site/js/lecturas.test.js
+  s_c524ba238f0f5a::t_52e3baf443871a 1-57
+site/calculadora.html
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 1-23
+site/js/calidad.test.js
+  s_c524ba238f0f5a::t_3b849c40dc82c2 12
+site/descargas.html
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 1-23
+site/js/insights.test.js
+  s_c524ba238f0f5a::t_7925bb5cf027c0 1-55
+site/js/gastos.js
+  s_c524ba238f0f5a::t_5aa39d50b17a40 4,8-9,16-17,46
+  s_c524ba238f0f5a::t_59ecf94dfbcb0d 11,21
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 25,50-54,56
+site/js/gastos-tree.js
+  s_c524ba238f0f5a::t_59ecf94dfbcb0d 20,28,39,47-50
+site/guia.html
+  s_c524ba238f0f5a::t_b98f2a79f1ff42 1-23
+tools/tests/test_site.py
+  s_c524ba238f0f5a::t_93eca6448b9692 13-19
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_c524ba238f0f5a::t_e25bf8d2c19e42 108-120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f6d5b99458dbc9055d9bcb350121197d1858e23d",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
