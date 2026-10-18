@@ -27,6 +27,7 @@ jobs:
       - name: Los datos generados están al día y cuadran
         run: |
           for carpeta in [0-9][0-9][0-9][0-9]; do
+            ls "$carpeta"/*.xlsx > /dev/null 2>&1 || continue
             salida=$(python tools/convert.py "$carpeta")
             echo "$salida"
             if echo "$salida" | grep -q AVISO; then
