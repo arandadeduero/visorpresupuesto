@@ -41,9 +41,9 @@ def parse_gastos(year: int) -> dict:
         elif _es_codigo_programa(prog) and nombre_txt and row[4] == 2025.0:
             programa = code_str(prog)
             nombres_programa.setdefault(programa, sentence_case(nombre_txt))
-        elif econ is not None and programa is not None and nombre_txt:
+        elif econ is not None and programa is not None:
             partidas.append(
-                {"cap": cap, "programa": programa, "codigo": code_str(econ), "nombre": sentence_case(nombre_txt), "y2025": y2025, "y2026": y2026}
+                {"cap": cap, "programa": programa, "codigo": code_str(econ), "nombre": sentence_case(nombre_txt) if nombre_txt else f"Partida {code_str(econ)} (sin descripción)", "y2025": y2025, "y2026": y2026}
             )
 
     # Capítulo 1: una sola partida por programa con el total.

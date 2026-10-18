@@ -2,8 +2,8 @@
 import { esc } from "./layout.js";
 import { formatEuros, formatVariation } from "./format.js";
 
-/** «▲ +5 % frente a 2025», «nuevo en 2026»… con el color y la flecha adecuados (nunca solo color). */
-export function variacionHtml(actual, anterior, etiqueta = "frente a 2025") {
+/** «▲ +5 % frente al año anterior», «nuevo este año»… con el color y la flecha adecuados (nunca solo color). */
+export function variacionHtml(actual, anterior, etiqueta = "frente al año anterior") {
   const v = formatVariation(actual, anterior);
   if (v.dir === "na") return "";
   const flecha = { up: "▲", down: "▼", flat: "＝", new: "●" }[v.dir];

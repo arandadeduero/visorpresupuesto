@@ -19,7 +19,7 @@ runPage("resumen", async ({ anio, main, load }) => {
   const r = await load("resumen");
   const prestamos = r.ingresosPorCapitulo.find((c) => c.cap === 9).y2026;
   const filas = (caps) => caps.map((c) => `<tr><td>${esc(c.corto)}</td><td class="num">${formatEuros(c.y2025)}</td><td class="num">${formatEuros(c.y2026)}</td></tr>`);
-  const cab = [{ texto: "Concepto" }, { texto: "2025", num: true }, { texto: `${anio}`, num: true }];
+  const cab = [{ texto: "Concepto" }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }];
 
   main.innerHTML = `
     <h1>Resumen del presupuesto ${anio}</h1>
@@ -32,5 +32,5 @@ runPage("resumen", async ({ anio, main, load }) => {
       <h3>Ingresos</h3>${tablaHtml(cab, filas(r.ingresosPorCapitulo))}
       <h3>Gastos</h3>${tablaHtml(cab, filas(r.gastosPorCapitulo))}
     </details>
-    <p class="muted">La cifra de 2025 son los créditos del presupuesto de 2025.</p>`;
+    <p class="muted">La cifra de ${anio - 1} son los créditos del presupuesto de ${anio - 1}.</p>`;
 });

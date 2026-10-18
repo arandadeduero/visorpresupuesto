@@ -38,6 +38,10 @@ El script avisa si algún total de los Excel no cuadra con el resumen (A1).
 
 El selector de año de la web lee `site/data/index.json`, que el script actualiza solo.
 
+**Limitaciones actuales del conversor** (a revisar al añadir el primer año nuevo):
+- Los JSON usan las claves `y2025`/`y2026` (y `y2024` en ingresos) con el significado «año anterior» / «año del presupuesto»; los textos de la web ya se derivan del año elegido.
+- El conversor de deuda (`tools/budget/deuda.py`) espera el formato de `A13.1` de 2026: columnas de deuda viva desde 2023 hasta 2026 y un préstamo previsto sin entidad. Con otra estructura habrá que adaptarlo.
+
 ## Tests
 
 ```bash

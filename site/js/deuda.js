@@ -2,6 +2,7 @@ import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
 import { PALETTE, barChart } from "./charts.js";
 import { tablaHtml } from "./ui.js";
+import { explicaDosPrestamos } from "./deuda-texto.js";
 
 const fecha = (iso) => iso.split("-").reverse().join("/");
 const mes = (iso) => new Date(`${iso}T12:00:00`).toLocaleDateString("es-ES", { month: "long", year: "numeric" });
@@ -21,8 +22,8 @@ runPage("deuda", async ({ anio, main, load }) => {
 
     <div class="aviso"><h3>Previsión: un préstamo nuevo de ${formatEuros(pv.importe, { compact: true })}</h3>
       <p>El presupuesto prevé un préstamo de <strong>${formatEuros(pv.importe)}</strong> para ${esc(mes(pv.fecha))}, que se empezaría a devolver en ${esc(mes(pv.primeraAmortizacion))} y terminaría en ${esc(mes(pv.ultimaAmortizacion))} (${esc(pv.tipoInteres)}). Si se firmara, la deuda a 31 de diciembre de ${anio} sería de <strong>${formatEuros(d.titular.vivaFinConPrevisto)}</strong>.</p>
-      <p><strong>Solo se formalizará si es necesario</strong>, según la liquidación y la ejecución del presupuesto. El Ayuntamiento puede usar remanentes de tesorería (ahorros de años anteriores) para pagar parte de las inversiones en lugar de pedir todo el dinero a los bancos.</p>
-      <p>Verás dos cifras de préstamo en el presupuesto: <strong>${formatEuros(pv.importe)}</strong> en este anexo de deuda y <strong>${formatEuros(prestamoInversiones)}</strong> como préstamo en la financiación de las <a href="inversiones.html?anio=${anio}">inversiones</a> y en los ingresos. Son estimaciones y ninguna es una deuda ya contraída. Por eso el gráfico de abajo no las incluye.</p></div>
+      <p><strong>Solo se formalizará si es necesario</strong>, según la liquidación y la ejecución del presupuesto.</p>
+      <p>${esc(explicaDosPrestamos(pv.importe, prestamoInversiones))} Por eso el gráfico de abajo no las incluye. Las cifras de préstamo en las <a href="inversiones.html?anio=${anio}">inversiones</a> se explican en esa página.</p></div>
 
     <h2>Cómo evoluciona la deuda actual</h2>
     <p class="muted">Solo con los préstamos que ya existen. Cada columna es lo que se debe a 31 de diciembre.</p>

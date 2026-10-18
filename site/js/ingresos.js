@@ -37,7 +37,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
 
   const arbol = main.querySelector("#arbol");
   const resultados = main.querySelector("#resultados");
-  const cab = [{ texto: "Concepto" }, { texto: "2024", num: true }, { texto: "2025", num: true }, { texto: `${anio}`, num: true }, { texto: "Cambio" }];
+  const cab = [{ texto: "Concepto" }, { texto: `${anio - 2}`, num: true }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }, { texto: "Cambio" }];
   const fila = (x) => `<tr><td>${esc(x.nombre)}</td><td class="num">${formatEuros(x.y2024)}</td><td class="num">${formatEuros(x.y2025)}</td><td class="num">${formatEuros(x.y2026)}</td><td>${variacionHtml(x.y2026, x.y2025, "")}</td></tr>`;
 
   arbol.addEventListener("click", (e) => {

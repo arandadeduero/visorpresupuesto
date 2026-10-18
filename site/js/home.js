@@ -9,11 +9,11 @@ const EXPLICACION = {
   Otros: "Intereses y devolución de préstamos, ayudas a entidades y un fondo para imprevistos.",
 };
 
-function comparacion(total, anterior) {
+function comparacion(total, anterior, anio) {
   const v = formatVariation(total, anterior);
-  if (v.dir === "up") return `un ${v.text.slice(1)} más que en 2025`;
-  if (v.dir === "down") return `un ${v.text.slice(1)} menos que en 2025`;
-  return "igual que en 2025";
+  if (v.dir === "up") return `un ${v.text.slice(1)} más que en ${anio - 1}`;
+  if (v.dir === "down") return `un ${v.text.slice(1)} menos que en ${anio - 1}`;
+  return `igual que en ${anio - 1}`;
 }
 
 runPage("inicio", async ({ anio, main, load }) => {
@@ -30,7 +30,7 @@ runPage("inicio", async ({ anio, main, load }) => {
     <h1>Por cada 100&nbsp;€ que gasta el Ayuntamiento en ${anio}…</h1>
     <div class="stackbar" role="group" aria-label="Reparto de cada 100 euros">${segmentos}</div>
     <p class="detalle-seg" id="detalle-seg" aria-live="polite"></p>
-    <p class="lead">Total previsto: <strong>${formatEuros(r.totalGastos)}</strong>, ${comparacion(r.totalGastos, r.totalGastos2025)}.</p>
+    <p class="lead">Total previsto: <strong>${formatEuros(r.totalGastos)}</strong>, ${comparacion(r.totalGastos, r.totalGastos2025, anio)}.</p>
     <details><summary>Ver como tabla</summary>
       <div class="tabla-scroll"><table class="datos"><thead><tr><th>En qué</th><th class="num">Por cada 100 €</th><th class="num">Importe</th></tr></thead><tbody>${filas}</tbody></table></div>
     </details>
