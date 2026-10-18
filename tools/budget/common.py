@@ -45,22 +45,21 @@ def code_str(v):
     return str(v).strip()
 
 
-_SIGLA = re.compile(r"^[A-ZÁÉÍÓÚÑ]{2,4}$")
+_SIGLAS = {"IVA", "ARU", "ORA", "IBI", "ICIO", "IAE", "IVTM", "UNED", "FEMP", "EDAR", "PRTR"}
 
 
 def sentence_case(text: str) -> str:
-    """«IMPUESTO SOBRE EL IVA» → «Impuesto sobre el IVA». No toca texto que ya tiene minúsculas."""
+    """«IMPUESTO SOBRE EL IVA» → «Impuesto sobre el IVA». Respeta los textos que ya están en minúsculas
+    y las palabras que ya llevan minúsculas (p. ej. «(Ley 7/2022)») dentro de un texto en mayúsculas."""
     text = " ".join(text.split())
-    if not text or any(c.islower() for c in text):
+    letras = [c for c in text if c.isalpha()]
+    if not letras or sum(c.isupper() for c in letras) / len(letras) < 0.6:
         return text
-    words = text.split(" ")
     out = []
-    for i, w in enumerate(words):
+    for w in text.split(" "):
         core = re.sub(r"[^\wÁÉÍÓÚÑ]", "", w)
-        if _SIGLA.match(core) and i > 0 and core in {"IVA", "ARU", "ORA", "IBI", "ICIO", "IAE", "IVTM"}:
-            out.append(w)
-        else:
-            out.append(w.lower())
+        conserva = any(c.islower() for c in w) or core in _SIGLAS
+        out.append(w if conserva else w.lower())
     out[0] = out[0][:1].upper() + out[0][1:]
     return " ".join(out)
 
