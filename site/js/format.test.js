@@ -7,6 +7,8 @@ const NBSP = " ";
 test("formatEuros agrupa miles y redondea", () => {
   assert.equal(formatEuros(1234567.8), `1.234.568${NBSP}€`);
   assert.equal(formatEuros(950), `950${NBSP}€`);
+  assert.equal(formatEuros(3000), `3.000${NBSP}€`);
+  assert.equal(formatEuros(-12500.4), `-12.500${NBSP}€`);
 });
 
 test("formatEuros sin dato muestra una raya", () => {
