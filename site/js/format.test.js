@@ -49,3 +49,10 @@ test("matches ignora tildes y mayúsculas", () => {
 test("sumBy suma ignorando valores vacíos", () => {
   assert.equal(sumBy([{ v: 1 }, { v: null }, { v: 2.5 }], (x) => x.v), 3.5);
 });
+
+test("matches entiende las siglas habituales de los impuestos", () => {
+  assert.equal(matches("Impuesto sobre bienes inmuebles de naturaleza urbana", "IBI"), true);
+  assert.equal(matches("Impuesto sobre actividades económicas", "iae"), true);
+  assert.equal(matches("Impuesto sobre vehículos de tracción mecánica", "IVTM"), true);
+  assert.equal(matches("Tasa cementerio", "IBI"), false);
+});

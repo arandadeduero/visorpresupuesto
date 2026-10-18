@@ -42,4 +42,23 @@ def test_check_totals_avisa_de_descuadres():
     roto = copy.deepcopy(data)
     next(c for c in roto["gastos"]["capitulos"] if c["cap"] == 2)["y2026"] += 500
     avisos = conv.check_totals(roto)
-    assert len(avisos) == 1 and "capítulo 2" in avisos[0]
+    assert avisos and all("capítulo 2" in a for a in avisos)
+
+
+def _datos():
+    return {n: getattr(__import__(f"budget.{n}", fromlist=["x"]), f"parse_{n}")(2026) for n in ["resumen", "ingresos", "gastos", "inversiones"]}
+
+
+def test_check_totals_avisa_si_las_partidas_no_suman_el_capitulo():
+    roto = copy.deepcopy(_datos())
+    roto["gastos"]["partidas"][-1]["y2026"] += 700
+    avisos = conv.check_totals(roto)
+    assert len(avisos) == 1 and "partidas" in avisos[0] and "capítulo" in avisos[0]
+
+
+def test_check_totals_avisa_si_los_proyectos_no_suman_las_inversiones():
+    roto = copy.deepcopy(_datos())
+    roto["inversiones"]["programas"][0]["proyectos"][0]["importe"] += 300
+    roto["inversiones"]["programas"][0]["total"] += 300
+    avisos = conv.check_totals(roto)
+    assert len(avisos) == 1 and "proyectos" in avisos[0]

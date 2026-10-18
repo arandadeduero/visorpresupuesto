@@ -18,7 +18,7 @@ runPage("gastos", async ({ anio, main, load }) => {
         <button type="button" data-modo="capitulo" aria-pressed="false">¿Qué tipo de gasto es?</button>
       </div>
     </div>
-    <p><label>Buscar un gasto <input type="search" id="buscar" placeholder="Por ejemplo: energía, parques, deportes…" autocomplete="off"></label></p>
+    <p><label>Buscar un gasto <input type="search" id="buscar" placeholder="Por ejemplo: energía, parques, cultura…" autocomplete="off"></label></p>
     <div id="arbol"></div>
     <div id="resultados" hidden></div>
     <div class="ayuda"><strong>Sobre el personal:</strong> los sueldos y cotizaciones se muestran agrupados por programa, sin detalle por categoría. El resto de gastos llega hasta la partida concreta.</div>`;
@@ -76,7 +76,7 @@ runPage("gastos", async ({ anio, main, load }) => {
     if (!activa) return;
     resultados.innerHTML = filas.length
       ? `<p class="muted">${filas.length} resultado(s)</p>` + tablaHtml(
-          [{ texto: "Gasto" }, { texto: "Programa" }, { texto: "Tipo de gasto" }, { texto: "2025", num: true }, { texto: `${anio}`, num: true }],
+          [{ texto: "Gasto" }, { texto: "Programa" }, { texto: "Tipo de gasto" }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }],
           filas.map((f) => `<tr><td>${esc(f.nombre)}</td><td>${esc(f.programa)}</td><td>${esc(f.capitulo)}</td><td class="num">${formatEuros(f.y2025)}</td><td class="num">${formatEuros(f.y2026)}</td></tr>`),
         )
       : `<p>No hay gastos que coincidan con «${esc(consulta)}».</p>`;

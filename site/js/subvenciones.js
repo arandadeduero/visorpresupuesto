@@ -9,7 +9,7 @@ runPage("subvenciones", async ({ anio, main, load }) => {
 
   main.innerHTML = `
     <h1>Subvenciones <span class="muted">${anio}</span></h1>
-    <p class="lead">El Ayuntamiento prevé dar <strong>${formatEuros(d.total2026)}</strong> a asociaciones y entidades por convenio (en 2025: ${formatEuros(d.total2025)}).</p>
+    <p class="lead">El Ayuntamiento prevé dar <strong>${formatEuros(d.total2026)}</strong> a asociaciones y entidades por convenio (en ${anio - 1}: ${formatEuros(d.total2025)}).</p>
     <div class="controles"><div class="pestanas" role="group" aria-label="Cómo ver las subvenciones">
       <button type="button" data-vista="actividad" aria-pressed="true">Por actividad</button>
       <button type="button" data-vista="entidad" aria-pressed="false">Por entidad</button></div></div>
@@ -29,7 +29,7 @@ runPage("subvenciones", async ({ anio, main, load }) => {
       <div id="entidades"></div>
     </section>`;
 
-  const cab = [{ texto: "Entidad" }, { texto: "Para qué" }, { texto: "2025", num: true }, { texto: `${anio}`, num: true }];
+  const cab = [{ texto: "Entidad" }, { texto: "Para qué" }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }];
   main.querySelector("#vista-actividad").addEventListener("click", (e) => {
     const boton = e.target.closest("button.fila");
     if (!boton) return;
@@ -51,7 +51,7 @@ runPage("subvenciones", async ({ anio, main, load }) => {
     const filas = d.entidades.filter((e) => matches(e.entidad, consulta));
     lista.innerHTML = filas.length
       ? `<p class="muted">${filas.length} entidad(es) · ${formatEuros(filas.reduce((s, e) => s + e.total2026, 0))} en ${anio}</p>` + tablaHtml(
-          [{ texto: "Entidad" }, { texto: `Recibe en ${anio}`, num: true }, { texto: "2025", num: true }, { texto: "Actividades" }],
+          [{ texto: "Entidad" }, { texto: `Recibe en ${anio}`, num: true }, { texto: `${anio - 1}`, num: true }, { texto: "Actividades" }],
           filas.map((e) => `<tr><td>${esc(e.entidad)}</td><td class="num">${formatEuros(e.total2026)}</td><td class="num">${formatEuros(e.total2025)}</td><td>${esc(e.programas.join(", "))}</td></tr>`),
         )
       : `<p>No hay entidades que coincidan con «${esc(consulta)}».</p>`;
