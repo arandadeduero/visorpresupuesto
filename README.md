@@ -49,9 +49,11 @@ El selector de año de la web lee `site/data/index.json`, que el script actualiz
 node --test site/js/      # funciones de formato, búsqueda y árbol de gastos
 ```
 
-## Publicar en GitHub Pages
+## Publicación y comprobaciones automáticas
 
-Una sola vez, en el repositorio de GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**. A partir de ahí, cada push a `main` publica la web en `https://arandadeduero.github.io/visorpresupuesto/`.
+- **En cada Pull Request** (`.github/workflows/ci.yml`): tests del conversor y de la web (`pytest`), comprobación de que los JSON de `site/data/` están al día y cuadran con los Excel, y tests de JavaScript.
+- **En cada push a `main`** (`.github/workflows/pages.yml`): se repiten los tests y, solo si pasan, se publica `site/` en GitHub Pages. Al final, el propio workflow comprueba que la web publicada carga (portada, datos y Chart.js).
+- La web se sirve en **https://presupuestos.arandadeduero.dev/** (dominio configurado en *Settings → Pages*, con origen «GitHub Actions»).
 
 ## Actualizar Chart.js
 

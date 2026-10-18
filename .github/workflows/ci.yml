@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.x"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Tests del conversor y de la web
+        run: pytest -q
+
+      - name: Los datos generados están al día y cuadran
+        run: |
+          for carpeta in [0-9][0-9][0-9][0-9]; do
+            salida=$(python tools/convert.py "$carpeta")
+            echo "$salida"
+            if echo "$salida" | grep -q AVISO; then
+              echo "::error::Los totales de $carpeta no cuadran (ver AVISO arriba)"; exit 1
+            fi
+          done
+          git diff --exit-code site/data
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      - name: Tests de JavaScript
+        run: node --test site/js/
