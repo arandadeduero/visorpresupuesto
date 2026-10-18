@@ -1,0 +1,21 @@
+tools/budget/deuda.py
+  s_c524ba238f0f5a::t_6af2a4112b201b 1-97
+tools/tests/test_deuda.py
+  s_c524ba238f0f5a::t_4cea5c2b6c62a7 1-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eb8cae6a988a376ce269b167b80d71baa9e8878a",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
