@@ -1,0 +1,21 @@
+tools/tests/test_ingresos.py
+  s_8ce557d6a3461f::t_917c047845b9c3 1-38
+tools/budget/ingresos.py
+  s_8ce557d6a3461f::t_c381d66039fc3e 1-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1367352f305b42bbd6b2a4e87b3547619f1e2b22",
+  "prompts": {},
+  "sessions": {
+    "s_8ce557d6a3461f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f599689a-df4e-42d8-af45-c15da5c62d9b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
