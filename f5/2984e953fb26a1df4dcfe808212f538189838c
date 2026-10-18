@@ -1,0 +1,21 @@
+tools/tests/test_resumen.py
+  s_8ce557d6a3461f::t_a12a33ec197148 1-43
+tools/budget/resumen.py
+  s_8ce557d6a3461f::t_6407cfbce609ff 1-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f52984e953fb26a1df4dcfe808212f538189838c",
+  "prompts": {},
+  "sessions": {
+    "s_8ce557d6a3461f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f599689a-df4e-42d8-af45-c15da5c62d9b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
