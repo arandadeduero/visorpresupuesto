@@ -26,6 +26,10 @@ def test_sentence_case_conserva_siglas_y_textos_ya_en_minusculas():
     assert sentence_case("Sueldos del Grupo C1") == "Sueldos del Grupo C1"
 
 
+def test_sentence_case_con_un_fragmento_ya_en_minusculas():
+    assert sentence_case("TASA DE BASURAS: RECOGIDA Y TRANSPORTE (Ley 7/2022)") == "Tasa de basuras: recogida y transporte (Ley 7/2022)"
+
+
 def test_largest_remainder_suma_exactamente_100():
     assert largest_remainder([37.84, 33.64, 24.29, 4.22]) == [38, 34, 24, 4]
 
