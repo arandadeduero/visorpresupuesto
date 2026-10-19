@@ -62,3 +62,48 @@ def test_solo_2026_trae_tres_anios():
     for anio in (2024, 2025):
         assert all(x["anterior2"] is None for c in parse_ingresos(anio)["capitulos"] for x in c["conceptos"])
     assert any(x["anterior2"] for c in parse_ingresos(2026)["capitulos"] for x in c["conceptos"])
+
+
+# Artículos (dos primeros dígitos del concepto): 11 «Impuestos sobre el capital», 29 «Otros impuestos indirectos»,
+# 91 «Préstamos recibidos en euros». Importes del año del presupuesto, leídos de las filas «ARTÍCULO nn» de cada A2.
+ARTICULOS = {
+    2024: {"11": 13228000, "29": 900000, "91": 8618380.98},
+    2025: {"11": 14320000, "29": 900000, "91": 20457492.93},
+    2026: {"11": 14850000, "29": 900000, "91": 20161623.64},
+}
+
+
+def articulo(d, codigo):
+    return next(a for c in d["capitulos"] for a in c["articulos"] if a["codigo"] == codigo)
+
+
+def test_los_articulos_cuadran_con_el_excel(caso):
+    anio, d, _ = caso
+    for codigo, importe in ARTICULOS[anio].items():
+        assert articulo(d, codigo)["actual"] == pytest.approx(importe, abs=0.01)
+
+
+def test_prestamos_es_el_articulo_91_con_nombre_oficial():
+    a = articulo(parse_ingresos(2026), "91")
+    assert a["actual"] == 20161623.64 and a["anterior"] == 20457492.93 and a["anterior2"] == 8618380.98
+    assert a["nombre"] == "Préstamos recibidos" and a["oficial"] == "Préstamos recibidos en euros"
+
+
+def test_los_articulos_suman_el_capitulo_y_todos_tienen_nombre(caso):
+    _, d, _ = caso
+    for c in d["capitulos"]:
+        assert c["articulos"], f"capítulo {c['cap']} sin artículos"
+        for campo in ("anterior", "actual"):
+            if c[campo] is not None:
+                assert sum(a[campo] or 0 for a in c["articulos"]) == pytest.approx(c[campo], abs=1)
+        for a in c["articulos"]:
+            assert a["codigo"].startswith(str(c["cap"]))
+            assert not a["nombre"].startswith("Artículo "), f"artículo {a['codigo']} sin nombre oficial"
+        assert [a["codigo"] for a in c["articulos"]] == sorted(a["codigo"] for a in c["articulos"])
+        for x in c["conceptos"]:
+            assert x["articulo"] == x["codigo"][:2]
+
+
+def test_las_tasas_por_dominio_publico_son_el_articulo_33():
+    a = articulo(parse_ingresos(2026), "33")
+    assert a["oficial"].startswith("Tasas por la utilización privativa")

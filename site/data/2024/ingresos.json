@@ -11,6 +11,7 @@
    "conceptos": [
     {
      "codigo": "112",
+     "articulo": "11",
      "nombre": "Impuesto sobre bienes inmuebles de naturaleza rústica",
      "anterior2": null,
      "anterior": 527000.0,
@@ -18,6 +19,7 @@
     },
     {
      "codigo": "113",
+     "articulo": "11",
      "nombre": "Impuesto sobre bienes inmuebles de naturaleza urbana",
      "anterior2": null,
      "anterior": 10653000.0,
@@ -25,6 +27,7 @@
     },
     {
      "codigo": "115",
+     "articulo": "11",
      "nombre": "Impuesto sobre vehículos de tracción mecánica",
      "anterior2": null,
      "anterior": 1710000.0,
@@ -32,6 +35,7 @@
     },
     {
      "codigo": "116",
+     "articulo": "11",
      "nombre": "Impuesto sobre incremento de valor de los terrenos naturaleza urbana",
      "anterior2": null,
      "anterior": 410000.0,
@@ -39,7 +43,26 @@
     },
     {
      "codigo": "130",
+     "articulo": "13",
      "nombre": "Impuesto sobre actividades económicas",
+     "anterior2": null,
+     "anterior": 1350000.0,
+     "actual": 1450000.0
+    }
+   ],
+   "articulos": [
+    {
+     "codigo": "11",
+     "nombre": "Impuestos sobre el capital",
+     "oficial": "Impuestos sobre el capital",
+     "anterior2": null,
+     "anterior": 13300000.0,
+     "actual": 13228000.0
+    },
+    {
+     "codigo": "13",
+     "nombre": "Impuesto sobre actividades económicas",
+     "oficial": "Impuesto sobre las Actividades Económicas",
      "anterior2": null,
      "anterior": 1350000.0,
      "actual": 1450000.0
@@ -56,7 +79,18 @@
    "conceptos": [
     {
      "codigo": "290",
+     "articulo": "29",
      "nombre": "Impuesto sobre instalaciones, construcciones y obras",
+     "anterior2": null,
+     "anterior": 770000.0,
+     "actual": 900000.0
+    }
+   ],
+   "articulos": [
+    {
+     "codigo": "29",
+     "nombre": "Otros impuestos indirectos",
+     "oficial": "Otros impuestos indirectos",
      "anterior2": null,
      "anterior": 770000.0,
      "actual": 900000.0
@@ -73,6 +107,7 @@
    "conceptos": [
     {
      "codigo": "300.00",
+     "articulo": "30",
      "nombre": "Tasa abastecimiento agua",
      "anterior2": null,
      "anterior": 2300000.0,
@@ -80,6 +115,7 @@
     },
     {
      "codigo": "305.00",
+     "articulo": "30",
      "nombre": "Tasa extinción de incendios",
      "anterior2": null,
      "anterior": 10000.0,
@@ -87,6 +123,7 @@
     },
     {
      "codigo": "321.00",
+     "articulo": "32",
      "nombre": "Tasa licencias urbanísticas",
      "anterior2": null,
      "anterior": 225000.0,
@@ -94,6 +131,7 @@
     },
     {
      "codigo": "325.00",
+     "articulo": "32",
      "nombre": "Tasa expedición de documentos",
      "anterior2": null,
      "anterior": 5000.0,
@@ -101,6 +139,7 @@
     },
     {
      "codigo": "326.00",
+     "articulo": "32",
      "nombre": "Tasa retirada de vehículos",
      "anterior2": null,
      "anterior": 45000.0,
@@ -108,6 +147,7 @@
     },
     {
      "codigo": "327.00",
+     "articulo": "32",
      "nombre": "Tasa participación exámentes y procesos selectivos",
      "anterior2": null,
      "anterior": 10000.0,
@@ -115,6 +155,7 @@
     },
     {
      "codigo": "329.00",
+     "articulo": "32",
      "nombre": "Tasa autotaxis",
      "anterior2": null,
      "anterior": 500.0,
@@ -122,6 +163,7 @@
     },
     {
      "codigo": "329.01",
+     "articulo": "32",
      "nombre": "Tasa apertura establecimientos",
      "anterior2": null,
      "anterior": 8000.0,
@@ -129,6 +171,7 @@
     },
     {
      "codigo": "330.00",
+     "articulo": "33",
      "nombre": "Tasa por estacionamiento de vehículos (ORA)",
      "anterior2": null,
      "anterior": 380000.0,
@@ -136,6 +179,7 @@
     },
     {
      "codigo": "331.00",
+     "articulo": "33",
      "nombre": "Tasa entrada de vehículos a través de las aceras",
      "anterior2": null,
      "anterior": 191000.0,
@@ -143,6 +187,7 @@
     },
     {
      "codigo": "332.00",
+     "articulo": "33",
      "nombre": "Tasa utilización privativa empresas explotadoras de servicios y suministros",
      "anterior2": null,
      "anterior": 720000.0,
@@ -150,6 +195,7 @@
     },
     {
      "codigo": "335.00",
+     "articulo": "33",
      "nombre": "Tasa por ocupación de la vía pública con terrazas y veladores",
      "anterior2": null,
      "anterior": 40000.0,
@@ -157,6 +203,7 @@
     },
     {
      "codigo": "339.00",
+     "articulo": "33",
      "nombre": "Tasa por otras ocupaciones del dominio público local",
      "anterior2": null,
      "anterior": 30000.0,
@@ -164,6 +211,7 @@
     },
     {
      "codigo": "339.01",
+     "articulo": "33",
      "nombre": "Tasa por ocupación de la vía pública con quioscos",
      "anterior2": null,
      "anterior": 25000.0,
@@ -171,6 +219,7 @@
     },
     {
      "codigo": "339.02",
+     "articulo": "33",
      "nombre": "Tasa por ocupación de la vía pública con barracas y puestos de feria",
      "anterior2": null,
      "anterior": 37000.0,
@@ -178,6 +227,7 @@
     },
     {
      "codigo": "329.03",
+     "articulo": "32",
      "nombre": "Tasa celebración matrimonios civiles",
      "anterior2": null,
      "anterior": 1200.0,
@@ -185,6 +235,7 @@
     },
     {
      "codigo": "339.03",
+     "articulo": "33",
      "nombre": "Tasa por ocupación de vivienda pública",
      "anterior2": null,
      "anterior": 0.0,
@@ -192,6 +243,7 @@
     },
     {
      "codigo": "339.04",
+     "articulo": "33",
      "nombre": "Tasa cementerio",
      "anterior2": null,
      "anterior": 40000.0,
@@ -199,6 +251,7 @@
     },
     {
      "codigo": "339.09",
+     "articulo": "33",
      "nombre": "Otras tasas por utilización privativa del dominio publico local",
      "anterior2": null,
      "anterior": 15000.0,
@@ -206,6 +259,7 @@
     },
     {
      "codigo": "341.00",
+     "articulo": "34",
      "nombre": "Precio público ayuda a domicilio",
      "anterior2": null,
      "anterior": 140000.0,
@@ -213,6 +267,7 @@
     },
     {
      "codigo": "341.02",
+     "articulo": "34",
      "nombre": "Precio público servicio de comidas",
      "anterior2": null,
      "anterior": 100000.0,
@@ -220,6 +275,7 @@
     },
     {
      "codigo": "341.03",
+     "articulo": "34",
      "nombre": "Precio público atención preventiva",
      "anterior2": null,
      "anterior": 45000.0,
@@ -227,6 +283,7 @@
     },
     {
      "codigo": "342.00",
+     "articulo": "34",
      "nombre": "Precio público escuela de música",
      "anterior2": null,
      "anterior": 150000.0,
@@ -234,6 +291,7 @@
     },
     {
      "codigo": "342.01",
+     "articulo": "34",
      "nombre": "Precio público escuela de folclore",
      "anterior2": null,
      "anterior": 35000.0,
@@ -241,6 +299,7 @@
     },
     {
      "codigo": "342.02",
+     "articulo": "34",
      "nombre": "Precio público escuela de cerámica",
      "anterior2": null,
      "anterior": 32000.0,
@@ -248,6 +307,7 @@
     },
     {
      "codigo": "342.03",
+     "articulo": "34",
      "nombre": "Precio público actividades juveniles",
      "anterior2": null,
      "anterior": 6000.0,
@@ -255,6 +315,7 @@
     },
     {
      "codigo": "342.04",
+     "articulo": "34",
      "nombre": "Precio público escuelas infantiles municipales",
      "anterior2": null,
      "anterior": 74400.0,
@@ -262,6 +323,7 @@
     },
     {
      "codigo": "342.05",
+     "articulo": "34",
      "nombre": "Precio público cursos de verano",
      "anterior2": null,
      "anterior": 500.0,
@@ -269,6 +331,7 @@
     },
     {
      "codigo": "342.06",
+     "articulo": "34",
      "nombre": "Precio público otros cursos escuela de cerámica",
      "anterior2": null,
      "anterior": 18000.0,
@@ -276,6 +339,7 @@
     },
     {
      "codigo": "343.00",
+     "articulo": "34",
      "nombre": "Precio público utilización instalaciones deportivas",
      "anterior2": null,
      "anterior": 1000.0,
@@ -283,6 +347,7 @@
     },
     {
      "codigo": "344.00",
+     "articulo": "34",
      "nombre": "Precio público espectáculos casa de cultura",
      "anterior2": null,
      "anterior": 78000.0,
@@ -290,6 +355,7 @@
     },
     {
      "codigo": "345.00",
+     "articulo": "34",
      "nombre": "Precio público transporte urbano de viajeros",
      "anterior2": null,
      "anterior": 45000.0,
@@ -297,6 +363,7 @@
     },
     {
      "codigo": "349.00",
+     "articulo": "34",
      "nombre": "Precio público actividades acción social",
      "anterior2": null,
      "anterior": 20000.0,
@@ -304,6 +371,7 @@
     },
     {
      "codigo": "349.01",
+     "articulo": "34",
      "nombre": "Precio público de la banda de musica",
      "anterior2": null,
      "anterior": 1200.0,
@@ -311,6 +379,7 @@
     },
     {
      "codigo": "349.02",
+     "articulo": "34",
      "nombre": "Precio público ferias",
      "anterior2": null,
      "anterior": 5000.0,
@@ -318,6 +387,7 @@
     },
     {
      "codigo": "349.03",
+     "articulo": "34",
      "nombre": "Precio público utilización recinto ferial",
      "anterior2": null,
      "anterior": 5000.0,
@@ -325,6 +395,7 @@
     },
     {
      "codigo": "349.05",
+     "articulo": "34",
      "nombre": "Precio público otras actividades",
      "anterior2": null,
      "anterior": 1000.0,
@@ -332,6 +403,7 @@
     },
     {
      "codigo": "351.00",
+     "articulo": "35",
      "nombre": "Contribución especial unespa. servicio extinción de incendios",
      "anterior2": null,
      "anterior": 170000.0,
@@ -339,6 +411,7 @@
     },
     {
      "codigo": "360.00",
+     "articulo": "36",
      "nombre": "Ventas efectos inútiles",
      "anterior2": null,
      "anterior": 315000.0,
@@ -346,6 +419,7 @@
     },
     {
      "codigo": "361.00",
+     "articulo": "36",
      "nombre": "Ventas trabajos otras empresas",
      "anterior2": null,
      "anterior": 500.0,
@@ -353,6 +427,7 @@
     },
     {
      "codigo": "362.00",
+     "articulo": "36",
      "nombre": "Ventas otros efectos",
      "anterior2": null,
      "anterior": 500.0,
@@ -360,6 +435,7 @@
     },
     {
      "codigo": "389.00",
+     "articulo": "38",
      "nombre": "Reintegros de presupuestos cerrados",
      "anterior2": null,
      "anterior": 10000.0,
@@ -367,6 +443,7 @@
     },
     {
      "codigo": "391.00",
+     "articulo": "39",
      "nombre": "Multas por infracciones urbanísticas",
      "anterior2": null,
      "anterior": 10000.0,
@@ -374,6 +451,7 @@
     },
     {
      "codigo": "391.20",
+     "articulo": "39",
      "nombre": "Multas de tráfico",
      "anterior2": null,
      "anterior": 355000.0,
@@ -381,6 +459,7 @@
     },
     {
      "codigo": "391.30",
+     "articulo": "39",
      "nombre": "Multas coercitivas",
      "anterior2": null,
      "anterior": 5000.0,
@@ -388,6 +467,7 @@
     },
     {
      "codigo": "391.90",
+     "articulo": "39",
      "nombre": "Otras sanciones",
      "anterior2": null,
      "anterior": 15000.0,
@@ -395,6 +475,7 @@
     },
     {
      "codigo": "392.11",
+     "articulo": "39",
      "nombre": "Recargos de apremio",
      "anterior2": null,
      "anterior": 95000.0,
@@ -402,6 +483,7 @@
     },
     {
      "codigo": "393.00",
+     "articulo": "39",
      "nombre": "Intereses de demora",
      "anterior2": null,
      "anterior": 30000.0,
@@ -409,6 +491,7 @@
     },
     {
      "codigo": "397.00",
+     "articulo": "39",
      "nombre": "Aprovechamientos urbanísticos",
      "anterior2": null,
      "anterior": 500.0,
@@ -416,6 +499,7 @@
     },
     {
      "codigo": "398.00",
+     "articulo": "39",
      "nombre": "Indemnizaciones por siniestros",
      "anterior2": null,
      "anterior": 162.83,
@@ -423,10 +507,77 @@
     },
     {
      "codigo": "399.00",
+     "articulo": "39",
      "nombre": "Recursos eventuales",
      "anterior2": null,
      "anterior": 30000.0,
      "actual": 50000.0
+    }
+   ],
+   "articulos": [
+    {
+     "codigo": "30",
+     "nombre": "Tasas por servicios públicos básicos",
+     "oficial": "Tasas por la prestación de servicios públicos básicos",
+     "anterior2": null,
+     "anterior": 2310000.0,
+     "actual": 4510000.0
+    },
+    {
+     "codigo": "32",
+     "nombre": "Tasas por actividades de competencia local",
+     "oficial": "Tasas por la realización de actividades de competencia local",
+     "anterior2": null,
+     "anterior": 294700.0,
+     "actual": 396860.0
+    },
+    {
+     "codigo": "33",
+     "nombre": "Tasas por usar el dominio público",
+     "oficial": "Tasas por la utilización privativa o el aprovechamiento especial del dominio público",
+     "anterior2": null,
+     "anterior": 1478000.0,
+     "actual": 1832000.0
+    },
+    {
+     "codigo": "34",
+     "nombre": "Precios públicos",
+     "oficial": "Precios públicos",
+     "anterior2": null,
+     "anterior": 757100.0,
+     "actual": 767700.0
+    },
+    {
+     "codigo": "35",
+     "nombre": "Contribuciones especiales",
+     "oficial": "Contribuciones especiales",
+     "anterior2": null,
+     "anterior": 170000.0,
+     "actual": 200000.0
+    },
+    {
+     "codigo": "36",
+     "nombre": "Ventas",
+     "oficial": "Ventas",
+     "anterior2": null,
+     "anterior": 316000.0,
+     "actual": 351000.0
+    },
+    {
+     "codigo": "38",
+     "nombre": "Reintegros de operaciones corrientes",
+     "oficial": "Reintegros de operaciones corrientes",
+     "anterior2": null,
+     "anterior": 10000.0,
+     "actual": 10000.0
+    },
+    {
+     "codigo": "39",
+     "nombre": "Otros ingresos",
+     "oficial": "Otros ingresos",
+     "anterior2": null,
+     "anterior": 540662.83,
+     "actual": 618500.0
     }
    ]
   },
@@ -440,6 +591,7 @@
    "conceptos": [
     {
      "codigo": "420.00",
+     "articulo": "42",
      "nombre": "Participación en los tributos del estado",
      "anterior2": null,
      "anterior": 8183804.02,
@@ -447,6 +599,7 @@
     },
     {
      "codigo": "420.20",
+     "articulo": "42",
      "nombre": "Compensaciones por beneficios fiscales",
      "anterior2": null,
      "anterior": 18000.0,
@@ -454,6 +607,7 @@
     },
     {
      "codigo": "420.90",
+     "articulo": "42",
      "nombre": "Otras participaciónes (fondo adicional para compensar la liq negativa 2020)",
      "anterior2": null,
      "anterior": 730792.34,
@@ -461,6 +615,7 @@
     },
     {
      "codigo": "420.91",
+     "articulo": "42",
      "nombre": "Otras transferencias. contratación agente innovación local",
      "anterior2": null,
      "anterior": 37500.0,
@@ -468,6 +623,7 @@
     },
     {
      "codigo": "420.93",
+     "articulo": "42",
      "nombre": "Otras transf. pacto de estado contra violencia de género",
      "anterior2": null,
      "anterior": 0.0,
@@ -475,6 +631,7 @@
     },
     {
      "codigo": "420.94",
+     "articulo": "42",
      "nombre": "Otras transf. control colonias felinas",
      "anterior2": null,
      "anterior": 0.0,
@@ -482,6 +639,7 @@
     },
     {
      "codigo": "450.00",
+     "articulo": "45",
      "nombre": "Participación en ingresos de la ccaa. fondo incondicionado",
      "anterior2": null,
      "anterior": 168775.0,
@@ -489,6 +647,7 @@
     },
     {
      "codigo": "450.02",
+     "articulo": "45",
      "nombre": "Transferencias corrientes convenios servicios sociales. acuerdo marco",
      "anterior2": null,
      "anterior": 2212376.57,
@@ -496,6 +655,7 @@
     },
     {
      "codigo": "450.05",
+     "articulo": "45",
      "nombre": "Transferencias corrientes convenio jcyl gratiuidad escuelas infantiles",
      "anterior2": null,
      "anterior": 110431.08,
@@ -503,6 +663,7 @@
     },
     {
      "codigo": "450.80",
+     "articulo": "45",
      "nombre": "Otras subvenciones corrientes. competencias delegadas deportes",
      "anterior2": null,
      "anterior": 27700.0,
@@ -510,6 +671,7 @@
     },
     {
      "codigo": "450.81",
+     "articulo": "45",
      "nombre": "Otras transferencias. proteccion acustica",
      "anterior2": null,
      "anterior": 20000.0,
@@ -517,6 +679,7 @@
     },
     {
      "codigo": "450.83",
+     "articulo": "45",
      "nombre": "Otras transf. subv. PRTR oficina gestión ARU sta catalina",
      "anterior2": null,
      "anterior": 0.0,
@@ -524,6 +687,7 @@
     },
     {
      "codigo": "461.00",
+     "articulo": "46",
      "nombre": "Convenio diputación prestación servicio extinción de incendios",
      "anterior2": null,
      "anterior": 350000.0,
@@ -531,6 +695,7 @@
     },
     {
      "codigo": "470.01",
+     "articulo": "47",
      "nombre": "Subvenciones de empresas privadas. certamen de bandas",
      "anterior2": null,
      "anterior": 3500.0,
@@ -538,6 +703,7 @@
     },
     {
      "codigo": "470.12",
+     "articulo": "47",
      "nombre": "Subvenciones de empresas privadas. festejos",
      "anterior2": null,
      "anterior": 7000.0,
@@ -545,6 +711,7 @@
     },
     {
      "codigo": "470.10",
+     "articulo": "47",
      "nombre": "Subvenciones de empresas privadas. actividades deportivas",
      "anterior2": null,
      "anterior": 10000.0,
@@ -552,7 +719,50 @@
     },
     {
      "codigo": "497.00",
+     "articulo": "49",
      "nombre": "Otras transferencias de la union europea. ARU santa catalina",
+     "anterior2": null,
+     "anterior": 48000.0,
+     "actual": 0.0
+    }
+   ],
+   "articulos": [
+    {
+     "codigo": "42",
+     "nombre": "Transferencias de la Administración del Estado",
+     "oficial": "De la Administración del Estado",
+     "anterior2": null,
+     "anterior": 8970096.36,
+     "actual": 9630699.35
+    },
+    {
+     "codigo": "45",
+     "nombre": "Transferencias de Comunidades Autónomas",
+     "oficial": "De Comunidades Autónomas",
+     "anterior2": null,
+     "anterior": 2539282.65,
+     "actual": 2850473.59
+    },
+    {
+     "codigo": "46",
+     "nombre": "Transferencias de entidades locales",
+     "oficial": "De Entidades Locales",
+     "anterior2": null,
+     "anterior": 350000.0,
+     "actual": 350000.0
+    },
+    {
+     "codigo": "47",
+     "nombre": "Transferencias de empresas privadas",
+     "oficial": "De Empresas privadas",
+     "anterior2": null,
+     "anterior": 20500.0,
+     "actual": 15500.0
+    },
+    {
+     "codigo": "49",
+     "nombre": "Transferencias del exterior",
+     "oficial": "Del exterior",
      "anterior2": null,
      "anterior": 48000.0,
      "actual": 0.0
@@ -569,6 +779,7 @@
    "conceptos": [
     {
      "codigo": "520.00",
+     "articulo": "52",
      "nombre": "Intereses de depósitos de empresas privadas",
      "anterior2": null,
      "anterior": 0.0,
@@ -576,6 +787,7 @@
     },
     {
      "codigo": "540.00",
+     "articulo": "54",
      "nombre": "Arrendamiento fincas urbanas",
      "anterior2": null,
      "anterior": 5500.0,
@@ -583,6 +795,7 @@
     },
     {
      "codigo": "550.02",
+     "articulo": "55",
      "nombre": "Concesión albergue juvenil",
      "anterior2": null,
      "anterior": 20000.0,
@@ -590,6 +803,7 @@
     },
     {
      "codigo": "552.03",
+     "articulo": "55",
      "nombre": "Concesión quioscos",
      "anterior2": null,
      "anterior": 3500.0,
@@ -597,6 +811,7 @@
     },
     {
      "codigo": "552.04",
+     "articulo": "55",
      "nombre": "Concesión aparcamiento de camiones",
      "anterior2": null,
      "anterior": 1000.0,
@@ -604,6 +819,7 @@
     },
     {
      "codigo": "555.00",
+     "articulo": "55",
      "nombre": "Aprovechamiento coto monte la calabaza",
      "anterior2": null,
      "anterior": 9700.0,
@@ -611,6 +827,7 @@
     },
     {
      "codigo": "555.01",
+     "articulo": "55",
      "nombre": "Aprovechamiento pastos monte la calabaza",
      "anterior2": null,
      "anterior": 0.0,
@@ -618,7 +835,42 @@
     },
     {
      "codigo": "599.00",
+     "articulo": "59",
      "nombre": "Otros ingresos patrimoniales",
+     "anterior2": null,
+     "anterior": 75100.0,
+     "actual": 1000.0
+    }
+   ],
+   "articulos": [
+    {
+     "codigo": "52",
+     "nombre": "Intereses de depósitos",
+     "oficial": "Intereses de depósitos",
+     "anterior2": null,
+     "anterior": 0.0,
+     "actual": 400000.0
+    },
+    {
+     "codigo": "54",
+     "nombre": "Rentas de bienes inmuebles",
+     "oficial": "Rentas de bienes inmuebles",
+     "anterior2": null,
+     "anterior": 5500.0,
+     "actual": 5500.0
+    },
+    {
+     "codigo": "55",
+     "nombre": "Concesiones y aprovechamientos especiales",
+     "oficial": "Productos de concesiones y aprovechamientos especiales",
+     "anterior2": null,
+     "anterior": 34200.0,
+     "actual": 20914.0
+    },
+    {
+     "codigo": "59",
+     "nombre": "Otros ingresos patrimoniales",
+     "oficial": "Otros ingresos patrimoniales",
      "anterior2": null,
      "anterior": 75100.0,
      "actual": 1000.0
@@ -635,7 +887,18 @@
    "conceptos": [
     {
      "codigo": "609",
+     "articulo": "60",
      "nombre": "Otros terrenos",
+     "anterior2": null,
+     "anterior": 0.0,
+     "actual": 6000.0
+    }
+   ],
+   "articulos": [
+    {
+     "codigo": "60",
+     "nombre": "Venta de terrenos",
+     "oficial": "De terrenos",
      "anterior2": null,
      "anterior": 0.0,
      "actual": 6000.0
@@ -652,6 +915,7 @@
    "conceptos": [
     {
      "codigo": "750.60",
+     "articulo": "75",
      "nombre": "Otras transferencias capital. subvencion directa consejeria presidencia",
      "anterior2": null,
      "anterior": 143182.33,
@@ -659,6 +923,7 @@
     },
     {
      "codigo": "750.80",
+     "articulo": "75",
      "nombre": "Otras transferencias. fcl inversiones agenda 2030",
      "anterior2": null,
      "anterior": 268374.11,
@@ -666,6 +931,7 @@
     },
     {
      "codigo": "750.81",
+     "articulo": "75",
      "nombre": "Otras transferencias. fcl inversiones desafíos demográficos",
      "anterior2": null,
      "anterior": 268374.11,
@@ -673,6 +939,7 @@
     },
     {
      "codigo": "750.82",
+     "articulo": "75",
      "nombre": "Otras transf. subvención rehabilitación centro tercera edad san juan",
      "anterior2": null,
      "anterior": 61134.0,
@@ -680,6 +947,7 @@
     },
     {
      "codigo": "750.83",
+     "articulo": "75",
      "nombre": "Otras transf. subv. PRTR ARU santa catalina",
      "anterior2": null,
      "anterior": 0.0,
@@ -687,6 +955,7 @@
     },
     {
      "codigo": "789.00",
+     "articulo": "78",
      "nombre": "Transf. de familias e inst. sin fines de lucro. propietarios ARU",
      "anterior2": null,
      "anterior": 0.0,
@@ -694,7 +963,34 @@
     },
     {
      "codigo": "797.00",
+     "articulo": "79",
      "nombre": "Otras transferencias de la union europea. ARU santa catalina",
+     "anterior2": null,
+     "anterior": 0.0,
+     "actual": 0.0
+    }
+   ],
+   "articulos": [
+    {
+     "codigo": "75",
+     "nombre": "Subvenciones de Comunidades Autónomas",
+     "oficial": "De Comunidades Autónomas",
+     "anterior2": null,
+     "anterior": 741064.55,
+     "actual": 1391515.16
+    },
+    {
+     "codigo": "78",
+     "nombre": "Subvenciones de familias e instituciones sin fines de lucro",
+     "oficial": "De familias e instituciones sin fines de lucro",
+     "anterior2": null,
+     "anterior": 0.0,
+     "actual": 74240.4
+    },
+    {
+     "codigo": "79",
+     "nombre": "Subvenciones del exterior",
+     "oficial": "Del exterior",
      "anterior2": null,
      "anterior": 0.0,
      "actual": 0.0
@@ -711,6 +1007,7 @@
    "conceptos": [
     {
      "codigo": "830.00",
+     "articulo": "83",
      "nombre": "Reintegros anticipos al personal",
      "anterior2": null,
      "anterior": 15000.0,
@@ -718,7 +1015,26 @@
     },
     {
      "codigo": "870.10",
+     "articulo": "87",
      "nombre": "Remanente de tesorería afectado fondos europeos next-generation",
+     "anterior2": null,
+     "anterior": 0.0,
+     "actual": 2157195.5
+    }
+   ],
+   "articulos": [
+    {
+     "codigo": "83",
+     "nombre": "Reintegros de préstamos concedidos fuera del sector público",
+     "oficial": "Reintegros de préstamos de fuera del sector público",
+     "anterior2": null,
+     "anterior": 15000.0,
+     "actual": 15000.0
+    },
+    {
+     "codigo": "87",
+     "nombre": "Remanente de tesorería",
+     "oficial": "Remanente de tesorería",
      "anterior2": null,
      "anterior": 0.0,
      "actual": 2157195.5
@@ -735,7 +1051,18 @@
    "conceptos": [
     {
      "codigo": "913.00",
+     "articulo": "91",
      "nombre": "Préstamos de entes de fuera del sector público a largo plazo",
+     "anterior2": null,
+     "anterior": 8310560.01,
+     "actual": 8618380.98
+    }
+   ],
+   "articulos": [
+    {
+     "codigo": "91",
+     "nombre": "Préstamos recibidos",
+     "oficial": "Préstamos recibidos en euros",
      "anterior2": null,
      "anterior": 8310560.01,
      "actual": 8618380.98

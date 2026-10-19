@@ -57,6 +57,12 @@ def check_totals(data: dict, year: int | None = None) -> list[str]:
     for c in data["ingresos"]["capitulos"]:
         suma = sum(x["actual"] or 0 for x in c["conceptos"])
         _cmp(avisos, f"ingresos, capítulo {c['cap']}: los conceptos suman {round(suma, 2)} y el capítulo", suma, c["actual"])
+    for c in data["gastos"]["capitulos"]:
+        suma = sum(a["actual"] for a in data["gastos"]["articulos"] if a["cap"] == c["cap"])
+        _cmp(avisos, f"gastos, capítulo {c['cap']}: los artículos suman {round(suma, 2)} y el capítulo", suma, c["actual"])
+    for c in data["ingresos"]["capitulos"]:
+        suma = sum(a["actual"] or 0 for a in c["articulos"])
+        _cmp(avisos, f"ingresos, capítulo {c['cap']}: los artículos suman {round(suma, 2)} y el capítulo", suma, c["actual"])
     suma_proyectos = sum(pr["importe"] for p in data["inversiones"]["programas"] for pr in p["proyectos"])
     _cmp(avisos, f"inversiones: los proyectos suman {round(suma_proyectos, 2)} y el total", suma_proyectos, data["inversiones"]["total"])
     _cmp(avisos, "inversiones (total)", data["inversiones"]["total"], next(c["actual"] for c in res["gastosPorCapitulo"] if c["cap"] == 6))
