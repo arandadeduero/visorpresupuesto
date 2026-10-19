@@ -160,6 +160,14 @@ test("filasIndicadores compara los indicadores de ambos años aunque falte el pr
     for (const v of [x.a, x.b, x.delta]) assert.ok(v === null || Number.isFinite(v), `${x.id}: ${v}`);
     assert.ok(["euros", "pct"].includes(x.tipo));
   }
+  const nivel = f.find((x) => x.id === "deudaSobreIngresosCorrientesPct");
+  assert.equal(nivel.etiqueta, "Nivel de endeudamiento (estimado)");
+  cerca(nivel.a, 8.65, 0.01);
+  cerca(nivel.b, 5.15, 0.01);
+  const neto = f.find((x) => x.id === "ahorroNetoEstimado");
+  assert.equal(neto.etiqueta, "Ahorro neto (estimado)");
+  cerca(neto.a, 443545.16, 0.01);
+  cerca(neto.b, 2597756.54, 0.01);
   const conPrevisto = f.find((x) => x.id === "deudaConPrevistoPorHabitante");
   if (conPrevisto) assert.ok(conPrevisto.a === null || Number.isFinite(conPrevisto.a));
 });
