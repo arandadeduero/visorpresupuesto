@@ -1,0 +1,96 @@
+tools/budget/deuda.py
+  s_c524ba238f0f5a::t_1aa9e295e7443d 2,5,7-8,29,38-39,43-66,69-74,76-77,79-87,91,95-100,103-104,106-110,115,121,128-130
+  s_c524ba238f0f5a::t_1e9ca868ec05c0 90,92-94
+site/data/index.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 3-10
+site/data/2025/gastos.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-6722
+tools/tests/test_gastos.py
+  s_c524ba238f0f5a::t_1a92fa1e2189ce 5-38,44-45,49-50,54-55,57-58,61-62,68,72-74,77-78,84-85,88-89,96-120
+  s_c524ba238f0f5a::t_ac44119626c41f 121-122
+site/data/2026/subvenciones.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 3-4,7-8,24-25,143-144,160-161,183-184,200-201,271-272,288-289,311-312,352-358,360-371,393-394,470-471,487-488,504-505,521-522,538-539,555-556,572-578,580-591,601-602,636-637,666-673,682-689,722-729,799,959,1063,1168,1211-1218
+site/data/2025/inversiones.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-1531
+tools/budget/subvenciones.py
+  s_c524ba238f0f5a::t_1b69ebc8e7240d 17,21,26-27
+  s_c524ba238f0f5a::t_3f9030b557b296 75
+  s_c524ba238f0f5a::t_1e393a59b0ec61 1,5-7,14-16,18-20,22-25,33-36,38-42,46-47,49-74,76-78,108-119
+tools/tests/test_deuda.py
+  s_c524ba238f0f5a::t_3051946aee89e5 7,9-22,25-31,38,41-66,69-75,80,83-88,91-95
+tools/budget/gastos.py
+  s_c524ba238f0f5a::t_705ba4b7d4ba8c 6,74-80,82-90,92,99-100,102,110,112,120
+  s_c524ba238f0f5a::t_85222938fcaab9 5,10-11,20-29,32-33,39-40,43-44,46-47,53
+  s_c524ba238f0f5a::t_a34b1e0c6ca9ce 81
+site/data/2024/subvenciones.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-1516
+site/data/2024/deuda.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-95
+site/data/2025/resumen.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-182
+tools/budget/inversiones.py
+  s_c524ba238f0f5a::t_d7de4e2ff3c71d 4,14-22,25-26,32-33,35
+  s_c524ba238f0f5a::t_591b7f9fe25fce 43-45
+site/data/2024/gastos.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-6418
+site/data/2025/subvenciones.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-1236
+site/data/2025/ingresos.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-753
+tools/convert.py
+  s_c524ba238f0f5a::t_a2fc67d0ddfe0c 79-83,86-88,100,106-107,109-110
+  s_c524ba238f0f5a::t_cfd5d854b8cce3 33-45,48-49,57-59,63-65,69-75
+  s_c524ba238f0f5a::t_e7c1bb6cee7d4f 76-77
+tools/budget/labels.py
+  s_c524ba238f0f5a::t_aa487b7ce1d23e 71,73-74
+site/data/2024/inversiones.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-1119
+tools/tests/test_inversiones.py
+  s_c524ba238f0f5a::t_82b513760f9056 5,7-26,33-42,44-52,54-56,59-60,62-63,67-68,72-94
+site/data/2024/ingresos.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-746
+pytest.ini
+  s_c524ba238f0f5a::t_6521d8c9243d83 5-6
+tools/tests/test_convert.py
+  s_c524ba238f0f5a::t_2e6f237b000228 9,15,19-20,23-28,30,35-37,40-41,43-62,65-68,71,75-77,79,83-85,88,90-128
+tools/tests/test_ingresos.py
+  s_c524ba238f0f5a::t_9dfe02497630c6 5,7-18,25-27,30-31,35-36,39,42-43,49-50,53-64
+site/data/2025/deuda.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-101
+tools/budget/ingresos.py
+  s_c524ba238f0f5a::t_a9604fb1669dbb 4,8-26,32-33,35,40-47,49-54,57,61-63,66-70
+tools/budget/common.py
+  s_c524ba238f0f5a::t_2eed89075b76af 4,29-31
+  s_c524ba238f0f5a::t_85222938fcaab9 3,35-38
+  s_c524ba238f0f5a::t_68c42c57eaeadc 39-40
+tools/tests/test_subvenciones.py
+  s_c524ba238f0f5a::t_0025633cfc7466 1,4,7,9-12,24,30,37-43,91-93,100,102-108,115-146,148-150
+  s_c524ba238f0f5a::t_50a05f091c65bf 87-89
+  s_c524ba238f0f5a::t_7547506161f9b6 35
+  s_c524ba238f0f5a::t_389062fd966979 29,31,33-34,36,45-46
+  s_c524ba238f0f5a::t_3cc3412280b976 44,47-49,53-55,59
+  s_c524ba238f0f5a::t_3551827be65878 101
+  s_c524ba238f0f5a::t_3f9030b557b296 23,25,28,32,50-52,56-58,60-74,76-86,147
+site/data/2024/resumen.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 1-179
+tools/tests/test_resumen.py
+  s_c524ba238f0f5a::t_b8b0c3f4b799b1 7-31,38-43,46-47,50,52-62,65-66,68-69,73-74,78-81,83-86
+site/data/2026/gastos.json
+  s_c524ba238f0f5a::t_50a05f091c65bf 68,1187,1323,1363,1371,1379,1539,2227,2699,3187,3195,3203,3211,3251,3331,3411,3539,3955,4011,4115,4219,4331,4451,4571,4579,4587,4835,4843,4851,4859,4867,4875,5059,5067,5091,5155,5163,5219,5275,5283,5291,5299,5307,5315,5323,5339,5499,5523,5547,6163,6171,6299,6363,6459,6523,6883,6891,6947,7131,7203,7275
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "78598d2cd603bda9e81d9368600ea18d532331c9",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
