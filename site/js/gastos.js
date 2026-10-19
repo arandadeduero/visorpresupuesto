@@ -43,7 +43,7 @@ runPage("gastos", async ({ anio, main, load }) => {
       importe: n.actual,
       max,
       clicable: Boolean(n.hijos),
-      extra: [n.detalle ? esc(n.detalle) : "", `${((n.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total`, porHabHtml(n.actual, habitantes), variacionHtml(n.actual, n.anterior)].filter(Boolean).join(" · "),
+      extra: [n.detalle ? esc(n.detalle) : "", `${((n.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total`, porHabHtml(n.actual, habitantes), n.anterior == null ? "" : variacionHtml(n.actual, n.anterior)].filter(Boolean).join(" · "),
     })}<div class="hijos" hidden></div></li>`).join("")}</ul>`;
   }
 

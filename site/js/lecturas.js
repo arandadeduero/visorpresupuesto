@@ -21,7 +21,7 @@ export function repartoAportacion(importe, politicas) {
 }
 
 const sumaCaps = (capitulos, caps) => capitulos.filter((c) => caps.includes(c.cap)).reduce((s, c) => s + (c.actual ?? 0), 0);
-const pct = (parte, todo) => (todo > 0 ? (parte / todo) * 100 : null);
+const pct = (parte, todo) => (Number.isFinite(parte) && todo > 0 ? (parte / todo) * 100 : null);
 
 /** Indicadores sencillos de la situación económica, calculados con las cifras del propio presupuesto. */
 export function calcularIndicadores({ resumen, ingresos, deuda }) {
@@ -43,7 +43,7 @@ export function calcularIndicadores({ resumen, ingresos, deuda }) {
     impuestosYTasasPorHabitante: porHabitante(impuestos + tasas, hab),
     dependenciaTransferenciasPct: pct(transferencias, ingresosCorrientes),
     deudaViva,
-    deudaConPrevisto,
+    deudaConPrevisto, // null si el anexo de deuda de ese año no trae un préstamo previsto
     deudaPorHabitante: porHabitante(deudaViva, hab),
     deudaConPrevistoPorHabitante: porHabitante(deudaConPrevisto, hab),
     deudaSobreIngresosCorrientesPct: pct(deudaViva, ingresosCorrientes),

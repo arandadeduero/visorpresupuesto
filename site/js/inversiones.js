@@ -23,7 +23,7 @@ runPage("inversiones", async ({ anio, main, load }) => {
   const d = await load("inversiones");
   const usadas = FUENTES.filter(([k]) => d.fuentes[k] > 0);
   const programas = [...d.programas].sort((a, b) => b.total - a.total);
-  const max = programas[0].total;
+  const max = programas[0]?.total ?? 0;
 
   main.innerHTML = `
     <h1>Inversiones: obras y compras <span class="muted">${anio}</span></h1>

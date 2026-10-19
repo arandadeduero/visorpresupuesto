@@ -73,3 +73,26 @@ def test_el_ci_se_ejecuta_en_pull_requests_y_comprueba_los_datos_generados():
 def test_tras_desplegar_se_comprueba_que_la_web_carga():
     pages = _workflow("pages.yml")
     assert "page_url" in pages and "curl" in pages and "Presupuestos de Aranda de Duero" in pages
+
+
+def test_cada_carpeta_de_anio_con_excel_esta_publicada_en_el_indice_y_viceversa():
+    indice = json.loads((SITE / "data" / "index.json").read_text(encoding="utf-8"))
+    publicados = {a["anio"] for a in indice["anios"]}
+    con_excel = {int(c.name) for c in ROOT.glob("[0-9][0-9][0-9][0-9]") if list(c.glob("*.xlsx"))}
+    assert publicados == con_excel, "falta ejecutar tools/convert.py de algún año (o sobra una carpeta de datos)"
+    assert publicados == {int(c.name) for c in (SITE / "data").iterdir() if c.is_dir()}
+
+
+def test_los_json_de_todos_los_anios_usan_claves_genericas_sin_anio():
+    # «anterior»/«actual» (y «anterior2») en lugar de y2025/y2026, para que cualquier año use las mismas claves
+    for ruta in (SITE / "data").glob("*/*.json"):
+        assert not re.search(r'"(y20\d\d|total20\d\d|totalGastos20\d\d)"', ruta.read_text(encoding="utf-8")), ruta
+
+
+def test_los_enlaces_entre_paginas_conservan_el_anio_elegido():
+    # Todo enlace interno a una página .html escrito en js/*.js lleva ?anio=${anio} (el menú lo añade layout.js)
+    for js in (SITE / "js").glob("*.js"):
+        if js.name.endswith(".test.js"):
+            continue
+        for destino, resto in re.findall(r'href="([a-z]+\.html)([^"]*)"', js.read_text(encoding="utf-8")):
+            assert resto.startswith(("?anio=${", "${consulta}")), f"{js.name}: el enlace a {destino} pierde el año"

@@ -26,7 +26,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
     <h1>¿De dónde sale el dinero? <span class="muted">${anio}</span></h1>
     <p class="lead">Ingresos previstos: <strong>${formatEuros(total)}</strong>. Unos <strong>${porHabHtml(total, habitantes)}</strong>. Pulsa en cada línea para ver de qué está hecha.</p>
     <div id="quesito"></div>
-    <p><label>Buscar un ingreso <input type="search" id="buscar" placeholder="Por ejemplo: IBI, basuras, terrazas…" autocomplete="off"></label></p>
+    <p><label>Buscar un ingreso <input type="search" id="buscar" placeholder="Por ejemplo: IBI, agua, terrazas…" autocomplete="off"></label></p>
     <div id="arbol"><ul class="barras">${caps.map((c) => `<li>${filaHtml({
       id: `cap-${c.cap}`,
       nombre: c.corto,
@@ -41,8 +41,10 @@ runPage("ingresos", async ({ anio, main, load }) => {
   pintaQuesito(main.querySelector("#quesito"), datos.capitulos, "Ingresos por tipo");
   const arbol = main.querySelector("#arbol");
   const resultados = main.querySelector("#resultados");
-  const cab = [{ texto: "Concepto" }, { texto: `${anio - 2}`, num: true }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }, { texto: "Cambio" }];
-  const fila = (x) => `<tr><td>${esc(x.nombre)}</td><td class="num">${formatEuros(x.anterior2)}</td><td class="num">${formatEuros(x.anterior)}</td><td class="num">${formatEuros(x.actual)}</td><td>${variacionHtml(x.actual, x.anterior, "")}</td></tr>`;
+  // El Excel de ingresos trae tres años en 2026 pero solo dos en 2024 y 2025: la columna de hace dos años solo sale si hay datos.
+  const dosAtras = datos.capitulos.some((c) => c.conceptos.some((x) => x.anterior2 !== null && x.anterior2 !== undefined));
+  const cab = [{ texto: "Concepto" }, ...(dosAtras ? [{ texto: `${anio - 2}`, num: true }] : []), { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }, { texto: "Cambio" }];
+  const fila = (x) => `<tr><td>${esc(x.nombre)}</td>${dosAtras ? `<td class="num">${formatEuros(x.anterior2)}</td>` : ""}<td class="num">${formatEuros(x.anterior)}</td><td class="num">${formatEuros(x.actual)}</td><td>${variacionHtml(x.actual, x.anterior, "")}</td></tr>`;
 
   arbol.addEventListener("click", (e) => {
     const boton = e.target.closest("button.fila");

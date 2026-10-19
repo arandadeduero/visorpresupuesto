@@ -124,3 +124,20 @@ Descartado: series históricas 2010–2024, medias provincial, autonómica y nac
 - Cómo se resuelven las discrepancias de los Excel, documentándolas.
 - Accesibilidad y responsive (móvil primero, dado el público).
 - Texto exacto de las traducciones de capítulos y programas.
+
+
+## Varios ejercicios (2024, 2025 y 2026)
+
+**Diseño.** Cada año vive en `site/data/<año>/` con los mismos seis JSON; `site/data/index.json` los lista y el último es el año por defecto. Los JSON usan claves genéricas (`anterior`, `actual`, `anterior2`) en lugar de `y2025`/`y2026`: ninguna página ni test conoce un año concreto (un test lo vigila), y añadir un ejercicio es copiar la carpeta de Excel, añadir su población y ejecutar `tools/convert.py`. Lo que no existe en un año se representa con `null` y la web omite el texto asociado.
+
+**Diferencias halladas entre los Excel.**
+- Nombres: `A13.1`/`A13.2` se llaman «Estado de la deuda» / «Carga Financiera» (2024) o «… CON PRESTAMO FUTURO» (2025, 2026); el conversor busca por prefijo `A13.1`.
+- Posición de columnas: A3 2024 lleva una columna más antes de los importes; A9 2024 empieza en la columna A (no en B); A13.1 2024 y 2025 tienen una columna vacía más que 2026. Se localizan por rótulo.
+- A2: 2024 titula «PREVISIONES» a la columna del año anterior y solo trae dos años; 2025 también dos; 2026 trae tres. Total roto con `#REF!` en el capítulo VIII y en el total general de 2024: se recompone sumando conceptos. Las previsiones iniciales de 2023 de A2 no coinciden con los «créditos 2023» de A1 en el capítulo VII (741.064,55 € frente a 5.033.675,76 €): cada fichero mantiene su base.
+- A3: «CAPITULO» sin tilde en 2024. La columna del año anterior no trae las inversiones (capítulo VI) en 2024 ni en 2025: esas partidas quedan con `anterior = null` y los capítulos usan los créditos del año anterior de A1.
+- A9 2025: el programa 9240 aparece dos veces (un bloque antiguo de 5.000 € y el bueno de 345.000 €, que coincide con A3 y con el total); vale el último. Algunos programas difieren entre A3 y A9 en 2025 (1600/1610/1623/3200/3220) aunque el total coincide. A9 2024 contiene hojas de trabajo ajenas a la tabla (propuestas por grupo político, listados).
+- A12: el crédito de la partida es el texto «Loading...» en 2025 (`credito = null`); los nombres vienen en mayúsculas en 2024; algunas filas de partida llevan también la primera entidad (Sonorama, ASOHAR, Consorcio Ruta del Vino…) y debajo de un título (Turismo, Desarrollo económico); hay dos bloques (nominativas y cuotas). En 2024 la celda «TOTAL SUBVENCIONES NOMINATIVAS» (752.250 €) es 95.000 € menor que la suma de los subtotales de sus programas.
+- Deuda: en 2024 no hay préstamo previsto; en 2025 el previsto se firmaría en marzo de 2025 (en 2026, marzo de 2026). La etiqueta «TOTAL INTERESES 2024» del A13.2 de 2025 es en realidad la de 2025.
+- Totales: 2024 y 2026 cuadran (ingresos = gastos). En 2025 el Excel trae 250.000 € más de ingresos que de gastos (65.078.315,20 € frente a 64.828.315,20 €); el presupuesto de 2026 ya recoge un capítulo 2 de 2025 con 250.000 € más. El conversor lo trata como nota conocida y la web la enseña en el resumen.
+- Para comparar presupuestos entre sí, usar el `actual` de cada año: el `anterior` de un año no siempre coincide con el `actual` del anterior (ver el caso de 2025).
+- Población INE: 2024 → 33.757; 2025 → 33.956; 2026 → 33.956 (dato de 2025, el último disponible).

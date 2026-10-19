@@ -7,6 +7,20 @@ import { explicaDosPrestamos } from "./deuda-texto.js";
 const fecha = (iso) => iso.split("-").reverse().join("/");
 const mes = (iso) => new Date(`${iso}T12:00:00`).toLocaleDateString("es-ES", { month: "long", year: "numeric" });
 
+// El anexo de deuda de algunos años (2025, 2026) incluye un préstamo previsto; el de otros (2024) no.
+function avisoPrevisto(pv, d, prestamoInversiones, anio) {
+  return `<div class="aviso"><h3>Previsión: un préstamo nuevo de ${formatEuros(pv.importe, { compact: true })}</h3>
+      <p>El presupuesto prevé un préstamo de <strong>${formatEuros(pv.importe)}</strong> para ${esc(mes(pv.fecha))}, que se empezaría a devolver en ${esc(mes(pv.primeraAmortizacion))} y terminaría en ${esc(mes(pv.ultimaAmortizacion))} (${esc(pv.tipoInteres)}). Si se firmara, la deuda a 31 de diciembre de ${anio} sería de <strong>${formatEuros(d.titular.vivaFinConPrevisto)}</strong>.</p>
+      <p><strong>Solo se formalizará si es necesario</strong>, según la liquidación y la ejecución del presupuesto.</p>
+      <p>${esc(explicaDosPrestamos(pv.importe, prestamoInversiones))} Por eso el gráfico de abajo no las incluye. Las cifras de préstamo en las <a href="inversiones.html?anio=${anio}">inversiones</a> se explican en esa página.</p></div>`;
+}
+
+function avisoSinPrevisto(prestamoInversiones, anio) {
+  if (!(prestamoInversiones > 0)) return "";
+  return `<div class="aviso"><h3>Préstamos previstos en los ingresos</h3>
+      <p>El presupuesto de ${anio} cuenta con <strong>${formatEuros(prestamoInversiones)}</strong> de préstamos para financiar inversiones, pero el anexo de deuda de ese año no recoge ningún préstamo nuevo. Los documentos del presupuesto no detallan si finalmente se pedirían: es una previsión de ingresos, no una deuda contraída. Por eso la deuda y el gráfico de abajo solo incluyen los préstamos que ya existen. Más datos en las <a href="inversiones.html?anio=${anio}">inversiones</a>.</p></div>`;
+}
+
 runPage("deuda", async ({ anio, main, load }) => {
   const [d, inv] = await Promise.all([load("deuda"), load("inversiones")]);
   const vivaInicio = d.prestamos.reduce((s, p) => s + p.vivaInicio, 0);
@@ -20,10 +34,7 @@ runPage("deuda", async ({ anio, main, load }) => {
     <p class="cifra">${formatEuros(d.titular.vivaFin)}</p>
     <p class="lead">es lo que el Ayuntamiento deberá a los bancos a 31 de diciembre de ${anio}, con los préstamos que ya tiene. A 1 de enero era de ${formatEuros(vivaInicio)}: durante el año devuelve ${formatEuros(d.carga.amortizacion)}.</p>
 
-    <div class="aviso"><h3>Previsión: un préstamo nuevo de ${formatEuros(pv.importe, { compact: true })}</h3>
-      <p>El presupuesto prevé un préstamo de <strong>${formatEuros(pv.importe)}</strong> para ${esc(mes(pv.fecha))}, que se empezaría a devolver en ${esc(mes(pv.primeraAmortizacion))} y terminaría en ${esc(mes(pv.ultimaAmortizacion))} (${esc(pv.tipoInteres)}). Si se firmara, la deuda a 31 de diciembre de ${anio} sería de <strong>${formatEuros(d.titular.vivaFinConPrevisto)}</strong>.</p>
-      <p><strong>Solo se formalizará si es necesario</strong>, según la liquidación y la ejecución del presupuesto.</p>
-      <p>${esc(explicaDosPrestamos(pv.importe, prestamoInversiones))} Por eso el gráfico de abajo no las incluye. Las cifras de préstamo en las <a href="inversiones.html?anio=${anio}">inversiones</a> se explican en esa página.</p></div>
+    ${pv ? avisoPrevisto(pv, d, prestamoInversiones, anio) : avisoSinPrevisto(prestamoInversiones, anio)}
 
     <h2>Cómo evoluciona la deuda actual</h2>
     <p class="muted">Solo con los préstamos que ya existen. Cada columna es lo que se debe a 31 de diciembre.</p>
@@ -41,7 +52,7 @@ runPage("deuda", async ({ anio, main, load }) => {
 
     <h2>Cuánto cuesta la deuda en ${anio}</h2>
     <p>La carga financiera es lo que se paga cada año por los préstamos: <strong>${formatEuros(d.carga.total)}</strong> en total, de los cuales ${formatEuros(d.carga.amortizacion)} son devolución del dinero prestado y ${formatEuros(d.carga.intereses)} son intereses.</p>
-    <p class="muted">Si se firmara el préstamo previsto, los intereses de ${anio} subirían a ${formatEuros(d.carga.interesesConPrevisto)} (estimación; los tipos son variables y se calculan con previsiones de Euribor).</p>`;
+    ${d.carga.interesesConPrevisto === null ? `<p class="muted">Los tipos de interés son variables y el anexo los calcula con previsiones de Euribor.</p>` : `<p class="muted">Si se firmara el préstamo previsto, los intereses de ${anio} subirían a ${formatEuros(d.carga.interesesConPrevisto)} (estimación; los tipos son variables y se calculan con previsiones de Euribor).</p>`}`;
 
   const colores = d.serie.map((s) => (s.anio < anio ? real : prevision));
   barChart(main.querySelector("#grafico"), {

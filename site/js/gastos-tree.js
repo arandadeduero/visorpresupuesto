@@ -3,6 +3,8 @@ import { matches } from "./format.js";
 
 const porImporte = (a, b) => b.actual - a.actual;
 const suma = (items, campo) => items.reduce((s, x) => s + (x[campo] ?? 0), 0);
+// Año anterior de un grupo: si a alguna partida le falta (el Excel no trae las inversiones del año anterior), no se puede comparar.
+const sumaAnterior = (items) => (items.some((x) => x.anterior === null || x.anterior === undefined) ? null : suma(items, "anterior"));
 
 function nodoPartida(p, detalle) {
   return {
@@ -37,7 +39,7 @@ export function buildTree(datos, modo) {
         id: `prog-${codigo}`,
         nombre: info.nombre,
         politica: info.politica,
-        anterior: suma(partidas, "anterior"),
+        anterior: sumaAnterior(partidas),
         actual: suma(partidas, "actual"),
         hijos: partidas
           .map((p) => nodoPartida(p, p.cap === 1 ? "Sueldos y cotizaciones (total del programa)" : capitulo.get(p.cap).corto))
@@ -47,7 +49,7 @@ export function buildTree(datos, modo) {
     return datos.politicas
       .map((pol) => {
         const hijos = nodosPrograma.filter((n) => n.politica === pol.codigo).sort(porImporte);
-        return { id: `pol-${pol.codigo}`, nombre: pol.nombre, anterior: suma(hijos, "anterior"), actual: suma(hijos, "actual"), hijos };
+        return { id: `pol-${pol.codigo}`, nombre: pol.nombre, anterior: sumaAnterior(hijos), actual: suma(hijos, "actual"), hijos };
       })
       .sort(porImporte);
   }
@@ -64,7 +66,7 @@ export function buildTree(datos, modo) {
         .map(([codigo, partidas]) => ({
           id: `cap-${c.cap}-prog-${codigo}`,
           nombre: programa.get(codigo).nombre,
-          anterior: suma(partidas, "anterior"),
+          anterior: sumaAnterior(partidas),
           actual: suma(partidas, "actual"),
           hijos: c.cap === 1 ? null : partidas.map((p) => nodoPartida(p, null)).sort(porImporte),
         }))

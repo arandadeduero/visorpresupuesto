@@ -78,7 +78,7 @@ runPage("inicio", async ({ anio, main, load }) => {
         <div><span class="cifra">${formatEuros(d.importe, { compact: true })}</span><span>en total</span></div>
         <div><span class="cifra">${d.pct.toLocaleString("es-ES", { maximumFractionDigits: 1 })} %</span><span>del presupuesto</span></div>
       </div>
-      <p class="muted">${variacionHtml(d.importe, d.anterior)}</p>`;
+      ${d.anterior == null ? "" : `<p class="muted">${variacionHtml(d.importe, d.anterior)}</p>`}`;
   };
   main.querySelector("#otra").addEventListener("click", () => {
     actual = (actual + 1) % orden.length;
