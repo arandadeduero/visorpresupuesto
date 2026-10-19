@@ -1,0 +1,38 @@
+site/css/styles.css
+  s_c524ba238f0f5a::t_7a98d410d49c54 143-154
+site/js/gastos.js
+  s_c524ba238f0f5a::t_839c974d53811a 29,31,52,92
+site/js/ingresos.js
+  s_c524ba238f0f5a::t_1f4518522293ed 4,27,41,49-66,70-72,76,90
+site/js/quesito.test.js
+  s_c524ba238f0f5a::t_6aabb2c6909d29 4
+  s_c524ba238f0f5a::t_693fe4d299f4cb 39-99
+site/js/quesito.js
+  s_c524ba238f0f5a::t_7f43827292859b 65-66
+  s_c524ba238f0f5a::t_be7a1b9038efa8 1-2,31-64,67-85,88-113,115-124,127-129,131-139
+site/js/guia.js
+  s_c524ba238f0f5a::t_5a5183d5d8cd43 7,9,11
+  s_c524ba238f0f5a::t_a80994f5899518 8
+site/js/resumen.js
+  s_c524ba238f0f5a::t_936a055323df35 4,62-63
+site/js/gastos-tree.js
+  s_c524ba238f0f5a::t_197f27525d1441 23-24,57,60-73,85,93
+site/js/gastos-tree.test.js
+  s_c524ba238f0f5a::t_a48f7c3d51dfc0 30,33,36-37,39-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fc7fee968c46ab6f0b463348ca890261a0c89104",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
