@@ -1,0 +1,21 @@
+tools/tests/test_excel_una_hoja.py
+  s_c524ba238f0f5a::t_ce8a806c78a30f 1-19
+README.md
+  s_c524ba238f0f5a::t_dc2ed108ff76c6 58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "da45ed9b96997188af9255ab4562941ed85f6fc4",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
