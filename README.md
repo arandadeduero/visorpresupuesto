@@ -11,9 +11,9 @@ Incluye los **presupuestos iniciales 2024, 2025 y 2026** (previsiones, no gastos
 | Página | Qué responde |
 |---|---|
 | **Inicio** | «Por cada 100 € que gasta el Ayuntamiento…», euros por habitante y una tarjeta «¿Cuánto gasta Aranda de Duero en…?» |
-| **Resumen** | Ingresos frente a gastos, gráficos de quesito por capítulo y qué ha cambiado más respecto al año anterior |
-| **Ingresos** | De dónde sale el dinero, por capítulo y concepto, con buscador |
-| **Gastos** | En qué se gasta, por política (cultura, deporte…) o por tipo de gasto, hasta la partida (el personal, agrupado por programa) |
+| **Resumen** | Ingresos frente a gastos, gráficos de quesito (por capítulos o por artículos) y qué ha cambiado más respecto al año anterior |
+| **Ingresos** | De dónde sale el dinero: capítulo → artículo → concepto, con buscador |
+| **Gastos** | En qué se gasta, por política (cultura, deporte…) o por tipo de gasto (capítulo → artículo → partida; el personal se queda en el artículo) |
 | **Inversiones** | Obras y compras previstas y cómo se financia cada una |
 | **Subvenciones** | A qué entidades se da dinero, por actividad y por entidad |
 | **Deuda** | Préstamos actuales, deuda por año, coste anual y la previsión de un préstamo nuevo |
@@ -24,6 +24,8 @@ Incluye los **presupuestos iniciales 2024, 2025 y 2026** (previsiones, no gastos
 | **Descargas** | Los datos en JSON y los Excel originales |
 
 Los gráficos usan los colores del Ayuntamiento, la web funciona bien en el móvil y todo importe procede de los Excel oficiales (no se inventa ningún dato).
+
+**Capítulos y artículos.** Los quesitos de Resumen, Ingresos y Gastos se ven por defecto por **capítulos** (los 9 grandes bloques) y tienen un selector «Ver por: Capítulos | Artículos». El **artículo** es el siguiente nivel de la clasificación económica (los dos primeros dígitos del código: 91 «Préstamos recibidos», 29 «Otros impuestos indirectos», 12 «Personal funcionario»). Los nombres oficiales vienen de la Orden EHA/3565/2008 (BOE de 10-12-2008) y de la Orden HAP/419/2014; las fuentes están en `tools/budget/labels.py`.
 
 ## Cómo funciona
 
@@ -60,6 +62,8 @@ python3 -m venv .venv
 El selector de año de la web lee `site/data/index.json`, que el script actualiza solo.
 
 **Claves de los JSON.** Son las mismas en todos los años: `actual` es el importe del año del presupuesto y `anterior` el del año anterior (`anterior2` el de hace dos años en ingresos, solo si el Excel lo trae). `total`/`totalAnterior` en subvenciones y `totalGastosAnterior` en el resumen siguen la misma idea. El conversor localiza las columnas por sus rótulos, no por su posición, porque cambian de un ejercicio a otro.
+
+**Artículos en los JSON.** `ingresos.json`: cada capítulo trae `articulos` y cada concepto su `articulo`. `gastos.json`: `articulos` (lista plana con `cap`) y cada partida su `articulo` (el capítulo 1 sigue agrupado por programa, sin `articulo`, pero sus artículos sí están en `articulos`).
 
 **Diferencias entre ejercicios** (detalle en el documento de diseño): 2024 no tiene préstamo previsto en el anexo de deuda (`previsto`, `vivaFinConPrevisto` e `interesesConPrevisto` valen `null` y la web no muestra esas cajas); en 2025 el Excel trae 250.000 € más de ingresos que de gastos (es una nota, no un aviso); en 2024 y 2025 el Excel de gastos no trae las inversiones del año anterior, así que esas partidas, programas y políticas quedan sin variación (`null`, `sinAnterior`).
 
