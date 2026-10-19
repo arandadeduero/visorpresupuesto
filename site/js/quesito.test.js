@@ -23,7 +23,7 @@ test("los gastos por capítulo se ordenan de mayor a menor y suman el 100 %", ()
   assert.ok(items.every((x, i) => i === 0 || items[i - 1].valor >= x.valor));
   assert.ok(Math.abs(items.reduce((s, i) => s + i.pct, 0) - 100) < 0.01);
   assert.equal(items[0].color, COLOR_CAPITULO[6]);
-  assert.equal(items[0].nombre, "Obras e inversiones");
+  assert.equal(items[0].nombre, "Cap 6 - Obras e inversiones");
   assert.equal(items[0].oficial, "Inversiones reales");
 });
 
@@ -80,12 +80,12 @@ test("2026: los préstamos recibidos (artículo 91) son el 31,4 % de los ingreso
   assert.equal(prestamos.color, COLOR_CAPITULO[9]);
 });
 
-test("los artículos pequeños de un capítulo se agrupan en «Otros artículos de …», una sola vez por capítulo", () => {
+test("los artículos pequeños de un capítulo se agrupan en «Otros artículos del Cap N», una sola vez por capítulo", () => {
   const d = ingresosDe(2026);
   const { items, grupos } = datosArticulos(d.capitulos, articulosDeIngresos(d));
   const otros = items.filter((i) => i.otros);
   assert.ok(otros.length > 0);
-  assert.ok(otros.every((o) => o.nombre.startsWith("Otros artículos de ")));
+  assert.ok(otros.every((o) => /^Otros artículos del Cap \d$/.test(o.nombre)));
   for (const g of grupos) assert.ok(g.items.filter((i) => i.otros).length <= 1);
   assert.ok(items.length <= 20);
 });

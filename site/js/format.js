@@ -25,6 +25,9 @@ export function formatVariation(actual, anterior) {
   return pct > 0 ? { text: `+${cifra} %`, dir: "up" } : { text: `−${cifra} %`, dir: "down" };
 }
 
+/** «Cap 6 - Obras e inversiones»: el capítulo siempre con su número, que es lo más básico para orientarse. */
+export const etiquetaCapitulo = (c) => `Cap ${c.cap} - ${c.corto}`;
+
 export function normalize(texto) {
   return String(texto ?? "")
     .normalize("NFD")

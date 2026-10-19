@@ -1,5 +1,5 @@
 import { runPage, esc } from "./layout.js";
-import { formatEuros } from "./format.js";
+import { formatEuros, etiquetaCapitulo } from "./format.js";
 import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
 import { pintaQuesito, articulosDeIngresos } from "./quesito.js";
 import { mayoresCambios } from "./insights.js";
@@ -16,7 +16,7 @@ function bloque(titulo, capitulos, total) {
   const ordenados = [...capitulos].sort((a, b) => b.actual - a.actual);
   return `<section><h2>${esc(titulo)}</h2>
     <ul class="barras">${ordenados.map((c) => `<li>${filaHtml({
-      nombre: c.corto,
+      nombre: etiquetaCapitulo(c),
       title: `Nombre oficial: ${c.oficial}`,
       importe: c.actual,
       max,
@@ -35,7 +35,7 @@ runPage("resumen", async ({ anio, main, load }) => {
   const ic = mayoresCambios(ingresos.capitulos.flatMap((c) => c.conceptos), 5);
   const suben = { g: gc.suben, i: ic.suben };
   const bajan = { g: gc.bajan, i: ic.bajan };
-  const filas = (caps) => caps.map((c) => `<tr><td>${esc(c.corto)}</td><td class="num">${formatEuros(c.anterior)}</td><td class="num">${formatEuros(c.actual)}</td></tr>`);
+  const filas = (caps) => caps.map((c) => `<tr><td>${esc(etiquetaCapitulo(c))}</td><td class="num">${formatEuros(c.anterior)}</td><td class="num">${formatEuros(c.actual)}</td></tr>`);
   const cab = [{ texto: "Concepto" }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }];
 
   main.innerHTML = `

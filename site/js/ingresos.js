@@ -1,5 +1,5 @@
 import { runPage, esc } from "./layout.js";
-import { formatEuros, matches } from "./format.js";
+import { formatEuros, matches, etiquetaCapitulo } from "./format.js";
 import { filaHtml, variacionHtml, tablaHtml, porHabHtml } from "./ui.js";
 import { pintaQuesito, articulosDeIngresos } from "./quesito.js";
 
@@ -29,7 +29,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
     <p><label>Buscar un ingreso <input type="search" id="buscar" placeholder="Por ejemplo: IBI, agua, terrazas…" autocomplete="off"></label></p>
     <div id="arbol"><ul class="barras">${caps.map((c) => `<li>${filaHtml({
       id: `cap-${c.cap}`,
-      nombre: c.corto,
+      nombre: etiquetaCapitulo(c),
       title: `Nombre oficial: ${c.oficial}`,
       importe: c.actual,
       max,
@@ -87,7 +87,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
     arbol.hidden = activa;
     resultados.hidden = !activa;
     if (!activa) return;
-    const filas = datos.capitulos.flatMap((c) => c.conceptos.filter((x) => matches(x.nombre, consulta)).map((x) => ({ ...x, cap: `${c.corto} › ${c.articulos.find((a) => a.codigo === x.articulo).nombre}` })));
+    const filas = datos.capitulos.flatMap((c) => c.conceptos.filter((x) => matches(x.nombre, consulta)).map((x) => ({ ...x, cap: `${etiquetaCapitulo(c)} › ${c.articulos.find((a) => a.codigo === x.articulo).nombre}` })));
     resultados.innerHTML = filas.length
       ? tablaHtml([...cab.slice(0, 1), { texto: "Tipo de ingreso" }, ...cab.slice(1)], filas.sort((a, b) => (b.actual ?? 0) - (a.actual ?? 0)).map((x) => fila(x).replace("</td><td class=\"num\">", `</td><td>${esc(x.cap)}</td><td class="num">`)))
       : `<p>No hay ingresos que coincidan con «${esc(consulta)}».</p>`;
