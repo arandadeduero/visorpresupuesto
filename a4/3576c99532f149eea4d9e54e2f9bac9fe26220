@@ -1,0 +1,21 @@
+site/js/layout.js
+  s_c524ba238f0f5a::t_64a75901307e9d 5-30,32,37-69,81,83,92
+site/js/menu.test.js
+  s_c524ba238f0f5a::t_64a75901307e9d 1-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a43576c99532f149eea4d9e54e2f9bac9fe26220",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
