@@ -1,5 +1,5 @@
 // Construcción del árbol de gastos y búsqueda. Funciones puras, sin DOM.
-import { matches } from "./format.js";
+import { matches, etiquetaCapitulo } from "./format.js";
 
 const porImporte = (a, b) => b.actual - a.actual;
 const suma = (items, campo) => items.reduce((s, x) => s + (x[campo] ?? 0), 0);
@@ -42,7 +42,7 @@ export function buildTree(datos, modo) {
         anterior: sumaAnterior(partidas),
         actual: suma(partidas, "actual"),
         hijos: partidas
-          .map((p) => nodoPartida(p, p.cap === 1 ? "Sueldos y cotizaciones (total del programa)" : capitulo.get(p.cap).corto))
+          .map((p) => nodoPartida(p, p.cap === 1 ? "Sueldos y cotizaciones (total del programa)" : etiquetaCapitulo(capitulo.get(p.cap))))
           .sort(porImporte),
       };
     });
@@ -72,7 +72,7 @@ export function buildTree(datos, modo) {
           };
         })
         .sort(porImporte);
-      return { id: `cap-${c.cap}`, nombre: c.corto, oficial: c.oficial, anterior: c.anterior, actual: c.actual, hijos };
+      return { id: `cap-${c.cap}`, nombre: etiquetaCapitulo(c), oficial: c.oficial, anterior: c.anterior, actual: c.actual, hijos };
     })
     .sort(porImporte);
 }
@@ -90,7 +90,7 @@ export function buscar(datos, consulta, limite = 200) {
   for (const p of datos.partidas) {
     const prog = programa.get(p.programa);
     if (p.cap !== 1 && matches(p.nombre, consulta)) {
-      filas.push({ tipo: "partida", nombre: p.nombre, programa: prog.nombre, capitulo: capitulo.get(p.cap).corto, articulo: articulo.get(`${p.cap}-${p.articulo}`).nombre, anterior: p.anterior, actual: p.actual });
+      filas.push({ tipo: "partida", nombre: p.nombre, programa: prog.nombre, capitulo: etiquetaCapitulo(capitulo.get(p.cap)), articulo: articulo.get(`${p.cap}-${p.articulo}`).nombre, anterior: p.anterior, actual: p.actual });
     }
   }
   return filas.sort(porImporte).slice(0, limite);

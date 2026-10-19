@@ -1,7 +1,7 @@
 // Gráfico de quesito (rosca) con el reparto de gastos o de ingresos, por capítulos (los grandes bloques)
 // o por artículos (el nivel siguiente de la clasificación económica: «Préstamos recibidos», «Personal funcionario»…).
 import { esc } from "./layout.js";
-import { formatEuros } from "./format.js";
+import { formatEuros, etiquetaCapitulo } from "./format.js";
 import { doughnutChart } from "./charts.js";
 
 // Un color fijo por capítulo, el mismo en todas las páginas (los tres primeros coinciden con la portada:
@@ -23,7 +23,7 @@ export function datosQuesito(capitulos) {
   const con = capitulos.filter((c) => c.actual > 0);
   const total = con.reduce((s, c) => s + c.actual, 0);
   const items = con
-    .map((c) => ({ cap: c.cap, nombre: c.corto, oficial: c.oficial, valor: c.actual, pct: (c.actual / total) * 100, color: COLOR_CAPITULO[c.cap] }))
+    .map((c) => ({ cap: c.cap, nombre: etiquetaCapitulo(c), oficial: c.oficial, valor: c.actual, pct: (c.actual / total) * 100, color: COLOR_CAPITULO[c.cap] }))
     .sort((a, b) => b.valor - a.valor);
   return { items, total };
 }
@@ -69,14 +69,14 @@ export function datosArticulos(capitulos, articulos) {
       if (plegar) {
         crudos.push({
           codigo: pequenos.map((a) => a.codigo).join("+"),
-          nombre: `Otros artículos de ${c.corto}`,
+          nombre: `Otros artículos del Cap ${c.cap}`,
           oficial: `Artículos ${pequenos.map((a) => a.codigo).join(", ")}: ${pequenos.map((a) => a.nombre).join("; ")}`,
           valor: pequenos.reduce((s, a) => s + a.actual, 0),
           otros: true,
         });
       }
       const items = crudos.map((x, i) => ({ ...x, cap: c.cap, pct: (x.valor / total) * 100, color: tonoArticulo(COLOR_CAPITULO[c.cap], i) }));
-      return { cap: c.cap, nombre: c.corto, oficial: c.oficial, color: COLOR_CAPITULO[c.cap], valor: c.actual, pct: (c.actual / total) * 100, items };
+      return { cap: c.cap, nombre: etiquetaCapitulo(c), oficial: c.oficial, color: COLOR_CAPITULO[c.cap], valor: c.actual, pct: (c.actual / total) * 100, items };
     })
     .filter((g) => g.items.length)
     .sort((a, b) => b.valor - a.valor);

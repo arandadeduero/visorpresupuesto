@@ -31,11 +31,11 @@ test("por capítulo: capítulo → artículo → partida, y el personal no baja 
   const raiz = buildTree(datos, "capitulo");
   assert.ok(Math.abs(suma(raiz) - TOTAL) < 1);
   for (const cap of raiz) assert.ok(Math.abs(suma(cap.hijos) - cap.actual) < 1, cap.nombre);
-  const personal = raiz.find((n) => n.nombre === "Personal");
+  const personal = raiz.find((n) => n.nombre === "Cap 1 - Personal");
   assert.equal(personal.oficial, "Gastos de personal");
   assert.ok(personal.hijos.some((a) => a.nombre === "Personal funcionario"));
   assert.ok(personal.hijos.every((a) => a.hijos === null));
-  const obras = raiz.find((n) => n.nombre === "Obras e inversiones");
+  const obras = raiz.find((n) => n.nombre === "Cap 6 - Obras e inversiones");
   const reposicion = obras.hijos.find((a) => a.codigo === "62");
   assert.equal(reposicion.oficial, "Inversión nueva asociada al funcionamiento operativo de los servicios");
   assert.ok(Math.abs(suma(reposicion.hijos) - reposicion.actual) < 1);
@@ -46,7 +46,7 @@ test("por capítulo: capítulo → artículo → partida, y el personal no baja 
 });
 
 test("por capítulo: los préstamos que se devuelven son el artículo 91 del capítulo 9", () => {
-  const deuda = buildTree(datos, "capitulo").find((n) => n.nombre === "Devolución de préstamos");
+  const deuda = buildTree(datos, "capitulo").find((n) => n.nombre === "Cap 9 - Devolución de préstamos");
   assert.equal(deuda.hijos.length, 1);
   assert.equal(deuda.hijos[0].nombre, "Devolución de préstamos");
   assert.equal(deuda.hijos[0].actual, 535000);

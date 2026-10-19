@@ -8,7 +8,7 @@
 //    que solo está en un año se marca «nuevo» o «desaparece» (hoy: la 46, Investigación, desarrollo e innovación).
 //  - Capítulos de gastos e ingresos: los nueve capítulos y su nombre no cambian.
 import { calcularIndicadores } from "./lecturas.js";
-import { formatEuros, formatVariation } from "./format.js";
+import { formatEuros, formatVariation, etiquetaCapitulo } from "./format.js";
 
 const esNumero = (n) => typeof n === "number" && Number.isFinite(n);
 const EPS = 0.005;
@@ -52,8 +52,8 @@ export function emparejar(listaA, listaB, { clave, nombre, divisorA, divisorB })
 
 const VISTAS = {
   politicas: { lista: (d) => d.gastos.politicas, clave: (p) => p.codigo, nombre: (p) => p.nombre },
-  gastoCapitulos: { lista: (d) => d.gastos.capitulos, clave: (c) => c.cap, nombre: (c) => c.corto },
-  ingresoCapitulos: { lista: (d) => d.ingresos.capitulos, clave: (c) => c.cap, nombre: (c) => c.corto },
+  gastoCapitulos: { lista: (d) => d.gastos.capitulos, clave: (c) => c.cap, nombre: etiquetaCapitulo },
+  ingresoCapitulos: { lista: (d) => d.ingresos.capitulos, clave: (c) => c.cap, nombre: etiquetaCapitulo },
 };
 export const NOMBRES_VISTA = Object.keys(VISTAS);
 

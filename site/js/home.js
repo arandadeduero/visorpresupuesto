@@ -61,7 +61,7 @@ runPage("inicio", async ({ anio, main, load }) => {
     const b = r.por100[i];
     botones.forEach((btn, j) => btn.setAttribute("aria-pressed", String(i === j)));
     const pct = Math.round((b.importe / r.totalGastos) * 1000) / 10;
-    detalle.innerHTML = `<strong>${esc(b.bloque)}:</strong> ${formatEuros(b.importe)} (${String(pct).replace(".", ",")} % del total). ${esc(EXPLICACION[b.bloque] ?? "")}`;
+    detalle.innerHTML = `<strong>${esc(b.bloque)}:</strong> ${formatEuros(b.importe)} (${String(pct).replace(".", ",")} % del total). ${esc(EXPLICACION[b.bloque] ?? "")} <span class="muted">(${b.caps.length > 1 ? "Capítulos" : "Capítulo"} ${b.caps.join(", ")})</span>`;
   };
   botones.forEach((btn, i) => btn.addEventListener("click", () => elegir(i)));
   elegir(0);
