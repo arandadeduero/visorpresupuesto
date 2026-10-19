@@ -55,6 +55,7 @@ python3 -m venv .venv
 ## Añadir otro año
 
 1. Crear la carpeta `AAAA/` con los mismos Excel (nombres que empiezan por `A1`, `A2`, `A3`, `A9`, `A12`, `A13.1` y `A13.2`).
+   **Cada Excel debe llevar una sola hoja** (la del ejercicio: sin copias, borradores ni hojas de trabajo); un test lo comprueba.
 2. Añadir la población de ese año en `tools/budget/labels.py` (`POBLACION`).
 3. `.venv/bin/python tools/convert.py AAAA`
 4. Revisar los avisos, hacer commit de `site/data/` y publicar.
