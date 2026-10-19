@@ -23,6 +23,8 @@ Incluye los **presupuestos iniciales 2024, 2025 y 2026** (previsiones, no gastos
 | **Guía** | Qué significan las palabras del presupuesto |
 | **Descargas** | Los datos en JSON y los Excel originales |
 
+Todas las tablas se pueden ordenar pulsando su cabecera (y arrancan ordenadas por la primera columna).
+
 Los gráficos usan los colores del Ayuntamiento, la web funciona bien en el móvil y todo importe procede de los Excel oficiales (no se inventa ningún dato).
 
 **Capítulos y artículos.** Los quesitos de Resumen, Ingresos y Gastos se ven por defecto por **capítulos** (los 9 grandes bloques) y tienen un selector «Ver por: Capítulos | Artículos». El **artículo** es el siguiente nivel de la clasificación económica (los dos primeros dígitos del código: 91 «Préstamos recibidos», 29 «Otros impuestos indirectos», 12 «Personal funcionario»). Los nombres oficiales vienen de la Orden EHA/3565/2008 (BOE de 10-12-2008) y de la Orden HAP/419/2014; las fuentes están en `tools/budget/labels.py`.

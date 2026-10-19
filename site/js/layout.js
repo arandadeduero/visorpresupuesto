@@ -1,5 +1,6 @@
 // Cabecera, menú, selector de año y pie comunes a todas las páginas.
 import { getIndex, getYear, loadData } from "./data.js";
+import { activarOrdenacion } from "./ordenar-tablas.js";
 
 const SECCIONES = [
   ["inicio", "Inicio", "index.html"],
@@ -62,6 +63,7 @@ export async function renderShell(activa) {
     fallo = e;
   }
   const main = montarMarco(activa, anio, indice);
+  activarOrdenacion(main);
   if (fallo) {
     showError(main, fallo);
     return null;
