@@ -18,6 +18,7 @@ Incluye los **presupuestos iniciales 2024, 2025 y 2026** (previsiones, no gastos
 | **Subvenciones** | A qué entidades se da dinero, por actividad y por entidad |
 | **Deuda** | Préstamos actuales, deuda por año, coste anual y la previsión de un préstamo nuevo |
 | **Indicadores** | Ahorro bruto, deuda por habitante, impuestos y tasas por habitante… |
+| **Comparar** | Dos presupuestos a elegir, frente a frente: barras pareadas por política o capítulo, tabla, frases, indicadores, por habitante y evolución |
 | **Calculadora** | «¿A qué se destina lo que pago?»: reparto orientativo de tus impuestos y tasas |
 | **Guía** | Qué significan las palabras del presupuesto |
 | **Descargas** | Los datos en JSON y los Excel originales |

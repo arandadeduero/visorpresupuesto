@@ -10,6 +10,7 @@ const SECCIONES = [
   ["subvenciones", "Subvenciones", "subvenciones.html"],
   ["deuda", "Deuda", "deuda.html"],
   ["indicadores", "Indicadores", "indicadores.html"],
+  ["comparar", "Comparar", "comparar.html"],
   ["calculadora", "Calculadora", "calculadora.html"],
   ["guia", "Guía", "guia.html"],
   ["descargas", "Descargas", "descargas.html"],
