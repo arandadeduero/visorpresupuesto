@@ -3,10 +3,10 @@
  "prestamos": [
   {
    "fecha": "2017-11-27",
+   "entidad": "BANKIA",
    "importe": 362528.65,
    "primeraAmortizacion": "2017-12-31",
    "ultimaAmortizacion": "2027-09-30",
-   "entidad": "BANKIA",
    "tipoInteres": "EURIBOR TRIM. +0,600%",
    "vivaInicio": 99695.43,
    "vivaFin": 63442.59,
@@ -14,10 +14,10 @@
   },
   {
    "fecha": "2018-12-21",
+   "entidad": "UNICAJA BANCO",
    "importe": 2051624.51,
    "primeraAmortizacion": "2019-03-31",
    "ultimaAmortizacion": "2028-12-31",
-   "entidad": "UNICAJA BANCO",
    "tipoInteres": "EURIBOR TRIM. +0,350%",
    "vivaInicio": 820649.83,
    "vivaFin": 615487.39,
@@ -25,10 +25,10 @@
   },
   {
    "fecha": "2021-09-01",
+   "entidad": "CAJA LABORAL",
    "importe": 2906376.85,
    "primeraAmortizacion": "2023-12-31",
    "ultimaAmortizacion": "2032-12-31",
-   "entidad": "CAJA LABORAL",
    "tipoInteres": "EURIBOR ANUAL + 0,26%",
    "vivaInicio": 2325101.48,
    "vivaFin": 2034463.79,
