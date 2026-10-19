@@ -1,0 +1,27 @@
+site/js/layout.js
+  s_c524ba238f0f5a::t_352e05ba9b8071 3,66
+site/css/styles.css
+  s_c524ba238f0f5a::t_352e05ba9b8071 98-103
+site/js/ordenar-tablas.test.js
+  s_c524ba238f0f5a::t_fdfd2798d7ff30 1-51
+site/js/ordenar-tablas.js
+  s_c524ba238f0f5a::t_352e05ba9b8071 1-91
+README.md
+  s_c524ba238f0f5a::t_ca7c969004a434 26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b068d3d90aee2ec533f3320ea0afadd4c47f1674",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
