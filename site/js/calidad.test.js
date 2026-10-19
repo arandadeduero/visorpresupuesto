@@ -73,3 +73,18 @@ for (const anio of ANIOS) {
     for (const e of ejemplos("./subvenciones.js")) assert.ok(subv.entidades.some((x) => matches(x.entidad, e)), `subvenciones: «${e}» sin resultados`);
   });
 }
+
+test("las leyendas de los quesitos usan columnas (marca, nombre, porcentaje, importe) para que se alineen", () => {
+  const css = leer("../css/styles.css");
+  // Declaraciones de todas las reglas cuyo selector (o lista de selectores) incluye `selector`.
+  const regla = (selector) =>
+    [...css.replace(/\/\*[\s\S]*?\*\//g, "").matchAll(/([^{}]+)\{([^}]*)\}/g)]
+      .filter((m) => m[1].split(",").some((x) => x.trim() === selector))
+      .map((m) => m[2])
+      .join(";");
+  for (const sel of [".leyenda-quesito li", ".leyenda-agrupada .grupo-cab", ".leyenda-agrupada ul li"]) {
+    assert.match(regla(sel), /display:\s*grid/, `${sel} sin grid`);
+    assert.match(regla(sel), /grid-template-columns/, `${sel} sin columnas`);
+  }
+  assert.match(css, /font-variant-numeric:\s*tabular-nums/);
+});
