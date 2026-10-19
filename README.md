@@ -103,6 +103,10 @@ python3 -m http.server -d dist 8000  # abrir http://localhost:8000
 
 `site/` sigue funcionando sin build (`python3 -m http.server -d site`). Al hacer cambios: no escribas nunca rutas `data/…` a mano en el JS, usa `urlDatos`; no enlaces ficheros estáticos desde fuera de los HTML y módulos (el build solo reescribe `href`/`src` de los HTML y `from "./x.js"`); no uses `import()` dinámico ni `url()` en el CSS sin ampliar el build. Una página abierta justo antes de un despliegue puede pedir ficheros viejos que ya no existen hasta que se recargue (≤ 10 min).
 
+## Tipografía
+
+La web usa **Outfit** (SIL Open Font License 1.1), descargada de Fontsource y alojada en `site/fonts/` (sin Google Fonts ni CDN). Se declara con `@font-face` en `css/styles.css`, se precarga en cada página y el build le pone huella como al resto de ficheros. Detalles y cómo actualizarla: `site/fonts/README.md`.
+
 ## Actualizar Chart.js
 
 ```bash

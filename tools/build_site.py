@@ -3,7 +3,7 @@
 
 Uso: python3 tools/build_site.py [site] [dist]
 
-- css, js (módulos incluidos) y vendor se renombran: styles.<huella>.css, home.<huella>.js...
+- css, js (módulos incluidos), vendor y tipografías (woff2) se renombran: styles.<huella>.css, home.<huella>.js...
 - Los módulos se procesan en orden topológico: su huella sale de su contenido ya con los imports reescritos,
   así un cambio en format.js cambia también la huella de todos los que lo importan (y la de los HTML).
 - data/ se copia a data-<huella>/ (huella de todo el directorio) y cada HTML recibe data-datos="data-<huella>/".
@@ -19,7 +19,8 @@ from pathlib import Path
 
 LARGO = 10
 IMPORT = re.compile(r'((?:\bfrom|\bimport)\s*)"(\./[^"]+\.js)"')
-REF_HTML = re.compile(r'((?:href|src)=")([^"#:]+\.(?:css|js))(")')
+REF_HTML = re.compile(r'((?:href|src)=")([^"#:]+\.(?:css|js|woff2))(")')
+URL_FUENTE = re.compile(r"url\(\.\./(fonts/[^)]+\.woff2)\)")
 RAIZ = Path(__file__).resolve().parents[1]
 
 
@@ -82,7 +83,30 @@ def _publicar_modulos(site: Path, dist: Path, manifiesto: dict) -> None:
 
 
 def _publicar_estaticos(site: Path, dist: Path, manifiesto: dict) -> None:
-    for rel in ["css/styles.css", *sorted(f"vendor/{p.name}" for p in (site / "vendor").glob("*.js"))]:
+    # Tipografías primero: el css las referencia y su huella depende de las de las fuentes
+    for p in sorted((site / "fonts").glob("*.woff2")):
+        rel = f"fonts/{p.name}"
+        datos = p.read_bytes()
+        nombre = con_huella(rel, huella(datos))
+        manifiesto[rel] = nombre
+        (dist / nombre).write_bytes(datos)
+    for p in (site / "fonts").glob("*"):
+        if p.suffix != ".woff2":  # licencia y README, tal cual
+            shutil.copy2(p, dist / "fonts" / p.name)
+
+    css = (site / "css/styles.css").read_text(encoding="utf-8")
+
+    def url(m):
+        if m.group(1) not in manifiesto:
+            raise FileNotFoundError(f"styles.css usa {m.group(1)}, que no existe en {site}")
+        return f"url(../{manifiesto[m.group(1)]})"
+
+    css = URL_FUENTE.sub(url, css)
+    nombre = con_huella("css/styles.css", huella(css.encode()))
+    manifiesto["css/styles.css"] = nombre
+    (dist / nombre).write_text(css, encoding="utf-8")
+
+    for rel in sorted(f"vendor/{p.name}" for p in (site / "vendor").glob("*.js")):
         datos = (site / rel).read_bytes()
         nombre = con_huella(rel, huella(datos))
         manifiesto[rel] = nombre
@@ -93,7 +117,7 @@ def build(site: Path, dist: Path) -> dict:
     site, dist = Path(site), Path(dist)
     if dist.exists():
         shutil.rmtree(dist)
-    for sub in ["css", "js", "vendor"]:
+    for sub in ["css", "js", "vendor", "fonts"]:
         (dist / sub).mkdir(parents=True)
     manifiesto: dict[str, str] = {}
 
