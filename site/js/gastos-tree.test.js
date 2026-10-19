@@ -5,7 +5,7 @@ import { buildTree, buscar } from "./gastos-tree.js";
 
 const datos = JSON.parse(readFileSync(new URL("../data/2026/gastos.json", import.meta.url), "utf8"));
 const TOTAL = 64280861.35;
-const suma = (nodos) => nodos.reduce((s, n) => s + n.y2026, 0);
+const suma = (nodos) => nodos.reduce((s, n) => s + n.actual, 0);
 
 test("por política: las políticas suman el presupuesto y llevan nombre llano", () => {
   const raiz = buildTree(datos, "politica");
@@ -13,18 +13,18 @@ test("por política: las políticas suman el presupuesto y llevan nombre llano",
   for (const nombre of ["Cultura", "Deporte", "Educación", "Bienestar comunitario", "Seguridad y movilidad ciudadana", "Deuda pública"]) {
     assert.ok(raiz.some((n) => n.nombre === nombre), nombre);
   }
-  assert.ok(raiz.every((x, i) => i === 0 || raiz[i - 1].y2026 >= x.y2026));
+  assert.ok(raiz.every((x, i) => i === 0 || raiz[i - 1].actual >= x.actual));
 });
 
 test("por política: política → programa → partida, con los importes de Seguridad", () => {
   const politica = buildTree(datos, "politica").find((n) => n.nombre === "Seguridad y movilidad ciudadana");
   const seguridad = politica.hijos.find((n) => n.nombre === "Seguridad");
-  assert.ok(Math.abs(seguridad.y2026 - 2893700) < 1);
-  assert.ok(Math.abs(suma(seguridad.hijos) - seguridad.y2026) < 1);
+  assert.ok(Math.abs(seguridad.actual - 2893700) < 1);
+  assert.ok(Math.abs(suma(seguridad.hijos) - seguridad.actual) < 1);
   const edificios = seguridad.hijos.find((n) => n.codigo === "622");
-  assert.equal(edificios.y2026, 110000);
+  assert.equal(edificios.actual, 110000);
   assert.equal(edificios.hijos, null);
-  assert.ok(Math.abs(suma(politica.hijos) - politica.y2026) < 1);
+  assert.ok(Math.abs(suma(politica.hijos) - politica.actual) < 1);
 });
 
 test("por capítulo: el personal no baja de programa", () => {
@@ -36,7 +36,7 @@ test("por capítulo: el personal no baja de programa", () => {
   assert.ok(personal.hijos.every((p) => p.hijos === null));
   const obras = raiz.find((n) => n.nombre === "Obras e inversiones");
   const seg = obras.hijos.find((n) => n.nombre === "Seguridad");
-  assert.deepEqual(seg.hijos.map((p) => p.y2026).sort((a, b) => a - b), [45000, 110000]);
+  assert.deepEqual(seg.hijos.map((p) => p.actual).sort((a, b) => a - b), [45000, 110000]);
 });
 
 test("buscar ignora tildes y devuelve programas y partidas", () => {

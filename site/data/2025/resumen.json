@@ -1,0 +1,182 @@
+{
+ "anio": 2025,
+ "tipo": "inicial",
+ "habitantes": 33956,
+ "anioPoblacion": 2025,
+ "fuentePoblacion": "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos",
+ "totalGastos": 64828315.2,
+ "totalGastosAnterior": 49800478.98,
+ "totalIngresos": 65078315.2,
+ "gastosPorCapitulo": [
+  {
+   "cap": 1,
+   "corto": "Personal",
+   "oficial": "Gastos de personal",
+   "anterior": 14908290.5,
+   "actual": 15562398.5
+  },
+  {
+   "cap": 2,
+   "corto": "Servicios y mantenimiento",
+   "oficial": "Gastos corrientes en bienes y servicios",
+   "anterior": 19550670.0,
+   "actual": 19430030.0
+  },
+  {
+   "cap": 3,
+   "corto": "Intereses de préstamos",
+   "oficial": "Gastos financieros",
+   "anterior": 170300.0,
+   "actual": 170300.0
+  },
+  {
+   "cap": 4,
+   "corto": "Ayudas y transferencias",
+   "oficial": "Transferencias corrientes",
+   "anterior": 1955748.0,
+   "actual": 1727680.0
+  },
+  {
+   "cap": 5,
+   "corto": "Fondo de imprevistos",
+   "oficial": "Fondo de contingencia",
+   "anterior": 100000.0,
+   "actual": 50000.0
+  },
+  {
+   "cap": 6,
+   "corto": "Obras e inversiones",
+   "oficial": "Inversiones reales",
+   "anterior": 12435470.48,
+   "actual": 27237906.7
+  },
+  {
+   "cap": 7,
+   "corto": "Ayudas para inversiones",
+   "oficial": "Transferencias de capital",
+   "anterior": 130000.0,
+   "actual": 100000.0
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "anterior": 15000.0,
+   "actual": 15000.0
+  },
+  {
+   "cap": 9,
+   "corto": "Devolución de préstamos",
+   "oficial": "Pasivos financieros",
+   "anterior": 535000.0,
+   "actual": 535000.0
+  }
+ ],
+ "ingresosPorCapitulo": [
+  {
+   "cap": 1,
+   "corto": "Impuestos directos (IBI, IAE, vehículos…)",
+   "oficial": "Impuestos directos",
+   "anterior": 14678000.0,
+   "actual": 15820000.0
+  },
+  {
+   "cap": 2,
+   "corto": "Impuestos indirectos (obras)",
+   "oficial": "Impuestos indirectos",
+   "anterior": 900000.0,
+   "actual": 900000.0
+  },
+  {
+   "cap": 3,
+   "corto": "Tasas y precios públicos",
+   "oficial": "Tasas y otros ingresos",
+   "anterior": 8686060.0,
+   "actual": 7086060.0
+  },
+  {
+   "cap": 4,
+   "corto": "Transferencias de otras administraciones",
+   "oficial": "Transferencias corrientes",
+   "anterior": 12846672.94,
+   "actual": 13640973.59
+  },
+  {
+   "cap": 5,
+   "corto": "Ingresos de patrimonio",
+   "oficial": "Ingresos patrimoniales",
+   "anterior": 427414.0,
+   "actual": 671028.12
+  },
+  {
+   "cap": 6,
+   "corto": "Venta de inversiones",
+   "oficial": "Enajenación de inversiones reales",
+   "anterior": 6000.0,
+   "actual": 0.0
+  },
+  {
+   "cap": 7,
+   "corto": "Subvenciones para obras",
+   "oficial": "Transferencias de capital",
+   "anterior": 1465755.56,
+   "actual": 1931060.4
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "anterior": 2172195.5,
+   "actual": 4571700.16
+  },
+  {
+   "cap": 9,
+   "corto": "Préstamos",
+   "oficial": "Pasivos financieros",
+   "anterior": 8618380.98,
+   "actual": 20457492.93
+  }
+ ],
+ "por100": [
+  {
+   "bloque": "Obras e inversiones",
+   "caps": [
+    6,
+    7
+   ],
+   "importe": 27337906.7,
+   "euros": 42
+  },
+  {
+   "bloque": "Servicios",
+   "caps": [
+    2
+   ],
+   "importe": 19430030.0,
+   "euros": 30
+  },
+  {
+   "bloque": "Personal",
+   "caps": [
+    1
+   ],
+   "importe": 15562398.5,
+   "euros": 24
+  },
+  {
+   "bloque": "Otros",
+   "caps": [
+    3,
+    4,
+    5,
+    8,
+    9
+   ],
+   "importe": 2497980.0,
+   "euros": 4
+  }
+ ],
+ "notas": [
+  "En el Excel de 2025 el total de ingresos (65.078.315,20 €) supera en 250.000 € al de gastos (64.828.315,20 €); el propio fichero lo marca como «Diff total» en A1. El presupuesto de 2026 recoge para 2025 un capítulo 2 de gastos con 250.000 € más (19.680.030 € en lugar de 19.430.030 €)."
+ ]
+}

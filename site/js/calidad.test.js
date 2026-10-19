@@ -54,13 +54,22 @@ test("los textos de la interfaz no llevan años fijos (se derivan del año elegi
   assert.deepEqual(sueltos, []);
 });
 
-test("los ejemplos que sugieren los buscadores devuelven resultados", () => {
-  const ejemplos = (fichero) => leer(fichero).match(/placeholder="Por ejemplo: ([^"]+)"/)[1].replace("…", "").split(",").map((s) => s.trim()).filter(Boolean);
-  const gastos = JSON.parse(leer("../data/2026/gastos.json"));
-  for (const e of ejemplos("./gastos.js")) assert.ok(buscar(gastos, e).length > 0, `gastos: «${e}» sin resultados`);
-  const ingresos = JSON.parse(leer("../data/2026/ingresos.json"));
-  const conceptos = ingresos.capitulos.flatMap((c) => c.conceptos);
-  for (const e of ejemplos("./ingresos.js")) assert.ok(conceptos.some((x) => matches(x.nombre, e)), `ingresos: «${e}» sin resultados`);
-  const subv = JSON.parse(leer("../data/2026/subvenciones.json"));
-  for (const e of ejemplos("./subvenciones.js")) assert.ok(subv.entidades.some((x) => matches(x.entidad, e)), `subvenciones: «${e}» sin resultados`);
+test("las claves de los datos no llevan años (anterior/actual), para que sirvan en cualquier ejercicio", () => {
+  const ficheros = readdirSync(new URL("./", import.meta.url)).filter((f) => f.endsWith(".js"));
+  for (const f of ficheros) assert.doesNotMatch(leer(`./${f}`), /\b(y20\d\d|total20\d\d|totalGastos20\d\d)\b/, `${f} usa una clave con año`);
 });
+
+const ANIOS = JSON.parse(leer("../data/index.json")).anios.map((a) => a.anio);
+
+for (const anio of ANIOS) {
+  test(`los ejemplos que sugieren los buscadores devuelven resultados en ${anio}`, () => {
+    const ejemplos = (fichero) => leer(fichero).match(/placeholder="Por ejemplo: ([^"]+)"/)[1].replace("…", "").split(",").map((s) => s.trim()).filter(Boolean);
+    const gastos = JSON.parse(leer(`../data/${anio}/gastos.json`));
+    for (const e of ejemplos("./gastos.js")) assert.ok(buscar(gastos, e).length > 0, `gastos: «${e}» sin resultados`);
+    const ingresos = JSON.parse(leer(`../data/${anio}/ingresos.json`));
+    const conceptos = ingresos.capitulos.flatMap((c) => c.conceptos);
+    for (const e of ejemplos("./ingresos.js")) assert.ok(conceptos.some((x) => matches(x.nombre, e)), `ingresos: «${e}» sin resultados`);
+    const subv = JSON.parse(leer(`../data/${anio}/subvenciones.json`));
+    for (const e of ejemplos("./subvenciones.js")) assert.ok(subv.entidades.some((x) => matches(x.entidad, e)), `subvenciones: «${e}» sin resultados`);
+  });
+}

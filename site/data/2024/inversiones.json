@@ -1,0 +1,1119 @@
+{
+ "anio": 2024,
+ "total": 12435470.48,
+ "fuentes": {
+  "prestamo": 8618380.98,
+  "ingresosCorrientes": 188138.44,
+  "otros": 80240.4,
+  "rta": 2157195.5,
+  "subvenciones": 1391515.16
+ },
+ "programas": [
+  {
+   "codigo": "1320",
+   "nombre": "Seguridad",
+   "total": 67000.0,
+   "proyectos": [
+    {
+     "nombre": "Sistema portátil velocidad",
+     "partida": "623",
+     "importe": 16000.0,
+     "prestamo": 16000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "2 etilómetros",
+     "partida": "623",
+     "importe": 18000.0,
+     "prestamo": 18000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Software policía",
+     "partida": "641",
+     "importe": 33000.0,
+     "prestamo": 33000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1330",
+   "nombre": "Ordenación del tráfico y estacionamiento",
+   "total": 25000.0,
+   "proyectos": [
+    {
+     "nombre": "Instalación grupo peatonal en cruce bomberos - Avda Luis Mateos",
+     "partida": "609",
+     "importe": 25000.0,
+     "prestamo": 25000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1340",
+   "nombre": "Movilidad urbana e interurbana",
+   "total": 70000.0,
+   "proyectos": [
+    {
+     "nombre": "Carril bici Sol de las Moreras - Tapias Blancas",
+     "partida": "609",
+     "importe": 70000.0,
+     "prestamo": 70000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1510",
+   "nombre": "Urbanismo",
+   "total": 36080.0,
+   "proyectos": [
+    {
+     "nombre": "Licencia anual CAD LT (3 unidades)",
+     "partida": "626",
+     "importe": 1740.0,
+     "prestamo": 1740.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Actualización 7 licencias CAD LT",
+     "partida": "626",
+     "importe": 840.0,
+     "prestamo": 840.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Asistencia técnica RECITE",
+     "partida": "626",
+     "importe": 5000.0,
+     "prestamo": 5000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Base de precios (para Presto)",
+     "partida": "626",
+     "importe": 3500.0,
+     "prestamo": 3500.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Sustitución de unidad exterior aire acondicionado edificio Obras y Urbanismo",
+     "partida": "632",
+     "importe": 25000.0,
+     "prestamo": 25000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1522",
+   "nombre": "Vivienda",
+   "total": 815333.4,
+   "proyectos": [
+    {
+     "nombre": "Rehabilitación viviendas Junta Santa Catalina",
+     "partida": "650",
+     "importe": 815333.4,
+     "prestamo": 187772.57,
+     "ingresosCorrientes": 0.0,
+     "otros": 74240.4,
+     "rta": 0.0,
+     "subvenciones": 553320.43
+    }
+   ]
+  },
+  {
+   "codigo": "1530",
+   "nombre": "Vías públicas urbanas",
+   "total": 2227402.38,
+   "proyectos": [
+    {
+     "nombre": "Reurbanización ARU Santa Catalina",
+     "partida": "619",
+     "importe": 488703.95,
+     "prestamo": 186509.22,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 302194.73
+    },
+    {
+     "nombre": "Obras reurbanización Jardines de don Diego",
+     "partida": "619",
+     "importe": 736402.98,
+     "prestamo": 736402.98,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Dirección de obra Jardines de Don Diego",
+     "partida": "619",
+     "importe": 23958.0,
+     "prestamo": 23958.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Obras reurbanización parcial c/ Carrequemada",
+     "partida": "619",
+     "importe": 123000.0,
+     "prestamo": 123000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Obras reurbanización parcial c/ San Gregorio",
+     "partida": "619",
+     "importe": 242400.0,
+     "prestamo": 236400.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 6000.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Fase II de Traseras San Esteban",
+     "partida": "619",
+     "importe": 60000.0,
+     "prestamo": 60000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Ampliación de las aceras de Simón de Colonia",
+     "partida": "619",
+     "importe": 40000.0,
+     "prestamo": 40000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Vía lateral colegio Claret",
+     "partida": "619",
+     "importe": 15000.0,
+     "prestamo": 15000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Escaleras parque Península - Puente Conchuela",
+     "partida": "619",
+     "importe": 25000.0,
+     "prestamo": 25000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Certificación reparación y mejora aceras peatonales (2020/7876F)",
+     "partida": "619",
+     "importe": 22937.45,
+     "prestamo": 22937.45,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Remodelación Plaza Sorolla",
+     "partida": "619",
+     "importe": 100000.0,
+     "prestamo": 45000.0,
+     "ingresosCorrientes": 55000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Remodelación Plaza del Mediterráneo",
+     "partida": "619",
+     "importe": 100000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 100000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Inversión en elementos vegetales y de ornamentación",
+     "partida": "619",
+     "importe": 100000.0,
+     "prestamo": 100000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Inversión en mobiliario urbano (bancos, papeleras…)",
+     "partida": "619",
+     "importe": 150000.0,
+     "prestamo": 150000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1600",
+   "nombre": "Alcantarillado",
+   "total": 125000.0,
+   "proyectos": [
+    {
+     "nombre": "Reposición saneamiento Costaján",
+     "partida": "619",
+     "importe": 40000.0,
+     "prestamo": 40000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Reparación aliviadero Mediquín",
+     "partida": "619",
+     "importe": 40000.0,
+     "prestamo": 40000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Cerramientos Cerro de los Perros",
+     "partida": "619",
+     "importe": 40000.0,
+     "prestamo": 40000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Reposición saneamiento Santo Domingo",
+     "partida": "619",
+     "importe": 5000.0,
+     "prestamo": 5000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1610",
+   "nombre": "Abastecimiento y distribución de aguas",
+   "total": 211990.0,
+   "proyectos": [
+    {
+     "nombre": "Construcción tubería Tubilla",
+     "partida": "619",
+     "importe": 120000.0,
+     "prestamo": 120000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Plan de regeneración de agua urbana",
+     "partida": "619",
+     "importe": 30000.0,
+     "prestamo": 30000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Redacción estudios y proyectos para mejora de la calidad del agua",
+     "partida": "619",
+     "importe": 14790.0,
+     "prestamo": 14790.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Suministro medidor de oxígeno para trabajos en espacios confinados",
+     "partida": "623",
+     "importe": 1200.0,
+     "prestamo": 1200.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Repuesto cloradores",
+     "partida": "623",
+     "importe": 12000.0,
+     "prestamo": 12000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Suministro para reposición de tubería de acero de D.150 para camisa pozos",
+     "partida": "623",
+     "importe": 25000.0,
+     "prestamo": 25000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Servicio y suministro mantenimiento medidores de cloro/turbidímetro",
+     "partida": "623",
+     "importe": 6000.0,
+     "prestamo": 6000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Suministro EPIS y amianto",
+     "partida": "623",
+     "importe": 3000.0,
+     "prestamo": 3000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1640",
+   "nombre": "Cementerio",
+   "total": 182000.0,
+   "proyectos": [
+    {
+     "nombre": "Construcción sepulturas",
+     "partida": "609",
+     "importe": 170000.0,
+     "prestamo": 170000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Descensor de féretros y lápidas",
+     "partida": "622",
+     "importe": 12000.0,
+     "prestamo": 12000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1650",
+   "nombre": "Alumbrado",
+   "total": 30000.0,
+   "proyectos": [
+    {
+     "nombre": "Hasta Juan Carlos Higuero desde antigua Carr. Valladolid",
+     "partida": "609",
+     "importe": 30000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 30000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1710",
+   "nombre": "Parques y jardines",
+   "total": 620000.0,
+   "proyectos": [
+    {
+     "nombre": "Parque General Gutiérrez",
+     "partida": "619",
+     "importe": 200000.0,
+     "prestamo": 200000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Rampa emergencia (desembocadura Arandilla)",
+     "partida": "619",
+     "importe": 10000.0,
+     "prestamo": 10000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Pintar canchas (María Pacheco y barrio La Estación)",
+     "partida": "619",
+     "importe": 35000.0,
+     "prestamo": 35000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Parque canino educativo",
+     "partida": "619",
+     "importe": 60000.0,
+     "prestamo": 60000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Rehabilitación y certificación parques infantiles",
+     "partida": "619",
+     "importe": 315000.0,
+     "prestamo": 47000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 268000.0
+    }
+   ]
+  },
+  {
+   "codigo": "2310",
+   "nombre": "Admon. gral. asistencia social primaria",
+   "total": 18000.0,
+   "proyectos": [
+    {
+     "nombre": "Instalación de persianas térmicas",
+     "partida": "632",
+     "importe": 18000.0,
+     "prestamo": 18000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3110",
+   "nombre": "Protección de la salubridad pública",
+   "total": 150000.0,
+   "proyectos": [
+    {
+     "nombre": "Construcción de baños públicos",
+     "partida": "609",
+     "importe": 150000.0,
+     "prestamo": 150000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3261",
+   "nombre": "Escuela de música y danza",
+   "total": 6000.0,
+   "proyectos": [
+    {
+     "nombre": "Adquisición instrumentos musicales, imagen y sonido",
+     "partida": "629",
+     "importe": 6000.0,
+     "prestamo": 6000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3262",
+   "nombre": "Escuela de folclore",
+   "total": 11000.0,
+   "proyectos": [
+    {
+     "nombre": "Maniquíes",
+     "partida": "629",
+     "importe": 5000.0,
+     "prestamo": 5000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Adquisición instrumentos musicales, imagen y sonido",
+     "partida": "629",
+     "importe": 6000.0,
+     "prestamo": 6000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3321",
+   "nombre": "Biblioteca",
+   "total": 23700.0,
+   "proyectos": [
+    {
+     "nombre": "Arco y magnetizador mostrador y videoteca",
+     "partida": "626",
+     "importe": 8500.0,
+     "prestamo": 8500.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Equipo de visionado 32 pulgadas (Reproductor de dvd, pantalla y auriculares)",
+     "partida": "626",
+     "importe": 1200.0,
+     "prestamo": 1200.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Reparación y tapizado sillones sala de estudio (2a planta Biblioteca)",
+     "partida": "635",
+     "importe": 14000.0,
+     "prestamo": 14000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3330",
+   "nombre": "Museos",
+   "total": 40000.0,
+   "proyectos": [
+    {
+     "nombre": "Arreglo cubierta \"Museo del Tren\" (estación Chelva)",
+     "partida": "650",
+     "importe": 40000.0,
+     "prestamo": 40000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3340",
+   "nombre": "Equipamientos culturales y casa de cultura",
+   "total": 662500.0,
+   "proyectos": [
+    {
+     "nombre": "Varillas salas exposiciones",
+     "partida": "623",
+     "importe": 6000.0,
+     "prestamo": 6000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Diademas micro y petacas",
+     "partida": "623",
+     "importe": 2000.0,
+     "prestamo": 2000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mesa de mezclas",
+     "partida": "623",
+     "importe": 1500.0,
+     "prestamo": 1500.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Micros sobremesa inalámbricos",
+     "partida": "623",
+     "importe": 3000.0,
+     "prestamo": 3000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Proyecto Auditorio",
+     "partida": "632",
+     "importe": 650000.0,
+     "prestamo": 650000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3370",
+   "nombre": "Centros cívicos",
+   "total": 144595.0,
+   "proyectos": [
+    {
+     "nombre": "Rehabilitación Centro Cívico Virgen de las Viñas",
+     "partida": "632",
+     "importe": 144595.0,
+     "prestamo": 43020.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 101575.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3372",
+   "nombre": "Banda de música",
+   "total": 7000.0,
+   "proyectos": [
+    {
+     "nombre": "Adquisición instrumentos musicales, imagen y sonido",
+     "partida": "629",
+     "importe": 7000.0,
+     "prestamo": 7000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3373",
+   "nombre": "Casa de la juventud y centro arte joven",
+   "total": 700000.0,
+   "proyectos": [
+    {
+     "nombre": "Centro de Arte Joven",
+     "partida": "629",
+     "importe": 700000.0,
+     "prestamo": 432000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 268000.0
+    }
+   ]
+  },
+  {
+   "codigo": "3380",
+   "nombre": "Festejos",
+   "total": 74000.0,
+   "proyectos": [
+    {
+     "nombre": "Elevación escenario hasta 1.50 (sobre el actualmente disponible)",
+     "partida": "623",
+     "importe": 14000.0,
+     "prestamo": 14000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Construcción de tejadillo en almacén municipal (para carrozas)",
+     "partida": "623",
+     "importe": 15000.0,
+     "prestamo": 15000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Adquisición de dos módulos de tres gradas, de cuatro alturas para 192 personas (y movilidad reducida)",
+     "partida": "623",
+     "importe": 24000.0,
+     "prestamo": 24000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Vallas bajas y antiavalancha",
+     "partida": "623",
+     "importe": 12000.0,
+     "prestamo": 12000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Adquisición de dos cabezudos",
+     "partida": "623",
+     "importe": 9000.0,
+     "prestamo": 9000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3420",
+   "nombre": "Instalaciones deportivas",
+   "total": 2673772.46,
+   "proyectos": [
+    {
+     "nombre": "Obras mejora piscina municipal cubierta",
+     "partida": "632",
+     "importe": 546193.2,
+     "prestamo": 546193.2,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "SANTIAGO MANGUÁN y JUAN CARLOS HIGUERO. Planes autoprotección",
+     "partida": "632",
+     "importe": 270000.0,
+     "prestamo": 270000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "SANTIAGO MANGUÁN. Rehabilitación",
+     "partida": "632",
+     "importe": 1189536.08,
+     "prestamo": 1189536.08,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "JUAN CARLOS HIGUERO. Remodelación grada este",
+     "partida": "632",
+     "importe": 295043.18,
+     "prestamo": 295043.18,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "JUAN CARLOS HIGUERO. Anexos",
+     "partida": "632",
+     "importe": 42000.0,
+     "prestamo": 42000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "POLIDEPORTIVO CHELVA. Sustitución de paneles lucernarios en la cubierta",
+     "partida": "632",
+     "importe": 65000.0,
+     "prestamo": 65000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "CAMPO DE RUGBY V. VIÑAS. Construcción dependencias",
+     "partida": "632",
+     "importe": 120000.0,
+     "prestamo": 120000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Frontón Sinovas",
+     "partida": "632",
+     "importe": 25000.0,
+     "prestamo": 25000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Arreglo vestuarios y baños de la piscina calabaza",
+     "partida": "632",
+     "importe": 90000.0,
+     "prestamo": 90000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Cámaras de seguridad",
+     "partida": "632",
+     "importe": 31000.0,
+     "prestamo": 31000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4320",
+   "nombre": "Turismo",
+   "total": 2578897.24,
+   "proyectos": [
+    {
+     "nombre": "Diseño y adecuación de senderos locales \"Ribera, monte y viñedo\"",
+     "partida": "609",
+     "importe": 71988.7,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 71988.7,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Recuperación de los ríos como corredores ambientales y turísticos",
+     "partida": "619",
+     "importe": 422248.58,
+     "prestamo": 272248.58,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 150000.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Construcción Centro de recepción de visitantes",
+     "partida": "622",
+     "importe": 1168659.96,
+     "prestamo": 251028.16,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 917631.8,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Lanzadera con bus eléctrico a bodegas elaboradoras",
+     "partida": "624",
+     "importe": 562000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 562000.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Proyecto \"Aranda Patrimonio Digital\"",
+     "partida": "629",
+     "importe": 150000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 150000.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Creación del equipo de gestión turística",
+     "partida": "629",
+     "importe": 90000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 90000.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mobiliario artístico de arraigo y topofilia",
+     "partida": "689",
+     "importe": 114000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 114000.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4330",
+   "nombre": "Desarrollo económico",
+   "total": 300000.0,
+   "proyectos": [
+    {
+     "nombre": "Ampliación Polígono Prado Marina",
+     "partida": "609",
+     "importe": 200000.0,
+     "prestamo": 200000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Desarrollo Puerto seco",
+     "partida": "609",
+     "importe": 100000.0,
+     "prestamo": 100000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4540",
+   "nombre": "Caminos",
+   "total": 100000.0,
+   "proyectos": [
+    {
+     "nombre": "Arreglo de caminos",
+     "partida": "609",
+     "importe": 100000.0,
+     "prestamo": 100000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "9200",
+   "nombre": "Administración general",
+   "total": 241200.0,
+   "proyectos": [
+    {
+     "nombre": "Material informático (ordenadores, tablets, ratones, pantallas…)",
+     "partida": "626",
+     "importe": 200000.0,
+     "prestamo": 198061.56,
+     "ingresosCorrientes": 1938.44,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "2 destructoras de papel",
+     "partida": "626",
+     "importe": 1200.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 1200.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Redacción y modificación proyectos Fondos Europeos",
+     "partida": "629",
+     "importe": 40000.0,
+     "prestamo": 40000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "9290",
+   "nombre": "No clasificados",
+   "total": 295000.0,
+   "proyectos": [
+    {
+     "nombre": "Adquisición y rehabilitación de bajo en Santa Catalina",
+     "partida": "632",
+     "importe": 295000.0,
+     "prestamo": 295000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  }
+ ]
+}

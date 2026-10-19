@@ -4,7 +4,7 @@
 
 Visor de los presupuestos del Ayuntamiento de Aranda de Duero pensado para cualquier vecino, sin necesidad de saber de presupuestos: en qué se gasta el dinero, de dónde sale, qué obras se prevén, a quién se dan subvenciones y cuánto se debe.
 
-Hoy incluye el **presupuesto inicial 2026** (previsiones, no gastos ya realizados).
+Incluye los **presupuestos iniciales 2024, 2025 y 2026** (previsiones, no gastos ya realizados); por defecto se muestra el último y hay un selector de año.
 
 ## Qué se puede ver
 
@@ -26,7 +26,7 @@ Los gráficos usan los colores del Ayuntamiento, la web funciona bien en el móv
 
 ## Cómo funciona
 
-- `2026/` contiene los Excel oficiales del presupuesto.
+- `2024/`, `2025/` y `2026/` contienen los Excel oficiales de cada presupuesto.
 - `tools/` convierte esos Excel en ficheros JSON (Python con `openpyxl`) y avisa si algún total no cuadra.
 - `site/` es la web: HTML y JavaScript simples, sin framework, sin servidor. Lee los JSON de `site/data/` y dibuja los gráficos con [Chart.js](https://www.chartjs.org/), guardado en `site/vendor/` (no depende de ningún CDN).
 - GitHub Actions publica solo la carpeta `site/` en GitHub Pages.
@@ -46,7 +46,7 @@ python3 -m http.server -d site 8000
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python tools/convert.py 2026
+.venv/bin/python tools/convert.py 2024   # o 2025, 2026
 ```
 
 ## Añadir otro año
@@ -58,9 +58,9 @@ python3 -m venv .venv
 
 El selector de año de la web lee `site/data/index.json`, que el script actualiza solo.
 
-**Limitaciones actuales del conversor** (a revisar al añadir el primer año nuevo):
-- Los JSON usan las claves `y2025`/`y2026` (y `y2024` en ingresos) con el significado «año anterior» / «año del presupuesto»; los textos de la web ya se derivan del año elegido.
-- El conversor de deuda (`tools/budget/deuda.py`) espera el formato de `A13.1` de 2026: columnas de deuda viva desde 2023 hasta 2026 y un préstamo previsto sin entidad. Con otra estructura habrá que adaptarlo.
+**Claves de los JSON.** Son las mismas en todos los años: `actual` es el importe del año del presupuesto y `anterior` el del año anterior (`anterior2` el de hace dos años en ingresos, solo si el Excel lo trae). `total`/`totalAnterior` en subvenciones y `totalGastosAnterior` en el resumen siguen la misma idea. El conversor localiza las columnas por sus rótulos, no por su posición, porque cambian de un ejercicio a otro.
+
+**Diferencias entre ejercicios** (detalle en el documento de diseño): 2024 no tiene préstamo previsto en el anexo de deuda (`previsto`, `vivaFinConPrevisto` e `interesesConPrevisto` valen `null` y la web no muestra esas cajas); en 2025 el Excel trae 250.000 € más de ingresos que de gastos (es una nota, no un aviso); en 2024 y 2025 el Excel de gastos no trae las inversiones del año anterior, así que esas partidas, programas y políticas quedan sin variación (`null`, `sinAnterior`).
 
 ## Tests
 
@@ -84,9 +84,9 @@ npm pack chart.js     # descargar la última versión
 
 ## Notas sobre los datos
 
-- Los totales salen de la hoja «2026» de `A1`. En `A9` (inversiones) se usa la hoja «2026», no «Copia de 2026».
-- El préstamo previsto de 11 M€ (anexo de deuda) no entra en la deuda del titular ni en el gráfico: es una previsión que solo se formalizará si es necesario. La web muestra también los 20,16 M€ de préstamo de la financiación de inversiones, sin afirmar la causa de la diferencia.
-- Los importes «por habitante» dividen el gasto entre la población del INE (33.956 habitantes en 2025); no son lo que paga cada vecino.
+- Los totales salen de la hoja «<año>» de `A1`. En `A9` (inversiones) y `A12` se usa la hoja «<año>», no las «Copia de…» ni las hojas de trabajo.
+- El préstamo previsto de 11 M€ (anexo de deuda de 2025 y 2026) no entra en la deuda del titular ni en el gráfico: es una previsión que solo se formalizará si es necesario. La web muestra también los 20,16 M€ de préstamo de la financiación de inversiones, sin afirmar la causa de la diferencia.
+- Los importes «por habitante» dividen el gasto entre la población del INE (INE: 33.757 habitantes en 2024, 33.956 en 2025; 2026 usa el dato de 2025, el último disponible); no son lo que paga cada vecino.
 - Ideas tomadas de otros visores (Gobierto Presupuestos, visor de Fuengirola): ver el apartado correspondiente del diseño. Para comparar con otros municipios: [Gobierto Presupuestos](https://presupuestos.gobierto.es/municipios/aranda-de-duero).
 
 ## Licencia

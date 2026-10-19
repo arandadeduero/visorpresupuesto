@@ -21,12 +21,12 @@ runPage("indicadores", async ({ anio, main, load }) => {
     {
       titulo: "Deuda por habitante",
       valor: formatEuros(i.deudaPorHabitante),
-      texto: `Con los préstamos que ya existen, a 31 de diciembre de ${anio} (${formatEuros(i.deudaViva)} en total). Si se firmara el préstamo previsto, sería de ${formatEuros(i.deudaConPrevistoPorHabitante)} por habitante.`,
+      texto: `Con los préstamos que ya existen, a 31 de diciembre de ${anio} (${formatEuros(i.deudaViva)} en total).${i.deudaConPrevisto === null ? "" : ` Si se firmara el préstamo previsto, sería de ${formatEuros(i.deudaConPrevistoPorHabitante)} por habitante.`}`,
     },
     {
       titulo: "Deuda sobre los ingresos del año",
       valor: p1(i.deudaSobreIngresosCorrientesPct),
-      texto: `Compara lo que se debe con lo que se ingresa en un año. Cuanto menor, más holgura. Si se firmara el préstamo previsto subiría al ${p1(i.deudaConPrevistoSobreIngresosCorrientesPct)}.`,
+      texto: `Compara lo que se debe con lo que se ingresa en un año. Cuanto menor, más holgura.${i.deudaConPrevisto === null ? "" : ` Si se firmara el préstamo previsto subiría al ${p1(i.deudaConPrevistoSobreIngresosCorrientesPct)}.`}`,
     },
     {
       titulo: "Lo que cuesta la deuda al año",

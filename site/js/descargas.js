@@ -2,7 +2,7 @@ import { runPage, esc } from "./layout.js";
 
 const FICHEROS = [
   ["resumen", "Resumen", "Totales, ingresos y gastos por capítulo, reparto por cada 100 € y población."],
-  ["ingresos", "Ingresos", "Capítulos y conceptos de ingreso, con tres años."],
+  ["ingresos", "Ingresos", "Capítulos y conceptos de ingreso, con el año anterior (y el de hace dos años cuando el Excel lo trae)."],
   ["gastos", "Gastos", "Capítulos, políticas, programas y partidas."],
   ["inversiones", "Inversiones", "Proyectos por programa y cómo se financian."],
   ["subvenciones", "Subvenciones", "Subvenciones nominativas por actividad y por entidad."],

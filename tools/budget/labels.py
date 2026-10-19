@@ -68,6 +68,9 @@ POLITICAS = {
 }
 
 # Población para los importes «por habitante»: año del presupuesto → (habitantes, año del dato, fuente).
+# Para un año sin dato propio del INE se usa el último disponible (es el caso de 2026, que usa el de 2025).
 POBLACION = {
+    2024: (33757, 2024, "INE (población de Aranda de Duero en 2024), consultada en Gobierto Presupuestos"),
+    2025: (33956, 2025, "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos"),
     2026: (33956, 2025, "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos"),
 }

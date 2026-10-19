@@ -7,7 +7,7 @@ import { pintaQuesito } from "./quesito.js";
 runPage("gastos", async ({ anio, main, load }) => {
   const [datos, resumen] = await Promise.all([load("gastos"), load("resumen")]);
   const habitantes = resumen.habitantes;
-  const total = datos.capitulos.reduce((s, c) => s + c.y2026, 0);
+  const total = datos.capitulos.reduce((s, c) => s + c.actual, 0);
   let modo = "politica";
   let nodos = new Map();
 
@@ -35,15 +35,15 @@ runPage("gastos", async ({ anio, main, load }) => {
   const indexar = (lista) => lista.forEach((n) => { nodos.set(n.id, n); if (n.hijos) indexar(n.hijos); });
 
   function lista(hijos) {
-    const max = Math.max(...hijos.map((n) => n.y2026), 1);
+    const max = Math.max(...hijos.map((n) => n.actual), 1);
     return `<ul class="barras">${hijos.map((n) => `<li>${filaHtml({
       id: n.id,
       nombre: n.nombre,
       title: n.oficial ? `Nombre oficial: ${n.oficial}` : undefined,
-      importe: n.y2026,
+      importe: n.actual,
       max,
       clicable: Boolean(n.hijos),
-      extra: [n.detalle ? esc(n.detalle) : "", `${((n.y2026 / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total`, porHabHtml(n.y2026, habitantes), variacionHtml(n.y2026, n.y2025)].filter(Boolean).join(" · "),
+      extra: [n.detalle ? esc(n.detalle) : "", `${((n.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total`, porHabHtml(n.actual, habitantes), n.anterior == null ? "" : variacionHtml(n.actual, n.anterior)].filter(Boolean).join(" · "),
     })}<div class="hijos" hidden></div></li>`).join("")}</ul>`;
   }
 
@@ -89,7 +89,7 @@ runPage("gastos", async ({ anio, main, load }) => {
     resultados.innerHTML = filas.length
       ? `<p class="muted">${filas.length} resultado(s)</p>` + tablaHtml(
           [{ texto: "Gasto" }, { texto: "Programa" }, { texto: "Tipo de gasto" }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }],
-          filas.map((f) => `<tr><td>${esc(f.nombre)}</td><td>${esc(f.programa)}</td><td>${esc(f.capitulo)}</td><td class="num">${formatEuros(f.y2025)}</td><td class="num">${formatEuros(f.y2026)}</td></tr>`),
+          filas.map((f) => `<tr><td>${esc(f.nombre)}</td><td>${esc(f.programa)}</td><td>${esc(f.capitulo)}</td><td class="num">${formatEuros(f.anterior)}</td><td class="num">${formatEuros(f.actual)}</td></tr>`),
         )
       : `<p>No hay gastos que coincidan con «${esc(consulta)}».</p>`;
   });

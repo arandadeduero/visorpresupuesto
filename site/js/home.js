@@ -33,7 +33,7 @@ runPage("inicio", async ({ anio, main, load }) => {
     <h1>Por cada 100&nbsp;€ que gasta el Ayuntamiento en ${anio}…</h1>
     <div class="stackbar" role="group" aria-label="Reparto de cada 100 euros">${segmentos}</div>
     <p class="detalle-seg" id="detalle-seg" aria-live="polite"></p>
-    <p class="lead">Total previsto: <strong>${formatEuros(r.totalGastos)}</strong>, ${comparacion(r.totalGastos, r.totalGastos2025, anio)}.</p>
+    <p class="lead">Total previsto: <strong>${formatEuros(r.totalGastos)}</strong>, ${comparacion(r.totalGastos, r.totalGastosAnterior, anio)}.</p>
     <details><summary>Ver como tabla</summary>
       <div class="tabla-scroll"><table class="datos"><thead><tr><th>En qué</th><th class="num">Por cada 100 €</th><th class="num">Importe</th></tr></thead><tbody>${filas}</tbody></table></div>
     </details>
@@ -67,7 +67,7 @@ runPage("inicio", async ({ anio, main, load }) => {
   elegir(0);
 
   // «¿Cuánto gasta Aranda de Duero en…?»: una política de gasto cada vez, en orden aleatorio.
-  const orden = [...gastos.politicas].filter((p) => p.y2026 > 0).sort(() => Math.random() - 0.5);
+  const orden = [...gastos.politicas].filter((p) => p.actual > 0).sort(() => Math.random() - 0.5);
   let actual = 0;
   const caja = main.querySelector("#destacado");
   const mostrar = () => {
@@ -78,7 +78,7 @@ runPage("inicio", async ({ anio, main, load }) => {
         <div><span class="cifra">${formatEuros(d.importe, { compact: true })}</span><span>en total</span></div>
         <div><span class="cifra">${d.pct.toLocaleString("es-ES", { maximumFractionDigits: 1 })} %</span><span>del presupuesto</span></div>
       </div>
-      <p class="muted">${variacionHtml(d.importe, d.anterior)}</p>`;
+      ${d.anterior == null ? "" : `<p class="muted">${variacionHtml(d.importe, d.anterior)}</p>`}`;
   };
   main.querySelector("#otra").addEventListener("click", () => {
     actual = (actual + 1) % orden.length;

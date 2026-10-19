@@ -21,12 +21,12 @@ test("parseImporte entiende los formatos españoles y no revienta con basura", (
 });
 
 test("repartoAportacion reparte lo que pagas en proporción al gasto de cada política", () => {
-  const total = gastos.politicas.reduce((s, p) => s + p.y2026, 0);
+  const total = gastos.politicas.reduce((s, p) => s + p.actual, 0);
   const reparto = repartoAportacion(1000, gastos.politicas);
   cerca(reparto.reduce((s, x) => s + x.importe, 0), 1000);
   assert.ok(reparto.every((x, i) => i === 0 || reparto[i - 1].importe >= x.importe));
   const cultura = reparto.find((x) => x.nombre === "Cultura");
-  cerca(cultura.importe, (1000 * gastos.politicas.find((p) => p.nombre === "Cultura").y2026) / total, 1e-6);
+  cerca(cultura.importe, (1000 * gastos.politicas.find((p) => p.nombre === "Cultura").actual) / total, 1e-6);
   assert.deepEqual(repartoAportacion(0, gastos.politicas), []);
   assert.deepEqual(repartoAportacion(NaN, gastos.politicas), []);
 });

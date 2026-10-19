@@ -4,24 +4,25 @@ import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
 
 runPage("subvenciones", async ({ anio, main, load }) => {
   const d = await load("subvenciones");
-  const programas = [...d.programas].sort((a, b) => b.total2026 - a.total2026);
-  const max = programas[0].total2026;
+  const programas = [...d.programas].sort((a, b) => b.actual - a.actual);
+  const max = programas[0]?.actual ?? 0;
+  const idPrograma = (p) => `${p.bloque}-${p.codigo}`; // el mismo programa sale en las subvenciones y en las cuotas
 
   main.innerHTML = `
     <h1>Subvenciones <span class="muted">${anio}</span></h1>
-    <p class="lead">El Ayuntamiento prevé dar <strong>${formatEuros(d.total2026)}</strong> a asociaciones y entidades por convenio (en ${anio - 1}: ${formatEuros(d.total2025)}).</p>
+    <p class="lead">El Ayuntamiento prevé dar <strong>${formatEuros(d.total)}</strong> a asociaciones y entidades por convenio o cuota (en ${anio - 1}: ${formatEuros(d.totalAnterior)}).</p>
     <div class="controles"><div class="pestanas" role="group" aria-label="Cómo ver las subvenciones">
       <button type="button" data-vista="actividad" aria-pressed="true">Por actividad</button>
       <button type="button" data-vista="entidad" aria-pressed="false">Por entidad</button></div></div>
     <section id="vista-actividad">
       <p class="muted">Agrupadas por el tipo de actividad subvencionada. Pulsa en cada línea para ver las entidades.</p>
       <ul class="barras">${programas.map((p) => `<li>${filaHtml({
-        id: p.partida,
-        nombre: p.programa,
-        importe: p.total2026,
+        id: idPrograma(p),
+        nombre: p.bloque === "cuotas" ? `${p.programa} (cuotas)` : p.programa,
+        importe: p.actual,
         max,
         clicable: true,
-        extra: `${p.items.length} entidad(es) · ${variacionHtml(p.total2026, p.total2025)}`,
+        extra: `${p.items.length} entidad(es) · ${variacionHtml(p.actual, p.anterior)}`,
       })}<div class="hijos" hidden></div></li>`).join("")}</ul>
     </section>
     <section id="vista-entidad" hidden>
@@ -36,9 +37,9 @@ runPage("subvenciones", async ({ anio, main, load }) => {
     const hijos = boton.nextElementSibling;
     const abrir = hijos.hidden;
     if (abrir && !hijos.innerHTML) {
-      const p = d.programas.find((x) => x.partida === boton.dataset.id);
-      const items = [...p.items].sort((a, b) => b.y2026 - a.y2026);
-      hijos.innerHTML = tablaHtml(cab, items.map((i) => `<tr><td>${esc(i.entidad)}</td><td>${esc(i.objeto)}</td><td class="num">${formatEuros(i.y2025)}</td><td class="num">${formatEuros(i.y2026)}</td></tr>`));
+      const p = d.programas.find((x) => idPrograma(x) === boton.dataset.id);
+      const items = [...p.items].sort((a, b) => b.actual - a.actual);
+      hijos.innerHTML = tablaHtml(cab, items.map((i) => `<tr><td>${esc(i.entidad)}</td><td>${esc(i.objeto)}</td><td class="num">${formatEuros(i.anterior)}</td><td class="num">${formatEuros(i.actual)}</td></tr>`));
     }
     hijos.hidden = !abrir;
     boton.setAttribute("aria-expanded", String(abrir));
@@ -50,9 +51,9 @@ runPage("subvenciones", async ({ anio, main, load }) => {
   const pintaEntidades = (consulta) => {
     const filas = d.entidades.filter((e) => matches(e.entidad, consulta));
     lista.innerHTML = filas.length
-      ? `<p class="muted">${filas.length} entidad(es) · ${formatEuros(filas.reduce((s, e) => s + e.total2026, 0))} en ${anio}</p>` + tablaHtml(
+      ? `<p class="muted">${filas.length} entidad(es) · ${formatEuros(filas.reduce((s, e) => s + e.actual, 0))} en ${anio}</p>` + tablaHtml(
           [{ texto: "Entidad" }, { texto: `Recibe en ${anio}`, num: true }, { texto: `${anio - 1}`, num: true }, { texto: "Actividades" }],
-          filas.map((e) => `<tr><td>${esc(e.entidad)}</td><td class="num">${formatEuros(e.total2026)}</td><td class="num">${formatEuros(e.total2025)}</td><td>${esc(e.programas.join(", "))}</td></tr>`),
+          filas.map((e) => `<tr><td>${esc(e.entidad)}</td><td class="num">${formatEuros(e.actual)}</td><td class="num">${formatEuros(e.anterior)}</td><td>${esc(e.programas.join(", "))}</td></tr>`),
         )
       : `<p>No hay entidades que coincidan con «${esc(consulta)}».</p>`;
   };

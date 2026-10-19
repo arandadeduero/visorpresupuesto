@@ -1,0 +1,1516 @@
+{
+ "anio": 2024,
+ "totalAnterior": 822007.1,
+ "total": 898237.1,
+ "programas": [
+  {
+   "bloque": "nominativas",
+   "codigo": "1700",
+   "partida": "1700 489.00",
+   "programa": "Admon. gral medio ambiente",
+   "credito": 2300.0,
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "items": [
+    {
+     "entidad": "Club Deportivo Espeleoduero",
+     "objeto": "Limpieza de rios",
+     "anterior": 2000.0,
+     "actual": 2000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "2311",
+   "partida": "2311 489.00",
+   "programa": "Asistencia social primaria",
+   "credito": 177910.0,
+   "anterior": 149020.0,
+   "actual": 170750.0,
+   "items": [
+    {
+     "entidad": "AFAR",
+     "objeto": "Actividades sociales",
+     "anterior": 7670.0,
+     "actual": 8000.0
+    },
+    {
+     "entidad": "ANDAR",
+     "objeto": "Actividades sociales",
+     "anterior": 6120.0,
+     "actual": 6500.0
+    },
+    {
+     "entidad": "APACE (Aranda de Duero)",
+     "objeto": "Actividades sociales",
+     "anterior": 18500.0,
+     "actual": 18500.0
+    },
+    {
+     "entidad": "AREM",
+     "objeto": "Actividades sociales",
+     "anterior": 5000.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "ASADEMA",
+     "objeto": "Transporte interurbano colectivo",
+     "anterior": 5900.0,
+     "actual": 6000.0
+    },
+    {
+     "entidad": "Asoc. Española de Lucha contra el Cancer",
+     "objeto": "Actividades sociales y mantenimiento",
+     "anterior": 7610.0,
+     "actual": 8000.0
+    },
+    {
+     "entidad": "Autismo Burgos",
+     "objeto": "Actividades sociales",
+     "anterior": 7500.0,
+     "actual": 7500.0
+    },
+    {
+     "entidad": "CARITAS",
+     "objeto": "Pm drogas",
+     "anterior": 2900.0,
+     "actual": 3000.0
+    },
+    {
+     "entidad": "Cruz Roja",
+     "objeto": "Actividades sociales",
+     "anterior": 8460.0,
+     "actual": 8500.0
+    },
+    {
+     "entidad": "DISFAR",
+     "objeto": "Fomento empleo personas con discapac.",
+     "anterior": 4110.0,
+     "actual": 4500.0
+    },
+    {
+     "entidad": "Asociacion Salud Mental Aranda",
+     "objeto": "Activ., alquiler y manten. centro",
+     "anterior": 60000.0,
+     "actual": 80000.0
+    },
+    {
+     "entidad": "Residencia Sagrada Familia",
+     "objeto": "Actividades sociales",
+     "anterior": 10000.0,
+     "actual": 10000.0
+    },
+    {
+     "entidad": "Nuevo Futuro",
+     "objeto": "Actividades sociales",
+     "anterior": 2500.0,
+     "actual": 2500.0
+    },
+    {
+     "entidad": "Asoc. Personas Sordas Aranda y Ribera",
+     "objeto": "Actividades sociales",
+     "anterior": 2750.0,
+     "actual": 2750.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "2313",
+   "partida": "2313 489.00",
+   "programa": "Promoción de la igualdad",
+   "credito": 83400.0,
+   "anterior": 0.0,
+   "actual": 36000.0,
+   "items": [
+    {
+     "entidad": "Asociación Mujeres Progresistas Rosa de Lima",
+     "objeto": "Promoción de la mujer",
+     "anterior": 0.0,
+     "actual": 12000.0
+    },
+    {
+     "entidad": "Asociación Amas de Casa Unae Aranda",
+     "objeto": "Promoción de la mujer",
+     "anterior": 0.0,
+     "actual": 12000.0
+    },
+    {
+     "entidad": "Asoc. feminista Ruperta Baraya",
+     "objeto": "Promoción de la mujer",
+     "anterior": 0.0,
+     "actual": 12000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "3260",
+   "partida": "3260 489.00",
+   "programa": "Servicios complementarios de educación",
+   "credito": 91400.0,
+   "anterior": 2000.0,
+   "actual": 26000.0,
+   "items": [
+    {
+     "entidad": "Convenio colabroración Romorantin-Lanthenay",
+     "objeto": "Convenio colaboración",
+     "anterior": 2000.0,
+     "actual": 2000.0
+    },
+    {
+     "entidad": "UNED",
+     "objeto": "Sostenimiento universidad",
+     "anterior": 0.0,
+     "actual": 24000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "3340",
+   "partida": "3340 489.00",
+   "programa": "Promocion cultural",
+   "credito": 104700.0,
+   "anterior": 59900.0,
+   "actual": 78400.0,
+   "items": [
+    {
+     "entidad": "Cine Club Duero",
+     "objeto": "Semana de cine y curso cinematográfico",
+     "anterior": 5400.0,
+     "actual": 5400.0
+    },
+    {
+     "entidad": "Orfeon Arandino",
+     "objeto": "Otoño polifonico y alquiler de local",
+     "anterior": 16200.0,
+     "actual": 16200.0
+    },
+    {
+     "entidad": "Asociacion Cultural \"la Tanguilla\"",
+     "objeto": "Actv. promc., festiv., congr. y talleres",
+     "anterior": 15000.0,
+     "actual": 15000.0
+    },
+    {
+     "entidad": "Agrupacion Ribereña de las Artes",
+     "objeto": "Concurso de pintura rapida",
+     "anterior": 3000.0,
+     "actual": 3000.0
+    },
+    {
+     "entidad": "Asociacion Art de Troya",
+     "objeto": "Jornadas del pop",
+     "anterior": 5300.0,
+     "actual": 5300.0
+    },
+    {
+     "entidad": "Filarmonica Aranda",
+     "objeto": "Conciertos musicales",
+     "anterior": 5000.0,
+     "actual": 7000.0
+    },
+    {
+     "entidad": "Fundacion Lola Perez Rivera",
+     "objeto": "Promocion musica tradicional",
+     "anterior": 10000.0,
+     "actual": 10000.0
+    },
+    {
+     "entidad": "Filatelia y Numismática",
+     "objeto": "Exposicion filatelia y numismática con edición sellos",
+     "anterior": 0.0,
+     "actual": 2500.0
+    },
+    {
+     "entidad": "Asociación Cultural \"el Mostacho\"",
+     "objeto": "Festival internacional de cine",
+     "anterior": 0.0,
+     "actual": 14000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "3373",
+   "partida": "3373 489.00",
+   "programa": "Juventud",
+   "credito": 180000.0,
+   "anterior": 15000.0,
+   "actual": 85000.0,
+   "items": [
+    {
+     "entidad": "Asociación Grupo 93",
+     "objeto": "Eurofestival 2024",
+     "anterior": 15000.0,
+     "actual": 85000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "3410",
+   "partida": "3410 489.00",
+   "programa": "Promoción deportiva",
+   "credito": 339400.0,
+   "anterior": 247600.0,
+   "actual": 278600.0,
+   "items": [
+    {
+     "entidad": "C D Aranda Box",
+     "objeto": "Promocion deportiva",
+     "anterior": 2000.0,
+     "actual": 3000.0
+    },
+    {
+     "entidad": "C D Aranda Corre",
+     "objeto": "Promocion deportiva",
+     "anterior": 350.0,
+     "actual": 350.0
+    },
+    {
+     "entidad": "C D Aranda Riber",
+     "objeto": "Promocion deportiva",
+     "anterior": 6000.0,
+     "actual": 21000.0
+    },
+    {
+     "entidad": "C D Aranda Veteranos Cf",
+     "objeto": "Promocion deportiva",
+     "anterior": 500.0,
+     "actual": 500.0
+    },
+    {
+     "entidad": "C D Arandina Club de Futbol",
+     "objeto": "Promocion deportiva",
+     "anterior": 56000.0,
+     "actual": 63000.0
+    },
+    {
+     "entidad": "C D Arco Club Mosqueteros",
+     "objeto": "Promocion deportiva",
+     "anterior": 750.0,
+     "actual": 750.0
+    },
+    {
+     "entidad": "C D Arete",
+     "objeto": "Promocion deportiva",
+     "anterior": 2500.0,
+     "actual": 2500.0
+    },
+    {
+     "entidad": "C D Atletismo Aranda",
+     "objeto": "Promocion deportiva",
+     "anterior": 20000.0,
+     "actual": 20000.0
+    },
+    {
+     "entidad": "C D Ciclista Arandino",
+     "objeto": "Promocion deportiva",
+     "anterior": 14000.0,
+     "actual": 14000.0
+    },
+    {
+     "entidad": "C D Doncel Asadema",
+     "objeto": "Promocion deportiva",
+     "anterior": 2000.0,
+     "actual": 2000.0
+    },
+    {
+     "entidad": "C D Espeleoduero",
+     "objeto": "Promocion deportiva",
+     "anterior": 3300.0,
+     "actual": 3300.0
+    },
+    {
+     "entidad": "C D Espeleologico Ribereño",
+     "objeto": "Promocion deportiva",
+     "anterior": 2500.0,
+     "actual": 2500.0
+    },
+    {
+     "entidad": "C D Futbol Sala 1503",
+     "objeto": "Promocion deportiva",
+     "anterior": 1000.0,
+     "actual": 1000.0
+    },
+    {
+     "entidad": "C D Gimnasia Artistica Aranda",
+     "objeto": "Promocion deportiva",
+     "anterior": 1000.0,
+     "actual": 1500.0
+    },
+    {
+     "entidad": "C D Golf Aranda",
+     "objeto": "Promocion deportiva",
+     "anterior": 3000.0,
+     "actual": 3000.0
+    },
+    {
+     "entidad": "C D Hokey Linea",
+     "objeto": "Promocion deportiva",
+     "anterior": 7000.0,
+     "actual": 7500.0
+    },
+    {
+     "entidad": "C D Juventud Aranda",
+     "objeto": "Promocion deportiva",
+     "anterior": 7500.0,
+     "actual": 7500.0
+    },
+    {
+     "entidad": "C D Motoclub Aranda",
+     "objeto": "Promocion deportiva",
+     "anterior": 2000.0,
+     "actual": 2500.0
+    },
+    {
+     "entidad": "C.d Promoaranda",
+     "objeto": "Promocion deportiva",
+     "anterior": 20000.0,
+     "actual": 20000.0
+    },
+    {
+     "entidad": "C D Rugby Aranda",
+     "objeto": "Promocion deportiva",
+     "anterior": 6000.0,
+     "actual": 6000.0
+    },
+    {
+     "entidad": "C D Tenis Aranda",
+     "objeto": "Promocion deportiva",
+     "anterior": 1500.0,
+     "actual": 1500.0
+    },
+    {
+     "entidad": "C D Tiro Alcotanes",
+     "objeto": "Promocion deportiva",
+     "anterior": 2000.0,
+     "actual": 2000.0
+    },
+    {
+     "entidad": "C D Torre Negra Ajedrez",
+     "objeto": "Promocion deportiva",
+     "anterior": 1000.0,
+     "actual": 1500.0
+    },
+    {
+     "entidad": "C D Triatlon Aranda",
+     "objeto": "Promocion deportiva",
+     "anterior": 2000.0,
+     "actual": 2000.0
+    },
+    {
+     "entidad": "C D Triatlon Tribu Ribera",
+     "objeto": "Promocion deportiva",
+     "anterior": 250.0,
+     "actual": 250.0
+    },
+    {
+     "entidad": "C D Paddelfit",
+     "objeto": "Promocion deportiva",
+     "anterior": 450.0,
+     "actual": 450.0
+    },
+    {
+     "entidad": "C D Velo Club Ribera Duero",
+     "objeto": "Promocion deportiva",
+     "anterior": 8000.0,
+     "actual": 8000.0
+    },
+    {
+     "entidad": "C D Villa de Aranda Blm",
+     "objeto": "Promocion deportiva",
+     "anterior": 63000.0,
+     "actual": 68000.0
+    },
+    {
+     "entidad": "C D Bomberos",
+     "objeto": "Organización san silvestre",
+     "anterior": 12000.0,
+     "actual": 12000.0
+    },
+    {
+     "entidad": "Ribera Rugby",
+     "objeto": "Promocion deportiva",
+     "anterior": 0.0,
+     "actual": 1000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "4310",
+   "partida": "4310 489.00",
+   "programa": "Comercio",
+   "credito": 50000.0,
+   "anterior": 70000.0,
+   "actual": 50000.0,
+   "items": [
+    {
+     "entidad": "ACOA",
+     "objeto": "Plan dinamizacion comercio local",
+     "anterior": 50000.0,
+     "actual": 30000.0
+    },
+    {
+     "entidad": "Asoc. Comerciantes Santa Catalina",
+     "objeto": "Dinamizacion comercio local",
+     "anterior": 20000.0,
+     "actual": 20000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "4320",
+   "partida": "4320 489.00",
+   "programa": "Turismo",
+   "credito": 43700.0,
+   "anterior": 9000.0,
+   "actual": 33000.0,
+   "items": [
+    {
+     "entidad": "Biker Racing Show Dos Leones",
+     "objeto": "ORGANIZACIÓN Concentración motera",
+     "anterior": 0.0,
+     "actual": 24000.0
+    },
+    {
+     "entidad": "Hermandad de Cofradias",
+     "objeto": "Bajada del angel , semana santa y alquiler almacen",
+     "anterior": 9000.0,
+     "actual": 9000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "4330",
+   "partida": "4330 489.00",
+   "programa": "Desarrollo económico",
+   "credito": 65900.0,
+   "anterior": 110500.0,
+   "actual": 52500.0,
+   "items": [
+    {
+     "entidad": "ASOHAR",
+     "objeto": "Plan dinamizacion hosteleria",
+     "anterior": 100000.0,
+     "actual": 30000.0
+    },
+    {
+     "entidad": "JEARCO",
+     "objeto": "Desarrollo proyectos emprendedores",
+     "anterior": 3500.0,
+     "actual": 3500.0
+    },
+    {
+     "entidad": "ASEMAR",
+     "objeto": "Premio iniciativa empresarial",
+     "anterior": 3000.0,
+     "actual": 3000.0
+    },
+    {
+     "entidad": "Feder. de Org. de Panaderia de Cast. y Leon",
+     "objeto": "Promc. marca de gart. torta de aranda",
+     "anterior": 2500.0,
+     "actual": 2500.0
+    },
+    {
+     "entidad": "Asociacion Enologos de la Ribera",
+     "objeto": "Mantenimiento sede y actividades varias",
+     "anterior": 1500.0,
+     "actual": 1500.0
+    },
+    {
+     "entidad": "Plataforma por el Ferrocarril Directo Madrid - Aranda",
+     "objeto": "Apoyo a la plataforma",
+     "anterior": 0.0,
+     "actual": 12000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "9240",
+   "partida": "9240 489.00",
+   "programa": "Participación ciudadana",
+   "credito": 85000.0,
+   "anterior": 109000.0,
+   "actual": 35000.0,
+   "items": [
+    {
+     "entidad": "Asociación Vecinos la Estación",
+     "objeto": "Proyectos vecinales",
+     "anterior": 100000.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "Asociación Vecinos el Polígono",
+     "objeto": "Proyectos vecinales",
+     "anterior": 3500.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Allendeduero",
+     "objeto": "Proyectos vecinales",
+     "anterior": 3000.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Centro",
+     "objeto": "Proyectos vecinales",
+     "anterior": 2500.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Ferial Bañuelos",
+     "objeto": "Proyectos vecinales",
+     "anterior": 0.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Santa Catalina",
+     "objeto": "Proyectos vecinales",
+     "anterior": 0.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Sinovas",
+     "objeto": "Proyectos vecinales",
+     "anterior": 0.0,
+     "actual": 5000.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "1610",
+   "partida": "1610 489.00",
+   "programa": "Abastecimiento y distribución de aguas",
+   "credito": 8500.0,
+   "anterior": 2200.0,
+   "actual": 2200.0,
+   "items": [
+    {
+     "entidad": "Asociacion Esp. de Abastc. de Aguas y Sanea.",
+     "objeto": "Cuota",
+     "anterior": 2200.0,
+     "actual": 2200.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "1700",
+   "partida": "1700 489.00",
+   "programa": "Admon. gral medio ambiente",
+   "credito": 2300.0,
+   "anterior": 150.0,
+   "actual": 150.0,
+   "items": [
+    {
+     "entidad": "Federacion Española de Municipios y Prov.",
+     "objeto": "Cuota red esp. ciudades del clima",
+     "anterior": 150.0,
+     "actual": 150.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "1710",
+   "partida": "1710 489.00",
+   "programa": "Parques y jardines",
+   "credito": 210.0,
+   "anterior": 210.0,
+   "actual": 210.0,
+   "items": [
+    {
+     "entidad": "Asociacion Esp. de Parques y Jardines",
+     "objeto": "Cuota",
+     "anterior": 210.0,
+     "actual": 210.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "3260",
+   "partida": "3260 489.00",
+   "programa": "Servicios complementarios educación",
+   "credito": 91400.0,
+   "anterior": 800.0,
+   "actual": 800.0,
+   "items": [
+    {
+     "entidad": "Fundacion Universidad de Burgos",
+     "objeto": "Cuota",
+     "anterior": 800.0,
+     "actual": 800.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "3340",
+   "partida": "3340 489.00",
+   "programa": "Promocion cultural",
+   "credito": 104700.0,
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "items": [
+    {
+     "entidad": "Instituto Castellano y Leones de la Lengua",
+     "objeto": "Cuota patronato",
+     "anterior": 12000.0,
+     "actual": 12000.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "3341",
+   "partida": "3341 489.00",
+   "programa": "Banda de musica",
+   "credito": 100.0,
+   "anterior": 100.0,
+   "actual": 100.0,
+   "items": [
+    {
+     "entidad": "Federacion Bandas de Musica",
+     "objeto": "Cuota",
+     "anterior": 100.0,
+     "actual": 100.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "4320",
+   "partida": "4320 467.00",
+   "programa": "Turismo",
+   "credito": 18000.0,
+   "anterior": 18300.0,
+   "actual": 18300.0,
+   "items": [
+    {
+     "entidad": "Consorcio Ruta del Vino Ribera del Duero",
+     "objeto": "Cuota",
+     "anterior": 18000.0,
+     "actual": 18000.0
+    },
+    {
+     "entidad": "Asociacion de Museos del Vino",
+     "objeto": "Cuota",
+     "anterior": 300.0,
+     "actual": 300.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "4330",
+   "partida": "4330 489.00",
+   "programa": "Desarrollo económico",
+   "credito": 65900.0,
+   "anterior": 10000.0,
+   "actual": 13000.0,
+   "items": [
+    {
+     "entidad": "Asociacion Iberica de Municipios Ribereños",
+     "objeto": "Cuota",
+     "anterior": 5000.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "ACEVIN",
+     "objeto": "Cuota",
+     "anterior": 2000.0,
+     "actual": 2000.0
+    },
+    {
+     "entidad": "Red Impulso",
+     "objeto": "Cuota",
+     "anterior": 1500.0,
+     "actual": 1500.0
+    },
+    {
+     "entidad": "Red Ciudades Michelin",
+     "objeto": "Cuota",
+     "anterior": 1500.0,
+     "actual": 1500.0
+    },
+    {
+     "entidad": "H2CyL",
+     "objeto": "Cuota",
+     "anterior": 0.0,
+     "actual": 3000.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "9200",
+   "partida": "9200 489.00",
+   "programa": "Administración general",
+   "credito": 4500.0,
+   "anterior": 4227.1,
+   "actual": 4227.1,
+   "items": [
+    {
+     "entidad": "Federacion Española de Municipios y Prov.",
+     "objeto": "Cuota por habitante",
+     "anterior": 1883.74,
+     "actual": 1883.74
+    },
+    {
+     "entidad": "Fede. Reg. Municipios y Prov. Castilla y Leon",
+     "objeto": "Cuota por habitante",
+     "anterior": 1343.36,
+     "actual": 1343.36
+    },
+    {
+     "entidad": "Federacion Española de Municipios y Prov.",
+     "objeto": "Cuota red esp. ciudades saludables",
+     "anterior": 1000.0,
+     "actual": 1000.0
+    }
+   ]
+  }
+ ],
+ "entidades": [
+  {
+   "entidad": "Asociación Grupo 93",
+   "anterior": 15000.0,
+   "actual": 85000.0,
+   "programas": [
+    "Juventud"
+   ]
+  },
+  {
+   "entidad": "Asociacion Salud Mental Aranda",
+   "anterior": 60000.0,
+   "actual": 80000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "C D Villa de Aranda Blm",
+   "anterior": 63000.0,
+   "actual": 68000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Arandina Club de Futbol",
+   "anterior": 56000.0,
+   "actual": 63000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "ACOA",
+   "anterior": 50000.0,
+   "actual": 30000.0,
+   "programas": [
+    "Comercio"
+   ]
+  },
+  {
+   "entidad": "ASOHAR",
+   "anterior": 100000.0,
+   "actual": 30000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "UNED",
+   "anterior": 0.0,
+   "actual": 24000.0,
+   "programas": [
+    "Servicios complementarios de educación"
+   ]
+  },
+  {
+   "entidad": "Biker Racing Show Dos Leones",
+   "anterior": 0.0,
+   "actual": 24000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "C D Aranda Riber",
+   "anterior": 6000.0,
+   "actual": 21000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Atletismo Aranda",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C.d Promoaranda",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Asoc. Comerciantes Santa Catalina",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "programas": [
+    "Comercio"
+   ]
+  },
+  {
+   "entidad": "APACE (Aranda de Duero)",
+   "anterior": 18500.0,
+   "actual": 18500.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Consorcio Ruta del Vino Ribera del Duero",
+   "anterior": 18000.0,
+   "actual": 18000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "Orfeon Arandino",
+   "anterior": 16200.0,
+   "actual": 16200.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "Asociacion Cultural \"la Tanguilla\"",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "Asociación Cultural \"el Mostacho\"",
+   "anterior": 0.0,
+   "actual": 14000.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "C D Ciclista Arandino",
+   "anterior": 14000.0,
+   "actual": 14000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Asociación Mujeres Progresistas Rosa de Lima",
+   "anterior": 0.0,
+   "actual": 12000.0,
+   "programas": [
+    "Promoción de la igualdad"
+   ]
+  },
+  {
+   "entidad": "Asociación Amas de Casa Unae Aranda",
+   "anterior": 0.0,
+   "actual": 12000.0,
+   "programas": [
+    "Promoción de la igualdad"
+   ]
+  },
+  {
+   "entidad": "Asoc. feminista Ruperta Baraya",
+   "anterior": 0.0,
+   "actual": 12000.0,
+   "programas": [
+    "Promoción de la igualdad"
+   ]
+  },
+  {
+   "entidad": "C D Bomberos",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Plataforma por el Ferrocarril Directo Madrid - Aranda",
+   "anterior": 0.0,
+   "actual": 12000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Instituto Castellano y Leones de la Lengua",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "Residencia Sagrada Familia",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Fundacion Lola Perez Rivera",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "Hermandad de Cofradias",
+   "anterior": 9000.0,
+   "actual": 9000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "Cruz Roja",
+   "anterior": 8460.0,
+   "actual": 8500.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "AFAR",
+   "anterior": 7670.0,
+   "actual": 8000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Asoc. Española de Lucha contra el Cancer",
+   "anterior": 7610.0,
+   "actual": 8000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "C D Velo Club Ribera Duero",
+   "anterior": 8000.0,
+   "actual": 8000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Autismo Burgos",
+   "anterior": 7500.0,
+   "actual": 7500.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "C D Hokey Linea",
+   "anterior": 7000.0,
+   "actual": 7500.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Juventud Aranda",
+   "anterior": 7500.0,
+   "actual": 7500.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Filarmonica Aranda",
+   "anterior": 5000.0,
+   "actual": 7000.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "ANDAR",
+   "anterior": 6120.0,
+   "actual": 6500.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "ASADEMA",
+   "anterior": 5900.0,
+   "actual": 6000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "C D Rugby Aranda",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Cine Club Duero",
+   "anterior": 5400.0,
+   "actual": 5400.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "Asociacion Art de Troya",
+   "anterior": 5300.0,
+   "actual": 5300.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "AREM",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos la Estación",
+   "anterior": 100000.0,
+   "actual": 5000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos el Polígono",
+   "anterior": 3500.0,
+   "actual": 5000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Allendeduero",
+   "anterior": 3000.0,
+   "actual": 5000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Centro",
+   "anterior": 2500.0,
+   "actual": 5000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Ferial Bañuelos",
+   "anterior": 0.0,
+   "actual": 5000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Santa Catalina",
+   "anterior": 0.0,
+   "actual": 5000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Sinovas",
+   "anterior": 0.0,
+   "actual": 5000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociacion Iberica de Municipios Ribereños",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "DISFAR",
+   "anterior": 4110.0,
+   "actual": 4500.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "JEARCO",
+   "anterior": 3500.0,
+   "actual": 3500.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "C D Espeleoduero",
+   "anterior": 3300.0,
+   "actual": 3300.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Federacion Española de Municipios y Prov.",
+   "anterior": 3033.74,
+   "actual": 3033.74,
+   "programas": [
+    "Admon. gral medio ambiente",
+    "Administración general"
+   ]
+  },
+  {
+   "entidad": "CARITAS",
+   "anterior": 2900.0,
+   "actual": 3000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Agrupacion Ribereña de las Artes",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "C D Aranda Box",
+   "anterior": 2000.0,
+   "actual": 3000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Golf Aranda",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "ASEMAR",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "H2CyL",
+   "anterior": 0.0,
+   "actual": 3000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Asoc. Personas Sordas Aranda y Ribera",
+   "anterior": 2750.0,
+   "actual": 2750.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Nuevo Futuro",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Filatelia y Numismática",
+   "anterior": 0.0,
+   "actual": 2500.0,
+   "programas": [
+    "Promocion cultural"
+   ]
+  },
+  {
+   "entidad": "C D Arete",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Espeleologico Ribereño",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Motoclub Aranda",
+   "anterior": 2000.0,
+   "actual": 2500.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Feder. de Org. de Panaderia de Cast. y Leon",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Asociacion Esp. de Abastc. de Aguas y Sanea.",
+   "anterior": 2200.0,
+   "actual": 2200.0,
+   "programas": [
+    "Abastecimiento y distribución de aguas"
+   ]
+  },
+  {
+   "entidad": "Club Deportivo Espeleoduero",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "programas": [
+    "Admon. gral medio ambiente"
+   ]
+  },
+  {
+   "entidad": "Convenio colabroración Romorantin-Lanthenay",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "programas": [
+    "Servicios complementarios de educación"
+   ]
+  },
+  {
+   "entidad": "C D Doncel Asadema",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Tiro Alcotanes",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Triatlon Aranda",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "ACEVIN",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "C D Gimnasia Artistica Aranda",
+   "anterior": 1000.0,
+   "actual": 1500.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Tenis Aranda",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Torre Negra Ajedrez",
+   "anterior": 1000.0,
+   "actual": 1500.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Asociacion Enologos de la Ribera",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Red Impulso",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Red Ciudades Michelin",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Fede. Reg. Municipios y Prov. Castilla y Leon",
+   "anterior": 1343.36,
+   "actual": 1343.36,
+   "programas": [
+    "Administración general"
+   ]
+  },
+  {
+   "entidad": "C D Futbol Sala 1503",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Ribera Rugby",
+   "anterior": 0.0,
+   "actual": 1000.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Fundacion Universidad de Burgos",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "programas": [
+    "Servicios complementarios educación"
+   ]
+  },
+  {
+   "entidad": "C D Arco Club Mosqueteros",
+   "anterior": 750.0,
+   "actual": 750.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Aranda Veteranos Cf",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Paddelfit",
+   "anterior": 450.0,
+   "actual": 450.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "C D Aranda Corre",
+   "anterior": 350.0,
+   "actual": 350.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Asociacion de Museos del Vino",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "C D Triatlon Tribu Ribera",
+   "anterior": 250.0,
+   "actual": 250.0,
+   "programas": [
+    "Promoción deportiva"
+   ]
+  },
+  {
+   "entidad": "Asociacion Esp. de Parques y Jardines",
+   "anterior": 210.0,
+   "actual": 210.0,
+   "programas": [
+    "Parques y jardines"
+   ]
+  },
+  {
+   "entidad": "Federacion Bandas de Musica",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "programas": [
+    "Banda de musica"
+   ]
+  }
+ ]
+}

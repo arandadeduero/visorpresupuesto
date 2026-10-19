@@ -1,6 +1,14 @@
 {
  "anios": [
   {
+   "anio": 2024,
+   "tipo": "inicial"
+  },
+  {
+   "anio": 2025,
+   "tipo": "inicial"
+  },
+  {
    "anio": 2026,
    "tipo": "inicial"
   }

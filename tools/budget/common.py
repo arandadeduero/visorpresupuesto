@@ -1,5 +1,7 @@
 """Utilidades de lectura de los Excel del presupuesto."""
 import re
+import unicodedata
+import warnings
 from pathlib import Path
 
 import openpyxl
@@ -24,8 +26,16 @@ def find_file(year: int, prefix: str) -> Path:
 
 
 def load_sheet(path: Path, sheet: str):
-    wb = openpyxl.load_workbook(path, data_only=True)
+    with warnings.catch_warnings():
+        warnings.filterwarnings("ignore", message="Cannot parse header or footer")  # cabeceras de Excel que openpyxl no entiende
+        wb = openpyxl.load_workbook(path, data_only=True)
     return wb[sheet]
+
+
+def norm(texto) -> str:
+    """Texto sin tildes ni mayúsculas, para comparar rótulos que cambian de un año a otro («CAPITULO» / «CAPÍTULO»)."""
+    sin_tildes = unicodedata.normalize("NFKD", str(texto)).encode("ascii", "ignore").decode()
+    return " ".join(sin_tildes.split()).casefold()
 
 
 def num(v):

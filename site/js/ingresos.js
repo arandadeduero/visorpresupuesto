@@ -18,31 +18,33 @@ const EXPLICACION = {
 runPage("ingresos", async ({ anio, main, load }) => {
   const [datos, resumen] = await Promise.all([load("ingresos"), load("resumen")]);
   const habitantes = resumen.habitantes;
-  const caps = [...datos.capitulos].sort((a, b) => b.y2026 - a.y2026);
-  const total = caps.reduce((s, c) => s + c.y2026, 0);
-  const max = caps[0].y2026;
+  const caps = [...datos.capitulos].sort((a, b) => b.actual - a.actual);
+  const total = caps.reduce((s, c) => s + c.actual, 0);
+  const max = caps[0].actual;
 
   main.innerHTML = `
     <h1>¿De dónde sale el dinero? <span class="muted">${anio}</span></h1>
     <p class="lead">Ingresos previstos: <strong>${formatEuros(total)}</strong>. Unos <strong>${porHabHtml(total, habitantes)}</strong>. Pulsa en cada línea para ver de qué está hecha.</p>
     <div id="quesito"></div>
-    <p><label>Buscar un ingreso <input type="search" id="buscar" placeholder="Por ejemplo: IBI, basuras, terrazas…" autocomplete="off"></label></p>
+    <p><label>Buscar un ingreso <input type="search" id="buscar" placeholder="Por ejemplo: IBI, agua, terrazas…" autocomplete="off"></label></p>
     <div id="arbol"><ul class="barras">${caps.map((c) => `<li>${filaHtml({
       id: `cap-${c.cap}`,
       nombre: c.corto,
       title: `Nombre oficial: ${c.oficial}`,
-      importe: c.y2026,
+      importe: c.actual,
       max,
       clicable: true,
-      extra: `${((c.y2026 / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${porHabHtml(c.y2026, habitantes)} · ${variacionHtml(c.y2026, c.y2025)}`,
+      extra: `${((c.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${porHabHtml(c.actual, habitantes)} · ${variacionHtml(c.actual, c.anterior)}`,
     })}<div class="hijos" hidden></div></li>`).join("")}</ul></div>
     <div id="resultados" hidden></div>`;
 
   pintaQuesito(main.querySelector("#quesito"), datos.capitulos, "Ingresos por tipo");
   const arbol = main.querySelector("#arbol");
   const resultados = main.querySelector("#resultados");
-  const cab = [{ texto: "Concepto" }, { texto: `${anio - 2}`, num: true }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }, { texto: "Cambio" }];
-  const fila = (x) => `<tr><td>${esc(x.nombre)}</td><td class="num">${formatEuros(x.y2024)}</td><td class="num">${formatEuros(x.y2025)}</td><td class="num">${formatEuros(x.y2026)}</td><td>${variacionHtml(x.y2026, x.y2025, "")}</td></tr>`;
+  // El Excel de ingresos trae tres años en 2026 pero solo dos en 2024 y 2025: la columna de hace dos años solo sale si hay datos.
+  const dosAtras = datos.capitulos.some((c) => c.conceptos.some((x) => x.anterior2 !== null && x.anterior2 !== undefined));
+  const cab = [{ texto: "Concepto" }, ...(dosAtras ? [{ texto: `${anio - 2}`, num: true }] : []), { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }, { texto: "Cambio" }];
+  const fila = (x) => `<tr><td>${esc(x.nombre)}</td>${dosAtras ? `<td class="num">${formatEuros(x.anterior2)}</td>` : ""}<td class="num">${formatEuros(x.anterior)}</td><td class="num">${formatEuros(x.actual)}</td><td>${variacionHtml(x.actual, x.anterior, "")}</td></tr>`;
 
   arbol.addEventListener("click", (e) => {
     const boton = e.target.closest("button.fila");
@@ -51,7 +53,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
     const hijos = boton.nextElementSibling;
     const abrir = hijos.hidden;
     if (abrir && !hijos.innerHTML) {
-      const conceptos = [...cap.conceptos].filter((x) => x.y2026 || x.y2025 || x.y2024).sort((a, b) => (b.y2026 ?? 0) - (a.y2026 ?? 0));
+      const conceptos = [...cap.conceptos].filter((x) => x.actual || x.anterior || x.anterior2).sort((a, b) => (b.actual ?? 0) - (a.actual ?? 0));
       hijos.innerHTML = `<p class="ayuda">${esc(EXPLICACION[cap.cap])}</p>${tablaHtml(cab, conceptos.map(fila))}`;
     }
     hijos.hidden = !abrir;
@@ -68,7 +70,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
     if (!activa) return;
     const filas = datos.capitulos.flatMap((c) => c.conceptos.filter((x) => matches(x.nombre, consulta)).map((x) => ({ ...x, cap: c.corto })));
     resultados.innerHTML = filas.length
-      ? tablaHtml([...cab.slice(0, 1), { texto: "Tipo de ingreso" }, ...cab.slice(1)], filas.sort((a, b) => (b.y2026 ?? 0) - (a.y2026 ?? 0)).map((x) => fila(x).replace("</td><td class=\"num\">", `</td><td>${esc(x.cap)}</td><td class="num">`)))
+      ? tablaHtml([...cab.slice(0, 1), { texto: "Tipo de ingreso" }, ...cab.slice(1)], filas.sort((a, b) => (b.actual ?? 0) - (a.actual ?? 0)).map((x) => fila(x).replace("</td><td class=\"num\">", `</td><td>${esc(x.cap)}</td><td class="num">`)))
       : `<p>No hay ingresos que coincidan con «${esc(consulta)}».</p>`;
   });
 });

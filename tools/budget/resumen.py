@@ -6,10 +6,10 @@ from .labels import BLOQUES_100, CAPITULOS_GASTOS, CAPITULOS_INGRESOS, POBLACION
 def _capitulos(rows, etiquetas):
     caps = []
     for row in rows:
-        cap, y2026, y2025 = row[1], num(row[3]), num(row[4])
+        cap, actual, anterior = row[1], num(row[3]), num(row[4])
         if isinstance(cap, (int, float)) and not isinstance(cap, bool) and 1 <= cap <= 9:
             corto, oficial = etiquetas[int(cap)]
-            caps.append({"cap": int(cap), "corto": corto, "oficial": oficial, "y2025": y2025, "y2026": y2026})
+            caps.append({"cap": int(cap), "corto": corto, "oficial": oficial, "anterior": anterior, "actual": actual})
     return caps
 
 
@@ -29,7 +29,7 @@ def parse_resumen(year: int) -> dict:
     total_gastos, total_gastos_2025 = total(rows[:corte], "TOTAL GASTOS")
     total_ingresos, _ = total(rows[corte:], "TOTAL INGRESOS")
 
-    por_cap = {c["cap"]: c["y2026"] for c in gastos}
+    por_cap = {c["cap"]: c["actual"] for c in gastos}
     importes = [sum(por_cap[c] for c in caps) for _, caps in BLOQUES_100]
     euros = largest_remainder(importes)
     por100 = [
@@ -45,7 +45,7 @@ def parse_resumen(year: int) -> dict:
         "anioPoblacion": anio_poblacion,
         "fuentePoblacion": fuente,
         "totalGastos": total_gastos,
-        "totalGastos2025": total_gastos_2025,
+        "totalGastosAnterior": total_gastos_2025,
         "totalIngresos": total_ingresos,
         "gastosPorCapitulo": gastos,
         "ingresosPorCapitulo": ingresos,
