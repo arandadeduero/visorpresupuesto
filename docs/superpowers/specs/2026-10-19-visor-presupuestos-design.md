@@ -164,3 +164,7 @@ Descartado: series históricas 2010–2024, medias provincial, autonómica y nac
 - Vista por artículos: cada artículo lleva el color de su capítulo en distintos tonos (el del capítulo, más claro, más oscuro…); las porciones de un capítulo van juntas; en cada capítulo los artículos por debajo del 2 % del total se agrupan en «Otros artículos de <capítulo>» (solo si hay al menos dos y queda alguno grande); como no se pueden distinguir ~20 categorías por color, la leyenda va agrupada por capítulo con nombre, porcentaje e importe de cada artículo y el nombre oficial al pasar el ratón.
 - Listas: Ingresos pasa a capítulo → artículo → concepto; en Gastos, «¿Qué tipo de gasto es?» pasa a capítulo → artículo → partida (el programa es el detalle de la partida; el personal acaba en el artículo). «¿En qué se gasta?» (políticas) no cambia ni deja de ser la vista inicial de Gastos.
 - La Guía recoge «Artículo» y «Concepto».
+
+## Despliegue con huellas
+
+Cloudflare cachea css/js 4 h, así que el despliegue publica `dist/`, generado por `tools/build_site.py`: css, js (módulos con los `import` reescritos, huella en orden topológico), vendor y la carpeta de datos (`data-<huella>/`, indicada en `<html data-datos>` y leída solo desde `data.js`) llevan el hash del contenido en el nombre. Los HTML conservan nombre (caché corta, 10 min). `site/` sigue funcionando sin build. Detalles y uso local en el README.
