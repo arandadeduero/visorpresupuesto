@@ -87,3 +87,15 @@ test("los gráficos se vuelven a dibujar cuando termina de cargar la tipografía
   const fuente = leer("./charts.js");
   assert.match(fuente, /document\.fonts\??\.ready/);
 });
+
+test("el relleno de las barras es un bloque: un <span> en línea ignoraría su ancho y la barra saldría vacía", () => {
+  const css = leer("../css/styles.css").replace(/\/\*[\s\S]*?\*\//g, "");
+  const reglas = (selector) =>
+    [...css.matchAll(/([^{}]+)\{([^}]*)\}/g)]
+      .filter((m) => m[1].split(",").some((x) => x.trim() === selector))
+      .map((m) => m[2])
+      .join(";");
+  for (const sel of [".fila .relleno", ".par-barra .relleno", ".mini-barra i"]) {
+    assert.match(reglas(sel), /display:\s*block/, `${sel} debe ser display:block`);
+  }
+});

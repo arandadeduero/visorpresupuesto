@@ -145,7 +145,7 @@ button.fila:hover { background: var(--azul-claro); }
 .fila .nombre { font-weight: 500; overflow-wrap: anywhere; }
 .fila .importe { font-weight: 700; text-align: right; white-space: nowrap; }
 .fila .pista { grid-column: 1 / -1; height: 10px; background: var(--azul-claro); border-radius: 5px; overflow: hidden; }
-.fila .relleno { height: 100%; background: var(--azul); border-radius: 5px; }
+.fila .relleno { display: block; height: 100%; background: var(--azul); border-radius: 5px; }
 .fila .extra { grid-column: 1 / -1; font-size: .85rem; color: var(--gris); }
 .hijos { margin-left: 16px; border-left: 3px solid var(--borde); }
 .var-up { color: var(--marron); }
