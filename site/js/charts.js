@@ -5,13 +5,16 @@ export const PALETTE = ["#0083c1", "#f5a800", "#ce0e2d", "#646464", "#3cb4e5", "
 export const TEXTO_SOBRE = { "#0083c1": "#fff", "#f5a800": "#3c3c3c", "#ce0e2d": "#fff", "#646464": "#fff", "#3cb4e5": "#3c3c3c", "#a4541c": "#fff" };
 
 const base = () => {
-  Chart.defaults.font.family = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+  Chart.defaults.font.family = '"Outfit", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
   Chart.defaults.color = "#3c3c3c";
 };
 
 function crear(canvas, tipo, datos, opciones) {
   base();
-  return new Chart(canvas, { type: tipo, data: datos, options: { responsive: true, maintainAspectRatio: false, ...opciones } });
+  const grafico = new Chart(canvas, { type: tipo, data: datos, options: { responsive: true, maintainAspectRatio: false, ...opciones } });
+  // La tipografía puede terminar de cargar después del primer dibujo: se redibuja para que los textos del gráfico usen Outfit.
+  document.fonts?.ready.then(() => grafico.update("none"));
+  return grafico;
 }
 
 // Marcas del eje: «0», «0,5 M€», «1 M€»… (siempre en millones a partir de 100.000 € para no mezclar unidades)

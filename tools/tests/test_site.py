@@ -96,3 +96,34 @@ def test_los_enlaces_entre_paginas_conservan_el_anio_elegido():
             continue
         for destino, resto in re.findall(r'href="([a-z]+\.html)([^"]*)"', js.read_text(encoding="utf-8")):
             assert resto.startswith(("?anio=${", "${consulta}")), f"{js.name}: el enlace a {destino} pierde el año"
+
+
+def test_la_tipografia_outfit_esta_descargada_y_se_usa():
+    fuentes = SITE / "fonts"
+    for fichero in ["outfit-latin-wght-normal.woff2", "outfit-latin-ext-wght-normal.woff2", "OFL.txt", "README.md"]:
+        assert (fuentes / fichero).is_file(), fichero
+    assert "SIL OPEN FONT LICENSE" in (fuentes / "OFL.txt").read_text(encoding="utf-8").upper()
+    css = (SITE / "css" / "styles.css").read_text(encoding="utf-8")
+    # @font-face propio (sin Google Fonts), con las dos partes del alfabeto latino y font-display: swap
+    caras = re.findall(r"@font-face\s*\{([^}]*)\}", css)
+    assert len(caras) == 2
+    for cara in caras:
+        assert 'font-family: "Outfit"' in cara and "font-display: swap" in cara and "font-weight: 100 900" in cara
+        ref = re.search(r"url\(([^)]+)\)", cara).group(1)
+        assert (SITE / "css" / ref).resolve().is_file(), ref
+    # la web entera usa Outfit primero
+    assert re.search(r'body\s*\{[^}]*font:[^;]*"Outfit"', css)
+    charts = (SITE / "js" / "charts.js").read_text(encoding="utf-8")
+    assert re.search(r'font\.family\s*=\s*[\'"]"?Outfit', charts)
+
+
+def test_ninguna_pagina_carga_tipografias_de_terceros():
+    for ruta in [*SITE.glob("*.html"), *(SITE / "css").glob("*.css"), *(SITE / "js").glob("*.js")]:
+        texto = ruta.read_text(encoding="utf-8")
+        assert "fonts.googleapis.com" not in texto and "fonts.gstatic.com" not in texto, ruta.name
+
+
+@pytest.mark.parametrize("pagina", PAGINAS, ids=lambda p: p.name)
+def test_cada_pagina_precarga_la_tipografia(pagina):
+    html = pagina.read_text(encoding="utf-8")
+    assert re.search(r'<link rel="preload" href="fonts/outfit-latin-wght-normal\.woff2" as="font" type="font/woff2" crossorigin>', html), pagina.name

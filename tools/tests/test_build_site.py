@@ -13,7 +13,7 @@ SITE = ROOT / "site"
 sys.path.insert(0, str(ROOT / "tools"))
 import build_site  # noqa: E402
 
-HUELLA = re.compile(r"\.[0-9a-f]{10}\.(css|js)$")
+HUELLA = re.compile(r"\.[0-9a-f]{10}\.(css|js|woff2)$")
 
 
 @pytest.fixture(scope="module")
@@ -150,3 +150,28 @@ def test_pages_sube_dist_y_comprueba_los_nombres_con_huella():
 def test_el_ci_construye_dist_y_lo_comprueba():
     ci = (ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
     assert "python tools/build_site.py" in ci and "DIST_DIR" in ci
+
+
+def test_el_build_pone_huella_a_las_tipografias_y_reescribe_su_url_en_el_css(tmp_path):
+    site = Path(__file__).resolve().parents[2] / "site"
+    manifiesto = build_site.build(site, tmp_path / "dist")
+    dist = tmp_path / "dist"
+    fuentes = [v for k, v in manifiesto.items() if k.startswith("fonts/") and k.endswith(".woff2")]
+    assert len(fuentes) == 2 and all(re.search(r"\.[0-9a-f]{10}\.woff2$", f) for f in fuentes)
+    css = (dist / manifiesto["css/styles.css"]).read_text(encoding="utf-8")
+    urls = re.findall(r"url\(([^)]+)\)", css)
+    assert sorted(urls) == sorted("../" + f for f in fuentes)
+    for f in fuentes:
+        assert (dist / f).is_file()
+    index = (dist / "index.html").read_text(encoding="utf-8")
+    assert f'href="{manifiesto["fonts/outfit-latin-wght-normal.woff2"]}"' in index
+
+
+def test_cambiar_una_tipografia_cambia_la_huella_del_css(tmp_path):
+    site = tmp_path / "site"
+    shutil.copytree(Path(__file__).resolve().parents[2] / "site", site)
+    antes = build_site.build(site, tmp_path / "d1")["css/styles.css"]
+    fuente = site / "fonts" / "outfit-latin-wght-normal.woff2"
+    fuente.write_bytes(fuente.read_bytes() + b"x")
+    despues = build_site.build(site, tmp_path / "d2")["css/styles.css"]
+    assert antes != despues

@@ -82,3 +82,8 @@ test("la muestra de color de la leyenda de los quesitos tiene estilo y las leyen
   assert.match(css, /\.muestra\s*\{[^}]*width:\s*12px/);
   assert.doesNotMatch(css, /leyenda-quesito|leyenda-agrupada|grupo-cab/);
 });
+
+test("los gráficos se vuelven a dibujar cuando termina de cargar la tipografía", () => {
+  const fuente = leer("./charts.js");
+  assert.match(fuente, /document\.fonts\??\.ready/);
+});
