@@ -1,0 +1,1236 @@
+{
+ "anio": 2025,
+ "totalAnterior": 530637.1,
+ "total": 730937.1,
+ "programas": [
+  {
+   "bloque": "nominativas",
+   "codigo": "1700",
+   "partida": "1700 489.00",
+   "programa": "Admon. gral medio ambiente",
+   "credito": null,
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "items": [
+    {
+     "entidad": "Club Deportivo Espeleoduero",
+     "objeto": "Limpieza de ríos",
+     "anterior": 2000.0,
+     "actual": 2000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "2311",
+   "partida": "2311 489.00",
+   "programa": "Asistencia social primaria",
+   "credito": null,
+   "anterior": 170750.0,
+   "actual": 183000.0,
+   "items": [
+    {
+     "entidad": "AFAR",
+     "objeto": "Actividades sociales",
+     "anterior": 8000.0,
+     "actual": 9000.0
+    },
+    {
+     "entidad": "ANDAR",
+     "objeto": "Actividades sociales",
+     "anterior": 6500.0,
+     "actual": 7000.0
+    },
+    {
+     "entidad": "APACE",
+     "objeto": "Actividades sociales",
+     "anterior": 18500.0,
+     "actual": 15000.0
+    },
+    {
+     "entidad": "AREM",
+     "objeto": "Actividades sociales",
+     "anterior": 5000.0,
+     "actual": 7000.0
+    },
+    {
+     "entidad": "ASADEMA",
+     "objeto": "Transporte interurbano colectivo",
+     "anterior": 6000.0,
+     "actual": 6000.0
+    },
+    {
+     "entidad": "Asoc. Española de Lucha contra el Cáncer",
+     "objeto": "Actividades sociales y mantenimiento",
+     "anterior": 8000.0,
+     "actual": 9000.0
+    },
+    {
+     "entidad": "Autismo Burgos",
+     "objeto": "Actividades sociales",
+     "anterior": 7500.0,
+     "actual": 9000.0
+    },
+    {
+     "entidad": "Cáritas",
+     "objeto": "Programa drogas y trabajo con migrantes",
+     "anterior": 3000.0,
+     "actual": 10000.0
+    },
+    {
+     "entidad": "Cruz Roja",
+     "objeto": "Actividades sociales",
+     "anterior": 8500.0,
+     "actual": 10000.0
+    },
+    {
+     "entidad": "DISFAR",
+     "objeto": "Fomento empleo de personas con discapacidad",
+     "anterior": 4500.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "Asociación Salud Mental Aranda",
+     "objeto": "Actividades, alquiler y mantenimiento del centro",
+     "anterior": 80000.0,
+     "actual": 70000.0
+    },
+    {
+     "entidad": "Residencia Sagrada Familia",
+     "objeto": "Actividades sociales",
+     "anterior": 10000.0,
+     "actual": 10000.0
+    },
+    {
+     "entidad": "Nuevo Futuro",
+     "objeto": "Actividades sociales",
+     "anterior": 2500.0,
+     "actual": 3000.0
+    },
+    {
+     "entidad": "Asoc. Personas Sordas Aranda Y Ribera",
+     "objeto": "Actividades sociales",
+     "anterior": 2750.0,
+     "actual": 3000.0
+    },
+    {
+     "entidad": "ALEA",
+     "objeto": "Actividades sociales",
+     "anterior": 0.0,
+     "actual": 6000.0
+    },
+    {
+     "entidad": "ARANSBUR",
+     "objeto": "Actividades sociales",
+     "anterior": 0.0,
+     "actual": 2000.0
+    },
+    {
+     "entidad": "AFAC (Asociación de Fibromialgia y Astenia Crónica de CyL)",
+     "objeto": "Actividades sociales",
+     "anterior": 0.0,
+     "actual": 2000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "2313",
+   "partida": "2313 489.00",
+   "programa": "Promoción de la igualdad",
+   "credito": null,
+   "anterior": 36000.0,
+   "actual": 18000.0,
+   "items": [
+    {
+     "entidad": "Asociación Mujeres Progresistas Rosa de Lima",
+     "objeto": "Promoción de la mujer",
+     "anterior": 12000.0,
+     "actual": 6000.0
+    },
+    {
+     "entidad": "Asociación Amas de Casa Unae Aranda",
+     "objeto": "Promoción de la mujer",
+     "anterior": 12000.0,
+     "actual": 6000.0
+    },
+    {
+     "entidad": "Asoc. feminista Ruperta Baraya",
+     "objeto": "Promoción de la mujer",
+     "anterior": 12000.0,
+     "actual": 6000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "3260",
+   "partida": "3260 489.00",
+   "programa": "Servicios complementarios de educación",
+   "credito": null,
+   "anterior": 26000.0,
+   "actual": 26000.0,
+   "items": [
+    {
+     "entidad": "Convenio colaboración Romorantin-Lanthenay",
+     "objeto": "Convenio colaboración",
+     "anterior": 2000.0,
+     "actual": 2000.0
+    },
+    {
+     "entidad": "UNED",
+     "objeto": "Sostenimiento universidad",
+     "anterior": 24000.0,
+     "actual": 24000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "3262",
+   "partida": "3262 489.00",
+   "programa": "Escuela municipal de folklore",
+   "credito": null,
+   "anterior": 0.0,
+   "actual": 16000.0,
+   "items": [
+    {
+     "entidad": "Asociación de amigos de la indumentaria tradicional de la Ribera",
+     "objeto": "Implementación de un taller de trajes regionales",
+     "anterior": 0.0,
+     "actual": 16000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "3340",
+   "partida": "3340 489.00",
+   "programa": "Promoción cultural",
+   "credito": null,
+   "anterior": 78400.0,
+   "actual": 78400.0,
+   "items": [
+    {
+     "entidad": "Cine Club Duero",
+     "objeto": "Semana de cine y curso cinematográfico",
+     "anterior": 5400.0,
+     "actual": 5400.0
+    },
+    {
+     "entidad": "Orfeón Arandino",
+     "objeto": "Otoño polifónico y alquiler de local",
+     "anterior": 16200.0,
+     "actual": 16200.0
+    },
+    {
+     "entidad": "Asociación Cultural \"La Tanguilla\"",
+     "objeto": "Actividades culturales, fiestas patronales y talleres",
+     "anterior": 15000.0,
+     "actual": 15000.0
+    },
+    {
+     "entidad": "Agrupación Ribereña de Las Artes",
+     "objeto": "Concurso de pintura rápida",
+     "anterior": 3000.0,
+     "actual": 3000.0
+    },
+    {
+     "entidad": "Asociación Art de Troya",
+     "objeto": "Jornadas del pop",
+     "anterior": 5300.0,
+     "actual": 5300.0
+    },
+    {
+     "entidad": "Filarmónica Aranda",
+     "objeto": "Conciertos musicales",
+     "anterior": 7000.0,
+     "actual": 7000.0
+    },
+    {
+     "entidad": "Fundacion Lola Perez Rivera",
+     "objeto": "Promoción música tradicional",
+     "anterior": 10000.0,
+     "actual": 10000.0
+    },
+    {
+     "entidad": "Filatelia Y Numismática",
+     "objeto": "Exposición filatelia y numismática con edición sellos",
+     "anterior": 2500.0,
+     "actual": 2500.0
+    },
+    {
+     "entidad": "Asociación Cultural \"El Mostacho\"",
+     "objeto": "Festival internacional de cine",
+     "anterior": 14000.0,
+     "actual": 14000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "3373",
+   "partida": "3373 489.00",
+   "programa": "Juventud",
+   "credito": null,
+   "anterior": 0.0,
+   "actual": 15000.0,
+   "items": [
+    {
+     "entidad": "Asociación Músicos Ribereños",
+     "objeto": "Alquiler locales de ensayo",
+     "anterior": 0.0,
+     "actual": 15000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "4310",
+   "partida": "4310 489.00",
+   "programa": "Comercio",
+   "credito": null,
+   "anterior": 50000.0,
+   "actual": 40000.0,
+   "items": [
+    {
+     "entidad": "ACOA",
+     "objeto": "Plan dinamización comercio local",
+     "anterior": 30000.0,
+     "actual": 20000.0
+    },
+    {
+     "entidad": "Asoc. Comerciantes Santa Catalina",
+     "objeto": "Dinamización comercio local",
+     "anterior": 20000.0,
+     "actual": 20000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "4320",
+   "partida": "4320 489.00",
+   "programa": "Turismo",
+   "credito": null,
+   "anterior": 33000.0,
+   "actual": 76000.0,
+   "items": [
+    {
+     "entidad": "Biker Racing Show Dos Leones",
+     "objeto": "Organización concentración motera",
+     "anterior": 24000.0,
+     "actual": 24000.0
+    },
+    {
+     "entidad": "C D Arandina Club de Fútbol",
+     "objeto": "Promoción de Aranda de Duero en Liga 3º RFEF",
+     "anterior": 0.0,
+     "actual": 3000.0
+    },
+    {
+     "entidad": "C D Hockey Línea Erizos Rudos",
+     "objeto": "Promoción de Aranda de Duero en Liga Élite",
+     "anterior": 0.0,
+     "actual": 7000.0
+    },
+    {
+     "entidad": "C D Villa de Aranda Balonmano",
+     "objeto": "Promoción de Aranda de Duero en Liga ASOBAL",
+     "anterior": 0.0,
+     "actual": 25000.0
+    },
+    {
+     "entidad": "Museo del Tren",
+     "objeto": "Promoción del museo del tren y maquetas",
+     "anterior": 0.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "Hermandad de Cofradías",
+     "objeto": "Bajada del Ángel, Semana santa y alquiler almacén",
+     "anterior": 9000.0,
+     "actual": 12000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "4330",
+   "partida": "4330 479.00",
+   "programa": "Desarrollo económico",
+   "credito": null,
+   "anterior": 48500.0,
+   "actual": 187200.0,
+   "items": [
+    {
+     "entidad": "Sonorama Producciones SL",
+     "objeto": "Subvención festival",
+     "anterior": 0.0,
+     "actual": 145200.0
+    },
+    {
+     "entidad": "ASOHAR",
+     "objeto": "Plan dinamización hostelería",
+     "anterior": 30000.0,
+     "actual": 22000.0
+    },
+    {
+     "entidad": "JEARCO",
+     "objeto": "Desarrollo proyectos emprendedores",
+     "anterior": 3500.0,
+     "actual": 4500.0
+    },
+    {
+     "entidad": "ASEMAR",
+     "objeto": "Premio iniciativa empresarial",
+     "anterior": 3000.0,
+     "actual": 3500.0
+    },
+    {
+     "entidad": "Plataforma por el Ferrocarril Directo Madrid - Aranda",
+     "objeto": "Apoyo a la plataforma",
+     "anterior": 12000.0,
+     "actual": 12000.0
+    }
+   ]
+  },
+  {
+   "bloque": "nominativas",
+   "codigo": "9240",
+   "partida": "9240 489.00",
+   "programa": "Participación ciudadana",
+   "credito": null,
+   "anterior": 35000.0,
+   "actual": 40000.0,
+   "items": [
+    {
+     "entidad": "Asociación Vecinos La Estación",
+     "objeto": "Proyectos vecinales",
+     "anterior": 5000.0,
+     "actual": 4000.0
+    },
+    {
+     "entidad": "Asociación Vecinos El Polígono",
+     "objeto": "Proyectos vecinales",
+     "anterior": 5000.0,
+     "actual": 4000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Allendeduero",
+     "objeto": "Proyectos vecinales",
+     "anterior": 5000.0,
+     "actual": 4000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Centro",
+     "objeto": "Proyectos vecinales",
+     "anterior": 5000.0,
+     "actual": 4000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Ferial Bañuelos",
+     "objeto": "Proyectos vecinales",
+     "anterior": 5000.0,
+     "actual": 4000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Santa Catalina",
+     "objeto": "Proyectos vecinales",
+     "anterior": 5000.0,
+     "actual": 4000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Sinovas",
+     "objeto": "Proyectos vecinales",
+     "anterior": 5000.0,
+     "actual": 4000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Costaján",
+     "objeto": "Proyectos vecinales",
+     "anterior": 0.0,
+     "actual": 4000.0
+    },
+    {
+     "entidad": "Asociación Vecinos Calabaza",
+     "objeto": "Proyectos vecinales",
+     "anterior": 0.0,
+     "actual": 4000.0
+    },
+    {
+     "entidad": "Asociación Vecinos La Aguilera (Asoc Cultural Cuesta Del Águila)",
+     "objeto": "Proyectos vecinales",
+     "anterior": 0.0,
+     "actual": 4000.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "1610",
+   "partida": "1610 489.00",
+   "programa": "Abastecimiento y distribución de aguas",
+   "credito": null,
+   "anterior": 2200.0,
+   "actual": 2200.0,
+   "items": [
+    {
+     "entidad": "Asociación española de abastecimiento de aguas y saneamiento",
+     "objeto": "Cuota",
+     "anterior": 2200.0,
+     "actual": 2200.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "1700",
+   "partida": "1700 489.00",
+   "programa": "Admon. gral medio ambiente",
+   "credito": null,
+   "anterior": 150.0,
+   "actual": 300.0,
+   "items": [
+    {
+     "entidad": "Federación Española de Municipios y Provincias",
+     "objeto": "Cuota Red Española de Ciudades por el Clima",
+     "anterior": 150.0,
+     "actual": 300.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "1710",
+   "partida": "1710 489.00",
+   "programa": "Parques y jardines",
+   "credito": null,
+   "anterior": 210.0,
+   "actual": 210.0,
+   "items": [
+    {
+     "entidad": "Asociación española de parques y jardines",
+     "objeto": "Cuota",
+     "anterior": 210.0,
+     "actual": 210.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "3260",
+   "partida": "3260 489.00",
+   "programa": "Servicios complementarios educación",
+   "credito": null,
+   "anterior": 800.0,
+   "actual": 800.0,
+   "items": [
+    {
+     "entidad": "Fundación Universidad de Burgos",
+     "objeto": "Cuota",
+     "anterior": 800.0,
+     "actual": 800.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "3340",
+   "partida": "3340 489.00",
+   "programa": "Promoción cultural",
+   "credito": null,
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "items": [
+    {
+     "entidad": "Instituto Castellano y Leonés de la Lengua",
+     "objeto": "Cuota patronato",
+     "anterior": 12000.0,
+     "actual": 12000.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "3341",
+   "partida": "3341 489.00",
+   "programa": "Banda de música",
+   "credito": null,
+   "anterior": 100.0,
+   "actual": 100.0,
+   "items": [
+    {
+     "entidad": "Federación bandas de música",
+     "objeto": "Cuota",
+     "anterior": 100.0,
+     "actual": 100.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "4320",
+   "partida": "4320 467.00",
+   "programa": "Turismo",
+   "credito": null,
+   "anterior": 18300.0,
+   "actual": 18300.0,
+   "items": [
+    {
+     "entidad": "Consorcio Ruta del vino Ribera del Duero",
+     "objeto": "Cuota",
+     "anterior": 18000.0,
+     "actual": 18000.0
+    },
+    {
+     "entidad": "Asociación de museos del vino",
+     "objeto": "Cuota",
+     "anterior": 300.0,
+     "actual": 300.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "4330",
+   "partida": "4330 489.00",
+   "programa": "Desarrollo económico",
+   "credito": null,
+   "anterior": 13000.0,
+   "actual": 11200.0,
+   "items": [
+    {
+     "entidad": "Asociación Ibérica de Municipios Ribereños",
+     "objeto": "Cuota",
+     "anterior": 5000.0,
+     "actual": 5000.0
+    },
+    {
+     "entidad": "ACEVIN",
+     "objeto": "Cuota",
+     "anterior": 2000.0,
+     "actual": 2000.0
+    },
+    {
+     "entidad": "Red Impulso",
+     "objeto": "Cuota",
+     "anterior": 1500.0,
+     "actual": 1500.0
+    },
+    {
+     "entidad": "Red Ciudades Michelin",
+     "objeto": "Cuota",
+     "anterior": 1500.0,
+     "actual": 1500.0
+    },
+    {
+     "entidad": "H2CyL",
+     "objeto": "Cuota",
+     "anterior": 3000.0,
+     "actual": 1200.0
+    }
+   ]
+  },
+  {
+   "bloque": "cuotas",
+   "codigo": "9200",
+   "partida": "9200 489.00",
+   "programa": "Administración general",
+   "credito": null,
+   "anterior": 4227.1,
+   "actual": 4227.1,
+   "items": [
+    {
+     "entidad": "Federación Española de Municipios y Provincias",
+     "objeto": "Cuota por habitante",
+     "anterior": 1883.74,
+     "actual": 1883.74
+    },
+    {
+     "entidad": "Federación Regional de Municipios y provincias de Castilla y León",
+     "objeto": "Cuota por habitante",
+     "anterior": 1343.36,
+     "actual": 1343.36
+    },
+    {
+     "entidad": "Federación Española de Municipios y Provincias",
+     "objeto": "Cuota red esp. Ciudades saludables",
+     "anterior": 1000.0,
+     "actual": 1000.0
+    }
+   ]
+  }
+ ],
+ "entidades": [
+  {
+   "entidad": "Sonorama Producciones SL",
+   "anterior": 0.0,
+   "actual": 145200.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Asociación Salud Mental Aranda",
+   "anterior": 80000.0,
+   "actual": 70000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "C D Villa de Aranda Balonmano",
+   "anterior": 0.0,
+   "actual": 25000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "UNED",
+   "anterior": 24000.0,
+   "actual": 24000.0,
+   "programas": [
+    "Servicios complementarios de educación"
+   ]
+  },
+  {
+   "entidad": "Biker Racing Show Dos Leones",
+   "anterior": 24000.0,
+   "actual": 24000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "ASOHAR",
+   "anterior": 30000.0,
+   "actual": 22000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "ACOA",
+   "anterior": 30000.0,
+   "actual": 20000.0,
+   "programas": [
+    "Comercio"
+   ]
+  },
+  {
+   "entidad": "Asoc. Comerciantes Santa Catalina",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "programas": [
+    "Comercio"
+   ]
+  },
+  {
+   "entidad": "Consorcio Ruta del vino Ribera del Duero",
+   "anterior": 18000.0,
+   "actual": 18000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "Orfeón Arandino",
+   "anterior": 16200.0,
+   "actual": 16200.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "Asociación de amigos de la indumentaria tradicional de la Ribera",
+   "anterior": 0.0,
+   "actual": 16000.0,
+   "programas": [
+    "Escuela municipal de folklore"
+   ]
+  },
+  {
+   "entidad": "APACE",
+   "anterior": 18500.0,
+   "actual": 15000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Asociación Cultural \"La Tanguilla\"",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "Asociación Músicos Ribereños",
+   "anterior": 0.0,
+   "actual": 15000.0,
+   "programas": [
+    "Juventud"
+   ]
+  },
+  {
+   "entidad": "Asociación Cultural \"El Mostacho\"",
+   "anterior": 14000.0,
+   "actual": 14000.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "Hermandad de Cofradías",
+   "anterior": 9000.0,
+   "actual": 12000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "Plataforma por el Ferrocarril Directo Madrid - Aranda",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Instituto Castellano y Leonés de la Lengua",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "Cáritas",
+   "anterior": 3000.0,
+   "actual": 10000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Cruz Roja",
+   "anterior": 8500.0,
+   "actual": 10000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Residencia Sagrada Familia",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Fundacion Lola Perez Rivera",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "AFAR",
+   "anterior": 8000.0,
+   "actual": 9000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Asoc. Española de Lucha contra el Cáncer",
+   "anterior": 8000.0,
+   "actual": 9000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Autismo Burgos",
+   "anterior": 7500.0,
+   "actual": 9000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "ANDAR",
+   "anterior": 6500.0,
+   "actual": 7000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "AREM",
+   "anterior": 5000.0,
+   "actual": 7000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Filarmónica Aranda",
+   "anterior": 7000.0,
+   "actual": 7000.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "C D Hockey Línea Erizos Rudos",
+   "anterior": 0.0,
+   "actual": 7000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "ASADEMA",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "ALEA",
+   "anterior": 0.0,
+   "actual": 6000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Asociación Mujeres Progresistas Rosa de Lima",
+   "anterior": 12000.0,
+   "actual": 6000.0,
+   "programas": [
+    "Promoción de la igualdad"
+   ]
+  },
+  {
+   "entidad": "Asociación Amas de Casa Unae Aranda",
+   "anterior": 12000.0,
+   "actual": 6000.0,
+   "programas": [
+    "Promoción de la igualdad"
+   ]
+  },
+  {
+   "entidad": "Asoc. feminista Ruperta Baraya",
+   "anterior": 12000.0,
+   "actual": 6000.0,
+   "programas": [
+    "Promoción de la igualdad"
+   ]
+  },
+  {
+   "entidad": "Cine Club Duero",
+   "anterior": 5400.0,
+   "actual": 5400.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "Asociación Art de Troya",
+   "anterior": 5300.0,
+   "actual": 5300.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "DISFAR",
+   "anterior": 4500.0,
+   "actual": 5000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Museo del Tren",
+   "anterior": 0.0,
+   "actual": 5000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "Asociación Ibérica de Municipios Ribereños",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "JEARCO",
+   "anterior": 3500.0,
+   "actual": 4500.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos La Estación",
+   "anterior": 5000.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos El Polígono",
+   "anterior": 5000.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Allendeduero",
+   "anterior": 5000.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Centro",
+   "anterior": 5000.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Ferial Bañuelos",
+   "anterior": 5000.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Santa Catalina",
+   "anterior": 5000.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Sinovas",
+   "anterior": 5000.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Costaján",
+   "anterior": 0.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos Calabaza",
+   "anterior": 0.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "Asociación Vecinos La Aguilera (Asoc Cultural Cuesta Del Águila)",
+   "anterior": 0.0,
+   "actual": 4000.0,
+   "programas": [
+    "Participación ciudadana"
+   ]
+  },
+  {
+   "entidad": "ASEMAR",
+   "anterior": 3000.0,
+   "actual": 3500.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Federación Española de Municipios y Provincias",
+   "anterior": 3033.74,
+   "actual": 3183.74,
+   "programas": [
+    "Admon. gral medio ambiente",
+    "Administración general"
+   ]
+  },
+  {
+   "entidad": "Nuevo Futuro",
+   "anterior": 2500.0,
+   "actual": 3000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Asoc. Personas Sordas Aranda Y Ribera",
+   "anterior": 2750.0,
+   "actual": 3000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Agrupación Ribereña de Las Artes",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "C D Arandina Club de Fútbol",
+   "anterior": 0.0,
+   "actual": 3000.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "Filatelia Y Numismática",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "programas": [
+    "Promoción cultural"
+   ]
+  },
+  {
+   "entidad": "Asociación española de abastecimiento de aguas y saneamiento",
+   "anterior": 2200.0,
+   "actual": 2200.0,
+   "programas": [
+    "Abastecimiento y distribución de aguas"
+   ]
+  },
+  {
+   "entidad": "Club Deportivo Espeleoduero",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "programas": [
+    "Admon. gral medio ambiente"
+   ]
+  },
+  {
+   "entidad": "ARANSBUR",
+   "anterior": 0.0,
+   "actual": 2000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "AFAC (Asociación de Fibromialgia y Astenia Crónica de CyL)",
+   "anterior": 0.0,
+   "actual": 2000.0,
+   "programas": [
+    "Asistencia social primaria"
+   ]
+  },
+  {
+   "entidad": "Convenio colaboración Romorantin-Lanthenay",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "programas": [
+    "Servicios complementarios de educación"
+   ]
+  },
+  {
+   "entidad": "ACEVIN",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Red Impulso",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Red Ciudades Michelin",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Federación Regional de Municipios y provincias de Castilla y León",
+   "anterior": 1343.36,
+   "actual": 1343.36,
+   "programas": [
+    "Administración general"
+   ]
+  },
+  {
+   "entidad": "H2CyL",
+   "anterior": 3000.0,
+   "actual": 1200.0,
+   "programas": [
+    "Desarrollo económico"
+   ]
+  },
+  {
+   "entidad": "Fundación Universidad de Burgos",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "programas": [
+    "Servicios complementarios educación"
+   ]
+  },
+  {
+   "entidad": "Asociación de museos del vino",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "programas": [
+    "Turismo"
+   ]
+  },
+  {
+   "entidad": "Asociación española de parques y jardines",
+   "anterior": 210.0,
+   "actual": 210.0,
+   "programas": [
+    "Parques y jardines"
+   ]
+  },
+  {
+   "entidad": "Federación bandas de música",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "programas": [
+    "Banda de música"
+   ]
+  }
+ ]
+}

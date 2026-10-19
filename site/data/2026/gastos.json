@@ -65,6 +65,7 @@
    "actual": 535000.0
   }
  ],
+ "sinAnterior": [],
  "areas": [
   {
    "area": 0,
@@ -1183,7 +1184,7 @@
    "programa": "1320",
    "codigo": "216.01",
    "nombre": "Mantenimiento software policía",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 10000.0
   },
   {
@@ -1319,7 +1320,7 @@
    "programa": "1330",
    "codigo": "200",
    "nombre": "Arrendamientos de terrenos y bienes naturales",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 5000.0
   },
   {
@@ -1359,7 +1360,7 @@
    "programa": "1330",
    "codigo": "227.99.01",
    "nombre": "Servicio ORA",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 355000.0
   },
   {
@@ -1367,7 +1368,7 @@
    "programa": "1330",
    "codigo": "227.99.02",
    "nombre": "Servicio Grúa Municipal",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 255000.0
   },
   {
@@ -1375,7 +1376,7 @@
    "programa": "1350",
    "codigo": "202",
    "nombre": "Arrendamiento de edificios y otras construcciones",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 18000.0
   },
   {
@@ -1535,7 +1536,7 @@
    "programa": "1360",
    "codigo": "216",
    "nombre": "Repar., manten. y conserv. de equipos informáticos",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 13000.0
   },
   {
@@ -2223,7 +2224,7 @@
    "programa": "1610",
    "codigo": "227.99.01",
    "nombre": "Analíticas de agua",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 96000.0
   },
   {
@@ -2695,7 +2696,7 @@
    "programa": "1710",
    "codigo": "227.99.01",
    "nombre": "Servicio mantenimiento de parques y jardines",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 1452000.0
   },
   {
@@ -3183,7 +3184,7 @@
    "programa": "2314",
    "codigo": "227.99.01",
    "nombre": "Servicio de comidas y comedor",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 355000.0
   },
   {
@@ -3191,7 +3192,7 @@
    "programa": "2314",
    "codigo": "227.99.02",
    "nombre": "Servicio de atención domiciliaria",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 1280000.0
   },
   {
@@ -3199,7 +3200,7 @@
    "programa": "2314",
    "codigo": "227.99.03",
    "nombre": "Servicio de atención preventiva a personas mayores",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 405000.0
   },
   {
@@ -3207,7 +3208,7 @@
    "programa": "2314",
    "codigo": "227.99.04",
    "nombre": "Servicio de urgencias sociales",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 55000.0
   },
   {
@@ -3247,7 +3248,7 @@
    "programa": "3110",
    "codigo": "227.99.01",
    "nombre": "Recogida de animales abandonados, aves gregarias y desratización",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 225000.0
   },
   {
@@ -3327,7 +3328,7 @@
    "programa": "3230",
    "codigo": "227.99.01",
    "nombre": "Escuelas infantiles",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 489000.0
   },
   {
@@ -3407,7 +3408,7 @@
    "programa": "3260",
    "codigo": "227.99.01",
    "nombre": "Ludotecas",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 38000.0
   },
   {
@@ -3535,7 +3536,7 @@
    "programa": "3261",
    "codigo": "226.09.01",
    "nombre": "Certamen de bandas",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 80000.0
   },
   {
@@ -3951,7 +3952,7 @@
    "programa": "3330",
    "codigo": "224.00",
    "nombre": "Primas de seguros",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 2100.0
   },
   {
@@ -4007,7 +4008,7 @@
    "programa": "3330",
    "codigo": "227.99.03",
    "nombre": "Museo del Tren",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 38000.0
   },
   {
@@ -4111,7 +4112,7 @@
    "programa": "3331",
    "codigo": "277.99.01",
    "nombre": "Escuela y museo de cerámica, contrato",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 60000.0
   },
   {
@@ -4215,7 +4216,7 @@
    "programa": "3340",
    "codigo": "227.99.01",
    "nombre": "Contrato servicio técnico iluminación, sonido y audiovisual",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 38500.0
   },
   {
@@ -4327,7 +4328,7 @@
    "programa": "3341",
    "codigo": "226.09.01",
    "nombre": "Concierto de navidad",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 15000.0
   },
   {
@@ -4447,7 +4448,7 @@
    "programa": "3370",
    "codigo": "226.99.01",
    "nombre": "Ocio alternativo",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 14000.0
   },
   {
@@ -4567,7 +4568,7 @@
    "programa": "3373",
    "codigo": "226.09.01",
    "nombre": "Ocio Alternativo",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 46000.0
   },
   {
@@ -4575,7 +4576,7 @@
    "programa": "3373",
    "codigo": "226.09.02",
    "nombre": "Colonias de verano",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 230000.0
   },
   {
@@ -4583,7 +4584,7 @@
    "programa": "3373",
    "codigo": "226.09.03",
    "nombre": "Pista de hielo",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 17000.0
   },
   {
@@ -4831,7 +4832,7 @@
    "programa": "3410",
    "codigo": "226.09.01",
    "nombre": "Cross de la Constitución",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 15000.0
   },
   {
@@ -4839,7 +4840,7 @@
    "programa": "3410",
    "codigo": "226.09.02",
    "nombre": "Vuelta Ciclista Junior a la Ribera",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 230000.0
   },
   {
@@ -4847,7 +4848,7 @@
    "programa": "3410",
    "codigo": "226.09.03",
    "nombre": "Milla Urbana",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 50000.0
   },
   {
@@ -4855,7 +4856,7 @@
    "programa": "3410",
    "codigo": "226.09.04",
    "nombre": "Campeonato de dardos",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 10000.0
   },
   {
@@ -4863,7 +4864,7 @@
    "programa": "3410",
    "codigo": "226.09.05",
    "nombre": "Campeonato internacional de fútbol",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 12000.0
   },
   {
@@ -4871,7 +4872,7 @@
    "programa": "3410",
    "codigo": "226.09.06",
    "nombre": "Campeonato de España de pentatlón",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 15000.0
   },
   {
@@ -5055,7 +5056,7 @@
    "programa": "3420",
    "codigo": "227.99.01",
    "nombre": "Piscina climatizada",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 420000.0
   },
   {
@@ -5063,7 +5064,7 @@
    "programa": "3420",
    "codigo": "227.99.02",
    "nombre": "Piscinas de verano",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 160000.0
   },
   {
@@ -5087,7 +5088,7 @@
    "programa": "4220",
    "codigo": "227.06",
    "nombre": "Estudios y trabajos técnicos",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 20000.0
   },
   {
@@ -5151,7 +5152,7 @@
    "programa": "4311",
    "codigo": "226.99.01",
    "nombre": "Feria FP",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 38000.0
   },
   {
@@ -5159,7 +5160,7 @@
    "programa": "4311",
    "codigo": "226.99.02",
    "nombre": "Feria gastronomía",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 50000.0
   },
   {
@@ -5215,7 +5216,7 @@
    "programa": "4320",
    "codigo": "221.10",
    "nombre": "Hidrógeno autobús bodegas",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 25000.0
   },
   {
@@ -5271,7 +5272,7 @@
    "programa": "4320",
    "codigo": "226.09.01",
    "nombre": "Fiesta de la Vendimia",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 80000.0
   },
   {
@@ -5279,7 +5280,7 @@
    "programa": "4320",
    "codigo": "226.09.02",
    "nombre": "Visitas teatralizadas",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 41000.0
   },
   {
@@ -5287,7 +5288,7 @@
    "programa": "4320",
    "codigo": "226.09.03",
    "nombre": "Feria de la cerveza",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 5000.0
   },
   {
@@ -5295,7 +5296,7 @@
    "programa": "4320",
    "codigo": "226.09.04",
    "nombre": "Mes del enoturismo",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 5000.0
   },
   {
@@ -5303,7 +5304,7 @@
    "programa": "4320",
    "codigo": "226.09.05",
    "nombre": "Noche de velas",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 8000.0
   },
   {
@@ -5311,7 +5312,7 @@
    "programa": "4320",
    "codigo": "226.09.06",
    "nombre": "Noche de ronda",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 6000.0
   },
   {
@@ -5319,7 +5320,7 @@
    "programa": "4320",
    "codigo": "226.09.07",
    "nombre": "Fitur",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 50000.0
   },
   {
@@ -5335,7 +5336,7 @@
    "programa": "4320",
    "codigo": "226.99.01",
    "nombre": "Gestión WineBus",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 40000.0
   },
   {
@@ -5495,7 +5496,7 @@
    "programa": "4330",
    "codigo": "226.99.01",
    "nombre": "Gastos Sonorama",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 45000.0
   },
   {
@@ -5519,7 +5520,7 @@
    "programa": "4330",
    "codigo": "227.99.01",
    "nombre": "Premios Envero",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 120000.0
   },
   {
@@ -5543,7 +5544,7 @@
    "programa": "4411",
    "codigo": "227.99.01",
    "nombre": "Contrato autobuses urbanos",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 350000.0
   },
   {
@@ -6159,7 +6160,7 @@
    "programa": "9250",
    "codigo": "216.01",
    "nombre": "Portal de transparencia",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 14520.0
   },
   {
@@ -6167,7 +6168,7 @@
    "programa": "9250",
    "codigo": "216.02",
    "nombre": "Página web arandadeduero.es",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 15000.0
   },
   {
@@ -6295,7 +6296,7 @@
    "programa": "9310",
    "codigo": "216.01",
    "nombre": "Sede electrónica",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 10000.0
   },
   {
@@ -6359,7 +6360,7 @@
    "programa": "9320",
    "codigo": "216.01",
    "nombre": "Sede electrónica",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 38000.0
   },
   {
@@ -6455,7 +6456,7 @@
    "programa": "9330",
    "codigo": "216.01",
    "nombre": "Gestión inventario",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 13500.0
   },
   {
@@ -6519,7 +6520,7 @@
    "programa": "9340",
    "codigo": "227.99.01",
    "nombre": "Contrato de Servicios Bancarios",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 65000.0
   },
   {
@@ -6879,7 +6880,7 @@
    "programa": "1610",
    "codigo": "623",
    "nombre": "Maquinaria, instalaciones técnicas y utillaje",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 86500.0
   },
   {
@@ -6887,7 +6888,7 @@
    "programa": "1610",
    "codigo": "624",
    "nombre": "Elementos de transporte",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 5000.0
   },
   {
@@ -6943,7 +6944,7 @@
    "programa": "1710",
    "codigo": "627",
    "nombre": "Proyectos complejos",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 38200.0
   },
   {
@@ -7127,7 +7128,7 @@
    "programa": "3420",
    "codigo": "624",
    "nombre": "Elementos de transporte",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 45000.0
   },
   {
@@ -7199,7 +7200,7 @@
    "programa": "4330",
    "codigo": "622",
    "nombre": "Edificios y otras construcciones",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 40000.0
   },
   {
@@ -7271,7 +7272,7 @@
    "programa": "9200",
    "codigo": "632",
    "nombre": "Edificios y otras construcciones",
-   "anterior": null,
+   "anterior": 0.0,
    "actual": 40000.0
   },
   {

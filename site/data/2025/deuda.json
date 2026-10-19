@@ -1,0 +1,101 @@
+{
+ "anio": 2025,
+ "prestamos": [
+  {
+   "fecha": "2017-11-27",
+   "importe": 362528.65,
+   "primeraAmortizacion": "2017-12-31",
+   "ultimaAmortizacion": "2027-09-30",
+   "entidad": "BANKIA",
+   "tipoInteres": "EURIBOR TRIM. +0,600%",
+   "vivaInicio": 99695.43,
+   "vivaFin": 63442.59,
+   "amortizacion": 36252.84
+  },
+  {
+   "fecha": "2018-12-21",
+   "importe": 2051624.51,
+   "primeraAmortizacion": "2019-03-31",
+   "ultimaAmortizacion": "2028-12-31",
+   "entidad": "UNICAJA BANCO",
+   "tipoInteres": "EURIBOR TRIM. +0,350%",
+   "vivaInicio": 820649.83,
+   "vivaFin": 615487.39,
+   "amortizacion": 205162.44
+  },
+  {
+   "fecha": "2021-09-01",
+   "importe": 2906376.85,
+   "primeraAmortizacion": "2023-12-31",
+   "ultimaAmortizacion": "2032-12-31",
+   "entidad": "CAJA LABORAL",
+   "tipoInteres": "EURIBOR ANUAL + 0,26%",
+   "vivaInicio": 2325101.48,
+   "vivaFin": 2034463.79,
+   "amortizacion": 290637.68
+  }
+ ],
+ "previsto": {
+  "fecha": "2025-03-01",
+  "importe": 11000000.0,
+  "primeraAmortizacion": "2026-12-31",
+  "ultimaAmortizacion": "2036-12-31",
+  "tipoInteres": "Euribor anual + 0,5"
+ },
+ "serie": [
+  {
+   "anio": 2022,
+   "viva": 4309552.67
+  },
+  {
+   "anio": 2023,
+   "viva": 3777499.71
+  },
+  {
+   "anio": 2024,
+   "viva": 3245446.74
+  },
+  {
+   "anio": 2025,
+   "viva": 2713393.77
+  },
+  {
+   "anio": 2026,
+   "viva": 2181340.81
+  },
+  {
+   "anio": 2027,
+   "viva": 1658350.94
+  },
+  {
+   "anio": 2028,
+   "viva": 1162550.75
+  },
+  {
+   "anio": 2029,
+   "viva": 871913.07
+  },
+  {
+   "anio": 2030,
+   "viva": 581275.39
+  },
+  {
+   "anio": 2031,
+   "viva": 290637.71
+  },
+  {
+   "anio": 2032,
+   "viva": 0.0
+  }
+ ],
+ "titular": {
+  "vivaFin": 2713393.77,
+  "vivaFinConPrevisto": 13713393.77
+ },
+ "carga": {
+  "intereses": 101122.07,
+  "amortizacion": 532052.98,
+  "total": 633175.05,
+  "interesesConPrevisto": 489445.83
+ }
+}
