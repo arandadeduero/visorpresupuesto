@@ -97,3 +97,33 @@ test("los capítulos a cero no producen porciones vacías", () => {
   const { items } = datosArticulos(caps, arts);
   assert.ok(items.every((i) => i.valor > 0) && !items.some((i) => i.cap === 8));
 });
+
+test("la leyenda de capítulos es una tabla con cabecera (ordenable): capítulo, % e importe", async () => {
+  const { tablaLeyendaCapitulos } = await import("./quesito.js");
+  const { items } = datosQuesito(resumen.ingresosPorCapitulo);
+  const html = tablaLeyendaCapitulos(items);
+  assert.match(html, /<table class="datos/);
+  const cabeceras = [...html.matchAll(/<th[^>]*>(.*?)<\/th>/g)].map((m) => m[1].replace(/<[^>]+>/g, "").trim());
+  assert.deepEqual(cabeceras, ["Capítulo", "% del total", "Importe"]);
+  assert.equal([...html.matchAll(/<tbody>[\s\S]*<\/tbody>/g)][0][0].split("<tr").length - 1, items.length);
+  for (const i of items) assert.ok(html.includes(`background:${i.color}`), i.nombre);
+  assert.ok(html.includes("Cap 9 - Préstamos"));
+  assert.match(html, /31,4\s%/);
+});
+
+test("la leyenda de artículos es una tabla plana con capítulo, artículo, % e importe", async () => {
+  const { tablaLeyendaArticulos, datosArticulos, articulosDeIngresos } = await import("./quesito.js");
+  const datos = datosArticulos(resumen.ingresosPorCapitulo, articulosDeIngresos(leer("../data/2026/ingresos.json")));
+  const html = tablaLeyendaArticulos(datos.grupos);
+  const cabeceras = [...html.matchAll(/<th[^>]*>(.*?)<\/th>/g)].map((m) => m[1].replace(/<[^>]+>/g, "").trim());
+  assert.deepEqual(cabeceras, ["Capítulo", "Artículo", "% del total", "Importe"]);
+  const filas = html.split("<tbody>")[1].split("<tr").length - 1;
+  assert.equal(filas, datos.items.length);
+  assert.ok(html.includes("Préstamos recibidos"));
+  assert.doesNotMatch(html, /leyenda-agrupada|<ul/);
+});
+
+test("las leyendas ya no son listas: quesito.js solo pinta tablas", () => {
+  const fuente = readFileSync(new URL("./quesito.js", import.meta.url), "utf8");
+  assert.doesNotMatch(fuente, /leyenda-quesito|leyenda-agrupada|<ul/);
+});
