@@ -1,7 +1,7 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
 import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
-import { pintaQuesito } from "./quesito.js";
+import { pintaQuesito, articulosDeIngresos } from "./quesito.js";
 import { mayoresCambios } from "./insights.js";
 
 function cambios(titulo, items, clase) {
@@ -59,6 +59,6 @@ runPage("resumen", async ({ anio, main, load }) => {
     </details>
     <p class="muted">La cifra de ${anio - 1} son los créditos del presupuesto de ${anio - 1}.</p>`;
 
-  pintaQuesito(main.querySelector("#q-ingresos"), r.ingresosPorCapitulo, "De dónde sale el dinero");
-  pintaQuesito(main.querySelector("#q-gastos"), r.gastosPorCapitulo, "En qué se gasta");
+  pintaQuesito(main.querySelector("#q-ingresos"), r.ingresosPorCapitulo, "De dónde sale el dinero", articulosDeIngresos(ingresos));
+  pintaQuesito(main.querySelector("#q-gastos"), r.gastosPorCapitulo, "En qué se gasta", gastos.articulos);
 });

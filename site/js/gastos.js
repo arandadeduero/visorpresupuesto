@@ -26,9 +26,9 @@ runPage("gastos", async ({ anio, main, load }) => {
     <p><label>Buscar un gasto <input type="search" id="buscar" placeholder="Por ejemplo: energía, parques, cultura…" autocomplete="off"></label></p>
     <div id="arbol"></div>
     <div id="resultados" hidden></div>
-    <div class="ayuda"><strong>Sobre el personal:</strong> los sueldos y cotizaciones se muestran agrupados por programa, sin detalle por categoría. El resto de gastos llega hasta la partida concreta.</div>`;
+    <div class="ayuda"><strong>Sobre el personal:</strong> los sueldos y cotizaciones se muestran agrupados por programa (en «¿En qué se gasta?») o por tipo de personal (en «¿Qué tipo de gasto es?»), sin detalle por categoría. El resto de gastos llega hasta la partida concreta (en «¿Qué tipo de gasto es?», con el programa al que pertenece).</div>`;
 
-  pintaQuesito(main.querySelector("#quesito"), datos.capitulos, "Gastos por tipo de gasto");
+  pintaQuesito(main.querySelector("#quesito"), datos.capitulos, "Gastos por tipo de gasto", datos.articulos);
   const arbol = main.querySelector("#arbol");
   const resultados = main.querySelector("#resultados");
 
@@ -49,7 +49,7 @@ runPage("gastos", async ({ anio, main, load }) => {
 
   const EXPLICA = {
     politica: "Agrupa los gastos por la finalidad a la que se destinan (cultura, deporte, seguridad…). Es lo que se llama clasificación por programas.",
-    capitulo: "Agrupa los gastos por su naturaleza (sueldos, servicios, obras, intereses…). Es lo que se llama clasificación económica.",
+    capitulo: "Agrupa los gastos por su naturaleza (sueldos, servicios, obras, intereses…). Primero los grandes bloques (capítulos), dentro de cada uno su tipo concreto (artículos) y, al abrirlo, las partidas con el programa al que pertenecen. Es lo que se llama clasificación económica.",
   };
 
   function dibujar() {
@@ -89,7 +89,7 @@ runPage("gastos", async ({ anio, main, load }) => {
     resultados.innerHTML = filas.length
       ? `<p class="muted">${filas.length} resultado(s)</p>` + tablaHtml(
           [{ texto: "Gasto" }, { texto: "Programa" }, { texto: "Tipo de gasto" }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }],
-          filas.map((f) => `<tr><td>${esc(f.nombre)}</td><td>${esc(f.programa)}</td><td>${esc(f.capitulo)}</td><td class="num">${formatEuros(f.anterior)}</td><td class="num">${formatEuros(f.actual)}</td></tr>`),
+          filas.map((f) => `<tr><td>${esc(f.nombre)}</td><td>${esc(f.programa)}</td><td>${esc(f.capitulo)}${f.articulo ? ` › ${esc(f.articulo)}` : ""}</td><td class="num">${formatEuros(f.anterior)}</td><td class="num">${formatEuros(f.actual)}</td></tr>`),
         )
       : `<p>No hay gastos que coincidan con «${esc(consulta)}».</p>`;
   });

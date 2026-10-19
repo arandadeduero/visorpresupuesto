@@ -27,16 +27,29 @@ test("por política: política → programa → partida, con los importes de Seg
   assert.ok(Math.abs(suma(politica.hijos) - politica.actual) < 1);
 });
 
-test("por capítulo: el personal no baja de programa", () => {
+test("por capítulo: capítulo → artículo → partida, y el personal no baja del artículo", () => {
   const raiz = buildTree(datos, "capitulo");
   assert.ok(Math.abs(suma(raiz) - TOTAL) < 1);
+  for (const cap of raiz) assert.ok(Math.abs(suma(cap.hijos) - cap.actual) < 1, cap.nombre);
   const personal = raiz.find((n) => n.nombre === "Personal");
   assert.equal(personal.oficial, "Gastos de personal");
-  assert.ok(personal.hijos.length > 5);
-  assert.ok(personal.hijos.every((p) => p.hijos === null));
+  assert.ok(personal.hijos.some((a) => a.nombre === "Personal funcionario"));
+  assert.ok(personal.hijos.every((a) => a.hijos === null));
   const obras = raiz.find((n) => n.nombre === "Obras e inversiones");
-  const seg = obras.hijos.find((n) => n.nombre === "Seguridad");
-  assert.deepEqual(seg.hijos.map((p) => p.actual).sort((a, b) => a - b), [45000, 110000]);
+  const reposicion = obras.hijos.find((a) => a.codigo === "62");
+  assert.equal(reposicion.oficial, "Inversión nueva asociada al funcionamiento operativo de los servicios");
+  assert.ok(Math.abs(suma(reposicion.hijos) - reposicion.actual) < 1);
+  // el programa pasa a ser el detalle de la partida
+  const edificios = reposicion.hijos.find((p) => p.codigo === "622" && p.detalle === "Seguridad");
+  assert.equal(edificios.actual, 110000);
+  assert.equal(edificios.hijos, null);
+});
+
+test("por capítulo: los préstamos que se devuelven son el artículo 91 del capítulo 9", () => {
+  const deuda = buildTree(datos, "capitulo").find((n) => n.nombre === "Devolución de préstamos");
+  assert.equal(deuda.hijos.length, 1);
+  assert.equal(deuda.hijos[0].nombre, "Devolución de préstamos");
+  assert.equal(deuda.hijos[0].actual, 535000);
 });
 
 test("buscar ignora tildes y devuelve programas y partidas", () => {
