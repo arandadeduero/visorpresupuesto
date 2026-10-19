@@ -1,0 +1,51 @@
+site/js/gastos-tree.js
+  s_c524ba238f0f5a::t_31ef9cd2bfa840 6-7,42,52,69
+site/js/gastos.js
+  s_c524ba238f0f5a::t_7587b4ab566e5b 46
+site/js/resumen.js
+  s_c524ba238f0f5a::t_7587b4ab566e5b 29-34,43-46,51
+site/js/descargas.js
+  s_c524ba238f0f5a::t_1c1023cda8ec09 5
+site/js/anios.test.js
+  s_c524ba238f0f5a::t_5d3645fc45bc6f 1-105
+site/js/home.js
+  s_c524ba238f0f5a::t_7587b4ab566e5b 81
+site/js/indicadores.js
+  s_c524ba238f0f5a::t_1c1023cda8ec09 24,29
+site/js/deuda.js
+  s_c524ba238f0f5a::t_1c1023cda8ec09 10-23,37,55
+site/js/subvenciones.js
+  s_c524ba238f0f5a::t_097260146b85f9 8-9,13,20-21,40
+site/js/ingresos.js
+  s_c524ba238f0f5a::t_02cb759ae1b22d 44-47
+  s_c524ba238f0f5a::t_35712cb8b245f7 29
+site/js/inversiones.js
+  s_c524ba238f0f5a::t_1c1023cda8ec09 26
+tools/tests/test_site.py
+  s_c524ba238f0f5a::t_bd83f2802fb6c7 98
+  s_c524ba238f0f5a::t_f9f1719c41bd6f 76-97
+site/js/calidad.test.js
+  s_c524ba238f0f5a::t_fd31e608666838 57-59,61-75
+site/js/lecturas.js
+  s_c524ba238f0f5a::t_31ef9cd2bfa840 24,46
+README.md
+  s_c524ba238f0f5a::t_ddb950ce950588 7,29,49,61-63,87-89
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_c524ba238f0f5a::t_137e1c2d235a6f 127-143
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cfff9fdeda421d31d6b1a68bb8ba8c16f47fb3af",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
