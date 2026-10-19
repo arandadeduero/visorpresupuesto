@@ -1,0 +1,50 @@
+site/js/lecturas.js
+  s_c524ba238f0f5a::t_ff91d0cc05f2b0 40-58
+  s_c524ba238f0f5a::t_fc2608abfca658 26-39
+  s_c524ba238f0f5a::t_73e19324917506 84-87
+site/js/comparar.js
+  s_c524ba238f0f5a::t_35dbf74ead2204 103
+site/js/calidad.test.js
+  s_c524ba238f0f5a::t_5bf86f438bb4af 54
+  s_c524ba238f0f5a::t_ef4005ee93b6ab 51-53
+site/js/guia.js
+  s_c524ba238f0f5a::t_764be9f2c21145 25-27,29-32,34
+  s_c524ba238f0f5a::t_ea366d29184d2a 43
+  s_c524ba238f0f5a::t_9573e9b654b34e 28,33
+site/js/indicadores.js
+  s_c524ba238f0f5a::t_5b21407f94b17b 34
+  s_c524ba238f0f5a::t_e377969fe81256 3
+  s_c524ba238f0f5a::t_0fde81d335793b 27,29-33
+  s_c524ba238f0f5a::t_3efff297236bcc 49
+  s_c524ba238f0f5a::t_262a21bfdd922e 51
+  s_c524ba238f0f5a::t_cb7c5522a7c625 52
+site/js/comparacion.js
+  s_c524ba238f0f5a::t_2b3ebfb041aeac 133-134
+site/js/lecturas.test.js
+  s_c524ba238f0f5a::t_f8846ed43f82f9 90-112
+  s_c524ba238f0f5a::t_86b753b625ffc9 4
+  s_c524ba238f0f5a::t_662de1cff8819d 58-89,113-120
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_c524ba238f0f5a::t_b642e4f8610052 116
+README.md
+  s_c524ba238f0f5a::t_27df47754bed9b 95
+  s_c524ba238f0f5a::t_76457d63cabc43 20
+site/js/comparacion.test.js
+  s_c524ba238f0f5a::t_0cb9080a7cbc78 163-170
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9c906458090d1812f2a24c7fc55b1762b8777372",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
