@@ -1,0 +1,36 @@
+site/js/data.js
+  s_c524ba238f0f5a::t_980f5e755a00cb 3-6,21,31
+site/js/descargas.js
+  s_c524ba238f0f5a::t_980f5e755a00cb 2,18
+tools/build_site.py
+  s_c524ba238f0f5a::t_84834214362ae2 1-144
+.github/workflows/pages.yml
+  s_c524ba238f0f5a::t_b74fa75bf6d7e8 29-33,37,46-50,53-57
+tools/tests/test_build_site.py
+  s_c524ba238f0f5a::t_b2136e52a642b4 1-2,4-20,23-141
+  s_c524ba238f0f5a::t_b74fa75bf6d7e8 3,21-22,142-152
+.github/workflows/ci.yml
+  s_c524ba238f0f5a::t_b74fa75bf6d7e8 24-29
+.gitignore
+  s_c524ba238f0f5a::t_c780be3d78f89d 32
+README.md
+  s_c524ba238f0f5a::t_a9d825821b2c10 82-83,86-105
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_c524ba238f0f5a::t_bf519c6a3a80e2 167-170
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "46d9b3a2d07f9498ebeefeea38b87bfd572d9129",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
