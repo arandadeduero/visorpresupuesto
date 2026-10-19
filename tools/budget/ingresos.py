@@ -2,7 +2,7 @@
 import re
 
 from .common import code_str, find_file, load_sheet, norm, num, sentence_case
-from .labels import CAPITULOS_INGRESOS
+from .labels import CAPITULOS_INGRESOS, articulo_ingresos
 
 _ROMANOS = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9}
 _CABECERA = re.compile(r"^capitulo ([ivx]+)\b")
@@ -57,6 +57,7 @@ def parse_ingresos(year: int) -> dict:
             capitulo["conceptos"].append(
                 {
                     "codigo": code_str(codigo),
+                    "articulo": code_str(codigo)[:2],
                     "nombre": sentence_case(nombre),
                     "anterior2": valor("anterior2"),
                     "anterior": valor("anterior"),
@@ -68,4 +69,16 @@ def parse_ingresos(year: int) -> dict:
         for campo in ("anterior2", "anterior", "actual"):
             if c[campo] is None and any(x[campo] is not None for x in c["conceptos"]):
                 c[campo] = round(sum(x[campo] or 0 for x in c["conceptos"]), 2)
+    # Artículos: se agrupan los conceptos por sus dos primeros dígitos (la clasificación oficial), no por la fila
+    # «ARTÍCULO nn» del Excel, que en 2024 y 2025 cuenta la tasa 329.03 (800 €) dentro del artículo 33 en vez del 32.
+    for c in capitulos.values():
+        c["articulos"] = []
+        for cod in sorted({x["articulo"] for x in c["conceptos"]}):
+            propios = [x for x in c["conceptos"] if x["articulo"] == cod]
+            nombre, oficial = articulo_ingresos(cod)
+            art = {"codigo": cod, "nombre": nombre, "oficial": oficial}
+            for campo in ("anterior2", "anterior", "actual"):
+                valores = [x[campo] for x in propios if x[campo] is not None]
+                art[campo] = round(sum(valores), 2) if valores else None
+            c["articulos"].append(art)
     return {"anio": year, "capitulos": [capitulos[n] for n in sorted(capitulos)]}

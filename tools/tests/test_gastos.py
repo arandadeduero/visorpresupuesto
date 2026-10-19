@@ -120,3 +120,48 @@ def test_las_inversiones_del_anio_anterior_que_a3_no_trae_quedan_sin_dato_y_no_c
 
 def test_sin_errores_de_excel(caso):
     assert "#REF" not in str(caso[1])
+
+
+def articulo(d, cap, codigo):
+    return next(a for a in d["articulos"] if a["cap"] == cap and a["codigo"] == codigo)
+
+
+def test_los_articulos_suman_el_total_de_cada_capitulo(caso):
+    _, d, _ = caso
+    for c in d["capitulos"]:
+        delcap = [a for a in d["articulos"] if a["cap"] == c["cap"]]
+        assert delcap, f"capítulo {c['cap']} sin artículos"
+        assert sum(a["actual"] for a in delcap) == pytest.approx(c["actual"], abs=1)
+        for a in delcap:
+            assert a["codigo"].startswith(str(c["cap"]))
+            assert not a["nombre"].startswith("Artículo "), f"artículo {a['codigo']} sin nombre"
+            if c["cap"] in d["sinAnterior"]:
+                assert a["anterior"] is None
+
+
+def test_cada_partida_tiene_su_articulo_salvo_el_personal(caso):
+    _, d, _ = caso
+    for p in d["partidas"]:
+        if p["cap"] == 1:
+            assert p["articulo"] is None
+        else:
+            assert p["articulo"] == p["codigo"][:2]
+            assert any(a["codigo"] == p["articulo"] for a in d["articulos"])
+
+
+def test_el_personal_tambien_tiene_articulos(caso):
+    _, d, _ = caso
+    codigos = {a["codigo"] for a in d["articulos"] if a["cap"] == 1}
+    assert {"12", "13", "16"} <= codigos
+    assert articulo(d, 1, "12")["nombre"] == "Personal funcionario"
+
+
+def test_amortizacion_de_prestamos_es_el_articulo_91(caso):
+    _, d, _ = caso
+    a = articulo(d, 9, "91")
+    assert a["actual"] == 535000 and a["oficial"] == "Amortización de préstamos y de operaciones en euros"
+
+
+def test_2026_el_articulo_27_no_existe_en_la_clasificacion_oficial_y_lleva_nombre_neutro():
+    a = articulo(parse_gastos(2026), 2, "27")
+    assert "suprimido" in a["oficial"] and a["nombre"] == "Otros gastos en bienes y servicios"

@@ -20,8 +20,8 @@ function nodoPartida(p, detalle) {
 
 /**
  * modo "politica": políticas de gasto (Cultura, Deporte…) → programas → partidas (¿en qué se gasta?).
- * modo "capitulo": capítulos → programas → partidas (¿qué tipo de gasto es?).
- * El capítulo 1 (personal) no baja de programa: sus programas son hojas.
+ * modo "capitulo": capítulos → artículos → partidas (¿qué tipo de gasto es?).
+ * El capítulo 1 (personal) no baja de artículo: sus artículos son hojas.
  */
 export function buildTree(datos, modo) {
   const capitulo = new Map(datos.capitulos.map((c) => [c.cap, c]));
@@ -54,22 +54,23 @@ export function buildTree(datos, modo) {
       .sort(porImporte);
   }
 
+  // capítulo → artículo → partida (el programa va como detalle de la partida). El personal se queda en el artículo.
   return datos.capitulos
     .map((c) => {
-      const delCap = datos.partidas.filter((p) => p.cap === c.cap);
-      const porPrograma = new Map();
-      for (const p of delCap) {
-        if (!porPrograma.has(p.programa)) porPrograma.set(p.programa, []);
-        porPrograma.get(p.programa).push(p);
-      }
-      const hijos = [...porPrograma]
-        .map(([codigo, partidas]) => ({
-          id: `cap-${c.cap}-prog-${codigo}`,
-          nombre: programa.get(codigo).nombre,
-          anterior: sumaAnterior(partidas),
-          actual: suma(partidas, "actual"),
-          hijos: c.cap === 1 ? null : partidas.map((p) => nodoPartida(p, null)).sort(porImporte),
-        }))
+      const hijos = datos.articulos
+        .filter((a) => a.cap === c.cap && a.actual !== 0)
+        .map((a) => {
+          const partidas = c.cap === 1 ? null : datos.partidas.filter((p) => p.cap === c.cap && p.articulo === a.codigo);
+          return {
+            id: `cap-${c.cap}-art-${a.codigo}`,
+            codigo: a.codigo,
+            nombre: a.nombre,
+            oficial: a.oficial,
+            anterior: a.anterior,
+            actual: a.actual,
+            hijos: partidas ? partidas.map((p) => nodoPartida(p, programa.get(p.programa).nombre)).sort(porImporte) : null,
+          };
+        })
         .sort(porImporte);
       return { id: `cap-${c.cap}`, nombre: c.corto, oficial: c.oficial, anterior: c.anterior, actual: c.actual, hijos };
     })
@@ -81,6 +82,7 @@ export function buscar(datos, consulta, limite = 200) {
   if (!consulta || !consulta.trim()) return [];
   const capitulo = new Map(datos.capitulos.map((c) => [c.cap, c]));
   const programa = new Map(datos.programas.map((p) => [p.codigo, p]));
+  const articulo = new Map(datos.articulos.map((a) => [`${a.cap}-${a.codigo}`, a]));
   const filas = [];
   for (const p of datos.programas) {
     if (matches(p.nombre, consulta)) filas.push({ tipo: "programa", nombre: p.nombre, programa: p.nombre, capitulo: "—", anterior: p.anterior, actual: p.actual });
@@ -88,7 +90,7 @@ export function buscar(datos, consulta, limite = 200) {
   for (const p of datos.partidas) {
     const prog = programa.get(p.programa);
     if (p.cap !== 1 && matches(p.nombre, consulta)) {
-      filas.push({ tipo: "partida", nombre: p.nombre, programa: prog.nombre, capitulo: capitulo.get(p.cap).corto, anterior: p.anterior, actual: p.actual });
+      filas.push({ tipo: "partida", nombre: p.nombre, programa: prog.nombre, capitulo: capitulo.get(p.cap).corto, articulo: articulo.get(`${p.cap}-${p.articulo}`).nombre, anterior: p.anterior, actual: p.actual });
     }
   }
   return filas.sort(porImporte).slice(0, limite);

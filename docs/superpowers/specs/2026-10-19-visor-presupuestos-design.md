@@ -151,3 +151,16 @@ Descartado: series históricas 2010–2024, medias provincial, autonómica y nac
 **Reglas.** Se compara siempre el `actual` de cada año con el `actual` del otro (nunca `anterior` con `actual`). Lógica pura y probada en `site/js/comparacion.js`; la pintan `site/js/comparar.js`. Una categoría con importe 0 o ausente en un año y positivo en el otro es «nuevo» (o «desaparece»); el % es `null` si el punto de partida es 0, así que no hay NaN ni Infinity.
 
 **Equivalencias entre 2024, 2025 y 2026 (comprobadas).** Los códigos y nombres de las 21 políticas y de los nueve capítulos de gastos e ingresos coinciden; la única diferencia es la política 46 «Investigación, desarrollo e innovación», que solo existe en 2026 (sale «nuevo»). No hace falta mapeo. No se comparan programas ni partidas (sus códigos sí han variado en detalle); queda como mejora futura.
+
+
+## Capítulos y artículos
+
+**Petición.** «Agrupar a nivel de capítulo, sobre todo en los quesitos, y poder ver a nivel de Préstamos / Impuestos indirectos…». Interpretación: los **capítulos** (9 bloques) son la vista principal y por defecto de todos los quesitos; lo que el usuario describe como «Préstamos / Impuestos indirectos» es el **artículo**, el nivel siguiente de la clasificación económica (dos primeros dígitos del código; Gobierto lo usa en su top de ingresos).
+
+**Datos.** El artículo se deriva del código: ingresos, `concepto[:2]`; gastos, `partida[:2]` (también en el capítulo 1, aunque la web no baje de ahí). Se agrupa **por código**, no por las filas «ARTÍCULO nn» del Excel de ingresos, que en 2024 y 2025 cuenta la tasa 329.03 (800 €) dentro del artículo 33 en lugar del 32; el total del capítulo no cambia. Los nombres oficiales se tomaron de los anexos de la Orden EHA/3565/2008 (BOE n.º 297, 10-12-2008) y se contrastaron con la Orden HAP/419/2014, que crea el artículo 50 (Fondo de Contingencia) y **suprime el artículo 27**. En 2026 el Excel todavía usa el código 277 (un contrato de la escuela de cerámica): se le da el nombre neutro «Otros gastos en bienes y servicios» y se anota en `labels.py`. Cada artículo lleva `nombre` (corto y llano) y `oficial`.
+
+**Web.**
+- Selector accesible «Ver por: Capítulos | Artículos» (grupo de botones con `aria-pressed`, capítulos por defecto) en cada quesito.
+- Vista por artículos: cada artículo lleva el color de su capítulo en distintos tonos (el del capítulo, más claro, más oscuro…); las porciones de un capítulo van juntas; en cada capítulo los artículos por debajo del 2 % del total se agrupan en «Otros artículos de <capítulo>» (solo si hay al menos dos y queda alguno grande); como no se pueden distinguir ~20 categorías por color, la leyenda va agrupada por capítulo con nombre, porcentaje e importe de cada artículo y el nombre oficial al pasar el ratón.
+- Listas: Ingresos pasa a capítulo → artículo → concepto; en Gastos, «¿Qué tipo de gasto es?» pasa a capítulo → artículo → partida (el programa es el detalle de la partida; el personal acaba en el artículo). «¿En qué se gasta?» (políticas) no cambia ni deja de ser la vista inicial de Gastos.
+- La Guía recoge «Artículo» y «Concepto».

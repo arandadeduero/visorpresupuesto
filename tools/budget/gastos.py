@@ -4,7 +4,7 @@ from collections import defaultdict
 
 from .common import code_str, find_file, load_sheet, norm, num, sentence_case
 from .resumen import parse_resumen
-from .labels import AREAS, CAPITULOS_GASTOS, POLITICAS
+from .labels import AREAS, CAPITULOS_GASTOS, POLITICAS, articulo_gastos
 
 _ROMANOS = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9}
 _CABECERA = re.compile(r"^capitulo ([ivx]+)$")
@@ -58,6 +58,12 @@ def parse_gastos(year: int) -> dict:
                 {"cap": cap, "programa": programa, "codigo": code_str(econ), "nombre": sentence_case(nombre_txt) if nombre_txt else f"Partida {code_str(econ)} (sin descripción)", "anterior": anterior, "actual": actual}
             )
 
+    # Artículos: dos primeros dígitos del código económico («120.03» → 12). Se calculan con todas las partidas,
+    # también las del capítulo 1, aunque la web no enseñe su detalle por debajo de programa.
+    crudas = list(partidas)
+    for p in crudas:
+        p["articulo"] = p["codigo"][:2]
+
     # Capítulo 1: una sola partida por programa con el total.
     personal = defaultdict(lambda: [0.0, 0.0])
     for p in partidas:
@@ -66,7 +72,7 @@ def parse_gastos(year: int) -> dict:
             personal[p["programa"]][1] += p["actual"] or 0
     resto = [p for p in partidas if p["cap"] != 1]
     agrupadas = [
-        {"cap": 1, "programa": prog, "codigo": None, "nombre": "Gastos de personal", "anterior": round(a, 2), "actual": round(b, 2)}
+        {"cap": 1, "programa": prog, "codigo": None, "articulo": None, "nombre": "Gastos de personal", "anterior": round(a, 2), "actual": round(b, 2)}
         for prog, (a, b) in personal.items()
     ]
     partidas = agrupadas + resto
@@ -83,6 +89,21 @@ def parse_gastos(year: int) -> dict:
         capitulos[n]["anterior"] = ref.get(n, capitulos[n]["anterior"])
     for p in partidas:
         p["anterior"] = None if p["cap"] in sin_anterior else (p["anterior"] or 0.0)
+
+    articulos = []
+    for cap_n, cod in sorted({(p["cap"], p["articulo"]) for p in crudas}):
+        propios = [p for p in crudas if p["cap"] == cap_n and p["articulo"] == cod]
+        nombre, oficial = articulo_gastos(cod)
+        articulos.append(
+            {
+                "cap": cap_n,
+                "codigo": cod,
+                "nombre": nombre,
+                "oficial": oficial,
+                "anterior": None if cap_n in sin_anterior else round(sum(p["anterior"] or 0 for p in propios), 2),
+                "actual": round(sum(p["actual"] or 0 for p in propios), 2),
+            }
+        )
 
     def suma_anterior(items):
         return None if any(x["anterior"] is None for x in items) else round(sum(x["anterior"] for x in items), 2)
@@ -118,6 +139,7 @@ def parse_gastos(year: int) -> dict:
         "anio": year,
         "capitulos": [capitulos[n] for n in sorted(capitulos)],
         "sinAnterior": sin_anterior,
+        "articulos": articulos,
         "areas": [{"area": a, "nombre": AREAS[a]} for a in usadas],
         "politicas": politicas,
         "programas": programas,

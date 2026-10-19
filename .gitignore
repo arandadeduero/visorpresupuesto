@@ -26,3 +26,6 @@ node_modules/
 # Capturas y trazas de Playwright
 .playwright-mcp/
 *.png
+
+# Worktrees y sesiones de Claude Code
+.claude/

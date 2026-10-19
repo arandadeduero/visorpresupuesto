@@ -140,6 +140,18 @@ input[type="search"] { font: inherit; padding: 8px 12px; border: 1px solid var(-
 .leyenda-quesito { display: block; margin-top: 12px; }
 .leyenda-quesito li { display: flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; padding: 3px 0; border-bottom: 1px solid var(--borde); }
 .leyenda-quesito li > span:first-of-type { flex: 1 1 140px; }
+.controles-quesito { margin: .5em 0; }
+.etiqueta-ver { font-weight: 600; }
+.ayuda-vista { margin: .3em 0 .6em; font-size: .9rem; }
+/* Leyenda agrupada por capítulo (vista por artículos) */
+.leyenda-agrupada { list-style: none; padding: 0; }
+.leyenda-agrupada > li.grupo { display: block; padding: 6px 0 8px; border-bottom: 1px solid var(--borde); }
+.leyenda-agrupada .grupo-cab { display: flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; }
+.leyenda-agrupada .grupo-cab strong:first-of-type { flex: 1 1 140px; }
+.leyenda-agrupada ul { list-style: none; margin: 2px 0 0 18px; padding: 0; }
+.leyenda-agrupada ul li { border-bottom: 0; font-size: .9rem; padding: 2px 0; }
+.leyenda-agrupada i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; flex: none; border: 1px solid rgba(60, 60, 60, .25); }
+.leyenda-agrupada li { min-width: 0; overflow-wrap: anywhere; }
 
 /* Página «Comparar» */
 .comp-selectores { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 1em 0; }
