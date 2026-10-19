@@ -141,6 +141,26 @@ input[type="search"] { font: inherit; padding: 8px 12px; border: 1px solid var(-
 .leyenda-quesito li { display: flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; padding: 3px 0; border-bottom: 1px solid var(--borde); }
 .leyenda-quesito li > span:first-of-type { flex: 1 1 140px; }
 
+/* Página «Comparar» */
+.comp-selectores { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 1em 0; }
+.comp-selectores select, .comp-controles select, #clave { font: inherit; padding: 6px 10px; border: 1px solid var(--gris); border-radius: 6px; max-width: 100%; }
+.comp-cifras { display: flex; flex-direction: column; gap: 2px; margin: .3em 0; }
+.comp-modo { margin-top: 8px; }
+.punto { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.leyenda { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .95rem; }
+.comp-controles { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between; margin: 1em 0 .4em; }
+.frases { padding-left: 1.2em; }
+.frases li { margin-bottom: .4em; }
+.par { padding: 10px 4px; display: grid; gap: 4px; }
+.par-cab { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.par-nombre { font: inherit; font-weight: 600; background: none; border: 0; padding: 0; color: var(--azul-texto); text-align: left; cursor: pointer; text-decoration: underline dotted; overflow-wrap: anywhere; }
+.etiqueta { font-size: .8rem; background: var(--gris-oscuro); color: #fff; border-radius: 999px; padding: 1px 8px; }
+.par-barra { display: grid; grid-template-columns: 3.2em minmax(0, 1fr) minmax(6.5em, auto); gap: 8px; align-items: center; }
+.par-barra .pista { height: 12px; background: var(--azul-claro); border-radius: 6px; overflow: hidden; }
+.par-barra .relleno { display: block; height: 100%; border-radius: 6px; }
+.par-imp { text-align: right; font-weight: 600; white-space: nowrap; }
+.par-anio { font-size: .9rem; color: var(--gris); }
+.par-dif { font-size: .9rem; }
 @media (min-width: 900px) {
   .dos-columnas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

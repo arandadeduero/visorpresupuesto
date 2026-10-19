@@ -141,3 +141,13 @@ Descartado: series históricas 2010–2024, medias provincial, autonómica y nac
 - Totales: 2024 y 2026 cuadran (ingresos = gastos). En 2025 el Excel trae 250.000 € más de ingresos que de gastos (65.078.315,20 € frente a 64.828.315,20 €); el presupuesto de 2026 ya recoge un capítulo 2 de 2025 con 250.000 € más. El conversor lo trata como nota conocida y la web la enseña en el resumen.
 - Para comparar presupuestos entre sí, usar el `actual` de cada año: el `anterior` de un año no siempre coincide con el `actual` del anterior (ver el caso de 2025).
 - Población INE: 2024 → 33.757; 2025 → 33.956; 2026 → 33.956 (dato de 2025, el último disponible).
+
+## Comparar dos presupuestos (`comparar.html`)
+
+**Qué es.** Página «Comparar» para elegir dos presupuestos de `site/data/index.json` y ver qué ha cambiado. Los años van en la URL (`?a=2024&b=2026`, en cualquier orden, compartible; por defecto el penúltimo frente al último; nunca el mismo año dos veces). También se guardan `vista`, `modo`, `orden` y `clave`. La cabecera oculta el selector de año único.
+
+**Contenido.** Titular con gastos e ingresos de cada año y la diferencia; vistas «Gastos por política» (por defecto), «Gastos por capítulo», «Ingresos por capítulo» e «Indicadores» (lado a lado, con `calcularIndicadores`); interruptor «Total / Por habitante» (población de cada año en `resumen.json`); barras pareadas HTML/CSS (azul `#0083c1` el primer año, ámbar `#f5a800` el segundo; los importes van fuera de la barra), diferencia en euros y %, etiquetas «nuevo» / «desaparece», las tres frases más destacadas generadas, orden por importe, subida, bajada, % o nombre, tabla equivalente y evolución de la categoría elegida en todos los años (Chart.js con leyenda y tabla). Aviso visible: son presupuestos iniciales (previsiones) y euros corrientes, sin inflación.
+
+**Reglas.** Se compara siempre el `actual` de cada año con el `actual` del otro (nunca `anterior` con `actual`). Lógica pura y probada en `site/js/comparacion.js`; la pintan `site/js/comparar.js`. Una categoría con importe 0 o ausente en un año y positivo en el otro es «nuevo» (o «desaparece»); el % es `null` si el punto de partida es 0, así que no hay NaN ni Infinity.
+
+**Equivalencias entre 2024, 2025 y 2026 (comprobadas).** Los códigos y nombres de las 21 políticas y de los nueve capítulos de gastos e ingresos coinciden; la única diferencia es la política 46 «Investigación, desarrollo e innovación», que solo existe en 2026 (sale «nuevo»). No hace falta mapeo. No se comparan programas ni partidas (sus códigos sí han variado en detalle); queda como mejora futura.

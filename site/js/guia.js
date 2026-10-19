@@ -20,6 +20,7 @@ const TERMINOS = [
   ["Remanente de tesorería", "Ahorros que el Ayuntamiento acumula de años anteriores. Se puede usar para pagar inversiones en lugar de pedir un préstamo."],
   ["Ingresos corrientes", "Los ingresos de cada año que no son préstamos ni ventas de bienes: impuestos, tasas, transferencias corrientes e ingresos patrimoniales."],
   ["Ahorro bruto", "Ingresos corrientes menos los gastos corrientes (sueldos, servicios y ayudas, sin intereses). Es lo que queda para pagar la deuda e invertir."],
+  ["Euros corrientes", "Importes tal como figuran en cada presupuesto, sin ajustar por la subida de precios (inflación). Al comparar años, el mismo dinero compra menos cuanto más tarde sea."],
   ["Por habitante", "El importe dividido entre el número de habitantes del municipio. Sirve para comparar, pero no es lo que paga cada vecino."],
 ];
 

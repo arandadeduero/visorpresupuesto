@@ -10,9 +10,9 @@ SITE = ROOT / "site"
 PAGINAS = sorted(SITE.glob("*.html"))
 
 
-def test_hay_once_paginas_y_todas_estan_en_el_menu():
+def test_hay_doce_paginas_y_todas_estan_en_el_menu():
     assert [p.name for p in PAGINAS] == sorted(
-        f"{n}.html" for n in ["calculadora", "descargas", "deuda", "gastos", "guia", "index", "indicadores", "ingresos", "inversiones", "resumen", "subvenciones"]
+        f"{n}.html" for n in ["calculadora", "comparar", "descargas", "deuda", "gastos", "guia", "index", "indicadores", "ingresos", "inversiones", "resumen", "subvenciones"]
     )
     layout = (SITE / "js" / "layout.js").read_text(encoding="utf-8")
     for p in PAGINAS:
