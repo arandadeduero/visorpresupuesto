@@ -91,3 +91,15 @@ test("las leyendas de los quesitos usan columnas (marca, nombre, porcentaje, imp
   }
   assert.match(css, /font-variant-numeric:\s*tabular-nums/);
 });
+
+test("el menú tiene botón accesible, panel móvil, franja de herramientas y respeta prefers-reduced-motion", () => {
+  const css = leer("../css/styles.css");
+  const js = leer("./layout.js");
+  assert.match(js, /id="boton-menu"[^>]*aria-expanded="false"[^>]*aria-controls="menu-secciones"/);
+  assert.match(js, /Escape/);
+  assert.match(css, /\.boton-menu\s*\{[^}]*min-height:\s*44px/);
+  assert.match(css, /@media \(max-width: 799px\)/);
+  assert.match(css, /\.menu-principal a\s*\{[^}]*font-size:\s*1\.05rem/);
+  assert.match(css, /\.menu-herramientas\s*\{[^}]*font-size:\s*\.875rem/);
+  assert.match(css, /prefers-reduced-motion:\s*reduce[\s\S]*animation:\s*none/);
+});
