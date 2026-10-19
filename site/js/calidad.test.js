@@ -48,7 +48,10 @@ test("los textos de la interfaz no llevan años fijos (se derivan del año elegi
   for (const f of ficheros) {
     leer(`./${f}`).split("\n").forEach((linea, i) => {
       if (/^\s*(\/\/|\*|\/\*)/.test(linea)) return;
-      if (/(?<![\w.])20\d\d(?!\w)/.test(linea)) sueltos.push(`${f}:${i + 1}`);
+      // El «/» delante deja pasar las citas de normas («Ley 17/2012») y se ignoran los enlaces al BOE (BOE-A-2004-4214):
+      // no son años de presupuesto.
+      if (linea.includes("boe.es")) return;
+      if (/(?<![\w./])20\d\d(?!\w)/.test(linea)) sueltos.push(`${f}:${i + 1}`);
     });
   }
   assert.deepEqual(sueltos, []);

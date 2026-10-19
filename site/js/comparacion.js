@@ -130,7 +130,8 @@ const INDICADORES = [
   ["dependenciaTransferenciasPct", "Dependencia de otras administraciones", "pct"],
   ["deudaViva", "Deuda a final de año (préstamos actuales)", "euros"],
   ["deudaPorHabitante", "Deuda por habitante", "euros"],
-  ["deudaSobreIngresosCorrientesPct", "Deuda sobre los ingresos del año", "pct"],
+  ["deudaSobreIngresosCorrientesPct", "Nivel de endeudamiento (estimado)", "pct"],
+  ["ahorroNetoEstimado", "Ahorro neto (estimado)", "euros"],
   ["cargaFinanciera", "Lo que cuesta la deuda al año", "euros"],
   ["cargaFinancieraPct", "Coste de la deuda sobre los ingresos", "pct"],
 ];

@@ -22,6 +22,16 @@ const TERMINOS = [
   ["Remanente de tesorería", "Ahorros que el Ayuntamiento acumula de años anteriores. Se puede usar para pagar inversiones en lugar de pedir un préstamo."],
   ["Ingresos corrientes", "Los ingresos de cada año que no son préstamos ni ventas de bienes: impuestos, tasas, transferencias corrientes e ingresos patrimoniales."],
   ["Ahorro bruto", "Ingresos corrientes menos los gastos corrientes (sueldos, servicios y ayudas, sin intereses). Es lo que queda para pagar la deuda e invertir."],
+  [
+    "Nivel de endeudamiento",
+    "La deuda viva (préstamos pendientes de devolver, incluidos los avales y las operaciones a corto plazo) dividida entre los ingresos corrientes del año anterior ya liquidado (capítulos 1 a 5 de ingresos, sin los ingresos extraordinarios o afectados a inversiones). La ley de haciendas locales exige autorización previa para pedir préstamos a largo plazo si supera el 75 % y no permite concertarlos si supera el 110 %. En esta web es una estimación con las cifras del presupuesto inicial y solo con los préstamos del anexo de deuda.",
+    { texto: "Artículo 53 del texto refundido de la Ley Reguladora de las Haciendas Locales", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214#a53" },
+  ],
+  [
+    "Ahorro neto",
+    "Ingresos corrientes (capítulos 1 a 5) menos los gastos de los capítulos 1, 2 y 4, menos la anualidad teórica (intereses y devolución de un año) de cada préstamo. Si sale negativo en la liquidación, el Ayuntamiento no puede concertar nuevos préstamos a largo plazo. En esta web es una estimación solo con los préstamos actuales.",
+    { texto: "Artículo 53.1 del texto refundido de la Ley Reguladora de las Haciendas Locales", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214#a53" },
+  ],
   ["Euros corrientes", "Importes tal como figuran en cada presupuesto, sin ajustar por la subida de precios (inflación). Al comparar años, el mismo dinero compra menos cuanto más tarde sea."],
   ["Por habitante", "El importe dividido entre el número de habitantes del municipio. Sirve para comparar, pero no es lo que paga cada vecino."],
 ];
@@ -30,6 +40,6 @@ runPage("guia", async ({ anio, main }) => {
   main.innerHTML = `
     <h1>Guía: las palabras del presupuesto</h1>
     <p class="lead">Qué significan los términos que verás en esta web.</p>
-    <dl class="glosario">${TERMINOS.map(([t, d]) => `<dt id="${esc(t.toLowerCase().normalize("NFD").replace(/[^a-z]+/g, "-"))}">${esc(t)}</dt><dd>${esc(d)}</dd>`).join("")}</dl>
+    <dl class="glosario">${TERMINOS.map(([t, d, enlace]) => `<dt id="${esc(t.toLowerCase().normalize("NFD").replace(/[^a-z]+/g, "-"))}">${esc(t)}</dt><dd>${esc(d)}${enlace ? ` <a href="${esc(enlace.url)}" rel="noopener">${esc(enlace.texto)}</a>.` : ""}</dd>`).join("")}</dl>
     <p class="muted">¿Echas en falta alguna palabra? <a href="https://github.com/arandadeduero/visorpresupuesto/issues" rel="noopener">Cuéntanoslo</a>. Para ver los datos de ${anio}, vuelve al <a href="index.html?anio=${anio}">inicio</a>.</p>`;
 });

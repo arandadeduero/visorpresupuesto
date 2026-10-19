@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { parseImporte, repartoAportacion, calcularIndicadores } from "./lecturas.js";
+import { parseImporte, repartoAportacion, calcularIndicadores, situacionEndeudamiento, textoNivelEndeudamiento, UMBRAL_AUTORIZACION_PCT, UMBRAL_PROHIBICION_PCT } from "./lecturas.js";
 
 const leer = (r) => JSON.parse(readFileSync(new URL(r, import.meta.url), "utf8"));
 const gastos = leer("../data/2026/gastos.json");
@@ -54,4 +54,67 @@ test("calcularIndicadores sin población no inventa importes por habitante", () 
   assert.equal(i.impuestosPorHabitante, null);
   assert.equal(i.deudaPorHabitante, null);
   assert.ok(i.ahorroBruto > 0);
+});
+
+test("nivel de endeudamiento estimado (art. 53 TRLRHL): ingresos corrientes = capítulos 1 a 5, deuda viva de los préstamos existentes, en los tres años", () => {
+  const esperado = {
+    2024: { ic: 37538146.94, viva: 3245446.74, pct: 8.65, conPrevisto: null },
+    2025: { ic: 38118061.71, viva: 2713393.77, pct: 7.12, conPrevisto: 35.98 },
+    2026: { ic: 42365106.61, viva: 2181340.81, pct: 5.15, conPrevisto: 31.11 },
+  };
+  for (const [anio, e] of Object.entries(esperado)) {
+    const d = (n) => leer(`../data/${anio}/${n}.json`);
+    const i = calcularIndicadores({ resumen: d("resumen"), ingresos: d("ingresos"), deuda: d("deuda") });
+    cerca(i.ingresosCorrientes, e.ic);
+    cerca(i.deudaViva, e.viva);
+    cerca(i.deudaSobreIngresosCorrientesPct, e.pct, 0.01);
+    if (e.conPrevisto === null) assert.equal(i.deudaConPrevistoSobreIngresosCorrientesPct, null);
+    else cerca(i.deudaConPrevistoSobreIngresosCorrientesPct, e.conPrevisto, 0.01);
+    // En los tres años, con y sin el préstamo previsto, se está muy por debajo del 75 %.
+    assert.equal(situacionEndeudamiento(i.deudaConPrevistoSobreIngresosCorrientesPct ?? i.deudaSobreIngresosCorrientesPct), "bajo75");
+  }
+});
+
+test("situacionEndeudamiento aplica los umbrales del 75 % y del 110 % sin inventar nada cuando falta el dato", () => {
+  assert.equal(UMBRAL_AUTORIZACION_PCT, 75);
+  assert.equal(UMBRAL_PROHIBICION_PCT, 110);
+  assert.equal(situacionEndeudamiento(null), null);
+  assert.equal(situacionEndeudamiento(NaN), null);
+  assert.equal(situacionEndeudamiento(0), "bajo75");
+  assert.equal(situacionEndeudamiento(75), "bajo75"); // «no exceda del 75 %»
+  assert.equal(situacionEndeudamiento(75.01), "entre75y110");
+  assert.equal(situacionEndeudamiento(110), "entre75y110"); // «exceda del 110 %» es estrictamente mayor
+  assert.equal(situacionEndeudamiento(110.01), "sobre110");
+});
+
+test("textoNivelEndeudamiento explica la regla legal en llano, sin cifras no respaldadas por la ley", () => {
+  const d = (n) => leer(`../data/2026/${n}.json`);
+  const i = calcularIndicadores({ resumen: d("resumen"), ingresos: d("ingresos"), deuda: d("deuda") });
+  const t = textoNivelEndeudamiento(i);
+  assert.match(t, /capítulos 1 a 5/);
+  assert.match(t, /75 %/);
+  assert.match(t, /110 %/);
+  assert.match(t, /31,1 %/); // con el préstamo previsto
+  assert.match(t, /por debajo del 75 %/);
+  assert.match(t, /liquidados del año anterior/);
+  assert.doesNotMatch(t, /40 ?%/);
+  // sin préstamo previsto (2024) no se menciona
+  const d24 = (n) => leer(`../data/2024/${n}.json`);
+  const t24 = textoNivelEndeudamiento(calcularIndicadores({ resumen: d24("resumen"), ingresos: d24("ingresos"), deuda: d24("deuda") }));
+  assert.doesNotMatch(t24, /préstamo previsto/);
+  assert.match(t24, /por debajo del 75 %/);
+  // superando los umbrales
+  assert.match(textoNivelEndeudamiento({ ...i, deudaConPrevistoSobreIngresosCorrientesPct: 90 }), /necesitaría autorización/);
+  assert.match(textoNivelEndeudamiento({ ...i, deudaConPrevistoSobreIngresosCorrientesPct: 120 }), /no podría concertar/);
+  assert.doesNotMatch(textoNivelEndeudamiento({ ...i, deudaSobreIngresosCorrientesPct: null, deudaConPrevisto: null }), /NaN|undefined|null/);
+});
+
+test("ahorro neto estimado =ahorro bruto menos la carga de los préstamos actuales, en los tres años", () => {
+  const esperado = { 2024: [443545.16, 1.18], 2025: [764778.16, 2.01], 2026: [2597756.54, 6.13] };
+  for (const [anio, [neto, pctNeto]] of Object.entries(esperado)) {
+    const d = (n) => leer(`../data/${anio}/${n}.json`);
+    const i = calcularIndicadores({ resumen: d("resumen"), ingresos: d("ingresos"), deuda: d("deuda") });
+    cerca(i.ahorroNetoEstimado, neto);
+    cerca(i.ahorroNetoEstimadoPct, pctNeto, 0.01);
+  }
 });

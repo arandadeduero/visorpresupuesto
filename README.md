@@ -17,7 +17,7 @@ Incluye los **presupuestos iniciales 2024, 2025 y 2026** (previsiones, no gastos
 | **Inversiones** | Obras y compras previstas y cómo se financia cada una |
 | **Subvenciones** | A qué entidades se da dinero, por actividad y por entidad |
 | **Deuda** | Préstamos actuales, deuda por año, coste anual y la previsión de un préstamo nuevo |
-| **Indicadores** | Ahorro bruto, deuda por habitante, impuestos y tasas por habitante… |
+| **Indicadores** | Ahorro bruto y neto, nivel de endeudamiento (frente a los umbrales legales del 75 % y el 110 %), deuda por habitante, impuestos y tasas por habitante… |
 | **Comparar** | Dos presupuestos a elegir, frente a frente: barras pareadas por política o capítulo, tabla, frases, indicadores, por habitante y evolución |
 | **Calculadora** | «¿A qué se destina lo que pago?»: reparto orientativo de tus impuestos y tasas |
 | **Guía** | Qué significan las palabras del presupuesto |
@@ -92,6 +92,7 @@ npm pack chart.js     # descargar la última versión
 
 - Los totales salen de la hoja «<año>» de `A1`. En `A9` (inversiones) y `A12` se usa la hoja «<año>», no las «Copia de…» ni las hojas de trabajo.
 - El préstamo previsto de 11 M€ (anexo de deuda de 2025 y 2026) no entra en la deuda del titular ni en el gráfico: es una previsión que solo se formalizará si es necesario. La web muestra también los 20,16 M€ de préstamo de la financiación de inversiones, sin afirmar la causa de la diferencia.
+- **Nivel de endeudamiento** (página Indicadores): deuda viva a 31 de diciembre del año del presupuesto (solo los préstamos del anexo de deuda; aparte, con el préstamo previsto) dividida entre los ingresos corrientes (capítulos 1 a 5 de ingresos) del presupuesto. Es una **estimación**: el art. 53 del TRLRHL (RDL 2/2004) y la disposición final 31.ª de la Ley 17/2012 (que da nueva redacción a la disposición adicional 14.ª del RDL 20/2011) lo calculan con el capital vivo a 31/12 del año anterior (todas las operaciones a corto y largo plazo y avales, más la operación proyectada) sobre los ingresos corrientes **liquidados** del año anterior, descontando los ingresos afectados y extraordinarios. Umbrales legales: hasta el 75 % (con ahorro neto positivo) sin autorización para financiar inversiones; entre el 75 % y el 110 %, con autorización de la tutela financiera; por encima del 110 % (o con ahorro neto negativo), no se pueden concertar préstamos a largo plazo. El 60 % del PIB de la LOEPSF (art. 13, 3 % del PIB para el conjunto de corporaciones locales) es un límite del conjunto de las administraciones sobre el PIB nacional, no un porcentaje de los ingresos de un ayuntamiento. No hay ningún límite del 40 % en esa normativa.
 - Los importes «por habitante» dividen el gasto entre la población del INE (INE: 33.757 habitantes en 2024, 33.956 en 2025; 2026 usa el dato de 2025, el último disponible); no son lo que paga cada vecino.
 - Ideas tomadas de otros visores (Gobierto Presupuestos, visor de Fuengirola): ver el apartado correspondiente del diseño. Para comparar con otros municipios: [Gobierto Presupuestos](https://presupuestos.gobierto.es/municipios/aranda-de-duero).
 
