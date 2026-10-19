@@ -188,29 +188,12 @@ input[type="search"] { font: inherit; padding: 8px 12px; border: 1px solid var(-
 .quesito { margin: 0; }
 .quesito figcaption { margin-bottom: 8px; }
 .quesito-grafico { position: relative; height: 260px; }
-/* .leyenda (flex, de otras páginas) se declara más abajo: aquí se fuerza el bloque para que las filas ocupen todo el ancho */
-.leyenda.leyenda-quesito, .leyenda-quesito { display: block; margin-top: 12px; }
-/* Columnas fijas (marca, nombre, porcentaje, importe) para que cifras e importes queden alineados en todas las filas */
-.leyenda-quesito li, .leyenda-agrupada .grupo-cab {
-  display: grid; grid-template-columns: 14px minmax(0, 1fr) 3.6rem 6.8rem; gap: 0 8px; align-items: baseline;
-}
-.leyenda-quesito li { padding: 3px 0; border-bottom: 1px solid var(--borde); }
-.leyenda-quesito li > :nth-child(3), .leyenda-quesito li > :nth-child(4),
-.leyenda-agrupada .grupo-cab > :nth-child(3), .leyenda-agrupada .grupo-cab > :nth-child(4) { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.leyenda-quesito li > i { align-self: center; margin: 0; }
+/* La leyenda de cada quesito es una tabla ordenable; la muestra de color acompaña al nombre */
+.quesito .tabla-scroll { margin-top: 12px; }
+.muestra { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: -1px; border: 1px solid rgba(60, 60, 60, .25); }
 .controles-quesito { margin: .5em 0; }
 .etiqueta-ver { font-weight: 600; }
 .ayuda-vista { margin: .3em 0 .6em; font-size: .9rem; }
-/* Leyenda agrupada por capítulo (vista por artículos) */
-.leyenda-agrupada { list-style: none; padding: 0; }
-.leyenda-agrupada > li.grupo { display: block; padding: 6px 0 8px; border-bottom: 1px solid var(--borde); }
-.leyenda-agrupada ul { list-style: none; margin: 2px 0 0; padding: 0; }
-.leyenda-agrupada ul li { display: grid; grid-template-columns: 18px 14px minmax(0, 1fr) 3.6rem 6.8rem; gap: 0 8px; align-items: baseline; border-bottom: 0; font-size: .9rem; padding: 2px 0; }
-.leyenda-agrupada ul li > i { grid-column: 2; }
-.leyenda-agrupada ul li > :nth-child(3), .leyenda-agrupada ul li > :nth-child(4) { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.leyenda-agrupada i { display: block; width: 12px; height: 12px; border-radius: 3px; align-self: center; border: 1px solid rgba(60, 60, 60, .25); }
-.leyenda-agrupada li { min-width: 0; overflow-wrap: anywhere; }
-
 /* Página «Comparar» */
 .comp-selectores { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 1em 0; }
 .comp-selectores select, .comp-controles select, #clave { font: inherit; padding: 6px 10px; border: 1px solid var(--gris); border-radius: 6px; max-width: 100%; }

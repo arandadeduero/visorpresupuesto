@@ -3,6 +3,7 @@
 import { esc } from "./layout.js";
 import { formatEuros, etiquetaCapitulo } from "./format.js";
 import { doughnutChart } from "./charts.js";
+import { tablaHtml } from "./ui.js";
 
 // Un color fijo por capítulo, el mismo en todas las páginas (los tres primeros coinciden con la portada:
 // obras e inversiones azul, servicios ámbar, personal rojo). Los dos últimos son tonos claros de la paleta municipal.
@@ -85,20 +86,27 @@ export function datosArticulos(capitulos, articulos) {
 
 const pct = (n) => n.toLocaleString("es-ES", { maximumFractionDigits: 1 });
 
-const leyendaCapitulos = (items) =>
-  `<ul class="leyenda leyenda-quesito">${items
-    .map((i) => `<li title="Nombre oficial: ${esc(i.oficial)}"><i style="background:${i.color}"></i><span>${esc(i.nombre)}</span> <strong>${pct(i.pct)} %</strong> <span class="muted">${formatEuros(i.valor)}</span></li>`)
-    .join("")}</ul>`;
+const muestra = (color) => `<i class="muestra" style="background:${color}"></i>`;
 
-const leyendaArticulos = (grupos) =>
-  `<ul class="leyenda-quesito leyenda-agrupada">${grupos
-    .map(
-      (g) => `<li class="grupo"><div class="grupo-cab" title="Nombre oficial: ${esc(g.oficial)}"><i style="background:${g.color}"></i><strong>${esc(g.nombre)}</strong> <strong>${pct(g.pct)} %</strong> <span class="muted">${formatEuros(g.valor)}</span></div>
-      <ul>${g.items
-        .map((i) => `<li title="${esc(i.otros ? i.oficial : "Nombre oficial: " + i.oficial)}"><i style="background:${i.color}"></i><span>${esc(i.nombre)}</span> <strong>${pct(i.pct)} %</strong> <span class="muted">${formatEuros(i.valor)}</span></li>`)
-        .join("")}</ul></li>`,
-    )
-    .join("")}</ul>`;
+/** Leyenda de capítulos como tabla con cabecera (se ordena al pulsar; por defecto, por la primera columna). */
+export function tablaLeyendaCapitulos(items) {
+  return tablaHtml(
+    [{ texto: "Capítulo" }, { texto: "% del total", num: true }, { texto: "Importe", num: true }],
+    items.map((i) => `<tr title="Nombre oficial: ${esc(i.oficial)}"><td>${muestra(i.color)}${esc(i.nombre)}</td><td class="num">${pct(i.pct)} %</td><td class="num">${formatEuros(i.valor)}</td></tr>`),
+  );
+}
+
+/** Leyenda de artículos como tabla plana: capítulo, artículo, % e importe (el capítulo va primero, así que por defecto quedan agrupados). */
+export function tablaLeyendaArticulos(grupos) {
+  const capitulo = new Map(grupos.map((g) => [g.cap, g.nombre]));
+  const filas = grupos.flatMap((g) => g.items);
+  return tablaHtml(
+    [{ texto: "Capítulo" }, { texto: "Artículo" }, { texto: "% del total", num: true }, { texto: "Importe", num: true }],
+    filas.map(
+      (i) => `<tr title="${esc(i.otros ? i.oficial : "Nombre oficial: " + i.oficial)}"><td>${muestra(i.color)}${esc(capitulo.get(i.cap))}</td><td>${esc(i.nombre)}</td><td class="num">${pct(i.pct)} %</td><td class="num">${formatEuros(i.valor)}</td></tr>`,
+    ),
+  );
+}
 
 let contador = 0;
 
@@ -126,7 +134,7 @@ export function pintaQuesito(contenedor, capitulos, titulo, articulos = null, vi
     <figcaption><strong>${esc(titulo)}</strong><br><span class="muted">Total ${formatEuros(total)}</span></figcaption>
     ${selector}${ayuda}
     <div class="quesito-grafico"><canvas role="img" aria-label="${esc(titulo)}, por ${porArticulos ? "artículos" : "capítulos"}: ${esc(resumen)}…"></canvas></div>
-    ${porArticulos ? leyendaArticulos(datos.grupos) : leyendaCapitulos(items)}</figure>`;
+    ${porArticulos ? tablaLeyendaArticulos(datos.grupos) : tablaLeyendaCapitulos(items)}</figure>`;
   doughnutChart(contenedor.querySelector("canvas"), { labels: items.map((i) => i.nombre), values: items.map((i) => i.valor), colors: items.map((i) => i.color), leyenda: false });
   contenedor.querySelectorAll("[data-vista]").forEach((b) =>
     b.addEventListener("click", () => {
