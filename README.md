@@ -79,9 +79,29 @@ node --test "site/js/*.test.js"       # formato, búsqueda, árbol de gastos, in
 
 ## Publicación y comprobaciones automáticas
 
-- **En cada Pull Request** (`.github/workflows/ci.yml`): `pytest`, comprobación de que los JSON de `site/data/` están al día y cuadran con los Excel, y tests de JavaScript.
-- **En cada push a `main`** (`.github/workflows/pages.yml`): se repiten los tests y, solo si pasan, se publica `site/` en GitHub Pages. Al final, el propio workflow comprueba que la web publicada carga.
+- **En cada Pull Request** (`.github/workflows/ci.yml`): `pytest`, comprobación de que los JSON de `site/data/` están al día y cuadran con los Excel, tests de JavaScript y construcción de `dist/` con sus comprobaciones.
+- **En cada push a `main`** (`.github/workflows/pages.yml`): se repiten los tests y, solo si pasan, se construye `dist/` (ver «Despliegue con huellas») y se publica en GitHub Pages. Al final, el propio workflow comprueba, con los nombres del manifiesto, que la web publicada carga.
 - La web se sirve en <https://presupuestos.arandadeduero.dev/> (dominio configurado en *Settings → Pages*, con origen «GitHub Actions»).
+
+## Despliegue con huellas
+
+**Por qué.** El dominio está detrás de Cloudflare, que guarda css, js y vendor hasta 4 h (`cache-control: max-age=14400`). Sin huellas, tras publicar los visitantes verían ficheros viejos hasta 4 horas, y podían mezclar HTML nuevo con JS viejo. En vez de purgar la caché, cada fichero estático lleva en el nombre el hash de su contenido: si cambia el contenido, cambia la URL.
+
+**Qué lleva huella** (`tools/build_site.py` copia `site/` a `dist/`):
+- `css/styles.<hash>.css`, todos los módulos `js/<nombre>.<hash>.js` y `vendor/chart.umd.min.<hash>.js` (10 hex del sha256).
+- Los módulos se procesan en orden topológico y sus `import` se reescriben antes de calcular la huella: cambiar `format.js` cambia la huella de todos los que lo importan y, por tanto, la de los HTML. Un ciclo de importaciones hace fallar el build con un mensaje claro.
+- Los datos: `data/` se copia a `data-<hash>/` (hash de todo el directorio) y cada HTML lleva `<html data-datos="data-<hash>/">`. `site/js/data.js` (`urlDatos`) es el único sitio que conoce la ruta; si no hay atributo (local sin build) usa `data/`. Todo el JS debe usar ese helper.
+- **Sin huella:** los HTML (de entrada y enlaces entre páginas conservan su nombre). Hoy GitHub Pages los sirve con `max-age=600` y Cloudflare no los cachea (`DYNAMIC`), así que se actualizan en como mucho 10 minutos. Los `.md` de `vendor/` y `build-manifest.json` tampoco.
+- `dist/build-manifest.json` relaciona cada original con su nombre publicado; `dist/` no se versiona.
+
+**Probar `dist/` en local:**
+
+```bash
+python3 tools/build_site.py          # genera dist/
+python3 -m http.server -d dist 8000  # abrir http://localhost:8000
+```
+
+`site/` sigue funcionando sin build (`python3 -m http.server -d site`). Al hacer cambios: no escribas nunca rutas `data/…` a mano en el JS, usa `urlDatos`; no enlaces ficheros estáticos desde fuera de los HTML y módulos (el build solo reescribe `href`/`src` de los HTML y `from "./x.js"`); no uses `import()` dinámico ni `url()` en el CSS sin ampliar el build. Una página abierta justo antes de un despliegue puede pedir ficheros viejos que ya no existen hasta que se recargue (≤ 10 min).
 
 ## Actualizar Chart.js
 

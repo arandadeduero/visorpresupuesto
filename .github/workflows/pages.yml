@@ -26,10 +26,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.x"
+      - name: Construir dist/ con huella en los nombres de los ficheros
+        run: python tools/build_site.py
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: site
+          path: dist
       - id: deployment
         uses: actions/deploy-pages@v5
 
@@ -38,10 +43,18 @@ jobs:
           URL: ${{ steps.deployment.outputs.page_url }}
         run: |
           base="${URL%/}"
+          # Los nombres con huella salen del manifiesto del build
+          css=$(python -c 'import json;print(json.load(open("dist/build-manifest.json"))["css/styles.css"])')
+          js=$(python -c 'import json;print(json.load(open("dist/build-manifest.json"))["js/home.js"])')
+          vendor=$(python -c 'import json;print(json.load(open("dist/build-manifest.json"))["vendor/chart.umd.min.js"])')
+          datos=$(python -c 'import json;print(json.load(open("dist/build-manifest.json"))["data/"])')
           for intento in $(seq 1 18); do
             if curl -fsS "$base/" | grep -q "Presupuestos de Aranda de Duero" \
-              && curl -fsS "$base/data/index.json" | grep -q '"ultimo"' \
-              && curl -fsS -o /dev/null "$base/vendor/chart.umd.min.js"; then
+              && curl -fsS "$base/" | grep -q "$js" \
+              && curl -fsS -o /dev/null "$base/$css" \
+              && curl -fsS -o /dev/null "$base/$js" \
+              && curl -fsS -o /dev/null "$base/$vendor" \
+              && curl -fsS "$base/${datos}index.json" | grep -q '"ultimo"'; then
               echo "La web carga en $base"; exit 0
             fi
             echo "Intento $intento: todavía no responde, espero 10 s…"; sleep 10

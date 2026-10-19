@@ -21,7 +21,12 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Tests del conversor y de la web
+      - name: Construir dist/ con las huellas
+        run: python tools/build_site.py
+
+      - name: Tests del conversor y de la web (también sobre dist/)
+        env:
+          DIST_DIR: dist
         run: pytest -q
 
       - name: Los datos generados están al día y cuadran

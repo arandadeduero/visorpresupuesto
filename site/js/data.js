@@ -1,5 +1,9 @@
 // Carga de datos: rutas relativas para que funcione en la subruta /visorpresupuesto/ de GitHub Pages.
 
+// Única función que conoce dónde están los datos. En local es «data/»; el build (tools/build_site.py) pone
+// data-datos="data-<huella>/" en <html> para que cada versión de los datos tenga su propia URL.
+export const urlDatos = (ruta) => (globalThis.document?.documentElement?.dataset?.datos ?? "data/") + ruta;
+
 async function leerJson(ruta) {
   let respuesta;
   try {
@@ -14,7 +18,7 @@ async function leerJson(ruta) {
   return respuesta.json();
 }
 
-export const getIndex = () => leerJson("data/index.json");
+export const getIndex = () => leerJson(urlDatos("index.json"));
 
 export async function getYear() {
   const indice = await getIndex();
@@ -24,4 +28,4 @@ export async function getYear() {
   return anio;
 }
 
-export const loadData = (anio, nombre) => leerJson(`data/${anio}/${nombre}.json`);
+export const loadData = (anio, nombre) => leerJson(urlDatos(`${anio}/${nombre}.json`));
