@@ -87,6 +87,22 @@ node --test "site/js/*.test.js"       # formato, búsqueda, árbol de gastos, in
 - **Content-Security-Policy** por `<meta>` en cada página: `default-src 'self'; script-src 'self'; style-src 'self'; …`, sin `unsafe-inline`. Por eso el aviso de `file://` es un fichero (`js/aviso-file.js`) y no un script en línea. Chart.js solo modifica `canvas.style` por CSSOM, que la política permite (comprobado: sin violaciones en consola).
 - Tests: `tools/tests/test_estilos.py` (sin literales de color fuera de `:root`, sin `style=`, CSP, escalas al día) y `site/js/tema.test.js` (contraste AA de los pares texto/fondo reales en los dos temas).
 
+## Logo, redes sociales e iconos
+
+- **Logo.** El escudo oficial (propiedad del Ayuntamiento; origen y fecha en `site/img/README.md`) va en la cabecera, dentro del enlace a la portada, junto al título. Se muestra sobre una **placa clara** (`--logo-placa`) en los dos temas: el escudo tiene colores propios (rojo, ámbar, azul) y no se lee directamente sobre el rojo de la cabecera; el banner oficial con texto gris oscuro tampoco. `<img>` con `alt="Ayuntamiento de Aranda de Duero"`, `width`/`height` (22x33, imagen de 66x99 para pantallas 2x) y estilos solo en CSS. La cabecera mide lo mismo que antes (45 px). `layout.js` lee la ruta con huella de `<html data-escudo>`, que pone el build.
+- **Etiquetas en cada HTML.** `description`, `canonical` (URL absoluta), Open Graph (`og:type`, `site_name`, `locale`, `title`, `description`, `url`, `image` y su ancho, alto, tipo y `alt`; lo usan Facebook, Instagram al compartir enlace, WhatsApp, LinkedIn, Telegram...) y Twitter/X (`twitter:card=summary_large_image`, `title`, `description`, `image`, `image:alt`). Títulos y descripciones únicos y sin cifras. Además: `icon` (PNG 32), `apple-touch-icon` (180), `manifest.webmanifest` (iconos 192 y 512), `robots.txt` y `sitemap.xml` con las 12 páginas. La CSP no cambia.
+- **URLs estables.** `img/social.png`, los iconos, el manifiesto, `robots.txt` y `sitemap.xml` no llevan huella (los rastreadores y navegadores los piden por nombre); solo `img/escudo.png` la lleva.
+- **Regenerar las imágenes** (a partir de `site/img/icon-512.png`, con Outfit de `site/fonts/`):
+
+```bash
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python tools/generar_imagen_social.py
+```
+
+  La imagen social (1200x630, unos 25 KB) tiene a la izquierda un panel rojo con el escudo sobre una placa blanca y a la derecha «Presupuestos de Aranda de Duero», el lema «En qué se gasta tu dinero, de dónde sale y qué se debe», tres barras ámbar, azul y roja y la dirección web.
+- **Probar** tras publicar: [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) (sirve también para Instagram y WhatsApp), [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) y, para X, el borrador de un post (el validador de tarjetas ya no existe). Si cambia la imagen, usar «Scrape again» en Facebook: las redes la guardan por URL.
+- Tests: `tools/tests/test_social.py`.
+
 ## Publicación y comprobaciones automáticas
 
 - **En cada Pull Request** (`.github/workflows/ci.yml`): `pytest`, comprobación de que los JSON de `site/data/` están al día y cuadran con los Excel, tests de JavaScript y construcción de `dist/` con sus comprobaciones.
