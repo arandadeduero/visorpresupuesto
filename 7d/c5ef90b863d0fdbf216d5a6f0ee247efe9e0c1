@@ -1,0 +1,47 @@
+tools/build_site.py
+  s_c524ba238f0f5a::t_d9f073f4c0e962 30,190,232,253-255
+site/js/metodologia.js
+  s_c524ba238f0f5a::t_54f2588d967888 5-7
+README.md
+  s_c524ba238f0f5a::t_48073aa5341c51 161-167
+site/deuda.html
+  s_c524ba238f0f5a::t_d9f073f4c0e962 39
+tools/seo.py
+  s_c524ba238f0f5a::t_c01870eea1b1d1 1-150
+site/resumen.html
+  s_c524ba238f0f5a::t_d9f073f4c0e962 39
+site/js/layout.js
+  s_c524ba238f0f5a::t_b33fe7c0cabe2b 157-158,160-170
+  s_c524ba238f0f5a::t_b3126d4c92bd79 122-124,153
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_c524ba238f0f5a::t_48073aa5341c51 210-216
+site/gastos.html
+  s_c524ba238f0f5a::t_d9f073f4c0e962 39
+tools/tests/test_seo.py
+  s_c524ba238f0f5a::t_471e55c116c38b 283-284
+site/ingresos.html
+  s_c524ba238f0f5a::t_d9f073f4c0e962 39
+site/comparar.html
+  s_c524ba238f0f5a::t_d9f073f4c0e962 39
+tools/tests/test_jsonld.py
+  s_c524ba238f0f5a::t_493a2ed45b8bac 1-127,129-180
+  s_c524ba238f0f5a::t_471e55c116c38b 128
+site/css/styles.css
+  s_c524ba238f0f5a::t_b3126d4c92bd79 209
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7dc5ef90b863d0fdbf216d5a6f0ee247efe9e0c1",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
