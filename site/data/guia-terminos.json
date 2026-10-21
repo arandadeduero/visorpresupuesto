@@ -1,7 +1,7 @@
 [
  {
-  "termino": "Presupuesto inicial",
-  "definicion": "Lo que el Ayuntamiento prevé ingresar y gastar durante el año, aprobado antes de que empiece. Son previsiones: durante el año puede modificarse y lo realmente gastado puede ser distinto."
+  "termino": "Presupuesto aprobado",
+  "definicion": "Lo que el Ayuntamiento prevé ingresar y gastar durante el año, tal como se aprobó antes de que empezara. Son previsiones: durante el año puede modificarse y lo realmente gastado puede ser distinto."
  },
  {
   "termino": "Ingresos",
@@ -85,7 +85,7 @@
  },
  {
   "termino": "Nivel de endeudamiento",
-  "definicion": "La deuda viva (préstamos pendientes de devolver, incluidos los avales y las operaciones a corto plazo) dividida entre los ingresos corrientes del año anterior ya liquidado (capítulos 1 a 5 de ingresos, sin los ingresos extraordinarios o afectados a inversiones). La ley de haciendas locales exige autorización previa para pedir préstamos a largo plazo si supera el 75 % y no permite concertarlos si supera el 110 %. En esta web es una estimación con las cifras del presupuesto inicial y solo con los préstamos del anexo de deuda.",
+  "definicion": "La deuda viva (préstamos pendientes de devolver, incluidos los avales y las operaciones a corto plazo) dividida entre los ingresos corrientes del año anterior ya liquidado (capítulos 1 a 5 de ingresos, sin los ingresos extraordinarios o afectados a inversiones). La ley de haciendas locales exige autorización previa para pedir préstamos a largo plazo si supera el 75 % y no permite concertarlos si supera el 110 %. En esta web es una estimación con las cifras del presupuesto aprobado y solo con los préstamos del anexo de deuda.",
   "enlace": {
    "texto": "Artículo 53 del texto refundido de la Ley Reguladora de las Haciendas Locales",
    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214#a53"

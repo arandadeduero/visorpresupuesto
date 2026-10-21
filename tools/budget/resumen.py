@@ -40,7 +40,7 @@ def parse_resumen(year: int) -> dict:
     habitantes, anio_poblacion, fuente = POBLACION[year]
     return {
         "anio": year,
-        "tipo": "inicial",
+        "tipo": "aprobado",
         "habitantes": habitantes,
         "anioPoblacion": anio_poblacion,
         "fuentePoblacion": fuente,

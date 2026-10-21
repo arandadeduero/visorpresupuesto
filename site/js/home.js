@@ -48,7 +48,7 @@ runPage("inicio", async ({ anio, main, load }) => {
     <p class="muted">Es el gasto previsto del Ayuntamiento dividido entre la población (${esc(r.fuentePoblacion)}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>
     <h2>Y además…</h2>
     ${tarjetasHtml(anio)}
-    <p class="muted">Es el presupuesto inicial: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>`;
+    <p class="muted">Es el presupuesto aprobado: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>`;
 
   const detalle = main.querySelector("#detalle-seg");
   const botones = [...main.querySelectorAll(".seg")];

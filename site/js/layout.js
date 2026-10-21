@@ -153,7 +153,7 @@ export const URL_REPOSITORIO = "https://github.com/arandadeduero/visorpresupuest
 export function pieHtml(actualizado, anio = null) {
   const fecha = actualizado ? `<p class="pie-actualizado">Datos actualizados el ${fechaLarga(actualizado)}.</p>` : "";
   return `<footer class="site"><div class="wrap">
-      <p>Fuente: presupuesto inicial del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados. Para comparar con otros municipios: <a href="https://presupuestos.gobierto.es/municipios/aranda-de-duero" rel="noopener">Gobierto Presupuestos</a>.</p>
+      <p>Fuente: presupuesto aprobado del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados. Para comparar con otros municipios: <a href="https://presupuestos.gobierto.es/municipios/aranda-de-duero" rel="noopener">Gobierto Presupuestos</a>.</p>
       <p class="pie-enlaces"><a href="https://www.arandadeduero.es" rel="noopener">Ayuntamiento de Aranda de Duero</a> · <a href="https://transparencia.arandadeduero.es" rel="noopener">Portal de transparencia</a> · <a href="${URL_REPOSITORIO}" rel="noopener">Código y datos en GitHub</a> · <a href="${URL_POLITICA_PRIVACIDAD}" rel="noopener">Política de privacidad</a> · <a href="${urlPagina("metodologia", anio)}">Metodología y fuentes</a></p>
       ${fecha}</div></footer>`;
 }
@@ -161,7 +161,7 @@ export function pieHtml(actualizado, anio = null) {
 /** Cabecera, menú, contenido y pie. Función pura: la usa el navegador y también el build para el HTML estático. */
 export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido = "" }) {
   const opciones = (indice?.anios ?? [])
-    .map((a) => `<option value="${a.anio}"${a.anio === anio ? " selected" : ""}>${a.anio} · ${a.tipo === "inicial" ? "presupuesto inicial" : a.tipo}</option>`)
+    .map((a) => `<option value="${a.anio}"${a.anio === anio ? " selected" : ""}>${a.anio} · ${a.tipo === "aprobado" ? "presupuesto aprobado" : a.tipo}</option>`)
     .join("");
   return `
     <a class="saltar" href="#contenido">Saltar al contenido</a>

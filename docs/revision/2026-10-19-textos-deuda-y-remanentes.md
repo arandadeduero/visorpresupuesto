@@ -64,7 +64,7 @@ Hay que confirmar:
 
 ### 2.5 Página «Indicadores» → nivel de endeudamiento y ahorro neto (estimaciones)
 
-> **Nivel de endeudamiento (estimado): 5,1 %.** Compara la deuda viva con los ingresos corrientes del año (capítulos 1 a 5 de ingresos). Según la ley de haciendas locales, con ahorro neto positivo y por debajo del 75 % se pueden pedir préstamos a largo plazo para inversiones sin autorización previa; entre el 75 % y el 110 % hace falta la autorización de la administración que tutela las finanzas locales, y por encima del 110 % no se pueden concertar. Si se firmara el préstamo previsto subiría al 31,1 %. Incluso así quedaría por debajo del 75 %. Es una estimación con el presupuesto inicial: la ley usa los ingresos liquidados del año anterior y descuenta los ingresos extraordinarios o afectados.
+> **Nivel de endeudamiento (estimado): 5,1 %.** Compara la deuda viva con los ingresos corrientes del año (capítulos 1 a 5 de ingresos). Según la ley de haciendas locales, con ahorro neto positivo y por debajo del 75 % se pueden pedir préstamos a largo plazo para inversiones sin autorización previa; entre el 75 % y el 110 % hace falta la autorización de la administración que tutela las finanzas locales, y por encima del 110 % no se pueden concertar. Si se firmara el préstamo previsto subiría al 31,1 %. Incluso así quedaría por debajo del 75 %. Es una estimación con el presupuesto aprobado: la ley usa los ingresos liquidados del año anterior y descuenta los ingresos extraordinarios o afectados.
 >
 > **Ahorro neto (estimado): 2,6 M€** (6,1 % de los ingresos): ahorro bruto menos lo que cuesta cada año devolver los préstamos actuales. Si saliera negativo en la liquidación, la ley no permitiría concertar nuevos préstamos a largo plazo.
 
