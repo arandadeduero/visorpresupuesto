@@ -7,6 +7,9 @@ Uso: python3 tools/build_site.py [site] [dist]
 - Los módulos se procesan en orden topológico: su huella sale de su contenido ya con los imports reescritos,
   así un cambio en format.js cambia también la huella de todos los que lo importan (y la de los HTML).
 - data/ se copia a data-<huella>/ (huella de todo el directorio) y cada HTML recibe data-datos="data-<huella>/".
+- img/: social.png y los iconos conservan su nombre (URL estable); el resto (escudo.png de la cabecera) lleva huella y su ruta
+  se anota en cada HTML como data-escudo="img/escudo.<huella>.png" (lo lee layout.js).
+- manifest.webmanifest, robots.txt y sitemap.xml se copian tal cual.
 - Los HTML y los enlaces entre páginas conservan su nombre.
 - dist/build-manifest.json relaciona cada original con su fichero publicado.
 """
@@ -21,6 +24,9 @@ LARGO = 10
 IMPORT = re.compile(r'((?:\bfrom|\bimport)\s*)"(\./[^"]+\.js)"')
 REF_HTML = re.compile(r'((?:href|src)=")([^"#:]+\.(?:css|js|woff2))(")')
 URL_FUENTE = re.compile(r"url\(\.\./(fonts/[^)]+\.woff2)\)")
+# Con URL estable (sin huella): la imagen para compartir y los iconos los piden por nombre los rastreadores y los navegadores
+IMG_ESTABLES = {"social.png", "favicon-32.png", "apple-touch-icon.png", "icon-192.png", "icon-512.png"}
+FICHEROS_RAIZ = ["manifest.webmanifest", "robots.txt", "sitemap.xml"]
 RAIZ = Path(__file__).resolve().parents[1]
 
 
@@ -108,6 +114,16 @@ def _publicar_estaticos(site: Path, dist: Path, manifiesto: dict) -> None:
         manifiesto[rel] = nombre
         (dist / nombre).write_text(css, encoding="utf-8")
 
+    for p in sorted((site / "img").glob("*.png")):
+        rel = f"img/{p.name}"
+        datos = p.read_bytes()
+        nombre = rel if p.name in IMG_ESTABLES else con_huella(rel, huella(datos))
+        manifiesto[rel] = nombre
+        (dist / nombre).write_bytes(datos)
+    shutil.copy2(site / "img" / "README.md", dist / "img" / "README.md")
+    for f in FICHEROS_RAIZ:
+        shutil.copy2(site / f, dist / f)
+
     for rel in sorted(f"vendor/{p.name}" for p in (site / "vendor").glob("*.js")):
         datos = (site / rel).read_bytes()
         nombre = con_huella(rel, huella(datos))
@@ -119,7 +135,7 @@ def build(site: Path, dist: Path) -> dict:
     site, dist = Path(site), Path(dist)
     if dist.exists():
         shutil.rmtree(dist)
-    for sub in ["css", "js", "vendor", "fonts"]:
+    for sub in ["css", "js", "vendor", "fonts", "img"]:
         (dist / sub).mkdir(parents=True)
     manifiesto: dict[str, str] = {}
 
@@ -134,6 +150,7 @@ def build(site: Path, dist: Path) -> dict:
     for p in (site / "vendor").glob("*.md"):
         shutil.copy2(p, dist / "vendor" / p.name)
 
+    escudo = manifiesto["img/escudo.png"]
     for pagina in sorted(site.glob("*.html")):
         html = pagina.read_text(encoding="utf-8")
 
@@ -144,7 +161,7 @@ def build(site: Path, dist: Path) -> dict:
             return m.group(1) + manifiesto[ref] + m.group(3)
 
         html = REF_HTML.sub(cambia, html)
-        html, n = re.subn(r"<html lang=\"es\">", f'<html lang="es" data-datos="{carpeta_datos}">', html, count=1)
+        html, n = re.subn(r"<html lang=\"es\">", f'<html lang="es" data-datos="{carpeta_datos}" data-escudo="{escudo}">', html, count=1)
         if n != 1:
             raise ValueError(f'{pagina.name}: falta <html lang="es">')
         (dist / pagina.name).write_text(html, encoding="utf-8")
