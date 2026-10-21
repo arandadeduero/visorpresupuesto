@@ -1,0 +1,40 @@
+site/js/colores.js
+  s_c524ba238f0f5a::t_f414c93353174d 1-42
+site/js/quesito.test.js
+  s_c524ba238f0f5a::t_36314fa49fce81 80
+  s_c524ba238f0f5a::t_e3a53b17559102 4,9-17,26-27,38,47-49,58,109-110
+site/js/escalas.js
+  s_c524ba238f0f5a::t_d5b05b817452bd 1-10
+site/js/charts.js
+  s_c524ba238f0f5a::t_4d0e44c3a10ebf 1-3,5,7-14,18,21-31,40-45,47,49,54-55,62-65,69-72
+site/js/quesito.js
+  s_c524ba238f0f5a::t_6fca97aa1629e0 8-12,19,32-34,63-64,73,79,90,122
+site/js/escalas.test.js
+  s_c524ba238f0f5a::t_2777e2509dec7c 1-29
+site/js/comparar.js
+  s_c524ba238f0f5a::t_b9bf40f4af1c6c 5-6,23-26,93,115,122,126,136,181,186
+site/js/deuda.js
+  s_c524ba238f0f5a::t_f53531e9c4d7ee 3,29-31,43,61
+site/js/home.js
+  s_c524ba238f0f5a::t_a8974bf9a36d99 3,25,27
+site/js/inversiones.js
+  s_c524ba238f0f5a::t_8a87c83e1d2c9b 3,13-14,18-19,34-35
+site/js/ui.js
+  s_c524ba238f0f5a::t_4fc62834a425ee 5,24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0beab115caa99e85cafb6b4f3cb7af141b7f245c",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
