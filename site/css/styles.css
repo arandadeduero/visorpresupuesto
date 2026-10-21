@@ -59,6 +59,7 @@
   --cabecera-texto: var(--blanco);
   --cabecera-activo-fondo: var(--blanco);
   --cabecera-activo-texto: var(--rojo);
+  --logo-placa: var(--blanco);  /* el escudo es de colores propios: va sobre una placa clara en los dos temas */
   --aviso-fondo: var(--ambar-suave);
   --aviso-borde: var(--ambar);
   --error-fondo: var(--rojo-suave);
@@ -211,8 +212,9 @@ main.wrap { padding-top: 24px; padding-bottom: 48px; min-height: 60vh; }
 
 /* Cabecera y menú */
 header.site { background: var(--cabecera-fondo); color: var(--cabecera-texto); }
-.cabecera { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; justify-content: space-between; padding-top: 10px; padding-bottom: 6px; }
-.marca { color: var(--cabecera-texto); font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+.cabecera { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; justify-content: space-between; padding-top: 6px; padding-bottom: 6px; }
+.marca { display: inline-flex; align-items: center; gap: 10px; color: var(--cabecera-texto); font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+.logo { display: block; flex: none; width: 22px; height: 33px; padding: 3px 5px; background: var(--logo-placa); border-radius: 8px; }
 .anio { font-size: .95rem; }
 .anio select { font: inherit; padding: 4px 8px; border-radius: 6px; border: 0; background: var(--superficie); color: var(--texto); }
 .menu ul { list-style: none; margin: 0; padding: 0; }

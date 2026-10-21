@@ -46,6 +46,9 @@ export function menuHtml(activa, anio) {
   }).join("");
 }
 
+/** Ruta del escudo de la cabecera: con build lleva huella y la anota el HTML en data-escudo; sin build, la del fichero. */
+export const urlEscudo = () => document.documentElement.dataset.escudo || "img/escudo.png";
+
 function activarMenuMovil() {
   const cab = document.querySelector("header.site");
   const boton = document.getElementById("boton-menu");
@@ -76,7 +79,7 @@ function montarMarco(activa, anio, indice) {
     <a class="saltar" href="#contenido">Saltar al contenido</a>
     <header class="site">
       <div class="wrap cabecera">
-        <a class="marca" href="index.html${consulta}">Presupuestos de Aranda de Duero</a>
+        <a class="marca" href="index.html${consulta}"><img class="logo" src="${urlEscudo()}" alt="Ayuntamiento de Aranda de Duero" width="22" height="33"><span>Presupuestos de Aranda de Duero</span></a>
         <label class="anio">Año <select id="selector-anio" aria-label="Año del presupuesto">${opciones}</select></label>
         <button type="button" id="boton-menu" class="boton-menu" aria-expanded="false" aria-controls="menu-secciones"><span class="hamburguesa" aria-hidden="true"></span><span>Menú</span></button>
       </div>
