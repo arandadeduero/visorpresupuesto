@@ -280,7 +280,8 @@ def test_la_portada_usa_anclas_descriptivas(dist):
 def test_el_html_generado_no_lleva_estilos_en_linea_ni_colores_ni_scripts_en_linea(dist, nombre):
     html = leer(dist, nombre)
     assert not re.search(r"\sstyle\s*=", html, re.I) and "<style" not in html.lower()
-    assert not re.search(r"<script(?![^>]*\bsrc=)[^>]*>", html)
+    # el bloque application/ld+json es de datos, no se ejecuta (ver test_jsonld.py)
+    assert not re.search(r"<script(?![^>]*\bsrc=)(?![^>]*application/ld\+json)[^>]*>", html)
     assert not re.search(r"#[0-9a-fA-F]{6}\b", re.sub(r'<meta name="theme-color"[^>]*>', "", html))
     csp = re.search(r'<meta http-equiv="Content-Security-Policy" content="([^"]+)">', html).group(1)
     assert "'unsafe-inline'" not in csp and "style-src 'self';" in csp
