@@ -9,7 +9,7 @@ const leer = (ruta) => readFileSync(new URL(ruta, import.meta.url), "utf8");
 const paginas = readdirSync(new URL("../", import.meta.url)).filter((f) => f.endsWith(".html"));
 
 test("cada página avisa con un script clásico (fichero propio, no en línea) si se abre con file://", () => {
-  assert.equal(paginas.length, 12);
+  assert.equal(paginas.length, 13);
   const aviso = leer("./aviso-file.js");
   assert.ok(aviso.includes('location.protocol === "file:"'));
   for (const p of paginas) {

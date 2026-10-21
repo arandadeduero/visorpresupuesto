@@ -28,6 +28,12 @@ export function formatVariation(actual, anterior) {
 /** «Cap 6 - Obras e inversiones»: el capítulo siempre con su número, que es lo más básico para orientarse. */
 export const etiquetaCapitulo = (c) => `Cap ${c.cap} - ${c.corto}`;
 
+/** «21 de octubre de 2026» a partir de «2026-10-21». */
+export const fechaLarga = (iso) => new Date(`${iso}T12:00:00`).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+
+/** Identificador de ancla de un término de la guía («Capítulo» -> «capi-tulo»). Lo usan la página y el build. */
+export const idTermino = (t) => t.toLowerCase().normalize("NFD").replace(/[^a-z]+/g, "-");
+
 export function normalize(texto) {
   return String(texto ?? "")
     .normalize("NFD")

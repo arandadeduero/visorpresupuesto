@@ -73,7 +73,8 @@ def test_titulos_y_descripciones_son_unicos():
 
 def test_las_descripciones_no_llevan_cifras_que_se_queden_obsoletas():
     for p in PAGINAS:
-        assert not re.search(r"\d", datos(p)[1]["description"]), p.name
+        # solo vale «100 €» (el «por cada 100 €» de la portada, que no caduca)
+        assert not re.search(r"\d", datos(p)[1]["description"].replace("100 €", "")), p.name
 
 
 def test_la_imagen_social_es_1200x630_y_ligera():
@@ -114,17 +115,16 @@ def test_el_manifiesto_es_valido_y_sus_iconos_existen():
     assert {192, 512} <= tamanos
 
 
-def test_robots_y_sitemap_listan_las_doce_paginas():
+def test_robots_apunta_al_sitemap_que_genera_el_build():
+    # El sitemap.xml lo genera tools/build_site.py (con lastmod); sus pruebas están en test_seo.py
     robots = (SITE / "robots.txt").read_text(encoding="utf-8")
     assert "User-agent: *" in robots and f"Sitemap: {DOMINIO}sitemap.xml" in robots
-    ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-    urls = [e.text for e in ET.parse(SITE / "sitemap.xml").getroot().findall("s:url/s:loc", ns)]
-    assert sorted(urls) == sorted(url_pagina(p) for p in PAGINAS) and len(urls) == 12
+    assert not (SITE / "sitemap.xml").exists()
 
 
 def test_el_logo_de_la_cabecera_tiene_alt_tamano_y_enlaza_a_la_portada():
     js = (SITE / "js" / "layout.js").read_text(encoding="utf-8")
-    m = re.search(r'<a class="marca" href="index\.html\$\{consulta\}">(<img [^>]*>)', js)
+    m = re.search(r'<a class="marca" href="\./\$\{consulta\}">(<img [^>]*>)', js)
     assert m, "el logo debe ir dentro del enlace de la marca"
     img = m.group(1)
     assert 'alt="Ayuntamiento de Aranda de Duero"' in img

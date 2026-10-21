@@ -2,6 +2,7 @@ import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
 import { claseCrece } from "./escalas.js";
 import { filaHtml, tablaHtml } from "./ui.js";
+import { avisoPrestamoInversiones } from "./deuda-texto.js";
 
 const FUENTES = [
   ["prestamo", "Préstamo", "Dinero que se pediría prestado a un banco."],
@@ -33,8 +34,7 @@ runPage("inversiones", async ({ anio, main, load }) => {
     <h2>¿Cómo se pagan?</h2>
     <div class="stackbar stackbar-fina" role="img" aria-label="Fuentes de financiación de las inversiones">${usadas.map(([k, nombre]) => `<span class="seg seg-info ${SERIE[k]} ${claseCrece(d.fuentes[k], d.total)}" title="${esc(nombre)}: ${formatEuros(d.fuentes[k])}"></span>`).join("")}</div>
     <ul class="leyenda">${usadas.map(([k, nombre, ayuda]) => `<li><i class="${SERIE[k]}"></i><strong>${esc(nombre)}</strong>: ${formatEuros(d.fuentes[k])} (${((d.fuentes[k] / d.total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} %)${ayuda ? ` <span class="muted">· ${esc(ayuda)}</span>` : ""}</li>`).join("")}</ul>
-    <div class="aviso"><h3>El préstamo es una previsión</h3>
-      <p>Los <strong>${formatEuros(d.fuentes.prestamo)}</strong> de préstamo son lo máximo previsto en el presupuesto. Solo se pedirían si hacen falta, según la liquidación y la ejecución del presupuesto. El Ayuntamiento puede usar remanentes de tesorería (ahorros de años anteriores) para pagar parte de las obras, así que el préstamo final puede ser menor. Esta cifra es una estimación: depende de lo ya comprometido y de lo que finalmente no se ejecute. <a href="deuda.html?anio=${anio}">Ver la página de deuda</a>.</p></div>
+    ${avisoPrestamoInversiones(d.fuentes.prestamo, anio)}
     <h2>¿En qué se invierte?</h2>
     <p class="muted">Pulsa en cada línea para ver las obras y cómo se paga cada una.</p>
     <ul class="barras">${programas.map((p) => `<li>${filaHtml({
