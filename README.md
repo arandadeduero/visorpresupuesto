@@ -77,6 +77,16 @@ El selector de año de la web lee `site/data/index.json`, que el script actualiz
 node --test "site/js/*.test.js"       # formato, búsqueda, árbol de gastos, indicadores y calculadora
 ```
 
+## Tema claro y oscuro, variables CSS y sin estilos en línea
+
+- **Sigue al sistema.** `:root { color-scheme: light dark }` y un bloque `@media (prefers-color-scheme: dark)` que redefine los tokens: la web se ve en claro u oscuro según el sistema del visitante y cambia en vivo si éste lo cambia (los gráficos se repintan sin recargar). No hay interruptor manual (decisión: manda el sistema). Cada HTML lleva dos `<meta name="theme-color">` con `media` (rojo municipal en claro, rojo oscuro en oscuro).
+- **Todos los colores son variables.** En `site/css/styles.css`, los únicos literales de color están en los bloques `:root`: primero la paleta municipal (`--rojo`, `--ambar`, `--marron`, `--azul`, `--azul-claro`, `--gris`, `--gris-oscuro`, `--celeste`, `--azul-cielo`, `--ambar-claro`…), luego los tokens semánticos (`--fondo`, `--fondo-suave`, `--superficie`, `--texto`, `--texto-suave`, `--borde`, `--enlace`, `--cabecera-*`, `--aviso-*`, `--error-*`, `--foco`, `--sombra`, `--grafico-*`, `--tooltip-*`, `--serie-N`, `--cap-N`, `--tono-K`…). El resto del CSS solo usa `var(--…)` y `color-mix()`. Para cambiar un color hay que tocar un único sitio.
+- **Oscuro:** fondo `#14181c`, superficie `#1d2329`, superficie suave `#252d35`, texto `#e7ebee`, enlaces `#5bbae8`, cabecera en rojo oscuro `#8f0a20`, foco ámbar, acentos y colores de capítulo aclarados para ≥ 3:1 sobre la superficie, y tonos de artículo solo más claros.
+- **Sin estilos en línea.** Ningún `style=` en los HTML ni en las plantillas de los módulos, y ningún `element.style`. Las anchuras y proporciones son clases (`.ancho-0…100`, `.crece-1…100`) y los colores también (`.serie-N`, `.cap-N`, `.cap-N-tono-K`). `site/css/escalas.css` se **genera** con `python3 tools/generar_escalas.py` (no editar a mano; un test comprueba que está al día).
+- **Colores en los gráficos.** `site/js/colores.js` lee las variables con `getComputedStyle` (`colorVar('--cap-1')`); `charts.js` las usa como opciones «scriptable» de Chart.js y repinta todos los gráficos cuando cambia `prefers-color-scheme`.
+- **Content-Security-Policy** por `<meta>` en cada página: `default-src 'self'; script-src 'self'; style-src 'self'; …`, sin `unsafe-inline`. Por eso el aviso de `file://` es un fichero (`js/aviso-file.js`) y no un script en línea. Chart.js solo modifica `canvas.style` por CSSOM, que la política permite (comprobado: sin violaciones en consola).
+- Tests: `tools/tests/test_estilos.py` (sin literales de color fuera de `:root`, sin `style=`, CSP, escalas al día) y `site/js/tema.test.js` (contraste AA de los pares texto/fondo reales en los dos temas).
+
 ## Publicación y comprobaciones automáticas
 
 - **En cada Pull Request** (`.github/workflows/ci.yml`): `pytest`, comprobación de que los JSON de `site/data/` están al día y cuadran con los Excel, tests de JavaScript y construcción de `dist/` con sus comprobaciones.
@@ -88,7 +98,7 @@ node --test "site/js/*.test.js"       # formato, búsqueda, árbol de gastos, in
 **Por qué.** El dominio está detrás de Cloudflare, que guarda css, js y vendor hasta 4 h (`cache-control: max-age=14400`). Sin huellas, tras publicar los visitantes verían ficheros viejos hasta 4 horas, y podían mezclar HTML nuevo con JS viejo. En vez de purgar la caché, cada fichero estático lleva en el nombre el hash de su contenido: si cambia el contenido, cambia la URL.
 
 **Qué lleva huella** (`tools/build_site.py` copia `site/` a `dist/`):
-- `css/styles.<hash>.css`, todos los módulos `js/<nombre>.<hash>.js` y `vendor/chart.umd.min.<hash>.js` (10 hex del sha256).
+- `css/styles.<hash>.css`, `css/escalas.<hash>.css`, todos los módulos `js/<nombre>.<hash>.js` y `vendor/chart.umd.min.<hash>.js` (10 hex del sha256).
 - Los módulos se procesan en orden topológico y sus `import` se reescriben antes de calcular la huella: cambiar `format.js` cambia la huella de todos los que lo importan y, por tanto, la de los HTML. Un ciclo de importaciones hace fallar el build con un mensaje claro.
 - Los datos: `data/` se copia a `data-<hash>/` (hash de todo el directorio) y cada HTML lleva `<html data-datos="data-<hash>/">`. `site/js/data.js` (`urlDatos`) es el único sitio que conoce la ruta; si no hay atributo (local sin build) usa `data/`. Todo el JS debe usar ese helper.
 - **Sin huella:** los HTML (de entrada y enlaces entre páginas conservan su nombre). Hoy GitHub Pages los sirve con `max-age=600` y Cloudflare no los cachea (`DYNAMIC`), así que se actualizan en como mucho 10 minutos. Los `.md` de `vendor/` y `build-manifest.json` tampoco.
