@@ -1,0 +1,319 @@
+/* GENERADO por tools/generar_escalas.py: no editar a mano (un test comprueba que está al día). */
+/* Tonos de capítulo: --cap-N-tono-K (K = 0 es el color del capítulo; K >= 1 lo mezcla según --tono-K del tema). */
+:root {
+  --cap-1-tono-0: var(--cap-1);
+  --cap-1-tono-1: color-mix(in srgb, var(--cap-1), var(--tono-1));
+  --cap-1-tono-2: color-mix(in srgb, var(--cap-1), var(--tono-2));
+  --cap-1-tono-3: color-mix(in srgb, var(--cap-1), var(--tono-3));
+  --cap-1-tono-4: color-mix(in srgb, var(--cap-1), var(--tono-4));
+  --cap-1-tono-5: color-mix(in srgb, var(--cap-1), var(--tono-5));
+  --cap-2-tono-0: var(--cap-2);
+  --cap-2-tono-1: color-mix(in srgb, var(--cap-2), var(--tono-1));
+  --cap-2-tono-2: color-mix(in srgb, var(--cap-2), var(--tono-2));
+  --cap-2-tono-3: color-mix(in srgb, var(--cap-2), var(--tono-3));
+  --cap-2-tono-4: color-mix(in srgb, var(--cap-2), var(--tono-4));
+  --cap-2-tono-5: color-mix(in srgb, var(--cap-2), var(--tono-5));
+  --cap-3-tono-0: var(--cap-3);
+  --cap-3-tono-1: color-mix(in srgb, var(--cap-3), var(--tono-1));
+  --cap-3-tono-2: color-mix(in srgb, var(--cap-3), var(--tono-2));
+  --cap-3-tono-3: color-mix(in srgb, var(--cap-3), var(--tono-3));
+  --cap-3-tono-4: color-mix(in srgb, var(--cap-3), var(--tono-4));
+  --cap-3-tono-5: color-mix(in srgb, var(--cap-3), var(--tono-5));
+  --cap-4-tono-0: var(--cap-4);
+  --cap-4-tono-1: color-mix(in srgb, var(--cap-4), var(--tono-1));
+  --cap-4-tono-2: color-mix(in srgb, var(--cap-4), var(--tono-2));
+  --cap-4-tono-3: color-mix(in srgb, var(--cap-4), var(--tono-3));
+  --cap-4-tono-4: color-mix(in srgb, var(--cap-4), var(--tono-4));
+  --cap-4-tono-5: color-mix(in srgb, var(--cap-4), var(--tono-5));
+  --cap-5-tono-0: var(--cap-5);
+  --cap-5-tono-1: color-mix(in srgb, var(--cap-5), var(--tono-1));
+  --cap-5-tono-2: color-mix(in srgb, var(--cap-5), var(--tono-2));
+  --cap-5-tono-3: color-mix(in srgb, var(--cap-5), var(--tono-3));
+  --cap-5-tono-4: color-mix(in srgb, var(--cap-5), var(--tono-4));
+  --cap-5-tono-5: color-mix(in srgb, var(--cap-5), var(--tono-5));
+  --cap-6-tono-0: var(--cap-6);
+  --cap-6-tono-1: color-mix(in srgb, var(--cap-6), var(--tono-1));
+  --cap-6-tono-2: color-mix(in srgb, var(--cap-6), var(--tono-2));
+  --cap-6-tono-3: color-mix(in srgb, var(--cap-6), var(--tono-3));
+  --cap-6-tono-4: color-mix(in srgb, var(--cap-6), var(--tono-4));
+  --cap-6-tono-5: color-mix(in srgb, var(--cap-6), var(--tono-5));
+  --cap-7-tono-0: var(--cap-7);
+  --cap-7-tono-1: color-mix(in srgb, var(--cap-7), var(--tono-1));
+  --cap-7-tono-2: color-mix(in srgb, var(--cap-7), var(--tono-2));
+  --cap-7-tono-3: color-mix(in srgb, var(--cap-7), var(--tono-3));
+  --cap-7-tono-4: color-mix(in srgb, var(--cap-7), var(--tono-4));
+  --cap-7-tono-5: color-mix(in srgb, var(--cap-7), var(--tono-5));
+  --cap-8-tono-0: var(--cap-8);
+  --cap-8-tono-1: color-mix(in srgb, var(--cap-8), var(--tono-1));
+  --cap-8-tono-2: color-mix(in srgb, var(--cap-8), var(--tono-2));
+  --cap-8-tono-3: color-mix(in srgb, var(--cap-8), var(--tono-3));
+  --cap-8-tono-4: color-mix(in srgb, var(--cap-8), var(--tono-4));
+  --cap-8-tono-5: color-mix(in srgb, var(--cap-8), var(--tono-5));
+  --cap-9-tono-0: var(--cap-9);
+  --cap-9-tono-1: color-mix(in srgb, var(--cap-9), var(--tono-1));
+  --cap-9-tono-2: color-mix(in srgb, var(--cap-9), var(--tono-2));
+  --cap-9-tono-3: color-mix(in srgb, var(--cap-9), var(--tono-3));
+  --cap-9-tono-4: color-mix(in srgb, var(--cap-9), var(--tono-4));
+  --cap-9-tono-5: color-mix(in srgb, var(--cap-9), var(--tono-5));
+}
+
+/* Color por capítulo y tono (--color lo leen .muestra, .punto, .seg…) */
+.cap-1 { --color: var(--cap-1); }
+.cap-1-tono-1 { --color: var(--cap-1-tono-1); }
+.cap-1-tono-2 { --color: var(--cap-1-tono-2); }
+.cap-1-tono-3 { --color: var(--cap-1-tono-3); }
+.cap-1-tono-4 { --color: var(--cap-1-tono-4); }
+.cap-1-tono-5 { --color: var(--cap-1-tono-5); }
+.cap-2 { --color: var(--cap-2); }
+.cap-2-tono-1 { --color: var(--cap-2-tono-1); }
+.cap-2-tono-2 { --color: var(--cap-2-tono-2); }
+.cap-2-tono-3 { --color: var(--cap-2-tono-3); }
+.cap-2-tono-4 { --color: var(--cap-2-tono-4); }
+.cap-2-tono-5 { --color: var(--cap-2-tono-5); }
+.cap-3 { --color: var(--cap-3); }
+.cap-3-tono-1 { --color: var(--cap-3-tono-1); }
+.cap-3-tono-2 { --color: var(--cap-3-tono-2); }
+.cap-3-tono-3 { --color: var(--cap-3-tono-3); }
+.cap-3-tono-4 { --color: var(--cap-3-tono-4); }
+.cap-3-tono-5 { --color: var(--cap-3-tono-5); }
+.cap-4 { --color: var(--cap-4); }
+.cap-4-tono-1 { --color: var(--cap-4-tono-1); }
+.cap-4-tono-2 { --color: var(--cap-4-tono-2); }
+.cap-4-tono-3 { --color: var(--cap-4-tono-3); }
+.cap-4-tono-4 { --color: var(--cap-4-tono-4); }
+.cap-4-tono-5 { --color: var(--cap-4-tono-5); }
+.cap-5 { --color: var(--cap-5); }
+.cap-5-tono-1 { --color: var(--cap-5-tono-1); }
+.cap-5-tono-2 { --color: var(--cap-5-tono-2); }
+.cap-5-tono-3 { --color: var(--cap-5-tono-3); }
+.cap-5-tono-4 { --color: var(--cap-5-tono-4); }
+.cap-5-tono-5 { --color: var(--cap-5-tono-5); }
+.cap-6 { --color: var(--cap-6); }
+.cap-6-tono-1 { --color: var(--cap-6-tono-1); }
+.cap-6-tono-2 { --color: var(--cap-6-tono-2); }
+.cap-6-tono-3 { --color: var(--cap-6-tono-3); }
+.cap-6-tono-4 { --color: var(--cap-6-tono-4); }
+.cap-6-tono-5 { --color: var(--cap-6-tono-5); }
+.cap-7 { --color: var(--cap-7); }
+.cap-7-tono-1 { --color: var(--cap-7-tono-1); }
+.cap-7-tono-2 { --color: var(--cap-7-tono-2); }
+.cap-7-tono-3 { --color: var(--cap-7-tono-3); }
+.cap-7-tono-4 { --color: var(--cap-7-tono-4); }
+.cap-7-tono-5 { --color: var(--cap-7-tono-5); }
+.cap-8 { --color: var(--cap-8); }
+.cap-8-tono-1 { --color: var(--cap-8-tono-1); }
+.cap-8-tono-2 { --color: var(--cap-8-tono-2); }
+.cap-8-tono-3 { --color: var(--cap-8-tono-3); }
+.cap-8-tono-4 { --color: var(--cap-8-tono-4); }
+.cap-8-tono-5 { --color: var(--cap-8-tono-5); }
+.cap-9 { --color: var(--cap-9); }
+.cap-9-tono-1 { --color: var(--cap-9-tono-1); }
+.cap-9-tono-2 { --color: var(--cap-9-tono-2); }
+.cap-9-tono-3 { --color: var(--cap-9-tono-3); }
+.cap-9-tono-4 { --color: var(--cap-9-tono-4); }
+.cap-9-tono-5 { --color: var(--cap-9-tono-5); }
+
+/* Anchos (% redondeado) */
+.ancho-0 { width: 0%; }
+.ancho-1 { width: 1%; }
+.ancho-2 { width: 2%; }
+.ancho-3 { width: 3%; }
+.ancho-4 { width: 4%; }
+.ancho-5 { width: 5%; }
+.ancho-6 { width: 6%; }
+.ancho-7 { width: 7%; }
+.ancho-8 { width: 8%; }
+.ancho-9 { width: 9%; }
+.ancho-10 { width: 10%; }
+.ancho-11 { width: 11%; }
+.ancho-12 { width: 12%; }
+.ancho-13 { width: 13%; }
+.ancho-14 { width: 14%; }
+.ancho-15 { width: 15%; }
+.ancho-16 { width: 16%; }
+.ancho-17 { width: 17%; }
+.ancho-18 { width: 18%; }
+.ancho-19 { width: 19%; }
+.ancho-20 { width: 20%; }
+.ancho-21 { width: 21%; }
+.ancho-22 { width: 22%; }
+.ancho-23 { width: 23%; }
+.ancho-24 { width: 24%; }
+.ancho-25 { width: 25%; }
+.ancho-26 { width: 26%; }
+.ancho-27 { width: 27%; }
+.ancho-28 { width: 28%; }
+.ancho-29 { width: 29%; }
+.ancho-30 { width: 30%; }
+.ancho-31 { width: 31%; }
+.ancho-32 { width: 32%; }
+.ancho-33 { width: 33%; }
+.ancho-34 { width: 34%; }
+.ancho-35 { width: 35%; }
+.ancho-36 { width: 36%; }
+.ancho-37 { width: 37%; }
+.ancho-38 { width: 38%; }
+.ancho-39 { width: 39%; }
+.ancho-40 { width: 40%; }
+.ancho-41 { width: 41%; }
+.ancho-42 { width: 42%; }
+.ancho-43 { width: 43%; }
+.ancho-44 { width: 44%; }
+.ancho-45 { width: 45%; }
+.ancho-46 { width: 46%; }
+.ancho-47 { width: 47%; }
+.ancho-48 { width: 48%; }
+.ancho-49 { width: 49%; }
+.ancho-50 { width: 50%; }
+.ancho-51 { width: 51%; }
+.ancho-52 { width: 52%; }
+.ancho-53 { width: 53%; }
+.ancho-54 { width: 54%; }
+.ancho-55 { width: 55%; }
+.ancho-56 { width: 56%; }
+.ancho-57 { width: 57%; }
+.ancho-58 { width: 58%; }
+.ancho-59 { width: 59%; }
+.ancho-60 { width: 60%; }
+.ancho-61 { width: 61%; }
+.ancho-62 { width: 62%; }
+.ancho-63 { width: 63%; }
+.ancho-64 { width: 64%; }
+.ancho-65 { width: 65%; }
+.ancho-66 { width: 66%; }
+.ancho-67 { width: 67%; }
+.ancho-68 { width: 68%; }
+.ancho-69 { width: 69%; }
+.ancho-70 { width: 70%; }
+.ancho-71 { width: 71%; }
+.ancho-72 { width: 72%; }
+.ancho-73 { width: 73%; }
+.ancho-74 { width: 74%; }
+.ancho-75 { width: 75%; }
+.ancho-76 { width: 76%; }
+.ancho-77 { width: 77%; }
+.ancho-78 { width: 78%; }
+.ancho-79 { width: 79%; }
+.ancho-80 { width: 80%; }
+.ancho-81 { width: 81%; }
+.ancho-82 { width: 82%; }
+.ancho-83 { width: 83%; }
+.ancho-84 { width: 84%; }
+.ancho-85 { width: 85%; }
+.ancho-86 { width: 86%; }
+.ancho-87 { width: 87%; }
+.ancho-88 { width: 88%; }
+.ancho-89 { width: 89%; }
+.ancho-90 { width: 90%; }
+.ancho-91 { width: 91%; }
+.ancho-92 { width: 92%; }
+.ancho-93 { width: 93%; }
+.ancho-94 { width: 94%; }
+.ancho-95 { width: 95%; }
+.ancho-96 { width: 96%; }
+.ancho-97 { width: 97%; }
+.ancho-98 { width: 98%; }
+.ancho-99 { width: 99%; }
+.ancho-100 { width: 100%; }
+
+/* Proporciones de las barras divididas (flex-grow, % redondeado; mínimo 1 para que todo lo que existe se vea) */
+.crece-1 { flex-grow: 1; }
+.crece-2 { flex-grow: 2; }
+.crece-3 { flex-grow: 3; }
+.crece-4 { flex-grow: 4; }
+.crece-5 { flex-grow: 5; }
+.crece-6 { flex-grow: 6; }
+.crece-7 { flex-grow: 7; }
+.crece-8 { flex-grow: 8; }
+.crece-9 { flex-grow: 9; }
+.crece-10 { flex-grow: 10; }
+.crece-11 { flex-grow: 11; }
+.crece-12 { flex-grow: 12; }
+.crece-13 { flex-grow: 13; }
+.crece-14 { flex-grow: 14; }
+.crece-15 { flex-grow: 15; }
+.crece-16 { flex-grow: 16; }
+.crece-17 { flex-grow: 17; }
+.crece-18 { flex-grow: 18; }
+.crece-19 { flex-grow: 19; }
+.crece-20 { flex-grow: 20; }
+.crece-21 { flex-grow: 21; }
+.crece-22 { flex-grow: 22; }
+.crece-23 { flex-grow: 23; }
+.crece-24 { flex-grow: 24; }
+.crece-25 { flex-grow: 25; }
+.crece-26 { flex-grow: 26; }
+.crece-27 { flex-grow: 27; }
+.crece-28 { flex-grow: 28; }
+.crece-29 { flex-grow: 29; }
+.crece-30 { flex-grow: 30; }
+.crece-31 { flex-grow: 31; }
+.crece-32 { flex-grow: 32; }
+.crece-33 { flex-grow: 33; }
+.crece-34 { flex-grow: 34; }
+.crece-35 { flex-grow: 35; }
+.crece-36 { flex-grow: 36; }
+.crece-37 { flex-grow: 37; }
+.crece-38 { flex-grow: 38; }
+.crece-39 { flex-grow: 39; }
+.crece-40 { flex-grow: 40; }
+.crece-41 { flex-grow: 41; }
+.crece-42 { flex-grow: 42; }
+.crece-43 { flex-grow: 43; }
+.crece-44 { flex-grow: 44; }
+.crece-45 { flex-grow: 45; }
+.crece-46 { flex-grow: 46; }
+.crece-47 { flex-grow: 47; }
+.crece-48 { flex-grow: 48; }
+.crece-49 { flex-grow: 49; }
+.crece-50 { flex-grow: 50; }
+.crece-51 { flex-grow: 51; }
+.crece-52 { flex-grow: 52; }
+.crece-53 { flex-grow: 53; }
+.crece-54 { flex-grow: 54; }
+.crece-55 { flex-grow: 55; }
+.crece-56 { flex-grow: 56; }
+.crece-57 { flex-grow: 57; }
+.crece-58 { flex-grow: 58; }
+.crece-59 { flex-grow: 59; }
+.crece-60 { flex-grow: 60; }
+.crece-61 { flex-grow: 61; }
+.crece-62 { flex-grow: 62; }
+.crece-63 { flex-grow: 63; }
+.crece-64 { flex-grow: 64; }
+.crece-65 { flex-grow: 65; }
+.crece-66 { flex-grow: 66; }
+.crece-67 { flex-grow: 67; }
+.crece-68 { flex-grow: 68; }
+.crece-69 { flex-grow: 69; }
+.crece-70 { flex-grow: 70; }
+.crece-71 { flex-grow: 71; }
+.crece-72 { flex-grow: 72; }
+.crece-73 { flex-grow: 73; }
+.crece-74 { flex-grow: 74; }
+.crece-75 { flex-grow: 75; }
+.crece-76 { flex-grow: 76; }
+.crece-77 { flex-grow: 77; }
+.crece-78 { flex-grow: 78; }
+.crece-79 { flex-grow: 79; }
+.crece-80 { flex-grow: 80; }
+.crece-81 { flex-grow: 81; }
+.crece-82 { flex-grow: 82; }
+.crece-83 { flex-grow: 83; }
+.crece-84 { flex-grow: 84; }
+.crece-85 { flex-grow: 85; }
+.crece-86 { flex-grow: 86; }
+.crece-87 { flex-grow: 87; }
+.crece-88 { flex-grow: 88; }
+.crece-89 { flex-grow: 89; }
+.crece-90 { flex-grow: 90; }
+.crece-91 { flex-grow: 91; }
+.crece-92 { flex-grow: 92; }
+.crece-93 { flex-grow: 93; }
+.crece-94 { flex-grow: 94; }
+.crece-95 { flex-grow: 95; }
+.crece-96 { flex-grow: 96; }
+.crece-97 { flex-grow: 97; }
+.crece-98 { flex-grow: 98; }
+.crece-99 { flex-grow: 99; }
+.crece-100 { flex-grow: 100; }

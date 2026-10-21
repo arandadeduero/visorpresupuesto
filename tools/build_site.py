@@ -3,7 +3,7 @@
 
 Uso: python3 tools/build_site.py [site] [dist]
 
-- css, js (módulos incluidos), vendor y tipografías (woff2) se renombran: styles.<huella>.css, home.<huella>.js...
+- css (styles.css, escalas.css), js (módulos incluidos), vendor y tipografías (woff2) se renombran: styles.<huella>.css, home.<huella>.js...
 - Los módulos se procesan en orden topológico: su huella sale de su contenido ya con los imports reescritos,
   así un cambio en format.js cambia también la huella de todos los que lo importan (y la de los HTML).
 - data/ se copia a data-<huella>/ (huella de todo el directorio) y cada HTML recibe data-datos="data-<huella>/".
@@ -94,17 +94,19 @@ def _publicar_estaticos(site: Path, dist: Path, manifiesto: dict) -> None:
         if p.suffix != ".woff2":  # licencia y README, tal cual
             shutil.copy2(p, dist / "fonts" / p.name)
 
-    css = (site / "css/styles.css").read_text(encoding="utf-8")
+    for ruta in sorted((site / "css").glob("*.css")):
+        rel = f"css/{ruta.name}"
+        css = ruta.read_text(encoding="utf-8")
 
-    def url(m):
-        if m.group(1) not in manifiesto:
-            raise FileNotFoundError(f"styles.css usa {m.group(1)}, que no existe en {site}")
-        return f"url(../{manifiesto[m.group(1)]})"
+        def url(m, rel=rel):
+            if m.group(1) not in manifiesto:
+                raise FileNotFoundError(f"{rel} usa {m.group(1)}, que no existe en {site}")
+            return f"url(../{manifiesto[m.group(1)]})"
 
-    css = URL_FUENTE.sub(url, css)
-    nombre = con_huella("css/styles.css", huella(css.encode()))
-    manifiesto["css/styles.css"] = nombre
-    (dist / nombre).write_text(css, encoding="utf-8")
+        css = URL_FUENTE.sub(url, css)
+        nombre = con_huella(rel, huella(css.encode()))
+        manifiesto[rel] = nombre
+        (dist / nombre).write_text(css, encoding="utf-8")
 
     for rel in sorted(f"vendor/{p.name}" for p in (site / "vendor").glob("*.js")):
         datos = (site / rel).read_bytes()
