@@ -1,0 +1,54 @@
+site/comparar.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/index.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/robots.txt
+  s_c524ba238f0f5a::t_1f49d228785b11 1-4
+site/calculadora.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/inversiones.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+tools/build_site.py
+  s_c524ba238f0f5a::t_8639bb1dbfae40 153,164
+  s_c524ba238f0f5a::t_65bb9143e2b1ab 10-12,27-29,117-126,138
+site/descargas.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/guia.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/subvenciones.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/sitemap.xml
+  s_c524ba238f0f5a::t_35b3b1fbb73ff2 1-15
+site/manifest.webmanifest
+  s_c524ba238f0f5a::t_80639c61791472 1-15
+tools/tests/test_social.py
+  s_c524ba238f0f5a::t_5367da72dc8f29 1-169
+site/gastos.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/deuda.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/resumen.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/ingresos.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+site/indicadores.html
+  s_c524ba238f0f5a::t_ce7e3b9255ec24 11-31
+tools/tests/test_build_site.py
+  s_c524ba238f0f5a::t_70a926138d64cd 40-41,75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e9604240a2b185d0cd8ba31840e477d350caf8e0",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
