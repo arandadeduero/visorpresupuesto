@@ -1,0 +1,67 @@
+tools/tests/test_seo.py
+  s_c524ba238f0f5a::t_d4de757d2e6e86 97
+site/data/2025/resumen.json
+  s_c524ba238f0f5a::t_e7662967d7c600 3
+tools/budget/resumen.py
+  s_c524ba238f0f5a::t_d4de757d2e6e86 43
+tools/tests/test_resumen.py
+  s_c524ba238f0f5a::t_e751cd9b3c147b 43
+docs/revision/2026-10-19-textos-deuda-y-remanentes.md
+  s_c524ba238f0f5a::t_d4de757d2e6e86 67
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_c524ba238f0f5a::t_d4de757d2e6e86 14,116,119,149,209
+site/metodologia.html
+  s_c524ba238f0f5a::t_e7662967d7c600 46
+  s_c524ba238f0f5a::t_d4de757d2e6e86 45,55
+site/js/menu.test.js
+  s_c524ba238f0f5a::t_d4de757d2e6e86 80
+site/js/lecturas.js
+  s_c524ba238f0f5a::t_d4de757d2e6e86 55
+site/data/index.json
+  s_c524ba238f0f5a::t_e7662967d7c600 5,9,13
+tools/tests/test_convert.py
+  s_c524ba238f0f5a::t_d4de757d2e6e86 30
+site/js/descargas.js
+  s_c524ba238f0f5a::t_d4de757d2e6e86 21
+site/js/indicadores.js
+  s_c524ba238f0f5a::t_d4de757d2e6e86 52
+site/data/2026/resumen.json
+  s_c524ba238f0f5a::t_e7662967d7c600 3
+README.md
+  s_c524ba238f0f5a::t_d4de757d2e6e86 7,179
+tools/seo.py
+  s_c524ba238f0f5a::t_d4de757d2e6e86 35,116-117
+site/data/guia-terminos.json
+  s_c524ba238f0f5a::t_d4de757d2e6e86 3,88
+  s_c524ba238f0f5a::t_e7662967d7c600 4
+site/js/home.js
+  s_c524ba238f0f5a::t_d4de757d2e6e86 51
+site/js/layout.js
+  s_c524ba238f0f5a::t_d4de757d2e6e86 156,164
+site/js/comparar.js
+  s_c524ba238f0f5a::t_d4de757d2e6e86 106,152
+site/js/data.test.js
+  s_c524ba238f0f5a::t_d4de757d2e6e86 10
+tools/prerender.py
+  s_c524ba238f0f5a::t_d4de757d2e6e86 192,200,325,376
+site/data/2024/resumen.json
+  s_c524ba238f0f5a::t_e7662967d7c600 3
+site/js/comparacion.js
+  s_c524ba238f0f5a::t_d4de757d2e6e86 3-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d5cbe42178db5f30da0fa1dc8ab6219f62976f9d",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
