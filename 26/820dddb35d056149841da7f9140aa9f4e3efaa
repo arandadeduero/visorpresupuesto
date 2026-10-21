@@ -1,0 +1,27 @@
+README.md
+  s_c524ba238f0f5a::t_ebcbfb67d6d424 80-89,101
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_c524ba238f0f5a::t_ebcbfb67d6d424 171-181
+tools/tests/test_estilos.py
+  s_c524ba238f0f5a::t_e866baddcc485c 1-92,94-117
+  s_c524ba238f0f5a::t_6c218360c8a09c 93
+site/js/tema.test.js
+  s_c524ba238f0f5a::t_562a7d1e579d3f 1-85,87-138,141-199
+  s_c524ba238f0f5a::t_f8bbc80337966b 86,139-140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "26820dddb35d056149841da7f9140aa9f4e3efaa",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
