@@ -11,7 +11,7 @@ Referencias de otros ayuntamientos (solo como inspiración de estructura, no par
 ## Objetivos
 
 - Portada que contesta la pregunta antes de pedir al vecino que explore.
-- Selector de año. Hoy solo existe **2026, presupuesto inicial** (previsiones, no gastos ejecutados). Añadir otro año debe ser: poner sus Excel en una carpeta `AAAA/`, ejecutar la conversión y publicar.
+- Selector de año. Hoy solo existe **2026, presupuesto aprobado** (previsiones, no gastos ejecutados). Añadir otro año debe ser: poner sus Excel en una carpeta `AAAA/`, ejecutar la conversión y publicar.
 - Secciones: **Resumen, Ingresos, Gastos, Inversiones, Subvenciones, Deuda y carga financiera**.
 - Lenguaje llano: los nombres técnicos se traducen («Gastos corrientes en bienes y servicios» → «Servicios y mantenimiento»); el nombre oficial es visible al pasar el ratón o en un detalle.
 - Publicable en **GitHub Pages**, sin servidor.
@@ -113,10 +113,10 @@ Integrado, siempre calculado con nuestros datos:
 - **Euros por habitante** en portada, gastos e ingresos, con la población del INE (33.956 habitantes en 2025) indicada como fuente y con el aviso de que no es lo que paga cada vecino.
 - **Políticas de gasto** con nombre llano (Cultura, Deporte, Bienestar comunitario…), a partir de los dos primeros dígitos del programa y la clasificación oficial por programas; sustituyen a las áreas en la vista «¿En qué se gasta?».
 - **«¿Cuánto gasta Aranda de Duero en…?»** con «Enséñame otra» en la portada y **«Qué ha cambiado más»** (suben y bajan) en el resumen.
-- **Indicadores** (impuestos y tasas por habitante, ahorro bruto y neto estimado, deuda por habitante, nivel de endeudamiento estimado frente a los umbrales legales del 75 % y el 110 % (art. 53 TRLRHL y DF 31.ª de la Ley 17/2012; estimación con el presupuesto inicial, la ley usa la liquidación del año anterior), coste anual de la deuda, dependencia de transferencias), **calculadora** («¿a qué se destina lo que pago?», reparto proporcional y orientativo con los importes que escribe el vecino), **guía** con glosario, **descargas** de los JSON y explicación breve de cada forma de ver los gastos.
+- **Indicadores** (impuestos y tasas por habitante, ahorro bruto y neto estimado, deuda por habitante, nivel de endeudamiento estimado frente a los umbrales legales del 75 % y el 110 % (art. 53 TRLRHL y DF 31.ª de la Ley 17/2012; estimación con el presupuesto aprobado, la ley usa la liquidación del año anterior), coste anual de la deuda, dependencia de transferencias), **calculadora** («¿a qué se destina lo que pago?», reparto proporcional y orientativo con los importes que escribe el vecino), **guía** con glosario, **descargas** de los JSON y explicación breve de cada forma de ver los gastos.
 - Enlace a Gobierto para comparar con otros municipios.
 
-Descartado: series históricas 2010–2024, medias provincial, autonómica y nacional, rankings, ejecución presupuestaria (los Excel solo traen el presupuesto inicial y datos de terceros no son comparables), calculadora con ordenanzas fiscales (no disponemos de ellas) y clasificación orgánica («¿quién gasta?»), que los Excel no traen.
+Descartado: series históricas 2010–2024, medias provincial, autonómica y nacional, rankings, ejecución presupuestaria (los Excel solo traen el presupuesto aprobado y datos de terceros no son comparables), calculadora con ordenanzas fiscales (no disponemos de ellas) y clasificación orgánica («¿quién gasta?»), que los Excel no traen.
 
 ## Deja al constructor
 
@@ -146,7 +146,7 @@ Descartado: series históricas 2010–2024, medias provincial, autonómica y nac
 
 **Qué es.** Página «Comparar» para elegir dos presupuestos de `site/data/index.json` y ver qué ha cambiado. Los años van en la URL (`?a=2024&b=2026`, en cualquier orden, compartible; por defecto el penúltimo frente al último; nunca el mismo año dos veces). También se guardan `vista`, `modo`, `orden` y `clave`. La cabecera oculta el selector de año único.
 
-**Contenido.** Titular con gastos e ingresos de cada año y la diferencia; vistas «Gastos por política» (por defecto), «Gastos por capítulo», «Ingresos por capítulo» e «Indicadores» (lado a lado, con `calcularIndicadores`); interruptor «Total / Por habitante» (población de cada año en `resumen.json`); barras pareadas HTML/CSS (azul `#0083c1` el primer año, ámbar `#f5a800` el segundo; los importes van fuera de la barra), diferencia en euros y %, etiquetas «nuevo» / «desaparece», las tres frases más destacadas generadas, orden por importe, subida, bajada, % o nombre, tabla equivalente y evolución de la categoría elegida en todos los años (Chart.js con leyenda y tabla). Aviso visible: son presupuestos iniciales (previsiones) y euros corrientes, sin inflación.
+**Contenido.** Titular con gastos e ingresos de cada año y la diferencia; vistas «Gastos por política» (por defecto), «Gastos por capítulo», «Ingresos por capítulo» e «Indicadores» (lado a lado, con `calcularIndicadores`); interruptor «Total / Por habitante» (población de cada año en `resumen.json`); barras pareadas HTML/CSS (azul `#0083c1` el primer año, ámbar `#f5a800` el segundo; los importes van fuera de la barra), diferencia en euros y %, etiquetas «nuevo» / «desaparece», las tres frases más destacadas generadas, orden por importe, subida, bajada, % o nombre, tabla equivalente y evolución de la categoría elegida en todos los años (Chart.js con leyenda y tabla). Aviso visible: son presupuestos aprobados (previsiones) y euros corrientes, sin inflación.
 
 **Reglas.** Se compara siempre el `actual` de cada año con el `actual` del otro (nunca `anterior` con `actual`). Lógica pura y probada en `site/js/comparacion.js`; la pintan `site/js/comparar.js`. Una categoría con importe 0 o ausente en un año y positivo en el otro es «nuevo» (o «desaparece»); el % es `null` si el punto de partida es 0, así que no hay NaN ni Infinity.
 
@@ -206,7 +206,7 @@ Decisión (petición del usuario, siguiendo la implementación del repositorio `
 
 **Rastreo.** `sitemap.xml` se genera en el build con `<lastmod>` (fecha del último commit que toca `site/`); `robots.txt` apunta a él; `404.html` (noindex, sin canonical, rutas desde la raíz, menú y lista de páginas) también. «Datos actualizados el …» del pie es la fecha del último commit que toca `site/data`. Por eso los workflows hacen `checkout` con `fetch-depth: 0`; sin historial, el build usa `SOURCE_DATE_EPOCH` o el día de hoy.
 
-**Metodología y fuentes** (`metodologia.html`): origen de los datos, presupuesto inicial frente a ejecutado, clasificación (órdenes EHA/3565/2008 y HAP/419/2014), población del INE, estimaciones, actualización, errores y aviso de textos de préstamos y remanentes pendientes de revisión (`docs/revision/`).
+**Metodología y fuentes** (`metodologia.html`): origen de los datos, presupuesto aprobado frente a ejecutado, clasificación (órdenes EHA/3565/2008 y HAP/419/2014), población del INE, estimaciones, actualización, errores y aviso de textos de préstamos y remanentes pendientes de revisión (`docs/revision/`).
 
 ### Datos estructurados y rendimiento
 

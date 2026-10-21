@@ -40,7 +40,7 @@ def test_totales(caso):
     assert r["totalGastos"] == pytest.approx(e["totalGastos"], abs=0.01)
     assert r["totalIngresos"] == pytest.approx(e["totalIngresos"], abs=0.01)
     assert r["totalGastosAnterior"] == pytest.approx(e["totalGastosAnterior"], abs=0.01)
-    assert r["anio"] == anio and r["tipo"] == "inicial"
+    assert r["anio"] == anio and r["tipo"] == "aprobado"
 
 
 def test_capitulos_de_gastos_e_ingresos(caso):

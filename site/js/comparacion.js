@@ -1,7 +1,7 @@
 // Lógica de la página «Comparar»: empareja las categorías de dos presupuestos y calcula diferencias. Funciones puras, sin DOM.
 //
-// Se compara siempre el importe `actual` (el presupuesto inicial) de cada año con el de otro año, nunca el `anterior`
-// de un año con el `actual` del otro: los créditos del año anterior no coinciden con el presupuesto inicial de ese año.
+// Se compara siempre el importe `actual` (el presupuesto aprobado) de cada año con el de otro año, nunca el `anterior`
+// de un año con el `actual` del otro: los créditos del año anterior no coinciden con el presupuesto aprobado de ese año.
 //
 // Equivalencias entre años (comprobadas con los datos de todos los ejercicios publicados):
 //  - Políticas de gasto: el código de dos cifras (p. ej. «33» Cultura) significa lo mismo en todos los años. Una política

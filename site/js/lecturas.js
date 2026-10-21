@@ -52,7 +52,7 @@ export function textoNivelEndeudamiento(i) {
   if (situacion === "bajo75") partes.push(`${hayPrevisto ? "Incluso así" : "Con esta cifra"} quedaría por debajo del 75 %.`);
   else if (situacion === "entre75y110") partes.push("Con esta cifra superaría el 75 % y necesitaría autorización para endeudarse a largo plazo.");
   else if (situacion === "sobre110") partes.push("Con esta cifra superaría el 110 % y no podría concertar nuevos préstamos a largo plazo.");
-  partes.push("Es una estimación con el presupuesto inicial: la ley usa los ingresos liquidados del año anterior y descuenta los ingresos extraordinarios o afectados.");
+  partes.push("Es una estimación con el presupuesto aprobado: la ley usa los ingresos liquidados del año anterior y descuenta los ingresos extraordinarios o afectados.");
   return partes.join(" ");
 }
 

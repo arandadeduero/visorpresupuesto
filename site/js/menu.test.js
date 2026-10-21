@@ -77,7 +77,7 @@ function conBuild(dataset, fn) {
     globalThis.document = antes;
   }
 }
-const indice = { ultimo: 2026, anios: [{ anio: 2024, tipo: "inicial" }, { anio: 2025, tipo: "inicial" }, { anio: 2026, tipo: "inicial" }] };
+const indice = { ultimo: 2026, anios: [{ anio: 2024, tipo: "aprobado" }, { anio: 2025, tipo: "aprobado" }, { anio: 2026, tipo: "aprobado" }] };
 
 test("con build, el menú de /2025/ lleva a la carpeta del año y las páginas sin año a la raíz, sin ?anio=", () => {
   conBuild({ raiz: "../", anio: "2025", ultimo: "2026" }, () => {

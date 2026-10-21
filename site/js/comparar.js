@@ -103,7 +103,7 @@ runPage("comparar", async ({ main }) => {
     if (vista === "indicadores") {
       const f = filasIndicadores(dA, dB);
       cuerpo = `<h2>Indicadores de ${a} y ${b}</h2>
-        <p class="muted">Calculados con las cifras de cada presupuesto inicial (más explicaciones en la <a href="${urlPagina("indicadores", b)}">página de indicadores</a>). Si un año no trae el dato, aparece una raya. El nivel de endeudamiento y el ahorro neto son estimaciones con el presupuesto inicial: la ley los calcula con la liquidación del año anterior.</p>
+        <p class="muted">Calculados con las cifras de cada presupuesto aprobado (más explicaciones en la <a href="${urlPagina("indicadores", b)}">página de indicadores</a>). Si un año no trae el dato, aparece una raya. El nivel de endeudamiento y el ahorro neto son estimaciones con el presupuesto aprobado: la ley los calcula con la liquidación del año anterior.</p>
         ${tablaHtml(
           [{ texto: "Indicador" }, { texto: `${a}`, num: true }, { texto: `${b}`, num: true }, { texto: "Cambio", num: true }],
           f.map((x) => `<tr><td>${esc(x.etiqueta)}</td><td class="num">${fmtInd(x.a, x.tipo)}</td><td class="num">${fmtInd(x.b, x.tipo)}</td><td class="num">${fmtIndDelta(x.delta, x.tipo)}</td></tr>`),
@@ -149,7 +149,7 @@ runPage("comparar", async ({ main }) => {
         <label>frente al de <select id="sel-b">${opcionesAnio(b, a)}</select></label>
       </div>
       <div class="cards">${tarjeta("Gastos previstos", tg)}${tarjeta("Ingresos previstos", ti)}</div>
-      <div class="ayuda"><p>Son <strong>presupuestos iniciales</strong>, es decir, previsiones y no gasto ya realizado. Los importes son <strong>euros de cada año</strong>, sin descontar la inflación: con la subida de precios, el mismo dinero compra menos cada año.</p></div>
+      <div class="ayuda"><p>Son <strong>presupuestos aprobados</strong>, es decir, previsiones y no gasto ya realizado. Los importes son <strong>euros de cada año</strong>, sin descontar la inflación: con la subida de precios, el mismo dinero compra menos cada año.</p></div>
       <div class="pestanas" role="group" aria-label="Qué comparar">${pestanas}</div>
       ${vista === "indicadores" ? "" : `<div class="pestanas comp-modo" role="group" aria-label="Cómo mostrar los importes">${modos}</div>`}
       ${cuerpo}`;

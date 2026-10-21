@@ -7,7 +7,7 @@ const peticiones = [];
 globalThis.fetch = async (ruta) => {
   peticiones.push(ruta);
   if (ruta.includes("falla")) return { ok: false };
-  return { ok: true, json: async () => ({ anios: [{ anio: 2026, tipo: "inicial" }], ultimo: 2026 }) };
+  return { ok: true, json: async () => ({ anios: [{ anio: 2026, tipo: "aprobado" }], ultimo: 2026 }) };
 };
 globalThis.location = { search: "", protocol: "https:" };
 

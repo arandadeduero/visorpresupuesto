@@ -27,7 +27,7 @@ def test_escribe_los_seis_json_de_cada_anio(generado, anio):
 def test_el_indice_lista_los_tres_anios_ordenados_y_el_ultimo_es_el_por_defecto(generado):
     out, _ = generado
     assert json.loads((out / "index.json").read_text(encoding="utf-8")) == {
-        "anios": [{"anio": a, "tipo": "inicial"} for a in ANIOS],
+        "anios": [{"anio": a, "tipo": "aprobado"} for a in ANIOS],
         "ultimo": 2026,
     }
 

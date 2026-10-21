@@ -4,7 +4,7 @@
 
 Visor de los presupuestos del Ayuntamiento de Aranda de Duero pensado para cualquier vecino, sin necesidad de saber de presupuestos: en qué se gasta el dinero, de dónde sale, qué obras se prevén, a quién se dan subvenciones y cuánto se debe.
 
-Incluye los **presupuestos iniciales 2024, 2025 y 2026** (previsiones, no gastos ya realizados); por defecto se muestra el último y hay un selector de año.
+Incluye los **presupuestos aprobados 2024, 2025 y 2026** (previsiones, no gastos ya realizados); por defecto se muestra el último y hay un selector de año.
 
 ## Qué se puede ver
 
@@ -176,7 +176,7 @@ python3 -m http.server -d dist 8000  # abrir http://localhost:8000
 
 **Rastreo.** `sitemap.xml` se genera en el build con `<lastmod>` (fecha del último commit que toca `site/`); `robots.txt` apunta a él; `404.html` (noindex, sin canonical, rutas desde la raíz, menú y lista de páginas) también. «Datos actualizados el …» del pie es la fecha del último commit que toca `site/data`. Por eso los workflows hacen `checkout` con `fetch-depth: 0`; sin historial, el build usa `SOURCE_DATE_EPOCH` o el día de hoy.
 
-**Metodología y fuentes** (`metodologia.html`): origen de los datos, presupuesto inicial frente a ejecutado, clasificación (órdenes EHA/3565/2008 y HAP/419/2014), población del INE, estimaciones, actualización, errores y aviso de textos de préstamos y remanentes pendientes de revisión (`docs/revision/`).
+**Metodología y fuentes** (`metodologia.html`): origen de los datos, presupuesto aprobado frente a ejecutado, clasificación (órdenes EHA/3565/2008 y HAP/419/2014), población del INE, estimaciones, actualización, errores y aviso de textos de préstamos y remanentes pendientes de revisión (`docs/revision/`).
 
 ### Datos estructurados y rendimiento
 

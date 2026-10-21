@@ -94,7 +94,7 @@ CLAVES = {
     "comparar.html": ["Comparar presupuestos", "Gasto por habitante"],
     "indicadores.html": ["Nivel de endeudamiento", "Ahorro bruto", "Deuda por habitante"],
     "calculadora.html": ["IBI", "orientativo"],
-    "guia.html": ["Presupuesto inicial", "Remanente de tesorería", "Ahorro neto"],
+    "guia.html": ["Presupuesto aprobado", "Remanente de tesorería", "Ahorro neto"],
     "metodologia.html": ["Orden EHA/3565/2008", "Orden HAP/419/2014", "INE", "pendientes de que los revise", "incidencia"],
     "descargas.html": ["resumen.json", "deuda.json", ".xlsx"],
 }
