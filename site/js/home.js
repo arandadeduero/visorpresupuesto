@@ -3,6 +3,7 @@ import { formatEuros, formatVariation } from "./format.js";
 import { claseCrece } from "./escalas.js";
 import { destacar, porHabitante } from "./insights.js";
 import { variacionHtml } from "./ui.js";
+import { urlPagina } from "./rutas.js";
 
 const EXPLICACION = {
   "Obras e inversiones": "Obras nuevas y mejoras en calles, edificios e instalaciones, y ayudas para inversiones.",
@@ -21,7 +22,6 @@ function comparacion(total, anterior, anio) {
 runPage("inicio", async ({ anio, main, load }) => {
   const r = await load("resumen"); // gastos.json (el más pesado) solo se pide después, para la tarjeta «¿Cuánto gasta…?»
   const porVecino = formatEuros(porHabitante(r.totalGastos, r.habitantes));
-  const consulta = `?anio=${anio}`;
   const suma = r.por100.reduce((s, b) => s + b.euros, 0);
   const segmentos = r.por100.map((b, i) => {
     return `<button class="seg serie-${i + 1} ${claseCrece(b.euros, suma)}" type="button" data-i="${i}" aria-pressed="false">
@@ -37,7 +37,7 @@ runPage("inicio", async ({ anio, main, load }) => {
     <details><summary>Ver como tabla</summary>
       <div class="tabla-scroll"><table class="datos"><thead><tr><th>En qué</th><th class="num">Por cada 100 €</th><th class="num">Importe</th></tr></thead><tbody>${filas}</tbody></table></div>
     </details>
-    <p><a href="gastos.html${consulta}">Ver el detalle de los gastos del Ayuntamiento por política</a></p>
+    <p><a href="${urlPagina("gastos", anio)}">Ver el detalle de los gastos del Ayuntamiento por política</a></p>
     <section class="destacado" aria-labelledby="titulo-destacado">
       <h2 id="titulo-destacado">¿Cuánto gasta Aranda de Duero en…?</h2>
       <div id="destacado" class="destacado-caja" aria-live="polite"><p class="muted">Cargando…</p></div>

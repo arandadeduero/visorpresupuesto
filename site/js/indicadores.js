@@ -1,5 +1,6 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
+import { urlPagina } from "./rutas.js";
 import { calcularIndicadores, textoNivelEndeudamiento } from "./lecturas.js";
 
 const p1 = (n) => (n === null ? "—" : `${n.toLocaleString("es-ES", { maximumFractionDigits: 1 })} %`);
@@ -48,6 +49,6 @@ runPage("indicadores", async ({ anio, main, load }) => {
     <h1>Indicadores <span class="muted">${anio}</span></h1>
     <p class="lead">Siete cifras sencillas para entender la situación económica del Ayuntamiento.</p>
     <div class="cards">${tarjetas.map((t) => `<section class="card"><h2 class="card-titulo">${esc(t.titulo)}</h2><p class="cifra">${t.valor}</p><p class="muted">${esc(t.texto)}</p></section>`).join("")}</div>
-    <p class="muted">Calculados con las cifras del presupuesto inicial (previsiones), con ${resumen.habitantes.toLocaleString("es-ES")} habitantes (${esc(resumen.fuentePoblacion)}). No son los indicadores oficiales de la liquidación del presupuesto. Más explicaciones en la <a href="guia.html?anio=${anio}">guía</a>.</p>
+    <p class="muted">Calculados con las cifras del presupuesto inicial (previsiones), con ${resumen.habitantes.toLocaleString("es-ES")} habitantes (${esc(resumen.fuentePoblacion)}). No son los indicadores oficiales de la liquidación del presupuesto. Más explicaciones en la <a href="${urlPagina("guia", anio)}">guía</a>.</p>
     <p class="muted">Normativa del nivel de endeudamiento y del ahorro neto: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214#a53" rel="noopener">artículo 53 del texto refundido de la Ley Reguladora de las Haciendas Locales</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2012-15651" rel="noopener">disposición final 31.ª de la Ley 17/2012</a> (umbral del 75 %). Para las cifras oficiales hay que consultar la liquidación del presupuesto y la Intervención municipal.</p>`;
 });

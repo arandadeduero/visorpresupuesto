@@ -48,3 +48,16 @@ test("guia.js no lleva los textos: los lee del JSON compartido", () => {
   const terminos = JSON.parse(readFileSync(new URL("../data/guia-terminos.json", import.meta.url), "utf8"));
   assert.ok(terminos.length >= 20 && terminos.every((t) => t.termino && t.definicion));
 });
+
+test("en una carpeta de año manda la ruta (data-anio), no ?anio=; en local sí vale ?anio=", async () => {
+  const antes = { document: globalThis.document, location: globalThis.location };
+  try {
+    globalThis.location = { search: "?anio=1999", protocol: "https:" };
+    globalThis.document = { documentElement: { dataset: { raiz: "../", anio: "2026", ultimo: "2026" } } };
+    assert.equal(await getYear(), 2026);
+    globalThis.document = undefined;
+    await assert.rejects(getYear(), /Año no disponible/);
+  } finally {
+    Object.assign(globalThis, antes);
+  }
+});

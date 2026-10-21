@@ -5,6 +5,7 @@ import { formatEuros } from "./format.js";
 import { barChart, colorPorPunto } from "./charts.js";
 import { claseAncho } from "./escalas.js";
 import { tablaHtml } from "./ui.js";
+import { urlPagina } from "./rutas.js";
 import { elegirPareja, filasVista, ordenar, frase, titular, serieEvolucion, filasIndicadores } from "./comparacion.js";
 
 const VISTAS = [
@@ -102,7 +103,7 @@ runPage("comparar", async ({ main }) => {
     if (vista === "indicadores") {
       const f = filasIndicadores(dA, dB);
       cuerpo = `<h2>Indicadores de ${a} y ${b}</h2>
-        <p class="muted">Calculados con las cifras de cada presupuesto inicial (más explicaciones en la <a href="indicadores.html?anio=${b}">página de indicadores</a>). Si un año no trae el dato, aparece una raya. El nivel de endeudamiento y el ahorro neto son estimaciones con el presupuesto inicial: la ley los calcula con la liquidación del año anterior.</p>
+        <p class="muted">Calculados con las cifras de cada presupuesto inicial (más explicaciones en la <a href="${urlPagina("indicadores", b)}">página de indicadores</a>). Si un año no trae el dato, aparece una raya. El nivel de endeudamiento y el ahorro neto son estimaciones con el presupuesto inicial: la ley los calcula con la liquidación del año anterior.</p>
         ${tablaHtml(
           [{ texto: "Indicador" }, { texto: `${a}`, num: true }, { texto: `${b}`, num: true }, { texto: "Cambio", num: true }],
           f.map((x) => `<tr><td>${esc(x.etiqueta)}</td><td class="num">${fmtInd(x.a, x.tipo)}</td><td class="num">${fmtInd(x.b, x.tipo)}</td><td class="num">${fmtIndDelta(x.delta, x.tipo)}</td></tr>`),

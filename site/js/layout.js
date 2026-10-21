@@ -4,6 +4,7 @@ import { activarOrdenacion } from "./ordenar-tablas.js";
 import { iniciarAnalitica } from "./analytics.js";
 import { URL_POLITICA_PRIVACIDAD } from "./analytics-config.js";
 import { fechaLarga } from "./format.js";
+import { PAGINAS_SIN_ANIO, destinoAntiguo, enBuild, esRaiz, urlCambioDeAnio, urlPagina } from "./rutas.js";
 
 // Menú en dos niveles: lo principal (grande) y las herramientas (pequeño). Único sitio donde se declaran las páginas.
 export const GRUPOS = [
@@ -38,9 +39,6 @@ export const SECCIONES = GRUPOS.flatMap((g) => g.secciones);
 export const esc = (t) =>
   String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
-/** La portada se enlaza como «./» y no como «index.html»: así hay una sola URL para ella (la canónica es «/»). */
-export const urlPagina = (href) => (href === "index.html" ? "./" : href);
-
 /** Enlaces «Relacionado» de cada página: [página destino, texto del enlace]. Los lee también el build para el HTML estático. */
 export const RELACIONADOS = {
   resumen: [["ingresos", "De dónde sale el dinero del Ayuntamiento"], ["gastos", "En qué se gasta, por política de gasto"], ["deuda", "La deuda del Ayuntamiento"], ["indicadores", "Indicadores de endeudamiento y ahorro"]],
@@ -65,9 +63,8 @@ export const TARJETAS_INICIO = [
 ];
 
 export function tarjetasHtml(anio) {
-  const consulta = anio === null || anio === undefined ? "" : `?anio=${anio}`;
   const tarjetas = TARJETAS_INICIO
-    .map(([id, texto, detalle]) => `<a class="card" href="${urlPagina(SECCIONES.find((s) => s[0] === id)[2])}${consulta}"><strong>${esc(texto)}</strong><span>${esc(detalle)}</span></a>`)
+    .map(([id, texto, detalle]) => `<a class="card" href="${urlPagina(id, anio)}"><strong>${esc(texto)}</strong><span>${esc(detalle)}</span></a>`)
     .join("");
   return `<div class="cards">${tarjetas}</div>`;
 }
@@ -76,19 +73,47 @@ export function tarjetasHtml(anio) {
 export function relacionadoHtml(activa, anio) {
   const lista = RELACIONADOS[activa];
   if (!lista) return "";
-  const consulta = anio === null || anio === undefined ? "" : `?anio=${anio}`;
   const items = lista
-    .map(([id, texto]) => `<li><a href="${urlPagina(SECCIONES.find((s) => s[0] === id)[2])}${consulta}">${esc(texto)}</a></li>`)
+    .map(([id, texto]) => `<li><a href="${urlPagina(id, anio)}">${esc(texto)}</a></li>`)
     .join("");
   return `<nav class="relacionado" aria-labelledby="titulo-relacionado"><h2 id="titulo-relacionado">Relacionado</h2><ul>${items}</ul></nav>`;
 }
 
-/** HTML del menú: un bloque por grupo, con `aria-current="page"` en la sección activa y `?anio=` en los enlaces. */
+/** Cómo se llama el enlace a la misma página de otro año («Otros años»): una frase con el año, no «2024» a secas. */
+const ANCLA_ANIO = {
+  inicio: (a) => `Presupuesto de ${a}: por cada 100 €`,
+  resumen: (a) => `Resumen del presupuesto de ${a}`,
+  ingresos: (a) => `Ingresos de ${a}`,
+  gastos: (a) => `Gastos de ${a}`,
+  inversiones: (a) => `Inversiones de ${a}`,
+  subvenciones: (a) => `Subvenciones de ${a}`,
+  deuda: (a) => `Deuda de ${a}`,
+  indicadores: (a) => `Indicadores de ${a}`,
+  calculadora: (a) => `Calculadora de impuestos de ${a}`,
+};
+
+/** En la portada de la raíz, un bloque «Presupuestos por año»; en las demás páginas de un año, «Otros años» con la misma página en
+ * cada uno. Las páginas que no dependen del año no llevan nada. */
+export function aniosHtml(activa, anio, indice) {
+  if (PAGINAS_SIN_ANIO.includes(activa) || !indice?.anios?.length) return "";
+  const anios = indice.anios.map((a) => a.anio);
+  if (activa === "inicio" && esRaiz()) {
+    const items = [...anios]
+      .sort((a, b) => b - a)
+      .map((a) => `<li><a href="${urlPagina(a === indice.ultimo ? "gastos" : "inicio", a)}">Presupuesto de ${a}: en qué se gasta</a></li>`)
+      .join("");
+    return `<section class="anios" aria-labelledby="titulo-anios"><h2 id="titulo-anios">Presupuestos por año</h2><p>Cada año tiene sus propias páginas con sus cifras:</p><ul class="descargas">${items}</ul></section>`;
+  }
+  const otros = anios.filter((a) => a !== anio).sort((a, b) => a - b);
+  if (!otros.length) return "";
+  return `<p class="muted otros-anios">Otros años: ${otros.map((a) => `<a href="${urlPagina(activa, a)}">${esc(ANCLA_ANIO[activa](a))}</a>`).join(" · ")}</p>`;
+}
+
+/** HTML del menú: un bloque por grupo, con `aria-current="page"` en la sección activa. */
 export function menuHtml(activa, anio) {
-  const consulta = anio === null || anio === undefined ? "" : `?anio=${anio}`;
   return GRUPOS.map((g) => {
     const items = g.secciones
-      .map(([id, texto, href]) => `<li><a href="${urlPagina(href)}${consulta}"${id === activa ? ' aria-current="page"' : ""}>${texto}</a></li>`)
+      .map(([id, texto]) => `<li><a href="${urlPagina(id, anio)}"${id === activa ? ' aria-current="page"' : ""}>${texto}</a></li>`)
       .join("");
     const etiqueta = g.id === "principal" ? "" : `<span class="menu-etiqueta">${g.titulo}</span>`;
     return `<div class="menu-grupo menu-${g.id}">${etiqueta}<ul>${items}</ul></div>`;
@@ -125,18 +150,16 @@ const PAGINAS_ALTAS = ["comparar", "calculadora"];
 export const URL_REPOSITORIO = "https://github.com/arandadeduero/visorpresupuesto";
 
 /** Pie común: fuente, enlaces institucionales y fecha de actualización de los datos (ISO, la pone el build). */
-export function pieHtml(actualizado, consulta = "") {
+export function pieHtml(actualizado, anio = null) {
   const fecha = actualizado ? `<p class="pie-actualizado">Datos actualizados el ${fechaLarga(actualizado)}.</p>` : "";
   return `<footer class="site"><div class="wrap">
       <p>Fuente: presupuesto inicial del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados. Para comparar con otros municipios: <a href="https://presupuestos.gobierto.es/municipios/aranda-de-duero" rel="noopener">Gobierto Presupuestos</a>.</p>
-      <p class="pie-enlaces"><a href="https://www.arandadeduero.es" rel="noopener">Ayuntamiento de Aranda de Duero</a> · <a href="https://transparencia.arandadeduero.es" rel="noopener">Portal de transparencia</a> · <a href="${URL_REPOSITORIO}" rel="noopener">Código y datos en GitHub</a> · <a href="${URL_POLITICA_PRIVACIDAD}" rel="noopener">Política de privacidad</a> · <a href="metodologia.html${consulta}">Metodología y fuentes</a></p>
+      <p class="pie-enlaces"><a href="https://www.arandadeduero.es" rel="noopener">Ayuntamiento de Aranda de Duero</a> · <a href="https://transparencia.arandadeduero.es" rel="noopener">Portal de transparencia</a> · <a href="${URL_REPOSITORIO}" rel="noopener">Código y datos en GitHub</a> · <a href="${URL_POLITICA_PRIVACIDAD}" rel="noopener">Política de privacidad</a> · <a href="${urlPagina("metodologia", anio)}">Metodología y fuentes</a></p>
       ${fecha}</div></footer>`;
 }
 
 /** Cabecera, menú, contenido y pie. Función pura: la usa el navegador y también el build para el HTML estático. */
-export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido = "", enlazarAnio = true }) {
-  const enlaces = enlazarAnio ? anio : null; // el HTML estático enlaza sin «?anio=»: una sola URL por página
-  const consulta = enlaces === null ? "" : `?anio=${enlaces}`;
+export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido = "" }) {
   const opciones = (indice?.anios ?? [])
     .map((a) => `<option value="${a.anio}"${a.anio === anio ? " selected" : ""}>${a.anio} · ${a.tipo === "inicial" ? "presupuesto inicial" : a.tipo}</option>`)
     .join("");
@@ -144,14 +167,14 @@ export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido
     <a class="saltar" href="#contenido">Saltar al contenido</a>
     <header class="site">
       <div class="wrap cabecera">
-        <a class="marca" href="./${consulta}"><img class="logo" src="${escudo}" alt="Ayuntamiento de Aranda de Duero" width="22" height="33"><span>Presupuestos de Aranda de Duero</span></a>
+        <a class="marca" href="${urlPagina("inicio", anio)}"><img class="logo" src="${escudo}" alt="Ayuntamiento de Aranda de Duero" width="22" height="33"><span>Presupuestos de Aranda de Duero</span></a>
         <label class="anio">Año <select id="selector-anio" aria-label="Año del presupuesto">${opciones}</select></label>
         <button type="button" id="boton-menu" class="boton-menu" aria-expanded="false" aria-controls="menu-secciones"><span class="hamburguesa" aria-hidden="true"></span><span>Menú</span></button>
       </div>
-      <nav class="menu" id="menu-secciones" aria-label="Secciones"><div class="wrap menu-interior">${menuHtml(activa, enlaces)}</div></nav>
+      <nav class="menu" id="menu-secciones" aria-label="Secciones"><div class="wrap menu-interior">${menuHtml(activa, anio)}</div></nav>
     </header>
     <main id="contenido" class="wrap${PAGINAS_ALTAS.includes(activa) ? " alto" : ""}" tabindex="-1">${contenido}</main>
-    ${pieHtml(actualizado, consulta)}`;
+    ${pieHtml(actualizado, anio)}`;
 }
 
 /** Si el HTML ya trae el marco estático (build), se completa en su sitio y el contenido estático se queda hasta que la página
@@ -169,9 +192,7 @@ function montarMarco(activa, anio, indice) {
     document.body.innerHTML = html;
   }
   document.getElementById("selector-anio").addEventListener("change", (e) => {
-    const url = new URL(location.href);
-    url.searchParams.set("anio", e.target.value);
-    location.href = url.toString();
+    location.href = new URL(urlCambioDeAnio(activa, Number(e.target.value), location.search), location.href).toString();
   });
   activarMenuMovil();
   iniciarAnalitica(); // aviso de consentimiento y enlace de preferencias; Google no carga hasta que se acepta
@@ -194,15 +215,20 @@ export async function renderShell(activa) {
   } catch (e) {
     fallo = e;
   }
+  const antiguo = indice && destinoAntiguo(activa, indice, location.search, location.hash); // enlaces viejos con «?anio=»
+  if (antiguo) {
+    location.replace(antiguo);
+    return null;
+  }
   const main = montarMarco(activa, anio, indice);
   activarOrdenacion(main);
   if (fallo) {
     showError(main, fallo);
     return null;
   }
-  // El título estático de cada HTML ya describe la página; aquí solo se le añade el año elegido.
-  document.title = `${tituloEstatico} (${anio})`;
-  return { anio, main, load: (nombre) => loadData(anio, nombre) };
+  // Con build el título estático ya lleva el año; sin build (local) se le añade el año elegido.
+  if (!enBuild()) document.title = `${tituloEstatico} (${anio})`;
+  return { anio, indice, main, load: (nombre) => loadData(anio, nombre) };
 }
 
 /** Atajo para las páginas: renderShell + captura de errores al dibujar. */
@@ -211,7 +237,7 @@ export async function runPage(activa, dibujar) {
   if (!ctx) return;
   try {
     await dibujar(ctx);
-    ctx.main.insertAdjacentHTML("beforeend", relacionadoHtml(activa, ctx.anio));
+    ctx.main.insertAdjacentHTML("beforeend", relacionadoHtml(activa, ctx.anio) + aniosHtml(activa, ctx.anio, ctx.indice));
   } catch (e) {
     showError(ctx.main, e);
   }

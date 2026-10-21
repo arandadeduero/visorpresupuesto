@@ -1,4 +1,5 @@
 // Carga de datos: rutas relativas para que funcione en la subruta /visorpresupuesto/ de GitHub Pages.
+import { anioDeLaUrl } from "./rutas.js";
 
 // Única función que conoce dónde están los datos. En local es «data/»; el build (tools/build_site.py) pone
 // data-datos="data-<huella>/" en <html> para que cada versión de los datos tenga su propia URL.
@@ -38,8 +39,9 @@ export const getGuiaTerminos = () => leerUnaVez(urlDatos("guia-terminos.json"));
 
 export async function getYear() {
   const indice = await getIndex();
+  // En /2025/… manda la ruta; en la raíz y en local, «?anio=» y, si no hay, el último año
   const pedido = new URLSearchParams(location.search).get("anio");
-  const anio = pedido === null ? indice.ultimo : Number(pedido);
+  const anio = anioDeLaUrl() ?? (pedido === null ? indice.ultimo : Number(pedido));
   if (!indice.anios.some((a) => a.anio === anio)) throw new Error("Año no disponible: ese presupuesto aún no está publicado. Elige otro año en el selector de arriba.");
   return anio;
 }
