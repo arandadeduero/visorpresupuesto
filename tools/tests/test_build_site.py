@@ -38,7 +38,7 @@ def test_los_recursos_de_cada_pagina_existen_y_llevan_huella(dist, nombre):
     html = (dist / nombre).read_text(encoding="utf-8")
     refs = [r for r in re.findall(r'(?:href|src)="([^"]+)"', html) if not r.startswith(("http", "data:", "#"))]
     # Iconos, imagen social y manifiesto tienen URL estable (ver test_social.py): sin huella a propósito
-    recursos = [r for r in refs if not r.endswith(".html") and not r.startswith("img/") and r not in ("manifest.webmanifest", "./") and not r.startswith("data-")]  # data-<huella>/ ya lo comprueba test_los_datos_se_leen_de_la_carpeta_con_huella
+    recursos = [r for r in refs if not r.endswith(".html") and not r.startswith("img/") and r not in ("manifest.webmanifest", "./") and not r.startswith("data-") and not r.endswith("/")]  # data-<huella>/ ya lo comprueba test_los_datos_se_leen_de_la_carpeta_con_huella
     assert any(r.endswith(".css") for r in recursos) and any(r.endswith(".js") for r in recursos)
     for ref in recursos:
         assert HUELLA.search(ref), f"{nombre}: {ref} no lleva huella"
@@ -146,6 +146,8 @@ def test_pages_sube_dist_y_comprueba_los_nombres_con_huella():
     pages = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
     assert "python tools/build_site.py" in pages and "path: dist" in pages and "path: site" not in pages
     assert "build-manifest.json" in pages
+    # y comprueba una URL de año, el alias del último año y que el sitemap las lista
+    assert "/$anio/gastos.html" in pages and "/$ultimo/gastos.html" in pages and "sitemap.xml" in pages
 
 
 def test_el_ci_construye_dist_y_lo_comprueba():
