@@ -90,7 +90,7 @@ node --test "site/js/*.test.js"       # formato, búsqueda, árbol de gastos, in
 ## Logo, redes sociales e iconos
 
 - **Logo.** El escudo oficial (propiedad del Ayuntamiento; origen y fecha en `site/img/README.md`) va en la cabecera, dentro del enlace a la portada, junto al título. Se muestra sobre una **placa clara** (`--logo-placa`) en los dos temas: el escudo tiene colores propios (rojo, ámbar, azul) y no se lee directamente sobre el rojo de la cabecera; el banner oficial con texto gris oscuro tampoco. `<img>` con `alt="Ayuntamiento de Aranda de Duero"`, `width`/`height` (22x33, imagen de 66x99 para pantallas 2x) y estilos solo en CSS. La cabecera mide lo mismo que antes (45 px). `layout.js` lee la ruta con huella de `<html data-escudo>`, que pone el build.
-- **Etiquetas en cada HTML.** `description`, `canonical` (URL absoluta), Open Graph (`og:type`, `site_name`, `locale`, `title`, `description`, `url`, `image` y su ancho, alto, tipo y `alt`; lo usan Facebook, Instagram al compartir enlace, WhatsApp, LinkedIn, Telegram...) y Twitter/X (`twitter:card=summary_large_image`, `title`, `description`, `image`, `image:alt`). Títulos y descripciones únicos y sin cifras. Además: `icon` (PNG 32), `apple-touch-icon` (180), `manifest.webmanifest` (iconos 192 y 512), `robots.txt` y `sitemap.xml` con las 12 páginas. La CSP no cambia.
+- **Etiquetas en cada HTML.** `description`, `canonical` (URL absoluta), Open Graph (`og:type`, `site_name`, `locale`, `title`, `description`, `url`, `image` y su ancho, alto, tipo y `alt`; lo usan Facebook, Instagram al compartir enlace, WhatsApp, LinkedIn, Telegram...) y Twitter/X (`twitter:card=summary_large_image`, `title`, `description`, `image`, `image:alt`). Títulos y descripciones únicos y sin cifras. Además: `icon` (PNG 32), `apple-touch-icon` (180), `manifest.webmanifest` (iconos 192 y 512), `robots.txt` y `sitemap.xml` (ver «URLs propias por año»). La CSP no cambia.
 - **URLs estables.** `img/social.png`, los iconos, el manifiesto, `robots.txt` y `sitemap.xml` no llevan huella (los rastreadores y navegadores los piden por nombre); solo `img/escudo.png` la lleva.
 - **Regenerar las imágenes** (a partir de `site/img/icon-512.png`, con Outfit de `site/fonts/`):
 
@@ -120,6 +120,26 @@ node --test "site/js/*.test.js"       # formato, búsqueda, árbol de gastos, in
 - **En cada push a `main`** (`.github/workflows/pages.yml`): se repiten los tests y, solo si pasan, se construye `dist/` (ver «Despliegue con huellas») y se publica en GitHub Pages. Al final, el propio workflow comprueba, con los nombres del manifiesto, que la web publicada carga.
 - La web se sirve en <https://presupuestos.arandadeduero.dev/> (dominio configurado en *Settings → Pages*, con origen «GitHub Actions»).
 
+## URLs propias por año
+
+Cada presupuesto tiene sus páginas indexables: «presupuesto Aranda de Duero 2025» tiene su URL, `/2025/`, y el gasto de ese año `/2025/gastos.html`. Los años salen de `site/data/index.json`; no hay ninguno escrito a mano.
+
+**Estructura de `dist/`** (`tools/build_site.py`):
+
+- `/<año>/` (portada, «por cada 100 €») y `/<año>/resumen.html`, `ingresos`, `gastos`, `inversiones`, `subvenciones`, `deuda`, `indicadores`, `calculadora`: 9 páginas por año (27 con 2024, 2025 y 2026). Salen de los mismos `site/*.html`, un nivel por debajo de la raíz, con los datos del año en el HTML estático.
+- En la raíz: `/` (portada del último año y bloque «Presupuestos por año» con un enlace a cada uno), las páginas que no dependen del año (`comparar.html` con `?a=&b=`, `guia.html`, `metodologia.html`, `descargas.html`) y **alias del último año** (`/gastos.html`, `/resumen.html`...) para no romper enlaces antiguos ni los compartidos en redes. Con 3 años, `dist/` tiene 41 HTML (27 + 13 + `404.html`).
+- Cuando llegue un año nuevo solo cambia qué año es el último (`index.json`): el build lo calcula, sin tocar código.
+
+**Canonical** (una sola página indexable por contenido): `/` → `/`; `/2026/` (último año) → `/`; `/2025/` y `/2024/` → ellas mismas; `/2026/gastos.html` → ella misma; el alias `/gastos.html` → `/2026/gastos.html`; páginas sin año → ellas mismas. `sitemap.xml` lista solo las páginas cuya canónica es ella misma (31 URLs), con `lastmod` por año (el mayor entre el último commit de `site/data/<año>` y el del resto de `site/`).
+
+**SEO de cada año** (`tools/seo.py`): título ≤ 60 y descripción 120–160 únicos con el año y sin cifras («Gastos del Ayuntamiento de Aranda de Duero en 2025»), Open Graph/Twitter con `og:url` y título del año, `BreadcrumbList` Inicio › Presupuesto 2025 › Gastos, prerender con los JSON de ese año, «Relacionado» con enlaces del mismo año y «Otros años» (la misma página en los demás, con anclas descriptivas). `descargas` sigue con un `Dataset` por año.
+
+**Rutas con profundidad.** Las páginas de `/<año>/` referencian `../css/…`, `../js/…`, `../fonts/…`, `../img/…` y `data-datos="../data-<huella>/"`: el build antepone `../` a todo enlace relativo del HTML fuente. Las precargas (`modulepreload`, datos del año) llevan también `../`.
+
+**Cómo conviven producción y desarrollo en el JS** (`site/js/rutas.js`): el build pone en `<html>` `data-raiz` (`""` en la raíz, `"../"` en `/<año>/`), `data-ultimo` y, solo en `/<año>/`, `data-anio`. `urlPagina(pagina, anio)` es la única función que construye enlaces internos (menú, «Relacionado», tarjetas, selector, pie). Sin `data-raiz` (por ejemplo `site/` servido en local sin build) usa el modo de siempre, `?anio=`. En `/<año>/` manda `data-anio`; en la raíz y en local, `?anio=` o el último año.
+
+**Compatibilidad.** En una página de la raíz, `gastos.html?anio=2025` hace `location.replace` a `2025/gastos.html` (conservando otros parámetros y el ancla); con el último año o un año inexistente no se mueve. `comparar.html?a=&b=` no cambia. El selector de año navega a la misma página del otro año (en las páginas sin año, a la portada de ese año). La `404.html` enlaza a las URLs canónicas con rutas desde la raíz.
+
 ## Despliegue con huellas
 
 **Por qué.** El dominio está detrás de Cloudflare, que guarda css, js y vendor hasta 4 h (`cache-control: max-age=14400`). Sin huellas, tras publicar los visitantes verían ficheros viejos hasta 4 horas, y podían mezclar HTML nuevo con JS viejo. En vez de purgar la caché, cada fichero estático lleva en el nombre el hash de su contenido: si cambia el contenido, cambia la URL.
@@ -144,7 +164,7 @@ python3 -m http.server -d dist 8000  # abrir http://localhost:8000
 
 **Problema.** Todas las páginas pintan su contenido con JavaScript (`layout.js` sustituye el `<body>`), así que el HTML publicado solo decía «Cargando…». Bing, DuckDuckGo, las vistas previas y los asistentes de IA no ven nada.
 
-**Solución (prerender en el build).** `tools/build_site.py` sustituye el `<p class="cargando">` de cada HTML de `dist/` por el marco completo (cabecera, menú, pie) y el contenido de la página con las cifras clave del último año en tablas simples, `<h1>` único, enlaces «Relacionado» y un `<noscript>`. El JS sigue sustituyendo el `<body>` al cargar; el marco estático tiene las mismas clases, así que no hay salto. Los HTML de `site/` siguen mostrando «Cargando…» y funcionan en local sin build.
+**Solución (prerender en el build).** `tools/build_site.py` sustituye el `<p class="cargando">` de cada HTML de `dist/` por el marco completo (cabecera, menú, pie) y el contenido de la página con las cifras clave del año de cada página en tablas simples, `<h1>` único, enlaces «Relacionado» y un `<noscript>`. El JS sigue sustituyendo el `<body>` al cargar; el marco estático tiene las mismas clases, así que no hay salto. Los HTML de `site/` siguen mostrando «Cargando…» y funcionan en local sin build.
 
 **Sin duplicar lógica.**
 - `tools/exportar_js.mjs` (node) importa los módulos del propio JS y saca el marco (`marcoHtml`), el pie, el menú, los «Relacionado», las tarjetas de la portada, los avisos sobre préstamos (`deuda-texto.js`) y los indicadores (`lecturas.js`). **El build necesita node** (ya lo trae `ubuntu-latest`; el CI lo declara).
@@ -152,7 +172,7 @@ python3 -m http.server -d dist 8000  # abrir http://localhost:8000
 - La Guía lee `site/data/guia-terminos.json`, el mismo fichero que usa el build. El texto de Metodología vive en un `<template id="contenido-estatico">` de `metodologia.html`: lo usa el build para el HTML estático y el JS en el navegador.
 - Un test comprueba que las anclas de la guía y los textos de los avisos coinciden con los del JS.
 
-**Títulos y descripciones** (únicos, título ≤ 60, descripción 120–160, sin cifras que caduquen salvo «100 €») están en el HTML fuente; `layout.js` solo añade el año: «título (2026)». El canonical nunca lleva `?anio=`. `/index.html` y `/` devuelven ambos 200 (GitHub Pages no redirige): se resuelve con el canonical y porque todos los enlaces internos usan `./`.
+**Títulos y descripciones** (únicos, título ≤ 60, descripción 120–160, sin cifras que caduquen salvo «100 €») están en el HTML fuente; `layout.js` solo añade el año: «título (2026)». El canonical nunca lleva `?anio=`; en `/<año>/` el título ya lleva el año y `layout.js` no añade nada (solo en local, sin build). `/index.html` y `/` devuelven ambos 200 (GitHub Pages no redirige): se resuelve con el canonical y porque todos los enlaces internos usan `./`.
 
 **Rastreo.** `sitemap.xml` se genera en el build con `<lastmod>` (fecha del último commit que toca `site/`); `robots.txt` apunta a él; `404.html` (noindex, sin canonical, rutas desde la raíz, menú y lista de páginas) también. «Datos actualizados el …» del pie es la fecha del último commit que toca `site/data`. Por eso los workflows hacen `checkout` con `fetch-depth: 0`; sin historial, el build usa `SOURCE_DATE_EPOCH` o el día de hoy.
 
