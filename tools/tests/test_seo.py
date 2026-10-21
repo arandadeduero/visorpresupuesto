@@ -16,8 +16,20 @@ DOMINIO = "https://presupuestos.arandadeduero.dev/"
 sys.path.insert(0, str(ROOT / "tools"))
 import build_site  # noqa: E402
 import prerender  # noqa: E402
+import seo  # noqa: E402
 
-PAGINAS = sorted(p.name for p in SITE.glob("*.html"))
+PAGINAS = sorted(p.name for p in SITE.glob("*.html"))  # las de la raíz: portada, alias del último año y páginas sin año
+ULTIMO = json.loads((SITE / "data" / "index.json").read_text(encoding="utf-8"))["ultimo"]
+ID_DE = {"index.html": "inicio", **{p: p.removesuffix(".html") for p in PAGINAS if p != "index.html"}}
+
+
+def url_canonica(nombre: str) -> str:
+    """Canónica de una página de la raíz: la portada es «/», las que dependen del año apuntan a su carpeta del último año."""
+    if nombre == "index.html":
+        return DOMINIO
+    if ID_DE[nombre] in seo.PAGINAS_ANIO:
+        return DOMINIO + f"{ULTIMO}/{nombre}"
+    return DOMINIO + nombre
 
 
 @pytest.fixture(scope="module")
@@ -118,8 +130,7 @@ def test_el_aviso_del_prestamo_es_el_mismo_texto_que_pinta_el_js(dist):
     # No se copia a Python: lo exporta el propio módulo del JS
     js = prerender.exportar_js(SITE, "img/escudo.png", "2026-01-01")
     for pagina, clave in [("deuda.html", "deuda"), ("inversiones.html", "inversiones")]:
-        aviso = re.sub(r"\?anio=\d{4}", "", js["avisos"][clave])
-        assert aviso in leer(dist, pagina)
+        assert js["entornos"]["raiz"]["avisos"][clave] in leer(dist, pagina)
 
 
 def test_la_guia_estatica_tiene_todos_los_terminos_con_las_mismas_anclas_que_el_js(dist):
@@ -175,39 +186,35 @@ def test_titulos_y_descripciones_cumplen_longitud_y_son_unicos(cabeceras):
     assert len({c["descripcion"] for c in cabeceras.values()}) == len(PAGINAS)
 
 
-def test_los_titulos_pedidos_estan_tal_cual(cabeceras):
+def test_los_titulos_de_la_raiz_son_los_pedidos(cabeceras):
+    """La portada y las páginas sin año tienen título propio; los alias del último año, el de su página en /<último año>/."""
     esperados = {
         "index.html": "Presupuesto de Aranda de Duero: en qué se gasta",
-        "resumen.html": "Resumen del presupuesto municipal de Aranda de Duero",
-        "ingresos.html": "Ingresos del Ayuntamiento de Aranda de Duero: de dónde sale",
-        "gastos.html": "Gastos del Ayuntamiento de Aranda de Duero por política",
-        "inversiones.html": "Inversiones y obras previstas en Aranda de Duero",
-        "subvenciones.html": "Subvenciones del Ayuntamiento de Aranda de Duero",
-        "deuda.html": "Deuda del Ayuntamiento de Aranda de Duero",
         "comparar.html": "Comparar presupuestos de Aranda de Duero entre años",
-        "indicadores.html": "Indicadores financieros de Aranda de Duero",
-        "calculadora.html": "¿A qué se destinan mis impuestos? Calculadora",
         "guia.html": "Guía del presupuesto municipal: capítulos y partidas",
         "descargas.html": "Datos abiertos del presupuesto de Aranda de Duero",
+        "metodologia.html": "Metodología y fuentes de los datos de Aranda de Duero",
     }
+    esperados |= {f"{i}.html": seo.textos_anio(i, ULTIMO)[0] for i in seo.PAGINAS_ANIO if i != "inicio"}
     for n, t in esperados.items():
         assert cabeceras[n]["titulo"] == t
 
 
 @pytest.mark.parametrize("nombre", PAGINAS)
 def test_la_url_canonica_es_absoluta_unica_y_sin_parametros(cabeceras, nombre):
-    assert cabeceras[nombre]["canonical"] == [url_de(nombre)]
+    assert cabeceras[nombre]["canonical"] == [url_canonica(nombre)]
     assert "?" not in cabeceras[nombre]["canonical"][0]
 
 
 # ---------------------------------------------------------------- rastreo
 
-def test_el_sitemap_tiene_lastmod_y_todas_las_paginas(dist):
+def test_el_sitemap_tiene_lastmod_y_no_lista_alias(dist):
     ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     raiz = ET.fromstring(leer(dist, "sitemap.xml"))
     urls = {e.find("s:loc", ns).text: e.find("s:lastmod", ns) for e in raiz.findall("s:url", ns)}
-    assert sorted(urls) == sorted(url_de(n) for n in PAGINAS)
-    assert len(urls) == 13 and url_de("metodologia.html") in urls
+    assert url_de("index.html") in urls and url_de("metodologia.html") in urls
+    for n in PAGINAS:  # los alias de la raíz tienen la canónica en otra URL: no se listan
+        assert (url_de(n) in urls) == (url_canonica(n) == url_de(n)), n
     for u, lastmod in urls.items():
         assert lastmod is not None and re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod.text), u
 
@@ -221,9 +228,8 @@ def test_la_404_esta_marcada_noindex_sin_canonical_y_con_enlaces_rastreables(dis
     html = leer(dist, "404.html")
     assert '<meta name="robots" content="noindex">' in html
     assert "canonical" not in html and "og:url" not in html
-    for n in PAGINAS:
-        destino = "/" if n == "index.html" else f"/{n}"
-        assert f'href="{destino}"' in html, n
+    for n in PAGINAS:  # los enlaces de la 404 van a la URL canónica de cada página
+        assert f'href="{url_canonica(n).removeprefix(DOMINIO.rstrip("/"))}"' in html, n
     # sirve en cualquier ruta: nada relativo
     for ref in re.findall(r'(?:href|src)="([^"]+)"', html):
         assert ref.startswith(("/", "http", "#", "data:")), ref
@@ -243,7 +249,7 @@ def test_los_enlaces_internos_existen_y_la_portada_se_enlaza_como_barra(dist, no
     for ref in hrefs_internos(html):
         ruta = re.split(r"[?#]", ref)[0]
         assert ruta != "index.html", f"{nombre}: enlaza index.html en vez de ./"
-        assert (dist / ("index.html" if ruta in ("", "./") else ruta)).is_file(), f"{nombre}: {ref} no existe"
+        assert (dist / ("index.html" if ruta in ("", "./") else ruta + "index.html" if ruta.endswith("/") else ruta)).is_file(), f"{nombre}: {ref} no existe"
     assert 'href="./"' in html  # logo y menú
 
 

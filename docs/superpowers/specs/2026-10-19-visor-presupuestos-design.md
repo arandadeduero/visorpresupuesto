@@ -214,3 +214,17 @@ Decisión (petición del usuario, siguiendo la implementación del repositorio `
 - **Precarga** (build): `modulepreload` del módulo de cada página y de sus imports, y `preload` (`as="fetch" crossorigin`) de `index.json` y de los JSON que lee esa página (se deducen de su código, `load("…")`) del último año. Así la petición de datos empieza al leer el `<head>` y no tras bajar la cadena de módulos. Si alguien abre un año que no es el último, el navegador avisa en consola de que la precarga no se usó (solo aviso, y solo con `?anio=` distinto del último).
 - `getIndex` y `loadData` cachean por ruta (una sola petición a `index.json`); la portada pide `gastos.json` (el más pesado) después de pintar, solo para la tarjeta «¿Cuánto gasta…?»; Chart.js solo va en las páginas con gráficos y con `defer` (se ejecuta antes del módulo, en orden).
 - **Saltos de diseño (CLS):** si el HTML ya trae el marco estático, `layout.js` solo rellena cabecera y pie en su sitio y deja el contenido estático hasta que la página pinta el suyo (antes, quitar y volver a crear el pie daba un CLS de 0,28); `comparar` y `calculadora` reservan altura con la clase `.alto`; la tarjeta de la portada con `.destacado-caja`.
+
+## URLs propias por año
+
+**Problema.** El año iba en `?anio=` y el canonical no lo incluía: «presupuesto Aranda de Duero 2025» no tenía página propia.
+
+**Diseño.** Una carpeta por año publicado con las 9 páginas que dependen de él (`/2025/`, `/2025/gastos.html`...; los años salen de `index.json`). La raíz es el último año: `/` (portada, con bloque «Presupuestos por año») y alias `/gastos.html`... con canonical a `/2026/gastos.html`; `/2026/` tiene canonical `/`. Comparar, guía, metodología y descargas no dependen del año y se quedan en la raíz. El sitemap solo lista páginas con canónica propia (31 URLs).
+
+**Decisiones.**
+- Los alias se conservan (no hay redirecciones en GitHub Pages) y se resuelven con canonical, no con `noindex`, para pasar la señal de enlaces al canónico.
+- Rutas relativas con profundidad (`../`) reescritas por el build sobre el mismo HTML fuente; el JS no calcula rutas a mano: `rutas.js` (`urlPagina`) lee `data-raiz`, `data-ultimo` y `data-anio` de `<html>`. Sin `data-raiz` (`site/` sin build) se mantiene `?anio=`: un solo `if` en `urlPagina`, `destinoAntiguo` y `urlCambioDeAnio`, con tests en ambos modos.
+- El HTML estático se calcula por «entorno» (cada año y la raíz) ejecutando el propio JS (`tools/exportar_js.mjs` simula esos `data-*`): enlaces, avisos, indicadores y «Otros años» no tienen segunda copia en Python.
+- Las páginas sin año no arrastran el año en la URL en producción (enlaces limpios); en local sí (`?anio=`).
+- Miga «Presupuesto 2025» → `/2025/` también para el último año (su carpeta existe y es la misma página).
+

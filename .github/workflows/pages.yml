@@ -53,12 +53,23 @@ jobs:
           js=$(python -c 'import json;print(json.load(open("dist/build-manifest.json"))["js/home.js"])')
           vendor=$(python -c 'import json;print(json.load(open("dist/build-manifest.json"))["vendor/chart.umd.min.js"])')
           datos=$(python -c 'import json;print(json.load(open("dist/build-manifest.json"))["data/"])')
+          # Páginas de un año (el más antiguo publicado, que no es el último) y el alias del último año en la raíz; los años salen de los datos
+          anio=$(python -c 'import json;m=json.load(open("dist/build-manifest.json"));i=json.load(open("dist/"+m["data/"]+"index.json"));print(min(a["anio"] for a in i["anios"]))')
+          ultimo=$(python -c 'import json;m=json.load(open("dist/build-manifest.json"));print(json.load(open("dist/"+m["data/"]+"index.json"))["ultimo"])')
           for intento in $(seq 1 18); do
             if curl -fsS "$base/" | grep -q "Presupuestos de Aranda de Duero" \
               && curl -fsS "$base/" | grep -q "<h1>" \
               && curl -fsS "$base/sitemap.xml" | grep -q "<lastmod>" \
               && curl -fsS "$base/metodologia.html" | grep -q "<h1>Metodología y fuentes</h1>" \
               && curl -fsS "$base/" | grep -q "$js" \
+              && curl -fsS "$base/$anio/gastos.html" | grep -q "<h1>.*$anio" \
+              && curl -fsS "$base/$anio/gastos.html" | grep -q "rel=\"canonical\" href=\"[^\"]*/$anio/gastos.html\"" \
+              && curl -fsS "$base/$anio/gastos.html" | grep -q "\.\./$css" \
+              && curl -fsS "$base/$anio/" | grep -q "<h1>.*$anio" \
+              && curl -fsS "$base/gastos.html" | grep -q "rel=\"canonical\" href=\"[^\"]*/$ultimo/gastos.html\"" \
+              && curl -fsS "$base/sitemap.xml" | grep -q "/$anio/gastos.html" \
+              && curl -fsS "$base/404.html" | grep -q "noindex" \
+              && curl -fsS -o /dev/null "$base/${datos}$anio/gastos.json" \
               && curl -fsS -o /dev/null "$base/$css" \
               && curl -fsS -o /dev/null "$base/$js" \
               && curl -fsS -o /dev/null "$base/$vendor" \

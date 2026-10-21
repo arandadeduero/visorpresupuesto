@@ -2,10 +2,12 @@
 
 El navegador, al cargar el JS, sustituye todo el <body> por lo que pinta cada página; mientras tanto (y para los
 rastreadores, las vistas previas y quien tenga el JS desactivado) el HTML ya trae el marco y las cifras clave del
-último año en tablas simples. Todo texto con cifras sale de site/data/<último>/*.json; el marco, los enlaces
-«Relacionado», las tarjetas de la portada, los avisos sobre préstamos y los indicadores los calcula el propio JS de la
-web (tools/exportar_js.mjs), así que no hay una segunda copia en Python.
+año de cada página en tablas simples. Todo texto con cifras sale de site/data/<año>/*.json; el marco, los enlaces
+«Relacionado» y «Otros años», las URLs, las tarjetas de la portada, los avisos sobre préstamos y los indicadores los calcula
+el propio JS de la web (tools/exportar_js.mjs), así que no hay una segunda copia en Python.
 """
+import copy
+import functools
 import html
 import json
 import re
@@ -93,15 +95,13 @@ def titulo(texto: str, anio=None) -> str:
     return f"<h1>{texto}" + (f' <span class="muted">{anio}</span>' if anio else "") + "</h1>"
 
 
-def sin_anio(fragmento: str) -> str:
-    """Los avisos del JS enlazan con ?anio=AAAA; en el HTML estático las URLs van limpias."""
-    return re.sub(r"\?anio=\d{4}", "", fragmento)
-
-
 # ---------------------------------------------------------------- contexto
 
 class Contexto:
-    """Todo lo que necesita el prerender: datos del último año, lo que exporta el JS y las rutas con huella."""
+    """Todo lo que necesita el prerender de una página: los datos de su año, lo que exporta el JS para su «entorno» y las rutas con huella.
+
+    Hay un entorno por año publicado (páginas de /<año>/) y el entorno «raiz» (portada, alias del último año y páginas sin año:
+    sus datos son los del último año). `para()` da la vista de otro entorno sin recalcular nada."""
 
     def __init__(self, site: Path, js: dict, carpeta_datos: str, actualizado: str, escudo: str, excels: dict | None = None):
         self.site = Path(site)
@@ -114,16 +114,38 @@ class Contexto:
         self.ultimo = self.indice["ultimo"]
         self.anios = [a["anio"] for a in self.indice["anios"]]
         self.terminos = json.loads((self.site / "data" / "guia-terminos.json").read_text(encoding="utf-8"))
+        self.clave = "raiz"
+        self.anio = self.ultimo
+
+    def para(self, anio: int | None) -> "Contexto":
+        """Vista del año `anio` (páginas de /<año>/) o, con None, de la raíz (último año)."""
+        otro = copy.copy(self)
+        otro.clave = "raiz" if anio is None else str(anio)
+        otro.anio = self.ultimo if anio is None else anio
+        return otro
+
+    @property
+    def e(self) -> dict:
+        """Lo que el JS calcula para este entorno (marcos, urls, avisos, indicadores…)."""
+        return self.js["entornos"][self.clave]
+
+    def url(self, pagina: str) -> str:
+        """Ruta relativa a una página desde la actual (la misma regla que urlPagina() de site/js/rutas.js)."""
+        return self.e["urls"][pagina]
 
     def datos(self, nombre: str, anio: int | None = None) -> dict:
-        anio = anio or self.ultimo
-        return json.loads((self.site / "data" / str(anio) / f"{nombre}.json").read_text(encoding="utf-8"))
+        return _json(self.site / "data" / str(anio or self.anio) / f"{nombre}.json")
 
     def relacionado(self, pagina: str) -> str:
-        return sin_anio(self.js["relacionados"].get(pagina, ""))
+        return self.e["relacionados"].get(pagina, "")
 
     def url_json(self, anio: int, nombre: str) -> str:
         return f"{self.carpeta_datos}{anio}/{nombre}.json"
+
+
+@functools.lru_cache(maxsize=None)
+def _json(ruta: Path) -> dict:
+    return json.loads(ruta.read_text(encoding="utf-8"))
 
 
 def exportar_js(site: Path, escudo: str, actualizado: str) -> dict:
@@ -140,16 +162,17 @@ def exportar_js(site: Path, escudo: str, actualizado: str) -> dict:
 
 # ---------------------------------------------------------------- una función por página
 
-NOSCRIPT = (
-    '<noscript><div class="aviso"><strong>Esta página funciona mejor con JavaScript.</strong>'
-    "<p>Con JavaScript puedes elegir el año, ver gráficos, buscar y ordenar las tablas. Sin él ves las cifras principales del "
-    "presupuesto de {anio} en tablas. Puedes <a href=\"descargas.html\">descargar todos los datos</a> o consultar los "
-    f'<a href="{REPO}" rel="noopener">Excel originales del Ayuntamiento</a>.</p></div></noscript>'
-)
+def noscript(ctx: Contexto) -> str:
+    return (
+        '<noscript><div class="aviso"><strong>Esta página funciona mejor con JavaScript.</strong>'
+        "<p>Con JavaScript puedes elegir el año, ver gráficos, buscar y ordenar las tablas. Sin él ves las cifras principales del "
+        f'presupuesto de {ctx.anio} en tablas. Puedes <a href="{ctx.url("descargas")}">descargar todos los datos</a> o consultar los '
+        f'<a href="{REPO}" rel="noopener">Excel originales del Ayuntamiento</a>.</p></div></noscript>'
+    )
 
 
 def _intro(ctx, parrafo: str) -> str:
-    return f'<p class="lead">{parrafo}</p>' + NOSCRIPT.format(anio=ctx.ultimo)
+    return f'<p class="lead">{parrafo}</p>' + noscript(ctx)
 
 
 def _filas_capitulos(caps: list) -> list:
@@ -162,25 +185,25 @@ def _cab_capitulos(anio: int) -> list:
 
 def pagina_inicio(ctx: Contexto) -> str:
     r = ctx.datos("resumen")
-    anio = ctx.ultimo
+    anio = ctx.anio
     filas = [[esc(b["bloque"]), f"{b['euros']}{NBSP}€", euros(b["importe"])] for b in r["por100"]]
     return (
         f"<h1>Por cada 100{NBSP}€ que gasta el Ayuntamiento en {anio}…</h1>"
         + _intro(ctx, f"El Ayuntamiento de Aranda de Duero prevé gastar <strong>{euros(r['totalGastos'])}</strong> en {anio} (presupuesto inicial). Así se reparte cada 100{NBSP}€: personal, servicios, obras y otros gastos, como la deuda.")
         + tabla([("En qué", False), ("Por cada 100 €", True), (f"Importe en {anio}", True)], filas)
-        + f'<p><a href="gastos.html">Ver el detalle de los gastos del Ayuntamiento por política</a></p>'
+        + f'<p><a href="{ctx.url("gastos")}">Ver el detalle de los gastos del Ayuntamiento por política</a></p>'
         + "<h2>Para cada vecino</h2>"
         + f'<p class="lead">El presupuesto de {anio} equivale a unos <strong>{euros(r["totalGastos"] / r["habitantes"])}</strong> por habitante al año ({_agrupa(r["habitantes"])} habitantes).</p>'
         + f'<p class="muted">Es el gasto previsto del Ayuntamiento dividido entre la población ({esc(r["fuentePoblacion"])}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>'
         + "<h2>Y además…</h2>"
-        + sin_anio(ctx.js["tarjetasInicio"])
+        + ctx.e["tarjetasInicio"]
         + '<p class="muted">Es el presupuesto inicial: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>'
     )
 
 
 def pagina_resumen(ctx: Contexto) -> str:
     r = ctx.datos("resumen")
-    anio = ctx.ultimo
+    anio = ctx.anio
     equilibrado = abs(r["totalIngresos"] - r["totalGastos"]) < 1
     return (
         titulo(f"Resumen del presupuesto {anio}")
@@ -195,7 +218,7 @@ def pagina_resumen(ctx: Contexto) -> str:
 
 def pagina_ingresos(ctx: Contexto) -> str:
     d = ctx.datos("ingresos")
-    anio = ctx.ultimo
+    anio = ctx.anio
     total = sum(c["actual"] for c in d["capitulos"])
     caps = sorted(d["capitulos"], key=lambda c: -c["actual"])
     filas = [[esc(etiqueta_capitulo(c)), euros(c.get("anterior")), euros(c["actual"]), porcentaje(c["actual"] / total * 100)] for c in caps]
@@ -208,7 +231,7 @@ def pagina_ingresos(ctx: Contexto) -> str:
 
 def pagina_gastos(ctx: Contexto) -> str:
     d = ctx.datos("gastos")
-    anio = ctx.ultimo
+    anio = ctx.anio
     total = sum(c["actual"] for c in d["capitulos"])
     pols = sorted((p for p in d["politicas"] if p["actual"] > 0), key=lambda p: -p["actual"])
     filas_pol = [[esc(p["nombre"]), euros(p.get("anterior")), euros(p["actual"]), porcentaje(p["actual"] / total * 100)] for p in pols]
@@ -224,7 +247,7 @@ def pagina_gastos(ctx: Contexto) -> str:
 
 def pagina_inversiones(ctx: Contexto) -> str:
     d = ctx.datos("inversiones")
-    anio = ctx.ultimo
+    anio = ctx.anio
     nombres = {"prestamo": "Préstamo", "ingresosCorrientes": "Ingresos del Ayuntamiento", "otros": "Otros", "rta": "Remanente de tesorería", "subvenciones": "Subvenciones"}
     fuentes = [[esc(n), euros(d["fuentes"][k]), porcentaje(d["fuentes"][k] / d["total"] * 100)] for k, n in nombres.items() if d["fuentes"].get(k, 0) > 0]
     programas = sorted(d["programas"], key=lambda p: -p["total"])
@@ -234,7 +257,7 @@ def pagina_inversiones(ctx: Contexto) -> str:
         + _intro(ctx, f"El Ayuntamiento prevé invertir <strong>{euros(d['total'])}</strong> en obras, equipamientos y mejoras en {anio}.")
         + "<h2>¿Cómo se pagan?</h2>"
         + tabla([("Fuente", False), ("Importe", True), ("% del total", True)], fuentes)
-        + sin_anio(ctx.js["avisos"]["inversiones"])
+        + ctx.e["avisos"]["inversiones"]
         + "<h2>¿En qué se invierte?</h2>"
         + tabla([("Programa", False), ("Proyectos", True), ("Importe", True)], filas)
     )
@@ -242,7 +265,7 @@ def pagina_inversiones(ctx: Contexto) -> str:
 
 def pagina_subvenciones(ctx: Contexto) -> str:
     d = ctx.datos("subvenciones")
-    anio = ctx.ultimo
+    anio = ctx.anio
     progs = sorted(d["programas"], key=lambda p: -p["actual"])
     filas = [[esc(p["programa"] + (" (cuotas)" if p["bloque"] == "cuotas" else "")), str(len(p["items"])), euros(p.get("anterior")), euros(p["actual"])] for p in progs]
     return (
@@ -254,7 +277,7 @@ def pagina_subvenciones(ctx: Contexto) -> str:
 
 def pagina_deuda(ctx: Contexto) -> str:
     d = ctx.datos("deuda")
-    anio = ctx.ultimo
+    anio = ctx.anio
     viva_inicio = sum(p["vivaInicio"] for p in d["prestamos"])
     filas_serie = [[str(s["anio"]), euros(s["viva"])] for s in d["serie"]]
     filas_prestamos = [[esc(p["entidad"]), euros(p["importe"]), esc(p["tipoInteres"]), esc(p["ultimaAmortizacion"].split("-")[0]), euros(p["vivaFin"])] for p in d["prestamos"]]
@@ -262,7 +285,7 @@ def pagina_deuda(ctx: Contexto) -> str:
     return (
         titulo("Deuda del Ayuntamiento", anio)
         + _intro(ctx, f"El Ayuntamiento deberá a los bancos <strong>{euros(d['titular']['vivaFin'])}</strong> a 31 de diciembre de {anio}, con los préstamos que ya tiene. A 1 de enero era de {euros(viva_inicio)}: durante el año devuelve {euros(carga['amortizacion'])}.")
-        + sin_anio(ctx.js["avisos"]["deuda"])
+        + ctx.e["avisos"]["deuda"]
         + "<h2>Cómo evoluciona la deuda actual</h2>"
         + tabla([("Final de año", False), ("Deuda", True)], filas_serie)
         + "<h2>Los préstamos actuales</h2>"
@@ -281,13 +304,13 @@ def pagina_comparar(ctx: Contexto) -> str:
         titulo("Comparar presupuestos")
         + _intro(ctx, "Elige dos presupuestos y mira qué ha cambiado entre uno y otro: gastos por política y por capítulo, ingresos por capítulo e indicadores. Estos son los totales de cada año publicado.")
         + tabla([("Año", False), ("Ingresos previstos", True), ("Gastos previstos", True), ("Gasto por habitante", True)], filas)
-        + '<p class="muted">Los importes son euros corrientes, sin ajustar por la subida de precios. Más en la <a href="guia.html">guía</a> y en la <a href="metodologia.html">metodología</a>.</p>'
+        + f'<p class="muted">Los importes son euros corrientes, sin ajustar por la subida de precios. Más en la <a href="{ctx.url("guia")}">guía</a> y en la <a href="{ctx.url("metodologia")}">metodología</a>.</p>'
     )
 
 
 def pagina_indicadores(ctx: Contexto) -> str:
-    i = ctx.js["indicadores"]
-    anio = ctx.ultimo
+    i = ctx.e["indicadores"]
+    anio = ctx.anio
     filas = [
         ["Impuestos y tasas por habitante", euros(i["impuestosYTasasPorHabitante"])],
         ["Ahorro bruto", f"{euros(i['ahorroBruto'], True)} ({porcentaje(i['ahorroBrutoPct'])} de los ingresos corrientes)"],
@@ -301,17 +324,17 @@ def pagina_indicadores(ctx: Contexto) -> str:
         titulo("Indicadores", anio)
         + _intro(ctx, "Siete cifras sencillas para entender la situación económica del Ayuntamiento, calculadas con las cifras del presupuesto inicial.")
         + tabla([("Indicador", False), (f"Valor en {anio}", True)], [[esc(a), b] for a, b in filas])
-        + f"<h2>Nivel de endeudamiento</h2><p>{esc(ctx.js['textoNivelEndeudamiento'])}</p>"
-        + '<p class="muted">No son los indicadores oficiales de la liquidación del presupuesto. Más explicaciones en la <a href="guia.html">guía</a> y en la <a href="metodologia.html">metodología</a>.</p>'
+        + f"<h2>Nivel de endeudamiento</h2><p>{esc(ctx.e['textoNivelEndeudamiento'])}</p>"
+        + f'<p class="muted">No son los indicadores oficiales de la liquidación del presupuesto. Más explicaciones en la <a href="{ctx.url("guia")}">guía</a> y en la <a href="{ctx.url("metodologia")}">metodología</a>.</p>'
     )
 
 
 def pagina_calculadora(ctx: Contexto) -> str:
     return (
-        titulo("¿A qué se destina lo que pago?", ctx.ultimo)
+        titulo("¿A qué se destina lo que pago?", ctx.anio)
         + _intro(ctx, "Parte del presupuesto se financia con impuestos y tasas locales. Escribe lo que pagas al año (mira tus recibos del IBI, del impuesto de vehículos y de las tasas) y verás cómo se repartiría en los gastos del Ayuntamiento.")
         + '<div class="aviso"><h3>Cómo leerlo</h3><p>Es un reparto <strong>proporcional y orientativo</strong>: los impuestos no se destinan a un servicio concreto, sino al conjunto del presupuesto. Aquí se reparte tu aportación en la misma proporción que el gasto previsto de cada política. Tampoco todo el gasto se paga con impuestos locales: también hay transferencias de otras administraciones y préstamos.</p></div>'
-        + '<p>La calculadora necesita JavaScript. Mientras tanto, mira <a href="gastos.html">en qué se gasta el dinero del Ayuntamiento por política</a> y <a href="ingresos.html">de dónde sale</a>.</p>'
+        + f'<p>La calculadora necesita JavaScript. Mientras tanto, mira <a href="{ctx.url("gastos")}">en qué se gasta el dinero del Ayuntamiento por política</a> y <a href="{ctx.url("ingresos")}">de dónde sale</a>.</p>'
     )
 
 
@@ -326,12 +349,12 @@ def pagina_guia(ctx: Contexto) -> str:
         "<h1>Guía: las palabras del presupuesto</h1>"
         + '<p class="lead">Qué significan los términos que verás en esta web.</p>'
         + f'<dl class="glosario">{items}</dl>'
-        + f'<p class="muted">¿Echas en falta alguna palabra? <a href="{REPO}/issues" rel="noopener">Cuéntanoslo</a>. Para ver los datos, vuelve al <a href="./">inicio</a>.</p>'
+        + f'<p class="muted">¿Echas en falta alguna palabra? <a href="{REPO}/issues" rel="noopener">Cuéntanoslo</a>. Para ver los datos, vuelve al <a href="{ctx.url("inicio")}">inicio</a>.</p>'
     )
 
 
 def pagina_descargas(ctx: Contexto) -> str:
-    anio = ctx.ultimo
+    anio = ctx.anio
     bloques = []
     for a in sorted(ctx.anios, reverse=True):
         lista = "".join(
@@ -366,19 +389,27 @@ PAGINAS = {
 }
 
 
+ENLACE_PAGINA = re.compile(r'href="([a-z]+)\.html"')
+
+
+def enlaces_de_la_entrada(ctx: Contexto, fragmento: str) -> str:
+    """Las páginas escritas a mano (metodología) enlazan «deuda.html»: en el sitio construido, a la URL canónica del año."""
+    return ENLACE_PAGINA.sub(lambda m: f'href="{ctx.url(m.group(1))}"' if m.group(1) in ctx.e["urls"] else m.group(0), fragmento)
+
+
 def contenido_pagina(ctx: Contexto, pagina: str, estatico: str | None = None) -> str:
     """HTML de <main> para una página. `estatico` es el contenido de la <template> de las páginas que son solo texto (metodología)."""
     if pagina in PAGINAS:
         cuerpo = PAGINAS[pagina](ctx)
     elif estatico is not None:
-        cuerpo = estatico
+        cuerpo = enlaces_de_la_entrada(ctx, estatico)
     else:
         raise ErrorDePrerender(f"No sé prerenderizar la página «{pagina}»")
     if "<noscript>" not in cuerpo:  # las páginas que son solo texto lo llevan al final
-        cuerpo += NOSCRIPT.format(anio=ctx.ultimo)
-    return cuerpo + ctx.relacionado(pagina)
+        cuerpo += noscript(ctx)
+    return cuerpo + ctx.relacionado(pagina) + ctx.e["anios"][pagina]
 
 
 def montar(ctx: Contexto, pagina: str, estatico: str | None = None) -> str:
     """Marco completo (cabecera, menú, contenido y pie) para sustituir el «Cargando…» del HTML fuente."""
-    return ctx.js["marcos"][pagina].replace(ctx.js["marca"], contenido_pagina(ctx, pagina, estatico))
+    return ctx.e["marcos"][pagina].replace(ctx.js["marca"], contenido_pagina(ctx, pagina, estatico))

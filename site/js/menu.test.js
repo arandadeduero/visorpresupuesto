@@ -2,7 +2,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readdirSync } from "node:fs";
-import { GRUPOS, SECCIONES, RELACIONADOS, menuHtml, relacionadoHtml, pieHtml } from "./layout.js";
+import { GRUPOS, SECCIONES, RELACIONADOS, menuHtml, relacionadoHtml, pieHtml, aniosHtml, marcoHtml, tarjetasHtml } from "./layout.js";
 
 const nombres = (g) => g.secciones.map((s) => s[1]);
 
@@ -17,7 +17,7 @@ test("cada página .html del sitio está exactamente en un grupo", () => {
   assert.deepEqual(SECCIONES.map((s) => s[2]).sort(), paginas);
 });
 
-test("los enlaces llevan ?anio= y solo la sección activa lleva aria-current, sea del grupo que sea", () => {
+test("sin build, los enlaces llevan ?anio= y solo la sección activa lleva aria-current, sea del grupo que sea", () => {
   for (const activa of ["deuda", "guia"]) {
     const html = menuHtml(activa, 2025);
     assert.equal((html.match(/<a /g) ?? []).length, 13);
@@ -65,4 +65,67 @@ test("el pie lleva los enlaces institucionales, la metodología y la fecha de lo
   }
   assert.match(html, /Datos actualizados el 21 de octubre de 2026/);
   assert.ok(!pieHtml(undefined).includes("Datos actualizados"));
+});
+
+// ---- Con build: carpetas por año (data-raiz en <html>) ----
+function conBuild(dataset, fn) {
+  const antes = globalThis.document;
+  globalThis.document = { documentElement: { dataset } };
+  try {
+    return fn();
+  } finally {
+    globalThis.document = antes;
+  }
+}
+const indice = { ultimo: 2026, anios: [{ anio: 2024, tipo: "inicial" }, { anio: 2025, tipo: "inicial" }, { anio: 2026, tipo: "inicial" }] };
+
+test("con build, el menú de /2025/ lleva a la carpeta del año y las páginas sin año a la raíz, sin ?anio=", () => {
+  conBuild({ raiz: "../", anio: "2025", ultimo: "2026" }, () => {
+    const html = menuHtml("gastos", 2025);
+    assert.ok(html.includes('<a href="../2025/gastos.html" aria-current="page">Gastos</a>'));
+    assert.ok(html.includes('<a href="../2025/">Inicio</a>'));
+    assert.ok(html.includes('<a href="../guia.html">Guía</a>') && html.includes('<a href="../comparar.html">Comparar</a>'));
+    assert.ok(!html.includes("?anio="));
+    assert.ok(relacionadoHtml("gastos", 2025).includes('href="../2025/ingresos.html"'));
+    assert.ok(relacionadoHtml("gastos", 2025).includes('href="../guia.html"'));
+    assert.ok(tarjetasHtml(2025).includes('href="../2025/deuda.html"'));
+    assert.ok(pieHtml("2026-10-21", 2025).includes('href="../metodologia.html"'));
+  });
+});
+
+test("con build, la raíz enlaza el último año sin repetir su carpeta en la portada", () => {
+  conBuild({ raiz: "", ultimo: "2026" }, () => {
+    const html = menuHtml("inicio", 2026);
+    assert.ok(html.includes('<a href="./" aria-current="page">Inicio</a>'));
+    assert.ok(html.includes('<a href="2026/gastos.html">Gastos</a>'));
+    const marco = marcoHtml({ activa: "inicio", anio: 2026, indice, escudo: "img/escudo.png", actualizado: "2026-10-21" });
+    assert.ok(marco.includes('<a class="marca" href="./">'));
+    assert.ok(marco.includes('<option value="2026" selected>'));
+  });
+});
+
+test("«Otros años»: la misma página en los demás años, con anclas descriptivas; sin nada en las páginas sin año", () => {
+  conBuild({ raiz: "../", anio: "2025", ultimo: "2026" }, () => {
+    const html = aniosHtml("gastos", 2025, indice);
+    assert.match(html, /Otros años: <a href="\.\.\/2024\/gastos\.html">Gastos de 2024<\/a> · <a href="\.\.\/2026\/gastos\.html">Gastos de 2026<\/a>/);
+    assert.ok(!html.includes("2025/"));
+    assert.ok(aniosHtml("inicio", 2025, indice).includes('href="../"'), "la portada del último año es la raíz");
+    for (const id of ["comparar", "guia", "metodologia", "descargas"]) assert.equal(aniosHtml(id, 2025, indice), "");
+  });
+});
+
+test("en la portada de la raíz, un bloque «Presupuestos por año» con un enlace a cada año", () => {
+  conBuild({ raiz: "", ultimo: "2026" }, () => {
+    const html = aniosHtml("inicio", 2026, indice);
+    assert.match(html, /<h2 id="titulo-anios">Presupuestos por año<\/h2>/);
+    for (const a of [2024, 2025, 2026]) assert.ok(html.includes(`Presupuesto de ${a}: en qué se gasta</a>`), a);
+    assert.ok(html.includes('href="2025/"') && html.includes('href="2024/"'));
+    assert.ok(!html.includes('href="2026/"'), "la portada del último año es la propia raíz");
+    assert.ok(html.includes('href="2026/gastos.html"'));
+  });
+});
+
+test("sin build, «Otros años» enlaza con ?anio=", () => {
+  const html = aniosHtml("deuda", 2026, indice);
+  assert.ok(html.includes('href="deuda.html?anio=2024"') && html.includes('href="deuda.html?anio=2025"'));
 });

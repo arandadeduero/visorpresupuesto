@@ -124,7 +124,7 @@ def test_robots_apunta_al_sitemap_que_genera_el_build():
 
 def test_el_logo_de_la_cabecera_tiene_alt_tamano_y_enlaza_a_la_portada():
     js = (SITE / "js" / "layout.js").read_text(encoding="utf-8")
-    m = re.search(r'<a class="marca" href="\./\$\{consulta\}">(<img [^>]*>)', js)
+    m = re.search(r'<a class="marca" href="\$\{urlPagina\("inicio", anio\)\}">(<img [^>]*>)', js)
     assert m, "el logo debe ir dentro del enlace de la marca"
     img = m.group(1)
     assert 'alt="Ayuntamiento de Aranda de Duero"' in img

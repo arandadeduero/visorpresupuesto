@@ -10,9 +10,15 @@ Uso: python3 tools/build_site.py [site] [dist]
 - img/: social.png y los iconos conservan su nombre (URL estable); el resto (escudo.png de la cabecera) lleva huella y su ruta
   se anota en cada HTML como data-escudo="img/escudo.<huella>.png" (lo lee layout.js).
 - manifest.webmanifest y robots.txt se copian tal cual.
+- Cada año publicado (site/data/index.json) tiene su carpeta con las páginas que dependen del año: /2025/ (portada), /2025/gastos.html...
+  Salen de los mismos site/*.html, un nivel por debajo de la raíz: las rutas relativas se reescriben (../css/..., data-datos="../data-<huella>/")
+  y <html> lleva data-raiz="../", data-anio="2025" y data-ultimo="2026" (los lee site/js/rutas.js). Las páginas de la raíz son el último año
+  (la portada y los alias /gastos.html... con canonical a /2026/gastos.html) y las que no dependen del año (comparar, guía, metodología, descargas).
 - Los HTML y los enlaces entre páginas conservan su nombre. Cada HTML sale con el contenido estático (tools/prerender.py) en
-  lugar de «Cargando…», para quien no ejecuta JavaScript; el navegador lo sustituye al pintar la página.
-- sitemap.xml se genera con <lastmod> (fecha del último commit que toca site/) y 404.html (con noindex) se construye aquí.
+  lugar de «Cargando…», para quien no ejecuta JavaScript; el navegador lo sustituye al pintar la página. Título, descripción,
+  URL canónica y datos estructurados son los de cada año (tools/seo.py).
+- sitemap.xml se genera con <lastmod> (fecha del último commit que toca los datos del año o el código de site/) y solo lista las
+  páginas cuya canónica es ella misma. 404.html (con noindex) se construye aquí.
 - dist/build-manifest.json relaciona cada original con su fichero publicado.
 """
 import hashlib
@@ -38,6 +44,7 @@ IMG_ESTABLES = {"social.png", "favicon-32.png", "apple-touch-icon.png", "icon-19
 FICHEROS_RAIZ = ["manifest.webmanifest", "robots.txt"]
 DOMINIO = "https://presupuestos.arandadeduero.dev/"
 CARGANDO = '<p class="cargando wrap">Cargando…</p>'
+REF_RELATIVA = re.compile(r'((?:href|src)=")(?!https?:|data:|#|/)([^"]*")')
 PLANTILLA = re.compile(r'\s*<template id="contenido-estatico">(.*?)</template>\n?', re.S)
 RAIZ = Path(__file__).resolve().parents[1]
 
@@ -143,11 +150,11 @@ def _publicar_estaticos(site: Path, dist: Path, manifiesto: dict) -> None:
         (dist / nombre).write_bytes(datos)
 
 
-def fecha_de_git(site: Path, ruta: str) -> str:
-    """Fecha (AAAA-MM-DD) del último commit que toca `ruta` (relativa a la carpeta que contiene site/).
+def fecha_de_git(site: Path, ruta) -> str:
+    """Fecha (AAAA-MM-DD) del último commit que toca `ruta` (o la lista de rutas; relativas a la carpeta que contiene site/).
     Determinista en CI (el checkout debe traer el historial). Sin git o sin historial: SOURCE_DATE_EPOCH o el día de hoy."""
     try:
-        r = subprocess.run(["git", "log", "-1", "--format=%cs", "--", ruta], cwd=Path(site).resolve().parent, capture_output=True, text=True)
+        r = subprocess.run(["git", "log", "-1", "--format=%cs", "--", *([ruta] if isinstance(ruta, str) else ruta)], cwd=Path(site).resolve().parent, capture_output=True, text=True)
         if r.returncode == 0 and re.fullmatch(r"\d{4}-\d{2}-\d{2}", r.stdout.strip()):
             return r.stdout.strip()
     except OSError:
@@ -166,12 +173,9 @@ def excels_por_anio(site: Path, anios: list) -> dict:
     return salida
 
 
-def url_de(pagina_html: str) -> str:
-    return DOMINIO if pagina_html == "index.html" else DOMINIO + pagina_html
-
-
-def sitemap(secciones: list, lastmod: str) -> str:
-    urls = "".join(f"  <url><loc>{url_de(href)}</loc><lastmod>{lastmod}</lastmod></url>\n" for _, _, href in secciones)
+def sitemap(paginas: list) -> str:
+    """paginas: [(URL absoluta, lastmod)]. Solo van las páginas cuya canónica es ella misma (los alias no)."""
+    urls = "".join(f"  <url><loc>{url}</loc><lastmod>{lastmod}</lastmod></url>\n" for url, lastmod in paginas)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n'
 
 
@@ -193,13 +197,14 @@ def pagina_404(base_html: str, ctx) -> str:
     cabecera = re.sub(r"<title>.*?</title>", "<title>Página no encontrada · Presupuestos de Aranda de Duero</title>", cabecera, flags=re.S)
     cabecera = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="La página que buscas no existe. Mira los presupuestos del Ayuntamiento de Aranda de Duero desde la portada o el menú.">', cabecera)
     cabecera = cabecera.replace('<meta name="color-scheme"', '<meta name="robots" content="noindex">\n  <meta name="color-scheme"', 1)
-    enlaces = "".join(f'<li><a href="{h if h != "index.html" else "./"}">{prerender.esc(t)}</a></li>' for _, t, h in ctx.js["secciones"])
+    urls = ctx.e["urls"]
+    enlaces = "".join(f'<li><a href="{urls[id_]}">{prerender.esc(t)}</a></li>' for id_, t, _ in ctx.js["secciones"])
     contenido = (
         "<h1>Página no encontrada</h1>"
         '<p class="lead">La dirección que has escrito no existe o ha cambiado. Estas son las páginas de la web:</p>'
         f'<ul class="descargas">{enlaces}</ul>'
     )
-    marco = ctx.js["marcos"]["inicio"].replace(ctx.js["marca"], contenido).replace(' aria-current="page"', "")
+    marco = ctx.e["marcos"]["inicio"].replace(ctx.js["marca"], contenido).replace(' aria-current="page"', "")
     return desde_la_raiz(cabecera) + "<body>" + desde_la_raiz(marco) + "\n</body>\n</html>\n"
 
 
@@ -223,13 +228,40 @@ def build(site: Path, dist: Path) -> dict:
         shutil.copy2(p, dist / "vendor" / p.name)
 
     escudo = manifiesto["img/escudo.png"]
-    actualizado = fecha_de_git(site, f"{site.name}/data")
     lastmod = fecha_de_git(site, site.name)
+    codigo = fecha_de_git(site, [site.name, f":(exclude){site.name}/data"])  # lo que no son datos: HTML, JS, CSS
+    actualizado = fecha_de_git(site, f"{site.name}/data")
     js = prerender.exportar_js(site, escudo, actualizado)
     indice = json.loads((site / "data" / "index.json").read_text(encoding="utf-8"))
-    ctx = prerender.Contexto(site, js, carpeta_datos, actualizado, escudo, excels_por_anio(site, [a["anio"] for a in indice["anios"]]))
+    anios = [a["anio"] for a in indice["anios"]]
+    ultimo = indice["ultimo"]
+    ctx = prerender.Contexto(site, js, carpeta_datos, actualizado, escudo, excels_por_anio(site, anios))
     ids = {href: id_ for id_, _, href in js["secciones"]}
     textos = {href: texto for _, texto, href in js["secciones"]}
+    paginas_sitemap = []  # (URL absoluta, lastmod) de las páginas cuya canónica es ella misma
+
+    def emitir(destino: str, base: str, plantilla, id_: str, texto: str, vista, anio_url, canonica: str, titulos, fecha: str):
+        """Escribe dist/<destino>. `anio_url`: año de la carpeta (None en la raíz); `canonica`: URL canónica; `titulos`: (título, descripción) o None."""
+        prefijo = "../" if anio_url is not None else ""
+        html = REF_RELATIVA.sub(lambda m: m.group(1) + prefijo + m.group(2), base)
+        atributos = f'data-datos="{prefijo}{carpeta_datos}" data-escudo="{prefijo}{escudo}" data-actualizado="{actualizado}" data-raiz="{prefijo}" data-ultimo="{ultimo}"'
+        if anio_url is not None:
+            atributos += f' data-anio="{anio_url}"'
+        html = html.replace('<html lang="es">', f'<html lang="es" {atributos}>', 1)
+        html = html.replace(CARGANDO, prerender.montar(vista, id_, plantilla), 1)
+        titulo, descripcion = titulos if titulos else (None, None)
+        html = seo.poner_cabecera(html, titulo, descripcion, canonica)
+        # Migas con el año: las páginas de /<año>/ y los alias de la raíz del último año (que son esa misma página)
+        anio_migas = anio_url if anio_url is not None else (vista.anio if id_ in seo.PAGINAS_ANIO and id_ != "inicio" else None)
+        url_propia = seo.DOMINIO + destino.removesuffix("index.html")
+        extra = seo.precarga(site, dist, vista, manifiesto, id_, html, prefijo) + seo.bloque_jsonld(seo.nodos(id_, texto, canonica, vista, anio_migas))
+        html = html.replace("</head>", extra + "</head>", 1)
+        (dist / destino).parent.mkdir(parents=True, exist_ok=True)
+        (dist / destino).write_text(html, encoding="utf-8")
+        manifiesto[destino] = destino
+        if canonica == url_propia:
+            paginas_sitemap.append((url_propia, fecha))
+
     for pagina in sorted(site.glob("*.html")):
         html = pagina.read_text(encoding="utf-8")
 
@@ -240,8 +272,7 @@ def build(site: Path, dist: Path) -> dict:
             return m.group(1) + manifiesto[ref] + m.group(3)
 
         html = REF_HTML.sub(cambia, html)
-        html, n = re.subn(r"<html lang=\"es\">", f'<html lang="es" data-datos="{carpeta_datos}" data-escudo="{escudo}" data-actualizado="{actualizado}">', html, count=1)
-        if n != 1:
+        if '<html lang="es">' not in html:
             raise ValueError(f'{pagina.name}: falta <html lang="es">')
         if pagina.name not in ids:
             raise ValueError(f"{pagina.name} no está en el menú de layout.js (SECCIONES)")
@@ -249,16 +280,31 @@ def build(site: Path, dist: Path) -> dict:
         html = PLANTILLA.sub("\n", html)
         if CARGANDO not in html:
             raise ValueError(f"{pagina.name}: falta {CARGANDO}")
-        html = html.replace(CARGANDO, prerender.montar(ctx, ids[pagina.name], plantilla.group(1).strip() if plantilla else None), 1)
+        plantilla = plantilla.group(1).strip() if plantilla else None
         id_ = ids[pagina.name]
-        extra = seo.precarga(site, dist, ctx, manifiesto, id_, html) + seo.bloque_jsonld(seo.nodos(id_, pagina.name, textos[pagina.name], ctx, manifiesto))
-        html = html.replace("</head>", extra + "</head>", 1)
-        (dist / pagina.name).write_text(html, encoding="utf-8")
-        manifiesto[pagina.name] = pagina.name
+        texto = textos[pagina.name]
 
-    (dist / "404.html").write_text(pagina_404((dist / "index.html").read_text(encoding="utf-8"), ctx), encoding="utf-8")
+        # Raíz: la portada, las páginas sin año y, de las que dependen del año, un alias del último año con la canónica en su carpeta
+        if id_ == "inicio":
+            canonica = seo.DOMINIO
+        elif id_ in seo.PAGINAS_ANIO:
+            canonica = seo.DOMINIO + seo.ruta_anio(id_, ultimo)
+        else:
+            canonica = seo.DOMINIO + pagina.name
+        titulos = seo.textos_anio(id_, ultimo) if id_ in seo.PAGINAS_ANIO and id_ != "inicio" else None
+        emitir(pagina.name, html, plantilla, id_, texto, ctx.para(None), None, canonica, titulos, lastmod)
+
+        # Una carpeta por año con las páginas que dependen de él
+        if id_ in seo.PAGINAS_ANIO:
+            for anio in anios:
+                canonica = seo.DOMINIO if id_ == "inicio" and anio == ultimo else seo.DOMINIO + seo.ruta_anio(id_, anio)
+                fecha = max(fecha_de_git(site, f"{site.name}/data/{anio}"), codigo)
+                destino = "index.html" if id_ == "inicio" else pagina.name
+                emitir(f"{anio}/{destino}", html, plantilla, id_, texto, ctx.para(anio), anio, canonica, seo.textos_anio(id_, anio), fecha)
+
+    (dist / "404.html").write_text(pagina_404((dist / "index.html").read_text(encoding="utf-8"), ctx.para(None)), encoding="utf-8")
     manifiesto["404.html"] = "404.html"
-    (dist / "sitemap.xml").write_text(sitemap(js["secciones"], lastmod), encoding="utf-8")
+    (dist / "sitemap.xml").write_text(sitemap(sorted(paginas_sitemap)), encoding="utf-8")
     manifiesto["sitemap.xml"] = "sitemap.xml"
 
     (dist / "build-manifest.json").write_text(json.dumps(manifiesto, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")

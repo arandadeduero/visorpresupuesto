@@ -14,6 +14,8 @@ sys.path.insert(0, str(ROOT / "tools"))
 import build_site  # noqa: E402
 
 PAGINAS = sorted(p.name for p in SITE.glob("*.html"))
+SIN_ANIO = ["comparar.html", "guia.html", "metodologia.html", "descargas.html"]
+ULTIMO = json.loads((SITE / "data" / "index.json").read_text(encoding="utf-8"))["ultimo"]
 BLOQUE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
 
 
@@ -80,8 +82,12 @@ def test_las_paginas_interiores_tienen_migas_de_pan(dist, pagina):
     migas = [n for n in nodos(dist, pagina) if n["@type"] == "BreadcrumbList"]
     assert len(migas) == 1
     items = migas[0]["itemListElement"]
-    assert [i["position"] for i in items] == [1, 2]
-    assert items[0]["item"] == DOMINIO and items[1]["item"] == DOMINIO + pagina
+    if pagina in SIN_ANIO:
+        assert [i["position"] for i in items] == [1, 2]
+        assert items[0]["item"] == DOMINIO and items[1]["item"] == DOMINIO + pagina
+    else:  # alias del último año: las migas son las de su página en /<último año>/ (ver test_anios.py)
+        assert [i["position"] for i in items] == [1, 2, 3]
+        assert items[0]["item"] == DOMINIO and items[2]["item"] == DOMINIO + f"{ULTIMO}/{pagina}"
 
 
 def test_descargas_tiene_un_dataset_por_anio_con_distribuciones_que_existen(dist):
@@ -108,7 +114,7 @@ def test_descargas_tiene_un_dataset_por_anio_con_distribuciones_que_existen(dist
 
 def test_calculadora_es_una_aplicacion_web_gratuita(dist):
     app = next(n for n in nodos(dist, "calculadora.html") if n["@type"] == "WebApplication")
-    assert app["isAccessibleForFree"] is True and app["offers"]["price"] == "0" and app["url"] == DOMINIO + "calculadora.html"
+    assert app["isAccessibleForFree"] is True and app["offers"]["price"] == "0" and app["url"] == DOMINIO + f"{ULTIMO}/calculadora.html"
 
 
 def test_la_guia_tiene_un_defined_term_por_termino(dist):

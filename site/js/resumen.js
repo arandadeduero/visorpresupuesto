@@ -1,6 +1,7 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros, etiquetaCapitulo } from "./format.js";
 import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
+import { urlPagina } from "./rutas.js";
 import { pintaQuesito, articulosDeIngresos } from "./quesito.js";
 import { mayoresCambios } from "./insights.js";
 
@@ -43,7 +44,7 @@ runPage("resumen", async ({ anio, main, load }) => {
     <p class="lead">El Ayuntamiento prevé ingresar <strong>${formatEuros(r.totalIngresos)}</strong> y gastar <strong>${formatEuros(r.totalGastos)}</strong>${equilibrado ? ": el presupuesto está equilibrado" : ""}.</p>
     ${(r.notas ?? []).map((n) => `<div class="aviso"><h3>Una diferencia que viene en el Excel</h3><p>${esc(n)}</p></div>`).join("")}
     ${prestamos > 0 ? `<div class="aviso"><h3>Una aclaración sobre los ingresos</h3>
-      <p>De los ingresos previstos, <strong>${formatEuros(prestamos)}</strong> son préstamos que se podrían pedir para pagar inversiones. No es dinero que ya se tenga: se explica en las páginas de <a href="inversiones.html?anio=${anio}">inversiones</a> y de <a href="deuda.html?anio=${anio}">deuda</a>.</p></div>` : ""}
+      <p>De los ingresos previstos, <strong>${formatEuros(prestamos)}</strong> son préstamos que se podrían pedir para pagar inversiones. No es dinero que ya se tenga: se explica en las páginas de <a href="${urlPagina("inversiones", anio)}">inversiones</a> y de <a href="${urlPagina("deuda", anio)}">deuda</a>.</p></div>` : ""}
     <div class="dos-columnas"><div id="q-ingresos"></div><div id="q-gastos"></div></div>
     ${bloque("De dónde sale el dinero", r.ingresosPorCapitulo, r.totalIngresos)}
     ${bloque("En qué se gasta", r.gastosPorCapitulo, r.totalGastos)}
