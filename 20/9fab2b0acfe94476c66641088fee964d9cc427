@@ -1,0 +1,35 @@
+site/js/layout.js
+  s_c524ba238f0f5a::t_e060652d466468 156
+site/js/descargas.js
+  s_c524ba238f0f5a::t_e060652d466468 19-21
+LICENSE-DATOS.md
+  s_c524ba238f0f5a::t_e060652d466468 1-13
+tools/seo.py
+  s_c524ba238f0f5a::t_e060652d466468 100,121-122
+tools/prerender.py
+  s_c524ba238f0f5a::t_e060652d466468 374-378
+site/metodologia.html
+  s_c524ba238f0f5a::t_e060652d466468 64-66
+tools/tests/test_licencia.py
+  s_c524ba238f0f5a::t_1692ba10157295 1-71
+README.md
+  s_c524ba238f0f5a::t_e060652d466468 209-210
+tools/tests/test_jsonld.py
+  s_c524ba238f0f5a::t_38c652599e8b90 102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "209fab2b0acfe94476c66641088fee964d9cc427",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
