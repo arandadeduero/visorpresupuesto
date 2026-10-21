@@ -1,0 +1,114 @@
+site/js/deuda.js
+  s_c524ba238f0f5a::t_fb31a845367109 5
+tools/build_site.py
+  s_c524ba238f0f5a::t_1da0f7952b402c 12-15,21,23,25,28-30,37-40,145-203,224-229,240,243-249,253-257,267
+tools/tests/test_site.py
+  s_c524ba238f0f5a::t_cce408916c27db 13,15
+site/guia.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+site/calculadora.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+tools/prerender.py
+  s_c524ba238f0f5a::t_71cdedc927a41c 377-378
+  s_c524ba238f0f5a::t_d9ec42c0d86279 80-82,85,87
+  s_c524ba238f0f5a::t_bff04ce4fed548 1-79,83-84,86,88-376,379-384
+site/js/metodologia.js
+  s_c524ba238f0f5a::t_f0e88ee9bdba64 1-9
+site/comparar.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+site/js/tema.test.js
+  s_c524ba238f0f5a::t_cce408916c27db 181
+site/index.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+tools/tests/test_seo.py
+  s_c524ba238f0f5a::t_1e5523530d0a22 1-41,46-100,102-103,105,107,109,111-306
+  s_c524ba238f0f5a::t_e7d0727cf821ff 42-45,101,104,106,108,110
+site/js/data.test.js
+  s_c524ba238f0f5a::t_09a0f12b56df36 1-50
+site/resumen.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+site/css/styles.css
+  s_c524ba238f0f5a::t_3f87b39d720eb4 271-276
+  s_c524ba238f0f5a::t_64a5796b99b458 439-441
+.github/workflows/pages.yml
+  s_c524ba238f0f5a::t_633ac6a33d1dc5 29-30,34-36,58-60
+site/gastos.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+site/js/layout.js
+  s_c524ba238f0f5a::t_92fb09b4fb69fe 5-6,31,41-55,75-85,91,122-124,126-128,130-133,140,144,150,152-155,172,188-189,199
+  s_c524ba238f0f5a::t_621be9d500ce3a 125,129,151
+  s_c524ba238f0f5a::t_6dea8f1b79612b 56-74,134-136,148
+site/ingresos.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+site/descargas.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+site/js/guia.js
+  s_c524ba238f0f5a::t_92fb09b4fb69fe 3,11
+  s_c524ba238f0f5a::t_6b6358c0b7b155 2,6,10
+site/js/calidad.test.js
+  s_c524ba238f0f5a::t_3f87b39d720eb4 12
+site/js/menu.test.js
+  s_c524ba238f0f5a::t_3f87b39d720eb4 5,12,23-24,29-33,40-68
+tools/tests/test_build_site.py
+  s_c524ba238f0f5a::t_60f47e9a7b62dd 29
+  s_c524ba238f0f5a::t_cce408916c27db 32
+  s_c524ba238f0f5a::t_2ae1d69487e540 41
+site/js/home.js
+  s_c524ba238f0f5a::t_654492cf2e30e4 1,22,40,43-44,50,65,67-85,87-90
+site/data/guia-terminos.json
+  s_c524ba238f0f5a::t_07dbfae698d24d 1-110
+site/js/rendimiento.test.js
+  s_c524ba238f0f5a::t_b488157078d929 1-24
+site/js/inversiones.js
+  s_c524ba238f0f5a::t_b0c93780736579 5,37
+site/inversiones.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+site/js/data.js
+  s_c524ba238f0f5a::t_6b6358c0b7b155 21-37,47
+site/subvenciones.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+tools/exportar_js.mjs
+  s_c524ba238f0f5a::t_b297ad83dc07af 1-2,4-8,11-16,18-24,26-34,43-48,50-52
+  s_c524ba238f0f5a::t_b3962b5c920d18 17,35-42,49
+  s_c524ba238f0f5a::t_7c51bd32a5f4fe 3,9-10,25
+tools/tests/test_analitica.py
+  s_c524ba238f0f5a::t_cce408916c27db 36
+.github/workflows/ci.yml
+  s_c524ba238f0f5a::t_633ac6a33d1dc5 16-17,24-27
+  s_c524ba238f0f5a::t_ddf0a14a768bae 28
+tools/tests/test_social.py
+  s_c524ba238f0f5a::t_621be9d500ce3a 76-77,118-119,122,127
+site/deuda.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+site/indicadores.html
+  s_c524ba238f0f5a::t_05634a0b193101 10-11,16-17,25-26
+site/js/format.js
+  s_c524ba238f0f5a::t_92fb09b4fb69fe 31-36
+site/metodologia.html
+  s_c524ba238f0f5a::t_f0e88ee9bdba64 38-66
+  s_c524ba238f0f5a::t_d4974478ed143b 1-9,13-15,19-24,27-37,67,69-70
+  s_c524ba238f0f5a::t_05634a0b193101 10-12,16-18,25-26,68
+site/js/deuda-texto.js
+  s_c524ba238f0f5a::t_b0c93780736579 30-36
+  s_c524ba238f0f5a::t_fb31a845367109 2,14-29
+README.md
+  s_c524ba238f0f5a::t_673063e849115e 137,143-160
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_c524ba238f0f5a::t_ace9150aede1da 192-209
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "48d9f60a5f3f3d5dbd4501eba5dceb44206bda0c",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
