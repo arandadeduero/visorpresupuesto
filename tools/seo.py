@@ -97,7 +97,7 @@ def organizacion() -> dict:
 
 
 def dataset(ctx, anio: int) -> dict:
-    """Un conjunto de datos por año: los JSON de la web (con huella) y los Excel originales. Sin licencia: pendiente de decidir."""
+    """Un conjunto de datos por año: los JSON de la web (con huella) y los Excel originales, con licencia CC BY 4.0."""
     distribucion = [
         {
             "@type": "DataDownload",
@@ -118,6 +118,8 @@ def dataset(ctx, anio: int) -> dict:
         "url": DOMINIO + "descargas.html",
         "inLanguage": "es",
         "isAccessibleForFree": True,
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "creditText": "Ayuntamiento de Aranda de Duero",
         "creator": {"@id": ID_ORGANIZACION},
         "temporalCoverage": str(anio),
         "spatialCoverage": {"@type": "Place", "name": "Aranda de Duero, Burgos, España"},

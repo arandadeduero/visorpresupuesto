@@ -206,4 +206,5 @@ npm pack chart.js     # descargar la última versión
 
 ## Licencia
 
-[MIT](LICENSE) © 2026 Ayuntamiento de Aranda de Duero. Chart.js tiene su propia licencia (MIT), en `site/vendor/`.
+- **Código**: [MIT](LICENSE) © 2026 Ayuntamiento de Aranda de Duero. Chart.js tiene su propia licencia (MIT), en `site/vendor/`; Outfit, la suya (SIL OFL 1.1), en `site/fonts/`.
+- **Datos** (los Excel de `2024/`, `2025/` y `2026/` y los JSON de `site/data/`): [Creative Commons Reconocimiento 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), ver [LICENSE-DATOS.md](LICENSE-DATOS.md). Para citar: «Fuente: Ayuntamiento de Aranda de Duero (presupuestos.arandadeduero.dev), licencia CC BY 4.0». Los `Dataset` del JSON-LD (`tools/seo.py`) y la página de descargas la declaran.
