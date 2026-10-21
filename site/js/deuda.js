@@ -1,6 +1,6 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
-import { PALETTE, barChart } from "./charts.js";
+import { barChart, colorPorPunto } from "./charts.js";
 import { tablaHtml } from "./ui.js";
 import { explicaDosPrestamos } from "./deuda-texto.js";
 
@@ -26,8 +26,9 @@ runPage("deuda", async ({ anio, main, load }) => {
   const vivaInicio = d.prestamos.reduce((s, p) => s + p.vivaInicio, 0);
   const prestamoInversiones = inv.fuentes.prestamo;
   const pv = d.previsto;
-  const real = PALETTE[0];
-  const prevision = PALETTE[4];
+  // Años cerrados en azul (--serie-1) y previsión en celeste (--serie-5)
+  const real = "--serie-1";
+  const prevision = "--serie-5";
 
   main.innerHTML = `
     <h1>Deuda del Ayuntamiento <span class="muted">${anio}</span></h1>
@@ -39,7 +40,7 @@ runPage("deuda", async ({ anio, main, load }) => {
     <h2>Cómo evoluciona la deuda actual</h2>
     <p class="muted">Solo con los préstamos que ya existen. Cada columna es lo que se debe a 31 de diciembre.</p>
     <div class="grafico"><canvas id="grafico" role="img" aria-label="Deuda a 31 de diciembre de cada año: baja desde ${formatEuros(d.serie[0].viva)} en ${d.serie[0].anio} hasta cero en ${d.serie.at(-1).anio}"></canvas></div>
-    <ul class="leyenda"><li><i style="background:${real}"></i>Deuda a final de año (años cerrados)</li><li><i style="background:${prevision}"></i>Previsión con los préstamos actuales</li></ul>
+    <ul class="leyenda"><li><i class="serie-1"></i>Deuda a final de año (años cerrados)</li><li><i class="serie-5"></i>Previsión con los préstamos actuales</li></ul>
     <details><summary>Ver como tabla</summary>${tablaHtml([{ texto: "Final de año" }, { texto: "Deuda", num: true }], d.serie.map((s) => `<tr><td>${s.anio}</td><td class="num">${formatEuros(s.viva)}</td></tr>`))}</details>
 
     <h2>Los préstamos actuales</h2>
@@ -57,6 +58,6 @@ runPage("deuda", async ({ anio, main, load }) => {
   const colores = d.serie.map((s) => (s.anio < anio ? real : prevision));
   barChart(main.querySelector("#grafico"), {
     labels: d.serie.map((s) => String(s.anio)),
-    datasets: [{ label: "Deuda a 31 de diciembre", data: d.serie.map((s) => s.viva), backgroundColor: colores, borderRadius: 4 }],
+    datasets: [{ label: "Deuda a 31 de diciembre", data: d.serie.map((s) => s.viva), backgroundColor: colorPorPunto(colores), borderRadius: 4 }],
   });
 });

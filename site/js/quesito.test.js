@@ -1,19 +1,20 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { datosQuesito, datosArticulos, tonoArticulo, articulosDeIngresos, COLOR_CAPITULO } from "./quesito.js";
+import { datosQuesito, datosArticulos, tonoArticulo, articulosDeIngresos, claseCapitulo, variableCapitulo, NUM_TONOS } from "./quesito.js";
 
 const leer = (r) => JSON.parse(readFileSync(new URL(r, import.meta.url), "utf8"));
 const resumen = leer("../data/2026/resumen.json");
 
-test("cada capítulo tiene un color propio y estable", () => {
-  const colores = Object.values(COLOR_CAPITULO);
-  assert.equal(colores.length, 9);
-  assert.equal(new Set(colores).size, 9);
-  assert.ok(colores.every((c) => /^#[0-9a-f]{6}$/i.test(c)));
-  assert.equal(COLOR_CAPITULO[6], "#0083c1"); // obras e inversiones: el azul de la portada
-  assert.equal(COLOR_CAPITULO[2], "#f5a800"); // servicios
-  assert.equal(COLOR_CAPITULO[1], "#ce0e2d"); // personal
+test("cada capítulo se pinta con la clase y la variable CSS de su capítulo (sin colores en JS)", () => {
+  const clases = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((c) => claseCapitulo(c));
+  assert.equal(new Set(clases).size, 9);
+  assert.equal(claseCapitulo(6), "cap-6");
+  assert.equal(claseCapitulo(6, 2), "cap-6-tono-2");
+  assert.equal(variableCapitulo(6), "--cap-6-tono-0");
+  assert.equal(variableCapitulo(6, 2), "--cap-6-tono-2");
+  const fuente = readFileSync(new URL("./quesito.js", import.meta.url), "utf8");
+  assert.doesNotMatch(fuente, /#[0-9a-fA-F]{3,6}\b/, "quesito.js no debe escribir colores");
 });
 
 test("los gastos por capítulo se ordenan de mayor a menor y suman el 100 %", () => {
@@ -22,7 +23,8 @@ test("los gastos por capítulo se ordenan de mayor a menor y suman el 100 %", ()
   assert.deepEqual(items.map((i) => i.cap).slice(0, 3), [6, 2, 1]);
   assert.ok(items.every((x, i) => i === 0 || items[i - 1].valor >= x.valor));
   assert.ok(Math.abs(items.reduce((s, i) => s + i.pct, 0) - 100) < 0.01);
-  assert.equal(items[0].color, COLOR_CAPITULO[6]);
+  assert.equal(items[0].clase, "cap-6");
+  assert.equal(items[0].variable, "--cap-6-tono-0");
   assert.equal(items[0].nombre, "Cap 6 - Obras e inversiones");
   assert.equal(items[0].oficial, "Inversiones reales");
 });
@@ -33,7 +35,7 @@ test("los ingresos por capítulo mantienen los colores y descartan los capítulo
   assert.equal(items.length, 8);
   assert.ok(items.every((i) => i.valor > 0));
   const prestamos = items.find((i) => i.cap === 9);
-  assert.equal(prestamos.color, COLOR_CAPITULO[9]);
+  assert.equal(prestamos.clase, "cap-9");
   assert.ok(prestamos.pct > 31 && prestamos.pct < 32);
 });
 
@@ -42,11 +44,9 @@ const ANIOS = [2024, 2025, 2026];
 const ingresosDe = (a) => leer(`../data/${a}/ingresos.json`);
 const gastosDe = (a) => leer(`../data/${a}/gastos.json`);
 
-test("los tonos de un capítulo empiezan en su color, son colores válidos y no se repiten", () => {
-  const tonos = [0, 1, 2, 3, 4, 5].map((i) => tonoArticulo("#0083c1", i));
-  assert.equal(tonos[0], "#0083c1");
-  assert.ok(tonos.every((t) => /^#[0-9a-f]{6}$/.test(t)));
-  assert.equal(new Set(tonos).size, tonos.length);
+test("los tonos de un capítulo son seis, empiezan en el color del capítulo y se repiten en ciclo", () => {
+  assert.equal(NUM_TONOS, 6);
+  assert.deepEqual([0, 1, 2, 3, 4, 5, 6, 7].map(tonoArticulo), [0, 1, 2, 3, 4, 5, 0, 1]);
 });
 
 for (const anio of ANIOS) {
@@ -55,7 +55,7 @@ for (const anio of ANIOS) {
     const { items, total, grupos } = datosArticulos(d.capitulos, articulosDeIngresos(d));
     assert.ok(Math.abs(items.reduce((s, i) => s + i.valor, 0) - total) < 0.01);
     assert.ok(Math.abs(items.reduce((s, i) => s + i.pct, 0) - 100) < 0.01);
-    assert.ok(items.every((i) => i.valor > 0 && Number.isFinite(i.pct) && i.nombre && i.color));
+    assert.ok(items.every((i) => i.valor > 0 && Number.isFinite(i.pct) && i.nombre && i.clase && i.variable));
     const caps = items.map((i) => i.cap);
     assert.deepEqual(caps, grupos.flatMap((g) => g.items.map((i) => i.cap)));
     assert.ok(grupos.every((g, i) => i === 0 || grupos[i - 1].valor >= g.valor));
@@ -77,7 +77,7 @@ test("2026: los préstamos recibidos (artículo 91) son el 31,4 % de los ingreso
   assert.equal(prestamos.nombre, "Préstamos recibidos");
   assert.equal(prestamos.valor, 20161623.64);
   assert.ok(prestamos.pct > 31 && prestamos.pct < 32);
-  assert.equal(prestamos.color, COLOR_CAPITULO[9]);
+  assert.equal(prestamos.clase, "cap-9");
 });
 
 test("los artículos pequeños de un capítulo se agrupan en «Otros artículos del Cap N», una sola vez por capítulo", () => {
@@ -106,7 +106,8 @@ test("la leyenda de capítulos es una tabla con cabecera (ordenable): capítulo,
   const cabeceras = [...html.matchAll(/<th[^>]*>(.*?)<\/th>/g)].map((m) => m[1].replace(/<[^>]+>/g, "").trim());
   assert.deepEqual(cabeceras, ["Capítulo", "% del total", "Importe"]);
   assert.equal([...html.matchAll(/<tbody>[\s\S]*<\/tbody>/g)][0][0].split("<tr").length - 1, items.length);
-  for (const i of items) assert.ok(html.includes(`background:${i.color}`), i.nombre);
+  for (const i of items) assert.ok(html.includes(`class="muestra ${i.clase}"`), i.nombre);
+  assert.doesNotMatch(html, /style=/);
   assert.ok(html.includes("Cap 9 - Préstamos"));
   assert.match(html, /31,4\s%/);
 });

@@ -2,6 +2,7 @@
 import { esc } from "./layout.js";
 import { formatEuros, formatVariation } from "./format.js";
 import { porHabitante } from "./insights.js";
+import { claseAncho } from "./escalas.js";
 
 /** «▲ +5 % frente al año anterior», «nuevo este año»… con el color y la flecha adecuados (nunca solo color). */
 export function variacionHtml(actual, anterior, etiqueta = "frente al año anterior") {
@@ -15,13 +16,12 @@ export function variacionHtml(actual, anterior, etiqueta = "frente al año anter
 
 /** Fila con barra proporcional a `max`. Si `clicable`, es un botón que despliega. */
 export function filaHtml({ id, nombre, title, importe, max, extra = "", clicable = false }) {
-  const ancho = max > 0 ? Math.max(0, Math.min(100, (importe / max) * 100)) : 0;
   const tag = clicable ? "button" : "div";
   const attrs = clicable ? ` type="button" data-id="${esc(id)}" aria-expanded="false"` : "";
   const t = title ? ` title="${esc(title)}"` : "";
   return `<${tag} class="fila"${attrs}${t}>
     <span class="nombre">${clicable ? "▸ " : ""}${esc(nombre)}</span><span class="importe">${formatEuros(importe)}</span>
-    <span class="pista" aria-hidden="true"><span class="relleno" style="width:${ancho.toFixed(1)}%"></span></span>
+    <span class="pista" aria-hidden="true"><span class="relleno ${claseAncho(importe, max)}"></span></span>
     ${extra ? `<span class="extra">${extra}</span>` : ""}
   </${tag}>`;
 }

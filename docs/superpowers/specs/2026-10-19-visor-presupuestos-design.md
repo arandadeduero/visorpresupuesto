@@ -168,3 +168,14 @@ Descartado: series históricas 2010–2024, medias provincial, autonómica y nac
 ## Despliegue con huellas
 
 Cloudflare cachea css/js 4 h, así que el despliegue publica `dist/`, generado por `tools/build_site.py`: css, js (módulos con los `import` reescritos, huella en orden topológico), vendor y la carpeta de datos (`data-<huella>/`, indicada en `<html data-datos>` y leída solo desde `data.js`) llevan el hash del contenido en el nombre. Los HTML conservan nombre (caché corta, 10 min). `site/` sigue funcionando sin build. Detalles y uso local en el README.
+
+## Tema claro/oscuro, variables y sin estilos en línea
+
+Petición: «una versión en oscuro; sin estilos inline, solo CSS; todos los colores son variables; que claro/oscuro haga match del sistema». Decisiones:
+
+- **Solo el sistema decide** (`prefers-color-scheme`, `color-scheme: light dark`); sin interruptor manual. Reacciona en vivo, incluidos los gráficos.
+- **Tokens en dos capas:** paleta municipal como constantes y tokens semánticos que las referencian. El oscuro redefine solo los semánticos (y los de capítulo/serie/tono), con sus propias constantes (`--n-*`, `--rojo-d`…). Un test impide literales de color fuera de los bloques `:root` y otro fija el contraste (4,5:1 texto; 3:1 texto grande, foco y gráficos) de los pares reales en ambos temas.
+- **Valores dinámicos sin inline:** escalas de clases generadas (`.ancho-N` 0–100 %, `.crece-N` 1–100, redondeadas; todo lo que es > 0 se ve) y clases de color (`.serie-N`, `.cap-N-tono-K`) que fijan `--color`/`--sobre`. Los seis tonos de los artículos son `--cap-N-tono-K = color-mix(--cap-N, --tono-K)`; en oscuro los tonos solo se aclaran.
+- **Chart.js:** los colores se leen de las variables (`colorVar`, normalizadas a `rgb()` mediante un canvas) y se pasan como opciones scriptable; al cambiar el esquema se llama a `update()` en todas las instancias.
+- **CSP por `<meta>`** (`style-src 'self'`, `script-src 'self'`): activada, porque Chart.js solo usa CSSOM. El script de aviso de `file://` pasa a fichero propio. `frame-ancestors` no se puede fijar por `<meta>`, así que no se incluye.
+- El tono del texto sobre los bloques de color de la portada en claro se mantiene (3:1, texto grande en negrita), como antes.

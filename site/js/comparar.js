@@ -2,7 +2,8 @@
 import { runPage, esc } from "./layout.js";
 import { getIndex, loadData } from "./data.js";
 import { formatEuros } from "./format.js";
-import { barChart } from "./charts.js";
+import { barChart, colorPorPunto } from "./charts.js";
+import { claseAncho } from "./escalas.js";
 import { tablaHtml } from "./ui.js";
 import { elegirPareja, filasVista, ordenar, frase, titular, serieEvolucion, filasIndicadores } from "./comparacion.js";
 
@@ -19,9 +20,10 @@ const ORDENES = [
   ["pct", "Mayor cambio en %"],
   ["nombre", "Nombre (A-Z)"],
 ];
-const COLOR_A = "#0083c1";
-const COLOR_B = "#f5a800";
-const COLOR_OTRO = "#646464";
+// Año A, año B y «otros años»: series de color del tema (clases .serie-N y variables --serie-N de styles.css)
+const SERIE_A = "serie-1";
+const SERIE_B = "serie-2";
+const SERIE_OTRO = "serie-4";
 
 const num = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 1 });
 const euros = (v, modo) => (v === null || v === undefined ? "—" : modo === "habitante" ? formatEuros(v) : formatEuros(v, { compact: false }));
@@ -88,7 +90,7 @@ runPage("comparar", async ({ main }) => {
     const tg = titular(dA, dB, "gastos", modo);
     const ti = titular(dA, dB, "ingresos", modo);
     const tarjeta = (titulo, t) => `<section class="card"><h2 class="card-titulo">${titulo}</h2>
-      <p class="comp-cifras"><span><i class="punto" style="background:${COLOR_A}"></i>${a}: <strong>${euros(t.a, modo)}</strong></span><span><i class="punto" style="background:${COLOR_B}"></i>${b}: <strong>${euros(t.b, modo)}</strong></span></p>
+      <p class="comp-cifras"><span><i class="punto ${SERIE_A}"></i>${a}: <strong>${euros(t.a, modo)}</strong></span><span><i class="punto ${SERIE_B}"></i>${b}: <strong>${euros(t.b, modo)}</strong></span></p>
       <p class="muted">${t.delta === null ? "" : `${t.delta > 0 ? "Sube" : t.delta < 0 ? "Baja" : "Igual"} ${conSigno(t.delta, modo)}${t.pct === null ? "" : ` (${pctTxt(t.pct)})`} de ${a} a ${b}`}</p></section>`;
 
     const pestanas = VISTAS.map((v) => `<button type="button" data-vista="${v.id}" aria-pressed="${v.id === vista}">${v.texto}</button>`).join("");
@@ -108,21 +110,20 @@ runPage("comparar", async ({ main }) => {
     } else {
       const filas = ordenar(filasVista(vista, dA, dB, modo), estado.orden);
       const max = Math.max(0, ...filas.map((f) => Math.max(f.a ?? 0, f.b ?? 0)));
-      const ancho = (v) => (v && max > 0 ? Math.min(100, (v / max) * 100).toFixed(1) : "0");
       const claves = filas.map((f) => f.clave);
       if (!claves.includes(estado.clave)) estado.clave = ordenar(filas, "importe")[0]?.clave ?? null;
-      const barra = (anio, v, color) => `<div class="par-barra"><span class="par-anio">${anio}</span><span class="pista" aria-hidden="true"><span class="relleno" style="width:${ancho(v)}%;background:${color}"></span></span><span class="par-imp">${euros(v, modo)}</span></div>`;
+      const barra = (anio, v, serie) => `<div class="par-barra"><span class="par-anio">${anio}</span><span class="pista" aria-hidden="true"><span class="relleno ${serie} ${claseAncho(v, max)}"></span></span><span class="par-imp">${euros(v, modo)}</span></div>`;
       const destacadas = [...filas].filter((f) => f.estado !== "igual").sort((x, y) => Math.abs(y.delta) - Math.abs(x.delta)).slice(0, 3);
       const unidad = modo === "habitante" ? " Los importes son euros por habitante, con la población de cada año." : "";
       cuerpo = `
         <h2>${conf.texto}: ${a} frente a ${b}</h2>
         ${destacadas.length ? `<h3>Lo más destacado</h3><ul class="frases">${destacadas.map((f) => `<li>${esc(frase(f, a, b, { verbo: conf.verbo, modo }))}</li>`).join("")}</ul>` : ""}
         <div class="comp-controles"><label>Ordenar por <select id="orden">${ORDENES.map(([id, t]) => `<option value="${id}"${id === estado.orden ? " selected" : ""}>${t}</option>`).join("")}</select></label>
-          <span class="leyenda"><span><i class="punto" style="background:${COLOR_A}"></i>${a}</span><span><i class="punto" style="background:${COLOR_B}"></i>${b}</span></span></div>
+          <span class="leyenda"><span><i class="punto ${SERIE_A}"></i>${a}</span><span><i class="punto ${SERIE_B}"></i>${b}</span></span></div>
         <ul class="barras pares">${filas
           .map(
             (f) => `<li class="par"><div class="par-cab"><button type="button" class="par-nombre" data-clave="${esc(f.clave)}" title="Ver su evolución en todos los años">${esc(f.nombre)}</button>${f.estado === "nuevo" ? '<span class="etiqueta">nuevo</span>' : f.estado === "desaparece" ? '<span class="etiqueta">desaparece</span>' : ""}</div>
-            ${barra(a, f.a, COLOR_A)}${barra(b, f.b, COLOR_B)}<div class="par-dif">${difHtml(f, modo)}</div></li>`,
+            ${barra(a, f.a, SERIE_A)}${barra(b, f.b, SERIE_B)}<div class="par-dif">${difHtml(f, modo)}</div></li>`,
           )
           .join("")}</ul>
         <h3>Como tabla</h3>
@@ -132,7 +133,7 @@ runPage("comparar", async ({ main }) => {
         )}
         <section id="evolucion"><h2>Evolución en todos los años</h2>
           <label>Ver la evolución de <select id="clave">${ordenar(filas, "nombre").map((f) => `<option value="${esc(f.clave)}"${f.clave === estado.clave ? " selected" : ""}>${esc(f.nombre)}</option>`).join("")}</select></label>
-          <p class="leyenda"><span><i class="punto" style="background:${COLOR_A}"></i>${a}</span><span><i class="punto" style="background:${COLOR_B}"></i>${b}</span><span><i class="punto" style="background:${COLOR_OTRO}"></i>Otros años</span></p>
+          <p class="leyenda"><span><i class="punto ${SERIE_A}"></i>${a}</span><span><i class="punto ${SERIE_B}"></i>${b}</span><span><i class="punto ${SERIE_OTRO}"></i>Otros años</span></p>
           <div class="grafico"><canvas id="evol" role="img" aria-label="Evolución del importe en todos los años"></canvas></div>
           <div id="evol-tabla"></div>
           <p class="muted">${unidad}</p>
@@ -177,12 +178,12 @@ runPage("comparar", async ({ main }) => {
 
   function pintaEvolucion() {
     const serie = serieEvolucion(cargados, estado.vista, estado.clave, estado.modo);
-    const color = (anio) => (anio === estado.a ? COLOR_A : anio === estado.b ? COLOR_B : COLOR_OTRO);
+    const color = (anio) => (anio === estado.a ? "--serie-1" : anio === estado.b ? "--serie-2" : "--serie-4");
     const canvas = main.querySelector("#evol");
     if (typeof Chart !== "undefined") {
       grafico = barChart(canvas, {
         labels: serie.map((p) => String(p.anio)),
-        datasets: [{ label: estado.modo === "habitante" ? "Euros por habitante" : "Euros", data: serie.map((p) => p.valor ?? 0), backgroundColor: serie.map((p) => color(p.anio)), borderRadius: 4 }],
+        datasets: [{ label: estado.modo === "habitante" ? "Euros por habitante" : "Euros", data: serie.map((p) => p.valor ?? 0), backgroundColor: colorPorPunto(serie.map((p) => color(p.anio))), borderRadius: 4 }],
       });
     }
     main.querySelector("#evol-tabla").innerHTML = tablaHtml(

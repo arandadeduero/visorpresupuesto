@@ -3,22 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ce0e2d" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#8f0a20" media="(prefers-color-scheme: dark)">
   <title>Calculadora · Presupuestos de Aranda de Duero</title>
   <link rel="icon" href="data:,">
   <link rel="preload" href="fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/escalas.css">
 </head>
 <body>
   <p class="cargando wrap">Cargando…</p>
-  <script>
-    // Con doble clic (file://) el navegador bloquea los módulos: avisamos en vez de dejar «Cargando…» para siempre.
-    if (location.protocol === "file:") {
-      document.addEventListener("DOMContentLoaded", function () {
-        var p = document.querySelector(".cargando");
-        if (p) p.textContent = "Abre la web desde un servidor, no haciendo doble clic en el fichero (por ejemplo: python3 -m http.server -d site).";
-      });
-    }
-  </script>
+  <script src="js/aviso-file.js"></script>
   <script type="module" src="js/calculadora.js"></script>
 </body>
 </html>
