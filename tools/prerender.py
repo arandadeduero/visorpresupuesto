@@ -371,6 +371,11 @@ def pagina_descargas(ctx: Contexto) -> str:
     return (
         titulo("Descargas")
         + _intro(ctx, "Los datos que alimentan esta web, para que puedas usarlos, revisarlos o compararlos: ficheros JSON de cada año y los Excel originales que publicó el Ayuntamiento.")
+        + (
+            '<h2>Licencia de los datos</h2>'
+            f'<p>Los datos de esta web (los ficheros JSON y los Excel del presupuesto) se publican con la licencia <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">Creative Commons Reconocimiento 4.0 (CC BY 4.0)</a>: puedes copiarlos, redistribuirlos y reutilizarlos, también con fines comerciales, siempre que cites la fuente.</p>'
+            '<p><strong>Cómo citar:</strong> «Fuente: Ayuntamiento de Aranda de Duero (presupuestos.arandadeduero.dev), licencia CC BY 4.0».</p>'
+        )
         + "".join(bloques)
         + f'<p>Todos los Excel están también en el <a href="{REPO}/tree/main/{anio}" rel="noopener">repositorio del proyecto</a>.</p>'
         + '<p class="muted">Los importes son del presupuesto aprobado. Las cifras «por habitante» usan la población indicada en la página de resumen.</p>'

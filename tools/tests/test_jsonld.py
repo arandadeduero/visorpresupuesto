@@ -99,7 +99,7 @@ def test_descargas_tiene_un_dataset_por_anio_con_distribuciones_que_existen(dist
             assert d.get(clave) not in (None, ""), clave
         assert d["inLanguage"] == "es" and d["isAccessibleForFree"] is True
         assert "Aranda de Duero" in d["spatialCoverage"]["name"] and "Burgos" in d["spatialCoverage"]["name"]
-        assert "license" not in d  # pendiente: el usuario aún no ha decidido la licencia de los datos
+        assert d["license"] == "https://creativecommons.org/licenses/by/4.0/"  # datos con CC BY 4.0 (ver LICENSE-DATOS.md)
         json_ = [x for x in d["distribution"] if x["encodingFormat"] == "application/json"]
         assert len(json_) == 6
         for x in json_:
