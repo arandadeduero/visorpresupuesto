@@ -1,0 +1,21 @@
+README.md
+  s_c524ba238f0f5a::t_b861c22b9f5122 93,123-142,167,175
+docs/superpowers/specs/2026-10-19-visor-presupuestos-design.md
+  s_c524ba238f0f5a::t_476922b10ee8f8 217-230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "722f0c32a777f952b87ffca153f303701e702d78",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
