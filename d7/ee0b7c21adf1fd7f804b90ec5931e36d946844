@@ -1,0 +1,26 @@
+tools/generar_imagen_social.py
+  s_c524ba238f0f5a::t_073a7c019f316c 1-55,57-67,69,73-80,82-105
+  s_c524ba238f0f5a::t_d2bc79b619f157 56,68,70-72,81
+requirements.txt
+  s_c524ba238f0f5a::t_d2bc79b619f157 3-5
+site/img/README.md
+  s_c524ba238f0f5a::t_d4bca8544571af 1-20
+.gitignore
+  s_c524ba238f0f5a::t_d272c724da8040 33-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d7ee0b7c21adf1fd7f804b90ec5931e36d946844",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
