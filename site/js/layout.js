@@ -1,6 +1,7 @@
 // Cabecera, menú, selector de año y pie comunes a todas las páginas.
 import { getIndex, getYear, loadData } from "./data.js";
 import { activarOrdenacion } from "./ordenar-tablas.js";
+import { iniciarAnalitica } from "./analytics.js";
 
 // Menú en dos niveles: lo principal (grande) y las herramientas (pequeño). Único sitio donde se declaran las páginas.
 export const GRUPOS = [
@@ -90,6 +91,7 @@ function montarMarco(activa, anio, indice) {
     location.href = url.toString();
   });
   activarMenuMovil();
+  iniciarAnalitica(); // aviso de consentimiento y enlace de preferencias; Google no carga hasta que se acepta
   return document.getElementById("contenido");
 }
 

@@ -103,7 +103,12 @@ def test_cada_pagina_tiene_politica_de_seguridad_que_impide_estilos_en_linea(pag
     assert csp, f"{pagina.name} sin Content-Security-Policy"
     politica = {d.split()[0]: d.split()[1:] for d in csp.group(1).split(";") if d.strip()}
     assert politica["style-src"] == ["'self'"]
-    assert politica["script-src"] == ["'self'"]
+    # Google solo está permitido para la analítica con consentimiento (js/analytics.js); nada más
+    assert politica["script-src"] == ["'self'", "https://www.googletagmanager.com"]
+    assert politica["connect-src"] == ["'self'", "https://*.google-analytics.com", "https://*.analytics.google.com", "https://*.googletagmanager.com"]
+    assert politica["img-src"] == ["'self'", "data:", "https://*.google-analytics.com", "https://*.googletagmanager.com"]
+    assert politica["font-src"] == ["'self'"]
+    assert politica["form-action"] == ["'self'"] and politica["base-uri"] == ["'self'"]
     assert politica["default-src"] == ["'self'"]
     assert "'unsafe-inline'" not in csp.group(1) and "'unsafe-eval'" not in csp.group(1)
     assert politica["object-src"] == ["'none'"]
