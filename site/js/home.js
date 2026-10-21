@@ -1,6 +1,6 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros, formatVariation } from "./format.js";
-import { PALETTE, TEXTO_SOBRE } from "./charts.js";
+import { claseCrece } from "./escalas.js";
 import { destacar, porHabitante } from "./insights.js";
 import { variacionHtml } from "./ui.js";
 
@@ -22,9 +22,9 @@ runPage("inicio", async ({ anio, main, load }) => {
   const [r, gastos] = await Promise.all([load("resumen"), load("gastos")]);
   const porVecino = formatEuros(porHabitante(r.totalGastos, r.habitantes));
   const consulta = `?anio=${anio}`;
+  const suma = r.por100.reduce((s, b) => s + b.euros, 0);
   const segmentos = r.por100.map((b, i) => {
-    const color = PALETTE[i];
-    return `<button class="seg" type="button" data-i="${i}" aria-pressed="false" style="flex-grow:${b.euros};background:${color};color:${TEXTO_SOBRE[color]}">
+    return `<button class="seg serie-${i + 1} ${claseCrece(b.euros, suma)}" type="button" data-i="${i}" aria-pressed="false">
       <span class="seg-euros">${b.euros}&nbsp;€</span><span class="seg-nombre">${esc(b.bloque)}</span></button>`;
   }).join("");
   const filas = r.por100.map((b) => `<tr><td>${esc(b.bloque)}</td><td class="num">${b.euros} €</td><td class="num">${formatEuros(b.importe)}</td></tr>`).join("");

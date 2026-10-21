@@ -1,6 +1,6 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros } from "./format.js";
-import { PALETTE } from "./charts.js";
+import { claseCrece } from "./escalas.js";
 import { filaHtml, tablaHtml } from "./ui.js";
 
 const FUENTES = [
@@ -10,11 +10,13 @@ const FUENTES = [
   ["rta", "Remanente de tesorería", "Ahorros de años anteriores."],
   ["subvenciones", "Subvenciones", "Dinero de otras administraciones para obras."],
 ];
-const COLOR = Object.fromEntries(FUENTES.map(([k], i) => [k, PALETTE[i]]));
+// Cada fuente de financiación tiene su serie de color (.serie-N en styles.css)
+const SERIE = Object.fromEntries(FUENTES.map(([k], i) => [k, `serie-${i + 1}`]));
 
 function miniBarra(proyecto) {
   const partes = FUENTES.filter(([k]) => proyecto[k] > 0);
-  const barra = partes.map(([k, nombre]) => `<i style="flex:${proyecto[k]};background:${COLOR[k]}" title="${esc(nombre)}: ${formatEuros(proyecto[k])}"></i>`).join("");
+  const total = partes.reduce((s, [k]) => s + proyecto[k], 0);
+  const barra = partes.map(([k, nombre]) => `<i class="${SERIE[k]} ${claseCrece(proyecto[k], total)}" title="${esc(nombre)}: ${formatEuros(proyecto[k])}"></i>`).join("");
   const texto = partes.map(([k, nombre]) => `${esc(nombre)} ${formatEuros(proyecto[k])}`).join(" · ");
   return `<div class="mini-barra" aria-hidden="true">${barra}</div><small class="muted">${texto || "—"}</small>`;
 }
@@ -29,8 +31,8 @@ runPage("inversiones", async ({ anio, main, load }) => {
     <h1>Inversiones: obras y compras <span class="muted">${anio}</span></h1>
     <p class="lead">El Ayuntamiento prevé invertir <strong>${formatEuros(d.total)}</strong> en obras, equipamientos y mejoras.</p>
     <h2>¿Cómo se pagan?</h2>
-    <div class="stackbar" role="img" aria-label="Fuentes de financiación de las inversiones" style="min-height:40px">${usadas.map(([k, nombre]) => `<span class="seg" style="flex-grow:${d.fuentes[k]};background:${COLOR[k]};cursor:default;min-width:6px" title="${esc(nombre)}: ${formatEuros(d.fuentes[k])}"></span>`).join("")}</div>
-    <ul class="leyenda">${usadas.map(([k, nombre, ayuda]) => `<li><i style="background:${COLOR[k]}"></i><strong>${esc(nombre)}</strong>: ${formatEuros(d.fuentes[k])} (${((d.fuentes[k] / d.total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} %)${ayuda ? ` <span class="muted">· ${esc(ayuda)}</span>` : ""}</li>`).join("")}</ul>
+    <div class="stackbar stackbar-fina" role="img" aria-label="Fuentes de financiación de las inversiones">${usadas.map(([k, nombre]) => `<span class="seg seg-info ${SERIE[k]} ${claseCrece(d.fuentes[k], d.total)}" title="${esc(nombre)}: ${formatEuros(d.fuentes[k])}"></span>`).join("")}</div>
+    <ul class="leyenda">${usadas.map(([k, nombre, ayuda]) => `<li><i class="${SERIE[k]}"></i><strong>${esc(nombre)}</strong>: ${formatEuros(d.fuentes[k])} (${((d.fuentes[k] / d.total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} %)${ayuda ? ` <span class="muted">· ${esc(ayuda)}</span>` : ""}</li>`).join("")}</ul>
     <div class="aviso"><h3>El préstamo es una previsión</h3>
       <p>Los <strong>${formatEuros(d.fuentes.prestamo)}</strong> de préstamo son lo máximo previsto en el presupuesto. Solo se pedirían si hacen falta, según la liquidación y la ejecución del presupuesto. El Ayuntamiento puede usar remanentes de tesorería (ahorros de años anteriores) para pagar parte de las obras, así que el préstamo final puede ser menor. Esta cifra es una estimación: depende de lo ya comprometido y de lo que finalmente no se ejecute. <a href="deuda.html?anio=${anio}">Ver la página de deuda</a>.</p></div>
     <h2>¿En qué se invierte?</h2>
