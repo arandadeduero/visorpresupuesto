@@ -158,6 +158,13 @@ python3 -m http.server -d dist 8000  # abrir http://localhost:8000
 
 **Metodología y fuentes** (`metodologia.html`): origen de los datos, presupuesto inicial frente a ejecutado, clasificación (órdenes EHA/3565/2008 y HAP/419/2014), población del INE, estimaciones, actualización, errores y aviso de textos de préstamos y remanentes pendientes de revisión (`docs/revision/`).
 
+### Datos estructurados y rendimiento
+
+- **JSON-LD** (`tools/seo.py`, bloque `application/ld+json` en el `<head>`, generado en el build; es un bloque de datos y no incumple la CSP): portada con `WebSite` y `GovernmentOrganization` enlazados por `@id` (logo = escudo con huella, `sameAs` = <https://github.com/arandadeduero>); `BreadcrumbList` en las páginas interiores; un `Dataset` por año en Descargas (JSON con huella y Excel originales como `DataDownload`); `WebApplication` gratuita en la calculadora; `DefinedTermSet` en la guía desde `guia-terminos.json`. No se usan `FAQPage` ni `SearchAction`. **Falta la licencia:** los `Dataset` no llevan `license` porque aún no se ha decidido la de los datos; cuando se decida hay que añadirla en `seo.dataset()` (y publicarla en README y Metodología).
+- **Precarga** (build): `modulepreload` del módulo de cada página y de sus imports, y `preload` (`as="fetch" crossorigin`) de `index.json` y de los JSON que lee esa página (se deducen de su código, `load("…")`) del último año. Así la petición de datos empieza al leer el `<head>` y no tras bajar la cadena de módulos. Si alguien abre un año que no es el último, el navegador avisa en consola de que la precarga no se usó (solo aviso, y solo con `?anio=` distinto del último).
+- `getIndex` y `loadData` cachean por ruta (una sola petición a `index.json`); la portada pide `gastos.json` (el más pesado) después de pintar, solo para la tarjeta «¿Cuánto gasta…?»; Chart.js solo va en las páginas con gráficos y con `defer` (se ejecuta antes del módulo, en orden).
+- **Saltos de diseño (CLS):** si el HTML ya trae el marco estático, `layout.js` solo rellena cabecera y pie en su sitio y deja el contenido estático hasta que la página pinta el suyo (antes, quitar y volver a crear el pie daba un CLS de 0,28); `comparar` y `calculadora` reservan altura con la clase `.alto`; la tarjeta de la portada con `.destacado-caja`.
+
 ## Tipografía
 
 La web usa **Outfit** (SIL Open Font License 1.1), descargada de Fontsource y alojada en `site/fonts/` (sin Google Fonts ni CDN). Se declara con `@font-face` en `css/styles.css`, se precarga en cada página y el build le pone huella como al resto de ficheros. Detalles y cómo actualizarla: `site/fonts/README.md`.

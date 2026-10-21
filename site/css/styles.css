@@ -206,6 +206,7 @@ a { color: var(--enlace); }
 :focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; box-shadow: 0 0 0 6px var(--foco-anillo); }
 .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
 main.wrap { padding-top: 24px; padding-bottom: 48px; min-height: 60vh; }
+main.alto { min-height: 100vh; }
 .muted { color: var(--texto-suave); }
 .saltar { position: absolute; left: -999px; }
 .saltar:focus { left: 8px; top: 8px; background: var(--superficie); color: var(--texto); padding: 8px; z-index: 10; }

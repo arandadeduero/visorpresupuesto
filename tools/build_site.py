@@ -27,6 +27,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import prerender  # noqa: E402
+import seo  # noqa: E402
 
 LARGO = 10
 IMPORT = re.compile(r'((?:\bfrom|\bimport)\s*)"(\./[^"]+\.js)"')
@@ -186,6 +187,7 @@ def desde_la_raiz(fragmento: str) -> str:
 def pagina_404(base_html: str, ctx) -> str:
     """404.html: sin canonical ni JS, con noindex, con el menú y la lista de páginas como enlaces normales."""
     cabecera = base_html[: base_html.index("<body>")]
+    cabecera = re.sub(r'\s*<link rel="(?:modulepreload|preload)" href="(?:js/|data-)[^>]*>|\s*<script type="application/ld\+json">.*?</script>', "", cabecera, flags=re.S)
     cabecera = re.sub(r"\s*<link rel=\"canonical\"[^>]*>", "", cabecera)
     cabecera = re.sub(r"\s*<meta (?:property=\"og:|name=\"twitter:)[^>]*>", "", cabecera)
     cabecera = re.sub(r"<title>.*?</title>", "<title>Página no encontrada · Presupuestos de Aranda de Duero</title>", cabecera, flags=re.S)
@@ -227,6 +229,7 @@ def build(site: Path, dist: Path) -> dict:
     indice = json.loads((site / "data" / "index.json").read_text(encoding="utf-8"))
     ctx = prerender.Contexto(site, js, carpeta_datos, actualizado, escudo, excels_por_anio(site, [a["anio"] for a in indice["anios"]]))
     ids = {href: id_ for id_, _, href in js["secciones"]}
+    textos = {href: texto for _, texto, href in js["secciones"]}
     for pagina in sorted(site.glob("*.html")):
         html = pagina.read_text(encoding="utf-8")
 
@@ -247,6 +250,9 @@ def build(site: Path, dist: Path) -> dict:
         if CARGANDO not in html:
             raise ValueError(f"{pagina.name}: falta {CARGANDO}")
         html = html.replace(CARGANDO, prerender.montar(ctx, ids[pagina.name], plantilla.group(1).strip() if plantilla else None), 1)
+        id_ = ids[pagina.name]
+        extra = seo.precarga(site, dist, ctx, manifiesto, id_, html) + seo.bloque_jsonld(seo.nodos(id_, pagina.name, textos[pagina.name], ctx, manifiesto))
+        html = html.replace("</head>", extra + "</head>", 1)
         (dist / pagina.name).write_text(html, encoding="utf-8")
         manifiesto[pagina.name] = pagina.name
 

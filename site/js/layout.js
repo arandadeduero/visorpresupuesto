@@ -119,6 +119,9 @@ function activarMenuMovil() {
   });
 }
 
+// Páginas cuyo contenido pintado es mucho más alto que el estático: reservan altura para que el pie no salte
+const PAGINAS_ALTAS = ["comparar", "calculadora"];
+
 export const URL_REPOSITORIO = "https://github.com/arandadeduero/visorpresupuesto";
 
 /** Pie común: fuente, enlaces institucionales y fecha de actualización de los datos (ISO, la pone el build). */
@@ -147,12 +150,24 @@ export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido
       </div>
       <nav class="menu" id="menu-secciones" aria-label="Secciones"><div class="wrap menu-interior">${menuHtml(activa, enlaces)}</div></nav>
     </header>
-    <main id="contenido" class="wrap" tabindex="-1">${contenido}</main>
+    <main id="contenido" class="wrap${PAGINAS_ALTAS.includes(activa) ? " alto" : ""}" tabindex="-1">${contenido}</main>
     ${pieHtml(actualizado, consulta)}`;
 }
 
+/** Si el HTML ya trae el marco estático (build), se completa en su sitio y el contenido estático se queda hasta que la página
+ * pinta el suyo: así no hay un hueco ni se quita el pie de golpe (saltos de diseño). Sin build, se pinta todo. */
 function montarMarco(activa, anio, indice) {
-  document.body.innerHTML = marcoHtml({ activa, anio, indice, escudo: urlEscudo(), actualizado: document.documentElement.dataset.actualizado });
+  const html = marcoHtml({ activa, anio, indice, escudo: urlEscudo(), actualizado: document.documentElement.dataset.actualizado });
+  const cabecera = document.querySelector("body > header.site");
+  const pie = document.querySelector("body > footer.site");
+  if (cabecera && pie && document.getElementById("contenido")) {
+    const nuevo = document.createElement("div");
+    nuevo.innerHTML = html;
+    cabecera.replaceChildren(...nuevo.querySelector("header.site").childNodes);
+    pie.replaceChildren(...nuevo.querySelector("footer.site").childNodes);
+  } else {
+    document.body.innerHTML = html;
+  }
   document.getElementById("selector-anio").addEventListener("change", (e) => {
     const url = new URL(location.href);
     url.searchParams.set("anio", e.target.value);
