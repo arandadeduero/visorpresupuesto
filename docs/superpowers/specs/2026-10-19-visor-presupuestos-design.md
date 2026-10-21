@@ -179,3 +179,13 @@ Petición: «una versión en oscuro; sin estilos inline, solo CSS; todos los col
 - **Chart.js:** los colores se leen de las variables (`colorVar`, normalizadas a `rgb()` mediante un canvas) y se pasan como opciones scriptable; al cambiar el esquema se llama a `update()` en todas las instancias.
 - **CSP por `<meta>`** (`style-src 'self'`, `script-src 'self'`): activada, porque Chart.js solo usa CSSOM. El script de aviso de `file://` pasa a fichero propio. `frame-ancestors` no se puede fijar por `<meta>`, así que no se incluye.
 - El tono del texto sobre los bloques de color de la portada en claro se mantiene (3:1, texto grande en negrita), como antes.
+
+## Analítica y privacidad
+
+Decisión (petición del usuario, siguiendo la implementación del repositorio `contratacion-estado`): Google Analytics 4 con consentimiento previo (RGPD).
+
+- Nada se carga ni se envía a Google hasta «Aceptar». «Aceptar» no caduca; «Rechazar» caduca a los 4 días. Do Not Track lo oculta todo. El enlace «Preferencias de analítica» del pie retira el consentimiento, borra las cookies `_ga*` y vuelve a preguntar.
+- Lógica pura y testeable en `site/js/analytics.js`; valores (ID, clave de `localStorage`, TTL, política de privacidad del Ayuntamiento) en `site/js/analytics-config.js`; se monta desde `layout.js`, así que no se toca el HTML de las páginas.
+- El aviso es una tarjeta fija abajo (`role="region"`), con clases CSS y tokens existentes (sin colores ni estilos en línea), botones de al menos 44 px, foco visible y sin animación con `prefers-reduced-motion`.
+- La CSP de las 12 páginas añade solo los dominios de GA4/GTM necesarios (`script-src`, `img-src`, `connect-src`); el código solo los usa con consentimiento. Sin `unsafe-inline` ni `unsafe-eval`.
+- No se redacta texto legal propio: se enlaza la política del Ayuntamiento, que conviene revisar con él.
