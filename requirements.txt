@@ -1,2 +1,5 @@
 openpyxl
 pytest
+pillow
+fonttools
+brotli

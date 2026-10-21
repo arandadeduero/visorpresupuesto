@@ -37,7 +37,8 @@ def test_las_doce_paginas_conservan_su_nombre(dist):
 def test_los_recursos_de_cada_pagina_existen_y_llevan_huella(dist, nombre):
     html = (dist / nombre).read_text(encoding="utf-8")
     refs = [r for r in re.findall(r'(?:href|src)="([^"]+)"', html) if not r.startswith(("http", "data:", "#"))]
-    recursos = [r for r in refs if not r.endswith(".html")]
+    # Iconos, imagen social y manifiesto tienen URL estable (ver test_social.py): sin huella a propósito
+    recursos = [r for r in refs if not r.endswith(".html") and not r.startswith("img/") and r != "manifest.webmanifest"]
     assert any(r.endswith(".css") for r in recursos) and any(r.endswith(".js") for r in recursos)
     for ref in recursos:
         assert HUELLA.search(ref), f"{nombre}: {ref} no lleva huella"
@@ -71,7 +72,7 @@ def test_los_datos_se_leen_de_la_carpeta_con_huella(dist):
     assert (dist / carpeta / "index.json").is_file()
     assert not (dist / "data").exists()
     for p in paginas(dist):
-        assert f'<html lang="es" data-datos="{carpeta}">' in p.read_text(encoding="utf-8"), p.name
+        assert f'<html lang="es" data-datos="{carpeta}" data-escudo="img/' in p.read_text(encoding="utf-8"), p.name
 
 
 def test_solo_data_js_conoce_la_ruta_data():
