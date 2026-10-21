@@ -1,0 +1,45 @@
+site/js/data.test.js
+  s_c524ba238f0f5a::t_11ff9e010f8fe6 51-63
+site/js/rutas.test.js
+  s_c524ba238f0f5a::t_cc8d39a91797c3 1-86
+site/js/rutas.js
+  s_c524ba238f0f5a::t_b6f1c9a97b18d1 1-49
+site/js/deuda-texto.js
+  s_c524ba238f0f5a::t_142d786a476b58 4,24,30,36
+site/js/data.js
+  s_c524ba238f0f5a::t_142d786a476b58 2,42,44
+site/js/guia.js
+  s_c524ba238f0f5a::t_142d786a476b58 4,12
+site/js/layout.js
+  s_c524ba238f0f5a::t_f707b77f464c60 218
+  s_c524ba238f0f5a::t_e0868a75e3d0fd 7,67,77,82-112,116,153,157,162,170,174,177,195,219-222,229-231,240
+site/js/indicadores.js
+  s_c524ba238f0f5a::t_142d786a476b58 52
+  s_c524ba238f0f5a::t_504c015749c04f 3
+site/js/menu.test.js
+  s_c524ba238f0f5a::t_a451bcc4f355b3 5,20,69-131
+site/js/comparar.js
+  s_c524ba238f0f5a::t_504c015749c04f 8
+  s_c524ba238f0f5a::t_142d786a476b58 106
+site/js/resumen.js
+  s_c524ba238f0f5a::t_504c015749c04f 4
+  s_c524ba238f0f5a::t_142d786a476b58 47
+site/js/home.js
+  s_c524ba238f0f5a::t_142d786a476b58 6,40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c02a53e213fc58e43f40b4721b82b3be0f7e38de",
+  "prompts": {},
+  "sessions": {
+    "s_c524ba238f0f5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5fb24a0a-e1c8-4b0c-870d-80f4fe6ded4b",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
