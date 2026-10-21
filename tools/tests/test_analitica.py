@@ -33,7 +33,7 @@ def csp(pagina):
 
 
 def test_hay_doce_paginas_y_todas_con_la_misma_csp():
-    assert len(PAGINAS) == 12
+    assert len(PAGINAS) == 13
     assert len({csp(p) for p in PAGINAS}) == 1, "la CSP debe ser idéntica en todas las páginas"
 
 

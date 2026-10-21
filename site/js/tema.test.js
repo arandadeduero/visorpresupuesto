@@ -178,7 +178,7 @@ test("la paleta municipal y los colores de capítulo del tema claro no han cambi
 
 test("las dos meta theme-color de cada página coinciden con la cabecera de cada tema", () => {
   const paginas = readdirSync(new URL("../", import.meta.url)).filter((f) => f.endsWith(".html"));
-  assert.equal(paginas.length, 12);
+  assert.equal(paginas.length, 13);
   for (const p of paginas) {
     const html = leer(`../${p}`);
     const claro = html.match(/<meta name="theme-color" content="(#[0-9a-f]{6})" media="\(prefers-color-scheme: light\)">/i)?.[1];

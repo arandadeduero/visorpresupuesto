@@ -189,3 +189,21 @@ Decisión (petición del usuario, siguiendo la implementación del repositorio `
 - El aviso es una tarjeta fija abajo (`role="region"`), con clases CSS y tokens existentes (sin colores ni estilos en línea), botones de al menos 44 px, foco visible y sin animación con `prefers-reduced-motion`.
 - La CSP de las 12 páginas añade solo los dominios de GA4/GTM necesarios (`script-src`, `img-src`, `connect-src`); el código solo los usa con consentimiento. Sin `unsafe-inline` ni `unsafe-eval`.
 - No se redacta texto legal propio: se enlaza la política del Ayuntamiento, que conviene revisar con él.
+
+## SEO: contenido estático rastreable
+
+**Problema.** Todas las páginas pintan su contenido con JavaScript (`layout.js` sustituye el `<body>`), así que el HTML publicado solo decía «Cargando…». Bing, DuckDuckGo, las vistas previas y los asistentes de IA no ven nada.
+
+**Solución (prerender en el build).** `tools/build_site.py` sustituye el `<p class="cargando">` de cada HTML de `dist/` por el marco completo (cabecera, menú, pie) y el contenido de la página con las cifras clave del último año en tablas simples, `<h1>` único, enlaces «Relacionado» y un `<noscript>`. El JS sigue sustituyendo el `<body>` al cargar; el marco estático tiene las mismas clases, así que no hay salto. Los HTML de `site/` siguen mostrando «Cargando…» y funcionan en local sin build.
+
+**Sin duplicar lógica.**
+- `tools/exportar_js.mjs` (node) importa los módulos del propio JS y saca el marco (`marcoHtml`), el pie, el menú, los «Relacionado», las tarjetas de la portada, los avisos sobre préstamos (`deuda-texto.js`) y los indicadores (`lecturas.js`). **El build necesita node** (ya lo trae `ubuntu-latest`; el CI lo declara).
+- `tools/prerender.py` escribe solo el contenido de cada página con las cifras de `site/data/<último>/*.json` (todo número sale de los JSON y declara el año).
+- La Guía lee `site/data/guia-terminos.json`, el mismo fichero que usa el build. El texto de Metodología vive en un `<template id="contenido-estatico">` de `metodologia.html`: lo usa el build para el HTML estático y el JS en el navegador.
+- Un test comprueba que las anclas de la guía y los textos de los avisos coinciden con los del JS.
+
+**Títulos y descripciones** (únicos, título ≤ 60, descripción 120–160, sin cifras que caduquen salvo «100 €») están en el HTML fuente; `layout.js` solo añade el año: «título (2026)». El canonical nunca lleva `?anio=`. `/index.html` y `/` devuelven ambos 200 (GitHub Pages no redirige): se resuelve con el canonical y porque todos los enlaces internos usan `./`.
+
+**Rastreo.** `sitemap.xml` se genera en el build con `<lastmod>` (fecha del último commit que toca `site/`); `robots.txt` apunta a él; `404.html` (noindex, sin canonical, rutas desde la raíz, menú y lista de páginas) también. «Datos actualizados el …» del pie es la fecha del último commit que toca `site/data`. Por eso los workflows hacen `checkout` con `fetch-depth: 0`; sin historial, el build usa `SOURCE_DATE_EPOCH` o el día de hoy.
+
+**Metodología y fuentes** (`metodologia.html`): origen de los datos, presupuesto inicial frente a ejecutado, clasificación (órdenes EHA/3565/2008 y HAP/419/2014), población del INE, estimaciones, actualización, errores y aviso de textos de préstamos y remanentes pendientes de revisión (`docs/revision/`).

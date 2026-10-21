@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ce0e2d" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#8f0a20" media="(prefers-color-scheme: dark)">
+  <title>Metodología y fuentes de los datos de Aranda de Duero</title>
+  <meta name="description" content="De dónde salen los datos de esta web, cómo se clasifican, qué estimaciones se hacen, cómo se actualizan y cómo avisar de un error en el presupuesto.">
+  <link rel="canonical" href="https://presupuestos.arandadeduero.dev/metodologia.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Presupuestos de Aranda de Duero">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Metodología y fuentes de los datos de Aranda de Duero">
+  <meta property="og:description" content="De dónde salen los datos de esta web, cómo se clasifican, qué estimaciones se hacen, cómo se actualizan y cómo avisar de un error en el presupuesto.">
+  <meta property="og:url" content="https://presupuestos.arandadeduero.dev/metodologia.html">
+  <meta property="og:image" content="https://presupuestos.arandadeduero.dev/img/social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Escudo de Aranda de Duero y el texto Presupuestos de Aranda de Duero: en qué se gasta tu dinero, de dónde sale y qué se debe">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Metodología y fuentes de los datos de Aranda de Duero">
+  <meta name="twitter:description" content="De dónde salen los datos de esta web, cómo se clasifican, qué estimaciones se hacen, cómo se actualizan y cómo avisar de un error en el presupuesto.">
+  <meta name="twitter:image" content="https://presupuestos.arandadeduero.dev/img/social.png">
+  <meta name="twitter:image:alt" content="Escudo de Aranda de Duero y el texto Presupuestos de Aranda de Duero: en qué se gasta tu dinero, de dónde sale y qué se debe">
+  <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/escalas.css">
+</head>
+<body>
+  <p class="cargando wrap">Cargando…</p>
+  <template id="contenido-estatico">
+    <h1>Metodología y fuentes</h1>
+    <p class="lead">De dónde salen los datos de esta web, cómo se han tratado y qué límites tienen.</p>
+
+    <h2>De dónde salen los datos</h2>
+    <p>Todas las cifras salen de los documentos del presupuesto que publica el Ayuntamiento de Aranda de Duero: hojas de Excel numeradas del anexo A1 al A13 (resumen por capítulos, estados de ingresos y de gastos, inversiones, subvenciones nominativas, estado de la deuda y carga financiera). Los ficheros originales, sin tocar, están en el <a href="https://github.com/arandadeduero/visorpresupuesto" rel="noopener">repositorio del proyecto</a>, en una carpeta por cada año. Un programa convierte cada Excel en los ficheros JSON que lee la web, y puedes bajarlos en <a href="descargas.html">Descargas</a>.</p>
+
+    <h2>Presupuesto inicial, no gasto ejecutado</h2>
+    <p>Todo lo que ves aquí es el <strong>presupuesto inicial</strong>: lo que el Ayuntamiento prevé ingresar y gastar, aprobado antes de que empiece el año. No es lo que se ha gastado de verdad. Durante el año el presupuesto se modifica, y lo realmente ingresado y gastado (la ejecución y la liquidación) puede ser distinto. Para ver cómo va la ejecución, consulta el <a href="https://transparencia.arandadeduero.es" rel="noopener">portal de transparencia del Ayuntamiento</a>.</p>
+
+    <h2>Cómo se clasifican los ingresos y los gastos</h2>
+    <p>Los ingresos y los gastos se agrupan en <strong>capítulos</strong> (clasificación económica: qué tipo de ingreso o de gasto es) y los gastos, además, en <strong>programas y políticas de gasto</strong> (clasificación por programas: para qué sirve). Es la estructura que obliga a seguir a las entidades locales la <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2008-19916" rel="noopener">Orden EHA/3565/2008</a>, modificada por la <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-2922" rel="noopener">Orden HAP/419/2014</a>. En la web cada capítulo se escribe como «Cap 6 - Obras e inversiones»: el número y un nombre corto; el nombre oficial aparece al pasar el ratón. Los términos están explicados en la <a href="guia.html">guía</a>.</p>
+
+    <h2>Población</h2>
+    <p>Las cifras «por habitante» dividen el importe entre la población de Aranda de Duero según el <a href="https://www.ine.es" rel="noopener">Instituto Nacional de Estadística (INE)</a>. Cada página de resumen indica de qué año es la población usada. Es una media: no es lo que paga cada vecino.</p>
+
+    <h2>Estimaciones propias</h2>
+    <p>El <strong>nivel de endeudamiento</strong> y el <strong>ahorro neto</strong> de la página de <a href="indicadores.html">indicadores</a> son estimaciones nuestras con las cifras del presupuesto inicial y solo con los préstamos del anexo de deuda. Siguen la idea del <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214#a53" rel="noopener">artículo 53 del texto refundido de la Ley Reguladora de las Haciendas Locales</a>, pero no son los indicadores oficiales: esos salen de la liquidación del presupuesto y los calcula la Intervención municipal.</p>
+
+    <h2>Cómo se actualiza</h2>
+    <p>Cuando el Ayuntamiento publica un presupuesto, se añade su carpeta de Excel al repositorio, se convierten los datos y la web se publica de nuevo de forma automática. La fecha «Datos actualizados el…» que verás en el pie de cada página es la del último cambio en los datos de la web.</p>
+
+    <h2>Textos pendientes de revisión</h2>
+    <div class="aviso"><h3>Préstamos y remanentes de tesorería</h3>
+      <p>Los textos de las páginas de <a href="deuda.html">deuda</a> e <a href="inversiones.html">inversiones</a> sobre los préstamos y los remanentes de tesorería están pendientes de que los revise el Ayuntamiento. Hasta entonces, léelos como una explicación orientativa. Las preguntas concretas están en <a href="https://github.com/arandadeduero/visorpresupuesto/blob/main/docs/revision/2026-10-19-textos-deuda-y-remanentes.md" rel="noopener">el documento de revisión</a>.</p></div>
+
+    <h2>Cómo avisar de un error</h2>
+    <p>Si ves una cifra que no cuadra con el Excel original o un texto que no se entiende, <a href="https://github.com/arandadeduero/visorpresupuesto/issues" rel="noopener">abre una incidencia en GitHub</a> indicando la página y el año. El código y los datos están en el <a href="https://github.com/arandadeduero/visorpresupuesto" rel="noopener">repositorio del proyecto</a>.</p>
+  </template>
+  <script src="js/aviso-file.js"></script>
+  <script type="module" src="js/metodologia.js"></script>
+</body>
+</html>

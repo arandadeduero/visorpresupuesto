@@ -1,4 +1,4 @@
-import { runPage, esc } from "./layout.js";
+import { runPage, esc, tarjetasHtml } from "./layout.js";
 import { formatEuros, formatVariation } from "./format.js";
 import { claseCrece } from "./escalas.js";
 import { destacar, porHabitante } from "./insights.js";
@@ -19,7 +19,7 @@ function comparacion(total, anterior, anio) {
 }
 
 runPage("inicio", async ({ anio, main, load }) => {
-  const [r, gastos] = await Promise.all([load("resumen"), load("gastos")]);
+  const r = await load("resumen"); // gastos.json (el más pesado) solo se pide después, para la tarjeta «¿Cuánto gasta…?»
   const porVecino = formatEuros(porHabitante(r.totalGastos, r.habitantes));
   const consulta = `?anio=${anio}`;
   const suma = r.por100.reduce((s, b) => s + b.euros, 0);
@@ -37,22 +37,17 @@ runPage("inicio", async ({ anio, main, load }) => {
     <details><summary>Ver como tabla</summary>
       <div class="tabla-scroll"><table class="datos"><thead><tr><th>En qué</th><th class="num">Por cada 100 €</th><th class="num">Importe</th></tr></thead><tbody>${filas}</tbody></table></div>
     </details>
-    <p><a href="gastos.html${consulta}">Ver el detalle de los gastos →</a></p>
+    <p><a href="gastos.html${consulta}">Ver el detalle de los gastos del Ayuntamiento por política</a></p>
     <section class="destacado" aria-labelledby="titulo-destacado">
       <h2 id="titulo-destacado">¿Cuánto gasta Aranda de Duero en…?</h2>
-      <div id="destacado" aria-live="polite"></div>
-      <button class="boton" type="button" id="otra">Enséñame otra</button>
+      <div id="destacado" class="destacado-caja" aria-live="polite"><p class="muted">Cargando…</p></div>
+      <button class="boton" type="button" id="otra" disabled>Enséñame otra</button>
     </section>
     <h2>Para cada vecino</h2>
     <p class="lead">El presupuesto equivale a unos <strong>${porVecino}</strong> por habitante al año (${r.habitantes.toLocaleString("es-ES")} habitantes).</p>
     <p class="muted">Es el gasto previsto del Ayuntamiento dividido entre la población (${esc(r.fuentePoblacion)}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>
     <h2>Y además…</h2>
-    <div class="cards">
-      <a class="card" href="ingresos.html${consulta}"><strong>Ingresos</strong><span>De dónde sale el dinero</span></a>
-      <a class="card" href="inversiones.html${consulta}"><strong>Inversiones</strong><span>Las obras previstas y cómo se pagan</span></a>
-      <a class="card" href="subvenciones.html${consulta}"><strong>Subvenciones</strong><span>A qué entidades se da dinero</span></a>
-      <a class="card" href="deuda.html${consulta}"><strong>Deuda</strong><span>Cuánto se debe y cuándo se paga</span></a>
-    </div>
+    ${tarjetasHtml(anio)}
     <p class="muted">Es el presupuesto inicial: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>`;
 
   const detalle = main.querySelector("#detalle-seg");
@@ -67,22 +62,30 @@ runPage("inicio", async ({ anio, main, load }) => {
   elegir(0);
 
   // «¿Cuánto gasta Aranda de Duero en…?»: una política de gasto cada vez, en orden aleatorio.
-  const orden = [...gastos.politicas].filter((p) => p.actual > 0).sort(() => Math.random() - 0.5);
-  let actual = 0;
+  // Se pinta lo demás primero y gastos.json se baja después: no bloquea la parte visible de la portada.
   const caja = main.querySelector("#destacado");
-  const mostrar = () => {
-    const d = destacar(orden[actual], r.totalGastos, r.habitantes);
-    caja.innerHTML = `<p class="destacado-nombre">${esc(d.nombre)}</p>
-      <div class="cifras">
-        <div><span class="cifra">${formatEuros(d.porHabitante)}</span><span>por habitante</span></div>
-        <div><span class="cifra">${formatEuros(d.importe, { compact: true })}</span><span>en total</span></div>
-        <div><span class="cifra">${d.pct.toLocaleString("es-ES", { maximumFractionDigits: 1 })} %</span><span>del presupuesto</span></div>
-      </div>
-      ${d.anterior == null ? "" : `<p class="muted">${variacionHtml(d.importe, d.anterior)}</p>`}`;
-  };
-  main.querySelector("#otra").addEventListener("click", () => {
-    actual = (actual + 1) % orden.length;
+  const otra = main.querySelector("#otra");
+  try {
+    const gastos = await load("gastos");
+    const orden = [...gastos.politicas].filter((p) => p.actual > 0).sort(() => Math.random() - 0.5);
+    let actual = 0;
+    const mostrar = () => {
+      const d = destacar(orden[actual], r.totalGastos, r.habitantes);
+      caja.innerHTML = `<p class="destacado-nombre">${esc(d.nombre)}</p>
+        <div class="cifras">
+          <div><span class="cifra">${formatEuros(d.porHabitante)}</span><span>por habitante</span></div>
+          <div><span class="cifra">${formatEuros(d.importe, { compact: true })}</span><span>en total</span></div>
+          <div><span class="cifra">${d.pct.toLocaleString("es-ES", { maximumFractionDigits: 1 })} %</span><span>del presupuesto</span></div>
+        </div>
+        ${d.anterior == null ? "" : `<p class="muted">${variacionHtml(d.importe, d.anterior)}</p>`}`;
+    };
+    otra.addEventListener("click", () => {
+      actual = (actual + 1) % orden.length;
+      mostrar();
+    });
     mostrar();
-  });
-  mostrar();
+    otra.disabled = false;
+  } catch {
+    main.querySelector(".destacado").hidden = true; // sin esa tarjeta la portada sigue siendo útil
+  }
 });

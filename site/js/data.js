@@ -18,7 +18,23 @@ async function leerJson(ruta) {
   return respuesta.json();
 }
 
-export const getIndex = () => leerJson(urlDatos("index.json"));
+// Caché por ruta: getIndex lo llaman a la vez el marco, getYear y las páginas, y cada JSON debe bajarse una sola vez.
+// Si la petición falla no se guarda, para que el siguiente intento vuelva a pedirlo.
+const cache = new Map();
+function leerUnaVez(ruta) {
+  if (!cache.has(ruta)) {
+    cache.set(ruta, leerJson(ruta).catch((e) => {
+      cache.delete(ruta);
+      throw e;
+    }));
+  }
+  return cache.get(ruta);
+}
+
+export const getIndex = () => leerUnaVez(urlDatos("index.json"));
+
+/** Términos del glosario: los comparten la página Guía y el build (que los escribe en el HTML estático). */
+export const getGuiaTerminos = () => leerUnaVez(urlDatos("guia-terminos.json"));
 
 export async function getYear() {
   const indice = await getIndex();
@@ -28,4 +44,4 @@ export async function getYear() {
   return anio;
 }
 
-export const loadData = (anio, nombre) => leerJson(urlDatos(`${anio}/${nombre}.json`));
+export const loadData = (anio, nombre) => leerUnaVez(urlDatos(`${anio}/${nombre}.json`));

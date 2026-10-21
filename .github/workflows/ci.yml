@@ -13,11 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # el build saca la fecha de los datos y el lastmod del sitemap del historial
 
       - uses: actions/setup-python@v7
         with:
           python-version: "3.x"
           cache: pip
+
+      # El build usa node: el HTML estático reutiliza el JS de la web (menú, pie, avisos, indicadores)
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
 
       - run: pip install -r requirements.txt
 
@@ -40,10 +47,6 @@ jobs:
             fi
           done
           git diff --exit-code site/data
-
-      - uses: actions/setup-node@v7
-        with:
-          node-version: lts/*
 
       - name: Tests de JavaScript
         run: node --test "site/js/*.test.js"

@@ -1,0 +1,110 @@
+[
+ {
+  "termino": "Presupuesto inicial",
+  "definicion": "Lo que el Ayuntamiento prevé ingresar y gastar durante el año, aprobado antes de que empiece. Son previsiones: durante el año puede modificarse y lo realmente gastado puede ser distinto."
+ },
+ {
+  "termino": "Ingresos",
+  "definicion": "El dinero que el Ayuntamiento espera recibir: impuestos, tasas, transferencias de otras administraciones, préstamos…"
+ },
+ {
+  "termino": "Gastos",
+  "definicion": "El dinero que el Ayuntamiento prevé destinar a sueldos, servicios, ayudas, obras, intereses y devolución de préstamos."
+ },
+ {
+  "termino": "Capítulo",
+  "definicion": "Los grandes bloques en que se clasifican ingresos y gastos según su naturaleza. Hay nueve: por ejemplo, el capítulo 1 de gastos son los sueldos y el 6 las inversiones. Cada capítulo se divide en artículos y estos, en ingresos, en conceptos. Es lo que se llama clasificación económica."
+ },
+ {
+  "termino": "Artículo",
+  "definicion": "El siguiente nivel dentro de un capítulo: un tipo más concreto de ingreso o de gasto. Por ejemplo, dentro del capítulo 9 de ingresos (préstamos) el artículo 91 son los «Préstamos recibidos»; dentro del capítulo 1 de gastos, el artículo 12 es el «Personal funcionario». Se identifica con los dos primeros dígitos del código económico. Los nombres son los de la clasificación económica oficial de las entidades locales (la orden ministerial que fija la estructura de los presupuestos de las entidades locales)."
+ },
+ {
+  "termino": "Concepto",
+  "definicion": "El detalle de un artículo en los ingresos: por ejemplo, dentro del artículo 11 «Impuestos sobre el capital», el concepto 113 es el impuesto sobre bienes inmuebles de naturaleza urbana (IBI). Se identifica con los tres primeros dígitos del código."
+ },
+ {
+  "termino": "Programa y política de gasto",
+  "definicion": "La manera de clasificar los gastos según su finalidad: cultura, deporte, seguridad, limpieza… Una política agrupa varios programas. Es lo que se llama clasificación por programas."
+ },
+ {
+  "termino": "Partida",
+  "definicion": "La línea más concreta del presupuesto de gastos: un tipo de gasto dentro de un programa, por ejemplo «Energía eléctrica» del alumbrado público. Su código empieza por el del artículo al que pertenece (la partida 221.00 es del artículo 22)."
+ },
+ {
+  "termino": "Gastos de personal",
+  "definicion": "Sueldos y cotizaciones sociales de las personas que trabajan en el Ayuntamiento."
+ },
+ {
+  "termino": "Servicios y mantenimiento",
+  "definicion": "Los gastos corrientes en bienes y servicios: luz, agua, limpieza, mantenimiento, contratos, material."
+ },
+ {
+  "termino": "Transferencias y ayudas",
+  "definicion": "Dinero que el Ayuntamiento da a otras entidades o personas, por ejemplo subvenciones a asociaciones."
+ },
+ {
+  "termino": "Inversiones",
+  "definicion": "Obras y compras que duran en el tiempo: calles, edificios, instalaciones, vehículos."
+ },
+ {
+  "termino": "Subvención nominativa",
+  "definicion": "Ayuda que el presupuesto asigna con nombre y apellidos a una entidad concreta para una actividad concreta."
+ },
+ {
+  "termino": "Préstamo",
+  "definicion": "Dinero que el Ayuntamiento pide a un banco y devuelve con intereses en varios años."
+ },
+ {
+  "termino": "Deuda viva",
+  "definicion": "Lo que queda por devolver de los préstamos en una fecha concreta."
+ },
+ {
+  "termino": "Amortización",
+  "definicion": "La parte de un préstamo que se devuelve cada año (el dinero prestado, sin contar los intereses)."
+ },
+ {
+  "termino": "Intereses",
+  "definicion": "Lo que se paga al banco por el préstamo, además de devolver el dinero. Si el tipo es variable, depende del Euribor."
+ },
+ {
+  "termino": "Carga financiera",
+  "definicion": "Lo que se paga en un año por la deuda: intereses más amortización."
+ },
+ {
+  "termino": "Remanente de tesorería",
+  "definicion": "Ahorros que el Ayuntamiento acumula de años anteriores. Se puede usar para pagar inversiones en lugar de pedir un préstamo."
+ },
+ {
+  "termino": "Ingresos corrientes",
+  "definicion": "Los ingresos de cada año que no son préstamos ni ventas de bienes: impuestos, tasas, transferencias corrientes e ingresos patrimoniales."
+ },
+ {
+  "termino": "Ahorro bruto",
+  "definicion": "Ingresos corrientes menos los gastos corrientes (sueldos, servicios y ayudas, sin intereses). Es lo que queda para pagar la deuda e invertir."
+ },
+ {
+  "termino": "Nivel de endeudamiento",
+  "definicion": "La deuda viva (préstamos pendientes de devolver, incluidos los avales y las operaciones a corto plazo) dividida entre los ingresos corrientes del año anterior ya liquidado (capítulos 1 a 5 de ingresos, sin los ingresos extraordinarios o afectados a inversiones). La ley de haciendas locales exige autorización previa para pedir préstamos a largo plazo si supera el 75 % y no permite concertarlos si supera el 110 %. En esta web es una estimación con las cifras del presupuesto inicial y solo con los préstamos del anexo de deuda.",
+  "enlace": {
+   "texto": "Artículo 53 del texto refundido de la Ley Reguladora de las Haciendas Locales",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214#a53"
+  }
+ },
+ {
+  "termino": "Ahorro neto",
+  "definicion": "Ingresos corrientes (capítulos 1 a 5) menos los gastos de los capítulos 1, 2 y 4, menos la anualidad teórica (intereses y devolución de un año) de cada préstamo. Si sale negativo en la liquidación, el Ayuntamiento no puede concertar nuevos préstamos a largo plazo. En esta web es una estimación solo con los préstamos actuales.",
+  "enlace": {
+   "texto": "Artículo 53.1 del texto refundido de la Ley Reguladora de las Haciendas Locales",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214#a53"
+  }
+ },
+ {
+  "termino": "Euros corrientes",
+  "definicion": "Importes tal como figuran en cada presupuesto, sin ajustar por la subida de precios (inflación). Al comparar años, el mismo dinero compra menos cuanto más tarde sea."
+ },
+ {
+  "termino": "Por habitante",
+  "definicion": "El importe dividido entre el número de habitantes del municipio. Sirve para comparar, pero no es lo que paga cada vecino."
+ }
+]
