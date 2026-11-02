@@ -1,0 +1,73 @@
+tools/seo.py
+  s_d1091bbbd2bf47::t_c62be2da849024 12
+site/resumen.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+site/inversiones.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+LICENSE-DATOS.md
+  s_d1091bbbd2bf47::t_c62be2da849024 3,9
+CNAME
+  s_d1091bbbd2bf47::t_c62be2da849024 1
+site/comparar.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+site/deuda.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+site/js/descargas.js
+  s_d1091bbbd2bf47::t_c62be2da849024 21
+site/subvenciones.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+tools/prerender.py
+  s_d1091bbbd2bf47::t_c62be2da849024 377
+tools/tests/test_social.py
+  s_d1091bbbd2bf47::t_c62be2da849024 16
+site/index.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+site/ingresos.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+site/js/analytics.test.js
+  s_d1091bbbd2bf47::t_c62be2da849024 68
+README.md
+  s_d1091bbbd2bf47::t_c62be2da849024 3,121,210
+tools/tests/test_jsonld.py
+  s_d1091bbbd2bf47::t_c62be2da849024 12
+site/indicadores.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+tools/build_site.py
+  s_d1091bbbd2bf47::t_c62be2da849024 45
+site/descargas.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+site/calculadora.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+site/gastos.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+site/metodologia.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27,65
+site/robots.txt
+  s_d1091bbbd2bf47::t_c62be2da849024 4
+tools/tests/test_anios.py
+  s_d1091bbbd2bf47::t_c62be2da849024 14
+docs/revision/2026-10-19-textos-deuda-y-remanentes.md
+  s_d1091bbbd2bf47::t_c62be2da849024 3
+tools/tests/test_seo.py
+  s_d1091bbbd2bf47::t_c62be2da849024 15
+site/guia.html
+  s_d1091bbbd2bf47::t_c62be2da849024 12,18-19,27
+tools/generar_imagen_social.py
+  s_d1091bbbd2bf47::t_c62be2da849024 81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d943b6941f28bd18b26f3fadc076c193e44ada5d",
+  "prompts": {},
+  "sessions": {
+    "s_d1091bbbd2bf47": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5553f1be-4648-4121-8a24-53a8c37eda38",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Guillermo López Leal <guillermo.lopezleal@vonage.com>"
+    }
+  }
+}
