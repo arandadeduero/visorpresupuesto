@@ -65,7 +65,7 @@ test("nombresCookiesGa solo devuelve las _ga*", () => {
 });
 
 test("dominiosCookie: el host y sus dominios superiores, sin el dominio de primer nivel", () => {
-  assert.deepEqual(dominiosCookie("presupuestos.arandadeduero.dev"), ["", "; domain=.presupuestos.arandadeduero.dev", "; domain=.arandadeduero.dev"]);
+  assert.deepEqual(dominiosCookie("presupuestos.arandadeduero.es"), ["", "; domain=.presupuestos.arandadeduero.es", "; domain=.arandadeduero.es"]);
   assert.deepEqual(dominiosCookie("localhost"), [""]);
   assert.deepEqual(dominiosCookie(""), [""]);
 });
