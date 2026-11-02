@@ -12,7 +12,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
 SITE = ROOT / "site"
-DOMINIO = "https://presupuestos.arandadeduero.dev/"
+DOMINIO = "https://presupuestos.arandadeduero.es/"
 sys.path.insert(0, str(ROOT / "tools"))
 import build_site  # noqa: E402
 import prerender  # noqa: E402

@@ -78,7 +78,7 @@ def imagen_social(escudo: Image.Image) -> Image.Image:
     for ancho_b, color in [(250, AMBAR), (170, AZUL), (110, ROJO)]:
         d.rounded_rectangle((x, by, x + ancho_b, by + 16), radius=8, fill=color)
         x += ancho_b + 10
-    d.text((izq + 60, 548), "presupuestos.arandadeduero.dev", font=outfit(500, 28), fill=GRIS)
+    d.text((izq + 60, 548), "presupuestos.arandadeduero.es", font=outfit(500, 28), fill=GRIS)
     return im
 
 

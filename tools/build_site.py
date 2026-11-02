@@ -42,7 +42,7 @@ URL_FUENTE = re.compile(r"url\(\.\./(fonts/[^)]+\.woff2)\)")
 # Con URL estable (sin huella): la imagen para compartir y los iconos los piden por nombre los rastreadores y los navegadores
 IMG_ESTABLES = {"social.png", "favicon-32.png", "apple-touch-icon.png", "icon-192.png", "icon-512.png"}
 FICHEROS_RAIZ = ["manifest.webmanifest", "robots.txt"]
-DOMINIO = "https://presupuestos.arandadeduero.dev/"
+DOMINIO = "https://presupuestos.arandadeduero.es/"
 CARGANDO = '<p class="cargando wrap">Cargando…</p>'
 REF_RELATIVA = re.compile(r'((?:href|src)=")(?!https?:|data:|#|/)([^"]*")')
 PLANTILLA = re.compile(r'\s*<template id="contenido-estatico">(.*?)</template>\n?', re.S)

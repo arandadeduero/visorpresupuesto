@@ -1,6 +1,6 @@
 # Revisión de los textos sobre deuda, préstamos y remanentes
 
-Documento para que el **Ayuntamiento de Aranda de Duero (Intervención / Hacienda)** revise y confirme lo que dice la web https://presupuestos.arandadeduero.dev/ sobre préstamos, remanentes de tesorería y endeudamiento. Los textos los ha redactado el equipo de desarrollo a partir de los Excel del presupuesto (A1, A2, A3, A9, A13.1 y A13.2 de 2024, 2025 y 2026) y de las indicaciones recibidas; **ninguno ha sido validado todavía por el Ayuntamiento**.
+Documento para que el **Ayuntamiento de Aranda de Duero (Intervención / Hacienda)** revise y confirme lo que dice la web https://presupuestos.arandadeduero.es/ sobre préstamos, remanentes de tesorería y endeudamiento. Los textos los ha redactado el equipo de desarrollo a partir de los Excel del presupuesto (A1, A2, A3, A9, A13.1 y A13.2 de 2024, 2025 y 2026) y de las indicaciones recibidas; **ninguno ha sido validado todavía por el Ayuntamiento**.
 
 Para cada punto: qué dice la web, en qué datos se apoya y qué hay que confirmar. Se puede responder marcando una de las opciones: ✅ correcto · ✏️ cambiar por… · ❌ quitar.
 

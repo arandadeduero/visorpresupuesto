@@ -9,7 +9,7 @@ from pathlib import Path
 
 import prerender
 
-DOMINIO = "https://presupuestos.arandadeduero.dev/"
+DOMINIO = "https://presupuestos.arandadeduero.es/"
 URL_AYUNTAMIENTO = "https://www.arandadeduero.es"
 ID_ORGANIZACION = DOMINIO + "#ayuntamiento"
 ID_WEB = DOMINIO + "#web"

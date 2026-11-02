@@ -1,6 +1,6 @@
 # Presupuestos de Aranda de Duero
 
-**🌐 Web: <https://presupuestos.arandadeduero.dev/>**
+**🌐 Web: <https://presupuestos.arandadeduero.es/>**
 
 Visor de los presupuestos del Ayuntamiento de Aranda de Duero pensado para cualquier vecino, sin necesidad de saber de presupuestos: en qué se gasta el dinero, de dónde sale, qué obras se prevén, a quién se dan subvenciones y cuánto se debe.
 
@@ -118,7 +118,7 @@ node --test "site/js/*.test.js"       # formato, búsqueda, árbol de gastos, in
 
 - **En cada Pull Request** (`.github/workflows/ci.yml`): `pytest`, comprobación de que los JSON de `site/data/` están al día y cuadran con los Excel, tests de JavaScript y construcción de `dist/` con sus comprobaciones.
 - **En cada push a `main`** (`.github/workflows/pages.yml`): se repiten los tests y, solo si pasan, se construye `dist/` (ver «Despliegue con huellas») y se publica en GitHub Pages. Al final, el propio workflow comprueba, con los nombres del manifiesto, que la web publicada carga.
-- La web se sirve en <https://presupuestos.arandadeduero.dev/> (dominio configurado en *Settings → Pages*, con origen «GitHub Actions»).
+- La web se sirve en <https://presupuestos.arandadeduero.es/> (dominio configurado en *Settings → Pages*, con origen «GitHub Actions»).
 
 ## URLs propias por año
 
@@ -207,4 +207,4 @@ npm pack chart.js     # descargar la última versión
 ## Licencia
 
 - **Código**: [MIT](LICENSE) © 2026 Ayuntamiento de Aranda de Duero. Chart.js tiene su propia licencia (MIT), en `site/vendor/`; Outfit, la suya (SIL OFL 1.1), en `site/fonts/`.
-- **Datos** (los Excel de `2024/`, `2025/` y `2026/` y los JSON de `site/data/`): [Creative Commons Reconocimiento 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), ver [LICENSE-DATOS.md](LICENSE-DATOS.md). Para citar: «Fuente: Ayuntamiento de Aranda de Duero (presupuestos.arandadeduero.dev), licencia CC BY 4.0». Los `Dataset` del JSON-LD (`tools/seo.py`) y la página de descargas la declaran.
+- **Datos** (los Excel de `2024/`, `2025/` y `2026/` y los JSON de `site/data/`): [Creative Commons Reconocimiento 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), ver [LICENSE-DATOS.md](LICENSE-DATOS.md). Para citar: «Fuente: Ayuntamiento de Aranda de Duero (presupuestos.arandadeduero.es), licencia CC BY 4.0». Los `Dataset` del JSON-LD (`tools/seo.py`) y la página de descargas la declaran.
