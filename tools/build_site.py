@@ -7,7 +7,7 @@ Uso: python3 tools/build_site.py [site] [dist]
 - Los módulos se procesan en orden topológico: su huella sale de su contenido ya con los imports reescritos,
   así un cambio en format.js cambia también la huella de todos los que lo importan (y la de los HTML).
 - data/ se copia a data-<huella>/ (huella de todo el directorio) y cada HTML recibe data-datos="data-<huella>/".
-- img/: social.png y los iconos conservan su nombre (URL estable); el resto (escudo.png de la cabecera) lleva huella y su ruta
+- img/: social.png, los iconos y el logotipo de la cabecera conservan su nombre (URL estable); el resto (escudo.png del pie) lleva huella y su ruta
   se anota en cada HTML como data-escudo="img/escudo.<huella>.png" (lo lee layout.js).
 - manifest.webmanifest y robots.txt se copian tal cual.
 - Cada año publicado (site/data/index.json) tiene su carpeta con las páginas que dependen del año: /2025/ (portada), /2025/gastos.html...
@@ -40,7 +40,7 @@ IMPORT = re.compile(r'((?:\bfrom|\bimport)\s*)"(\./[^"]+\.js)"')
 REF_HTML = re.compile(r'((?:href|src)=")([^"#:]+\.(?:css|js|woff2))(")')
 URL_FUENTE = re.compile(r"url\(\.\./(fonts/[^)]+\.woff2)\)")
 # Con URL estable (sin huella): la imagen para compartir y los iconos los piden por nombre los rastreadores y los navegadores
-IMG_ESTABLES = {"social.png", "favicon-32.png", "apple-touch-icon.png", "icon-192.png", "icon-512.png"}
+IMG_ESTABLES = {"logo-ayuntamiento.png", "social.png", "favicon-32.png", "apple-touch-icon.png", "icon-192.png", "icon-512.png"}
 FICHEROS_RAIZ = ["manifest.webmanifest", "robots.txt"]
 DOMINIO = "https://presupuestos.arandadeduero.es/"
 CARGANDO = '<p class="cargando wrap">Cargando…</p>'

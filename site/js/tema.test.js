@@ -69,7 +69,7 @@ const ESQUEMAS = ["claro", "oscuro"];
 
 test("hay un tema oscuro que solo redefine tokens que existen en el claro", () => {
   assert.match(CSS, /color-scheme:\s*light dark/);
-  const nuevos = [...OSCURO.keys()].filter((k) => !CLARO.has(k) && !k.startsWith("--n-") && !/-d$|^--rojo-(cabecera|pastel|aviso)$|^--ambar-aviso$|^--marron-claro-d$/.test(k));
+  const nuevos = [...OSCURO.keys()].filter((k) => !CLARO.has(k) && !k.startsWith("--n-") && !/-d$|^--rojo-aviso$|^--ambar-aviso$|^--marron-claro-d$/.test(k));
   assert.deepEqual(nuevos, []);
   for (const k of ["--fondo", "--superficie", "--texto", "--texto-suave", "--borde", "--enlace", "--cabecera-fondo", "--aviso-fondo", "--error-fondo", "--foco", "--sombra"]) {
     assert.ok(OSCURO.has(k), `el tema oscuro no redefine ${k}`);
@@ -136,9 +136,11 @@ for (const esquema of ESQUEMAS) {
   });
 }
 
-test("foco visible también sobre la cabecera: en claro lo da el anillo blanco, en oscuro el propio contorno ámbar", () => {
-  assert.ok(contraste(color("--foco-anillo", "claro"), color("--cabecera-fondo", "claro")) >= 3);
-  assert.ok(contraste(color("--foco", "oscuro"), color("--cabecera-fondo", "oscuro")) >= 3);
+test("foco visible también en la cabecera y sobre la franja del logotipo", () => {
+  for (const esquema of ESQUEMAS) assert.ok(contraste(color("--foco", esquema), color("--cabecera-fondo", esquema)) >= 3, esquema);
+  // Sobre el celeste: en claro lo da el propio contorno gris; en oscuro, el anillo oscuro alrededor del contorno ámbar
+  assert.ok(contraste(color("--foco", "claro"), color("--franja", "claro")) >= 3);
+  assert.ok(contraste(color("--foco-anillo", "oscuro"), color("--franja", "oscuro")) >= 3);
 });
 
 test("tema oscuro: colores de capítulo, tonos y series se distinguen de la superficie (3:1)", () => {
@@ -176,15 +178,15 @@ test("la paleta municipal y los colores de capítulo del tema claro no han cambi
   assert.deepEqual([1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => color(`--cap-${n}`, "claro")), ["#ce0e2d", "#f5a800", "#646464", "#3cb4e5", "#a4541c", "#0083c1", "#3c3c3c", "#8fc9e6", "#f9d37a"]);
 });
 
-test("las dos meta theme-color de cada página coinciden con la cabecera de cada tema", () => {
+test("las dos meta theme-color de cada página coinciden con la franja del logotipo de cada tema", () => {
   const paginas = readdirSync(new URL("../", import.meta.url)).filter((f) => f.endsWith(".html"));
   assert.equal(paginas.length, 13);
   for (const p of paginas) {
     const html = leer(`../${p}`);
     const claro = html.match(/<meta name="theme-color" content="(#[0-9a-f]{6})" media="\(prefers-color-scheme: light\)">/i)?.[1];
     const oscuro = html.match(/<meta name="theme-color" content="(#[0-9a-f]{6})" media="\(prefers-color-scheme: dark\)">/i)?.[1];
-    assert.equal(claro?.toLowerCase(), color("--cabecera-fondo", "claro"), `${p}: theme-color claro`);
-    assert.equal(oscuro?.toLowerCase(), color("--cabecera-fondo", "oscuro"), `${p}: theme-color oscuro`);
+    assert.equal(claro?.toLowerCase(), color("--franja", "claro"), `${p}: theme-color claro`);
+    assert.equal(oscuro?.toLowerCase(), color("--franja", "oscuro"), `${p}: theme-color oscuro`);
   }
 });
 

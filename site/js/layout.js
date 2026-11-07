@@ -4,7 +4,7 @@ import { activarOrdenacion } from "./ordenar-tablas.js";
 import { iniciarAnalitica } from "./analytics.js";
 import { URL_POLITICA_PRIVACIDAD } from "./analytics-config.js";
 import { fechaLarga } from "./format.js";
-import { PAGINAS_SIN_ANIO, destinoAntiguo, enBuild, esRaiz, urlCambioDeAnio, urlPagina } from "./rutas.js";
+import { PAGINAS_SIN_ANIO, destinoAntiguo, enBuild, esRaiz, urlCambioDeAnio, urlPagina, urlRaiz } from "./rutas.js";
 
 // Menú en dos niveles: lo principal (grande) y las herramientas (pequeño). Único sitio donde se declaran las páginas.
 export const GRUPOS = [
@@ -120,8 +120,8 @@ export function menuHtml(activa, anio) {
   }).join("");
 }
 
-/** Ruta del escudo de la cabecera: con build lleva huella y la anota el HTML en data-escudo; sin build, la del fichero. */
-export const urlEscudo = () => document.documentElement.dataset.escudo || "img/escudo.png";
+/** Ruta del escudo del pie: con build lleva huella y la anota el HTML en data-escudo; sin build, la del fichero. */
+export const urlEscudo = () => globalThis.document?.documentElement?.dataset?.escudo || "img/escudo.png";
 
 function activarMenuMovil() {
   const cab = document.querySelector("header.site");
@@ -150,12 +150,14 @@ const PAGINAS_ALTAS = ["comparar", "calculadora"];
 export const URL_REPOSITORIO = "https://github.com/arandadeduero/visorpresupuesto";
 
 /** Pie común: fuente, enlaces institucionales y fecha de actualización de los datos (ISO, la pone el build). */
-export function pieHtml(actualizado, anio = null) {
+export function pieHtml(actualizado, anio = null, escudo = urlEscudo()) {
   const fecha = actualizado ? `<p class="pie-actualizado">Datos actualizados el ${fechaLarga(actualizado)}.</p>` : "";
-  return `<footer class="site"><div class="wrap">
+  return `<footer class="site"><div class="wrap pie">
+      <img class="pie-escudo" src="${escudo}" alt="" width="44" height="66">
+      <div class="pie-texto">
       <p>Fuente: presupuesto aprobado del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados. Datos con licencia <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>. Para comparar con otros municipios: <a href="https://presupuestos.gobierto.es/municipios/aranda-de-duero" rel="noopener">Gobierto Presupuestos</a>.</p>
       <p class="pie-enlaces"><a href="https://www.arandadeduero.es" rel="noopener">Ayuntamiento de Aranda de Duero</a> · <a href="https://transparencia.arandadeduero.es" rel="noopener">Portal de transparencia</a> · <a href="${URL_REPOSITORIO}" rel="noopener">Código y datos en GitHub</a> · <a href="${URL_POLITICA_PRIVACIDAD}" rel="noopener">Política de privacidad</a> · <a href="${urlPagina("metodologia", anio)}">Metodología y fuentes</a></p>
-      ${fecha}</div></footer>`;
+      ${fecha}</div></div></footer>`;
 }
 
 /** Cabecera, menú, contenido y pie. Función pura: la usa el navegador y también el build para el HTML estático. */
@@ -166,15 +168,16 @@ export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido
   return `
     <a class="saltar" href="#contenido">Saltar al contenido</a>
     <header class="site">
+      <div class="franja"><div class="wrap"><a class="marca" href="${urlPagina("inicio", anio)}"><img class="logo" src="${urlRaiz("img/logo-ayuntamiento.png")}" alt="Ayuntamiento de Aranda de Duero" width="205" height="52"></a></div></div>
       <div class="wrap cabecera">
-        <a class="marca" href="${urlPagina("inicio", anio)}"><img class="logo" src="${escudo}" alt="Ayuntamiento de Aranda de Duero" width="22" height="33"><span>Presupuestos de Aranda de Duero</span></a>
+        <span class="nombre-sitio">Presupuestos de Aranda de Duero</span>
         <label class="anio">Año <select id="selector-anio" aria-label="Año del presupuesto">${opciones}</select></label>
         <button type="button" id="boton-menu" class="boton-menu" aria-expanded="false" aria-controls="menu-secciones"><span class="hamburguesa" aria-hidden="true"></span><span>Menú</span></button>
       </div>
       <nav class="menu" id="menu-secciones" aria-label="Secciones"><div class="wrap menu-interior">${menuHtml(activa, anio)}</div></nav>
     </header>
     <main id="contenido" class="wrap${PAGINAS_ALTAS.includes(activa) ? " alto" : ""}" tabindex="-1">${contenido}</main>
-    ${pieHtml(actualizado, anio)}`;
+    ${pieHtml(actualizado, anio, escudo)}`;
 }
 
 /** Si el HTML ya trae el marco estático (build), se completa en su sitio y el contenido estático se queda hasta que la página
