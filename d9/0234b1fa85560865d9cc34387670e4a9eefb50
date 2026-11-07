@@ -1,0 +1,67 @@
+site/resumen.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/img/README.md
+  s_99057c6fb43bed::t_707e0798028911 9-10,15
+site/metodologia.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+tools/generar_imagen_social.py
+  s_99057c6fb43bed::t_707e0798028911 8
+site/guia.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/subvenciones.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/js/analytics.js
+  s_99057c6fb43bed::t_8783599b3a743f 93
+site/gastos.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/deuda.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/ingresos.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/inversiones.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/descargas.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/js/layout.js
+  s_99057c6fb43bed::t_ad8efc0fb336e9 124
+  s_99057c6fb43bed::t_4a2e6434e63313 123,153,155-156,160,171,173,180
+  s_99057c6fb43bed::t_ad94c22a976653 7
+  s_99057c6fb43bed::t_8783599b3a743f 157
+site/calculadora.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/comparar.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/js/tema.test.js
+  s_99057c6fb43bed::t_fd4e5347d98a04 72,139-143,181,188-189
+tools/tests/test_social.py
+  s_99057c6fb43bed::t_fd4e5347d98a04 133,153,159
+tools/build_site.py
+  s_99057c6fb43bed::t_ad8efc0fb336e9 10,43
+site/indicadores.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/index.html
+  s_99057c6fb43bed::t_fd4e5347d98a04 8-9
+site/css/styles.css
+  s_99057c6fb43bed::t_7fa7574d1443f7 40-42,49,60-65,110,145-148,215-226,229-230,240-247,257,260-263,266-268,275-277
+  s_99057c6fb43bed::t_4b505edaab770f 209,253-254
+site/js/rutas.js
+  s_99057c6fb43bed::t_51706870136b3d 18-20
+site/manifest.webmanifest
+  s_99057c6fb43bed::t_fd4e5347d98a04 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d90234b1fa85560865d9cc34387670e4a9eefb50",
+  "prompts": {},
+  "sessions": {
+    "s_99057c6fb43bed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "de30bd86-43a4-46a4-bc5b-708bc8eedd73",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
