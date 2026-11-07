@@ -1,0 +1,31 @@
+site/data/2027/gastos.json
+  s_99057c6fb43bed::t_a796be82d9deda 9,93,102,320,327,334,355,376,383,390,404,439,446,453,478,526,542,558,598,638,646,694,726,734,742,766,798,838,870,886,926,942,950,990,998,1006,1033,1069,1087,1096,1123,1159,1168,1186,1204,1213,1222,1231,1249,1276,1285,1294,1321,1339,1348,1357,1366,1375
+site/js/inversiones.js
+  s_99057c6fb43bed::t_0701722be5b67d 10
+site/data/2027/resumen.json
+  s_99057c6fb43bed::t_a796be82d9deda 7,9,16,137,163
+site/data/2027/inversiones.json
+  s_99057c6fb43bed::t_a796be82d9deda 5-7,193-194,203-204,277-278,1488-1489
+site/data/2027/deuda.json
+  s_99057c6fb43bed::t_a796be82d9deda 51,124
+site/data/2027/subvenciones.json
+  s_99057c6fb43bed::t_a796be82d9deda 10,174,268,285,367,390,514,531,565,599,616,645,723,739,755,779,787,803,819,827,843,851,899,907,1011,1019,1115,1139,1147,1155,1163,1220,1228,1236,1252,1260,1268,1292,1300,1308,1324
+site/data/2027/ingresos.json
+  s_99057c6fb43bed::t_a796be82d9deda 1114,1122,1132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a5bf29cd4417e30aae759d0552f358cfca4137d2",
+  "prompts": {},
+  "sessions": {
+    "s_99057c6fb43bed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "de30bd86-43a4-46a4-bc5b-708bc8eedd73",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
