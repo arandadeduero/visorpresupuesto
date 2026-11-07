@@ -1,0 +1,19 @@
+tools/generar_imagen_social.py
+  s_99057c6fb43bed::t_910314b298aaee 27,60-61,73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0591445e466c938a6a831253d2c01a3e659b840d",
+  "prompts": {},
+  "sessions": {
+    "s_99057c6fb43bed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "de30bd86-43a4-46a4-bc5b-708bc8eedd73",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
