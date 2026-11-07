@@ -1,0 +1,93 @@
+site/data/2027/subvenciones.json
+  s_99057c6fb43bed::t_8054e333b7499a 1-1328
+site/js/deuda-texto.js
+  s_99057c6fb43bed::t_6f00dff4347934 8,10-11,26
+  s_99057c6fb43bed::t_0b9f98dc435db3 9
+  s_99057c6fb43bed::t_3a0f0c8a3fb0fe 28
+site/data/2026/gastos.json
+  s_99057c6fb43bed::t_adc958631511ac 430,915,1308
+site/data/2027/resumen.json
+  s_99057c6fb43bed::t_8054e333b7499a 1-179
+site/data/2027/ingresos.json
+  s_99057c6fb43bed::t_8054e333b7499a 1-1169
+site/js/anios.test.js
+  s_99057c6fb43bed::t_95c120e89eb637 21-23
+site/js/subvenciones.js
+  s_99057c6fb43bed::t_0b9f98dc435db3 10
+  s_99057c6fb43bed::t_2c1e4522f18a19 14-15,27,35-36,45,58-59
+site/js/indicadores.js
+  s_99057c6fb43bed::t_dca33039cae28d 1
+  s_99057c6fb43bed::t_bd13ac31f50d94 8,52
+tools/seo.py
+  s_99057c6fb43bed::t_dca33039cae28d 35,117-118
+  s_99057c6fb43bed::t_9b100862eeea10 101
+site/css/styles.css
+  s_99057c6fb43bed::t_8054e333b7499a 269,311-312
+site/data/index.json
+  s_99057c6fb43bed::t_8054e333b7499a 14-17
+tools/prerender.py
+  s_99057c6fb43bed::t_dca33039cae28d 120-125,198,206,333,389
+  s_99057c6fb43bed::t_6f00dff4347934 276-278,281-282
+tools/tests/test_site.py
+  s_99057c6fb43bed::t_aa4b230d6e2307 41
+site/data/2027/gastos.json
+  s_99057c6fb43bed::t_8054e333b7499a 1-76,78-84,86-92,94-100,102-108,110-116,118-346,348-360,362-430,432-437,439-451,453-476,478-524,526-580,582-604,606-628,630-644,646-676,678-732,734-828,830-916,918-924,926-940,942-948,950-988,990-996,998-1004,1006-1012,1014-1031,1033-1040,1042-1049,1051-1058,1060-1067,1069-1076,1078-1085,1087-1094,1096-1103,1105-1112,1114-1121,1123-1130,1132-1139,1141-1148,1150-1157,1159-1166,1168-1175,1177-1184,1186-1193,1195-1202,1204-1211,1213-1220,1222-1229,1231-1238,1240-1247,1249-1256,1258-1265,1267-1274,1276-1283,1285-1292,1294-1301,1303-1310,1312-1319,1321-1328,1330-1337,1339-1346,1348-1355,1357-1364,1366-1373,1375-1382,1384-9037
+  s_99057c6fb43bed::t_adc958631511ac 77,85,93,101,109,117,347,361,431,438,452,477,525,581,605,629,645,677,733,829,917,925,941,949,989,997,1005,1013,1032,1041,1050,1059,1068,1077,1086,1095,1104,1113,1122,1131,1140,1149,1158,1167,1176,1185,1194,1203,1212,1221,1230,1239,1248,1257,1266,1275,1284,1293,1302,1311,1320,1329,1338,1347,1356,1365,1374,1383
+site/js/comparar.js
+  s_99057c6fb43bed::t_bd13ac31f50d94 106,152
+site/js/lecturas.js
+  s_99057c6fb43bed::t_bd13ac31f50d94 55
+tools/budget/gastos.py
+  s_99057c6fb43bed::t_adc958631511ac 77-82,84
+  s_99057c6fb43bed::t_28c108611ee683 37,57-58
+tools/budget/labels.py
+  s_99057c6fb43bed::t_11b85d50307e6d 154
+tools/budget/inversiones.py
+  s_99057c6fb43bed::t_8ecd1990f8dd9c 16-17,20-24,27,29,36,43-44,46-47,60,62-63
+  s_99057c6fb43bed::t_63c6cbd5f63f4c 7-9,18,25-26,28
+tools/budget/subvenciones.py
+  s_99057c6fb43bed::t_cbb93a9e117d9e 44-48,53,55,72,78,80,89,97,107,114-115,119-120,123-124
+tools/budget/deuda.py
+  s_99057c6fb43bed::t_28fbe2eedc47d0 56-59,80,82-83,91-93,97,104-109,124,130
+  s_99057c6fb43bed::t_6dcc19e6472686 81
+tools/convert.py
+  s_99057c6fb43bed::t_bd13ac31f50d94 103-104,106
+site/data/2027/deuda.json
+  s_99057c6fb43bed::t_8054e333b7499a 1-132
+site/js/layout.js
+  s_99057c6fb43bed::t_bd13ac31f50d94 112-121,168,176,189
+site/js/descargas.js
+  s_99057c6fb43bed::t_bd13ac31f50d94 13,24
+  s_99057c6fb43bed::t_dca33039cae28d 1
+tools/budget/resumen.py
+  s_99057c6fb43bed::t_bd13ac31f50d94 41-42,45
+site/js/deuda-texto.test.js
+  s_99057c6fb43bed::t_f15de28feb458d 3,14-26
+site/data/2027/inversiones.json
+  s_99057c6fb43bed::t_8054e333b7499a 1-1759
+README.md
+  s_99057c6fb43bed::t_6d429a6855934b 133
+  s_99057c6fb43bed::t_e7d3083ccbacf8 7,34,54,129,204,210
+tools/tests/test_anios.py
+  s_99057c6fb43bed::t_aa4b230d6e2307 101,161,359
+  s_99057c6fb43bed::t_b0002e10f1872f 96-97
+site/js/home.js
+  s_99057c6fb43bed::t_bd13ac31f50d94 22,51
+  s_99057c6fb43bed::t_dca33039cae28d 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e890f889cdfb6fa1d0e021aa8981dc0b044b4ace",
+  "prompts": {},
+  "sessions": {
+    "s_99057c6fb43bed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "de30bd86-43a4-46a4-bc5b-708bc8eedd73",
+        "model": "unknown"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
