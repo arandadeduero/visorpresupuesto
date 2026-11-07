@@ -53,8 +53,10 @@ def _columnas(filas, year: int) -> dict:
                     cols["amort"][int(m.group(1))] = i
                 elif e in ("fecha", "entidad", "primera amortiz.", "ultima amortiz.", "tipo de interes"):
                     cols[e] = i
-                elif e == "importe" and "importe" not in cols:  # la segunda «IMPORTE» es la cuota
-                    cols[e] = i
+                elif e == "importe":  # la primera «IMPORTE» es el del préstamo; la segunda, la cuota de cada plazo
+                    cols["cuota" if "importe" in cols else "importe"] = i
+                elif e == "amort.":  # periodicidad de la cuota: «CTE. ANUAL» o «CTE. TRIM.»
+                    cols["periodo"] = i
             for clave in [(year, 12, 31), (year, 1, 1)]:
                 if clave not in cols["vivas"]:
                     raise ValueError(f"A13.1 no tiene la columna «DEUDA VIVA {clave[2]:02d}/{clave[1]:02d}/{clave[0]}»")
@@ -74,9 +76,11 @@ def parse_deuda(year: int) -> dict:
     primer_cierre = min(cierres)
     prestamos, previsto = [], None
     for row in filas:
-        if not isinstance(row[cols["fecha"]], datetime):
-            continue
         entidad = row[cols["entidad"]]
+        # El previsto de 2027 lleva como fecha el texto «2027 (previsto)» y como entidad «PREVISTO (2)»
+        es_previsto = isinstance(entidad, str) and norm(entidad).startswith("previsto")
+        if not isinstance(row[cols["fecha"]], datetime) and not es_previsto:
+            continue
         base = {
             "fecha": _iso(row[cols["fecha"]]),
             "importe": num(row[cols["importe"]]),
@@ -84,20 +88,25 @@ def parse_deuda(year: int) -> dict:
             "ultimaAmortizacion": _iso(row[cols["ultima amortiz."]]),
         }
         tipo = row[cols["tipo de interes"]].strip()
-        if isinstance(entidad, str) and entidad.strip("* "):
+        if isinstance(entidad, str) and entidad.strip("* ") and not es_previsto:
+            cuota = num(row[cols["cuota"]]) or 0
+            cuota_anual = cuota * 4 if "trim" in norm(row[cols["periodo"]] or "") else cuota
             prestamos.append(
                 {
                     "fecha": base["fecha"],
-                    "entidad": entidad.strip(),
+                    "entidad": re.sub(r"\s*\(\d+\)$", "", entidad.strip()),  # sin la llamada a nota «(1)»
                     "importe": base["importe"],
                     "primeraAmortizacion": base["primeraAmortizacion"],
                     "ultimaAmortizacion": base["ultimaAmortizacion"],
                     "tipoInteres": tipo,
                     "vivaInicio": num(row[inicio]),
                     "vivaFin": num(row[fin]),
-                    "amortizacion": num(row[amort]),
-                    "_cierres": {y: num(row[c]) for y, c in cierres.items()},
-                    "_viva_1_enero_primer_anio": num(row[vivas[min(vivas)]]),
+                    "amortizacion": num(row[amort]) or 0,
+                    # Un préstamo en concertación (2027) no tiene cifras en los años anteriores a su firma: cuenta como 0
+                    "_cierres": {y: num(row[c]) or 0 for y, c in cierres.items()},
+                    "_viva_1_enero_primer_anio": num(row[vivas[min(vivas)]]) or 0,
+                    # Con carencia el año del anexo no amortiza nada: la proyección usa la cuota anual
+                    "_cuota_anual": num(row[amort]) or cuota_anual,
                 }
             )
         else:  # fila sin entidad («******»): préstamo previsto, que no es deuda contraída
@@ -112,13 +121,13 @@ def parse_deuda(year: int) -> dict:
         anio += 1
         serie[anio] = round(
             sum(
-                project_balance(p["vivaFin"], p["amortizacion"], year, date.fromisoformat(p["ultimaAmortizacion"]), anio)
+                project_balance(p["vivaFin"], p["_cuota_anual"], year, date.fromisoformat(p["ultimaAmortizacion"]), anio)
                 for p in prestamos
             ),
             2,
         )
     for p in prestamos:
-        del p["_cierres"], p["_viva_1_enero_primer_anio"]
+        del p["_cierres"], p["_viva_1_enero_primer_anio"], p["_cuota_anual"]
     return {
         "anio": year,
         "prestamos": prestamos,

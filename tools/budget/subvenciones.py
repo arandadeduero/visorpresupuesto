@@ -41,14 +41,18 @@ def parse_subvenciones(year: int) -> dict:
     «Desarrollo económico» la fila de la partida es además la primera entidad (lleva importes) y el nombre del programa
     está en la fila de título de encima; un mismo programa puede tener varias partidas (467.00 y 489.00)."""
     ws = load_sheet(find_file(year, "A12"), str(year))
+    filas = [tuple(r) + (None,) * 8 for r in ws.iter_rows(values_only=True)]
+    # Columnas de importes según la cabecera («2025», «2026»): el anexo de 2027 solo trae la del propio año
+    cabecera = next(f for f in filas if any(isinstance(v, str) and norm(v) == "partida" for v in f))
+    anios = {str(v).strip(): i for i, v in enumerate(cabecera) if v is not None and str(v).strip().isdigit()}
+    cols = (anios.get(str(year - 1)), anios[str(year)])
     programas = []
     prog = None
     titulo = None
     bloque = "nominativas"
-    for row in ws.iter_rows(values_only=True):
-        row = tuple(row) + (None,) * 8
+    for row in filas:
         partida, credito, col_d, objeto = row[1], row[2], row[3], row[4]
-        con_importes = _es_numero(row[5]) or _es_numero(row[6])
+        con_importes = any(c is not None and _es_numero(row[c]) for c in cols)
         texto_d = _limpia(col_d) if isinstance(col_d, str) else ""
         if norm(texto_d).startswith("aportaciones y cuotas"):
             bloque, prog, titulo = "cuotas", None, None
@@ -65,15 +69,15 @@ def parse_subvenciones(year: int) -> dict:
                     "partida": _limpia(partida),
                     "programa": nombre_programa,
                     "credito": num(credito),
-                    "anterior": 0.0,
+                    "anterior": 0.0 if cols[0] is not None else None,
                     "actual": 0.0,
                     "items": [],
                 }
                 programas.append(prog)
             if con_importes:  # la fila de la partida es también una entidad
-                _anade_item(prog, texto_d, objeto, row)
+                _anade_item(prog, texto_d, objeto, row, cols)
         elif prog is not None and partida is None and texto_d and (isinstance(objeto, str) or con_importes):
-            _anade_item(prog, texto_d, objeto, row)
+            _anade_item(prog, texto_d, objeto, row, cols)
         elif partida is None and texto_d and not con_importes and not isinstance(objeto, str) and norm(texto_d) not in ("entidad beneficiaria", "programa"):
             titulo = sentence_case(texto_d)  # fila de título («TURISMO», «DESARROLLO ECONÓMICO»), no es una entidad
 
@@ -82,7 +86,7 @@ def parse_subvenciones(year: int) -> dict:
         for it in p["items"]:
             e = por_entidad[_clave(it["entidad"])]
             e["nombres"][it["entidad"]] += 1
-            e["anterior"] += it["anterior"]
+            e["anterior"] = None if it["anterior"] is None else e["anterior"] + it["anterior"]
             e["actual"] += it["actual"]
             if p["programa"] not in e["programas"]:
                 e["programas"].append(p["programa"])
@@ -90,7 +94,7 @@ def parse_subvenciones(year: int) -> dict:
         (
             {
                 "entidad": e["nombres"].most_common(1)[0][0],
-                "anterior": round(e["anterior"], 2),
+                "anterior": None if e["anterior"] is None else round(e["anterior"], 2),
                 "actual": round(e["actual"], 2),
                 "programas": e["programas"],
             }
@@ -100,20 +104,22 @@ def parse_subvenciones(year: int) -> dict:
     )
     return {
         "anio": year,
-        "totalAnterior": round(sum(p["anterior"] for p in programas), 2),
+        "totalAnterior": None if cols[0] is None else round(sum(p["anterior"] for p in programas), 2),
         "total": round(sum(p["actual"] for p in programas), 2),
         "programas": [p for p in programas if p["items"]],
         "entidades": entidades,
     }
 
 
-def _anade_item(prog, texto_d, objeto, row):
+def _anade_item(prog, texto_d, objeto, row, cols):
+    anterior, actual = cols
     item = {
         "entidad": _nombre(texto_d, entidad=True),
         "objeto": _nombre(objeto) if isinstance(objeto, str) else "",
-        "anterior": num(row[5]) or 0.0,
-        "actual": num(row[6]) or 0.0,
+        "anterior": (num(row[anterior]) or 0.0) if anterior is not None else None,  # null si el anexo no trae el año anterior
+        "actual": num(row[actual]) or 0.0,
     }
     prog["items"].append(item)
-    prog["anterior"] = round(prog["anterior"] + item["anterior"], 2)
+    if item["anterior"] is not None:
+        prog["anterior"] = round(prog["anterior"] + item["anterior"], 2)
     prog["actual"] = round(prog["actual"] + item["actual"], 2)

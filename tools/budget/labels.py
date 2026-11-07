@@ -151,4 +151,5 @@ POBLACION = {
     2024: (33757, 2024, "INE (población de Aranda de Duero en 2024), consultada en Gobierto Presupuestos"),
     2025: (33956, 2025, "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos"),
     2026: (33956, 2025, "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos"),
+    2027: (33956, 2025, "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos"),
 }

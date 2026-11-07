@@ -1,0 +1,9037 @@
+{
+ "anio": 2027,
+ "capitulos": [
+  {
+   "cap": 1,
+   "corto": "Personal",
+   "oficial": "Gastos de personal",
+   "anterior": 15616598.5,
+   "actual": 17681810.0
+  },
+  {
+   "cap": 2,
+   "corto": "Servicios y mantenimiento",
+   "oficial": "Gastos corrientes en bienes y servicios",
+   "anterior": 21623640.0,
+   "actual": 24291985.0
+  },
+  {
+   "cap": 3,
+   "corto": "Intereses de préstamos",
+   "oficial": "Gastos financieros",
+   "anterior": 184000.0,
+   "actual": 246000.0
+  },
+  {
+   "cap": 4,
+   "corto": "Ayudas y transferencias",
+   "oficial": "Transferencias corrientes",
+   "anterior": 1929680.0,
+   "actual": 2054222.1
+  },
+  {
+   "cap": 5,
+   "corto": "Fondo de imprevistos",
+   "oficial": "Fondo de contingencia",
+   "anterior": 50000.0,
+   "actual": 50000.0
+  },
+  {
+   "cap": 6,
+   "corto": "Obras e inversiones",
+   "oficial": "Inversiones reales",
+   "anterior": 24206942.85,
+   "actual": 30010180.77
+  },
+  {
+   "cap": 7,
+   "corto": "Ayudas para inversiones",
+   "oficial": "Transferencias de capital",
+   "anterior": 120000.0,
+   "actual": 120000.0
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "anterior": 15000.0,
+   "actual": 15000.0
+  },
+  {
+   "cap": 9,
+   "corto": "Devolución de préstamos",
+   "oficial": "Pasivos financieros",
+   "anterior": 535000.0,
+   "actual": 525000.0
+  }
+ ],
+ "sinAnterior": [
+  6
+ ],
+ "articulos": [
+  {
+   "cap": 1,
+   "codigo": "10",
+   "nombre": "Órganos de gobierno y personal directivo",
+   "oficial": "Órganos de gobierno y personal directivo",
+   "anterior": 233080.0,
+   "actual": 233080.0
+  },
+  {
+   "cap": 1,
+   "codigo": "11",
+   "nombre": "Personal eventual",
+   "oficial": "Personal eventual",
+   "anterior": 70000.0,
+   "actual": 105000.0
+  },
+  {
+   "cap": 1,
+   "codigo": "12",
+   "nombre": "Personal funcionario",
+   "oficial": "Personal Funcionario",
+   "anterior": 5927675.5,
+   "actual": 8002700.0
+  },
+  {
+   "cap": 1,
+   "codigo": "13",
+   "nombre": "Personal laboral",
+   "oficial": "Personal Laboral",
+   "anterior": 969350.0,
+   "actual": 4195850.0
+  },
+  {
+   "cap": 1,
+   "codigo": "15",
+   "nombre": "Incentivos al rendimiento",
+   "oficial": "Incentivos al rendimiento",
+   "anterior": 1329210.0,
+   "actual": 1491580.0
+  },
+  {
+   "cap": 1,
+   "codigo": "16",
+   "nombre": "Cuotas y gastos sociales a cargo del empleador",
+   "oficial": "Cuotas, prestaciones y gastos sociales a cargo del empleador",
+   "anterior": 2535920.0,
+   "actual": 3653600.0
+  },
+  {
+   "cap": 2,
+   "codigo": "20",
+   "nombre": "Arrendamientos y cánones",
+   "oficial": "Arrendamientos y cánones",
+   "anterior": 595100.0,
+   "actual": 603100.0
+  },
+  {
+   "cap": 2,
+   "codigo": "21",
+   "nombre": "Reparaciones, mantenimiento y conservación",
+   "oficial": "Reparaciones, mantenimiento y conservación",
+   "anterior": 3039870.0,
+   "actual": 2748370.0
+  },
+  {
+   "cap": 2,
+   "codigo": "22",
+   "nombre": "Material, suministros y otros",
+   "oficial": "Material, suministros y otros",
+   "anterior": 17532390.0,
+   "actual": 20654235.0
+  },
+  {
+   "cap": 2,
+   "codigo": "23",
+   "nombre": "Indemnizaciones por razón del servicio",
+   "oficial": "Indemnizaciones por razón del servicio",
+   "anterior": 286280.0,
+   "actual": 286280.0
+  },
+  {
+   "cap": 3,
+   "codigo": "31",
+   "nombre": "Intereses de préstamos",
+   "oficial": "De préstamos y otras operaciones financieras en euros",
+   "anterior": 160000.0,
+   "actual": 222000.0
+  },
+  {
+   "cap": 3,
+   "codigo": "35",
+   "nombre": "Intereses de demora y otros gastos financieros",
+   "oficial": "Intereses de demora y otros gastos financieros",
+   "anterior": 24000.0,
+   "actual": 24000.0
+  },
+  {
+   "cap": 4,
+   "codigo": "46",
+   "nombre": "Transferencias a entidades locales",
+   "oficial": "A Entidades Locales",
+   "anterior": 168000.0,
+   "actual": 168000.0
+  },
+  {
+   "cap": 4,
+   "codigo": "47",
+   "nombre": "Transferencias a empresas privadas",
+   "oficial": "A Empresas privadas",
+   "anterior": 215200.0,
+   "actual": 215200.0
+  },
+  {
+   "cap": 4,
+   "codigo": "48",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro",
+   "oficial": "A Familias e Instituciones sin fines de lucro",
+   "anterior": 1546480.0,
+   "actual": 1671022.1
+  },
+  {
+   "cap": 5,
+   "codigo": "50",
+   "nombre": "Fondo de contingencia",
+   "oficial": "Dotación al Fondo de Contingencia de Ejecución Presupuestaria",
+   "anterior": 50000.0,
+   "actual": 50000.0
+  },
+  {
+   "cap": 6,
+   "codigo": "60",
+   "nombre": "Inversión nueva en infraestructuras y bienes de uso general",
+   "oficial": "Inversión nueva en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 7615500.0
+  },
+  {
+   "cap": 6,
+   "codigo": "61",
+   "nombre": "Reposición de infraestructuras y bienes de uso general",
+   "oficial": "Inversiones de reposición de infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 9366480.19
+  },
+  {
+   "cap": 6,
+   "codigo": "62",
+   "nombre": "Inversión nueva para el funcionamiento de los servicios",
+   "oficial": "Inversión nueva asociada al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 2617120.58
+  },
+  {
+   "cap": 6,
+   "codigo": "63",
+   "nombre": "Reposición para el funcionamiento de los servicios",
+   "oficial": "Inversión de reposición asociada al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 4814000.0
+  },
+  {
+   "cap": 6,
+   "codigo": "64",
+   "nombre": "Inversiones inmateriales",
+   "oficial": "Gastos en inversiones de carácter inmaterial",
+   "anterior": null,
+   "actual": 222000.0
+  },
+  {
+   "cap": 6,
+   "codigo": "65",
+   "nombre": "Inversiones gestionadas para otros entes públicos",
+   "oficial": "Inversiones gestionadas para otros entes públicos",
+   "anterior": null,
+   "actual": 4464080.0
+  },
+  {
+   "cap": 6,
+   "codigo": "68",
+   "nombre": "Inversiones en bienes patrimoniales",
+   "oficial": "Gastos en inversiones de bienes patrimoniales",
+   "anterior": null,
+   "actual": 911000.0
+  },
+  {
+   "cap": 7,
+   "codigo": "78",
+   "nombre": "Ayudas para inversiones a familias e instituciones sin fines de lucro",
+   "oficial": "A familias e instituciones sin fines de lucro",
+   "anterior": 120000.0,
+   "actual": 120000.0
+  },
+  {
+   "cap": 8,
+   "codigo": "83",
+   "nombre": "Préstamos concedidos fuera del sector público",
+   "oficial": "Concesión de préstamos fuera del sector público",
+   "anterior": 15000.0,
+   "actual": 15000.0
+  },
+  {
+   "cap": 9,
+   "codigo": "91",
+   "nombre": "Devolución de préstamos",
+   "oficial": "Amortización de préstamos y de operaciones en euros",
+   "anterior": 535000.0,
+   "actual": 525000.0
+  }
+ ],
+ "areas": [
+  {
+   "area": 0,
+   "nombre": "Deuda"
+  },
+  {
+   "area": 1,
+   "nombre": "Servicios básicos (seguridad, limpieza, urbanismo…)"
+  },
+  {
+   "area": 2,
+   "nombre": "Protección social"
+  },
+  {
+   "area": 3,
+   "nombre": "Sanidad, educación, cultura y deporte"
+  },
+  {
+   "area": 4,
+   "nombre": "Economía y empleo"
+  },
+  {
+   "area": 9,
+   "nombre": "Administración general"
+  }
+ ],
+ "politicas": [
+  {
+   "codigo": "01",
+   "nombre": "Deuda pública",
+   "area": 0,
+   "anterior": 695000.0,
+   "actual": 747000.0
+  },
+  {
+   "codigo": "13",
+   "nombre": "Seguridad y movilidad ciudadana",
+   "area": 1,
+   "anterior": null,
+   "actual": 7140010.58
+  },
+  {
+   "codigo": "15",
+   "nombre": "Vivienda y urbanismo",
+   "area": 1,
+   "anterior": null,
+   "actual": 20666868.12
+  },
+  {
+   "codigo": "16",
+   "nombre": "Bienestar comunitario",
+   "area": 1,
+   "anterior": null,
+   "actual": 10992422.07
+  },
+  {
+   "codigo": "17",
+   "nombre": "Medio ambiente",
+   "area": 1,
+   "anterior": null,
+   "actual": 4201770.0
+  },
+  {
+   "codigo": "22",
+   "nombre": "Otras prestaciones económicas",
+   "area": 2,
+   "anterior": 116000.0,
+   "actual": 116000.0
+  },
+  {
+   "codigo": "23",
+   "nombre": "Servicios sociales y promoción social",
+   "area": 2,
+   "anterior": null,
+   "actual": 5872670.0
+  },
+  {
+   "codigo": "24",
+   "nombre": "Fomento del empleo",
+   "area": 2,
+   "anterior": 310000.0,
+   "actual": 310000.0
+  },
+  {
+   "codigo": "31",
+   "nombre": "Sanidad",
+   "area": 3,
+   "anterior": null,
+   "actual": 346500.0
+  },
+  {
+   "codigo": "32",
+   "nombre": "Educación",
+   "area": 3,
+   "anterior": null,
+   "actual": 3357800.0
+  },
+  {
+   "codigo": "33",
+   "nombre": "Cultura",
+   "area": 3,
+   "anterior": null,
+   "actual": 5163900.0
+  },
+  {
+   "codigo": "34",
+   "nombre": "Deporte",
+   "area": 3,
+   "anterior": null,
+   "actual": 5123140.0
+  },
+  {
+   "codigo": "42",
+   "nombre": "Industria y energía",
+   "area": 4,
+   "anterior": 50000.0,
+   "actual": 50000.0
+  },
+  {
+   "codigo": "43",
+   "nombre": "Comercio, turismo y pequeñas y medianas empresas",
+   "area": 4,
+   "anterior": null,
+   "actual": 3117300.0
+  },
+  {
+   "codigo": "44",
+   "nombre": "Transporte público",
+   "area": 4,
+   "anterior": null,
+   "actual": 561000.0
+  },
+  {
+   "codigo": "45",
+   "nombre": "Infraestructuras",
+   "area": 4,
+   "anterior": null,
+   "actual": 300000.0
+  },
+  {
+   "codigo": "46",
+   "nombre": "Investigación, desarrollo e innovación",
+   "area": 4,
+   "anterior": null,
+   "actual": 123000.0
+  },
+  {
+   "codigo": "49",
+   "nombre": "Otras actuaciones de carácter económico",
+   "area": 4,
+   "anterior": 89500.0,
+   "actual": 92600.0
+  },
+  {
+   "codigo": "91",
+   "nombre": "Órganos de gobierno",
+   "area": 9,
+   "anterior": 967000.0,
+   "actual": 1081060.0
+  },
+  {
+   "codigo": "92",
+   "nombre": "Servicios de carácter general",
+   "area": 9,
+   "anterior": null,
+   "actual": 3573647.1
+  },
+  {
+   "codigo": "93",
+   "nombre": "Administración financiera y tributaria",
+   "area": 9,
+   "anterior": 2027615.0,
+   "actual": 1907510.0
+  },
+  {
+   "codigo": "94",
+   "nombre": "Transferencias a otras administraciones públicas",
+   "area": 9,
+   "anterior": 150000.0,
+   "actual": 150000.0
+  }
+ ],
+ "programas": [
+  {
+   "codigo": "0110",
+   "nombre": "Deuda pública",
+   "area": 0,
+   "politica": "01",
+   "anterior": 695000.0,
+   "actual": 747000.0
+  },
+  {
+   "codigo": "1300",
+   "nombre": "Administración general de la seguridad y protección civil",
+   "area": 1,
+   "politica": "13",
+   "anterior": 177175.0,
+   "actual": 215000.0
+  },
+  {
+   "codigo": "1320",
+   "nombre": "Seguridad y orden público",
+   "area": 1,
+   "politica": "13",
+   "anterior": null,
+   "actual": 3176960.0
+  },
+  {
+   "codigo": "1330",
+   "nombre": "Ordenación del tráfico y del estacionamiento",
+   "area": 1,
+   "politica": "13",
+   "anterior": null,
+   "actual": 843300.0
+  },
+  {
+   "codigo": "1350",
+   "nombre": "Protección civil",
+   "area": 1,
+   "politica": "13",
+   "anterior": null,
+   "actual": 222300.0
+  },
+  {
+   "codigo": "1360",
+   "nombre": "Servicio de prevención y extinción de incendios",
+   "area": 1,
+   "politica": "13",
+   "anterior": null,
+   "actual": 2682450.58
+  },
+  {
+   "codigo": "1500",
+   "nombre": "Administración general de vivienda y urbanismo",
+   "area": 1,
+   "politica": "15",
+   "anterior": null,
+   "actual": 367150.0
+  },
+  {
+   "codigo": "1510",
+   "nombre": "Urbanismo",
+   "area": 1,
+   "politica": "15",
+   "anterior": 595300.0,
+   "actual": 595900.0
+  },
+  {
+   "codigo": "1522",
+   "nombre": "Conservación y rehabilitación de la edificación",
+   "area": 1,
+   "politica": "15",
+   "anterior": null,
+   "actual": 5549080.0
+  },
+  {
+   "codigo": "1530",
+   "nombre": "Vías públicas urbanas",
+   "area": 1,
+   "politica": "15",
+   "anterior": null,
+   "actual": 14154738.12
+  },
+  {
+   "codigo": "1600",
+   "nombre": "Alcantarillado",
+   "area": 1,
+   "politica": "16",
+   "anterior": null,
+   "actual": 696008.8
+  },
+  {
+   "codigo": "1610",
+   "nombre": "Abastecimiento domiciliario de agua potable",
+   "area": 1,
+   "politica": "16",
+   "anterior": null,
+   "actual": 2014806.51
+  },
+  {
+   "codigo": "1621",
+   "nombre": "Recogida de residuos",
+   "area": 1,
+   "politica": "16",
+   "anterior": null,
+   "actual": 1770126.76
+  },
+  {
+   "codigo": "1623",
+   "nombre": "Tratamiento de residuos",
+   "area": 1,
+   "politica": "16",
+   "anterior": null,
+   "actual": 1855000.0
+  },
+  {
+   "codigo": "1630",
+   "nombre": "Limpieza viaria",
+   "area": 1,
+   "politica": "16",
+   "anterior": 2398300.0,
+   "actual": 2401400.0
+  },
+  {
+   "codigo": "1640",
+   "nombre": "Cementerio y servicios funerarios",
+   "area": 1,
+   "politica": "16",
+   "anterior": null,
+   "actual": 554450.0
+  },
+  {
+   "codigo": "1650",
+   "nombre": "Alumbrado público",
+   "area": 1,
+   "politica": "16",
+   "anterior": null,
+   "actual": 1700630.0
+  },
+  {
+   "codigo": "1700",
+   "nombre": "Administración general del medio ambiente",
+   "area": 1,
+   "politica": "17",
+   "anterior": 237260.0,
+   "actual": 251860.0
+  },
+  {
+   "codigo": "1710",
+   "nombre": "Parques y jardines",
+   "area": 1,
+   "politica": "17",
+   "anterior": null,
+   "actual": 3831710.0
+  },
+  {
+   "codigo": "1721",
+   "nombre": "Protección contra la contaminación acústica, lumínica y atmosférica en zonas urbanas",
+   "area": 1,
+   "politica": "17",
+   "anterior": null,
+   "actual": 118200.0
+  },
+  {
+   "codigo": "2210",
+   "nombre": "Otras prestaciones económicas a favor de empleados",
+   "area": 2,
+   "politica": "22",
+   "anterior": 116000.0,
+   "actual": 116000.0
+  },
+  {
+   "codigo": "2310",
+   "nombre": "Administración general de asistencia social primaria",
+   "area": 2,
+   "politica": "23",
+   "anterior": null,
+   "actual": 729910.0
+  },
+  {
+   "codigo": "2311",
+   "nombre": "Asistencia social primaria",
+   "area": 2,
+   "politica": "23",
+   "anterior": 2302767.5,
+   "actual": 2206300.0
+  },
+  {
+   "codigo": "2312",
+   "nombre": "Colectivos marginados",
+   "area": 2,
+   "politica": "23",
+   "anterior": 203300.0,
+   "actual": 268600.0
+  },
+  {
+   "codigo": "2313",
+   "nombre": "Promoción de la igualdad",
+   "area": 2,
+   "politica": "23",
+   "anterior": 75490.0,
+   "actual": 75130.0
+  },
+  {
+   "codigo": "2314",
+   "nombre": "Tercera edad y dependencia",
+   "area": 2,
+   "politica": "23",
+   "anterior": 2137230.0,
+   "actual": 2592730.0
+  },
+  {
+   "codigo": "2411",
+   "nombre": "Fomento del empleo: formación y otros programas",
+   "area": 2,
+   "politica": "24",
+   "anterior": 310000.0,
+   "actual": 310000.0
+  },
+  {
+   "codigo": "3110",
+   "nombre": "Protección de la salubridad pública",
+   "area": 3,
+   "politica": "31",
+   "anterior": null,
+   "actual": 346500.0
+  },
+  {
+   "codigo": "3200",
+   "nombre": "Administración general de educación",
+   "area": 3,
+   "politica": "32",
+   "anterior": null,
+   "actual": 286500.0
+  },
+  {
+   "codigo": "3230",
+   "nombre": "Funcionamiento de centros docentes de enseñanza infantil y primaria",
+   "area": 3,
+   "politica": "32",
+   "anterior": null,
+   "actual": 1788900.0
+  },
+  {
+   "codigo": "3260",
+   "nombre": "Servicios complementarios de educación",
+   "area": 3,
+   "politica": "32",
+   "anterior": 170850.0,
+   "actual": 203850.0
+  },
+  {
+   "codigo": "3261",
+   "nombre": "Escuela de Música y Danza",
+   "area": 3,
+   "politica": "32",
+   "anterior": null,
+   "actual": 792450.0
+  },
+  {
+   "codigo": "3262",
+   "nombre": "Escuela de Folclore",
+   "area": 3,
+   "politica": "32",
+   "anterior": null,
+   "actual": 286100.0
+  },
+  {
+   "codigo": "3300",
+   "nombre": "Administración general de cultura",
+   "area": 3,
+   "politica": "33",
+   "anterior": 347680.0,
+   "actual": 390450.0
+  },
+  {
+   "codigo": "3321",
+   "nombre": "Bibliotecas públicas",
+   "area": 3,
+   "politica": "33",
+   "anterior": null,
+   "actual": 563000.0
+  },
+  {
+   "codigo": "3330",
+   "nombre": "Museos",
+   "area": 3,
+   "politica": "33",
+   "anterior": 140900.0,
+   "actual": 152400.0
+  },
+  {
+   "codigo": "3331",
+   "nombre": "Escuela y Museo de Cerámica",
+   "area": 3,
+   "politica": "33",
+   "anterior": null,
+   "actual": 164050.0
+  },
+  {
+   "codigo": "3340",
+   "nombre": "Promoción cultural",
+   "area": 3,
+   "politica": "33",
+   "anterior": null,
+   "actual": 580550.0
+  },
+  {
+   "codigo": "3341",
+   "nombre": "Banda de Música",
+   "area": 3,
+   "politica": "33",
+   "anterior": null,
+   "actual": 81000.0
+  },
+  {
+   "codigo": "3360",
+   "nombre": "Protección y gestión del patrimonio histórico-artístico",
+   "area": 3,
+   "politica": "33",
+   "anterior": 70000.0,
+   "actual": 70000.0
+  },
+  {
+   "codigo": "3370",
+   "nombre": "Centros cívicos",
+   "area": 3,
+   "politica": "33",
+   "anterior": null,
+   "actual": 308600.0
+  },
+  {
+   "codigo": "3373",
+   "nombre": "Casa de la Juventud y Centro de Arte Joven",
+   "area": 3,
+   "politica": "33",
+   "anterior": null,
+   "actual": 1311200.0
+  },
+  {
+   "codigo": "3374",
+   "nombre": "Albergue juvenil",
+   "area": 3,
+   "politica": "33",
+   "anterior": null,
+   "actual": 77850.0
+  },
+  {
+   "codigo": "3375",
+   "nombre": "Huertos urbanos",
+   "area": 3,
+   "politica": "33",
+   "anterior": null,
+   "actual": 56000.0
+  },
+  {
+   "codigo": "3380",
+   "nombre": "Fiestas populares y festejos",
+   "area": 3,
+   "politica": "33",
+   "anterior": null,
+   "actual": 1408800.0
+  },
+  {
+   "codigo": "3410",
+   "nombre": "Promoción y fomento del deporte",
+   "area": 3,
+   "politica": "34",
+   "anterior": 1179380.0,
+   "actual": 1371505.0
+  },
+  {
+   "codigo": "3420",
+   "nombre": "Instalaciones deportivas",
+   "area": 3,
+   "politica": "34",
+   "anterior": null,
+   "actual": 3751635.0
+  },
+  {
+   "codigo": "4220",
+   "nombre": "Promoción industrial",
+   "area": 4,
+   "politica": "42",
+   "anterior": 50000.0,
+   "actual": 50000.0
+  },
+  {
+   "codigo": "4310",
+   "nombre": "Comercio",
+   "area": 4,
+   "politica": "43",
+   "anterior": 142000.0,
+   "actual": 142000.0
+  },
+  {
+   "codigo": "4311",
+   "nombre": "Ferias",
+   "area": 4,
+   "politica": "43",
+   "anterior": 203000.0,
+   "actual": 220000.0
+  },
+  {
+   "codigo": "4320",
+   "nombre": "Información y promoción turística",
+   "area": 4,
+   "politica": "43",
+   "anterior": null,
+   "actual": 1047500.0
+  },
+  {
+   "codigo": "4321",
+   "nombre": "Hermanamientos",
+   "area": 4,
+   "politica": "43",
+   "anterior": 48700.0,
+   "actual": 68700.0
+  },
+  {
+   "codigo": "4330",
+   "nombre": "Desarrollo empresarial",
+   "area": 4,
+   "politica": "43",
+   "anterior": null,
+   "actual": 1639100.0
+  },
+  {
+   "codigo": "4411",
+   "nombre": "Transporte colectivo urbano de viajeros",
+   "area": 4,
+   "politica": "44",
+   "anterior": null,
+   "actual": 561000.0
+  },
+  {
+   "codigo": "4540",
+   "nombre": "Caminos vecinales",
+   "area": 4,
+   "politica": "45",
+   "anterior": null,
+   "actual": 300000.0
+  },
+  {
+   "codigo": "4620",
+   "nombre": "Innovación",
+   "area": 4,
+   "politica": "46",
+   "anterior": null,
+   "actual": 123000.0
+  },
+  {
+   "codigo": "4930",
+   "nombre": "Protección de consumidores y usuarios",
+   "area": 4,
+   "politica": "49",
+   "anterior": 89500.0,
+   "actual": 92600.0
+  },
+  {
+   "codigo": "9120",
+   "nombre": "Órganos de gobierno",
+   "area": 9,
+   "politica": "91",
+   "anterior": 967000.0,
+   "actual": 1081060.0
+  },
+  {
+   "codigo": "9200",
+   "nombre": "Administración general",
+   "area": 9,
+   "politica": "92",
+   "anterior": null,
+   "actual": 1448427.1
+  },
+  {
+   "codigo": "9201",
+   "nombre": "Secretaría general",
+   "area": 9,
+   "politica": "92",
+   "anterior": 495500.0,
+   "actual": 577000.0
+  },
+  {
+   "codigo": "9202",
+   "nombre": "Administración de personal",
+   "area": 9,
+   "politica": "92",
+   "anterior": 228700.0,
+   "actual": 1238000.0
+  },
+  {
+   "codigo": "9240",
+   "nombre": "Participación ciudadana",
+   "area": 9,
+   "politica": "92",
+   "anterior": null,
+   "actual": 199400.0
+  },
+  {
+   "codigo": "9250",
+   "nombre": "Atención a los ciudadanos",
+   "area": 9,
+   "politica": "92",
+   "anterior": 46720.0,
+   "actual": 46720.0
+  },
+  {
+   "codigo": "9290",
+   "nombre": "Imprevistos, situaciones transitorias y contingencias de ejecución",
+   "area": 9,
+   "politica": "92",
+   "anterior": 64100.0,
+   "actual": 64100.0
+  },
+  {
+   "codigo": "9300",
+   "nombre": "Administración general de economía y hacienda",
+   "area": 9,
+   "politica": "93",
+   "anterior": 81000.0,
+   "actual": 81000.0
+  },
+  {
+   "codigo": "9310",
+   "nombre": "Intervención",
+   "area": 9,
+   "politica": "93",
+   "anterior": 568285.0,
+   "actual": 514250.0
+  },
+  {
+   "codigo": "9320",
+   "nombre": "Gestión tributaria y recaudación",
+   "area": 9,
+   "politica": "93",
+   "anterior": 888220.0,
+   "actual": 770800.0
+  },
+  {
+   "codigo": "9330",
+   "nombre": "Contratación y patrimonio",
+   "area": 9,
+   "politica": "93",
+   "anterior": 274310.0,
+   "actual": 318810.0
+  },
+  {
+   "codigo": "9340",
+   "nombre": "Tesorería",
+   "area": 9,
+   "politica": "93",
+   "anterior": 215800.0,
+   "actual": 222650.0
+  },
+  {
+   "codigo": "9430",
+   "nombre": "Transferencias a La Aguilera",
+   "area": 9,
+   "politica": "94",
+   "anterior": 150000.0,
+   "actual": 150000.0
+  }
+ ],
+ "partidas": [
+  {
+   "cap": 1,
+   "programa": "1300",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 177175.0,
+   "actual": 215000.0
+  },
+  {
+   "cap": 1,
+   "programa": "1320",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 2494600.0,
+   "actual": 2709000.0
+  },
+  {
+   "cap": 1,
+   "programa": "1360",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 1927500.0,
+   "actual": 2152000.0
+  },
+  {
+   "cap": 1,
+   "programa": "1500",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 153200.0,
+   "actual": 159000.0
+  },
+  {
+   "cap": 1,
+   "programa": "1510",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 571400.0,
+   "actual": 572000.0
+  },
+  {
+   "cap": 1,
+   "programa": "1522",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 95496.0,
+   "actual": 104000.0
+  },
+  {
+   "cap": 1,
+   "programa": "1530",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 605150.0,
+   "actual": 617500.0
+  },
+  {
+   "cap": 1,
+   "programa": "1610",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 432800.0,
+   "actual": 534000.0
+  },
+  {
+   "cap": 1,
+   "programa": "1630",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 38300.0,
+   "actual": 41400.0
+  },
+  {
+   "cap": 1,
+   "programa": "1640",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 163700.0,
+   "actual": 178000.0
+  },
+  {
+   "cap": 1,
+   "programa": "1650",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 291650.0,
+   "actual": 328000.0
+  },
+  {
+   "cap": 1,
+   "programa": "1700",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 145510.0,
+   "actual": 160110.0
+  },
+  {
+   "cap": 1,
+   "programa": "1710",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 38300.0,
+   "actual": 38300.0
+  },
+  {
+   "cap": 1,
+   "programa": "2210",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 101000.0,
+   "actual": 101000.0
+  },
+  {
+   "cap": 1,
+   "programa": "2310",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 256310.0,
+   "actual": 260210.0
+  },
+  {
+   "cap": 1,
+   "programa": "2311",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 1859887.5,
+   "actual": 1824000.0
+  },
+  {
+   "cap": 1,
+   "programa": "2411",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 290000.0,
+   "actual": 290000.0
+  },
+  {
+   "cap": 1,
+   "programa": "3200",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 204720.0,
+   "actual": 256500.0
+  },
+  {
+   "cap": 1,
+   "programa": "3261",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 527100.0,
+   "actual": 554000.0
+  },
+  {
+   "cap": 1,
+   "programa": "3262",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 168000.0,
+   "actual": 173000.0
+  },
+  {
+   "cap": 1,
+   "programa": "3300",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 161430.0,
+   "actual": 163000.0
+  },
+  {
+   "cap": 1,
+   "programa": "3321",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 351965.0,
+   "actual": 445000.0
+  },
+  {
+   "cap": 1,
+   "programa": "3340",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 107150.0,
+   "actual": 74150.0
+  },
+  {
+   "cap": 1,
+   "programa": "3370",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 38700.0,
+   "actual": 54800.0
+  },
+  {
+   "cap": 1,
+   "programa": "3373",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 198530.0,
+   "actual": 316000.0
+  },
+  {
+   "cap": 1,
+   "programa": "3380",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 37960.0,
+   "actual": 40000.0
+  },
+  {
+   "cap": 1,
+   "programa": "3410",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 93580.0,
+   "actual": 94000.0
+  },
+  {
+   "cap": 1,
+   "programa": "3420",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 489100.0,
+   "actual": 487000.0
+  },
+  {
+   "cap": 1,
+   "programa": "4320",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 143020.0,
+   "actual": 157000.0
+  },
+  {
+   "cap": 1,
+   "programa": "4330",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 231870.0,
+   "actual": 236000.0
+  },
+  {
+   "cap": 1,
+   "programa": "4620",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 35700.0,
+   "actual": 51500.0
+  },
+  {
+   "cap": 1,
+   "programa": "4930",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 59400.0,
+   "actual": 62500.0
+  },
+  {
+   "cap": 1,
+   "programa": "9120",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 496920.0,
+   "actual": 610980.0
+  },
+  {
+   "cap": 1,
+   "programa": "9200",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 247310.0,
+   "actual": 270000.0
+  },
+  {
+   "cap": 1,
+   "programa": "9201",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 495500.0,
+   "actual": 577000.0
+  },
+  {
+   "cap": 1,
+   "programa": "9202",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 228700.0,
+   "actual": 1238000.0
+  },
+  {
+   "cap": 1,
+   "programa": "9310",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 531035.0,
+   "actual": 477000.0
+  },
+  {
+   "cap": 1,
+   "programa": "9320",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 752420.0,
+   "actual": 635000.0
+  },
+  {
+   "cap": 1,
+   "programa": "9330",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 258710.0,
+   "actual": 303210.0
+  },
+  {
+   "cap": 1,
+   "programa": "9340",
+   "codigo": null,
+   "articulo": null,
+   "nombre": "Gastos de personal",
+   "anterior": 115800.0,
+   "actual": 122650.0
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 41000.0,
+   "actual": 1000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 6000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 4300.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 74000.0,
+   "actual": 74000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "215",
+   "nombre": "Reparación, mantenimiento y conservación de mobiliario",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "216.01",
+   "nombre": "Mantenimiento software policía",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 5200.0,
+   "actual": 5200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 35000.0,
+   "actual": 35000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 8500.0,
+   "actual": 8500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 3500.0,
+   "actual": 3500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 2600.0,
+   "actual": 4160.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "226.03",
+   "nombre": "Publicación en diarios oficiales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 4500.0,
+   "actual": 4500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 22000.0,
+   "actual": 22000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1320",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 9000.0,
+   "actual": 9000.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "1330",
+   "codigo": "200",
+   "nombre": "Arrendamientos de terrenos y bienes naturales",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1330",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 3300.0,
+   "actual": 3300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1330",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1330",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1330",
+   "codigo": "227.99.01",
+   "nombre": "Servicio ORA",
+   "anterior": 355000.0,
+   "actual": 355000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1330",
+   "codigo": "227.99.02",
+   "nombre": "Servicio Grúa Municipal",
+   "anterior": 255000.0,
+   "actual": 255000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 18000.0,
+   "actual": 18000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 11000.0,
+   "actual": 9000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 2700.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 3200.0,
+   "actual": 3200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 18000.0,
+   "actual": 18000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 500.0,
+   "actual": 20000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 2100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1350",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 64000.0,
+   "actual": 8000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 4500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 10500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 13000.0,
+   "actual": 13000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 14000.0,
+   "actual": 14000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 22500.0,
+   "actual": 22500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "221.07",
+   "nombre": "Red de calor",
+   "anterior": 0.0,
+   "actual": 12500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 15000.0,
+   "actual": 14330.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 52000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1360",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 64000.0,
+   "actual": 2000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 6000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 10000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 25000.0,
+   "actual": 25000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 5100.0,
+   "actual": 5100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 16500.0,
+   "actual": 16500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 2100.0,
+   "actual": 2100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 4500.0,
+   "actual": 4500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 1300.0,
+   "actual": 1250.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1500",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 56000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1510",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1510",
+   "codigo": "226.03",
+   "nombre": "Publicación en diarios oficiales",
+   "anterior": 400.0,
+   "actual": 400.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1510",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1510",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 13000.0,
+   "actual": 13000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1510",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "1510",
+   "codigo": "231",
+   "nombre": "Locomoción",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "1522",
+   "codigo": "208",
+   "nombre": "Arrendamientos de otro inmovilizado material",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1522",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "204",
+   "nombre": "Arrendamientos de material de transporte",
+   "anterior": 5300.0,
+   "actual": 5300.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "210",
+   "nombre": "Reparación, mantenimiento y conservación de infraestructuras y bienes naturales",
+   "anterior": 35000.0,
+   "actual": 35000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 7000.0,
+   "actual": 7000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 600.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 2500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 7000.0,
+   "actual": 7000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 8000.0,
+   "actual": 8000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 21000.0,
+   "actual": 21000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 1700.0,
+   "actual": 1700.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "223",
+   "nombre": "Transportes",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 5000.0,
+   "actual": 6500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 1300.0,
+   "actual": 1300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "1530",
+   "codigo": "233.01",
+   "nombre": "Otras indemnizaciones del personal",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "1600",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1600",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 210000.0,
+   "actual": 250000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1600",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1600",
+   "codigo": "225.01",
+   "nombre": "Tributos de las comunidades autónomas",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1600",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1600",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1600",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1600",
+   "codigo": "233",
+   "nombre": "Otras indemnizaciones",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 4500.0,
+   "actual": 4500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "210",
+   "nombre": "Reparación, mantenimiento y conservación de infraestructuras y bienes naturales",
+   "anterior": 20000.0,
+   "actual": 35000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 12000.0,
+   "actual": 7000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 2000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 8000.0,
+   "actual": 8000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 15500.0,
+   "actual": 15500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 199000.0,
+   "actual": 199000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 5500.0,
+   "actual": 5500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 6500.0,
+   "actual": 6500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 7000.0,
+   "actual": 7000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "223",
+   "nombre": "Transportes",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 3700.0,
+   "actual": 3500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "225.00",
+   "nombre": "Tributos estatales",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 5200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "227.06.01",
+   "nombre": "Estudio de fugas estructurales",
+   "anterior": 0.0,
+   "actual": 180000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "227.99.01",
+   "nombre": "Analíticas de agua",
+   "anterior": 96000.0,
+   "actual": 127000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "227.99.02",
+   "nombre": "Colocación de contadores",
+   "anterior": 0.0,
+   "actual": 25000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "227.99.03",
+   "nombre": "Mantenimiento de cámaras",
+   "anterior": 0.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1610",
+   "codigo": "227.99.04",
+   "nombre": "Gestión de residuos",
+   "anterior": 0.0,
+   "actual": 50000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1621",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 1755000.0,
+   "actual": 1755000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1621",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1623",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 650000.0,
+   "actual": 770000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1623",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 140000.0,
+   "actual": 140000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1623",
+   "codigo": "225.00",
+   "nombre": "Tributos estatales",
+   "anterior": 80000.0,
+   "actual": 80000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1623",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1623",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1623",
+   "codigo": "227.99.01",
+   "nombre": "Gestión de residuos",
+   "anterior": 0.0,
+   "actual": 50000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1630",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 2360000.0,
+   "actual": 2360000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 7000.0,
+   "actual": 1800.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 50.0,
+   "actual": 50.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 5200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1640",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 9000.0,
+   "actual": 9000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "204",
+   "nombre": "Arrendamientos de material de transporte",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "210",
+   "nombre": "Reparación, mantenimiento y conservación de infraestructuras y bienes naturales",
+   "anterior": 30000.0,
+   "actual": 30000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 100.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 8000.0,
+   "actual": 8000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "220.02",
+   "nombre": "Material informático no inventariable",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 405000.0,
+   "actual": 405000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 3500.0,
+   "actual": 3500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "221.12",
+   "nombre": "Suministros de material electrónico y de telecomunicaciones",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 3500.0,
+   "actual": 1830.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1650",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "210",
+   "nombre": "Reparación, mantenimiento y conservación de infraestructuras y bienes naturales",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 2150.0,
+   "actual": 2150.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 1300.0,
+   "actual": 1300.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 1800.0,
+   "actual": 1800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 2200.0,
+   "actual": 2200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 900.0,
+   "actual": 900.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 8500.0,
+   "actual": 8500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 50000.0,
+   "actual": 50000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1700",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "1710",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "1710",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 21000.0,
+   "actual": 21000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1710",
+   "codigo": "221.15",
+   "nombre": "Plantas y árboles",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1710",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 48000.0,
+   "actual": 48000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1710",
+   "codigo": "227.99.01",
+   "nombre": "Servicio mantenimiento de parques y jardines",
+   "anterior": 1452000.0,
+   "actual": 2305000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "1721",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 18200.0,
+   "actual": 18200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 64000.0,
+   "actual": 5000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 5000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 6000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "215",
+   "nombre": "Reparación, mantenimiento y conservación de mobiliario",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "220.02",
+   "nombre": "Material informático no inventariable",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 35000.0,
+   "actual": 35000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "221.07",
+   "nombre": "Red de calor",
+   "anterior": 0.0,
+   "actual": 13500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 3500.0,
+   "actual": 3500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 8000.0,
+   "actual": 8000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 55000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2310",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "2311",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2311",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 13000.0,
+   "actual": 13000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2311",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 37500.0,
+   "actual": 37500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2311",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2311",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 400.0,
+   "actual": 400.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 48000.0,
+   "actual": 9500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 9300.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "215",
+   "nombre": "Reparación, mantenimiento y conservación de mobiliario",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 150.0,
+   "actual": 150.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 400.0,
+   "actual": 400.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 10000.0,
+   "actual": 42500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 35250.0,
+   "actual": 35250.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 38500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 33500.0,
+   "actual": 13500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "227.99.01",
+   "nombre": "Concierto Social de Cáritas",
+   "anterior": 0.0,
+   "actual": 33500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2312",
+   "codigo": "227.99.02",
+   "nombre": "Servicio de urgencias sociales",
+   "anterior": 55000.0,
+   "actual": 65000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2313",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 600.0,
+   "actual": 600.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "2313",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2313",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 2100.0,
+   "actual": 2100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2313",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 400.0,
+   "actual": 400.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2313",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2313",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2313",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2313",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2313",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 23000.0,
+   "actual": 23000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 8000.0,
+   "actual": 8000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 45000.0,
+   "actual": 3500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 4000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 11500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 2900.0,
+   "actual": 2900.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 2400.0,
+   "actual": 2400.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 30.0,
+   "actual": 30.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 41500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "227.99.01",
+   "nombre": "Servicio de comidas y comedor",
+   "anterior": 355000.0,
+   "actual": 375000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "227.99.02",
+   "nombre": "Servicio de atención domiciliaria",
+   "anterior": 1280000.0,
+   "actual": 1700000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2314",
+   "codigo": "227.99.03",
+   "nombre": "Servicio de atención preventiva a personas mayores",
+   "anterior": 405000.0,
+   "actual": 405000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "2411",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3110",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 6500.0,
+   "actual": 6500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3110",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 14000.0,
+   "actual": 14000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3110",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3110",
+   "codigo": "227.99.01",
+   "nombre": "Recogida de animales abandonados, aves gregarias y desratización",
+   "anterior": 225000.0,
+   "actual": 225000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 433000.0,
+   "actual": 433000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 31000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 34000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 50000.0,
+   "actual": 50000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 150000.0,
+   "actual": 150000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "221.07",
+   "nombre": "Red de calor",
+   "anterior": 60000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 12500.0,
+   "actual": 12500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3230",
+   "codigo": "227.99.01",
+   "nombre": "Escuelas infantiles",
+   "anterior": 489000.0,
+   "actual": 689000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 30000.0,
+   "actual": 30000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 11000.0,
+   "actual": 11000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3260",
+   "codigo": "227.99.01",
+   "nombre": "Ludotecas",
+   "anterior": 38000.0,
+   "actual": 68000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 22000.0,
+   "actual": 22000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "209",
+   "nombre": "Cánones",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 14500.0,
+   "actual": 1000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 7000.0,
+   "actual": 7000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 7000.0,
+   "actual": 7000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "226.06",
+   "nombre": "Reuniones, conferencias y cursos",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "226.09.01",
+   "nombre": "Certamen de bandas",
+   "anterior": 80000.0,
+   "actual": 100000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 18000.0,
+   "actual": 18000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 15550.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3261",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 13300.0,
+   "actual": 2800.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 200.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "215",
+   "nombre": "Reparación, mantenimiento y conservación de mobiliario",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 1300.0,
+   "actual": 1300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 900.0,
+   "actual": 900.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 16100.0,
+   "actual": 16100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 10500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 3500.0,
+   "actual": 3500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "227.99.01",
+   "nombre": "Taller de trajes regionales",
+   "anterior": 0.0,
+   "actual": 30000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3262",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 62000.0,
+   "actual": 6000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 4000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 11200.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 3800.0,
+   "actual": 3800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 96000.0,
+   "actual": 96000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 7000.0,
+   "actual": 7000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 50.0,
+   "actual": 50.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 52000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "227.01",
+   "nombre": "Seguridad",
+   "anterior": 0.0,
+   "actual": 30000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3300",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "209",
+   "nombre": "Cánones",
+   "anterior": 1800.0,
+   "actual": 1800.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 38000.0,
+   "actual": 38000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "223",
+   "nombre": "Transportes",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 9400.0,
+   "actual": 9400.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3321",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 600.0,
+   "actual": 600.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones (ADIF, Museo del Tren)",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 15000.0,
+   "actual": 1000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 4000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 6000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "224.00",
+   "nombre": "Primas de seguros",
+   "anterior": 2100.0,
+   "actual": 2100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 15500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "227.99.01",
+   "nombre": "Museo Casa de las Bolas (Colección de arte Félix Cañada)",
+   "anterior": 34050.0,
+   "actual": 34050.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "227.99.02",
+   "nombre": "Museo Arte Sacro Iglesia de San Juan",
+   "anterior": 34050.0,
+   "actual": 34050.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3330",
+   "codigo": "227.99.03",
+   "nombre": "Museo del Tren",
+   "anterior": 38000.0,
+   "actual": 38000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3331",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3331",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 0.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3331",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 0.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3331",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 50.0,
+   "actual": 50.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3331",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3331",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3331",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3331",
+   "codigo": "227.99.01",
+   "nombre": "Escuela y museo de cerámica, contrato",
+   "anterior": 60000.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 35000.0,
+   "actual": 35000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "209",
+   "nombre": "Cánones",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "223",
+   "nombre": "Transportes",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 35000.0,
+   "actual": 35000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "226.06",
+   "nombre": "Reuniones, conferencias y cursos",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 180000.0,
+   "actual": 180000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 5800.0,
+   "actual": 5800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "227.99.01",
+   "nombre": "Contrato servicio técnico iluminación, sonido y audiovisual",
+   "anterior": 38500.0,
+   "actual": 38500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3340",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "209",
+   "nombre": "Cánones",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 8000.0,
+   "actual": 2800.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 200.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 700.0,
+   "actual": 700.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 4500.0,
+   "actual": 4500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "226.09.01",
+   "nombre": "Concierto de navidad",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 12500.0,
+   "actual": 12500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3341",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 5200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 71000.0,
+   "actual": 53000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 6000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 5500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 1900.0,
+   "actual": 1900.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "221.07",
+   "nombre": "Red de calor",
+   "anterior": 60000.0,
+   "actual": 66000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 6100.0,
+   "actual": 6100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "226.99.01",
+   "nombre": "Ocio alternativo",
+   "anterior": 14000.0,
+   "actual": 14000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 12000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3370",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 30000.0,
+   "actual": 30000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "209",
+   "nombre": "Cánones",
+   "anterior": 900.0,
+   "actual": 900.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 48000.0,
+   "actual": 12000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 3000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 3300.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 3200.0,
+   "actual": 3200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 2900.0,
+   "actual": 2900.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 8000.0,
+   "actual": 8000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 1600.0,
+   "actual": 1600.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 3300.0,
+   "actual": 3300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 700.0,
+   "actual": 700.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 44000.0,
+   "actual": 60000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "226.09.01",
+   "nombre": "Ocio Alternativo",
+   "anterior": 46000.0,
+   "actual": 46000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "226.09.02",
+   "nombre": "Semana Joven",
+   "anterior": 230000.0,
+   "actual": 70000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "226.09.03",
+   "nombre": "Pista de hielo",
+   "anterior": 17000.0,
+   "actual": 17000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 49000.0,
+   "actual": 49000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 33000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "227.01",
+   "nombre": "Seguridad",
+   "anterior": 0.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3373",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3374",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 4400.0,
+   "actual": 5000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3374",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 850.0,
+   "actual": 850.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3374",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3374",
+   "codigo": "227.99.01",
+   "nombre": "Gestión Albergue",
+   "anterior": 0.0,
+   "actual": 50000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3375",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 3500.0,
+   "actual": 3500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3375",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 180000.0,
+   "actual": 180000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "204",
+   "nombre": "Arrendamientos de material de transporte",
+   "anterior": 900.0,
+   "actual": 900.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "209",
+   "nombre": "Cánones",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "210",
+   "nombre": "Reparación, mantenimiento y conservación de infraestructuras y bienes naturales",
+   "anterior": 600.0,
+   "actual": 600.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 400.0,
+   "actual": 400.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 2700.0,
+   "actual": 2700.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 3500.0,
+   "actual": 3500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 32000.0,
+   "actual": 32000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas (fiestas tradicionales, peñas…)",
+   "anterior": 95000.0,
+   "actual": 95000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "226.11",
+   "nombre": "Actividades de las fiestas patronales",
+   "anterior": 590000.0,
+   "actual": 590000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "226.12",
+   "nombre": "Actividades de Navidad",
+   "anterior": 65000.0,
+   "actual": 65000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "226.13",
+   "nombre": "Actividades de Carnaval",
+   "anterior": 25000.0,
+   "actual": 25000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 65000.0,
+   "actual": 65000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "227.01",
+   "nombre": "Seguridad",
+   "anterior": 0.0,
+   "actual": 170000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3380",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 30000.0,
+   "actual": 30000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "223",
+   "nombre": "Transportes",
+   "anterior": 1300.0,
+   "actual": 1300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 75000.0,
+   "actual": 50000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "226.09.01",
+   "nombre": "Cross de la Constitución",
+   "anterior": 15000.0,
+   "actual": 75000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "226.09.02",
+   "nombre": "Vuelta Ciclista Junior a la Ribera",
+   "anterior": 230000.0,
+   "actual": 226000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "226.09.03",
+   "nombre": "Milla Urbana",
+   "anterior": 50000.0,
+   "actual": 75000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "226.09.05",
+   "nombre": "Campeonato internacional de fútbol",
+   "anterior": 12000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "226.09.07",
+   "nombre": "Campeonato de España Canicross",
+   "anterior": 0.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 30000.0,
+   "actual": 22000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3410",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 30000.0,
+   "actual": 20000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 3800.0,
+   "actual": 3800.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "210",
+   "nombre": "Reparación, mantenimiento y conservación de infraestructuras y bienes naturales",
+   "anterior": 100000.0,
+   "actual": 100000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 160000.0,
+   "actual": 25000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 15000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 23200.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 5500.0,
+   "actual": 5500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "220.02",
+   "nombre": "Material informático no inventariable",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 100000.0,
+   "actual": 100000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 30000.0,
+   "actual": 30000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 2600.0,
+   "actual": 2600.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "221.07",
+   "nombre": "Red de calor",
+   "anterior": 78000.0,
+   "actual": 65500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 2800.0,
+   "actual": 2800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 800.0,
+   "actual": 2925.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "226.03",
+   "nombre": "Publicación en diarios oficiales",
+   "anterior": 10.0,
+   "actual": 10.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 1800.0,
+   "actual": 1800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 120000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 54000.0,
+   "actual": 54000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "227.99.01",
+   "nombre": "Piscina climatizada",
+   "anterior": 420000.0,
+   "actual": 420000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "227.99.02",
+   "nombre": "Piscinas de verano",
+   "anterior": 160000.0,
+   "actual": 160000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "3420",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "4220",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 30000.0,
+   "actual": 30000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4220",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4310",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 1300.0,
+   "actual": 1300.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "4310",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4310",
+   "codigo": "226.03",
+   "nombre": "Publicación en diarios oficiales",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4310",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 24500.0,
+   "actual": 24500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4311",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 50000.0,
+   "actual": 50000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "4311",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 25000.0,
+   "actual": 35000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4311",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4311",
+   "codigo": "226.99.01",
+   "nombre": "Feria FP",
+   "anterior": 38000.0,
+   "actual": 45000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4311",
+   "codigo": "226.99.02",
+   "nombre": "Feria gastronomía",
+   "anterior": 50000.0,
+   "actual": 50000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 18000.0,
+   "actual": 18000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 6700.0,
+   "actual": 1000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 6000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 5300.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 1000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "221.07",
+   "nombre": "Red de calor",
+   "anterior": 0.0,
+   "actual": 12500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 1200.0,
+   "actual": 1200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 1600.0,
+   "actual": 1600.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 75000.0,
+   "actual": 75000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.09.02",
+   "nombre": "Visitas teatralizadas",
+   "anterior": 41000.0,
+   "actual": 41000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.09.03",
+   "nombre": "Feria de la cerveza",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.09.04",
+   "nombre": "Mes del enoturismo",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.09.05",
+   "nombre": "Noche de velas",
+   "anterior": 8000.0,
+   "actual": 8000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.09.06",
+   "nombre": "Noche de ronda",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.09.07",
+   "nombre": "Fitur",
+   "anterior": 50000.0,
+   "actual": 50000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.09.08",
+   "nombre": "Aranda Motor Show",
+   "anterior": 0.0,
+   "actual": 35000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 30700.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 18200.0,
+   "actual": 18200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4320",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "4321",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4321",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4321",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 33500.0,
+   "actual": 33500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4321",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 10000.0,
+   "actual": 30000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 39000.0,
+   "actual": 39000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 70000.0,
+   "actual": 34000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 12300.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 18000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 3600.0,
+   "actual": 3600.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 4000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 26000.0,
+   "actual": 26000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 5500.0,
+   "actual": 5500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 5500.0,
+   "actual": 5500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 12000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 70000.0,
+   "actual": 70000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "226.09.01",
+   "nombre": "Fiesta de la Vendimia",
+   "anterior": 0.0,
+   "actual": 80000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "226.99.01",
+   "nombre": "Gastos Sonorama",
+   "anterior": 45000.0,
+   "actual": 80000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 36000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "227.99.01",
+   "nombre": "Premios Envero",
+   "anterior": 120000.0,
+   "actual": 150000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4330",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "4411",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4411",
+   "codigo": "227.99.01",
+   "nombre": "Contrato autobuses urbanos",
+   "anterior": 350000.0,
+   "actual": 350000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4620",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4620",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 18200.0,
+   "actual": 20000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4620",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 25000.0,
+   "actual": 25000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "209",
+   "nombre": "Cánones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 1600.0,
+   "actual": 1600.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 700.0,
+   "actual": 700.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 9300.0,
+   "actual": 9300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "226.06",
+   "nombre": "Reuniones, conferencias y cursos",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "226.09",
+   "nombre": "Actividades culturales y deportivas",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 12000.0,
+   "actual": 12000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "4930",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 600.0,
+   "actual": 600.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 3600.0,
+   "actual": 3600.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "204",
+   "nombre": "Arrendamientos de material de transporte",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 1300.0,
+   "actual": 1300.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 10500.0,
+   "actual": 10500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "226.01",
+   "nombre": "Atenciones protocolarias y representativas",
+   "anterior": 30000.0,
+   "actual": 30000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 70000.0,
+   "actual": 70000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 6000.0,
+   "actual": 6000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 18200.0,
+   "actual": 18200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "230.00",
+   "nombre": "Dietas de los miembros de los órganos de gobierno",
+   "anterior": 3500.0,
+   "actual": 3500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "9120",
+   "codigo": "233.00",
+   "nombre": "Indemnizaciones por asistencia a órganos de gobierno",
+   "anterior": 251980.0,
+   "actual": 251980.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "203",
+   "nombre": "Arrendamientos de maquinaria, instalaciones y utillaje",
+   "anterior": 1600.0,
+   "actual": 1600.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 60000.0,
+   "actual": 17500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 5100.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 10000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 1800.0,
+   "actual": 1800.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "214",
+   "nombre": "Reparación, mantenimiento y conservación de elementos de transporte",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "215",
+   "nombre": "Reparación, mantenimiento y conservación de mobiliario",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 12700.0,
+   "actual": 12700.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "216.01",
+   "nombre": "Microsoft 365",
+   "anterior": 60000.0,
+   "actual": 60000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "216.02",
+   "nombre": "Servicio fichajes, nómina, portal de empleo y convocatorias-oposiciones",
+   "anterior": 40000.0,
+   "actual": 20000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "216.03",
+   "nombre": "Mantenimiento Oracle",
+   "anterior": 7300.0,
+   "actual": 7300.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "216.04",
+   "nombre": "Sede electrónica",
+   "anterior": 46000.0,
+   "actual": 46000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 13000.0,
+   "actual": 13000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "220.02",
+   "nombre": "Material informático no inventariable",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 23000.0,
+   "actual": 23000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "221.03",
+   "nombre": "Combustibles y carburantes",
+   "anterior": 1000.0,
+   "actual": 1000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "221.04",
+   "nombre": "Vestuario",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 8000.0,
+   "actual": 8000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 30000.0,
+   "actual": 30000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 17000.0,
+   "actual": 17000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 183000.0,
+   "actual": 183000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "225.00",
+   "nombre": "Tributos estatales",
+   "anterior": 600.0,
+   "actual": 600.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "226.03",
+   "nombre": "Publicación en diarios oficiales",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "226.04",
+   "nombre": "Jurídicos, contenciosos",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "226.04.01",
+   "nombre": "Contrato de servicios jurídicos externalizados",
+   "anterior": 91000.0,
+   "actual": 91000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "226.10",
+   "nombre": "Multas e indemnizaciones",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 37500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "227.01",
+   "nombre": "Seguridad",
+   "anterior": 0.0,
+   "actual": 40000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 18500.0,
+   "actual": 18500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "227.99.01",
+   "nombre": "Contrato de prevención de riesgos laborales",
+   "anterior": 34500.0,
+   "actual": 34500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 1500.0,
+   "actual": 1500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "9200",
+   "codigo": "233",
+   "nombre": "Otras indemnizaciones",
+   "anterior": 900.0,
+   "actual": 900.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 28000.0,
+   "actual": 36000.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 19500.0,
+   "actual": 1000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 11000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "212.03",
+   "nombre": "Mantenimiento de protección contra incendios",
+   "anterior": 0.0,
+   "actual": 5200.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 11000.0,
+   "actual": 11000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 11000.0,
+   "actual": 11000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 700.0,
+   "actual": 700.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 600.0,
+   "actual": 600.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 1800.0,
+   "actual": 1800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 800.0,
+   "actual": 800.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 22500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9240",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 0.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9250",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9250",
+   "codigo": "216.01",
+   "nombre": "Portal de transparencia",
+   "anterior": 14520.0,
+   "actual": 14520.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9250",
+   "codigo": "216.02",
+   "nombre": "Mantenimiento web, dominios…",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9250",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9250",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9290",
+   "codigo": "202",
+   "nombre": "Arrendamientos de edificios y otras construcciones",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "20"
+  },
+  {
+   "cap": 2,
+   "programa": "9290",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 7400.0,
+   "actual": 7400.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9290",
+   "codigo": "213",
+   "nombre": "Reparación, mantenimiento y conservación de maquinaria, instalaciones técnicas y utillaje",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9290",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 4000.0,
+   "actual": 4000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9290",
+   "codigo": "221.02",
+   "nombre": "Gas",
+   "anterior": 600.0,
+   "actual": 600.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9290",
+   "codigo": "221.99",
+   "nombre": "Otros suministros",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9290",
+   "codigo": "223",
+   "nombre": "Transportes",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9290",
+   "codigo": "224",
+   "nombre": "Primas de seguros",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9290",
+   "codigo": "225.02",
+   "nombre": "Tributos de las entidades locales",
+   "anterior": 1100.0,
+   "actual": 1100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9300",
+   "codigo": "212",
+   "nombre": "Reparación, mantenimiento y conservación de edificios y otras construcciones",
+   "anterior": 65000.0,
+   "actual": 6500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9300",
+   "codigo": "212.02",
+   "nombre": "Mantenimiento de climatización y OCA",
+   "anterior": 0.0,
+   "actual": 6000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9300",
+   "codigo": "221.00",
+   "nombre": "Energía eléctrica",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9300",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 11000.0,
+   "actual": 11000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9300",
+   "codigo": "227.00",
+   "nombre": "Limpieza y aseo",
+   "anterior": 0.0,
+   "actual": 52500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9310",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9310",
+   "codigo": "216.01",
+   "nombre": "Sede electrónica",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9310",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9310",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9310",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 250.0,
+   "actual": 250.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9310",
+   "codigo": "226.03",
+   "nombre": "Publicación en diarios oficiales",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9310",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 18200.0,
+   "actual": 18200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9310",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 200.0,
+   "actual": 200.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 2000.0,
+   "actual": 2000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "216.01",
+   "nombre": "Sede electrónica",
+   "anterior": 38000.0,
+   "actual": 38000.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 5000.0,
+   "actual": 5000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "220.01",
+   "nombre": "Prensa, revistas, libros y otras publicaciones",
+   "anterior": 1100.0,
+   "actual": 1100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 2500.0,
+   "actual": 2500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 60000.0,
+   "actual": 60000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "226.02",
+   "nombre": "Publicidad y propaganda",
+   "anterior": 7600.0,
+   "actual": 7600.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "226.03",
+   "nombre": "Publicación en diarios oficiales",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 3000.0,
+   "actual": 3000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "227.06",
+   "nombre": "Estudios y trabajos técnicos",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9320",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 1100.0,
+   "actual": 1100.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 2,
+   "programa": "9330",
+   "codigo": "216",
+   "nombre": "Reparación, mantenimiento y conservación de equipos para procesos de información",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9330",
+   "codigo": "216.01",
+   "nombre": "Gestión inventario",
+   "anterior": 13500.0,
+   "actual": 13500.0,
+   "articulo": "21"
+  },
+  {
+   "cap": 2,
+   "programa": "9330",
+   "codigo": "220.00",
+   "nombre": "Material de oficina ordinario no inventariable",
+   "anterior": 1200.0,
+   "actual": 1200.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9330",
+   "codigo": "222.00",
+   "nombre": "Servicios de telecomunicaciones",
+   "anterior": 300.0,
+   "actual": 300.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9330",
+   "codigo": "226.99",
+   "nombre": "Otros gastos diversos",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9340",
+   "codigo": "222.01",
+   "nombre": "Comunicaciones postales",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9340",
+   "codigo": "227.99",
+   "nombre": "Otros trabajos realizados por otras empresas y profesionales",
+   "anterior": 10000.0,
+   "actual": 10000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9340",
+   "codigo": "227.99.01",
+   "nombre": "Contrato de Servicios Bancarios",
+   "anterior": 65000.0,
+   "actual": 65000.0,
+   "articulo": "22"
+  },
+  {
+   "cap": 2,
+   "programa": "9340",
+   "codigo": "230.20",
+   "nombre": "Dietas del personal no directivo",
+   "anterior": 500.0,
+   "actual": 500.0,
+   "articulo": "23"
+  },
+  {
+   "cap": 3,
+   "programa": "0110",
+   "codigo": "310.00",
+   "nombre": "Intereses",
+   "anterior": 160000.0,
+   "actual": 222000.0,
+   "articulo": "31"
+  },
+  {
+   "cap": 3,
+   "programa": "0110",
+   "codigo": "311.00",
+   "nombre": "Gastos de formalización, modificación y cancelación",
+   "anterior": 0.0,
+   "actual": 0.0,
+   "articulo": "31"
+  },
+  {
+   "cap": 3,
+   "programa": "9340",
+   "codigo": "359.00",
+   "nombre": "Otros gastos financieros",
+   "anterior": 24000.0,
+   "actual": 24000.0,
+   "articulo": "35"
+  },
+  {
+   "cap": 4,
+   "programa": "1610",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 2200.0,
+   "actual": 2200.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "1700",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 2300.0,
+   "actual": 2300.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "1710",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 210.0,
+   "actual": 210.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "2311",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 203580.0,
+   "actual": 173000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "2311",
+   "codigo": "489.01",
+   "nombre": "Otras transferencias (Plataforma 0,7)",
+   "anterior": 26000.0,
+   "actual": 26000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "2311",
+   "codigo": "489.02",
+   "nombre": "Atenciones benéficas y asistenciales",
+   "anterior": 150000.0,
+   "actual": 120000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "2313",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 29690.0,
+   "actual": 6000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "2313",
+   "codigo": "489.01",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Concurrencia",
+   "anterior": 0.0,
+   "actual": 23330.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3260",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 59650.0,
+   "actual": 26800.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3260",
+   "codigo": "489.01",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Concurrencia",
+   "anterior": 0.0,
+   "actual": 35850.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3262",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 16000.0,
+   "actual": 16000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3331",
+   "codigo": "489.02",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro (convenio)",
+   "anterior": 0.0,
+   "actual": 60000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3340",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 103550.0,
+   "actual": 107100.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3341",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 100.0,
+   "actual": 100.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3373",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 55000.0,
+   "actual": 15000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3373",
+   "codigo": "489.01",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Concurrencia",
+   "anterior": 0.0,
+   "actual": 40000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3380",
+   "codigo": "489.01",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Concurrencia",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3410",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 570000.0,
+   "actual": 74405.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "3410",
+   "codigo": "489.01",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Concurrencia",
+   "anterior": 0.0,
+   "actual": 641300.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "4310",
+   "codigo": "472.00",
+   "nombre": "Subvenciones para reducir el precio a pagar por los consumidores. Bonos al consumo",
+   "anterior": 70000.0,
+   "actual": 70000.0,
+   "articulo": "47"
+  },
+  {
+   "cap": 4,
+   "programa": "4310",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 40000.0,
+   "actual": 40000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "4320",
+   "codigo": "467.00",
+   "nombre": "A consorcios",
+   "anterior": 18000.0,
+   "actual": 18000.0,
+   "articulo": "46"
+  },
+  {
+   "cap": 4,
+   "programa": "4320",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 92500.0,
+   "actual": 19300.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "4320",
+   "codigo": "489.01",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Concurrencia",
+   "anterior": 0.0,
+   "actual": 38200.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "4330",
+   "codigo": "479.00",
+   "nombre": "Otras subvenciones a empresas privadas",
+   "anterior": 145200.0,
+   "actual": 145200.0,
+   "articulo": "47"
+  },
+  {
+   "cap": 4,
+   "programa": "4330",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 63400.0,
+   "actual": 70200.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "4620",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 0.0,
+   "actual": 1500.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "9120",
+   "codigo": "489.00",
+   "nombre": "Dotaciones a los grupos municipales",
+   "anterior": 53000.0,
+   "actual": 53000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "9200",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 4300.0,
+   "actual": 4227.1,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "9240",
+   "codigo": "489.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro. Nominativas",
+   "anterior": 55000.0,
+   "actual": 55000.0,
+   "articulo": "48"
+  },
+  {
+   "cap": 4,
+   "programa": "9430",
+   "codigo": "468.00",
+   "nombre": "A entidades locales menores (La Aguilera)",
+   "anterior": 150000.0,
+   "actual": 150000.0,
+   "articulo": "46"
+  },
+  {
+   "cap": 5,
+   "programa": "9290",
+   "codigo": "500.00",
+   "nombre": "Fondo de contingencia",
+   "anterior": 50000.0,
+   "actual": 50000.0,
+   "articulo": "50"
+  },
+  {
+   "cap": 6,
+   "programa": "1320",
+   "codigo": "622",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 130000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1320",
+   "codigo": "623",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 12000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1320",
+   "codigo": "624",
+   "nombre": "Elementos de transporte",
+   "anterior": null,
+   "actual": 70000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1330",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 175000.0,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "1350",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 50000.0,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "1350",
+   "codigo": "623",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1350",
+   "codigo": "624",
+   "nombre": "Elementos de transporte",
+   "anterior": null,
+   "actual": 25000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1350",
+   "codigo": "625",
+   "nombre": "Mobiliario",
+   "anterior": null,
+   "actual": 6000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1360",
+   "codigo": "622",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 200000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1360",
+   "codigo": "623",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 71220.58,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1500",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 30000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "1500",
+   "codigo": "633",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "1500",
+   "codigo": "641",
+   "nombre": "Gastos en aplicaciones informáticas",
+   "anterior": null,
+   "actual": 12000.0,
+   "articulo": "64"
+  },
+  {
+   "cap": 6,
+   "programa": "1522",
+   "codigo": "650",
+   "nombre": "Gastos en inversiones gestionadas para otros entes públicos",
+   "anterior": null,
+   "actual": 4464080.0,
+   "articulo": "65"
+  },
+  {
+   "cap": 6,
+   "programa": "1522",
+   "codigo": "682",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 911000.0,
+   "articulo": "68"
+  },
+  {
+   "cap": 6,
+   "programa": "1530",
+   "codigo": "600",
+   "nombre": "Inversiones en terrenos",
+   "anterior": null,
+   "actual": 400000.0,
+   "articulo": "60"
+  },
+  {
+   "cap": 6,
+   "programa": "1530",
+   "codigo": "609",
+   "nombre": "Otras inversiones nuevas en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 6515500.0,
+   "articulo": "60"
+  },
+  {
+   "cap": 6,
+   "programa": "1530",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 5555438.12,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "1530",
+   "codigo": "622",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 500000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1530",
+   "codigo": "624",
+   "nombre": "Elementos de transporte",
+   "anterior": null,
+   "actual": 60000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1530",
+   "codigo": "635",
+   "nombre": "Mobiliario",
+   "anterior": null,
+   "actual": 380000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "1600",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 415508.8,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "1610",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 685406.51,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "1610",
+   "codigo": "623",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 6500.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1610",
+   "codigo": "624",
+   "nombre": "Elementos de transporte",
+   "anterior": null,
+   "actual": 60000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1621",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 126.76,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "1623",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 350000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "1623",
+   "codigo": "633",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 450000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "1640",
+   "codigo": "622",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 335000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1650",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 825000.0,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "1710",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 1360000.0,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "1710",
+   "codigo": "627",
+   "nombre": "Proyectos complejos",
+   "anterior": null,
+   "actual": 18200.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "1721",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 100000.0,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "2310",
+   "codigo": "622",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 150000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "2310",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 136000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "2310",
+   "codigo": "635",
+   "nombre": "Mobiliario",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "3110",
+   "codigo": "609",
+   "nombre": "Otras inversiones nuevas en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 100000.0,
+   "articulo": "60"
+  },
+  {
+   "cap": 6,
+   "programa": "3200",
+   "codigo": "623",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 30000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3230",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 300000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "3230",
+   "codigo": "633",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 48400.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "3261",
+   "codigo": "629",
+   "nombre": "Otras inversiones nuevas asociadas al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 38200.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3262",
+   "codigo": "629",
+   "nombre": "Otras inversiones nuevas asociadas al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3321",
+   "codigo": "623",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 25000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3321",
+   "codigo": "629",
+   "nombre": "Otras inversiones nuevas asociadas al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3331",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 30000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "3331",
+   "codigo": "633",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 50000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "3340",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 60000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "3341",
+   "codigo": "629",
+   "nombre": "Otras inversiones nuevas asociadas al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3370",
+   "codigo": "625",
+   "nombre": "Mobiliario",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3370",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 50000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "3373",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 560000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "3374",
+   "codigo": "629",
+   "nombre": "Otras inversiones nuevas asociadas al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3375",
+   "codigo": "629",
+   "nombre": "Otras inversiones nuevas asociadas al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 50000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3380",
+   "codigo": "623",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 80000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3420",
+   "codigo": "622",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 200000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "3420",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 1900000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "4320",
+   "codigo": "619",
+   "nombre": "Otras inversiones de reposición en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 200000.0,
+   "articulo": "61"
+  },
+  {
+   "cap": 6,
+   "programa": "4320",
+   "codigo": "625",
+   "nombre": "Mobiliario",
+   "anterior": null,
+   "actual": 150000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "4320",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 100000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "4330",
+   "codigo": "609",
+   "nombre": "Otras inversiones nuevas en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 300000.0,
+   "articulo": "60"
+  },
+  {
+   "cap": 6,
+   "programa": "4330",
+   "codigo": "622",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 40000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "4330",
+   "codigo": "625",
+   "nombre": "Mobiliario",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "4330",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 90000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "4411",
+   "codigo": "627",
+   "nombre": "Proyectos complejos",
+   "anterior": null,
+   "actual": 30000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "4411",
+   "codigo": "639",
+   "nombre": "Otras inversiones de reposición asociadas al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 180000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "4540",
+   "codigo": "609",
+   "nombre": "Otras inversiones nuevas en infraestructuras y bienes destinados al uso general",
+   "anterior": null,
+   "actual": 300000.0,
+   "articulo": "60"
+  },
+  {
+   "cap": 6,
+   "programa": "4620",
+   "codigo": "641",
+   "nombre": "Gastos en aplicaciones informáticas",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "64"
+  },
+  {
+   "cap": 6,
+   "programa": "9200",
+   "codigo": "623",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 40000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "9200",
+   "codigo": "626",
+   "nombre": "Equipos para procesos de información",
+   "anterior": null,
+   "actual": 50000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "9200",
+   "codigo": "627",
+   "nombre": "Proyectos complejos",
+   "anterior": null,
+   "actual": 40000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "9200",
+   "codigo": "629",
+   "nombre": "Otras inversiones nuevas asociadas al funcionamiento operativo de los servicios",
+   "anterior": null,
+   "actual": 60000.0,
+   "articulo": "62"
+  },
+  {
+   "cap": 6,
+   "programa": "9200",
+   "codigo": "633",
+   "nombre": "Maquinaria, instalaciones técnicas y utillaje",
+   "anterior": null,
+   "actual": 20000.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 6,
+   "programa": "9200",
+   "codigo": "641",
+   "nombre": "Gastos en aplicaciones informáticas",
+   "anterior": null,
+   "actual": 190000.0,
+   "articulo": "64"
+  },
+  {
+   "cap": 6,
+   "programa": "9240",
+   "codigo": "632",
+   "nombre": "Edificios y otras construcciones",
+   "anterior": null,
+   "actual": 39600.0,
+   "articulo": "63"
+  },
+  {
+   "cap": 7,
+   "programa": "1522",
+   "codigo": "780.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro (ITE)",
+   "anterior": 20000.0,
+   "actual": 20000.0,
+   "articulo": "78"
+  },
+  {
+   "cap": 7,
+   "programa": "1522",
+   "codigo": "780.01",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro (fachadas)",
+   "anterior": 30000.0,
+   "actual": 30000.0,
+   "articulo": "78"
+  },
+  {
+   "cap": 7,
+   "programa": "3360",
+   "codigo": "780.00",
+   "nombre": "Transferencias a familias e instituciones sin fines de lucro",
+   "anterior": 70000.0,
+   "actual": 70000.0,
+   "articulo": "78"
+  },
+  {
+   "cap": 8,
+   "programa": "2210",
+   "codigo": "830",
+   "nombre": "Préstamos a corto plazo",
+   "anterior": 15000.0,
+   "actual": 15000.0,
+   "articulo": "83"
+  },
+  {
+   "cap": 9,
+   "programa": "0110",
+   "codigo": "913",
+   "nombre": "Amortización de préstamos a largo plazo de entes de fuera del sector público",
+   "anterior": 535000.0,
+   "actual": 525000.0,
+   "articulo": "91"
+  }
+ ]
+}

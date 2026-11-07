@@ -1,0 +1,132 @@
+{
+ "anio": 2027,
+ "prestamos": [
+  {
+   "fecha": "2017-11-27",
+   "entidad": "CAIXABANK (antes BANKIA)",
+   "importe": 362528.65,
+   "primeraAmortizacion": "2017-12-31",
+   "ultimaAmortizacion": "2027-09-30",
+   "tipoInteres": "EURIBOR TRIM. +0,600%",
+   "vivaInicio": 27189.75,
+   "vivaFin": 0.0,
+   "amortizacion": 27189.75
+  },
+  {
+   "fecha": "2018-12-21",
+   "entidad": "UNICAJA BANCO",
+   "importe": 2051624.51,
+   "primeraAmortizacion": "2019-03-31",
+   "ultimaAmortizacion": "2028-12-31",
+   "tipoInteres": "EURIBOR TRIM. +0,350%",
+   "vivaInicio": 410324.95,
+   "vivaFin": 205162.51,
+   "amortizacion": 205162.44
+  },
+  {
+   "fecha": "2021-09-01",
+   "entidad": "CAJA LABORAL",
+   "importe": 2906376.85,
+   "primeraAmortizacion": "2023-12-31",
+   "ultimaAmortizacion": "2032-12-31",
+   "tipoInteres": "EURIBOR ANUAL + 0,26%",
+   "vivaInicio": 1743826.11,
+   "vivaFin": 1453188.43,
+   "amortizacion": 290637.68
+  },
+  {
+   "fecha": "2026-12-01",
+   "entidad": "EN CONCERTACIÓN",
+   "importe": 4000000.0,
+   "primeraAmortizacion": "2028-12-31",
+   "ultimaAmortizacion": "2037-12-31",
+   "tipoInteres": "EURIBOR ANUAL + 0,50%",
+   "vivaInicio": 4000000.0,
+   "vivaFin": 4000000.0,
+   "amortizacion": 0
+  }
+ ],
+ "previsto": {
+  "fecha": null,
+  "importe": 23596825.81,
+  "primeraAmortizacion": "2029-12-31",
+  "ultimaAmortizacion": "2038-12-31",
+  "tipoInteres": "Euribor anual + 0,50%"
+ },
+ "serie": [
+  {
+   "anio": 2022,
+   "viva": 4309552.67
+  },
+  {
+   "anio": 2023,
+   "viva": 3777499.71
+  },
+  {
+   "anio": 2024,
+   "viva": 3245446.74
+  },
+  {
+   "anio": 2025,
+   "viva": 2713393.77
+  },
+  {
+   "anio": 2026,
+   "viva": 6181340.81
+  },
+  {
+   "anio": 2027,
+   "viva": 5658350.94
+  },
+  {
+   "anio": 2028,
+   "viva": 4762550.75
+  },
+  {
+   "anio": 2029,
+   "viva": 4071913.07
+  },
+  {
+   "anio": 2030,
+   "viva": 3381275.39
+  },
+  {
+   "anio": 2031,
+   "viva": 2690637.71
+  },
+  {
+   "anio": 2032,
+   "viva": 2000000.0
+  },
+  {
+   "anio": 2033,
+   "viva": 1600000.0
+  },
+  {
+   "anio": 2034,
+   "viva": 1200000.0
+  },
+  {
+   "anio": 2035,
+   "viva": 800000.0
+  },
+  {
+   "anio": 2036,
+   "viva": 400000.0
+  },
+  {
+   "anio": 2037,
+   "viva": 0.0
+  }
+ ],
+ "titular": {
+  "vivaFin": 5658350.94,
+  "vivaFinConPrevisto": 29255176.75
+ },
+ "carga": {
+  "intereses": 220825.58,
+  "amortizacion": 522989.89,
+  "total": 743815.47,
+  "interesesConPrevisto": null
+ }
+}

@@ -18,8 +18,9 @@ const sinNaN = (valor, ruta = "") => {
   else if (valor && typeof valor === "object") Object.entries(valor).forEach(([k, v]) => sinNaN(v, `${ruta}.${k}`));
 };
 
-test("el índice publica 2024, 2025 y 2026 y el año por defecto es el último", () => {
-  assert.deepEqual(ANIOS, [2024, 2025, 2026]);
+test("el índice publica 2024 a 2027 (2027 en proyecto) y el año por defecto es el último aprobado", () => {
+  assert.deepEqual(ANIOS, [2024, 2025, 2026, 2027]);
+  assert.deepEqual(indice.anios.map((a) => a.tipo), ["aprobado", "aprobado", "aprobado", "proyecto"]);
   assert.equal(indice.ultimo, 2026);
   assert.equal(readdirSync(new URL("../data/", import.meta.url)).filter((f) => /^\d{4}$/.test(f)).length, ANIOS.length);
 });

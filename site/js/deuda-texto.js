@@ -5,6 +5,10 @@ import { urlPagina } from "./rutas.js";
 
 export function explicaDosPrestamos(previsto, prestamoInversiones) {
   const diferencia = Math.abs(prestamoInversiones - previsto);
+  if (diferencia < 1) {
+    // El anexo de deuda y la financiación de las inversiones pueden dar la misma cifra
+    return `Es la misma cifra que aparece en la financiación de las inversiones y en los ingresos. Es lo máximo previsto: el Ayuntamiento puede usar remanentes de tesorería (ahorros de años anteriores) para pagar parte de las inversiones, así que el préstamo realmente necesario puede ser menor. Es una estimación, no una deuda ya contraída.`;
+  }
   return (
     `En el presupuesto aparecen dos cifras de préstamo: ${formatEuros(previsto)} en el anexo de deuda y ${formatEuros(prestamoInversiones)} en la financiación de las inversiones y en los ingresos (una diferencia de ${formatEuros(diferencia)}). ` +
     "Los documentos del presupuesto no detallan por qué no coinciden. " +
@@ -19,9 +23,9 @@ export const mes = (iso) => new Date(`${iso}T12:00:00`).toLocaleDateString("es-E
 // El anexo de deuda de algunos años (2025, 2026) incluye un préstamo previsto; el de otros (2024) no.
 export function avisoPrevisto(pv, d, prestamoInversiones, anio) {
   return `<div class="aviso"><h3>Previsión: un préstamo nuevo de ${formatEuros(pv.importe, { compact: true })}</h3>
-      <p>El presupuesto prevé un préstamo de <strong>${formatEuros(pv.importe)}</strong> para ${esc(mes(pv.fecha))}, que se empezaría a devolver en ${esc(mes(pv.primeraAmortizacion))} y terminaría en ${esc(mes(pv.ultimaAmortizacion))} (${esc(pv.tipoInteres)}). Si se firmara, la deuda a 31 de diciembre de ${anio} sería de <strong>${formatEuros(d.titular.vivaFinConPrevisto)}</strong>.</p>
+      <p>El presupuesto prevé un préstamo de <strong>${formatEuros(pv.importe)}</strong> para ${pv.fecha ? esc(mes(pv.fecha)) : anio}, que se empezaría a devolver en ${esc(mes(pv.primeraAmortizacion))} y terminaría en ${esc(mes(pv.ultimaAmortizacion))} (${esc(pv.tipoInteres)}). Si se firmara, la deuda a 31 de diciembre de ${anio} sería de <strong>${formatEuros(d.titular.vivaFinConPrevisto)}</strong>.</p>
       <p><strong>Solo se formalizará si es necesario</strong>, según la liquidación y la ejecución del presupuesto.</p>
-      <p>${esc(explicaDosPrestamos(pv.importe, prestamoInversiones))} Por eso el gráfico de abajo no las incluye. Las cifras de préstamo en las <a href="${urlPagina("inversiones", anio)}">inversiones</a> se explican en esa página.</p></div>`;
+      <p>${esc(explicaDosPrestamos(pv.importe, prestamoInversiones))} Por eso el gráfico de abajo no incluye el préstamo previsto. Las cifras de préstamo en las <a href="${urlPagina("inversiones", anio)}">inversiones</a> se explican en esa página.</p></div>`;
 }
 
 export function avisoSinPrevisto(prestamoInversiones, anio) {
