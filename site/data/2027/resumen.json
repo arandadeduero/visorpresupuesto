@@ -4,16 +4,16 @@
  "habitantes": 33956,
  "anioPoblacion": 2025,
  "fuentePoblacion": "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos",
- "totalGastos": 74994197.87,
+ "totalGastos": 74926197.87,
  "totalGastosAnterior": 64280861.35,
- "totalIngresos": 74994197.87,
+ "totalIngresos": 74926197.87,
  "gastosPorCapitulo": [
   {
    "cap": 1,
    "corto": "Personal",
    "oficial": "Gastos de personal",
    "anterior": 15616598.5,
-   "actual": 17681810.0
+   "actual": 17613810.0
   },
   {
    "cap": 2,
@@ -134,7 +134,7 @@
    "corto": "Préstamos",
    "oficial": "Pasivos financieros",
    "anterior": 20161623.64,
-   "actual": 23596825.81
+   "actual": 23528825.81
   }
  ],
  "por100": [
@@ -160,7 +160,7 @@
    "caps": [
     1
    ],
-   "importe": 17681810.0,
+   "importe": 17613810.0,
    "euros": 24
   },
   {

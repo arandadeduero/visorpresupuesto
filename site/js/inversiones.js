@@ -7,7 +7,7 @@ import { avisoPrestamoInversiones } from "./deuda-texto.js";
 const FUENTES = [
   ["prestamo", "Préstamo", "Dinero que se pediría prestado a un banco."],
   ["ingresosCorrientes", "Ingresos del Ayuntamiento", "Impuestos y tasas del año."],
-  ["otros", "Otros", ""],
+  ["otros", "Otros", "Otras aportaciones que no son impuestos, préstamos ni subvenciones."],
   ["rta", "Remanente de tesorería", "Ahorros de años anteriores."],
   ["subvenciones", "Subvenciones", "Dinero de otras administraciones para obras."],
 ];
