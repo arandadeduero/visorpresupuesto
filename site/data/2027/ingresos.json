@@ -1048,22 +1048,6 @@
      "anterior2": null,
      "anterior": null,
      "actual": 242068.82
-    },
-    {
-     "codigo": "789.00",
-     "articulo": "78",
-     "nombre": "Transferencias de familias e instituciones sin fines de lucro. Propietarios ARU",
-     "anterior2": 74240.4,
-     "anterior": 0.0,
-     "actual": 0.0
-    },
-    {
-     "codigo": "797.00",
-     "articulo": "79",
-     "nombre": "Otras transferencias de la Unión Europea. ARU Santa Catalina",
-     "anterior2": 0.0,
-     "anterior": 0.0,
-     "actual": 0.0
     }
    ],
    "articulos": [
@@ -1074,22 +1058,6 @@
      "anterior2": 1856820.0,
      "anterior": 1445600.95,
      "actual": 5260857.62
-    },
-    {
-     "codigo": "78",
-     "nombre": "Subvenciones de familias e instituciones sin fines de lucro",
-     "oficial": "De familias e instituciones sin fines de lucro",
-     "anterior2": 74240.4,
-     "anterior": 0.0,
-     "actual": 0.0
-    },
-    {
-     "codigo": "79",
-     "nombre": "Subvenciones del exterior",
-     "oficial": "Del exterior",
-     "anterior2": 0.0,
-     "anterior": 0.0,
-     "actual": 0.0
     }
    ]
   },
@@ -1143,7 +1111,7 @@
    "oficial": "Pasivos financieros",
    "anterior2": 20457492.93,
    "anterior": 20161623.64,
-   "actual": 23596825.81,
+   "actual": 23528825.81,
    "conceptos": [
     {
      "codigo": "913.00",
@@ -1151,7 +1119,7 @@
      "nombre": "Préstamos de entes de fuera del sector público a largo plazo",
      "anterior2": 20457492.93,
      "anterior": 20161623.64,
-     "actual": 23596825.81
+     "actual": 23528825.81
     }
    ],
    "articulos": [
@@ -1161,7 +1129,7 @@
      "oficial": "Préstamos recibidos en euros",
      "anterior2": 20457492.93,
      "anterior": 20161623.64,
-     "actual": 23596825.81
+     "actual": 23528825.81
     }
    ]
   }

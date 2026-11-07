@@ -6,7 +6,7 @@
    "corto": "Personal",
    "oficial": "Gastos de personal",
    "anterior": 15616598.5,
-   "actual": 17681810.0
+   "actual": 17613810.0
   },
   {
    "cap": 2,
@@ -90,7 +90,7 @@
    "codigo": "12",
    "nombre": "Personal funcionario",
    "oficial": "Personal Funcionario",
-   "anterior": 5927675.5,
+   "anterior": 5925875.5,
    "actual": 8002700.0
   },
   {
@@ -99,7 +99,7 @@
    "nombre": "Personal laboral",
    "oficial": "Personal Laboral",
    "anterior": 969350.0,
-   "actual": 4195850.0
+   "actual": 4127850.0
   },
   {
    "cap": 1,
@@ -317,21 +317,21 @@
    "nombre": "Seguridad y movilidad ciudadana",
    "area": 1,
    "anterior": null,
-   "actual": 7140010.58
+   "actual": 7138010.58
   },
   {
    "codigo": "15",
    "nombre": "Vivienda y urbanismo",
    "area": 1,
    "anterior": null,
-   "actual": 20666868.12
+   "actual": 20605868.12
   },
   {
    "codigo": "16",
    "nombre": "Bienestar comunitario",
    "area": 1,
    "anterior": null,
-   "actual": 10992422.07
+   "actual": 10955422.07
   },
   {
    "codigo": "17",
@@ -352,7 +352,7 @@
    "nombre": "Servicios sociales y promoción social",
    "area": 2,
    "anterior": null,
-   "actual": 5872670.0
+   "actual": 5698670.0
   },
   {
    "codigo": "24",
@@ -373,21 +373,21 @@
    "nombre": "Educación",
    "area": 3,
    "anterior": null,
-   "actual": 3357800.0
+   "actual": 3320800.0
   },
   {
    "codigo": "33",
    "nombre": "Cultura",
    "area": 3,
    "anterior": null,
-   "actual": 5163900.0
+   "actual": 5119900.0
   },
   {
    "codigo": "34",
    "nombre": "Deporte",
    "area": 3,
    "anterior": null,
-   "actual": 5123140.0
+   "actual": 5079140.0
   },
   {
    "codigo": "42",
@@ -401,7 +401,7 @@
    "nombre": "Comercio, turismo y pequeñas y medianas empresas",
    "area": 4,
    "anterior": null,
-   "actual": 3117300.0
+   "actual": 3087300.0
   },
   {
    "codigo": "44",
@@ -436,21 +436,21 @@
    "nombre": "Órganos de gobierno",
    "area": 9,
    "anterior": 967000.0,
-   "actual": 1081060.0
+   "actual": 1013060.0
   },
   {
    "codigo": "92",
    "nombre": "Servicios de carácter general",
    "area": 9,
    "anterior": null,
-   "actual": 3573647.1
+   "actual": 4038647.1
   },
   {
    "codigo": "93",
    "nombre": "Administración financiera y tributaria",
    "area": 9,
    "anterior": 2027615.0,
-   "actual": 1907510.0
+   "actual": 1871510.0
   },
   {
    "codigo": "94",
@@ -475,7 +475,7 @@
    "area": 1,
    "politica": "13",
    "anterior": 177175.0,
-   "actual": 215000.0
+   "actual": 213000.0
   },
   {
    "codigo": "1320",
@@ -523,7 +523,7 @@
    "area": 1,
    "politica": "15",
    "anterior": 595300.0,
-   "actual": 595900.0
+   "actual": 573900.0
   },
   {
    "codigo": "1522",
@@ -539,7 +539,7 @@
    "area": 1,
    "politica": "15",
    "anterior": null,
-   "actual": 14154738.12
+   "actual": 14115738.12
   },
   {
    "codigo": "1600",
@@ -555,7 +555,7 @@
    "area": 1,
    "politica": "16",
    "anterior": null,
-   "actual": 2014806.51
+   "actual": 1989806.51
   },
   {
    "codigo": "1621",
@@ -595,7 +595,7 @@
    "area": 1,
    "politica": "16",
    "anterior": null,
-   "actual": 1700630.0
+   "actual": 1688630.0
   },
   {
    "codigo": "1700",
@@ -635,7 +635,7 @@
    "area": 2,
    "politica": "23",
    "anterior": null,
-   "actual": 729910.0
+   "actual": 717910.0
   },
   {
    "codigo": "2311",
@@ -643,7 +643,7 @@
    "area": 2,
    "politica": "23",
    "anterior": 2302767.5,
-   "actual": 2206300.0
+   "actual": 2044300.0
   },
   {
    "codigo": "2312",
@@ -691,7 +691,7 @@
    "area": 3,
    "politica": "32",
    "anterior": null,
-   "actual": 286500.0
+   "actual": 267500.0
   },
   {
    "codigo": "3230",
@@ -723,7 +723,7 @@
    "area": 3,
    "politica": "32",
    "anterior": null,
-   "actual": 286100.0
+   "actual": 268100.0
   },
   {
    "codigo": "3300",
@@ -731,7 +731,7 @@
    "area": 3,
    "politica": "33",
    "anterior": 347680.0,
-   "actual": 390450.0
+   "actual": 380450.0
   },
   {
    "codigo": "3321",
@@ -739,7 +739,7 @@
    "area": 3,
    "politica": "33",
    "anterior": null,
-   "actual": 563000.0
+   "actual": 556000.0
   },
   {
    "codigo": "3330",
@@ -763,7 +763,7 @@
    "area": 3,
    "politica": "33",
    "anterior": null,
-   "actual": 580550.0
+   "actual": 572550.0
   },
   {
    "codigo": "3341",
@@ -795,7 +795,7 @@
    "area": 3,
    "politica": "33",
    "anterior": null,
-   "actual": 1311200.0
+   "actual": 1292200.0
   },
   {
    "codigo": "3374",
@@ -835,7 +835,7 @@
    "area": 3,
    "politica": "34",
    "anterior": null,
-   "actual": 3751635.0
+   "actual": 3707635.0
   },
   {
    "codigo": "4220",
@@ -867,7 +867,7 @@
    "area": 4,
    "politica": "43",
    "anterior": null,
-   "actual": 1047500.0
+   "actual": 1033500.0
   },
   {
    "codigo": "4321",
@@ -883,7 +883,7 @@
    "area": 4,
    "politica": "43",
    "anterior": null,
-   "actual": 1639100.0
+   "actual": 1623100.0
   },
   {
    "codigo": "4411",
@@ -923,7 +923,7 @@
    "area": 9,
    "politica": "91",
    "anterior": 967000.0,
-   "actual": 1081060.0
+   "actual": 1013060.0
   },
   {
    "codigo": "9200",
@@ -939,7 +939,7 @@
    "area": 9,
    "politica": "92",
    "anterior": 495500.0,
-   "actual": 577000.0
+   "actual": 574000.0
   },
   {
    "codigo": "9202",
@@ -947,7 +947,7 @@
    "area": 9,
    "politica": "92",
    "anterior": 228700.0,
-   "actual": 1238000.0
+   "actual": 1706000.0
   },
   {
    "codigo": "9240",
@@ -987,7 +987,7 @@
    "area": 9,
    "politica": "93",
    "anterior": 568285.0,
-   "actual": 514250.0
+   "actual": 510250.0
   },
   {
    "codigo": "9320",
@@ -995,7 +995,7 @@
    "area": 9,
    "politica": "93",
    "anterior": 888220.0,
-   "actual": 770800.0
+   "actual": 749800.0
   },
   {
    "codigo": "9330",
@@ -1003,7 +1003,7 @@
    "area": 9,
    "politica": "93",
    "anterior": 274310.0,
-   "actual": 318810.0
+   "actual": 307810.0
   },
   {
    "codigo": "9340",
@@ -1030,7 +1030,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 177175.0,
-   "actual": 215000.0
+   "actual": 213000.0
   },
   {
    "cap": 1,
@@ -1066,7 +1066,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 571400.0,
-   "actual": 572000.0
+   "actual": 550000.0
   },
   {
    "cap": 1,
@@ -1084,7 +1084,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 605150.0,
-   "actual": 617500.0
+   "actual": 578500.0
   },
   {
    "cap": 1,
@@ -1093,7 +1093,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 432800.0,
-   "actual": 534000.0
+   "actual": 509000.0
   },
   {
    "cap": 1,
@@ -1120,7 +1120,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 291650.0,
-   "actual": 328000.0
+   "actual": 316000.0
   },
   {
    "cap": 1,
@@ -1156,7 +1156,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 256310.0,
-   "actual": 260210.0
+   "actual": 248210.0
   },
   {
    "cap": 1,
@@ -1165,7 +1165,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 1859887.5,
-   "actual": 1824000.0
+   "actual": 1662000.0
   },
   {
    "cap": 1,
@@ -1183,7 +1183,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 204720.0,
-   "actual": 256500.0
+   "actual": 237500.0
   },
   {
    "cap": 1,
@@ -1201,7 +1201,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 168000.0,
-   "actual": 173000.0
+   "actual": 155000.0
   },
   {
    "cap": 1,
@@ -1210,7 +1210,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 161430.0,
-   "actual": 163000.0
+   "actual": 153000.0
   },
   {
    "cap": 1,
@@ -1219,7 +1219,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 351965.0,
-   "actual": 445000.0
+   "actual": 438000.0
   },
   {
    "cap": 1,
@@ -1228,7 +1228,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 107150.0,
-   "actual": 74150.0
+   "actual": 66150.0
   },
   {
    "cap": 1,
@@ -1246,7 +1246,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 198530.0,
-   "actual": 316000.0
+   "actual": 297000.0
   },
   {
    "cap": 1,
@@ -1273,7 +1273,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 489100.0,
-   "actual": 487000.0
+   "actual": 443000.0
   },
   {
    "cap": 1,
@@ -1282,7 +1282,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 143020.0,
-   "actual": 157000.0
+   "actual": 143000.0
   },
   {
    "cap": 1,
@@ -1291,7 +1291,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 231870.0,
-   "actual": 236000.0
+   "actual": 220000.0
   },
   {
    "cap": 1,
@@ -1318,7 +1318,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 496920.0,
-   "actual": 610980.0
+   "actual": 542980.0
   },
   {
    "cap": 1,
@@ -1336,7 +1336,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 495500.0,
-   "actual": 577000.0
+   "actual": 574000.0
   },
   {
    "cap": 1,
@@ -1345,7 +1345,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 228700.0,
-   "actual": 1238000.0
+   "actual": 1706000.0
   },
   {
    "cap": 1,
@@ -1354,7 +1354,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 531035.0,
-   "actual": 477000.0
+   "actual": 473000.0
   },
   {
    "cap": 1,
@@ -1363,7 +1363,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 752420.0,
-   "actual": 635000.0
+   "actual": 614000.0
   },
   {
    "cap": 1,
@@ -1372,7 +1372,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 258710.0,
-   "actual": 303210.0
+   "actual": 292210.0
   },
   {
    "cap": 1,
@@ -8014,15 +8014,6 @@
    "nombre": "Intereses",
    "anterior": 160000.0,
    "actual": 222000.0,
-   "articulo": "31"
-  },
-  {
-   "cap": 3,
-   "programa": "0110",
-   "codigo": "311.00",
-   "nombre": "Gastos de formalización, modificación y cancelación",
-   "anterior": 0.0,
-   "actual": 0.0,
    "articulo": "31"
   },
   {

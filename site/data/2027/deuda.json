@@ -48,7 +48,7 @@
  ],
  "previsto": {
   "fecha": null,
-  "importe": 23596825.81,
+  "importe": 23528825.81,
   "primeraAmortizacion": "2029-12-31",
   "ultimaAmortizacion": "2038-12-31",
   "tipoInteres": "Euribor anual + 0,50%"
@@ -121,7 +121,7 @@
  ],
  "titular": {
   "vivaFin": 5658350.94,
-  "vivaFinConPrevisto": 29255176.75
+  "vivaFinConPrevisto": 29187176.75
  },
  "carga": {
   "intereses": 220825.58,
