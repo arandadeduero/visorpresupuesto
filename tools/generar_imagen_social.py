@@ -24,6 +24,7 @@ FUENTE = RAIZ / "site" / "fonts" / "outfit-latin-wght-normal.woff2"
 
 # Paleta municipal (la misma que site/css/styles.css)
 ROJO, AMBAR, AZUL = "#ce0e2d", "#f5a800", "#0083c1"
+CELESTE_LOGO, AZUL_ENLACE = "#30b5e5", "#0070a8"  # franja de la cabecera (--franja) y azul de texto (--enlace)
 GRIS_OSCURO, GRIS, AZUL_CLARO, BLANCO = "#3c3c3c", "#646464", "#e9f4f9", "#ffffff"
 
 
@@ -56,8 +57,8 @@ def imagen_social(escudo: Image.Image) -> Image.Image:
     ancho, alto, izq = 1200, 630, 400
     im = Image.new("RGB", (ancho, alto), BLANCO)
     d = ImageDraw.Draw(im)
-    d.rectangle((0, 0, izq, alto), fill=ROJO)
-    # Placa clara con el escudo (el escudo no se lee sobre el rojo)
+    d.rectangle((0, 0, izq, alto), fill=CELESTE_LOGO)
+    # Placa clara con el escudo, como en el pie de la web (el escudo no se lee sobre el celeste)
     pw, ph = 270, 400
     px, py = (izq - pw) // 2, (alto - ph) // 2
     d.rounded_rectangle((px, py, px + pw, py + ph), radius=34, fill=BLANCO)
@@ -69,7 +70,7 @@ def imagen_social(escudo: Image.Image) -> Image.Image:
     d.text((x, 92), "AYUNTAMIENTO DE ARANDA DE DUERO", font=outfit(600, 24), fill=GRIS)
     titulo = outfit(700, 70)
     d.text((x, 142), "Presupuestos", font=titulo, fill=GRIS_OSCURO)
-    d.text((x, 222), "de Aranda de Duero", font=titulo, fill=ROJO)
+    d.text((x, 222), "de Aranda de Duero", font=titulo, fill=AZUL_ENLACE)
     lema = outfit(400, 36)
     for i, linea in enumerate(["En qué se gasta tu dinero,", "de dónde sale y qué se debe"]):
         d.text((x, 360 + i * 50), linea, font=lema, fill=GRIS_OSCURO)
