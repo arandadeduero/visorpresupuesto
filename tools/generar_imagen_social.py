@@ -5,7 +5,7 @@ Uso: .venv/bin/python tools/generar_imagen_social.py
 
 Salida (todo en site/img/):
 - social.png          1200x630, la imagen que se ve al compartir un enlace (Facebook, X, WhatsApp, LinkedIn, Telegram...)
-- escudo.png          escudo recortado para la cabecera (66x99 px; se muestra a 22x33)
+- escudo.png          escudo recortado para el pie (66x99 px; se muestra a 44x66)
 - favicon-32.png      icono de pestaña
 - apple-touch-icon.png 180x180 sobre fondo blanco (iOS no admite transparencia)
 - icon-192.png        192x192 (manifiesto)

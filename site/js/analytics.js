@@ -90,7 +90,7 @@ function borrarCookiesGa(win, doc) {
 /** Monta el aviso y el enlace de preferencias y aplica la decisión guardada. Debe llamarse con el marco ya pintado. */
 export function iniciarAnalitica(win = window, doc = document) {
   if (doNotTrackActivo(win.navigator, win)) return; // Do Not Track: ni aviso, ni Google, ni enlace de preferencias
-  const pie = doc.querySelector("footer.site .wrap");
+  const pie = doc.querySelector("footer.site .pie-texto");
   if (pie && !pie.querySelector("[data-analytics-prefs]")) pie.insertAdjacentHTML("beforeend", prefsHtml());
   if (!doc.querySelector("[data-analytics-consent]")) doc.body.insertAdjacentHTML("beforeend", avisoHtml());
   const aviso = doc.querySelector("[data-analytics-consent]");

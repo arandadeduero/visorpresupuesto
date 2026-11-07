@@ -37,14 +37,16 @@
   --azul-cielo: #8fc9e6;   /* tono claro del capítulo 8 */
   --ambar-claro: #f9d37a;  /* tono claro del capítulo 9 */
   --azul-enlace: #0070a8;  /* azul para texto y enlaces: cumple contraste AA (el azul municipal solo para rellenos) */
-  --gris-borde: #d5dde2;
+  --celeste-logo: #30b5e5; /* fondo exacto del logotipo negativo: la franja no tiene costuras (igual que contratos.arandadeduero.es) */
+  --gris-azulado: #f4f8fb; /* fondo de página de contratos.arandadeduero.es */
+  --gris-borde: #d9e4ec;
   --ambar-suave: #fff8e6;
   --rojo-suave: #fdecee;
   --blanco: #ffffff;
   --negro: #000000;
 
   /* 2. Tokens semánticos (tema claro) */
-  --fondo: var(--blanco);
+  --fondo: var(--gris-azulado);
   --fondo-suave: var(--azul-claro);
   --superficie: var(--blanco);
   --texto: var(--gris-oscuro);
@@ -55,11 +57,12 @@
   --acento: var(--azul);
   --activo-fondo: var(--azul-enlace);
   --activo-texto: var(--blanco);
-  --cabecera-fondo: var(--rojo);
-  --cabecera-texto: var(--blanco);
-  --cabecera-activo-fondo: var(--blanco);
-  --cabecera-activo-texto: var(--rojo);
-  --logo-placa: var(--blanco);  /* el escudo es de colores propios: va sobre una placa clara en los dos temas */
+  --franja: var(--celeste-logo); /* franja del logotipo, igual en los dos temas (el color va en la imagen) */
+  --cabecera-fondo: var(--superficie);
+  --cabecera-texto: var(--texto);
+  --cabecera-activo-fondo: var(--superficie);
+  --cabecera-activo-texto: var(--texto);
+  --logo-placa: var(--blanco);  /* el escudo del pie es de colores propios: va sobre una placa clara en los dos temas */
   --aviso-fondo: var(--ambar-suave);
   --aviso-borde: var(--ambar);
   --error-fondo: var(--rojo-suave);
@@ -104,7 +107,7 @@
   --tono-4: var(--negro) 50%;
   --tono-5: var(--blanco) 78%;
 
-  --radio: 8px;
+  --radio: 10px;
 }
 
 /* 3. Tema oscuro: sigue la preferencia del sistema y reacciona en vivo si cambia (sin interruptor manual) */
@@ -119,8 +122,6 @@
     --n-texto: #e7ebee;
     --n-texto-suave: #a9b4bc;
     --rojo-d: #ee5a6f;
-    --rojo-cabecera: #8f0a20;
-    --rojo-pastel: #fde3e7;
     --azul-d: #3aa8de;
     --azul-enlace-d: #5bbae8;
     --marron-d: #d58348;
@@ -141,10 +142,10 @@
     --acento: var(--azul-d);
     --activo-fondo: var(--azul-enlace-d);
     --activo-texto: var(--n-fondo);
-    --cabecera-fondo: var(--rojo-cabecera);
-    --cabecera-texto: var(--blanco);
-    --cabecera-activo-fondo: var(--rojo-pastel);
-    --cabecera-activo-texto: var(--rojo-cabecera);
+    --cabecera-fondo: var(--n-superficie);
+    --cabecera-texto: var(--n-texto);
+    --cabecera-activo-fondo: var(--n-superficie);
+    --cabecera-activo-texto: var(--n-texto);
     --aviso-fondo: var(--ambar-aviso);
     --aviso-borde: var(--ambar);
     --error-fondo: var(--rojo-aviso);
@@ -205,23 +206,28 @@ p { margin: 0 0 1em; }
 a { color: var(--enlace); }
 :focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; box-shadow: 0 0 0 6px var(--foco-anillo); }
 .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
-main.wrap { padding-top: 24px; padding-bottom: 48px; min-height: 60vh; }
+main.wrap { min-height: 60vh; }
 main.alto { min-height: 100vh; }
 .muted { color: var(--texto-suave); }
 .saltar { position: absolute; left: -999px; }
 .saltar:focus { left: 8px; top: 8px; background: var(--superficie); color: var(--texto); padding: 8px; z-index: 10; }
 
-/* Cabecera y menú */
-header.site { background: var(--cabecera-fondo); color: var(--cabecera-texto); }
-.cabecera { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; justify-content: space-between; padding-top: 6px; padding-bottom: 6px; }
-.marca { display: inline-flex; align-items: center; gap: 10px; color: var(--cabecera-texto); font-weight: 700; font-size: 1.15rem; text-decoration: none; }
-.logo { display: block; flex: none; width: 22px; height: 33px; padding: 3px 5px; background: var(--logo-placa); border-radius: 8px; }
-.anio { font-size: .95rem; }
-.anio select { font: inherit; padding: 4px 8px; border-radius: 6px; border: 0; background: var(--superficie); color: var(--texto); }
+/* Contenido: un panel blanco sobre el fondo de página, alineado con la cabecera (como contratos.arandadeduero.es) */
+main.wrap { width: calc(100% - 32px); max-width: 968px; margin: 16px auto 0; padding: 24px; background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio); }
+
+/* Cabecera: franja con el logotipo, nombre del sitio con el año y menú en pestañas */
+header.site { background: var(--cabecera-fondo); color: var(--cabecera-texto); border-bottom: 1px solid var(--borde); }
+.franja { background: var(--franja); padding: 12px 0; }
+.marca { display: inline-block; vertical-align: top; }
+.logo { display: block; height: 52px; width: auto; max-width: 100%; }
+.cabecera { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 10px; }
+.nombre-sitio { font-weight: 700; font-size: 1.5rem; line-height: 1.2; }
+.anio { font-size: .95rem; color: var(--texto-suave); }
+.anio select { font: inherit; color: var(--texto); padding: 6px 10px; border: 1px solid var(--borde-fuerte); border-radius: var(--radio); background: var(--fondo); }
 .menu ul { list-style: none; margin: 0; padding: 0; }
 .menu a { text-decoration: none; }
-.boton-menu { display: none; align-items: center; gap: 10px; min-width: 44px; min-height: 44px; padding: 0 14px; font: inherit; font-weight: 600; color: var(--cabecera-texto); background: transparent; border: 2px solid color-mix(in srgb, var(--cabecera-texto) 85%, transparent); border-radius: 999px; cursor: pointer; }
-.boton-menu:hover { background: color-mix(in srgb, var(--cabecera-texto) 18%, transparent); }
+.boton-menu { display: none; align-items: center; gap: 10px; min-width: 44px; min-height: 44px; padding: 0 14px; font: inherit; font-weight: 600; color: var(--cabecera-texto); background: transparent; border: 1px solid var(--borde-fuerte); border-radius: var(--radio); cursor: pointer; }
+.boton-menu:hover { background: var(--fondo-suave); }
 .hamburguesa, .hamburguesa::before, .hamburguesa::after { display: block; width: 20px; height: 2px; background: var(--cabecera-texto); border-radius: 2px; }
 .hamburguesa { position: relative; }
 .hamburguesa::before, .hamburguesa::after { content: ""; position: absolute; left: 0; }
@@ -231,43 +237,44 @@ header.site[data-abierto] .hamburguesa { background: transparent; }
 header.site[data-abierto] .hamburguesa::before { top: 0; transform: rotate(45deg); }
 header.site[data-abierto] .hamburguesa::after { top: 0; transform: rotate(-45deg); }
 
-/* Menú principal (grande, sobre el rojo) */
-.menu-principal ul { display: flex; flex-wrap: wrap; gap: 4px; padding-bottom: 8px; }
-.menu-principal a { display: block; color: var(--cabecera-texto); font-size: 1.05rem; padding: 7px 16px; border-radius: 999px; }
-.menu-principal a:hover { background: color-mix(in srgb, var(--cabecera-texto) 18%, transparent); }
-.menu-principal a[aria-current="page"] { background: var(--cabecera-activo-fondo); color: var(--cabecera-activo-texto); font-weight: 700; }
-/* Herramientas (pequeño, franja clara a todo el ancho) */
-.menu-herramientas { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; padding: 3px 0; background: var(--fondo-suave); color: var(--texto); font-size: .875rem; clip-path: inset(0 -100vmax); box-shadow: 0 0 0 100vmax var(--fondo-suave); }
+/* Pestañas: la sección activa en negrita y subrayada con el azul de los enlaces */
+.menu-principal ul, .menu-herramientas ul { display: flex; flex-wrap: wrap; gap: 2px; }
+.menu-principal a, .menu-herramientas a { display: block; color: var(--texto-suave); padding: 10px 14px; border-bottom: 3px solid transparent; }
+.menu-principal a:hover, .menu-herramientas a:hover { color: var(--cabecera-texto); text-decoration: underline; }
+.menu-principal a[aria-current="page"], .menu-herramientas a[aria-current="page"] { color: var(--cabecera-activo-texto); border-bottom-color: var(--enlace); font-weight: 700; }
+/* Herramientas: la misma fila de pestañas, más pequeña y separada por un filete */
+.menu-herramientas { display: flex; flex-wrap: wrap; align-items: center; gap: 0 6px; border-top: 1px solid var(--borde); font-size: .875rem; }
+.menu-herramientas a { padding: 6px 12px; }
 .menu-etiqueta { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--texto-suave); margin-right: 6px; }
-.menu-herramientas ul { display: flex; flex-wrap: wrap; gap: 2px; }
-.menu-herramientas a { display: block; color: var(--texto); padding: 3px 11px; border-radius: 999px; }
-.menu-herramientas a:hover { background: var(--superficie); text-decoration: underline; }
-.menu-herramientas a[aria-current="page"] { background: var(--activo-fondo); color: var(--activo-texto); font-weight: 600; }
-.menu-interior :focus-visible { box-shadow: 0 0 0 6px var(--foco-anillo); }
-.menu-herramientas :focus-visible { box-shadow: none; }
 
 /* Móvil y pantallas estrechas: botón de menú y panel desplegable */
 @media (max-width: 799px) {
   .cabecera { flex-wrap: wrap; }
-  .marca { flex: 1 1 0; min-width: 0; font-size: 1.05rem; line-height: 1.25; }
+  .nombre-sitio { flex: 1 1 0; min-width: 0; font-size: 1.15rem; }
+  .logo { height: 40px; }
   .boton-menu { display: inline-flex; order: 2; }
   .anio { order: 3; flex: 1 0 100%; padding-bottom: 4px; }
-  .menu { display: none; border-top: 1px solid color-mix(in srgb, var(--cabecera-texto) 35%, transparent); }
+  .menu { display: none; border-top: 1px solid var(--borde); }
   header.site[data-abierto] .menu { display: block; animation: aparecer .15s ease-out; }
   .menu-principal ul { flex-direction: column; gap: 0; padding-bottom: 6px; }
-  .menu-principal li + li { border-top: 1px solid color-mix(in srgb, var(--cabecera-texto) 22%, transparent); }
-  .menu-principal a { font-size: 1.2rem; font-weight: 600; min-height: 52px; display: flex; align-items: center; padding: 8px 12px; border-radius: 8px; }
-  .menu-herramientas { display: block; padding: 8px 0 10px; clip-path: inset(0 -100vmax); }
+  .menu-principal li + li { border-top: 1px solid var(--borde); }
+  .menu-principal a { font-size: 1.2rem; font-weight: 600; min-height: 52px; display: flex; align-items: center; padding: 8px 12px; border-bottom: 0; border-left: 3px solid transparent; }
+  .menu-principal a[aria-current="page"] { border-left-color: var(--enlace); }
+  .menu-herramientas { display: block; padding: 8px 0 10px; }
   .menu-etiqueta { display: block; margin: 0 0 4px 12px; }
   .menu-herramientas ul { flex-direction: column; gap: 0; }
-  .menu-herramientas a { font-size: .98rem; min-height: 44px; display: flex; align-items: center; padding: 6px 12px; border-radius: 8px; }
+  .menu-herramientas a { font-size: .98rem; min-height: 44px; display: flex; align-items: center; padding: 6px 12px; border-bottom: 0; border-left: 3px solid transparent; }
+  .menu-herramientas a[aria-current="page"] { border-left-color: var(--enlace); }
+  main.wrap { width: calc(100% - 16px); padding: 16px; margin-top: 8px; }
 }
 @keyframes aparecer { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   header.site[data-abierto] .menu { animation: none; }
   .hamburguesa, .hamburguesa::before, .hamburguesa::after { transition: none; }
 }
-footer.site { background: var(--fondo-suave); color: var(--texto-suave); font-size: .9rem; padding: 16px 0; }
+footer.site { margin-top: 32px; background: var(--superficie); color: var(--texto-suave); font-size: .9rem; padding: 20px 0 28px; border-top: 1px solid var(--borde); }
+.pie { display: flex; gap: 16px; align-items: flex-start; }
+.pie-escudo { flex: none; width: 44px; height: auto; padding: 4px; background: var(--logo-placa); border-radius: var(--radio); }
 .pie-privacidad { margin: .75em 0 0; }
 footer.site p { margin: .4em 0; }
 .pie-enlaces a, .relacionado a { display: inline-block; padding: 8px 0; }

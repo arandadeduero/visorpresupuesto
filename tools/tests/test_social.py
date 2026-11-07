@@ -130,7 +130,7 @@ def test_el_logo_de_la_cabecera_tiene_alt_tamano_y_enlaza_a_la_portada():
     assert 'alt="Ayuntamiento de Aranda de Duero"' in img
     ancho = int(re.search(r'width="(\d+)"', img).group(1))
     alto = int(re.search(r'height="(\d+)"', img).group(1))
-    real = dimensiones_png(IMG / "escudo.png")
+    real = dimensiones_png(IMG / "logo-ayuntamiento.png")
     assert abs(ancho / alto - real[0] / real[1]) < 0.03 and real[0] >= 2 * ancho  # nítido en pantallas 2x
     assert "style" not in img
 
@@ -150,13 +150,13 @@ def dist(tmp_path_factory):
 
 
 def test_el_build_mantiene_estables_la_imagen_social_y_los_iconos(dist):
-    for nombre in ["social.png", *ICONOS]:
+    for nombre in ["social.png", "logo-ayuntamiento.png", *ICONOS]:
         assert (dist / "img" / nombre).read_bytes() == (IMG / nombre).read_bytes()
     for f in ["manifest.webmanifest", "robots.txt", "sitemap.xml"]:
         assert (dist / f).is_file()
 
 
-def test_el_build_pone_huella_al_escudo_de_la_cabecera_y_lo_anota_en_cada_html(dist):
+def test_el_build_pone_huella_al_escudo_del_pie_y_lo_anota_en_cada_html(dist):
     publicados = [p.name for p in (dist / "img").glob("escudo.*.png")]
     assert len(publicados) == 1 and re.fullmatch(r"escudo\.[0-9a-f]{10}\.png", publicados[0])
     assert not (dist / "img" / "escudo.png").exists()

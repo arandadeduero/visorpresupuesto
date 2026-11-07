@@ -15,6 +15,9 @@ export const anioDeLaUrl = () => (atributos().anio === undefined ? null : Number
 /** ¿Es una página de la raíz del sitio (portada, alias del último año, páginas sin año)? */
 export const esRaiz = () => enBuild() && anioDeLaUrl() === null;
 
+/** URL relativa de un fichero con nombre estable (sin huella) de la raíz del sitio, p. ej. «img/logo-ayuntamiento.png». */
+export const urlRaiz = (ruta) => (atributos().raiz ?? "") + ruta;
+
 /** URL relativa de una página. `anio` solo cuenta en las páginas que dependen del año; sin él, el último. */
 export function urlPagina(id, anio = null) {
   const fichero = id === "inicio" ? "" : `${id}.html`;
