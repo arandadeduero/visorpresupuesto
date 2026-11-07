@@ -7,10 +7,12 @@ runPage("subvenciones", async ({ anio, main, load }) => {
   const programas = [...d.programas].sort((a, b) => b.actual - a.actual);
   const max = programas[0]?.actual ?? 0;
   const idPrograma = (p) => `${p.bloque}-${p.codigo}`; // el mismo programa sale en las subvenciones y en las cuotas
+  const conAnterior = d.totalAnterior !== null; // algún anexo no trae la columna del año anterior
 
   main.innerHTML = `
     <h1>Subvenciones <span class="muted">${anio}</span></h1>
-    <p class="lead">El Ayuntamiento prevé dar <strong>${formatEuros(d.total)}</strong> a asociaciones y entidades por convenio o cuota (en ${anio - 1}: ${formatEuros(d.totalAnterior)}).</p>
+    <p class="lead">El Ayuntamiento prevé dar <strong>${formatEuros(d.total)}</strong> a asociaciones y entidades por convenio o cuota${conAnterior ? ` (en ${anio - 1}: ${formatEuros(d.totalAnterior)})` : ""}.</p>
+    ${conAnterior ? "" : `<p class="muted">El anexo de subvenciones de ${anio} no trae las cifras de ${anio - 1}, así que aquí no se comparan.</p>`}
     <div class="controles"><div class="pestanas" role="group" aria-label="Cómo ver las subvenciones">
       <button type="button" data-vista="actividad" aria-pressed="true">Por actividad</button>
       <button type="button" data-vista="entidad" aria-pressed="false">Por entidad</button></div></div>
@@ -22,7 +24,7 @@ runPage("subvenciones", async ({ anio, main, load }) => {
         importe: p.actual,
         max,
         clicable: true,
-        extra: `${p.items.length} entidad(es) · ${variacionHtml(p.actual, p.anterior)}`,
+        extra: `${p.items.length} entidad(es)${conAnterior ? ` · ${variacionHtml(p.actual, p.anterior)}` : ""}`,
       })}<div class="hijos" hidden></div></li>`).join("")}</ul>
     </section>
     <section id="vista-entidad" hidden>
@@ -30,7 +32,8 @@ runPage("subvenciones", async ({ anio, main, load }) => {
       <div id="entidades"></div>
     </section>`;
 
-  const cab = [{ texto: "Entidad" }, { texto: "Para qué" }, { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }];
+  const cab = [{ texto: "Entidad" }, { texto: "Para qué" }, ...(conAnterior ? [{ texto: `${anio - 1}`, num: true }] : []), { texto: `${anio}`, num: true }];
+  const celdaAnterior = (x) => (conAnterior ? `<td class="num">${formatEuros(x.anterior)}</td>` : "");
   main.querySelector("#vista-actividad").addEventListener("click", (e) => {
     const boton = e.target.closest("button.fila");
     if (!boton) return;
@@ -39,7 +42,7 @@ runPage("subvenciones", async ({ anio, main, load }) => {
     if (abrir && !hijos.innerHTML) {
       const p = d.programas.find((x) => idPrograma(x) === boton.dataset.id);
       const items = [...p.items].sort((a, b) => b.actual - a.actual);
-      hijos.innerHTML = tablaHtml(cab, items.map((i) => `<tr><td>${esc(i.entidad)}</td><td>${esc(i.objeto)}</td><td class="num">${formatEuros(i.anterior)}</td><td class="num">${formatEuros(i.actual)}</td></tr>`));
+      hijos.innerHTML = tablaHtml(cab, items.map((i) => `<tr><td>${esc(i.entidad)}</td><td>${esc(i.objeto)}</td>${celdaAnterior(i)}<td class="num">${formatEuros(i.actual)}</td></tr>`));
     }
     hijos.hidden = !abrir;
     boton.setAttribute("aria-expanded", String(abrir));
@@ -52,8 +55,8 @@ runPage("subvenciones", async ({ anio, main, load }) => {
     const filas = d.entidades.filter((e) => matches(e.entidad, consulta));
     lista.innerHTML = filas.length
       ? `<p class="muted">${filas.length} entidad(es) · ${formatEuros(filas.reduce((s, e) => s + e.actual, 0))} en ${anio}</p>` + tablaHtml(
-          [{ texto: "Entidad" }, { texto: `Recibe en ${anio}`, num: true }, { texto: `${anio - 1}`, num: true }, { texto: "Actividades" }],
-          filas.map((e) => `<tr><td>${esc(e.entidad)}</td><td class="num">${formatEuros(e.actual)}</td><td class="num">${formatEuros(e.anterior)}</td><td>${esc(e.programas.join(", "))}</td></tr>`),
+          [{ texto: "Entidad" }, { texto: `Recibe en ${anio}`, num: true }, ...(conAnterior ? [{ texto: `${anio - 1}`, num: true }] : []), { texto: "Actividades" }],
+          filas.map((e) => `<tr><td>${esc(e.entidad)}</td><td class="num">${formatEuros(e.actual)}</td>${celdaAnterior(e)}<td>${esc(e.programas.join(", "))}</td></tr>`),
         )
       : `<p>No hay entidades que coincidan con «${esc(consulta)}».</p>`;
   };

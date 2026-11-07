@@ -117,6 +117,12 @@ class Contexto:
         self.clave = "raiz"
         self.anio = self.ultimo
 
+    @property
+    def nombre_tipo(self) -> str:
+        """«presupuesto aprobado» o «proyecto de presupuesto» del año de la vista (como nombreTipo() de site/js/layout.js)."""
+        tipo = next((a["tipo"] for a in self.indice["anios"] if a["anio"] == self.anio), "aprobado")
+        return "proyecto de presupuesto" if tipo == "proyecto" else "presupuesto aprobado"
+
     def para(self, anio: int | None) -> "Contexto":
         """Vista del año `anio` (páginas de /<año>/) o, con None, de la raíz (último año)."""
         otro = copy.copy(self)
@@ -189,7 +195,7 @@ def pagina_inicio(ctx: Contexto) -> str:
     filas = [[esc(b["bloque"]), f"{b['euros']}{NBSP}€", euros(b["importe"])] for b in r["por100"]]
     return (
         f"<h1>Por cada 100{NBSP}€ que gasta el Ayuntamiento en {anio}…</h1>"
-        + _intro(ctx, f"El Ayuntamiento de Aranda de Duero prevé gastar <strong>{euros(r['totalGastos'])}</strong> en {anio} (presupuesto aprobado). Así se reparte cada 100{NBSP}€: personal, servicios, obras y otros gastos, como la deuda.")
+        + _intro(ctx, f"El Ayuntamiento de Aranda de Duero prevé gastar <strong>{euros(r['totalGastos'])}</strong> en {anio} ({ctx.nombre_tipo}). Así se reparte cada 100{NBSP}€: personal, servicios, obras y otros gastos, como la deuda.")
         + tabla([("En qué", False), ("Por cada 100 €", True), (f"Importe en {anio}", True)], filas)
         + f'<p><a href="{ctx.url("gastos")}">Ver el detalle de los gastos del Ayuntamiento por política</a></p>'
         + "<h2>Para cada vecino</h2>"
@@ -197,7 +203,7 @@ def pagina_inicio(ctx: Contexto) -> str:
         + f'<p class="muted">Es el gasto previsto del Ayuntamiento dividido entre la población ({esc(r["fuentePoblacion"])}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>'
         + "<h2>Y además…</h2>"
         + ctx.e["tarjetasInicio"]
-        + '<p class="muted">Es el presupuesto aprobado: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>'
+        + f'<p class="muted">Es el {ctx.nombre_tipo}: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>'
     )
 
 
@@ -267,11 +273,13 @@ def pagina_subvenciones(ctx: Contexto) -> str:
     d = ctx.datos("subvenciones")
     anio = ctx.anio
     progs = sorted(d["programas"], key=lambda p: -p["actual"])
-    filas = [[esc(p["programa"] + (" (cuotas)" if p["bloque"] == "cuotas" else "")), str(len(p["items"])), euros(p.get("anterior")), euros(p["actual"])] for p in progs]
+    con_anterior = d["totalAnterior"] is not None  # el anexo de 2027 no trae la columna del año anterior
+    filas = [[esc(p["programa"] + (" (cuotas)" if p["bloque"] == "cuotas" else "")), str(len(p["items"]))] + ([euros(p.get("anterior"))] if con_anterior else []) + [euros(p["actual"])] for p in progs]
+    previo = f" (en {anio - 1}: {euros(d['totalAnterior'])})" if con_anterior else ""
     return (
         titulo("Subvenciones", anio)
-        + _intro(ctx, f"El Ayuntamiento prevé dar <strong>{euros(d['total'])}</strong> a asociaciones y entidades por convenio o cuota (en {anio - 1}: {euros(d['totalAnterior'])}).")
-        + tabla([("Actividad", False), ("Entidades", True), (str(anio - 1), True), (str(anio), True)], filas)
+        + _intro(ctx, f"El Ayuntamiento prevé dar <strong>{euros(d['total'])}</strong> a asociaciones y entidades por convenio o cuota{previo}.")
+        + tabla([("Actividad", False), ("Entidades", True)] + ([(str(anio - 1), True)] if con_anterior else []) + [(str(anio), True)], filas)
     )
 
 
@@ -322,7 +330,7 @@ def pagina_indicadores(ctx: Contexto) -> str:
     ]
     return (
         titulo("Indicadores", anio)
-        + _intro(ctx, "Siete cifras sencillas para entender la situación económica del Ayuntamiento, calculadas con las cifras del presupuesto aprobado.")
+        + _intro(ctx, f"Siete cifras sencillas para entender la situación económica del Ayuntamiento, calculadas con las cifras del {ctx.nombre_tipo}.")
         + tabla([("Indicador", False), (f"Valor en {anio}", True)], [[esc(a), b] for a, b in filas])
         + f"<h2>Nivel de endeudamiento</h2><p>{esc(ctx.e['textoNivelEndeudamiento'])}</p>"
         + f'<p class="muted">No son los indicadores oficiales de la liquidación del presupuesto. Más explicaciones en la <a href="{ctx.url("guia")}">guía</a> y en la <a href="{ctx.url("metodologia")}">metodología</a>.</p>'
@@ -378,7 +386,7 @@ def pagina_descargas(ctx: Contexto) -> str:
         )
         + "".join(bloques)
         + f'<p>Todos los Excel están también en el <a href="{REPO}/tree/main/{anio}" rel="noopener">repositorio del proyecto</a>.</p>'
-        + '<p class="muted">Los importes son del presupuesto aprobado. Las cifras «por habitante» usan la población indicada en la página de resumen.</p>'
+        + f'<p class="muted">Los importes son del {ctx.nombre_tipo}. Las cifras «por habitante» usan la población indicada en la página de resumen.</p>'
     )
 
 

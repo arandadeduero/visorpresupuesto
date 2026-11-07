@@ -38,7 +38,7 @@ def test_los_imports_de_los_modulos_js_existen():
 
 def test_cada_anio_del_indice_tiene_sus_seis_ficheros_de_datos():
     indice = json.loads((SITE / "data" / "index.json").read_text(encoding="utf-8"))
-    assert indice["ultimo"] == max(a["anio"] for a in indice["anios"])
+    assert indice["ultimo"] == max(a["anio"] for a in indice["anios"] if a["tipo"] == "aprobado")  # un proyecto no es la raíz
     for a in indice["anios"]:
         for nombre in ["resumen", "ingresos", "gastos", "inversiones", "subvenciones", "deuda"]:
             ruta = SITE / "data" / str(a["anio"]) / f"{nombre}.json"

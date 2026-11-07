@@ -266,6 +266,7 @@ header.site[data-abierto] .hamburguesa::after { top: 0; transform: rotate(-45deg
   .menu-herramientas a { font-size: .98rem; min-height: 44px; display: flex; align-items: center; padding: 6px 12px; border-bottom: 0; border-left: 3px solid transparent; }
   .menu-herramientas a[aria-current="page"] { border-left-color: var(--enlace); }
   main.wrap { width: calc(100% - 16px); padding: 16px; margin-top: 8px; }
+  .aviso-proyecto { width: calc(100% - 16px); margin-top: 8px; }
 }
 @keyframes aparecer { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
@@ -307,6 +308,8 @@ body.con-aviso-analitica footer.site { padding-bottom: 16rem; } /* deja sitio pa
 .ayuda { background: var(--fondo-suave); border-radius: var(--radio); padding: 12px 16px; margin-bottom: 1.2em; }
 .aviso { border-left: 6px solid var(--aviso-borde); background: var(--aviso-fondo); border-radius: var(--radio); padding: 12px 16px; margin: 1.2em 0; }
 .aviso-error { border-color: var(--error-borde); background: var(--error-fondo); }
+/* Aviso de proyecto de presupuesto: entre la cabecera y el panel del contenido, con su mismo ancho */
+.aviso-proyecto { width: calc(100% - 32px); max-width: 968px; margin: 16px auto 0; }
 .aviso h3 { margin-bottom: .3em; }
 .cargando { color: var(--texto-suave); }
 

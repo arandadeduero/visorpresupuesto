@@ -93,12 +93,12 @@ def nodos(html):
 
 # ---------------------------------------------------------------- estructura
 
-def test_los_anios_salen_del_indice_y_hay_tres():
-    assert ANIOS == [2024, 2025, 2026] and ULTIMO == 2026
+def test_los_anios_salen_del_indice_y_hay_cuatro():
+    assert ANIOS == [2024, 2025, 2026, 2027] and ULTIMO == 2026  # 2027 es proyecto: la raíz sigue en el último aprobado
 
 
 def test_existen_las_paginas_de_cada_anio_las_de_la_raiz_y_la_404(dist):
-    assert len(PAGINAS_ANIO) == len(ANIOS) * 9 == 27
+    assert len(PAGINAS_ANIO) == len(ANIOS) * 9 == 36
     for n in TODAS + ["404.html", "sitemap.xml", "robots.txt"]:
         assert (dist / n).is_file(), n
     assert len(RAIZ) == 13  # portada, 8 alias del último año y comparar, guía, metodología y descargas
@@ -158,7 +158,7 @@ def test_titulos_y_descripciones_son_unicos_entre_las_paginas_indexables(dist):
         titulos.append(titulo(h))
         descripciones.append(meta(h, "description"))
         assert 0 < len(titulos[-1]) <= 60 and 120 <= len(descripciones[-1]) <= 160, n
-    assert len(titulos) == 1 + 2 * 1 + 3 * 8 + 4  # portada, portadas de los otros años, 8 páginas por año y 4 sin año
+    assert len(titulos) == 1 + 3 * 1 + 4 * 8 + 4  # portada, portadas de los otros años, 8 páginas por año y 4 sin año
     assert len(set(titulos)) == len(titulos) and len(set(descripciones)) == len(descripciones)
 
 
@@ -356,7 +356,7 @@ def test_el_sitemap_lista_cada_url_de_anio_las_paginas_sin_anio_y_la_raiz_sin_al
     raiz = ET.fromstring(leer(dist, "sitemap.xml"))
     urls = [e.find("s:loc", ns).text for e in raiz.findall("s:url", ns)]
     esperadas = {DOMINIO} | {url_de(n) for n in PAGINAS_ANIO if canonica_esperada(n) == url_de(n)} | {url_de(f"{i}.html") for i in SIN_ANIO}
-    assert sorted(urls) == sorted(esperadas) and len(urls) == len(set(urls)) == 31
+    assert sorted(urls) == sorted(esperadas) and len(urls) == len(set(urls)) == 40
     assert DOMINIO + "2025/gastos.html" in urls and DOMINIO + "2024/" in urls and DOMINIO + "2024/deuda.html" in urls
     for alias in ALIAS:  # los alias de la raíz y la carpeta del último año apuntan a otra canónica: fuera
         assert DOMINIO + alias not in urls

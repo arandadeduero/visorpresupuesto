@@ -38,9 +38,11 @@ def parse_resumen(year: int) -> dict:
     ]
 
     habitantes, anio_poblacion, fuente = POBLACION[year]
+    # «proyecto»: presentado y sin aprobar por el Pleno (la web lo avisa en cada página); el resto, presupuesto aprobado
+    tipo = {2027: "proyecto"}.get(year, "aprobado")
     return {
         "anio": year,
-        "tipo": "aprobado",
+        "tipo": tipo,
         "habitantes": habitantes,
         "anioPoblacion": anio_poblacion,
         "fuentePoblacion": fuente,

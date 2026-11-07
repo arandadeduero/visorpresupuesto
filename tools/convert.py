@@ -100,8 +100,10 @@ def convert_con_notas(year: int, out_dir: Path) -> tuple[list[str], list[str]]:
     indice_path = out_dir / "index.json"
     anios = json.loads(indice_path.read_text(encoding="utf-8"))["anios"] if indice_path.exists() else []
     anios = sorted([a for a in anios if a["anio"] != year] + [{"anio": year, "tipo": data["resumen"]["tipo"]}], key=lambda a: a["anio"])
+    # La raíz del sitio es el último presupuesto aprobado: un proyecto se ve en su carpeta (/2027/) hasta que se apruebe
+    aprobados = [a["anio"] for a in anios if a["tipo"] == "aprobado"] or [anios[-1]["anio"]]
     indice_path.write_text(
-        json.dumps({"anios": anios, "ultimo": anios[-1]["anio"]}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
+        json.dumps({"anios": anios, "ultimo": aprobados[-1]}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
     )
     return check_totals(data, year), notas
 

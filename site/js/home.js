@@ -1,4 +1,4 @@
-import { runPage, esc, tarjetasHtml } from "./layout.js";
+import { runPage, esc, tarjetasHtml, nombreTipo, tipoDe } from "./layout.js";
 import { formatEuros, formatVariation } from "./format.js";
 import { claseCrece } from "./escalas.js";
 import { destacar, porHabitante } from "./insights.js";
@@ -19,7 +19,7 @@ function comparacion(total, anterior, anio) {
   return `igual que en ${anio - 1}`;
 }
 
-runPage("inicio", async ({ anio, main, load }) => {
+runPage("inicio", async ({ anio, indice, main, load }) => {
   const r = await load("resumen"); // gastos.json (el más pesado) solo se pide después, para la tarjeta «¿Cuánto gasta…?»
   const porVecino = formatEuros(porHabitante(r.totalGastos, r.habitantes));
   const suma = r.por100.reduce((s, b) => s + b.euros, 0);
@@ -48,7 +48,7 @@ runPage("inicio", async ({ anio, main, load }) => {
     <p class="muted">Es el gasto previsto del Ayuntamiento dividido entre la población (${esc(r.fuentePoblacion)}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>
     <h2>Y además…</h2>
     ${tarjetasHtml(anio)}
-    <p class="muted">Es el presupuesto aprobado: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>`;
+    <p class="muted">Es el ${nombreTipo(tipoDe(indice, anio))}: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>`;
 
   const detalle = main.querySelector("#detalle-seg");
   const botones = [...main.querySelectorAll(".seg")];

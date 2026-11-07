@@ -109,6 +109,16 @@ export function aniosHtml(activa, anio, indice) {
   return `<p class="muted otros-anios">Otros años: ${otros.map((a) => `<a href="${urlPagina(activa, a)}">${esc(ANCLA_ANIO[activa](a))}</a>`).join(" · ")}</p>`;
 }
 
+/** Cómo se llama el presupuesto de cada año según su tipo («aprobado» o «proyecto», de data/index.json). */
+export const nombreTipo = (tipo) => (tipo === "proyecto" ? "proyecto de presupuesto" : "presupuesto aprobado");
+export const tipoDe = (indice, anio) => indice?.anios?.find((a) => a.anio === anio)?.tipo ?? "aprobado";
+
+/** Aviso fijo, entre la cabecera y el contenido, en todas las páginas de un año que solo es proyecto. */
+export function avisoProyectoHtml(indice, anio) {
+  if (tipoDe(indice, anio) !== "proyecto") return "";
+  return `<div class="aviso aviso-proyecto" role="note"><strong>Proyecto de presupuesto de ${anio}.</strong> Todavía no lo ha aprobado el Pleno: las cifras pueden cambiar con las enmiendas y la aprobación definitiva.</div>`;
+}
+
 /** HTML del menú: un bloque por grupo, con `aria-current="page"` en la sección activa. */
 export function menuHtml(activa, anio) {
   return GRUPOS.map((g) => {
@@ -155,7 +165,7 @@ export function pieHtml(actualizado, anio = null, escudo = urlEscudo()) {
   return `<footer class="site"><div class="wrap pie">
       <img class="pie-escudo" src="${escudo}" alt="" width="44" height="66">
       <div class="pie-texto">
-      <p>Fuente: presupuesto aprobado del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados. Datos con licencia <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>. Para comparar con otros municipios: <a href="https://presupuestos.gobierto.es/municipios/aranda-de-duero" rel="noopener">Gobierto Presupuestos</a>.</p>
+      <p>Fuente: presupuestos del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados. Datos con licencia <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>. Para comparar con otros municipios: <a href="https://presupuestos.gobierto.es/municipios/aranda-de-duero" rel="noopener">Gobierto Presupuestos</a>.</p>
       <p class="pie-enlaces"><a href="https://www.arandadeduero.es" rel="noopener">Ayuntamiento de Aranda de Duero</a> · <a href="https://transparencia.arandadeduero.es" rel="noopener">Portal de transparencia</a> · <a href="${URL_REPOSITORIO}" rel="noopener">Código y datos en GitHub</a> · <a href="${URL_POLITICA_PRIVACIDAD}" rel="noopener">Política de privacidad</a> · <a href="${urlPagina("metodologia", anio)}">Metodología y fuentes</a></p>
       ${fecha}</div></div></footer>`;
 }
@@ -163,7 +173,7 @@ export function pieHtml(actualizado, anio = null, escudo = urlEscudo()) {
 /** Cabecera, menú, contenido y pie. Función pura: la usa el navegador y también el build para el HTML estático. */
 export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido = "" }) {
   const opciones = (indice?.anios ?? [])
-    .map((a) => `<option value="${a.anio}"${a.anio === anio ? " selected" : ""}>${a.anio} · ${a.tipo === "aprobado" ? "presupuesto aprobado" : a.tipo}</option>`)
+    .map((a) => `<option value="${a.anio}"${a.anio === anio ? " selected" : ""}>${a.anio} · ${nombreTipo(a.tipo)}</option>`)
     .join("");
   return `
     <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -176,6 +186,7 @@ export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido
       </div>
       <nav class="menu" id="menu-secciones" aria-label="Secciones"><div class="wrap menu-interior">${menuHtml(activa, anio)}</div></nav>
     </header>
+    ${avisoProyectoHtml(indice, anio)}
     <main id="contenido" class="wrap${PAGINAS_ALTAS.includes(activa) ? " alto" : ""}" tabindex="-1">${contenido}</main>
     ${pieHtml(actualizado, anio, escudo)}`;
 }

@@ -427,7 +427,7 @@
    "codigo": "46",
    "nombre": "Investigación, desarrollo e innovación",
    "area": 4,
-   "anterior": 18500.0,
+   "anterior": 0.0,
    "actual": 103900.0
   },
   {
@@ -912,7 +912,7 @@
    "nombre": "Innovación",
    "area": 4,
    "politica": "46",
-   "anterior": 18500.0,
+   "anterior": 0.0,
    "actual": 103900.0
   },
   {
@@ -1305,7 +1305,7 @@
    "codigo": null,
    "articulo": null,
    "nombre": "Gastos de personal",
-   "anterior": 18500.0,
+   "anterior": 0.0,
    "actual": 35700.0
   },
   {

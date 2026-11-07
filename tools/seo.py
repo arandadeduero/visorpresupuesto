@@ -32,7 +32,7 @@ PAGINAS_ANIO = ["inicio", "resumen", "ingresos", "gastos", "inversiones", "subve
 # Título (hasta 60 caracteres) y descripción (120-160) de cada página en un año. Llevan el año y ninguna cifra.
 TEXTOS_ANIO = {
     "inicio": ("Presupuesto de Aranda de Duero {a}: en qué se gasta",
-               "Mira por cada 100 € en qué prevé gastar el Ayuntamiento de Aranda de Duero en {a}: personal, servicios, obras y deuda. Datos del presupuesto aprobado."),
+               "Mira por cada 100 € en qué prevé gastar el Ayuntamiento de Aranda de Duero en {a}: personal, servicios, obras y deuda. Datos del presupuesto municipal."),
     "resumen": ("Resumen del presupuesto de Aranda de Duero en {a}",
                 "Resumen del presupuesto de {a} del Ayuntamiento de Aranda de Duero: cuánto prevé ingresar y gastar, por capítulos, y qué ha cambiado respecto al año anterior."),
     "ingresos": ("Ingresos del Ayuntamiento de Aranda de Duero en {a}",
@@ -98,6 +98,7 @@ def organizacion() -> dict:
 
 def dataset(ctx, anio: int) -> dict:
     """Un conjunto de datos por año: los JSON de la web (con huella) y los Excel originales, con licencia CC BY 4.0."""
+    nombre = ctx.para(anio).nombre_tipo
     distribucion = [
         {
             "@type": "DataDownload",
@@ -113,8 +114,8 @@ def dataset(ctx, anio: int) -> dict:
     return {
         "@type": "Dataset",
         "@id": f"{DOMINIO}descargas.html#presupuesto-{anio}",
-        "name": f"Presupuesto aprobado {anio} del Ayuntamiento de Aranda de Duero",
-        "description": f"Ingresos, gastos, inversiones, subvenciones y deuda del presupuesto aprobado {anio} del Ayuntamiento de Aranda de Duero, en JSON y en los Excel originales del Ayuntamiento.",
+        "name": f"{nombre.capitalize()} {anio} del Ayuntamiento de Aranda de Duero",
+        "description": f"Ingresos, gastos, inversiones, subvenciones y deuda del {nombre} {anio} del Ayuntamiento de Aranda de Duero, en JSON y en los Excel originales del Ayuntamiento.",
         "url": DOMINIO + "descargas.html",
         "inLanguage": "es",
         "isAccessibleForFree": True,

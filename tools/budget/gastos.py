@@ -34,6 +34,7 @@ def parse_gastos(year: int) -> dict:
     capitulos = {}
     nombres_programa = {}
     partidas = []
+    subtotal_anterior = {}  # programa → año anterior de su fila de subtotal en el capítulo 1
     cap = None
     programa = None
     for row in filas:
@@ -53,6 +54,8 @@ def parse_gastos(year: int) -> dict:
         elif _es_codigo_programa(prog) and nombre_txt and row[col] == year - 1:
             programa = code_str(prog)
             nombres_programa.setdefault(programa, sentence_case(nombre_txt))
+        elif cap == 1 and econ is None and programa is not None and anterior is not None and code_str(prog if prog is not None else nombre) == programa:
+            subtotal_anterior[programa] = anterior
         elif econ is not None and programa is not None:
             partidas.append(
                 {"cap": cap, "programa": programa, "codigo": code_str(econ), "nombre": sentence_case(nombre_txt) if nombre_txt else f"Partida {code_str(econ)} (sin descripción)", "anterior": anterior, "actual": actual}
@@ -71,8 +74,14 @@ def parse_gastos(year: int) -> dict:
             personal[p["programa"]][0] += p["anterior"] or 0
             personal[p["programa"]][1] += p["actual"] or 0
     resto = [p for p in partidas if p["cap"] != 1]
+    # En el A3 de 2027 muchas partidas del capítulo 1 no traen el año anterior (vacío o 0), pero el subtotal de cada
+    # programa sí. Como la web enseña una sola línea por programa, se usan los subtotales si su suma cuadra con el
+    # año anterior de A1 mejor que la de las partidas (en 2026 algún subtotal es incoherente y ganan las partidas).
+    ref_personal = next(c["anterior"] for c in parse_resumen(year)["gastosPorCapitulo"] if c["cap"] == 1)
+    por_subtotal = {prog: subtotal_anterior.get(prog, a) for prog, (a, _) in personal.items()}
+    usar_subtotal = abs(sum(por_subtotal.values()) - ref_personal) < abs(sum(a for a, _ in personal.values()) - ref_personal)
     agrupadas = [
-        {"cap": 1, "programa": prog, "codigo": None, "articulo": None, "nombre": "Gastos de personal", "anterior": round(a, 2), "actual": round(b, 2)}
+        {"cap": 1, "programa": prog, "codigo": None, "articulo": None, "nombre": "Gastos de personal", "anterior": round(por_subtotal[prog] if usar_subtotal else a, 2), "actual": round(b, 2)}
         for prog, (a, b) in personal.items()
     ]
     partidas = agrupadas + resto
