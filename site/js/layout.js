@@ -178,8 +178,12 @@ export function pieHtml(actualizado, anio = null, escudo = urlEscudo()) {
 
 /** Cabecera, menú, contenido y pie. Función pura: la usa el navegador y también el build para el HTML estático. */
 export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido = "" }) {
-  const opciones = (indice?.anios ?? [])
-    .map((a) => `<option value="${a.anio}"${a.anio === anio ? " selected" : ""}>${a.anio} · ${nombreTipo(a.tipo)}</option>`)
+  const prorrogados = (indice?.prorrogados ?? []).map((p) => ({ ...p, prorrogado: true }));
+  const opciones = [...(indice?.anios ?? []), ...prorrogados]
+    .sort((a, b) => a.anio - b.anio)
+    .map((a) => a.prorrogado
+      ? `<option disabled>${a.anio} · prorrogado (se aplicó el de ${a.de})</option>`
+      : `<option value="${a.anio}"${a.anio === anio ? " selected" : ""}>${a.anio} · ${nombreTipo(a.tipo)}</option>`)
     .join("");
   return `
     <a class="saltar" href="#contenido">Saltar al contenido</a>

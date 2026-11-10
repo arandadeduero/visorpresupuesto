@@ -110,6 +110,15 @@ def test_descargas_tiene_un_dataset_por_anio_con_distribuciones_que_existen(dist
         for x in excels:
             assert x["contentUrl"].startswith(f"https://github.com/arandadeduero/visorpresupuesto/raw/main/{d['temporalCoverage']}/")
             assert x["contentUrl"].endswith(".xlsx")
+        # El PDF completo, cuando el Ayuntamiento lo publicó (los proyectos aún no lo tienen)
+        carpeta = SITE.parent / d["temporalCoverage"]
+        pdfs = [x for x in d["distribution"] if x["encodingFormat"] == "application/pdf"]
+        assert len(pdfs) == len(list(carpeta.glob("*.pdf")))
+        # Descargas (JS) enlaza «Presupuesto <año>.pdf» en cada año aprobado: tiene que existir
+        aprobado = next(a["tipo"] for a in indice["anios"] if str(a["anio"]) == d["temporalCoverage"]) == "aprobado"
+        assert (carpeta / f"Presupuesto {d['temporalCoverage']}.pdf").is_file() == aprobado
+        for x in pdfs:
+            assert x["contentUrl"].startswith(f"https://github.com/arandadeduero/visorpresupuesto/raw/main/{d['temporalCoverage']}/")
 
 
 def test_calculadora_es_una_aplicacion_web_gratuita(dist):

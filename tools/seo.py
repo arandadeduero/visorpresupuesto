@@ -14,6 +14,7 @@ URL_AYUNTAMIENTO = "https://www.arandadeduero.es"
 ID_ORGANIZACION = DOMINIO + "#ayuntamiento"
 ID_WEB = DOMINIO + "#web"
 XLSX = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+PDF = "application/pdf"
 IMPORT = re.compile(r'(?:\bfrom|\bimport)\s*"\./([^"]+\.js)"')
 # Datos que una página pide pero no hacen falta para pintar lo primero (no se precargan)
 SIN_PRECARGA = {"inicio": {"gastos"}}
@@ -108,7 +109,7 @@ def dataset(ctx, anio: int) -> dict:
         }
         for f in prerender.ORDEN_JSON
     ] + [
-        {"@type": "DataDownload", "name": n, "encodingFormat": XLSX, "contentUrl": prerender.url_excel(anio, n)}
+        {"@type": "DataDownload", "name": n, "encodingFormat": PDF if n.endswith(".pdf") else XLSX, "contentUrl": prerender.url_excel(anio, n)}
         for n in ctx.excels.get(anio, [])
     ]
     return {

@@ -165,11 +165,11 @@ def fecha_de_git(site: Path, ruta) -> str:
 
 
 def excels_por_anio(site: Path, anios: list) -> dict:
-    """Nombres de los Excel originales de cada año (carpeta <año>/ junto a site/), para enlazarlos desde Descargas."""
+    """Nombres de los documentos originales de cada año (Excel y PDF de la carpeta <año>/ junto a site/), para enlazarlos desde Descargas."""
     salida = {}
     for a in anios:
         carpeta = Path(site).resolve().parent / str(a)
-        salida[a] = sorted(p.name for p in carpeta.glob("*.xlsx")) if carpeta.is_dir() else []
+        salida[a] = sorted(p.name for p in carpeta.iterdir() if p.suffix in (".xlsx", ".pdf")) if carpeta.is_dir() else []
     return salida
 
 
