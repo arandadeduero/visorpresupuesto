@@ -4,7 +4,7 @@
 
 Visor de los presupuestos del Ayuntamiento de Aranda de Duero pensado para cualquier vecino, sin necesidad de saber de presupuestos: en qué se gasta el dinero, de dónde sale, qué obras se prevén, a quién se dan subvenciones y cuánto se debe.
 
-Incluye los **presupuestos aprobados 2024, 2025 y 2026** y el **proyecto de presupuesto 2027** (previsiones, no gastos ya realizados); por defecto se muestra el último aprobado y hay un selector de año. Las páginas de un proyecto (`tipo: "proyecto"` en `site/data/index.json`, fijado en `tools/budget/resumen.py`) llevan un aviso de que aún no está aprobado; al aprobarse, se cambia el tipo y se vuelve a convertir.
+Incluye los **presupuestos aprobados 2018 y 2021 a 2026** y el **proyecto de presupuesto 2027** (2019 y 2020 no tuvieron presupuesto propio: se prorrogó el de 2018 y salen en el selector sin poder elegirse) (previsiones, no gastos ya realizados); por defecto se muestra el último aprobado y hay un selector de año. Las páginas de un proyecto (`tipo: "proyecto"` en `site/data/index.json`, fijado en `tools/budget/resumen.py`) llevan un aviso de que aún no está aprobado; al aprobarse, se cambia el tipo y se vuelve a convertir.
 
 ## Qué se puede ver
 
@@ -31,7 +31,8 @@ Los gráficos usan los colores del Ayuntamiento, la web funciona bien en el móv
 
 ## Cómo funciona
 
-- `2024/`, `2025/`, `2026/` y `2027/` contienen los Excel oficiales de cada presupuesto (2027: los anexos del proyecto, exportados de Google Drive a Excel con una sola hoja).
+- `2024/`, `2025/`, `2026/` y `2027/` contienen los Excel oficiales de cada presupuesto (2027: los anexos del proyecto, exportados de Google Drive a Excel con una sola hoja). Cada año aprobado tiene además su PDF completo, `Presupuesto <año>.pdf`.
+- `2018/`, `2021/`, `2022/` y `2023/` solo tienen el PDF oficial: sus Excel se han preparado copiando las tablas del PDF con los scripts de `tools/desde_pdf/` (ver su README).
 - `tools/` convierte esos Excel en ficheros JSON (Python con `openpyxl`) y avisa si algún total no cuadra.
 - `site/` es la web: HTML y JavaScript simples, sin framework, sin servidor. Lee los JSON de `site/data/` y dibuja los gráficos con [Chart.js](https://www.chartjs.org/), guardado en `site/vendor/` (no depende de ningún CDN).
 - GitHub Actions publica solo la carpeta `site/` en GitHub Pages.
@@ -126,11 +127,11 @@ Cada presupuesto tiene sus páginas indexables: «presupuesto Aranda de Duero 20
 
 **Estructura de `dist/`** (`tools/build_site.py`):
 
-- `/<año>/` (portada, «por cada 100 €») y `/<año>/resumen.html`, `ingresos`, `gastos`, `inversiones`, `subvenciones`, `deuda`, `indicadores`, `calculadora`: 9 páginas por año (36 con 2024 a 2027). Salen de los mismos `site/*.html`, un nivel por debajo de la raíz, con los datos del año en el HTML estático.
+- `/<año>/` (portada, «por cada 100 €») y `/<año>/resumen.html`, `ingresos`, `gastos`, `inversiones`, `subvenciones`, `deuda`, `indicadores`, `calculadora`: 9 páginas por año (72 con los ocho años). Salen de los mismos `site/*.html`, un nivel por debajo de la raíz, con los datos del año en el HTML estático.
 - En la raíz: `/` (portada del último año y bloque «Presupuestos por año» con un enlace a cada uno), las páginas que no dependen del año (`comparar.html` con `?a=&b=`, `guia.html`, `metodologia.html`, `descargas.html`) y **alias del último año** (`/gastos.html`, `/resumen.html`...) para no romper enlaces antiguos ni los compartidos en redes. Con 3 años, `dist/` tiene 41 HTML (27 + 13 + `404.html`).
 - Cuando llegue un año nuevo solo cambia qué año es el último (`index.json`): el build lo calcula, sin tocar código.
 
-**Canonical** (una sola página indexable por contenido): `/` → `/`; `/2026/` (último aprobado) → `/`; `/2027/`, `/2025/` y `/2024/` → ellas mismas; `/2026/gastos.html` → ella misma; el alias `/gastos.html` → `/2026/gastos.html`; páginas sin año → ellas mismas. `sitemap.xml` lista solo las páginas cuya canónica es ella misma (40 URLs), con `lastmod` por año (el mayor entre el último commit de `site/data/<año>` y el del resto de `site/`).
+**Canonical** (una sola página indexable por contenido): `/` → `/`; `/2026/` (último aprobado) → `/`; `/2027/`, `/2025/` y `/2024/` → ellas mismas; `/2026/gastos.html` → ella misma; el alias `/gastos.html` → `/2026/gastos.html`; páginas sin año → ellas mismas. `sitemap.xml` lista solo las páginas cuya canónica es ella misma (76 URLs), con `lastmod` por año (el mayor entre el último commit de `site/data/<año>` y el del resto de `site/`).
 
 **SEO de cada año** (`tools/seo.py`): título ≤ 60 y descripción 120–160 únicos con el año y sin cifras («Gastos del Ayuntamiento de Aranda de Duero en 2025»), Open Graph/Twitter con `og:url` y título del año, `BreadcrumbList` Inicio › Presupuesto 2025 › Gastos, prerender con los JSON de ese año, «Relacionado» con enlaces del mismo año y «Otros años» (la misma página en los demás, con anclas descriptivas). `descargas` sigue con un `Dataset` por año.
 
@@ -201,10 +202,10 @@ npm pack chart.js     # descargar la última versión
 - Los totales salen de la hoja «<año>» de `A1`. En `A9` (inversiones) y `A12` se usa la hoja «<año>», no las «Copia de…» ni las hojas de trabajo.
 - El préstamo previsto de 11 M€ (anexo de deuda de 2025 y 2026) no entra en la deuda del titular ni en el gráfico: es una previsión que solo se formalizará si es necesario. La web muestra también los 20,16 M€ de préstamo de la financiación de inversiones, sin afirmar la causa de la diferencia.
 - **Nivel de endeudamiento** (página Indicadores): deuda viva a 31 de diciembre del año del presupuesto (solo los préstamos del anexo de deuda; aparte, con el préstamo previsto) dividida entre los ingresos corrientes (capítulos 1 a 5 de ingresos) del presupuesto. Es una **estimación**: el art. 53 del TRLRHL (RDL 2/2004) y la disposición final 31.ª de la Ley 17/2012 (que da nueva redacción a la disposición adicional 14.ª del RDL 20/2011) lo calculan con el capital vivo a 31/12 del año anterior (todas las operaciones a corto y largo plazo y avales, más la operación proyectada) sobre los ingresos corrientes **liquidados** del año anterior, descontando los ingresos afectados y extraordinarios. Umbrales legales: hasta el 75 % (con ahorro neto positivo) sin autorización para financiar inversiones; entre el 75 % y el 110 %, con autorización de la tutela financiera; por encima del 110 % (o con ahorro neto negativo), no se pueden concertar préstamos a largo plazo. El 60 % del PIB de la LOEPSF (art. 13, 3 % del PIB para el conjunto de corporaciones locales) es un límite del conjunto de las administraciones sobre el PIB nacional, no un porcentaje de los ingresos de un ayuntamiento. No hay ningún límite del 40 % en esa normativa.
-- Los importes «por habitante» dividen el gasto entre la población del INE (INE: 33.757 habitantes en 2024, 33.956 en 2025; 2026 y 2027 usan el dato de 2025, el último disponible); no son lo que paga cada vecino.
+- Los importes «por habitante» dividen el gasto entre la población del INE (padrón del INE a 1 de enero: 32.523 en 2018, 33.084 en 2021, 33.172 en 2022, 33.626 en 2023, 33.757 en 2024 y 33.956 en 2025; 2026 y 2027 usan el dato de 2025, el último disponible); no son lo que paga cada vecino.
 - Ideas tomadas de otros visores (Gobierto Presupuestos, visor de Fuengirola): ver el apartado correspondiente del diseño. Para comparar con otros municipios: [Gobierto Presupuestos](https://presupuestos.gobierto.es/municipios/aranda-de-duero).
 
 ## Licencia
 
 - **Código**: [Licencia Pública de la Unión Europea (EUPL) v1.2](LICENSE) © 2026 Ayuntamiento de Aranda de Duero. Es la licencia común de todo el software del Ayuntamiento: ver [arandadeduero/licencia](https://github.com/arandadeduero/licencia). Chart.js tiene su propia licencia (MIT), en `site/vendor/`; Outfit, la suya (SIL OFL 1.1), en `site/fonts/`.
-- **Datos** (los Excel de `2024/` a `2027/` y los JSON de `site/data/`): [Creative Commons Reconocimiento 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), ver [LICENSE-DATOS.md](LICENSE-DATOS.md). Para citar: «Fuente: Ayuntamiento de Aranda de Duero (presupuestos.arandadeduero.es), licencia CC BY 4.0». Los `Dataset` del JSON-LD (`tools/seo.py`) y la página de descargas la declaran.
+- **Datos** (los Excel de las carpetas de cada año y los JSON de `site/data/`): [Creative Commons Reconocimiento 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), ver [LICENSE-DATOS.md](LICENSE-DATOS.md). Para citar: «Fuente: Ayuntamiento de Aranda de Duero (presupuestos.arandadeduero.es), licencia CC BY 4.0». Los `Dataset` del JSON-LD (`tools/seo.py`) y la página de descargas la declaran.

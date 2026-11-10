@@ -1,0 +1,101 @@
+{
+ "anio": 2018,
+ "prestamos": [
+  {
+   "fecha": "2008-10-22",
+   "entidad": "CAJA MADRID",
+   "importe": 1161000.0,
+   "primeraAmortizacion": "2010-12-31",
+   "ultimaAmortizacion": "2020-09-30",
+   "tipoInteres": "EURIBOR TRIM. +0,15%",
+   "vivaInicio": 226838.0,
+   "vivaFin": 144351.36,
+   "amortizacion": 82486.64
+  },
+  {
+   "fecha": "2009-12-01",
+   "entidad": "CAJA RURAL",
+   "importe": 1180700.0,
+   "primeraAmortizacion": "2011-12-31",
+   "ultimaAmortizacion": "2021-09-30",
+   "tipoInteres": "EURIBOR SEM. + 0,95%",
+   "vivaInicio": 101684.95,
+   "vivaFin": 74568.99,
+   "amortizacion": 27115.96
+  },
+  {
+   "fecha": "2017-11-27",
+   "entidad": "BANKIA",
+   "importe": 362528.65,
+   "primeraAmortizacion": "2017-12-31",
+   "ultimaAmortizacion": "2027-09-30",
+   "tipoInteres": "EURIBOR TRIM. +0,675%",
+   "vivaInicio": 353465.43,
+   "vivaFin": 317212.57,
+   "amortizacion": 36252.87
+  }
+ ],
+ "previsto": {
+  "fecha": null,
+  "importe": 2491062.38,
+  "primeraAmortizacion": null,
+  "ultimaAmortizacion": null,
+  "tipoInteres": "Euribor trim. +0,675%"
+ },
+ "serie": [
+  {
+   "anio": 2017,
+   "viva": 681988.38
+  },
+  {
+   "anio": 2018,
+   "viva": 536132.92
+  },
+  {
+   "anio": 2019,
+   "viva": 390277.45
+  },
+  {
+   "anio": 2020,
+   "viva": 265043.9
+  },
+  {
+   "anio": 2021,
+   "viva": 208453.96
+  },
+  {
+   "anio": 2022,
+   "viva": 172201.09
+  },
+  {
+   "anio": 2023,
+   "viva": 135948.22
+  },
+  {
+   "anio": 2024,
+   "viva": 99695.35
+  },
+  {
+   "anio": 2025,
+   "viva": 63442.48
+  },
+  {
+   "anio": 2026,
+   "viva": 27189.61
+  },
+  {
+   "anio": 2027,
+   "viva": 0.0
+  }
+ ],
+ "titular": {
+  "vivaFin": 536132.92,
+  "vivaFinConPrevisto": 3027195.3
+ },
+ "carga": {
+  "intereses": 6910.65,
+  "amortizacion": 145855.47,
+  "total": 152766.12,
+  "interesesConPrevisto": 32094.27
+ }
+}

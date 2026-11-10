@@ -1,0 +1,255 @@
+{
+ "anio": 2021,
+ "total": 4089775.42,
+ "fuentes": {
+  "prestamo": 2906376.85,
+  "ingresosCorrientes": 358367.0,
+  "otros": 0.0,
+  "rta": 0.0,
+  "subvenciones": 825031.57
+ },
+ "programas": [
+  {
+   "codigo": "1530",
+   "nombre": "Vias publicas",
+   "total": 1898088.86,
+   "proyectos": [
+    {
+     "nombre": "Mejoras de accesibilidad y reurbanización Avda. de Castilla",
+     "partida": "619",
+     "importe": 935436.8,
+     "prestamo": 935436.8,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Redacción proyecto mejora accesibilidad plaza Príncipe de España (Sinovas)",
+     "partida": "619",
+     "importe": 41000.0,
+     "prestamo": 41000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mejoras de accesibilidad, diseño y rehabilitación Jardines Don Diego (1ª fase)",
+     "partida": "619",
+     "importe": 200000.0,
+     "prestamo": 200000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mejoras de accesibilidad y arreglos de aceras (Subv. 75% JCyL)",
+     "partida": "619",
+     "importe": 221652.06,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 55512.61,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 166139.45
+    },
+    {
+     "nombre": "Mejoras de accesibilidad y conectividad en Polígono Industrial Allendeduero",
+     "partida": "619",
+     "importe": 500000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 232854.39,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 267145.61
+    }
+   ]
+  },
+  {
+   "codigo": "1710",
+   "nombre": "Parques y jardines",
+   "total": 590000.0,
+   "proyectos": [
+    {
+     "nombre": "Construcción pantalanes pluviales río Duero",
+     "partida": "609",
+     "importe": 70000.0,
+     "prestamo": 70000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mejora paseo del Duero traseras calle Burgo de Osma",
+     "partida": "619",
+     "importe": 10000.0,
+     "prestamo": 10000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mejoras de zonas verdes y áreas de esparcimiento Parque Gral. Gutiérrez",
+     "partida": "619",
+     "importe": 300000.0,
+     "prestamo": 300000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Limpieza y adecentamiento antiguo molino pluvial Fuenteminaya",
+     "partida": "619",
+     "importe": 40000.0,
+     "prestamo": 40000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Ampliación y acondicionamiento Espacio Esparcimiento Canino",
+     "partida": "619",
+     "importe": 20000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 20000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Rehabilitación y acondicionamiento Quioscos Barriles y La Huerta",
+     "partida": "632",
+     "importe": 150000.0,
+     "prestamo": 150000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3230",
+   "nombre": "Centros docentes infantil, primaria y educación especial",
+   "total": 709686.56,
+   "proyectos": [
+    {
+     "nombre": "Obras mejora y eficiencia energética colegio Santa María",
+     "partida": "632",
+     "importe": 559686.56,
+     "prestamo": 167940.05,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 391746.51
+    },
+    {
+     "nombre": "Mobiliario parques infantiles colegios públicos primaria",
+     "partida": "635",
+     "importe": 150000.0,
+     "prestamo": 150000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3420",
+   "nombre": "Instalaciones deportivas",
+   "total": 641000.0,
+   "proyectos": [
+    {
+     "nombre": "Redacción proyecto obras mejora piscina municipal cubierta",
+     "partida": "632",
+     "importe": 41000.0,
+     "prestamo": 41000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Cubierta y rehabilitación ala este Estadio Montecillo",
+     "partida": "632",
+     "importe": 200000.0,
+     "prestamo": 200000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Complejo Deportivo Montecillo, proyecto y ejecución",
+     "partida": "632",
+     "importe": 300000.0,
+     "prestamo": 300000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Construcción pistas paddel Complejo Deportivo Montecillo",
+     "partida": "632",
+     "importe": 50000.0,
+     "prestamo": 50000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Adecuación campo de rugby Complejo Deportivo Virgen Viñas",
+     "partida": "632",
+     "importe": 50000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 50000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4320",
+   "nombre": "Turismo",
+   "total": 1000.0,
+   "proyectos": [
+    {
+     "nombre": "Inversiones Ciudad Europea del Vino",
+     "partida": "609",
+     "importe": 1000.0,
+     "prestamo": 1000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "9200",
+   "nombre": "Administracion general",
+   "total": 250000.0,
+   "proyectos": [
+    {
+     "nombre": "Rehabilitación edificio Casa Consistorial",
+     "partida": "632",
+     "importe": 250000.0,
+     "prestamo": 250000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  }
+ ]
+}

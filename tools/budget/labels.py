@@ -148,6 +148,10 @@ POLITICAS = {
 # Población para los importes «por habitante»: año del presupuesto → (habitantes, año del dato, fuente).
 # Para un año sin dato propio del INE se usa el último disponible (es el caso de 2026, que usa el de 2025).
 POBLACION = {
+    2018: (32523, 2018, "INE (población de Aranda de Duero en 2018), padrón municipal a 1 de enero"),
+    2021: (33084, 2021, "INE (población de Aranda de Duero en 2021), padrón municipal a 1 de enero"),
+    2022: (33172, 2022, "INE (población de Aranda de Duero en 2022), padrón municipal a 1 de enero"),
+    2023: (33626, 2023, "INE (población de Aranda de Duero en 2023), padrón municipal a 1 de enero"),
     2024: (33757, 2024, "INE (población de Aranda de Duero en 2024), consultada en Gobierto Presupuestos"),
     2025: (33956, 2025, "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos"),
     2026: (33956, 2025, "INE (población de Aranda de Duero en 2025), consultada en Gobierto Presupuestos"),

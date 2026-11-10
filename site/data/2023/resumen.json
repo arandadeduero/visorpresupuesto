@@ -1,0 +1,182 @@
+{
+ "anio": 2023,
+ "tipo": "aprobado",
+ "habitantes": 33626,
+ "anioPoblacion": 2023,
+ "fuentePoblacion": "INE (población de Aranda de Duero en 2023), padrón municipal a 1 de enero",
+ "totalGastos": 46698377.61,
+ "totalGastosAnterior": 36358359.0,
+ "totalIngresos": 46698377.61,
+ "gastosPorCapitulo": [
+  {
+   "cap": 1,
+   "corto": "Personal",
+   "oficial": "Gastos de personal",
+   "anterior": 12751630.0,
+   "actual": 13537729.0
+  },
+  {
+   "cap": 2,
+   "corto": "Servicios y mantenimiento",
+   "oficial": "Gastos corrientes en bienes y servicios",
+   "anterior": 16566350.0,
+   "actual": 16927630.0
+  },
+  {
+   "cap": 3,
+   "corto": "Intereses de préstamos",
+   "oficial": "Gastos financieros",
+   "anterior": 123300.0,
+   "actual": 166300.0
+  },
+  {
+   "cap": 4,
+   "corto": "Ayudas y transferencias",
+   "oficial": "Transferencias corrientes",
+   "anterior": 1442090.0,
+   "actual": 1405240.0
+  },
+  {
+   "cap": 5,
+   "corto": "Fondo de imprevistos",
+   "oficial": "Fondo de contingencia",
+   "anterior": 0.0,
+   "actual": 200000.0
+  },
+  {
+   "cap": 6,
+   "corto": "Obras e inversiones",
+   "oficial": "Inversiones reales",
+   "anterior": 5007989.0,
+   "actual": 13784278.61
+  },
+  {
+   "cap": 7,
+   "corto": "Ayudas para inversiones",
+   "oficial": "Transferencias de capital",
+   "anterior": 210000.0,
+   "actual": 127200.0
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "anterior": 15000.0,
+   "actual": 15000.0
+  },
+  {
+   "cap": 9,
+   "corto": "Devolución de préstamos",
+   "oficial": "Pasivos financieros",
+   "anterior": 242000.0,
+   "actual": 535000.0
+  }
+ ],
+ "ingresosPorCapitulo": [
+  {
+   "cap": 1,
+   "corto": "Impuestos directos (IBI, IAE, vehículos…)",
+   "oficial": "Impuestos directos",
+   "anterior": 13621000.0,
+   "actual": 14650000.0
+  },
+  {
+   "cap": 2,
+   "corto": "Impuestos indirectos (obras)",
+   "oficial": "Impuestos indirectos",
+   "anterior": 1200000.0,
+   "actual": 770000.0
+  },
+  {
+   "cap": 3,
+   "corto": "Tasas y precios públicos",
+   "oficial": "Tasas y otros ingresos",
+   "anterior": 6057800.0,
+   "actual": 5876462.83
+  },
+  {
+   "cap": 4,
+   "corto": "Transferencias de otras administraciones",
+   "oficial": "Transferencias corrientes",
+   "anterior": 11080475.0,
+   "actual": 11927879.01
+  },
+  {
+   "cap": 5,
+   "corto": "Ingresos de patrimonio",
+   "oficial": "Ingresos patrimoniales",
+   "anterior": 29800.0,
+   "actual": 114800.0
+  },
+  {
+   "cap": 6,
+   "corto": "Venta de inversiones",
+   "oficial": "Enajenación de inversiones reales",
+   "anterior": 0.0,
+   "actual": 0.0
+  },
+  {
+   "cap": 7,
+   "corto": "Subvenciones para obras",
+   "oficial": "Transferencias de capital",
+   "anterior": 576457.22,
+   "actual": 5033675.76
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "anterior": 15000.0,
+   "actual": 15000.0
+  },
+  {
+   "cap": 9,
+   "corto": "Préstamos",
+   "oficial": "Pasivos financieros",
+   "anterior": 3777826.78,
+   "actual": 8310560.01
+  }
+ ],
+ "por100": [
+  {
+   "bloque": "Obras e inversiones",
+   "caps": [
+    6,
+    7
+   ],
+   "importe": 13911478.61,
+   "euros": 30
+  },
+  {
+   "bloque": "Servicios",
+   "caps": [
+    2
+   ],
+   "importe": 16927630.0,
+   "euros": 36
+  },
+  {
+   "bloque": "Personal",
+   "caps": [
+    1
+   ],
+   "importe": 13537729.0,
+   "euros": 29
+  },
+  {
+   "bloque": "Otros",
+   "caps": [
+    3,
+    4,
+    5,
+    8,
+    9
+   ],
+   "importe": 2321540.0,
+   "euros": 5
+  }
+ ],
+ "notas": [
+  "En el presupuesto de 2023 el capítulo 1 (personal) suma 13.537.729 € en el resumen y en el total del estado de gastos, pero sus partidas suman 13.455.129 €: 82.600 € menos, lo mismo que el programa 1522 (Oficina de gestión del ARU Santa Catalina). La web usa el total oficial para el capítulo y las partidas tal como vienen."
+ ]
+}

@@ -18,9 +18,10 @@ const sinNaN = (valor, ruta = "") => {
   else if (valor && typeof valor === "object") Object.entries(valor).forEach(([k, v]) => sinNaN(v, `${ruta}.${k}`));
 };
 
-test("el índice publica 2024 a 2027 (2027 en proyecto) y el año por defecto es el último aprobado", () => {
-  assert.deepEqual(ANIOS, [2024, 2025, 2026, 2027]);
-  assert.deepEqual(indice.anios.map((a) => a.tipo), ["aprobado", "aprobado", "aprobado", "proyecto"]);
+test("el índice publica 2018 y 2021 a 2027 (2027 en proyecto), 2019-2020 prorrogados y el año por defecto es el último aprobado", () => {
+  assert.deepEqual(ANIOS, [2018, 2021, 2022, 2023, 2024, 2025, 2026, 2027]);
+  assert.deepEqual(indice.anios.map((a) => a.tipo), [...Array(7).fill("aprobado"), "proyecto"]);
+  assert.deepEqual(indice.prorrogados.map((p) => p.anio), [2019, 2020]);
   assert.equal(indice.ultimo, 2026);
   assert.equal(readdirSync(new URL("../data/", import.meta.url)).filter((f) => /^\d{4}$/.test(f)).length, ANIOS.length);
 });
@@ -32,7 +33,9 @@ for (const anio of ANIOS) {
     const resumen = datos(anio, "resumen");
     for (const modo of ["politica", "capitulo"]) {
       const raiz = buildTree(gastos, modo);
-      cerca(raiz.reduce((s, n) => s + n.actual, 0), resumen.totalGastos, 1);
+      // por política se suman partidas; si el total oficial de un capítulo no es su suma (2023), falta esa diferencia
+      const descuadre = modo === "politica" ? Object.values(gastos.descuadreCapitulos ?? {}).reduce((s, d) => s + d, 0) : 0;
+      cerca(raiz.reduce((s, n) => s + n.actual, 0) + descuadre, resumen.totalGastos, 1);
     }
   });
 
@@ -46,8 +49,9 @@ for (const anio of ANIOS) {
       assert.equal(pol.anterior === null, conInversion, pol.nombre);
       if (sin.size === 0) assert.ok(typeof pol.anterior === "number", pol.nombre);
     }
-    // por capítulo el nivel superior usa los créditos de A1, que siempre existen
-    for (const cap of buildTree(gastos, "capitulo")) assert.ok(typeof cap.anterior === "number", cap.nombre);
+    // por capítulo el nivel superior usa los créditos de A1 (null si el A1 no trae el año anterior, como en 2018 y 2021)
+    const conA1 = datos(anio, "resumen").gastosPorCapitulo.some((c) => c.anterior !== null);
+    for (const cap of buildTree(gastos, "capitulo")) assert.equal(typeof cap.anterior === "number", conA1, cap.nombre);
   });
 
   test(`${anio}: cambios del año anterior y quesitos sin NaN`, () => {

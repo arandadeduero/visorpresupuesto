@@ -79,7 +79,7 @@ def parse_gastos(year: int) -> dict:
     # año anterior de A1 mejor que la de las partidas (en 2026 algún subtotal es incoherente y ganan las partidas).
     ref_personal = next(c["anterior"] for c in parse_resumen(year)["gastosPorCapitulo"] if c["cap"] == 1)
     por_subtotal = {prog: subtotal_anterior.get(prog, a) for prog, (a, _) in personal.items()}
-    usar_subtotal = abs(sum(por_subtotal.values()) - ref_personal) < abs(sum(a for a, _ in personal.values()) - ref_personal)
+    usar_subtotal = ref_personal is not None and abs(sum(por_subtotal.values()) - ref_personal) < abs(sum(a for a, _ in personal.values()) - ref_personal)
     agrupadas = [
         {"cap": 1, "programa": prog, "codigo": None, "articulo": None, "nombre": "Gastos de personal", "anterior": round(por_subtotal[prog] if usar_subtotal else a, 2), "actual": round(b, 2)}
         for prog, (a, b) in personal.items()
@@ -93,7 +93,7 @@ def parse_gastos(year: int) -> dict:
     sin_anterior = []
     for n in sorted(capitulos):
         suma = sum(p["anterior"] or 0 for p in partidas if p["cap"] == n)
-        if abs(suma - (ref.get(n) or 0)) > max(1.0, 0.05 * abs(ref.get(n) or 0)):
+        if ref.get(n) is None or abs(suma - ref[n]) > max(1.0, 0.05 * abs(ref[n])):  # sin año anterior en A1 (2018, 2021): null
             sin_anterior.append(n)
         capitulos[n]["anterior"] = ref.get(n, capitulos[n]["anterior"])
     for p in partidas:

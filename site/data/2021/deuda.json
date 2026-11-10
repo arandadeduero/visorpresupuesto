@@ -1,0 +1,93 @@
+{
+ "anio": 2021,
+ "prestamos": [
+  {
+   "fecha": "2009-12-01",
+   "entidad": "CAJA RURAL",
+   "importe": 1180700.0,
+   "primeraAmortizacion": "2011-12-31",
+   "ultimaAmortizacion": "2021-09-30",
+   "tipoInteres": "EURIBOR SEM. + 0,95%",
+   "vivaInicio": 20337.03,
+   "vivaFin": 0.0,
+   "amortizacion": 20337.03
+  },
+  {
+   "fecha": "2017-11-27",
+   "entidad": "BANKIA",
+   "importe": 362528.65,
+   "primeraAmortizacion": "2017-12-31",
+   "ultimaAmortizacion": "2027-09-30",
+   "tipoInteres": "EURIBOR TRIM. +0,600%",
+   "vivaInicio": 244706.79,
+   "vivaFin": 208453.95,
+   "amortizacion": 36252.84
+  },
+  {
+   "fecha": "2018-12-21",
+   "entidad": "UNICAJA BANCO",
+   "importe": 2051624.51,
+   "primeraAmortizacion": "2019-03-31",
+   "ultimaAmortizacion": "2028-12-31",
+   "tipoInteres": "EURIBOR TRIM. +0,350%",
+   "vivaInicio": 1641299.62,
+   "vivaFin": 1436137.17,
+   "amortizacion": 205162.45
+  }
+ ],
+ "previsto": {
+  "fecha": null,
+  "importe": 2738436.8,
+  "primeraAmortizacion": "2023-03-31",
+  "ultimaAmortizacion": "2032-12-31",
+  "tipoInteres": "Euribor trim. +0,675%"
+ },
+ "serie": [
+  {
+   "anio": 2020,
+   "viva": 1906343.44
+  },
+  {
+   "anio": 2021,
+   "viva": 1644591.12
+  },
+  {
+   "anio": 2022,
+   "viva": 1403175.83
+  },
+  {
+   "anio": 2023,
+   "viva": 1161760.54
+  },
+  {
+   "anio": 2024,
+   "viva": 920345.25
+  },
+  {
+   "anio": 2025,
+   "viva": 678929.96
+  },
+  {
+   "anio": 2026,
+   "viva": 437514.67
+  },
+  {
+   "anio": 2027,
+   "viva": 205162.47
+  },
+  {
+   "anio": 2028,
+   "viva": 0.0
+  }
+ ],
+ "titular": {
+  "vivaFin": 1644591.12,
+  "vivaFinConPrevisto": 4383027.92
+ },
+ "carga": {
+  "intereses": 242.05,
+  "amortizacion": 261752.32,
+  "total": 261994.37,
+  "interesesConPrevisto": null
+ }
+}

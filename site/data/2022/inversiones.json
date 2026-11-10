@@ -1,0 +1,498 @@
+{
+ "anio": 2022,
+ "total": 5007989.0,
+ "fuentes": {
+  "prestamo": 3777826.78,
+  "ingresosCorrientes": 653705.0,
+  "otros": 0.0,
+  "rta": 0.0,
+  "subvenciones": 576457.22
+ },
+ "programas": [
+  {
+   "codigo": "1510",
+   "nombre": "Urbanismo",
+   "total": 44165.0,
+   "proyectos": [
+    {
+     "nombre": "Modificación contrato redacción PGOU",
+     "partida": "619",
+     "importe": 44165.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 44165.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1530",
+   "nombre": "Vías públicas urbanas",
+   "total": 1990665.3,
+   "proyectos": [
+    {
+     "nombre": "Adquisición señalética para obras accesibilidad (pasos cebra/badenes)",
+     "partida": "609",
+     "importe": 15000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 15000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mejoras de accesibilidad y reurbanización Avda. de Castilla",
+     "partida": "619",
+     "importe": 815000.0,
+     "prestamo": 815000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mejoras de accesibilidad, diseño y rehabilitación Jardines Don Diego (1ª fase)",
+     "partida": "619",
+     "importe": 774662.3,
+     "prestamo": 774662.3,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Campaña asfaltado 2022",
+     "partida": "619",
+     "importe": 36003.0,
+     "prestamo": 36003.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Actuaciones accesibilidad Glorieta Rosales",
+     "partida": "619",
+     "importe": 321000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 53338.39,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 267661.61
+    },
+    {
+     "nombre": "Vehículo encargado de obras",
+     "partida": "624",
+     "importe": 29000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 29000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1610",
+   "nombre": "Abastecimiento y distribucion de aguas",
+   "total": 1000000.0,
+   "proyectos": [
+    {
+     "nombre": "Reconstrucción acueducto Ctra. Soria",
+     "partida": "619",
+     "importe": 1000000.0,
+     "prestamo": 742664.39,
+     "ingresosCorrientes": 257335.61,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1710",
+   "nombre": "Parques y jardines",
+   "total": 476658.61,
+   "proyectos": [
+    {
+     "nombre": "Instalación parques infantiles y biosaludables",
+     "partida": "609",
+     "importe": 267661.61,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 267661.61
+    },
+    {
+     "nombre": "Mobiliario urbano paseo Duero Trasera Calle San Esteban",
+     "partida": "609",
+     "importe": 14000.0,
+     "prestamo": 14000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Instalación vela/toldo en parque Avd. Teresa de Jesús Jornet",
+     "partida": "609",
+     "importe": 24999.0,
+     "prestamo": 24999.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Instalación Parkour en Parque de la Isla",
+     "partida": "609",
+     "importe": 75000.0,
+     "prestamo": 75000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Derribo y construcción nueva caseta cazadores \"La Calabaza\"",
+     "partida": "609",
+     "importe": 30000.0,
+     "prestamo": 30000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Embarcadero piraguismo río Arandilla",
+     "partida": "609",
+     "importe": 24999.0,
+     "prestamo": 24999.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Construcción acceso escalera Puente Conchuela-Parque La Isla",
+     "partida": "609",
+     "importe": 24999.0,
+     "prestamo": 24999.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Ampliación y acondicionamiento Espacio Esparcimiento Canino",
+     "partida": "619",
+     "importe": 15000.0,
+     "prestamo": 15000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3214",
+   "nombre": "Tercera edad y dependencia",
+   "total": 50000.0,
+   "proyectos": [
+    {
+     "nombre": "Rehabilitación Edificio Centro San Juan",
+     "partida": "632",
+     "importe": 50000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 8866.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 41134.0
+    }
+   ]
+  },
+  {
+   "codigo": "3260",
+   "nombre": "Servicios complementarios de educacion",
+   "total": 27000.0,
+   "proyectos": [
+    {
+     "nombre": "Baños y persianas Ludoteca",
+     "partida": "632",
+     "importe": 27000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 27000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3261",
+   "nombre": "Escuela de música y danza",
+   "total": 18000.0,
+   "proyectos": [
+    {
+     "nombre": "Instrumentos musicales",
+     "partida": "629",
+     "importe": 7000.0,
+     "prestamo": 7000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Equipos informáticos Escuela de Música",
+     "partida": "626",
+     "importe": 10000.0,
+     "prestamo": 10000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mobiliario Escuela de Música",
+     "partida": "635",
+     "importe": 1000.0,
+     "prestamo": 1000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3262",
+   "nombre": "Escuela de folclore",
+   "total": 10000.0,
+   "proyectos": [
+    {
+     "nombre": "Mobiliario e instrumentos",
+     "partida": "635",
+     "importe": 10000.0,
+     "prestamo": 10000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3331",
+   "nombre": "Escuela y museo de cerámica",
+   "total": 12500.0,
+   "proyectos": [
+    {
+     "nombre": "Valla perimetral Museo Cerámica",
+     "partida": "632",
+     "importe": 10000.0,
+     "prestamo": 10000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Torno Escuela Cerámica",
+     "partida": "623",
+     "importe": 1500.0,
+     "prestamo": 1500.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mesas y banquetas escuela",
+     "partida": "635",
+     "importe": 1000.0,
+     "prestamo": 1000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3341",
+   "nombre": "Banda de música",
+   "total": 18000.0,
+   "proyectos": [
+    {
+     "nombre": "Ventanas y persianas Banda de Música",
+     "partida": "632",
+     "importe": 15000.0,
+     "prestamo": 15000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Instrumentos musicales",
+     "partida": "629",
+     "importe": 3000.0,
+     "prestamo": 3000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3380",
+   "nombre": "Festejos",
+   "total": 96000.0,
+   "proyectos": [
+    {
+     "nombre": "Mobiliario (Vallas, mesas, sillas, módulos y casetas)",
+     "partida": "625",
+     "importe": 96000.0,
+     "prestamo": 96000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3420",
+   "nombre": "Instalaciones deportivas",
+   "total": 1045000.0,
+   "proyectos": [
+    {
+     "nombre": "Obras mejora piscina municipal cubierta",
+     "partida": "632",
+     "importe": 650000.0,
+     "prestamo": 650000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Complejo Deportivo Montecillo, redacción proyecto",
+     "partida": "632",
+     "importe": 70000.0,
+     "prestamo": 70000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Construcción pistas paddel Complejo Deportivo Montecillo",
+     "partida": "632",
+     "importe": 50000.0,
+     "prestamo": 50000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Caseta campo de rugby Complejo Deportivo Virgen Viñas",
+     "partida": "632",
+     "importe": 120000.0,
+     "prestamo": 120000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Vallado y acondicionamiento circuito trial en Antiguo Circuito Autocross 4x4",
+     "partida": "632",
+     "importe": 55000.0,
+     "prestamo": 55000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Instalación Pum Truck en parque Calle Isabel La Católica",
+     "partida": "632",
+     "importe": 85000.0,
+     "prestamo": 85000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Adecuación del campo de tiro",
+     "partida": "632",
+     "importe": 15000.0,
+     "prestamo": 15000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4320",
+   "nombre": "Turismo",
+   "total": 119000.0,
+   "proyectos": [
+    {
+     "nombre": "Alumbrado ornamental sobre el Puente del Duero",
+     "partida": "619",
+     "importe": 119000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 119000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4330",
+   "nombre": "Desarrollo economico",
+   "total": 1000.09,
+   "proyectos": [
+    {
+     "nombre": "Inversiones Ciudad Europea del Vino",
+     "partida": "609",
+     "importe": 1000.09,
+     "prestamo": 1000.09,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "9200",
+   "nombre": "Administracion general",
+   "total": 100000.0,
+   "proyectos": [
+    {
+     "nombre": "Redacción y modificación proyectos Fondos Europeos",
+     "partida": "629",
+     "importe": 100000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 100000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  }
+ ]
+}
