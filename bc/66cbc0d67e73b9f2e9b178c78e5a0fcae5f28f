@@ -1,0 +1,25 @@
+LICENSE-DATOS.md
+  s_99057c6fb43bed::t_d38198228523db 3,13
+site/js/layout.js
+  s_99057c6fb43bed::t_d38198228523db 174
+site/metodologia.html
+  s_99057c6fb43bed::t_d38198228523db 65
+tools/tests/test_licencia.py
+  s_99057c6fb43bed::t_a5374f6ce22256 1,72-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bc66cbc0d67e73b9f2e9b178c78e5a0fcae5f28f",
+  "prompts": {},
+  "sessions": {
+    "s_99057c6fb43bed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "de30bd86-43a4-46a4-bc5b-708bc8eedd73",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
