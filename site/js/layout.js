@@ -171,7 +171,7 @@ export function pieHtml(actualizado, anio = null, escudo = urlEscudo()) {
   return `<footer class="site"><div class="wrap pie">
       <img class="pie-escudo" src="${escudo}" alt="" width="44" height="66">
       <div class="pie-texto">
-      <p>Fuente: presupuestos del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados. Datos con licencia <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>. Para comparar con otros municipios: <a href="https://presupuestos.gobierto.es/municipios/aranda-de-duero" rel="noopener">Gobierto Presupuestos</a>.</p>
+      <p>Fuente: presupuestos del Ayuntamiento de Aranda de Duero. Son previsiones, no gastos ya realizados. Datos con licencia <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a> y código con licencia <a href="https://interoperable-europe.ec.europa.eu/collection/eupl/eupl-text-eupl-12" rel="noopener">EUPL 1.2</a>. Para comparar con otros municipios: <a href="https://presupuestos.gobierto.es/municipios/aranda-de-duero" rel="noopener">Gobierto Presupuestos</a>.</p>
       <p class="pie-enlaces"><a href="https://www.arandadeduero.es" rel="noopener">Ayuntamiento de Aranda de Duero</a> · <a href="https://transparencia.arandadeduero.es" rel="noopener">Portal de transparencia</a> · <a href="${URL_REPOSITORIO}" rel="noopener">Código y datos en GitHub</a> · <a href="${URL_POLITICA_PRIVACIDAD}" rel="noopener">Política de privacidad</a> · <a href="${urlPagina("metodologia", anio)}">Metodología y fuentes</a></p>
       ${fecha}</div></div></footer>`;
 }

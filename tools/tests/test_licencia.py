@@ -1,4 +1,4 @@
-"""Licencia de los datos: Creative Commons Reconocimiento 4.0 (CC BY 4.0). El código sigue siendo MIT."""
+"""Licencias: datos con Creative Commons Reconocimiento 4.0 (CC BY 4.0) y código con la EUPL v1.2 (la común del Ayuntamiento)."""
 import json
 import re
 import sys
@@ -69,3 +69,16 @@ def test_readme_y_fichero_de_licencia_de_datos():
     assert "MIT" in seccion and "CC BY 4.0" in seccion and URL in seccion
     datos = (ROOT / "LICENSE-DATOS.md").read_text(encoding="utf-8")
     assert "Creative Commons" in datos and URL in datos and "Ayuntamiento de Aranda de Duero" in datos
+
+
+EUPL = "https://interoperable-europe.ec.europa.eu/collection/eupl/eupl-text-eupl-12"
+
+
+def test_el_codigo_es_eupl_en_el_repositorio_y_en_la_web(dist):
+    assert "EUROPEAN UNION PUBLIC LICENCE v. 1.2" in (ROOT / "LICENSE").read_text(encoding="utf-8")
+    for doc in [ROOT / "LICENSE-DATOS.md", SITE / "metodologia.html", SITE / "js" / "layout.js"]:
+        texto = doc.read_text(encoding="utf-8")
+        assert "MIT" not in texto, f"{doc.name} aún dice MIT"
+        assert "EUPL" in texto, doc.name
+    for pagina in ["index.html", "metodologia.html"]:
+        assert EUPL in (dist / pagina).read_text(encoding="utf-8"), pagina
