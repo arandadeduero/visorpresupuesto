@@ -1,0 +1,330 @@
+{
+ "anio": 2023,
+ "total": 13784278.61,
+ "fuentes": {
+  "prestamo": 8310560.01,
+  "ingresosCorrientes": 440042.84,
+  "otros": 0.0,
+  "rta": 0.0,
+  "subvenciones": 5033675.76
+ },
+ "programas": [
+  {
+   "codigo": "1320",
+   "nombre": "Seguridad",
+   "total": 460876.48,
+   "proyectos": [
+    {
+     "nombre": "Comisaría de Policía",
+     "partida": "632",
+     "importe": 460876.48,
+     "prestamo": 445323.22,
+     "ingresosCorrientes": 15553.26,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1340",
+   "nombre": "Movilidad urbana e interurbana",
+   "total": 143182.33,
+   "proyectos": [
+    {
+     "nombre": "Obras acondicionamiento carril bici a Sinovas",
+     "partida": "619",
+     "importe": 143182.33,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 143182.33
+    }
+   ]
+  },
+  {
+   "codigo": "1360",
+   "nombre": "Extincion de incendios",
+   "total": 1931072.71,
+   "proyectos": [
+    {
+     "nombre": "Vehículo ligero pick-up 4X4",
+     "partida": "624",
+     "importe": 96800.0,
+     "prestamo": 51805.25,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 44994.75
+    },
+    {
+     "nombre": "Camión vehículo altura autoescala",
+     "partida": "624",
+     "importe": 1001630.86,
+     "prestamo": 454194.75,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 547436.11
+    },
+    {
+     "nombre": "Vestuario, equipamiento y equipos rescate",
+     "partida": "623",
+     "importe": 832641.85,
+     "prestamo": 454828.95,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 377812.9
+    }
+   ]
+  },
+  {
+   "codigo": "1522",
+   "nombre": "Vivienda",
+   "total": 1700000.0,
+   "proyectos": [
+    {
+     "nombre": "Rehabilitación viviendas Junta Santa Catalina",
+     "partida": "651",
+     "importe": 1700000.0,
+     "prestamo": 250000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 1450000.0
+    }
+   ]
+  },
+  {
+   "codigo": "1530",
+   "nombre": "Vías públicas urbanas",
+   "total": 5471847.23,
+   "proyectos": [
+    {
+     "nombre": "Reurbanización ARU Santa Catalina",
+     "partida": "619",
+     "importe": 250000.0,
+     "prestamo": 50000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 200000.0
+    },
+    {
+     "nombre": "Reurbanización Avenida Castilla- ampliación plazo ejecucción",
+     "partida": "619",
+     "importe": 901046.26,
+     "prestamo": 901046.26,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mejoras de accesibilidad, diseño y rehabilitación Jardines Don Diego",
+     "partida": "619",
+     "importe": 2294422.81,
+     "prestamo": 2294422.81,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Dirección factultativa Jardines de D. Diego",
+     "partida": "619",
+     "importe": 21296.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 21296.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Obras reparación Puente Nuevo (Padre Claret)",
+     "partida": "619",
+     "importe": 339552.92,
+     "prestamo": 339552.92,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Ensanche aceras Burgo de Osma y aparcamientos",
+     "partida": "619",
+     "importe": 41994.42,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 41994.42,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Modificación contrato redacción proyecto rotonda nuevo hospital",
+     "partida": "619",
+     "importe": 6247.17,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 6247.17,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Ejecucción obra desvío canalización aguas rotonda nuevo hospital",
+     "partida": "619",
+     "importe": 1555084.28,
+     "prestamo": 1555084.28,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Dirección factultativa y CSS, Desvío canalización aguas rotonda nuevo hospital",
+     "partida": "619",
+     "importe": 62203.37,
+     "prestamo": 62203.37,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1640",
+   "nombre": "Cementerio",
+   "total": 45581.79,
+   "proyectos": [
+    {
+     "nombre": "Construcciones 51 nichos cementerio municipal",
+     "partida": "622",
+     "importe": 45581.79,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 45581.79,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3214",
+   "nombre": "Tercera edad y dependencia",
+   "total": 61134.0,
+   "proyectos": [
+    {
+     "nombre": "Rehabilitación Edificio Centro San Juan",
+     "partida": "632",
+     "importe": 61134.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 61134.0
+    }
+   ]
+  },
+  {
+   "codigo": "3420",
+   "nombre": "Instalaciones deportivas",
+   "total": 3356701.87,
+   "proyectos": [
+    {
+     "nombre": "Obras mejora piscina municipal cubierta",
+     "partida": "632",
+     "importe": 2936701.87,
+     "prestamo": 1264334.42,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 1672367.45
+    },
+    {
+     "nombre": "Cambio luminarias a LED en instalaciones deportivas",
+     "partida": "632",
+     "importe": 300000.0,
+     "prestamo": 31625.89,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 268374.11
+    },
+    {
+     "nombre": "Caseta campo de rugby Complejo Deportivo Virgen Viñas",
+     "partida": "632",
+     "importe": 120000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 120000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4540",
+   "nombre": "Caminos",
+   "total": 300000.0,
+   "proyectos": [
+    {
+     "nombre": "Arreglo de caminos",
+     "partida": "619",
+     "importe": 300000.0,
+     "prestamo": 31625.89,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 268374.11
+    }
+   ]
+  },
+  {
+   "codigo": "9200",
+   "nombre": "Administracion general",
+   "total": 124512.0,
+   "proyectos": [
+    {
+     "nombre": "Módulos de integración para Plan Modernización de las AAPP",
+     "partida": "629",
+     "importe": 90000.0,
+     "prestamo": 90000.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Redacción y modificación proyectos Fondos Europeos",
+     "partida": "629",
+     "importe": 34512.0,
+     "prestamo": 34512.0,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "9290",
+   "nombre": "Servicios no clasificados",
+   "total": 189370.2,
+   "proyectos": [
+    {
+     "nombre": "Rehabilitación tejado ermita San Isidro",
+     "partida": "632",
+     "importe": 189370.2,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 189370.2,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  }
+ ]
+}

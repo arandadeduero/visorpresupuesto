@@ -21,6 +21,8 @@ runPage("ingresos", async ({ anio, main, load }) => {
   const caps = [...datos.capitulos].sort((a, b) => b.actual - a.actual);
   const total = caps.reduce((s, c) => s + c.actual, 0);
   const max = caps[0].actual;
+  // Algunos presupuestos antiguos no traen ninguna cifra del año anterior: entonces no hay columna ni variaciones
+  const conAnterior = caps.some((c) => c.anterior !== null && c.anterior !== undefined);
 
   main.innerHTML = `
     <h1>¿De dónde sale el dinero? <span class="muted">${anio}</span></h1>
@@ -34,7 +36,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
       importe: c.actual,
       max,
       clicable: true,
-      extra: `${((c.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${porHabHtml(c.actual, habitantes)} · ${variacionHtml(c.actual, c.anterior)}`,
+      extra: `${((c.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${porHabHtml(c.actual, habitantes)}${conAnterior ? ` · ${variacionHtml(c.actual, c.anterior)}` : ""}`,
     })}<div class="hijos" hidden></div></li>`).join("")}</ul></div>
     <div id="resultados" hidden></div>`;
 
@@ -43,8 +45,8 @@ runPage("ingresos", async ({ anio, main, load }) => {
   const resultados = main.querySelector("#resultados");
   // El Excel de ingresos trae tres años en 2026 pero solo dos en 2024 y 2025: la columna de hace dos años solo sale si hay datos.
   const dosAtras = datos.capitulos.some((c) => c.conceptos.some((x) => x.anterior2 !== null && x.anterior2 !== undefined));
-  const cab = [{ texto: "Concepto" }, ...(dosAtras ? [{ texto: `${anio - 2}`, num: true }] : []), { texto: `${anio - 1}`, num: true }, { texto: `${anio}`, num: true }, { texto: "Cambio" }];
-  const fila = (x) => `<tr><td>${esc(x.nombre)}</td>${dosAtras ? `<td class="num">${formatEuros(x.anterior2)}</td>` : ""}<td class="num">${formatEuros(x.anterior)}</td><td class="num">${formatEuros(x.actual)}</td><td>${variacionHtml(x.actual, x.anterior, "")}</td></tr>`;
+  const cab = [{ texto: "Concepto" }, ...(dosAtras ? [{ texto: `${anio - 2}`, num: true }] : []), ...(conAnterior ? [{ texto: `${anio - 1}`, num: true }] : []), { texto: `${anio}`, num: true }, ...(conAnterior ? [{ texto: "Cambio" }] : [])];
+  const fila = (x) => `<tr><td>${esc(x.nombre)}</td>${dosAtras ? `<td class="num">${formatEuros(x.anterior2)}</td>` : ""}${conAnterior ? `<td class="num">${formatEuros(x.anterior)}</td>` : ""}<td class="num">${formatEuros(x.actual)}</td>${conAnterior ? `<td>${variacionHtml(x.actual, x.anterior, "")}</td>` : ""}</tr>`;
 
   const articulosHtml = (cap) => {
     const arts = [...cap.articulos].filter((a) => a.actual || a.anterior || a.anterior2).sort((a, b) => (b.actual ?? 0) - (a.actual ?? 0));
@@ -56,7 +58,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
       importe: a.actual ?? 0,
       max: maxArt,
       clicable: true,
-      extra: `${(((a.actual ?? 0) / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${variacionHtml(a.actual, a.anterior)}`,
+      extra: `${(((a.actual ?? 0) / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total${conAnterior ? ` · ${variacionHtml(a.actual, a.anterior)}` : ""}`,
     })}<div class="hijos" hidden></div></li>`).join("")}</ul>`;
   };
   const conceptosHtml = (cap, articulo) => {

@@ -1,0 +1,399 @@
+{
+ "anio": 2018,
+ "total": 5136872.88,
+ "fuentes": {
+  "prestamo": 2491062.38,
+  "ingresosCorrientes": 2345810.5,
+  "otros": 0.0,
+  "rta": 0.0,
+  "subvenciones": 300000.0
+ },
+ "programas": [
+  {
+   "codigo": "1320",
+   "nombre": "Seguridad",
+   "total": 46300.0,
+   "proyectos": [
+    {
+     "nombre": "Proyecto Nueva Comisaría Policía Local",
+     "partida": "622",
+     "importe": 46300.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 46300.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1510",
+   "nombre": "Urbanismo",
+   "total": 2659636.38,
+   "proyectos": [
+    {
+     "nombre": "Sentencia 513/2016 PROINCOVE, S.L. Intereses)",
+     "partida": "600",
+     "importe": 2491062.38,
+     "prestamo": 2491062.38,
+     "ingresosCorrientes": 0.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Sentencia 348/2013 Procd. Ord.101/2012 (4º plazo justiprecio. Urb. C",
+     "partida": "600",
+     "importe": 168574.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 168574.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1522",
+   "nombre": "Conservacion y rehabilitacion de la edificacion",
+   "total": 40000.0,
+   "proyectos": [
+    {
+     "nombre": "Rehabilitación viviendas C/ Santiago nº 4 Bajo Dcha e Izqu.",
+     "partida": "632",
+     "importe": 40000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 40000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1530",
+   "nombre": "Vias publicas",
+   "total": 954636.5,
+   "proyectos": [
+    {
+     "nombre": "Reurbanización Avda. de Burgos.",
+     "partida": "619",
+     "importe": 854636.5,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 854636.5,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Actuaciones de Accesibilidad",
+     "partida": "619",
+     "importe": 100000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 100000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1640",
+   "nombre": "Cementerio",
+   "total": 20000.0,
+   "proyectos": [
+    {
+     "nombre": "Grua para mover las lapidas",
+     "partida": "623",
+     "importe": 20000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 20000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "1710",
+   "nombre": "Parques y jardines",
+   "total": 500000.0,
+   "proyectos": [
+    {
+     "nombre": "Acondic. Picón Polígono Industrial Zona Verde C/ Haza",
+     "partida": "609",
+     "importe": 380000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 380000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Juegos Infantilles",
+     "partida": "619",
+     "importe": 120000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 120000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "2311",
+   "nombre": "Asistencia social primaria",
+   "total": 2500.0,
+   "proyectos": [
+    {
+     "nombre": "Maquinaria Inst. y Utill. (Desfibriladores)",
+     "partida": "623",
+     "importe": 2500.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 2500.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "2314",
+   "nombre": "Asistencia social primaria tercera edad",
+   "total": 15000.0,
+   "proyectos": [
+    {
+     "nombre": "Edificios y otras constr. (Adecuación Centro de Día Sta. Catalina)",
+     "partida": "632",
+     "importe": 15000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 15000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3230",
+   "nombre": "Funcionamiento de centros docentes de enseñanza infa., primaria y educacion especial",
+   "total": 5000.0,
+   "proyectos": [
+    {
+     "nombre": "Sistema de Refrigeración Escuela Infantil Municipal",
+     "partida": "623",
+     "importe": 5000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 5000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3260",
+   "nombre": "Servicios complementarios de educacion",
+   "total": 6000.0,
+   "proyectos": [
+    {
+     "nombre": "Mobiliario y enseres (Mobiliario y Material para LUDOTECA)",
+     "partida": "635",
+     "importe": 6000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 6000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3261",
+   "nombre": "Instalaciones de ocupacion del tiempo libre escuela de musica y danza",
+   "total": 15000.0,
+   "proyectos": [
+    {
+     "nombre": "Mobiliario",
+     "partida": "635",
+     "importe": 1000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 1000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Instrumentos",
+     "partida": "635",
+     "importe": 14000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 14000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3372",
+   "nombre": "Banda de musica",
+   "total": 18000.0,
+   "proyectos": [
+    {
+     "nombre": "Mobiliario",
+     "partida": "635",
+     "importe": 3000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 3000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Instrumentos",
+     "partida": "635",
+     "importe": 15000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 15000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "3420",
+   "nombre": "Instalaciones deportivas",
+   "total": 135000.0,
+   "proyectos": [
+    {
+     "nombre": "Pistas de Atletismo",
+     "partida": "619",
+     "importe": 110000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 110000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mobiliario y enseres (Canastas Polidepo. Chelva)",
+     "partida": "635",
+     "importe": 25000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 25000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4320",
+   "nombre": "Turismo",
+   "total": 16000.0,
+   "proyectos": [
+    {
+     "nombre": "Maquinaria Inst. y Utill. (Sistema de vigi. Museo Arte Sacro)",
+     "partida": "623",
+     "importe": 10000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 10000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mobiliario y enseres (Mobiliario Museo del Tren)",
+     "partida": "625",
+     "importe": 6000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 6000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4330",
+   "nombre": "Desarrollo economico",
+   "total": 23000.0,
+   "proyectos": [
+    {
+     "nombre": "Maquin. Inst. y Utill. (Equi. Tec. 3ª Plnata Edif. Los Fantasmas)",
+     "partida": "633",
+     "importe": 20000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 20000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    },
+    {
+     "nombre": "Mobiliario y enseres (Mobil. Edificio Los Fantasmas)",
+     "partida": "635",
+     "importe": 3000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 3000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "4540",
+   "nombre": "Caminos vecinales",
+   "total": 72800.0,
+   "proyectos": [
+    {
+     "nombre": "Arreglo Camino de la Colonia",
+     "partida": "619",
+     "importe": 72800.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 72800.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  },
+  {
+   "codigo": "9200",
+   "nombre": "Administracion general",
+   "total": 516000.0,
+   "proyectos": [
+    {
+     "nombre": "Edificio Banca Pecho 2ª Anualidad",
+     "partida": "622",
+     "importe": 516000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 216000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 300000.0
+    }
+   ]
+  },
+  {
+   "codigo": "9250",
+   "nombre": "Atencion a los ciudadanos",
+   "total": 92000.0,
+   "proyectos": [
+    {
+     "nombre": "INNOVACION TECNOLOGICA (Registro Electronc. Y Tramit.)",
+     "partida": "627",
+     "importe": 92000.0,
+     "prestamo": 0.0,
+     "ingresosCorrientes": 92000.0,
+     "otros": 0.0,
+     "rta": 0.0,
+     "subvenciones": 0.0
+    }
+   ]
+  }
+ ]
+}

@@ -27,6 +27,8 @@ TOLERANCIA = 1.0
 
 # Años sin presupuesto propio: se prorrogó el de otro año. Salen en el selector de año, pero no se pueden elegir.
 PRORROGADOS = {2019: 2018, 2020: 2018}
+# Años de los que el Ayuntamiento solo publicó el PDF: sus Excel de <año>/ se han preparado copiando las tablas del PDF.
+DESDE_PDF = {2018, 2021, 2022, 2023}
 
 def _cmp(avisos, etiqueta, valor, referencia):
     if valor is None or referencia is None or abs(valor - referencia) > TOLERANCIA:
@@ -43,6 +45,22 @@ DESCUADRES_CONOCIDOS = {
     ),
 }
 
+# Capítulos de gastos cuyo total oficial (A1 y «TOTAL CAPÍTULO» de A3) no es la suma de sus partidas: año → {capítulo: (total − partidas, explicación)}.
+DESCUADRES_CAPITULO = {
+    2023: {
+        1: (
+            82600.0,
+            "En el presupuesto de 2023 el capítulo 1 (personal) suma 13.537.729 € en el resumen y en el total del estado de gastos, "
+            "pero sus partidas suman 13.455.129 €: 82.600 € menos, lo mismo que el programa 1522 (Oficina de gestión del ARU Santa Catalina). "
+            "La web usa el total oficial para el capítulo y las partidas tal como vienen.",
+        ),
+    },
+}
+
+
+def _descuadre(year, cap) -> float:
+    return DESCUADRES_CAPITULO.get(year, {}).get(cap, (0.0, ""))[0]
+
 
 def check_totals(data: dict, year: int | None = None) -> list[str]:
     """Avisos si los totales de A2, A3, A9 o A13 no cuadran entre sí o con el resumen (A1)."""
@@ -55,13 +73,13 @@ def check_totals(data: dict, year: int | None = None) -> list[str]:
         for c in data[nombre]["capitulos"]:
             _cmp(avisos, f"{nombre}, capítulo {c['cap']}", c["actual"], ref.get(c["cap"]))
     for c in data["gastos"]["capitulos"]:
-        suma = sum(p["actual"] or 0 for p in data["gastos"]["partidas"] if p["cap"] == c["cap"])
+        suma = sum(p["actual"] or 0 for p in data["gastos"]["partidas"] if p["cap"] == c["cap"]) + _descuadre(year, c["cap"])
         _cmp(avisos, f"gastos, capítulo {c['cap']}: las partidas suman {round(suma, 2)} y el capítulo", suma, c["actual"])
     for c in data["ingresos"]["capitulos"]:
         suma = sum(x["actual"] or 0 for x in c["conceptos"])
         _cmp(avisos, f"ingresos, capítulo {c['cap']}: los conceptos suman {round(suma, 2)} y el capítulo", suma, c["actual"])
     for c in data["gastos"]["capitulos"]:
-        suma = sum(a["actual"] for a in data["gastos"]["articulos"] if a["cap"] == c["cap"])
+        suma = sum(a["actual"] for a in data["gastos"]["articulos"] if a["cap"] == c["cap"]) + _descuadre(year, c["cap"])
         _cmp(avisos, f"gastos, capítulo {c['cap']}: los artículos suman {round(suma, 2)} y el capítulo", suma, c["actual"])
     for c in data["ingresos"]["capitulos"]:
         suma = sum(a["actual"] or 0 for a in c["articulos"])
@@ -77,11 +95,13 @@ def check_totals(data: dict, year: int | None = None) -> list[str]:
 
 def notas_conocidas(data: dict, year: int) -> list[str]:
     """Explicaciones de diferencias esperadas del Excel de ese año (no son avisos)."""
+    notas = []
     if year in DESCUADRES_CONOCIDOS:
         res = data["resumen"]
         if abs(res["totalIngresos"] - res["totalGastos"] - DESCUADRES_CONOCIDOS[year][0]) <= TOLERANCIA:
-            return [DESCUADRES_CONOCIDOS[year][1]]
-    return []
+            notas.append(DESCUADRES_CONOCIDOS[year][1])
+    notas += [nota for _, nota in DESCUADRES_CAPITULO.get(year, {}).values()]
+    return notas
 
 
 def convert(year: int, out_dir: Path) -> list[str]:
@@ -95,6 +115,8 @@ def convert_con_notas(year: int, out_dir: Path) -> tuple[list[str], list[str]]:
     notas = notas_conocidas(data, year)
     if notas:
         data["resumen"]["notas"] = notas  # la web las enseña tal cual en el resumen
+    if year in DESCUADRES_CAPITULO:  # total oficial − suma de partidas, por capítulo (lo que no se ve en el árbol de gastos)
+        data["gastos"]["descuadreCapitulos"] = {str(c): d for c, (d, _) in DESCUADRES_CAPITULO[year].items()}
     destino = out_dir / str(year)
     destino.mkdir(parents=True, exist_ok=True)
     for nombre, contenido in data.items():
@@ -102,7 +124,7 @@ def convert_con_notas(year: int, out_dir: Path) -> tuple[list[str], list[str]]:
 
     indice_path = out_dir / "index.json"
     anios = json.loads(indice_path.read_text(encoding="utf-8"))["anios"] if indice_path.exists() else []
-    anios = sorted([a for a in anios if a["anio"] != year] + [{"anio": year, "tipo": data["resumen"]["tipo"]}], key=lambda a: a["anio"])
+    anios = sorted([a for a in anios if a["anio"] != year] + [{"anio": year, "tipo": data["resumen"]["tipo"]} | ({"origen": "pdf"} if year in DESDE_PDF else {})], key=lambda a: a["anio"])
     # La raíz del sitio es el último presupuesto aprobado: un proyecto se ve en su carpeta (/2027/) hasta que se apruebe
     aprobados = [a["anio"] for a in anios if a["tipo"] == "aprobado"] or [anios[-1]["anio"]]
     prorrogados = [{"anio": a, "de": de} for a, de in sorted(PRORROGADOS.items())]

@@ -1,6 +1,26 @@
 {
  "anios": [
   {
+   "anio": 2018,
+   "tipo": "aprobado",
+   "origen": "pdf"
+  },
+  {
+   "anio": 2021,
+   "tipo": "aprobado",
+   "origen": "pdf"
+  },
+  {
+   "anio": 2022,
+   "tipo": "aprobado",
+   "origen": "pdf"
+  },
+  {
+   "anio": 2023,
+   "tipo": "aprobado",
+   "origen": "pdf"
+  },
+  {
    "anio": 2024,
    "tipo": "aprobado"
   },

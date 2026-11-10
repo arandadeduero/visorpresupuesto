@@ -13,6 +13,7 @@ const EXPLICACION = {
 };
 
 function comparacion(total, anterior, anio) {
+  if (anterior === null || anterior === undefined) return ""; // el presupuesto no trae el año anterior
   const v = formatVariation(total, anterior);
   if (v.dir === "up") return `un ${v.text.slice(1)} más que en ${anio - 1}`;
   if (v.dir === "down") return `un ${v.text.slice(1)} menos que en ${anio - 1}`;
@@ -21,6 +22,7 @@ function comparacion(total, anterior, anio) {
 
 runPage("inicio", async ({ anio, indice, main, load }) => {
   const r = await load("resumen"); // gastos.json (el más pesado) solo se pide después, para la tarjeta «¿Cuánto gasta…?»
+  const cambio = comparacion(r.totalGastos, r.totalGastosAnterior, anio);
   const porVecino = formatEuros(porHabitante(r.totalGastos, r.habitantes));
   const suma = r.por100.reduce((s, b) => s + b.euros, 0);
   const segmentos = r.por100.map((b, i) => {
@@ -34,7 +36,7 @@ runPage("inicio", async ({ anio, indice, main, load }) => {
     ${documentosOficialesHtml(indice, anio)}
     <div class="stackbar" role="group" aria-label="Reparto de cada 100 euros">${segmentos}</div>
     <p class="detalle-seg" id="detalle-seg" aria-live="polite"></p>
-    <p class="lead">Total previsto: <strong>${formatEuros(r.totalGastos)}</strong>, ${comparacion(r.totalGastos, r.totalGastosAnterior, anio)}.</p>
+    <p class="lead">Total previsto: <strong>${formatEuros(r.totalGastos)}</strong>${cambio ? `, ${cambio}` : ""}.</p>
     <details><summary>Ver como tabla</summary>
       <div class="tabla-scroll"><table class="datos"><thead><tr><th>En qué</th><th class="num">Por cada 100 €</th><th class="num">Importe</th></tr></thead><tbody>${filas}</tbody></table></div>
     </details>

@@ -86,6 +86,11 @@ def tabla(cabeceras: list, filas: list, pie: list | None = None) -> str:
         tag = "th" if th else "td"
         return "<tr>" + "".join(f"<{tag}{clase(i)}>{c}</{tag}>" for i, c in enumerate(celdas)) + "</tr>"
 
+    # Una columna sin ningún dato (el año anterior en 2018 y 2021, que no lo traen) no se pinta
+    vacias = {i for i in range(len(cabeceras)) if filas and all(f[i] == "—" for f in filas)}
+    if vacias:
+        quita = lambda celdas: [c for i, c in enumerate(celdas) if i not in vacias]
+        cabeceras, filas, pie = quita(cabeceras), [quita(f) for f in filas], quita(pie) if pie else pie
     cab = "".join(f"<th{clase(i)}>{esc(t)}</th>" for i, (t, _) in enumerate(cabeceras))
     cuerpo = "".join(fila(f) for f in filas) + (fila(pie, th=True) if pie else "")
     return f'<div class="tabla-scroll"><table class="datos"><thead><tr>{cab}</tr></thead><tbody>{cuerpo}</tbody></table></div>'
@@ -116,6 +121,11 @@ class Contexto:
         self.terminos = json.loads((self.site / "data" / "guia-terminos.json").read_text(encoding="utf-8"))
         self.clave = "raiz"
         self.anio = self.ultimo
+
+    @property
+    def desde_pdf(self) -> bool:
+        """El Ayuntamiento solo publicó el PDF de este año: sus Excel se han preparado copiando sus tablas."""
+        return any(a["anio"] == self.anio and a.get("origen") == "pdf" for a in self.indice["anios"])
 
     @property
     def nombre_tipo(self) -> str:
@@ -216,10 +226,10 @@ def pagina_resumen(ctx: Contexto) -> str:
         titulo(f"Resumen del presupuesto {anio}")
         + _intro(ctx, f"El Ayuntamiento prevé ingresar <strong>{euros(r['totalIngresos'])}</strong> y gastar <strong>{euros(r['totalGastos'])}</strong>{': el presupuesto está equilibrado' if equilibrado else ''}.")
         + "<h2>De dónde sale el dinero</h2>"
-        + tabla(_cab_capitulos(anio), _filas_capitulos(r["ingresosPorCapitulo"]), ["Total", euros(sum(c.get("anterior") or 0 for c in r["ingresosPorCapitulo"])), euros(r["totalIngresos"])])
+        + tabla(_cab_capitulos(anio), _filas_capitulos(r["ingresosPorCapitulo"]), ["Total", euros(None if all(c.get("anterior") is None for c in r["ingresosPorCapitulo"]) else sum(c.get("anterior") or 0 for c in r["ingresosPorCapitulo"])), euros(r["totalIngresos"])])
         + "<h2>En qué se gasta</h2>"
         + tabla(_cab_capitulos(anio), _filas_capitulos(r["gastosPorCapitulo"]), ["Total", euros(r["totalGastosAnterior"]), euros(r["totalGastos"])])
-        + f'<p class="muted">La cifra de {anio - 1} son los créditos del presupuesto de {anio - 1}.</p>'
+        + (f'<p class="muted">La cifra de {anio - 1} son los créditos del presupuesto de {anio - 1}.</p>' if r["totalGastosAnterior"] is not None else "")
     )
 
 
@@ -377,7 +387,7 @@ def pagina_descargas(ctx: Contexto) -> str:
         bloques.append(
             f"<h2>Presupuesto {a}</h2><h3>Datos en formato JSON</h3><ul class=\"descargas\">{lista}</ul>"
             + (f'<h3>Presupuesto completo del Ayuntamiento (PDF)</h3><ul class="descargas">{pdfs}</ul>' if pdfs else "")
-            + (f'<h3>Excel originales del Ayuntamiento</h3><ul class="descargas">{excels}</ul>' if excels else "")
+            + (f'<h3>{"Excel preparados a partir del PDF" if ctx.para(a).desde_pdf else "Excel originales del Ayuntamiento"}</h3><ul class="descargas">{excels}</ul>' if excels else "")
         )
     return (
         titulo("Descargas")

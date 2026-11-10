@@ -1,0 +1,179 @@
+{
+ "anio": 2022,
+ "tipo": "aprobado",
+ "habitantes": 33172,
+ "anioPoblacion": 2022,
+ "fuentePoblacion": "INE (población de Aranda de Duero en 2022), padrón municipal a 1 de enero",
+ "totalGastos": 36358359.0,
+ "totalGastosAnterior": 33784611.33,
+ "totalIngresos": 36358359.0,
+ "gastosPorCapitulo": [
+  {
+   "cap": 1,
+   "corto": "Personal",
+   "oficial": "Gastos de personal",
+   "anterior": 12287605.91,
+   "actual": 12657630.0
+  },
+  {
+   "cap": 2,
+   "corto": "Servicios y mantenimiento",
+   "oficial": "Gastos corrientes en bienes y servicios",
+   "anterior": 15142690.0,
+   "actual": 16660350.0
+  },
+  {
+   "cap": 3,
+   "corto": "Intereses de préstamos",
+   "oficial": "Gastos financieros",
+   "anterior": 65300.0,
+   "actual": 123300.0
+  },
+  {
+   "cap": 4,
+   "corto": "Ayudas y transferencias",
+   "oficial": "Transferencias corrientes",
+   "anterior": 1862240.0,
+   "actual": 1442090.0
+  },
+  {
+   "cap": 5,
+   "corto": "Fondo de imprevistos",
+   "oficial": "Fondo de contingencia",
+   "anterior": 0.0,
+   "actual": 0.0
+  },
+  {
+   "cap": 6,
+   "corto": "Obras e inversiones",
+   "oficial": "Inversiones reales",
+   "anterior": 4089775.42,
+   "actual": 5007989.0
+  },
+  {
+   "cap": 7,
+   "corto": "Ayudas para inversiones",
+   "oficial": "Transferencias de capital",
+   "anterior": 60000.0,
+   "actual": 210000.0
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "anterior": 15000.0,
+   "actual": 15000.0
+  },
+  {
+   "cap": 9,
+   "corto": "Devolución de préstamos",
+   "oficial": "Pasivos financieros",
+   "anterior": 262000.0,
+   "actual": 242000.0
+  }
+ ],
+ "ingresosPorCapitulo": [
+  {
+   "cap": 1,
+   "corto": "Impuestos directos (IBI, IAE, vehículos…)",
+   "oficial": "Impuestos directos",
+   "anterior": 13440000.0,
+   "actual": 13621000.0
+  },
+  {
+   "cap": 2,
+   "corto": "Impuestos indirectos (obras)",
+   "oficial": "Impuestos indirectos",
+   "anterior": 600000.0,
+   "actual": 1200000.0
+  },
+  {
+   "cap": 3,
+   "corto": "Tasas y precios públicos",
+   "oficial": "Tasas y otros ingresos",
+   "anterior": 5862400.0,
+   "actual": 6057800.0
+  },
+  {
+   "cap": 4,
+   "corto": "Transferencias de otras administraciones",
+   "oficial": "Transferencias corrientes",
+   "anterior": 10380021.22,
+   "actual": 11080475.0
+  },
+  {
+   "cap": 5,
+   "corto": "Ingresos de patrimonio",
+   "oficial": "Ingresos patrimoniales",
+   "anterior": 22927.3,
+   "actual": 29800.0
+  },
+  {
+   "cap": 6,
+   "corto": "Venta de inversiones",
+   "oficial": "Enajenación de inversiones reales",
+   "anterior": 0.0,
+   "actual": 0.0
+  },
+  {
+   "cap": 7,
+   "corto": "Subvenciones para obras",
+   "oficial": "Transferencias de capital",
+   "anterior": 557885.96,
+   "actual": 576457.22
+  },
+  {
+   "cap": 8,
+   "corto": "Activos financieros",
+   "oficial": "Activos financieros",
+   "anterior": 15000.0,
+   "actual": 15000.0
+  },
+  {
+   "cap": 9,
+   "corto": "Préstamos",
+   "oficial": "Pasivos financieros",
+   "anterior": 2906376.85,
+   "actual": 3777826.78
+  }
+ ],
+ "por100": [
+  {
+   "bloque": "Obras e inversiones",
+   "caps": [
+    6,
+    7
+   ],
+   "importe": 5217989.0,
+   "euros": 14
+  },
+  {
+   "bloque": "Servicios",
+   "caps": [
+    2
+   ],
+   "importe": 16660350.0,
+   "euros": 46
+  },
+  {
+   "bloque": "Personal",
+   "caps": [
+    1
+   ],
+   "importe": 12657630.0,
+   "euros": 35
+  },
+  {
+   "bloque": "Otros",
+   "caps": [
+    3,
+    4,
+    5,
+    8,
+    9
+   ],
+   "importe": 1822390.0,
+   "euros": 5
+  }
+ ]
+}
