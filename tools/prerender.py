@@ -370,11 +370,13 @@ def pagina_descargas(ctx: Contexto) -> str:
             f'<li><a href="{esc(ctx.url_json(a, f))}" download>{esc(NOMBRE_JSON[f][0])} {a} ({f}.json)</a><br><span class="muted">{esc(NOMBRE_JSON[f][1])}</span></li>'
             for f in ORDEN_JSON
         )
-        excels = "".join(
-            f'<li><a href="{esc(url_excel(a, n))}" rel="noopener">{esc(n)}</a></li>' for n in ctx.excels.get(a, [])
+        enlaces = lambda ext: "".join(
+            f'<li><a href="{esc(url_excel(a, n))}" rel="noopener">{esc(n)}</a></li>' for n in ctx.excels.get(a, []) if n.endswith(ext)
         )
+        pdfs, excels = enlaces(".pdf"), enlaces(".xlsx")
         bloques.append(
             f"<h2>Presupuesto {a}</h2><h3>Datos en formato JSON</h3><ul class=\"descargas\">{lista}</ul>"
+            + (f'<h3>Presupuesto completo del Ayuntamiento (PDF)</h3><ul class="descargas">{pdfs}</ul>' if pdfs else "")
             + (f'<h3>Excel originales del Ayuntamiento</h3><ul class="descargas">{excels}</ul>' if excels else "")
         )
     return (

@@ -135,3 +135,12 @@ test("la portada enlaza al Portal de Transparencia solo en los presupuestos apro
   assert.match(documentosOficialesHtml(indice, 2030), /href="https:\/\/transparencia\.arandadeduero\.es\/transparencia-economica\/presupuestos-2030\/"/);
   assert.equal(documentosOficialesHtml(indice, 2031), "");
 });
+
+test("el selector enseña los años prorrogados, en su sitio y sin poder elegirlos", () => {
+  const indice = { anios: [{ anio: 2030, tipo: "aprobado" }, { anio: 2033, tipo: "aprobado" }], ultimo: 2033, prorrogados: [{ anio: 2031, de: 2030 }, { anio: 2032, de: 2030 }] };
+  const html = marcoHtml({ activa: "inicio", anio: 2033, indice, escudo: "img/escudo.png", actualizado: null });
+  const opciones = [...html.matchAll(/<option([^>]*)>([^<]*)<\/option>/g)].map((m) => [m[1].includes("disabled"), m[2]]);
+  assert.deepEqual(opciones.map(([, t]) => t.slice(0, 4)), ["2030", "2031", "2032", "2033"]);
+  assert.deepEqual(opciones.map(([d]) => d), [false, true, true, false]);
+  assert.match(opciones[1][1], /prorrogado.*2030/);
+});

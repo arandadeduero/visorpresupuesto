@@ -25,6 +25,9 @@ PARSERS = {
 TOLERANCIA = 1.0
 
 
+# Años sin presupuesto propio: se prorrogó el de otro año. Salen en el selector de año, pero no se pueden elegir.
+PRORROGADOS = {2019: 2018, 2020: 2018}
+
 def _cmp(avisos, etiqueta, valor, referencia):
     if valor is None or referencia is None or abs(valor - referencia) > TOLERANCIA:
         avisos.append(f"{etiqueta}: {valor} no cuadra con {referencia}")
@@ -102,8 +105,9 @@ def convert_con_notas(year: int, out_dir: Path) -> tuple[list[str], list[str]]:
     anios = sorted([a for a in anios if a["anio"] != year] + [{"anio": year, "tipo": data["resumen"]["tipo"]}], key=lambda a: a["anio"])
     # La raíz del sitio es el último presupuesto aprobado: un proyecto se ve en su carpeta (/2027/) hasta que se apruebe
     aprobados = [a["anio"] for a in anios if a["tipo"] == "aprobado"] or [anios[-1]["anio"]]
+    prorrogados = [{"anio": a, "de": de} for a, de in sorted(PRORROGADOS.items())]
     indice_path.write_text(
-        json.dumps({"anios": anios, "ultimo": aprobados[-1]}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
+        json.dumps({"anios": anios, "ultimo": aprobados[-1], "prorrogados": prorrogados}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
     )
     return check_totals(data, year), notas
 

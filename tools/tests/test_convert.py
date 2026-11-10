@@ -29,6 +29,7 @@ def test_el_indice_lista_los_tres_anios_ordenados_y_el_ultimo_es_el_por_defecto(
     assert json.loads((out / "index.json").read_text(encoding="utf-8")) == {
         "anios": [{"anio": a, "tipo": "aprobado"} for a in ANIOS],
         "ultimo": 2026,
+        "prorrogados": [{"anio": 2019, "de": 2018}, {"anio": 2020, "de": 2018}],
     }
 
 
