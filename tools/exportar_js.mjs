@@ -55,6 +55,7 @@ function entorno(anio, dataset, escudoRelativo) {
       anios,
       urls,
       tarjetasInicio: layout.tarjetasHtml(anio),
+      documentosOficiales: layout.documentosOficialesHtml(indice, anio),
       // Avisos sobre los préstamos (pendientes de revisión por el Ayuntamiento): se reutilizan tal cual, sin copiarlos a Python
       avisos: {
         deuda: deuda.previsto ? textos.avisoPrevisto(deuda.previsto, deuda, prestamoInversiones, anio) : textos.avisoSinPrevisto(prestamoInversiones, anio),
