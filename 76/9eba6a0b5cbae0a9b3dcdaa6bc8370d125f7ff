@@ -1,0 +1,117 @@
+site/data/2023/ingresos.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-973
+site/data/2022/subvenciones.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-987
+tools/convert.py
+  s_99057c6fb43bed::t_c7d184af1becc8 48-63,76,82,98,102-104
+  s_99057c6fb43bed::t_cd3d4fb07d22f7 118-119
+  s_99057c6fb43bed::t_4ba1f79884f6ec 30-31,127
+tools/budget/labels.py
+  s_99057c6fb43bed::t_9e0174de575c83 151-154
+site/js/ingresos.js
+  s_99057c6fb43bed::t_387d25f896e78f 39,49,61
+  s_99057c6fb43bed::t_1ffac672da792e 24-25,48
+site/js/resumen.js
+  s_99057c6fb43bed::t_1ffac672da792e 24
+  s_99057c6fb43bed::t_aaed51a7e45218 36-39,50-52
+  s_99057c6fb43bed::t_98fa8190ad2b9d 42
+  s_99057c6fb43bed::t_c7d184af1becc8 58
+  s_99057c6fb43bed::t_cd09b5f3871dc6 43-49,53,64,69
+tools/tests/test_anios.py
+  s_99057c6fb43bed::t_197914ea0abe56 386-393
+  s_99057c6fb43bed::t_3b3ee7d161b4a6 96-97,101,359
+  s_99057c6fb43bed::t_0386eea6af25bc 161
+site/data/2018/gastos.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-7340
+site/js/anios.test.js
+  s_99057c6fb43bed::t_5d60b65b5c0386 36-37
+  s_99057c6fb43bed::t_cd3d4fb07d22f7 38,52-54
+  s_99057c6fb43bed::t_9de3dd4d61bf12 21-24
+site/data/2021/subvenciones.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-1257
+site/data/2022/gastos.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-6837
+site/data/2022/ingresos.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-869
+site/data/2022/inversiones.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-498
+tools/prerender.py
+  s_99057c6fb43bed::t_5593ab61215593 89-93,232
+  s_99057c6fb43bed::t_4ba1f79884f6ec 126-129,390
+  s_99057c6fb43bed::t_197914ea0abe56 229
+  s_99057c6fb43bed::t_98b60aa0837c34 125
+site/data/2021/deuda.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-93
+tools/desde_pdf/extraer_2023.py
+  s_99057c6fb43bed::t_4f870145c07985 1-325
+site/data/index.json
+  s_99057c6fb43bed::t_9e0174de575c83 3-4,7-9,12-14,17-19,22
+  s_99057c6fb43bed::t_4ba1f79884f6ec 5-6,10-11,15-16,20-21
+site/js/home.js
+  s_99057c6fb43bed::t_7ef7c1a22d24b8 25,39
+  s_99057c6fb43bed::t_98fa8190ad2b9d 16
+tools/desde_pdf/README.md
+  s_99057c6fb43bed::t_8863fe1c75e3cb 1-13
+site/data/2018/ingresos.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-1031
+site/data/2023/gastos.json
+  s_99057c6fb43bed::t_cd3d4fb07d22f7 6817-6820
+  s_99057c6fb43bed::t_9e0174de575c83 1-6816,6821
+site/data/2018/inversiones.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-399
+tools/budget/gastos.py
+  s_99057c6fb43bed::t_eacadd65afabad 82,96
+site/data/2021/resumen.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-179
+site/js/descargas.js
+  s_99057c6fb43bed::t_4ba1f79884f6ec 24-26
+tools/desde_pdf/extraer_2022.py
+  s_99057c6fb43bed::t_4f870145c07985 1-294
+site/data/2018/deuda.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-101
+site/data/2021/gastos.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-6926
+site/data/2022/deuda.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-89
+site/data/2023/inversiones.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-330
+tools/desde_pdf/extraer_2018.py
+  s_99057c6fb43bed::t_4f870145c07985 1-463
+tools/desde_pdf/extraer_2021.py
+  s_99057c6fb43bed::t_4f870145c07985 1-391
+site/data/2023/subvenciones.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-1290
+site/data/2021/inversiones.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-255
+site/data/2023/resumen.json
+  s_99057c6fb43bed::t_c7d184af1becc8 178-180
+  s_99057c6fb43bed::t_9e0174de575c83 1-177,181-182
+site/data/2018/resumen.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-179
+site/data/2023/deuda.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-95
+site/data/2021/ingresos.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-893
+site/data/2022/resumen.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-179
+site/data/2018/subvenciones.json
+  s_99057c6fb43bed::t_9e0174de575c83 1-1203
+README.md
+  s_99057c6fb43bed::t_cce703367f0ab5 7,34-35,130,134,205,211
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "769eba6a0b5cbae0a9b3dcdaa6bc8370d125f7ff",
+  "prompts": {},
+  "sessions": {
+    "s_99057c6fb43bed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "de30bd86-43a4-46a4-bc5b-708bc8eedd73",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
