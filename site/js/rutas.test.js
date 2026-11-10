@@ -79,6 +79,9 @@ test("el selector de año navega a la misma página del otro año (o a ?anio= si
     assert.equal(urlCambioDeAnio("guia", 2024, ""), "../2024/", "las páginas sin año llevan a la portada de ese año");
   });
   con(RAIZ, () => assert.equal(urlCambioDeAnio("gastos", 2025, ""), "2025/gastos.html"));
+  // Descargas lista todos los años: elegir uno lleva a su bloque en la misma página
+  con(RAIZ, () => assert.equal(urlCambioDeAnio("descargas", 2022, ""), "#presupuesto-2022"));
+  con(null, () => assert.equal(urlCambioDeAnio("descargas", 2022, "?anio=2024"), "#presupuesto-2022"));
   con(null, () => {
     assert.equal(urlCambioDeAnio("gastos", 2025, "?anio=2024"), "?anio=2025");
     assert.equal(urlCambioDeAnio("comparar", 2025, "?a=2024&b=2026"), "?a=2024&b=2026&anio=2025");

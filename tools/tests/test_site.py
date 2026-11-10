@@ -83,6 +83,14 @@ def test_cada_carpeta_de_anio_con_excel_esta_publicada_en_el_indice_y_viceversa(
     assert publicados == {int(c.name) for c in (SITE / "data").iterdir() if c.is_dir()}
 
 
+def test_el_indice_lista_los_documentos_originales_de_cada_carpeta():
+    """Descargas (JS) enlaza los Excel y el PDF de cada año con los nombres que guarda index.json: tienen que existir."""
+    indice = json.loads((SITE / "data" / "index.json").read_text(encoding="utf-8"))
+    for a in indice["anios"]:
+        carpeta = ROOT / str(a["anio"])
+        assert a["documentos"] == sorted(p.name for p in carpeta.iterdir() if p.suffix in (".xlsx", ".pdf")), a["anio"]
+
+
 def test_los_json_de_todos_los_anios_usan_claves_genericas_sin_anio():
     # «anterior»/«actual» (y «anterior2») en lugar de y2025/y2026, para que cualquier año use las mismas claves
     for ruta in (SITE / "data").glob("*/*.json"):
