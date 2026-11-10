@@ -3,38 +3,117 @@
   {
    "anio": 2018,
    "tipo": "aprobado",
-   "origen": "pdf"
+   "origen": "pdf",
+   "documentos": [
+    "A1 RESUMEN POR CAPITULOS 2018.xlsx",
+    "A12 ANEXO SUBVENCIONES NOMINATIVAS 2018.xlsx",
+    "A13.1 Estado de la deuda.xlsx",
+    "A13.2 Carga Financiera.xlsx",
+    "A2 ESTADO DE INGRESOS 2018.xlsx",
+    "A3 ESTADO DE GASTOS 2018.xlsx",
+    "A9 ANEXO DE INVERSIONES 2018.xlsx",
+    "Presupuesto 2018.pdf"
+   ]
   },
   {
    "anio": 2021,
    "tipo": "aprobado",
-   "origen": "pdf"
+   "origen": "pdf",
+   "documentos": [
+    "A1 RESUMEN POR CAPITULOS 2021.xlsx",
+    "A12 ANEXO SUBVENCIONES NOMINATIVAS 2021.xlsx",
+    "A13.1 Estado de la deuda.xlsx",
+    "A13.2 Carga Financiera.xlsx",
+    "A2 ESTADO DE INGRESOS 2021.xlsx",
+    "A3 ESTADO DE GASTOS 2021.xlsx",
+    "A9 ANEXO DE INVERSIONES 2021.xlsx",
+    "Presupuesto 2021.pdf"
+   ]
   },
   {
    "anio": 2022,
    "tipo": "aprobado",
-   "origen": "pdf"
+   "origen": "pdf",
+   "documentos": [
+    "A1 RESUMEN POR CAPITULOS 2022.xlsx",
+    "A12 ANEXO SUBVENCIONES NOMINATIVAS 2022.xlsx",
+    "A13.1 Estado de la deuda.xlsx",
+    "A13.2 Carga Financiera.xlsx",
+    "A2 ESTADO DE INGRESOS 2022.xlsx",
+    "A3 ESTADO DE GASTOS 2022.xlsx",
+    "A9 ANEXO DE INVERSIONES 2022.xlsx",
+    "Presupuesto 2022.pdf"
+   ]
   },
   {
    "anio": 2023,
    "tipo": "aprobado",
-   "origen": "pdf"
+   "origen": "pdf",
+   "documentos": [
+    "A1 RESUMEN POR CAPITULOS 2023.xlsx",
+    "A12 ANEXO SUBVENCIONES NOMINATIVAS 2023.xlsx",
+    "A13.1 Estado de la deuda.xlsx",
+    "A13.2 Carga Financiera.xlsx",
+    "A2 ESTADO DE INGRESOS 2023.xlsx",
+    "A3 ESTADO DE GASTOS 2023.xlsx",
+    "A9 ANEXO DE INVERSIONES 2023.xlsx",
+    "Presupuesto 2023.pdf"
+   ]
   },
   {
    "anio": 2024,
-   "tipo": "aprobado"
+   "tipo": "aprobado",
+   "documentos": [
+    "A1 RESUMEN POR CAPITULOS 2024.xlsx",
+    "A12 ANEXO SUBVENCIONES NOMINATIVAS 2024.xlsx",
+    "A13.1 Estado de la deuda.xlsx",
+    "A13.2 Carga Financiera.xlsx",
+    "A2 ESTADO DE INGRESOS 2024.xlsx",
+    "A3 ESTADO DE GASTOS 2024.xlsx",
+    "A9 ANEXO DE INVERSIONES 2024.xlsx",
+    "Presupuesto 2024.pdf"
+   ]
   },
   {
    "anio": 2025,
-   "tipo": "aprobado"
+   "tipo": "aprobado",
+   "documentos": [
+    "A1 RESUMEN POR CAPITULOS 2025.xlsx",
+    "A12 ANEXO SUBVENCIONES NOMINATIVAS 2025.xlsx",
+    "A13.1 Estado de la deuda CON PRESTAMO FUTURO.xlsx",
+    "A13.2 Carga Financiera CON PRESTAMO FUTURO.xlsx",
+    "A2 ESTADO DE INGRESOS 2025.xlsx",
+    "A3 ESTADO DE GASTOS 2025.xlsx",
+    "A9 ANEXO DE INVERSIONES 2025.xlsx",
+    "Presupuesto 2025.pdf"
+   ]
   },
   {
    "anio": 2026,
-   "tipo": "aprobado"
+   "tipo": "aprobado",
+   "documentos": [
+    "A1 RESUMEN POR CAPITULOS 2026.xlsx",
+    "A12 ANEXO SUBVENCIONES NOMINATIVAS 2026.xlsx",
+    "A13.1 Estado de la deuda CON PRESTAMO FUTURO para año 2026.xlsx",
+    "A13.2 Carga Financiera CON PRESTAMO FUTURO año 2026.xlsx",
+    "A2 ESTADO DE INGRESOS 2026.xlsx",
+    "A3 ESTADO DE GASTOS 2026.xlsx",
+    "A9 ANEXO DE INVERSIONES 2026.xlsx",
+    "Presupuesto 2026.pdf"
+   ]
   },
   {
    "anio": 2027,
-   "tipo": "proyecto"
+   "tipo": "proyecto",
+   "documentos": [
+    "A1 RESUMEN POR CAPITULOS 2027.xlsx",
+    "A12 ANEXO SUBVENCIONES NOMINATIVAS 2027.xlsx",
+    "A13.1 Estado de la deuda CON PRESTAMO FUTURO 2027.xlsx",
+    "A13.2 Carga Financiera CON PRESTAMO FUTURO 2027.xlsx",
+    "A2 ESTADO DE INGRESOS 2027.xlsx",
+    "A3 ESTADO DE GASTOS 2027.xlsx",
+    "A9 ANEXO DE INVERSIONES 2027.xlsx"
+   ]
   }
  ],
  "ultimo": 2026,

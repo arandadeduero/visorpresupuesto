@@ -47,7 +47,7 @@ def test_descargas_explica_la_licencia_y_como_citar(dist):
 
 
 def test_la_licencia_tambien_sale_al_ejecutar_el_js():
-    fuente = (SITE / "js" / "descargas.js").read_text(encoding="utf-8")
+    fuente = (SITE / "js" / "descargas-html.js").read_text(encoding="utf-8")  # lo que pinta descargas.js
     assert "CC BY 4.0" in fuente and URL in fuente
 
 

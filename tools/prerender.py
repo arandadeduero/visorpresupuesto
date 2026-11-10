@@ -373,7 +373,6 @@ def pagina_guia(ctx: Contexto) -> str:
 
 
 def pagina_descargas(ctx: Contexto) -> str:
-    anio = ctx.anio
     bloques = []
     for a in sorted(ctx.anios, reverse=True):
         lista = "".join(
@@ -385,21 +384,22 @@ def pagina_descargas(ctx: Contexto) -> str:
         )
         pdfs, excels = enlaces(".pdf"), enlaces(".xlsx")
         bloques.append(
-            f"<h2>Presupuesto {a}</h2><h3>Datos en formato JSON</h3><ul class=\"descargas\">{lista}</ul>"
+            f'<h2 id="presupuesto-{a}">Presupuesto {a} <span class="muted">· {esc(ctx.para(a).nombre_tipo)}</span></h2><h3>Datos en formato JSON</h3><ul class="descargas">{lista}</ul>'
             + (f'<h3>Presupuesto completo del Ayuntamiento (PDF)</h3><ul class="descargas">{pdfs}</ul>' if pdfs else "")
             + (f'<h3>{"Excel preparados a partir del PDF" if ctx.para(a).desde_pdf else "Excel originales del Ayuntamiento"}</h3><ul class="descargas">{excels}</ul>' if excels else "")
         )
     return (
         titulo("Descargas")
-        + _intro(ctx, "Los datos que alimentan esta web, para que puedas usarlos, revisarlos o compararlos: ficheros JSON de cada año y los Excel originales que publicó el Ayuntamiento.")
+        + _intro(ctx, "Los datos que alimentan esta web, para que puedas usarlos, revisarlos o compararlos: los ficheros JSON de cada presupuesto, el PDF completo y los Excel del Ayuntamiento.")
+        + "<p>Ir a: " + " · ".join(f'<a href="#presupuesto-{a}">{a}</a>' for a in sorted(ctx.anios, reverse=True)) + "</p>"
         + (
             '<h2>Licencia de los datos</h2>'
             f'<p>Los datos de esta web (los ficheros JSON y los Excel del presupuesto) se publican con la licencia <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">Creative Commons Reconocimiento 4.0 (CC BY 4.0)</a>: puedes copiarlos, redistribuirlos y reutilizarlos, también con fines comerciales, siempre que cites la fuente.</p>'
             '<p><strong>Cómo citar:</strong> «Fuente: Ayuntamiento de Aranda de Duero (presupuestos.arandadeduero.es), licencia CC BY 4.0».</p>'
         )
         + "".join(bloques)
-        + f'<p>Todos los Excel están también en el <a href="{REPO}/tree/main/{anio}" rel="noopener">repositorio del proyecto</a>.</p>'
-        + f'<p class="muted">Los importes son del {ctx.nombre_tipo}. Las cifras «por habitante» usan la población indicada en la página de resumen.</p>'
+        + f'<p>Todos los documentos están también en el <a href="{REPO}" rel="noopener">repositorio del proyecto</a>, en una carpeta por año.</p>'
+        + '<p class="muted">Los importes son previsiones del presupuesto de cada año, no gastos ya realizados. Las cifras «por habitante» usan la población indicada en la página de resumen de cada año.</p>'
     )
 
 

@@ -43,6 +43,7 @@ export function destinoAntiguo(activa, indice, busqueda, hash = "") {
 
 /** A dónde ir al elegir otro año en el selector: la misma página de ese año (con build) o la misma con ?anio= (sin build). */
 export function urlCambioDeAnio(activa, anio, busqueda) {
+  if (activa === "descargas") return `#presupuesto-${anio}`; // lista todos los años: se salta al bloque de ese año
   if (!enBuild()) {
     const params = new URLSearchParams(busqueda);
     params.set("anio", anio);

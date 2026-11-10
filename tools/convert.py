@@ -6,6 +6,7 @@ import json
 import sys
 from pathlib import Path
 
+from budget.common import SRC_DIR
 from budget.deuda import parse_deuda
 from budget.gastos import parse_gastos
 from budget.ingresos import parse_ingresos
@@ -56,6 +57,11 @@ DESCUADRES_CAPITULO = {
         ),
     },
 }
+
+
+def documentos(year: int) -> list[str]:
+    """Excel y PDF originales de la carpeta del año, para que Descargas los enlace por su nombre."""
+    return sorted(p.name for p in SRC_DIR(year).iterdir() if p.suffix in (".xlsx", ".pdf"))
 
 
 def _descuadre(year, cap) -> float:
@@ -124,7 +130,7 @@ def convert_con_notas(year: int, out_dir: Path) -> tuple[list[str], list[str]]:
 
     indice_path = out_dir / "index.json"
     anios = json.loads(indice_path.read_text(encoding="utf-8"))["anios"] if indice_path.exists() else []
-    anios = sorted([a for a in anios if a["anio"] != year] + [{"anio": year, "tipo": data["resumen"]["tipo"]} | ({"origen": "pdf"} if year in DESDE_PDF else {})], key=lambda a: a["anio"])
+    anios = sorted([a for a in anios if a["anio"] != year] + [{"anio": year, "tipo": data["resumen"]["tipo"]} | ({"origen": "pdf"} if year in DESDE_PDF else {}) | {"documentos": documentos(year)}], key=lambda a: a["anio"])
     # La raíz del sitio es el último presupuesto aprobado: un proyecto se ve en su carpeta (/2027/) hasta que se apruebe
     aprobados = [a["anio"] for a in anios if a["tipo"] == "aprobado"] or [anios[-1]["anio"]]
     prorrogados = [{"anio": a, "de": de} for a, de in sorted(PRORROGADOS.items())]
