@@ -83,7 +83,7 @@
    "nombre": "Personal eventual",
    "oficial": "Personal eventual",
    "anterior": 70000.0,
-   "actual": 105000.0
+   "actual": 142000.0
   },
   {
    "cap": 1,
@@ -91,7 +91,7 @@
    "nombre": "Personal funcionario",
    "oficial": "Personal Funcionario",
    "anterior": 5925875.5,
-   "actual": 8002700.0
+   "actual": 7957000.0
   },
   {
    "cap": 1,
@@ -115,7 +115,7 @@
    "nombre": "Cuotas y gastos sociales a cargo del empleador",
    "oficial": "Cuotas, prestaciones y gastos sociales a cargo del empleador",
    "anterior": 2535920.0,
-   "actual": 3653600.0
+   "actual": 3662300.0
   },
   {
    "cap": 2,
@@ -138,7 +138,7 @@
    "codigo": "22",
    "nombre": "Material, suministros y otros",
    "oficial": "Material, suministros y otros",
-   "anterior": 17532390.0,
+   "anterior": 17531390.0,
    "actual": 20654235.0
   },
   {
@@ -436,14 +436,14 @@
    "nombre": "Órganos de gobierno",
    "area": 9,
    "anterior": 967000.0,
-   "actual": 1013060.0
+   "actual": 1058760.0
   },
   {
    "codigo": "92",
    "nombre": "Servicios de carácter general",
    "area": 9,
    "anterior": null,
-   "actual": 4038647.1
+   "actual": 3992947.1
   },
   {
    "codigo": "93",
@@ -923,7 +923,7 @@
    "area": 9,
    "politica": "91",
    "anterior": 967000.0,
-   "actual": 1013060.0
+   "actual": 1058760.0
   },
   {
    "codigo": "9200",
@@ -947,7 +947,7 @@
    "area": 9,
    "politica": "92",
    "anterior": 228700.0,
-   "actual": 1706000.0
+   "actual": 1660300.0
   },
   {
    "codigo": "9240",
@@ -1318,7 +1318,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 496920.0,
-   "actual": 542980.0
+   "actual": 588680.0
   },
   {
    "cap": 1,
@@ -1345,7 +1345,7 @@
    "articulo": null,
    "nombre": "Gastos de personal",
    "anterior": 228700.0,
-   "actual": 1706000.0
+   "actual": 1660300.0
   },
   {
    "cap": 1,
@@ -3395,17 +3395,8 @@
    "programa": "2310",
    "codigo": "220.01",
    "nombre": "Prensa, revistas, libros y otras publicaciones",
-   "anterior": 1000.0,
-   "actual": 1000.0,
-   "articulo": "22"
-  },
-  {
-   "cap": 2,
-   "programa": "2310",
-   "codigo": "220.01",
-   "nombre": "Prensa, revistas, libros y otras publicaciones",
    "anterior": 3000.0,
-   "actual": 3000.0,
+   "actual": 4000.0,
    "articulo": "22"
   },
   {
