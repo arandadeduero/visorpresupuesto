@@ -1,0 +1,39 @@
+site/js/descargas.js
+  s_99057c6fb43bed::t_5fbf5e88e89716 1-2,4-5
+site/js/descargas-html.js
+  s_99057c6fb43bed::t_64b8c5e4cfcc75 1-41
+tools/tests/test_site.py
+  s_99057c6fb43bed::t_35b0569084abd3 86-93
+tools/convert.py
+  s_99057c6fb43bed::t_0b66789e7de50d 9,62-66,133
+tools/tests/test_licencia.py
+  s_99057c6fb43bed::t_c110c25979b7cf 50
+site/js/rutas.test.js
+  s_99057c6fb43bed::t_af1386d1d6fa84 82-84
+site/js/descargas.test.js
+  s_99057c6fb43bed::t_a9236bd5464618 1-28
+tools/prerender.py
+  s_99057c6fb43bed::t_fa8c68c020b8af 387,393-394,401-402
+tools/tests/test_convert.py
+  s_99057c6fb43bed::t_38071a948b3b0b 30
+site/js/rutas.js
+  s_99057c6fb43bed::t_b6c33284c3fdc3 46
+site/data/index.json
+  s_99057c6fb43bed::t_0b66789e7de50d 6-16,21-31,36-46,51-61,65-75,79-89,93-103,107-116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "51f19fd0582782113e3a0edd5646618f4b18e71e",
+  "prompts": {},
+  "sessions": {
+    "s_99057c6fb43bed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "de30bd86-43a4-46a4-bc5b-708bc8eedd73",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
