@@ -195,6 +195,7 @@ def pagina_inicio(ctx: Contexto) -> str:
     filas = [[esc(b["bloque"]), f"{b['euros']}{NBSP}€", euros(b["importe"])] for b in r["por100"]]
     return (
         f"<h1>Por cada 100{NBSP}€ que gasta el Ayuntamiento en {anio}…</h1>"
+        + ctx.e["documentosOficiales"]
         + _intro(ctx, f"El Ayuntamiento de Aranda de Duero prevé gastar <strong>{euros(r['totalGastos'])}</strong> en {anio} ({ctx.nombre_tipo}). Así se reparte cada 100{NBSP}€: personal, servicios, obras y otros gastos, como la deuda.")
         + tabla([("En qué", False), ("Por cada 100 €", True), (f"Importe en {anio}", True)], filas)
         + f'<p><a href="{ctx.url("gastos")}">Ver el detalle de los gastos del Ayuntamiento por política</a></p>'

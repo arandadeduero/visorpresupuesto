@@ -1,4 +1,4 @@
-import { runPage, esc, tarjetasHtml, nombreTipo, tipoDe } from "./layout.js";
+import { runPage, esc, tarjetasHtml, nombreTipo, tipoDe, documentosOficialesHtml } from "./layout.js";
 import { formatEuros, formatVariation } from "./format.js";
 import { claseCrece } from "./escalas.js";
 import { destacar, porHabitante } from "./insights.js";
@@ -31,6 +31,7 @@ runPage("inicio", async ({ anio, indice, main, load }) => {
 
   main.innerHTML = `
     <h1>Por cada 100&nbsp;€ que gasta el Ayuntamiento en ${anio}…</h1>
+    ${documentosOficialesHtml(indice, anio)}
     <div class="stackbar" role="group" aria-label="Reparto de cada 100 euros">${segmentos}</div>
     <p class="detalle-seg" id="detalle-seg" aria-live="polite"></p>
     <p class="lead">Total previsto: <strong>${formatEuros(r.totalGastos)}</strong>, ${comparacion(r.totalGastos, r.totalGastosAnterior, anio)}.</p>

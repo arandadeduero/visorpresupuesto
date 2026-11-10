@@ -119,6 +119,12 @@ export function avisoProyectoHtml(indice, anio) {
   return `<div class="aviso aviso-proyecto" role="note"><strong>Proyecto de presupuesto de ${anio}.</strong> Todavía no lo ha aprobado el Pleno: las cifras pueden cambiar con las enmiendas y la aprobación definitiva.</div>`;
 }
 
+/** Enlace a los documentos oficiales en el Portal de Transparencia (solo los presupuestos aprobados están publicados allí). */
+export function documentosOficialesHtml(indice, anio) {
+  if (tipoDe(indice, anio) !== "aprobado") return "";
+  return `<p class="ayuda" role="note">Los documentos oficiales del presupuesto de ${anio} están en el <a href="https://transparencia.arandadeduero.es/transparencia-economica/presupuestos-${anio}/">Portal de Transparencia del Ayuntamiento</a>.</p>`;
+}
+
 /** HTML del menú: un bloque por grupo, con `aria-current="page"` en la sección activa. */
 export function menuHtml(activa, anio) {
   return GRUPOS.map((g) => {

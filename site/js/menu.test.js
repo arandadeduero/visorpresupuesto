@@ -2,7 +2,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readdirSync } from "node:fs";
-import { GRUPOS, SECCIONES, RELACIONADOS, menuHtml, relacionadoHtml, pieHtml, aniosHtml, marcoHtml, tarjetasHtml } from "./layout.js";
+import { GRUPOS, SECCIONES, RELACIONADOS, menuHtml, relacionadoHtml, pieHtml, aniosHtml, marcoHtml, tarjetasHtml, documentosOficialesHtml } from "./layout.js";
 
 const nombres = (g) => g.secciones.map((s) => s[1]);
 
@@ -128,4 +128,10 @@ test("en la portada de la raíz, un bloque «Presupuestos por año» con un enla
 test("sin build, «Otros años» enlaza con ?anio=", () => {
   const html = aniosHtml("deuda", 2026, indice);
   assert.ok(html.includes('href="deuda.html?anio=2024"') && html.includes('href="deuda.html?anio=2025"'));
+});
+
+test("la portada enlaza al Portal de Transparencia solo en los presupuestos aprobados", () => {
+  const indice = { anios: [{ anio: 2030, tipo: "aprobado" }, { anio: 2031, tipo: "proyecto" }] };
+  assert.match(documentosOficialesHtml(indice, 2030), /href="https:\/\/transparencia\.arandadeduero\.es\/transparencia-economica\/presupuestos-2030\/"/);
+  assert.equal(documentosOficialesHtml(indice, 2031), "");
 });
