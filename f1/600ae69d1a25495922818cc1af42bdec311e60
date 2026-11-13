@@ -1,0 +1,57 @@
+site/js/home.js
+  s_b340930051157b::t_20c440c88bf1c8 2,27,81
+site/js/format.js
+  s_b340930051157b::t_20c440c88bf1c8 9,28-32
+  s_b340930051157b::t_514d822248addf 33
+site/js/format.test.js
+  s_b340930051157b::t_378a390e9294b9 59-65
+tools/budget/subvenciones.py
+  s_b340930051157b::t_378a390e9294b9 5,51
+site/js/comparacion.js
+  s_b340930051157b::t_20c440c88bf1c8 11
+site/js/indicadores.js
+  s_b340930051157b::t_20c440c88bf1c8 2,6
+site/js/inversiones.js
+  s_b340930051157b::t_378a390e9294b9 2,4,19,36,46,49-55
+site/js/lecturas.js
+  s_b340930051157b::t_20c440c88bf1c8 3,16,24,50
+tools/budget/common.py
+  s_b340930051157b::t_378a390e9294b9 41-44,47
+site/js/gastos.js
+  s_b340930051157b::t_378a390e9294b9 2,4,10,46,63
+site/js/ingresos.js
+  s_b340930051157b::t_378a390e9294b9 2-3,22,39,61,69,72
+site/js/deuda.js
+  s_b340930051157b::t_378a390e9294b9 2,9,33
+site/js/insights.js
+  s_b340930051157b::t_20c440c88bf1c8 4
+tools/budget/inversiones.py
+  s_b340930051157b::t_378a390e9294b9 4,56
+site/js/comparar.js
+  s_b340930051157b::t_378a390e9294b9 4,31-32,42-43
+site/js/resumen.js
+  s_b340930051157b::t_378a390e9294b9 3,24
+site/js/ui.js
+  s_b340930051157b::t_20c440c88bf1c8 3,33-49
+  s_b340930051157b::t_d7ec43d0647ffd 50
+site/js/quesito.js
+  s_b340930051157b::t_378a390e9294b9 4,17,59,77,88,104
+site/js/subvenciones.js
+  s_b340930051157b::t_378a390e9294b9 2-3,37-40,47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f1600ae69d1a25495922818cc1af42bdec311e60",
+  "prompts": {},
+  "sessions": {
+    "s_b340930051157b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fbfae6cd-1cb0-455b-b1ae-9690c9c3ff04",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
