@@ -107,7 +107,8 @@ test("con build, la raíz enlaza el último año sin repetir su carpeta en la po
 test("«Otros años»: la misma página en los demás años, con anclas descriptivas; sin nada en las páginas sin año", () => {
   conBuild({ raiz: "../", anio: "2025", ultimo: "2026" }, () => {
     const html = aniosHtml("gastos", 2025, indice);
-    assert.match(html, /Otros años: <a href="\.\.\/2024\/gastos\.html">Gastos de 2024<\/a> · <a href="\.\.\/2026\/gastos\.html">Gastos de 2026<\/a>/);
+    // A la vista solo el año; la frase completa va en aria-label, para lectores de pantalla y buscadores
+    assert.match(html, /Otros años: <a href="\.\.\/2024\/gastos\.html" aria-label="Gastos de 2024">2024<\/a> <a href="\.\.\/2026\/gastos\.html" aria-label="Gastos de 2026">2026<\/a>/);
     assert.ok(!html.includes("2025/"));
     assert.ok(aniosHtml("inicio", 2025, indice).includes('href="../"'), "la portada del último año es la raíz");
     for (const id of ["comparar", "guia", "metodologia", "descargas"]) assert.equal(aniosHtml(id, 2025, indice), "");

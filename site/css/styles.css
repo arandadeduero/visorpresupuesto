@@ -395,6 +395,10 @@ input[type="search"] { font: inherit; background: var(--superficie); color: var(
 .entrada-portada { font-size: 1.25rem; line-height: 1.35; max-width: 34em; margin: .6em 0 1.8em; }
 h1.titulo-reparto { font-size: 1.3rem; }
 
+/* «Otros años»: un botón pequeño por año */
+.otros-anios a { display: inline-block; margin: 3px 2px; padding: 5px 12px; border: 1px solid var(--borde); border-radius: 999px; text-decoration: none; }
+.otros-anios a:hover { border-color: var(--enlace); }
+
 /* Tarjeta destacada y cambios */
 .destacado { border: 1px solid var(--borde); border-left: 6px solid var(--acento); border-radius: var(--radio); padding: 4px 16px 16px; margin: 1.5em 0; background: var(--fondo-suave); }
 .destacado-nombre { font-size: 1.4rem; font-weight: 700; margin: 0 0 .4em; }
