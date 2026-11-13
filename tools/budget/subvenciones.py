@@ -2,7 +2,7 @@
 import unicodedata
 from collections import Counter, defaultdict
 
-from .common import find_file, load_sheet, norm, num, sentence_case
+from .common import es_numero, find_file, load_sheet, norm, num, sentence_case
 
 _MINUSCULAS = {"de", "del", "la", "las", "el", "los", "y", "e", "en", "a", "al", "con", "para", "por", "contra", "sobre"}
 
@@ -30,10 +30,6 @@ def _clave(nombre: str) -> str:
     return sin_tildes.casefold()
 
 
-def _es_numero(v) -> bool:
-    return isinstance(v, (int, float)) and not isinstance(v, bool)
-
-
 def parse_subvenciones(year: int) -> dict:
     """Dos bloques en la misma hoja: «subvenciones nominativas» y «aportaciones y cuotas a asociaciones».
 
@@ -52,7 +48,7 @@ def parse_subvenciones(year: int) -> dict:
     bloque = "nominativas"
     for row in filas:
         partida, credito, col_d, objeto = row[1], row[2], row[3], row[4]
-        con_importes = any(c is not None and _es_numero(row[c]) for c in cols)
+        con_importes = any(c is not None and es_numero(row[c]) for c in cols)
         texto_d = _limpia(col_d) if isinstance(col_d, str) else ""
         if norm(texto_d).startswith("aportaciones y cuotas"):
             bloque, prog, titulo = "cuotas", None, None

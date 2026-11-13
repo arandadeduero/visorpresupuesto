@@ -38,11 +38,13 @@ def norm(texto) -> str:
     return " ".join(sin_tildes.split()).casefold()
 
 
+def es_numero(v) -> bool:
+    return isinstance(v, (int, float)) and not isinstance(v, bool)
+
+
 def num(v):
     """Número redondeado a 2 decimales, o None si la celda no es numérica."""
-    if isinstance(v, bool) or not isinstance(v, (int, float)):
-        return None
-    return round(float(v), 2)
+    return round(float(v), 2) if es_numero(v) else None
 
 
 def code_str(v):

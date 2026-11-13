@@ -8,9 +8,8 @@
 //    que solo está en un año se marca «nuevo» o «desaparece» (hoy: la 46, Investigación, desarrollo e innovación).
 //  - Capítulos de gastos e ingresos: los nueve capítulos y su nombre no cambian.
 import { calcularIndicadores } from "./lecturas.js";
-import { formatEuros, formatVariation, etiquetaCapitulo } from "./format.js";
+import { esNumero, formatEuros, formatVariation, etiquetaCapitulo } from "./format.js";
 
-const esNumero = (n) => typeof n === "number" && Number.isFinite(n);
 const EPS = 0.005;
 
 const dividir = (v, d) => {

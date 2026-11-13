@@ -56,3 +56,10 @@ test("matches entiende las siglas habituales de los impuestos", () => {
   assert.equal(matches("Impuesto sobre vehículos de tracción mecánica", "IVTM"), true);
   assert.equal(matches("Tasa cementerio", "IBI"), false);
 });
+
+test("formatPct deja un decimal como mucho y signo marca la dirección", async () => {
+  const { formatPct, signo } = await import("./format.js");
+  assert.equal(formatPct(12.34), "12,3 %");
+  assert.equal(formatPct(5), "5 %");
+  assert.deepEqual([signo(2), signo(-2), signo(0)], ["+", "−", ""]);
+});

@@ -1,12 +1,12 @@
 import { runPage, esc } from "./layout.js";
-import { formatEuros } from "./format.js";
+import { formatEuros, sumBy } from "./format.js";
 import { barChart, colorPorPunto } from "./charts.js";
 import { tablaHtml } from "./ui.js";
 import { fecha, avisoPrevisto, avisoSinPrevisto } from "./deuda-texto.js";
 
 runPage("deuda", async ({ anio, main, load }) => {
   const [d, inv] = await Promise.all([load("deuda"), load("inversiones")]);
-  const vivaInicio = d.prestamos.reduce((s, p) => s + p.vivaInicio, 0);
+  const vivaInicio = sumBy(d.prestamos, (p) => p.vivaInicio);
   const prestamoInversiones = inv.fuentes.prestamo;
   const pv = d.previsto;
   // Años cerrados en azul (--serie-1) y previsión en celeste (--serie-5)
@@ -30,7 +30,7 @@ runPage("deuda", async ({ anio, main, load }) => {
     ${tablaHtml(
       [{ texto: "Concedido" }, { texto: "Entidad" }, { texto: "Importe pedido", num: true }, { texto: "Interés" }, { texto: "Se termina de pagar" }, { texto: `Queda por pagar a 31/12/${anio}`, num: true }],
       d.prestamos.map((p) => `<tr><td>${fecha(p.fecha)}</td><td>${esc(p.entidad)}</td><td class="num">${formatEuros(p.importe)}</td><td>${esc(p.tipoInteres)}</td><td>${fecha(p.ultimaAmortizacion)}</td><td class="num">${formatEuros(p.vivaFin)}</td></tr>`).concat(
-        `<tr><th colspan="2">Total</th><th class="num">${formatEuros(d.prestamos.reduce((s, p) => s + p.importe, 0))}</th><th></th><th></th><th class="num">${formatEuros(d.titular.vivaFin)}</th></tr>`,
+        `<tr><th colspan="2">Total</th><th class="num">${formatEuros(sumBy(d.prestamos, (p) => p.importe))}</th><th></th><th></th><th class="num">${formatEuros(d.titular.vivaFin)}</th></tr>`,
       ),
     )}
 

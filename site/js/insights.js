@@ -1,7 +1,7 @@
 // Lecturas del presupuesto pensadas para el vecino: euros por habitante, qué ha cambiado más y partidas destacadas.
 // Funciones puras, sin DOM.
 
-const esNumero = (n) => typeof n === "number" && Number.isFinite(n);
+import { esNumero } from "./format.js";
 
 /** Euros por habitante, o null si falta el importe o la población. */
 export function porHabitante(importe, habitantes) {

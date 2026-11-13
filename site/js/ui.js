@@ -1,6 +1,6 @@
 // Piezas de interfaz compartidas por varias páginas.
 import { esc } from "./layout.js";
-import { formatEuros, formatVariation } from "./format.js";
+import { formatEuros, formatPct, formatVariation } from "./format.js";
 import { porHabitante } from "./insights.js";
 import { claseAncho } from "./escalas.js";
 
@@ -29,6 +29,24 @@ export function filaHtml({ id, nombre, title, importe, max, extra = "", clicable
 export const tablaHtml = (cabeceras, filas) => `<div class="tabla-scroll"><table class="datos">
   <thead><tr>${cabeceras.map((c) => `<th${c.num ? ' class="num"' : ""}>${esc(c.texto)}</th>`).join("")}</tr></thead>
   <tbody>${filas.join("")}</tbody></table></div>`;
+
+/** «12,3 % del total». */
+export const delTotal = (importe, total) => `${formatPct((importe / total) * 100)} del total`;
+
+/** Hace desplegables las filas clicables de `contenedor`: al abrir una por primera vez pinta dentro `hijosHtml(id de la fila)`. */
+export function activarDesplegables(contenedor, hijosHtml) {
+  contenedor.addEventListener("click", (e) => {
+    const boton = e.target.closest("button.fila");
+    if (!boton) return;
+    const hijos = boton.nextElementSibling;
+    const abrir = hijos.hidden;
+    if (abrir && !hijos.innerHTML) hijos.innerHTML = hijosHtml(boton.dataset.id);
+    hijos.hidden = !abrir;
+    boton.setAttribute("aria-expanded", String(abrir));
+    const nombre = boton.querySelector(".nombre").firstChild;
+    nombre.textContent = (abrir ? "▾ " : "▸ ") + nombre.textContent.slice(2);
+  });
+}
 
 /** «117 € por habitante» (cadena vacía si no hay población). */
 export function porHabHtml(importe, habitantes) {

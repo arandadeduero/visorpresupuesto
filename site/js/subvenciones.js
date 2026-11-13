@@ -1,6 +1,6 @@
 import { runPage, esc } from "./layout.js";
-import { formatEuros, matches } from "./format.js";
-import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
+import { formatEuros, matches, sumBy } from "./format.js";
+import { filaHtml, variacionHtml, tablaHtml, activarDesplegables } from "./ui.js";
 
 runPage("subvenciones", async ({ anio, main, load }) => {
   const d = await load("subvenciones");
@@ -34,27 +34,17 @@ runPage("subvenciones", async ({ anio, main, load }) => {
 
   const cab = [{ texto: "Entidad" }, { texto: "Para qué" }, ...(conAnterior ? [{ texto: `${anio - 1}`, num: true }] : []), { texto: `${anio}`, num: true }];
   const celdaAnterior = (x) => (conAnterior ? `<td class="num">${formatEuros(x.anterior)}</td>` : "");
-  main.querySelector("#vista-actividad").addEventListener("click", (e) => {
-    const boton = e.target.closest("button.fila");
-    if (!boton) return;
-    const hijos = boton.nextElementSibling;
-    const abrir = hijos.hidden;
-    if (abrir && !hijos.innerHTML) {
-      const p = d.programas.find((x) => idPrograma(x) === boton.dataset.id);
-      const items = [...p.items].sort((a, b) => b.actual - a.actual);
-      hijos.innerHTML = tablaHtml(cab, items.map((i) => `<tr><td>${esc(i.entidad)}</td><td>${esc(i.objeto)}</td>${celdaAnterior(i)}<td class="num">${formatEuros(i.actual)}</td></tr>`));
-    }
-    hijos.hidden = !abrir;
-    boton.setAttribute("aria-expanded", String(abrir));
-    const nombre = boton.querySelector(".nombre").firstChild;
-    nombre.textContent = (abrir ? "▾ " : "▸ ") + nombre.textContent.slice(2);
+  activarDesplegables(main.querySelector("#vista-actividad"), (id) => {
+    const p = d.programas.find((x) => idPrograma(x) === id);
+    const items = [...p.items].sort((a, b) => b.actual - a.actual);
+    return tablaHtml(cab, items.map((i) => `<tr><td>${esc(i.entidad)}</td><td>${esc(i.objeto)}</td>${celdaAnterior(i)}<td class="num">${formatEuros(i.actual)}</td></tr>`));
   });
 
   const lista = main.querySelector("#entidades");
   const pintaEntidades = (consulta) => {
     const filas = d.entidades.filter((e) => matches(e.entidad, consulta));
     lista.innerHTML = filas.length
-      ? `<p class="muted">${filas.length} entidad(es) · ${formatEuros(filas.reduce((s, e) => s + e.actual, 0))} en ${anio}</p>` + tablaHtml(
+      ? `<p class="muted">${filas.length} entidad(es) · ${formatEuros(sumBy(filas, (e) => e.actual))} en ${anio}</p>` + tablaHtml(
           [{ texto: "Entidad" }, { texto: `Recibe en ${anio}`, num: true }, ...(conAnterior ? [{ texto: `${anio - 1}`, num: true }] : []), { texto: "Actividades" }],
           filas.map((e) => `<tr><td>${esc(e.entidad)}</td><td class="num">${formatEuros(e.actual)}</td>${celdaAnterior(e)}<td>${esc(e.programas.join(", "))}</td></tr>`),
         )

@@ -1,9 +1,9 @@
 import { runPage, esc, nombreTipo, tipoDe } from "./layout.js";
-import { formatEuros } from "./format.js";
+import { formatEuros, formatPct } from "./format.js";
 import { urlPagina } from "./rutas.js";
 import { calcularIndicadores, textoNivelEndeudamiento } from "./lecturas.js";
 
-const p1 = (n) => (n === null ? "—" : `${n.toLocaleString("es-ES", { maximumFractionDigits: 1 })} %`);
+const p1 = (n) => (n === null ? "—" : formatPct(n));
 
 runPage("indicadores", async ({ anio, indice, main, load }) => {
   const [resumen, ingresos, deuda] = await Promise.all([load("resumen"), load("ingresos"), load("deuda")]);
