@@ -6,7 +6,7 @@ import { URL_POLITICA_PRIVACIDAD } from "./analytics-config.js";
 import { fechaLarga } from "./format.js";
 import { PAGINAS_SIN_ANIO, destinoAntiguo, enBuild, esRaiz, urlCambioDeAnio, urlPagina, urlRaiz } from "./rutas.js";
 
-// Menú en dos niveles: lo principal (grande) y las herramientas (pequeño). Único sitio donde se declaran las páginas.
+// Menú en dos niveles: lo principal (a la vista) y las herramientas (en un desplegable). Único sitio donde se declaran las páginas.
 export const GRUPOS = [
   {
     id: "principal",
@@ -132,8 +132,9 @@ export function menuHtml(activa, anio) {
     const items = g.secciones
       .map(([id, texto]) => `<li><a href="${urlPagina(id, anio)}"${id === activa ? ' aria-current="page"' : ""}>${texto}</a></li>`)
       .join("");
-    const etiqueta = g.id === "principal" ? "" : `<span class="menu-etiqueta">${g.titulo}</span>`;
-    return `<div class="menu-grupo menu-${g.id}">${etiqueta}<ul>${items}</ul></div>`;
+    if (g.id === "principal") return `<div class="menu-grupo menu-${g.id}"><ul>${items}</ul></div>`;
+    const boton = `<button type="button" class="menu-etiqueta" id="boton-herramientas" aria-expanded="false" aria-controls="lista-herramientas">${g.titulo}</button>`;
+    return `<div class="menu-grupo menu-${g.id}">${boton}<ul id="lista-herramientas">${items}</ul></div>`;
   }).join("");
 }
 
@@ -145,6 +146,11 @@ function activarMenuMovil() {
   const boton = document.getElementById("boton-menu");
   const menu = document.getElementById("menu-secciones");
   if (!cab || !boton || !menu) return;
+  // «Herramientas»: desplegable dentro del menú; se cierra con Escape o al pulsar fuera
+  const herramientas = document.getElementById("boton-herramientas");
+  const desplegar = (si) => herramientas?.setAttribute("aria-expanded", String(si));
+  const desplegado = () => herramientas?.getAttribute("aria-expanded") === "true";
+  herramientas?.addEventListener("click", () => desplegar(!desplegado()));
   const abrir = (si, devolverFoco = false) => {
     if (si) cab.setAttribute("data-abierto", "");
     else cab.removeAttribute("data-abierto");
@@ -154,9 +160,14 @@ function activarMenuMovil() {
   boton.addEventListener("click", () => abrir(!cab.hasAttribute("data-abierto")));
   menu.addEventListener("click", (e) => { if (e.target.closest("a")) abrir(false); });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && cab.hasAttribute("data-abierto")) abrir(false, true);
+    if (e.key !== "Escape") return;
+    if (desplegado()) {
+      desplegar(false);
+      herramientas.focus();
+    } else if (cab.hasAttribute("data-abierto")) abrir(false, true);
   });
   document.addEventListener("click", (e) => {
+    if (desplegado() && !e.target.closest(".menu-herramientas")) desplegar(false);
     if (cab.hasAttribute("data-abierto") && !cab.contains(e.target)) abrir(false);
   });
 }
@@ -184,18 +195,18 @@ export function marcoHtml({ activa, anio, indice, escudo, actualizado, contenido
     .sort((a, b) => a.anio - b.anio)
     .map((a) => a.prorrogado
       ? `<option disabled>${a.anio} · prorrogado (se aplicó el de ${a.de})</option>`
-      : `<option value="${a.anio}"${a.anio === anio ? " selected" : ""}>${a.anio} · ${nombreTipo(a.tipo)}</option>`)
+      : `<option value="${a.anio}"${a.anio === anio ? " selected" : ""}>${a.anio} · ${a.tipo === "proyecto" ? "proyecto" : "aprobado"}</option>`)
     .join("");
   return `
     <a class="saltar" href="#contenido">Saltar al contenido</a>
     <header class="site">
       <div class="franja"><div class="wrap"><a class="marca" href="${urlPagina("inicio", anio)}"><img class="logo" src="${urlRaiz("img/logo-ayuntamiento.png")}" alt="Ayuntamiento de Aranda de Duero" width="205" height="52"></a></div></div>
       <div class="wrap cabecera">
-        <span class="nombre-sitio">Presupuestos de Aranda de Duero</span>
-        <label class="anio">Año <select id="selector-anio" aria-label="Año del presupuesto">${opciones}</select></label>
+        <span class="nombre-sitio">Presupuestos<span class="nombre-largo"> de Aranda de Duero</span></span>
         <button type="button" id="boton-menu" class="boton-menu" aria-expanded="false" aria-controls="menu-secciones"><span class="hamburguesa" aria-hidden="true"></span><span>Menú</span></button>
+        <nav class="menu" id="menu-secciones" aria-label="Secciones">${menuHtml(activa, anio)}</nav>
+        <label class="anio"><span class="anio-texto">Año </span><select id="selector-anio" aria-label="Año del presupuesto">${opciones}</select></label>
       </div>
-      <nav class="menu" id="menu-secciones" aria-label="Secciones"><div class="wrap menu-interior">${menuHtml(activa, anio)}</div></nav>
     </header>
     ${avisoProyectoHtml(indice, anio)}
     <main id="contenido" class="wrap${PAGINAS_ALTAS.includes(activa) ? " alto" : ""}" tabindex="-1">${contenido}</main>
