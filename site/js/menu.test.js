@@ -34,8 +34,17 @@ test("sin build, los enlaces llevan ?anio= y solo la sección activa lleva aria-
   assert.ok(!menuHtml("inicio", null).includes("?anio="));
 });
 
-test("el grupo secundario lleva la etiqueta «Herramientas»", () => {
-  assert.match(menuHtml("inicio", 2026), /menu-herramientas"><span class="menu-etiqueta">Herramientas<\/span>/);
+test("las herramientas van en un desplegable: un botón «Herramientas» que controla su lista, cerrada al cargar", () => {
+  const html = menuHtml("inicio", 2026);
+  assert.match(html, /menu-herramientas"><button type="button" class="menu-etiqueta" id="boton-herramientas" aria-expanded="false" aria-controls="lista-herramientas">Herramientas<\/button><ul id="lista-herramientas">/);
+  assert.ok(!html.includes('menu-principal"><button'), "las secciones principales no se pliegan");
+});
+
+test("cabecera compacta: nombre, menú y año van en la misma fila", () => {
+  const marco = marcoHtml({ activa: "inicio", anio: 2026, indice, escudo: "img/escudo.png", actualizado: null });
+  const fila = marco.slice(marco.indexOf('class="wrap cabecera"'), marco.indexOf("</header>"));
+  const pos = (t) => fila.indexOf(t);
+  assert.ok(pos("nombre-sitio") > 0 && pos("nombre-sitio") < pos('<nav class="menu"') && pos('<nav class="menu"') < pos('id="selector-anio"'));
 });
 
 test("la portada se enlaza como ./ y sin parámetros cuando no hay año", () => {
