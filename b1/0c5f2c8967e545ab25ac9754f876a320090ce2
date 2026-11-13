@@ -1,0 +1,28 @@
+site/css/styles.css
+  s_b340930051157b::t_675dc78a546b85 392-397
+site/js/home.js
+  s_b340930051157b::t_675dc78a546b85 36-39,53-54
+  s_b340930051157b::t_c12cd811425b8a 18-20
+site/js/menu.test.js
+  s_b340930051157b::t_5ae1d7e814ba69 147-150
+site/js/layout.js
+  s_b340930051157b::t_675dc78a546b85 63
+site/js/rendimiento.test.js
+  s_b340930051157b::t_5ae1d7e814ba69 25-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b10c5f2c8967e545ab25ac9754f876a320090ce2",
+  "prompts": {},
+  "sessions": {
+    "s_b340930051157b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fbfae6cd-1cb0-455b-b1ae-9690c9c3ff04",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
