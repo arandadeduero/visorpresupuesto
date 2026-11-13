@@ -15,8 +15,9 @@ const EXPLICACION = {
 function comparacion(total, anterior, anio) {
   if (anterior === null || anterior === undefined) return ""; // el presupuesto no trae el año anterior
   const v = formatVariation(total, anterior);
-  if (v.dir === "up") return `un ${v.text.slice(1)} más que en ${anio - 1}`;
-  if (v.dir === "down") return `un ${v.text.slice(1)} menos que en ${anio - 1}`;
+  const pct = v.text.slice(1).replace(" %", "&nbsp;%"); // que el «%» no salte de línea
+  if (v.dir === "up") return `un ${pct} más que en ${anio - 1}`;
+  if (v.dir === "down") return `un ${pct} menos que en ${anio - 1}`;
   return `igual que en ${anio - 1}`;
 }
 
@@ -32,11 +33,12 @@ runPage("inicio", async ({ anio, indice, main, load }) => {
   const filas = r.por100.map((b) => `<tr><td>${esc(b.bloque)}</td><td class="num">${b.euros} €</td><td class="num">${formatEuros(b.importe)}</td></tr>`).join("");
 
   main.innerHTML = `
-    <h1>Por cada 100&nbsp;€ que gasta el Ayuntamiento en ${anio}…</h1>
-    ${documentosOficialesHtml(indice, anio)}
+    <p class="antetitulo">${esc(nombreTipo(tipoDe(indice, anio)))} · ${anio}</p>
+    <p class="cifra-portada">${formatEuros(r.totalGastos, { compact: true })}</p>
+    <p class="entrada-portada">Es lo que el Ayuntamiento de Aranda de Duero prevé gastar en ${anio}: <strong>${porVecino} por habitante</strong>${cambio ? `, ${cambio}` : ""}.</p>
+    <h1 class="titulo-reparto">Por cada 100&nbsp;€ que gasta el Ayuntamiento en ${anio}…</h1>
     <div class="stackbar" role="group" aria-label="Reparto de cada 100 euros">${segmentos}</div>
     <p class="detalle-seg" id="detalle-seg" aria-live="polite"></p>
-    <p class="lead">Total previsto: <strong>${formatEuros(r.totalGastos)}</strong>${cambio ? `, ${cambio}` : ""}.</p>
     <details><summary>Ver como tabla</summary>
       <div class="tabla-scroll"><table class="datos"><thead><tr><th>En qué</th><th class="num">Por cada 100 €</th><th class="num">Importe</th></tr></thead><tbody>${filas}</tbody></table></div>
     </details>
@@ -46,12 +48,10 @@ runPage("inicio", async ({ anio, indice, main, load }) => {
       <div id="destacado" class="destacado-caja" aria-live="polite"><p class="muted">Cargando…</p></div>
       <button class="boton" type="button" id="otra" disabled>Enséñame otra</button>
     </section>
-    <h2>Para cada vecino</h2>
-    <p class="lead">El presupuesto equivale a unos <strong>${porVecino}</strong> por habitante al año (${r.habitantes.toLocaleString("es-ES")} habitantes).</p>
-    <p class="muted">Es el gasto previsto del Ayuntamiento dividido entre la población (${esc(r.fuentePoblacion)}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>
     <h2>Y además…</h2>
     ${tarjetasHtml(anio)}
-    <p class="muted">Es el ${nombreTipo(tipoDe(indice, anio))}: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>`;
+    <p class="muted">Es el ${nombreTipo(tipoDe(indice, anio))}: lo que el Ayuntamiento prevé gastar (${formatEuros(r.totalGastos)}), no lo gastado hasta hoy. El importe por habitante es ese gasto dividido entre la población (${r.habitantes.toLocaleString("es-ES")} habitantes; ${esc(r.fuentePoblacion)}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>
+    ${documentosOficialesHtml(indice, anio)}`;
 
   const detalle = main.querySelector("#detalle-seg");
   const botones = [...main.querySelectorAll(".seg")];

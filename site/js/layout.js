@@ -60,6 +60,7 @@ export const TARJETAS_INICIO = [
   ["deuda", "Deuda del Ayuntamiento", "Cuánto se debe y cuándo se paga"],
   ["indicadores", "Indicadores de endeudamiento", "Ahorro, deuda por habitante y más"],
   ["calculadora", "Calculadora de impuestos", "A qué se destina lo que pagas"],
+  ["comparar", "Comparar años", "Qué ha cambiado entre dos presupuestos"],
 ];
 
 export function tarjetasHtml(anio) {

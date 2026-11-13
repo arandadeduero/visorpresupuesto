@@ -22,3 +22,11 @@ test("los datos de cada página se piden una sola vez (caché de data.js) y getI
   assert.match(data, /leerUnaVez\(urlDatos\("index\.json"\)\)/);
   assert.match(data, /export const loadData = .*leerUnaVez/);
 });
+
+test("la portada abre con la cifra total en grande, antes del reparto por cada 100 €, y deja el aviso de documentos para el final", () => {
+  const home = readFileSync(new URL("./home.js", import.meta.url), "utf8");
+  const pos = (t) => { const i = home.indexOf(t); assert.ok(i >= 0, `falta ${t}`); return i; };
+  assert.ok(pos('class="cifra-portada"') < pos("<h1"), "primero la cifra, luego el reparto");
+  assert.ok(pos('class="stackbar"') < pos("documentosOficialesHtml(indice, anio)}"), "el aviso de documentos va después del contenido");
+  assert.ok(!home.includes("Para cada vecino"), "el importe por habitante va en la entrada, no en un apartado propio");
+});
