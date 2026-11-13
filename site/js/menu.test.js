@@ -144,3 +144,7 @@ test("el selector enseña los años prorrogados, en su sitio y sin poder elegirl
   assert.deepEqual(opciones.map(([d]) => d), [false, true, true, false]);
   assert.match(opciones[1][1], /prorrogado.*2030/);
 });
+
+test("las tarjetas de la portada llevan también a Comparar", () => {
+  assert.match(tarjetasHtml(2026), /comparar\.html[^"]*"><strong>Comparar años/);
+});
