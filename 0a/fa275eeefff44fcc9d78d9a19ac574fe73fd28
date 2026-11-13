@@ -1,0 +1,19 @@
+.github/workflows/pages.yml
+  s_b340930051157b::t_06f0d424c2356b 61,68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0afa275eeefff44fcc9d78d9a19ac574fe73fd28",
+  "prompts": {},
+  "sessions": {
+    "s_b340930051157b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fbfae6cd-1cb0-455b-b1ae-9690c9c3ff04",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
