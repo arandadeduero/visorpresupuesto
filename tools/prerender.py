@@ -199,22 +199,34 @@ def _cab_capitulos(anio: int) -> list:
     return [("Capítulo", False), (str(anio - 1), True), (str(anio), True)]
 
 
+def _cambio(total, anterior, anio: int) -> str:
+    """«, un 1,2 % menos que en 2025»: como comparacion() de site/js/home.js. Vacío si el presupuesto no trae el año anterior."""
+    if not anterior:
+        return ""
+    pct = (total - anterior) / abs(anterior) * 100
+    if abs(pct) < 0.05:
+        return f", igual que en {anio - 1}"
+    cifra = (porcentaje(abs(pct)) if abs(pct) < 10 else f"{_agrupa(abs(pct))} %").replace(" %", f"{NBSP}%")
+    return f", un {cifra} {'más' if pct > 0 else 'menos'} que en {anio - 1}"
+
+
 def pagina_inicio(ctx: Contexto) -> str:
+    """El mismo orden y las mismas clases que pinta site/js/home.js, para que la página no salte al cargar el JS."""
     r = ctx.datos("resumen")
     anio = ctx.anio
     filas = [[esc(b["bloque"]), f"{b['euros']}{NBSP}€", euros(b["importe"])] for b in r["por100"]]
     return (
-        f"<h1>Por cada 100{NBSP}€ que gasta el Ayuntamiento en {anio}…</h1>"
-        + ctx.e["documentosOficiales"]
-        + _intro(ctx, f"El Ayuntamiento de Aranda de Duero prevé gastar <strong>{euros(r['totalGastos'])}</strong> en {anio} ({ctx.nombre_tipo}). Así se reparte cada 100{NBSP}€: personal, servicios, obras y otros gastos, como la deuda.")
+        f'<p class="antetitulo">{ctx.nombre_tipo} · {anio}</p>'
+        + f'<p class="cifra-portada">{euros(r["totalGastos"], compacto=True)}</p>'
+        + f'<p class="entrada-portada">Es lo que el Ayuntamiento de Aranda de Duero prevé gastar en {anio}: <strong>{euros(r["totalGastos"] / r["habitantes"])} por habitante</strong>{_cambio(r["totalGastos"], r["totalGastosAnterior"], anio)}.</p>'
+        + noscript(ctx)
+        + f'<h1 class="titulo-reparto">Por cada 100{NBSP}€ que gasta el Ayuntamiento en {anio}…</h1>'
         + tabla([("En qué", False), ("Por cada 100 €", True), (f"Importe en {anio}", True)], filas)
         + f'<p><a href="{ctx.url("gastos")}">Ver el detalle de los gastos del Ayuntamiento por política</a></p>'
-        + "<h2>Para cada vecino</h2>"
-        + f'<p class="lead">El presupuesto de {anio} equivale a unos <strong>{euros(r["totalGastos"] / r["habitantes"])}</strong> por habitante al año ({_agrupa(r["habitantes"])} habitantes).</p>'
-        + f'<p class="muted">Es el gasto previsto del Ayuntamiento dividido entre la población ({esc(r["fuentePoblacion"])}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>'
         + "<h2>Y además…</h2>"
         + ctx.e["tarjetasInicio"]
-        + f'<p class="muted">Es el {ctx.nombre_tipo}: lo que el Ayuntamiento prevé gastar, no lo gastado hasta hoy.</p>'
+        + f'<p class="muted">Es el {ctx.nombre_tipo}: lo que el Ayuntamiento prevé gastar ({euros(r["totalGastos"])}), no lo gastado hasta hoy. El importe por habitante es ese gasto dividido entre la población ({_agrupa(r["habitantes"])} habitantes; {esc(r["fuentePoblacion"])}). No es lo que paga cada vecino: ni los impuestos se reparten por igual ni todo el gasto se paga con ellos.</p>'
+        + ctx.e["documentosOficiales"]
     )
 
 

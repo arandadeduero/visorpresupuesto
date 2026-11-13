@@ -247,14 +247,28 @@ def test_relacionado_y_otros_anios_son_del_mismo_anio(dist, nombre):
                 assert f"../{anio}/" in href, f"{nombre}: «Relacionado» enlaza otro año: {href}"
     otros = re.search(r'<p class="muted otros-anios">(.*?)</p>', html, re.S)
     assert otros, f"{nombre}: sin «Otros años»"
-    enlaces = re.findall(r'<a href="([^"]+)">([^<]+)</a>', otros.group(1))
-    assert [h.split("/")[1] if h != "../" else str(ULTIMO) for h, _ in enlaces] == [str(a) for a in ANIOS if str(a) != anio]
-    assert all(len(t.split()) >= 3 and re.search(r"\d{4}", t) for _, t in enlaces)
-    for h, _ in enlaces:
+    enlaces = re.findall(r'<a href="([^"]+)" aria-label="([^"]+)">(\d{4})</a>', otros.group(1))
+    assert [h.split("/")[1] if h != "../" else str(ULTIMO) for h, _, _ in enlaces] == [str(a) for a in ANIOS if str(a) != anio]
+    assert [a for _, _, a in enlaces] == [str(a) for a in ANIOS if str(a) != anio]  # a la vista, solo el año
+    assert all(len(t.split()) >= 3 and a in t for _, t, a in enlaces)  # la frase completa, en aria-label
+    for h, _, _ in enlaces:
         destino = h + "index.html" if h.endswith("/") else h
         assert (dist / nombre).parent.joinpath(destino).resolve().is_file(), h
     if nombre.endswith("gastos.html"):  # la misma página en los otros años
-        assert all(h.endswith("/gastos.html") for h, _ in enlaces)
+        assert all(h.endswith("/gastos.html") for h, _, _ in enlaces)
+
+
+@pytest.mark.parametrize("anio", ANIOS)
+def test_la_portada_sin_js_abre_igual_que_con_js(dist, anio):
+    """La cifra en grande, la frase y debajo el reparto: lo mismo que pinta home.js, para que la página no salte al cargar."""
+    html = leer(dist, f"{anio}/index.html")
+    r = json.loads((SITE / "data" / str(anio) / "resumen.json").read_text(encoding="utf-8"))
+    assert html.index('class="antetitulo"') < html.index('class="cifra-portada"') < html.index('class="entrada-portada"') < html.index('<h1 class="titulo-reparto"')
+    entrada = re.search(r'<p class="entrada-portada">(.*?)</p>', html, re.S).group(1)
+    assert "por habitante</strong>" in entrada
+    assert (f"que en {anio - 1}" in entrada) == (r["totalGastosAnterior"] is not None)
+    assert "Para cada vecino" not in html
+    assert html.index("<h2>Y además…</h2>") < html.index("No es lo que paga cada vecino")
 
 
 def test_la_portada_de_la_raiz_enlaza_a_cada_anio(dist):

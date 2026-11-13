@@ -80,7 +80,7 @@ export function relacionadoHtml(activa, anio) {
   return `<nav class="relacionado" aria-labelledby="titulo-relacionado"><h2 id="titulo-relacionado">Relacionado</h2><ul>${items}</ul></nav>`;
 }
 
-/** Cómo se llama el enlace a la misma página de otro año («Otros años»): una frase con el año, no «2024» a secas. */
+/** Cómo se llama el enlace a la misma página de otro año («Otros años»): a la vista va solo el año, y esta frase en aria-label. */
 const ANCLA_ANIO = {
   inicio: (a) => `Presupuesto de ${a}: por cada 100 €`,
   resumen: (a) => `Resumen del presupuesto de ${a}`,
@@ -107,7 +107,7 @@ export function aniosHtml(activa, anio, indice) {
   }
   const otros = anios.filter((a) => a !== anio).sort((a, b) => a - b);
   if (!otros.length) return "";
-  return `<p class="muted otros-anios">Otros años: ${otros.map((a) => `<a href="${urlPagina(activa, a)}">${esc(ANCLA_ANIO[activa](a))}</a>`).join(" · ")}</p>`;
+  return `<p class="muted otros-anios">Otros años: ${otros.map((a) => `<a href="${urlPagina(activa, a)}" aria-label="${esc(ANCLA_ANIO[activa](a))}">${a}</a>`).join(" ")}</p>`;
 }
 
 /** Cómo se llama el presupuesto de cada año según su tipo («aprobado» o «proyecto», de data/index.json). */
