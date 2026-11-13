@@ -1,16 +1,12 @@
 """A9 · Anexo de inversiones reales: proyectos y su financiación."""
 import re
 
-from .common import code_str, find_file, load_sheet, norm, num, sentence_case
+from .common import code_str, es_numero, find_file, load_sheet, norm, num, sentence_case
 
 FUENTES = ("prestamo", "ingresosCorrientes", "otros", "rta", "subvenciones")
 # Cómo empieza el rótulo de cada fuente de financiación (sin tildes ni mayúsculas): «SUBVENC.» en 2024, «SUBVENCIONES» después;
 # el remanente es «RTA (CAP 8)» o «REMANENTE DE TESORERÍA AFECTADO (CAP 8)»
 _ROTULOS = {"prestamo": "prestamo", "ingresosCorrientes": "ingresos corrientes", "otros": "otros", "rta": ("rta", "remanente"), "subvenciones": "subvenc"}
-
-
-def _es_num(v) -> bool:
-    return isinstance(v, (int, float)) and not isinstance(v, bool)
 
 
 def _columnas(filas) -> dict:
@@ -57,7 +53,7 @@ def parse_inversiones(year: int) -> dict:
             partida = None
         elif cod and es_texto and re.fullmatch(r"\d{3}", cod):  # cabecera de partida económica (622, 650…)
             partida = cod
-        elif es_texto and _es_num(row[cols["importe"]]) and programa is not None:  # proyecto (a veces con código propio, p. ej. «005/2023»)
+        elif es_texto and es_numero(row[cols["importe"]]) and programa is not None:  # proyecto (a veces con código propio, p. ej. «005/2023»)
             proyecto = {"nombre": nombre.strip(), "partida": partida}
             for campo in ("importe", *FUENTES):
                 proyecto[campo] = num(row[cols[campo]]) or 0.0

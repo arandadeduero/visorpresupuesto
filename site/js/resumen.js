@@ -1,6 +1,6 @@
 import { runPage, esc } from "./layout.js";
 import { formatEuros, etiquetaCapitulo } from "./format.js";
-import { filaHtml, variacionHtml, tablaHtml } from "./ui.js";
+import { filaHtml, variacionHtml, tablaHtml, delTotal } from "./ui.js";
 import { urlPagina } from "./rutas.js";
 import { pintaQuesito, articulosDeIngresos } from "./quesito.js";
 import { mayoresCambios } from "./insights.js";
@@ -21,7 +21,7 @@ function bloque(titulo, capitulos, total) {
       title: `Nombre oficial: ${c.oficial}`,
       importe: c.actual,
       max,
-      extra: `${((c.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total${c.anterior === null || c.anterior === undefined ? "" : ` · ${variacionHtml(c.actual, c.anterior)}`}`, // sin año anterior en el resumen: no se compara
+      extra: `${delTotal(c.actual, total)}${c.anterior === null || c.anterior === undefined ? "" : ` · ${variacionHtml(c.actual, c.anterior)}`}`, // sin año anterior en el resumen: no se compara
     })}</li>`).join("")}</ul></section>`;
 }
 

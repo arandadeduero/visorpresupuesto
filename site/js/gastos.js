@@ -1,13 +1,13 @@
 import { runPage, esc } from "./layout.js";
-import { formatEuros } from "./format.js";
+import { formatEuros, sumBy } from "./format.js";
 import { buildTree, buscar } from "./gastos-tree.js";
-import { filaHtml, variacionHtml, tablaHtml, porHabHtml } from "./ui.js";
+import { filaHtml, variacionHtml, tablaHtml, porHabHtml, delTotal, activarDesplegables } from "./ui.js";
 import { pintaQuesito } from "./quesito.js";
 
 runPage("gastos", async ({ anio, main, load }) => {
   const [datos, resumen] = await Promise.all([load("gastos"), load("resumen")]);
   const habitantes = resumen.habitantes;
-  const total = datos.capitulos.reduce((s, c) => s + c.actual, 0);
+  const total = sumBy(datos.capitulos, (c) => c.actual);
   let modo = "politica";
   let nodos = new Map();
 
@@ -43,7 +43,7 @@ runPage("gastos", async ({ anio, main, load }) => {
       importe: n.actual,
       max,
       clicable: Boolean(n.hijos),
-      extra: [n.detalle ? esc(n.detalle) : "", `${((n.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total`, porHabHtml(n.actual, habitantes), n.anterior == null ? "" : variacionHtml(n.actual, n.anterior)].filter(Boolean).join(" · "),
+      extra: [n.detalle ? esc(n.detalle) : "", delTotal(n.actual, total), porHabHtml(n.actual, habitantes), n.anterior == null ? "" : variacionHtml(n.actual, n.anterior)].filter(Boolean).join(" · "),
     })}<div class="hijos" hidden></div></li>`).join("")}</ul>`;
   }
 
@@ -60,16 +60,7 @@ runPage("gastos", async ({ anio, main, load }) => {
     arbol.innerHTML = lista(raiz);
   }
 
-  arbol.addEventListener("click", (e) => {
-    const boton = e.target.closest("button.fila");
-    if (!boton) return;
-    const hijos = boton.nextElementSibling;
-    const abrir = hijos.hidden;
-    if (abrir && !hijos.innerHTML) hijos.innerHTML = lista(nodos.get(boton.dataset.id).hijos);
-    hijos.hidden = !abrir;
-    boton.setAttribute("aria-expanded", String(abrir));
-    boton.querySelector(".nombre").firstChild.textContent = (abrir ? "▾ " : "▸ ") + boton.querySelector(".nombre").firstChild.textContent.slice(2);
-  });
+  activarDesplegables(arbol, (id) => lista(nodos.get(id).hijos));
 
   main.querySelectorAll("[data-modo]").forEach((b) =>
     b.addEventListener("click", () => {

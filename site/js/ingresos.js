@@ -1,6 +1,6 @@
 import { runPage, esc } from "./layout.js";
-import { formatEuros, matches, etiquetaCapitulo } from "./format.js";
-import { filaHtml, variacionHtml, tablaHtml, porHabHtml } from "./ui.js";
+import { formatEuros, matches, etiquetaCapitulo, sumBy } from "./format.js";
+import { filaHtml, variacionHtml, tablaHtml, porHabHtml, delTotal, activarDesplegables } from "./ui.js";
 import { pintaQuesito, articulosDeIngresos } from "./quesito.js";
 
 const EXPLICACION = {
@@ -19,7 +19,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
   const [datos, resumen] = await Promise.all([load("ingresos"), load("resumen")]);
   const habitantes = resumen.habitantes;
   const caps = [...datos.capitulos].sort((a, b) => b.actual - a.actual);
-  const total = caps.reduce((s, c) => s + c.actual, 0);
+  const total = sumBy(caps, (c) => c.actual);
   const max = caps[0].actual;
   // Algunos presupuestos antiguos no traen ninguna cifra del año anterior: entonces no hay columna ni variaciones
   const conAnterior = caps.some((c) => c.anterior !== null && c.anterior !== undefined);
@@ -36,7 +36,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
       importe: c.actual,
       max,
       clicable: true,
-      extra: `${((c.actual / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total · ${porHabHtml(c.actual, habitantes)}${conAnterior ? ` · ${variacionHtml(c.actual, c.anterior)}` : ""}`,
+      extra: `${delTotal(c.actual, total)} · ${porHabHtml(c.actual, habitantes)}${conAnterior ? ` · ${variacionHtml(c.actual, c.anterior)}` : ""}`,
     })}<div class="hijos" hidden></div></li>`).join("")}</ul></div>
     <div id="resultados" hidden></div>`;
 
@@ -58,7 +58,7 @@ runPage("ingresos", async ({ anio, main, load }) => {
       importe: a.actual ?? 0,
       max: maxArt,
       clicable: true,
-      extra: `${(((a.actual ?? 0) / total) * 100).toLocaleString("es-ES", { maximumFractionDigits: 1 })} % del total${conAnterior ? ` · ${variacionHtml(a.actual, a.anterior)}` : ""}`,
+      extra: `${delTotal(a.actual ?? 0, total)}${conAnterior ? ` · ${variacionHtml(a.actual, a.anterior)}` : ""}`,
     })}<div class="hijos" hidden></div></li>`).join("")}</ul>`;
   };
   const conceptosHtml = (cap, articulo) => {
@@ -66,21 +66,10 @@ runPage("ingresos", async ({ anio, main, load }) => {
     return tablaHtml(cab, conceptos.map(fila));
   };
 
-  arbol.addEventListener("click", (e) => {
-    const boton = e.target.closest("button.fila");
-    if (!boton) return;
-    const id = boton.dataset.id;
+  activarDesplegables(arbol, (id) => {
     const [, capN, codigo] = id.match(/^(?:cap|art)-(\d)(?:-(\d+))?$/);
     const cap = datos.capitulos.find((c) => String(c.cap) === capN);
-    const hijos = boton.nextElementSibling;
-    const abrir = hijos.hidden;
-    if (abrir && !hijos.innerHTML) {
-      hijos.innerHTML = codigo ? conceptosHtml(cap, cap.articulos.find((a) => a.codigo === codigo)) : articulosHtml(cap);
-    }
-    hijos.hidden = !abrir;
-    boton.setAttribute("aria-expanded", String(abrir));
-    const nombre = boton.querySelector(".nombre").firstChild;
-    nombre.textContent = (abrir ? "▾ " : "▸ ") + nombre.textContent.slice(2);
+    return codigo ? conceptosHtml(cap, cap.articulos.find((a) => a.codigo === codigo)) : articulosHtml(cap);
   });
 
   main.querySelector("#buscar").addEventListener("input", (e) => {

@@ -1,5 +1,5 @@
 import { runPage, esc, tarjetasHtml, nombreTipo, tipoDe, documentosOficialesHtml } from "./layout.js";
-import { formatEuros, formatVariation } from "./format.js";
+import { formatEuros, formatPct, formatVariation, sumBy } from "./format.js";
 import { claseCrece } from "./escalas.js";
 import { destacar, porHabitante } from "./insights.js";
 import { variacionHtml } from "./ui.js";
@@ -24,7 +24,7 @@ runPage("inicio", async ({ anio, indice, main, load }) => {
   const r = await load("resumen"); // gastos.json (el más pesado) solo se pide después, para la tarjeta «¿Cuánto gasta…?»
   const cambio = comparacion(r.totalGastos, r.totalGastosAnterior, anio);
   const porVecino = formatEuros(porHabitante(r.totalGastos, r.habitantes));
-  const suma = r.por100.reduce((s, b) => s + b.euros, 0);
+  const suma = sumBy(r.por100, (b) => b.euros);
   const segmentos = r.por100.map((b, i) => {
     return `<button class="seg serie-${i + 1} ${claseCrece(b.euros, suma)}" type="button" data-i="${i}" aria-pressed="false">
       <span class="seg-euros">${b.euros}&nbsp;€</span><span class="seg-nombre">${esc(b.bloque)}</span></button>`;
@@ -78,7 +78,7 @@ runPage("inicio", async ({ anio, indice, main, load }) => {
         <div class="cifras">
           <div><span class="cifra">${formatEuros(d.porHabitante)}</span><span>por habitante</span></div>
           <div><span class="cifra">${formatEuros(d.importe, { compact: true })}</span><span>en total</span></div>
-          <div><span class="cifra">${d.pct.toLocaleString("es-ES", { maximumFractionDigits: 1 })} %</span><span>del presupuesto</span></div>
+          <div><span class="cifra">${formatPct(d.pct)}</span><span>del presupuesto</span></div>
         </div>
         ${d.anterior == null ? "" : `<p class="muted">${variacionHtml(d.importe, d.anterior)}</p>`}`;
     };

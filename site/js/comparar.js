@@ -1,7 +1,7 @@
 // Página «Comparar»: elige dos presupuestos y muestra qué ha cambiado (barras pareadas, tabla, frases, indicadores y evolución).
 import { runPage, esc } from "./layout.js";
 import { getIndex, loadData } from "./data.js";
-import { formatEuros } from "./format.js";
+import { formatEuros, formatPct, signo } from "./format.js";
 import { barChart, colorPorPunto } from "./charts.js";
 import { claseAncho } from "./escalas.js";
 import { tablaHtml } from "./ui.js";
@@ -28,8 +28,8 @@ const SERIE_OTRO = "serie-4";
 
 const num = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 1 });
 const euros = (v, modo) => (v === null || v === undefined ? "—" : modo === "habitante" ? formatEuros(v) : formatEuros(v, { compact: false }));
-const conSigno = (d, modo) => (d === null ? "—" : `${d > 0 ? "+" : d < 0 ? "−" : ""}${euros(Math.abs(d), modo)}`);
-const pctTxt = (p) => (p === null ? "" : `${p > 0 ? "+" : p < 0 ? "−" : ""}${num.format(Math.abs(p))} %`);
+const conSigno = (d, modo) => (d === null ? "—" : `${signo(d)}${euros(Math.abs(d), modo)}`);
+const pctTxt = (p) => (p === null ? "" : `${signo(p)}${formatPct(Math.abs(p))}`);
 
 function difHtml(f, modo) {
   if (f.estado === "nuevo") return `<span class="var-up">● Nuevo: ${conSigno(f.delta, modo)}</span>`;
@@ -39,8 +39,8 @@ function difHtml(f, modo) {
   return `<span class="${clase}">${f.estado === "sube" ? "▲" : "▼"} ${conSigno(f.delta, modo)}${f.pct === null ? "" : ` (${pctTxt(f.pct)})`}</span>`;
 }
 
-const fmtInd = (v, tipo) => (v === null ? "—" : tipo === "pct" ? `${num.format(v)} %` : formatEuros(v, { compact: Math.abs(v) >= 1e6 }));
-const fmtIndDelta = (d, tipo) => (d === null ? "—" : tipo === "pct" ? `${d > 0 ? "+" : d < 0 ? "−" : ""}${num.format(Math.abs(d))} puntos` : `${d > 0 ? "+" : d < 0 ? "−" : ""}${formatEuros(Math.abs(d), { compact: Math.abs(d) >= 1e6 })}`);
+const fmtInd = (v, tipo) => (v === null ? "—" : tipo === "pct" ? formatPct(v) : formatEuros(v, { compact: Math.abs(v) >= 1e6 }));
+const fmtIndDelta = (d, tipo) => (d === null ? "—" : tipo === "pct" ? `${signo(d)}${num.format(Math.abs(d))} puntos` : `${signo(d)}${formatEuros(Math.abs(d), { compact: Math.abs(d) >= 1e6 })}`);
 
 runPage("comparar", async ({ main }) => {
   document.querySelector(".anio")?.remove(); // aquí se eligen dos años, no uno

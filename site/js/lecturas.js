@@ -1,5 +1,6 @@
 // Cálculos de las páginas «Calculadora» e «Indicadores». Funciones puras, sin DOM.
 import { porHabitante } from "./insights.js";
+import { formatPct, sumBy } from "./format.js";
 
 /** Convierte lo que escribe el vecino («1.234,56», «350 €») en un importe ≥ 0; 0 si no se entiende. */
 export function parseImporte(texto) {
@@ -12,7 +13,7 @@ export function parseImporte(texto) {
 /** Reparte `importe` entre las políticas de gasto en proporción a su gasto previsto (orientativo). */
 export function repartoAportacion(importe, politicas) {
   if (!Number.isFinite(importe) || importe <= 0) return [];
-  const total = politicas.reduce((s, p) => s + p.actual, 0);
+  const total = sumBy(politicas, (p) => p.actual);
   if (total <= 0) return [];
   return politicas
     .filter((p) => p.actual > 0)
@@ -20,7 +21,7 @@ export function repartoAportacion(importe, politicas) {
     .sort((a, b) => b.importe - a.importe);
 }
 
-const sumaCaps = (capitulos, caps) => capitulos.filter((c) => caps.includes(c.cap)).reduce((s, c) => s + (c.actual ?? 0), 0);
+const sumaCaps = (capitulos, caps) => sumBy(capitulos.filter((c) => caps.includes(c.cap)), (c) => c.actual);
 const pct = (parte, todo) => (Number.isFinite(parte) && todo > 0 ? (parte / todo) * 100 : null);
 
 // Umbrales legales del nivel de endeudamiento de las entidades locales (capital vivo / ingresos corrientes):
@@ -37,8 +38,6 @@ export function situacionEndeudamiento(pctNivel) {
   return pctNivel <= UMBRAL_PROHIBICION_PCT ? "entre75y110" : "sobre110";
 }
 
-const pct1 = (n) => `${n.toLocaleString("es-ES", { maximumFractionDigits: 1 })} %`;
-
 /** Texto llano de la tarjeta «Nivel de endeudamiento»: qué mide, qué dice la ley y dónde queda el Ayuntamiento. */
 export function textoNivelEndeudamiento(i) {
   const hayPrevisto = Number.isFinite(i.deudaConPrevistoSobreIngresosCorrientesPct);
@@ -48,7 +47,7 @@ export function textoNivelEndeudamiento(i) {
     "Compara la deuda viva (los préstamos pendientes de devolver) con los ingresos corrientes del año (capítulos 1 a 5 de ingresos: impuestos, tasas, transferencias corrientes e ingresos patrimoniales).",
     "Según la ley de haciendas locales, con ahorro neto positivo y por debajo del 75 % se pueden pedir préstamos a largo plazo para inversiones sin autorización previa; entre el 75 % y el 110 % hace falta la autorización de la administración que tutela las finanzas locales, y por encima del 110 % no se pueden concertar.",
   ];
-  if (hayPrevisto) partes.push(`Si se firmara el préstamo previsto subiría al ${pct1(i.deudaConPrevistoSobreIngresosCorrientesPct)}.`);
+  if (hayPrevisto) partes.push(`Si se firmara el préstamo previsto subiría al ${formatPct(i.deudaConPrevistoSobreIngresosCorrientesPct)}.`);
   if (situacion === "bajo75") partes.push(`${hayPrevisto ? "Incluso así" : "Con esta cifra"} quedaría por debajo del 75 %.`);
   else if (situacion === "entre75y110") partes.push("Con esta cifra superaría el 75 % y necesitaría autorización para endeudarse a largo plazo.");
   else if (situacion === "sobre110") partes.push("Con esta cifra superaría el 110 % y no podría concertar nuevos préstamos a largo plazo.");

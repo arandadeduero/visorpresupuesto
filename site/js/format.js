@@ -6,7 +6,7 @@ const entero = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 0, useGro
 const agrupar = (n) => entero.format(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const decimal1 = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 1 });
 
-const esNumero = (n) => typeof n === "number" && Number.isFinite(n);
+export const esNumero = (n) => typeof n === "number" && Number.isFinite(n);
 
 export function formatEuros(n, { compact = false } = {}) {
   if (!esNumero(n)) return "—";
@@ -24,6 +24,12 @@ export function formatVariation(actual, anterior) {
   const cifra = Math.abs(pct) < 10 ? decimal1.format(Math.abs(pct)) : agrupar(Math.abs(pct));
   return pct > 0 ? { text: `+${cifra} %`, dir: "up" } : { text: `−${cifra} %`, dir: "down" };
 }
+
+/** «12,3 %»: porcentaje con un decimal como mucho. */
+export const formatPct = (n) => `${decimal1.format(n)} %`;
+
+/** Signo de una diferencia: «+», «−» o nada si es 0. */
+export const signo = (n) => (n > 0 ? "+" : n < 0 ? "−" : "");
 
 /** «Cap 6 - Obras e inversiones»: el capítulo siempre con su número, que es lo más básico para orientarse. */
 export const etiquetaCapitulo = (c) => `Cap ${c.cap} - ${c.corto}`;
